@@ -9,7 +9,7 @@ This repository provides everything needed to deploy an unblocked, high-throughp
 1. Exhaustive 100-Provider Inventory: Documented endpoints, home pages, pricing URLs, llms.txt documentation, quotas, cadences, credit card requirements, anti-bot mechanisms, rendering engines, and rate limits.
 2. 8 Deep Technical Architecture Reviews: Focused reviews of Tinyfish, Keenable, Firecrawl, Jina AI, Tavily, Exa, Crawl4AI, and Serper.
 3. 5 Post-Analyses:
-   - 5-account capacity modeling (yielding 148.9 million requests per month).
+   - 5-account capacity modeling (yielding 14.48 million requests per month).
    - Anti-bot bypass rankings across Cloudflare Turnstile, Datadome, Kasada, and Akamai.
    - One-time trial credits vs. monthly recurring allowances breakdown.
    - Market maturity and ecosystem adoption matrix.
@@ -22,10 +22,10 @@ This repository provides everything needed to deploy an unblocked, high-throughp
 | Metric | Measurement |
 |---|---|
 | Total Providers Evaluated | 100 verified services |
-| Aggregate Monthly Volume (1 Account per Provider) | 29,787,275 requests per month |
-| Aggregate Monthly Volume (5 Accounts per Provider) | 148,936,375 requests per month |
-| Recurring Cadence (Monthly / Daily / Polite) | 55 providers |
-| One-Time Signup Trial Cadence | 48 providers |
+| Aggregate Monthly Volume (1 Account per Provider) | 2,897,475 requests per month |
+| Aggregate Monthly Volume (5 Accounts per Provider) | 14,487,375 requests per month |
+| Recurring Cadence (Monthly / Daily / Continuous / Sovereign) | 44 providers |
+| One-Time Signup Trial Cadence | 56 providers |
 | No Credit Card Required | 96 of 100 providers |
 | Credit Card Verification Required | 4 providers (Brave, Bright Data, SOAX, Azure Bing) |
 | Industrial Anti-Bot Bypass (Datadome/Kasada/Turnstile) | 28 providers |
@@ -44,13 +44,13 @@ This repository provides everything needed to deploy an unblocked, high-throughp
 | Webscraping.ai | Anti-Bot Scraping | 2k requests/month | Monthly | Yes | Automated rotating proxy web scraping |
 | Scrape.do | Residential Scraping | 1k requests/month | Monthly | Yes | Residential proxy unblocking of tough domains |
 | Apify | Serverless Scrapers | $5 monthly platform credit | Monthly | Yes | Serverless actor execution and web monitoring |
-| Semantic Scholar | Academic Papers | 10 RPS polite with key | Continuous | Yes | Scientific paper search and graph links |
-| OpenAlex | Scholarly Works | 100k requests/day | Daily Resets | Yes | Global academic literature and citation index |
-| Hacker News Algolia | Tech News & Links | 10k requests/hour | Hourly Resets | Yes | Real-time tech discussions and URL discovery |
+| Spider.cloud | High-Speed Scraper | 500 pages free trial | One-Time | Yes | Ultra low latency Rust crawler core |
+| ZenRows | Anti-Bot Bypass | 1k free credits | One-Time | Yes | Defeating strict Datadome and Kasada targets |
+| Scrapfly | Anti-Scraping Bypass | 1k free credits | One-Time | Yes | Full Chrome DevTools session unblocking |
 
 ## Repository Structure
 
-- `REPORT.md`: Comprehensive 2,300+ line technical report containing the master 100-provider catalog, 8 deep reviews, 5 post-analyses, and gateway architecture blueprints.
+- `REPORT.md`: Comprehensive 2,900+ line technical report containing the master 100-provider catalog, 8 deep reviews, 5 post-analyses, and gateway architecture blueprints.
 - `providers.json`: Full machine-readable catalog of all 100 providers with 16 structured metadata fields per provider.
 - `gateway_router.py`: Runnable reference implementation of the unified gateway router.
 - `LICENSE`: 0BSD License (public domain equivalent, zero restrictions).
