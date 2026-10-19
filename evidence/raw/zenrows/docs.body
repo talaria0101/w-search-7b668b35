@@ -1,0 +1,164 @@
+# Zenrows
+
+> Zenrows is web data infrastructure built for AI agents and applications. It gives them reliable access to the live web, including the protected web: sites defended by anti-bot systems, rendered in JavaScript, or built to block ordinary tools. Five primitives do the work: Fetch, Extract, Crawl (New), Batch and Browser Sessions. Each runs over the API, the CLI, MCP or an SDK.
+
+The Zenrows HTTP API serves Fetch and Extract (`extract=auto`) at `https://api.zenrows.com/v1/`, Crawl (New) at `https://api.zenrows.com/v1/crawls`, and Batch at `https://async.api.zenrows.com/v1`. Fetch, Extract, Crawl and Batch are described in OpenAPI 3.1 at https://www.zenrows.com/openapi.json and listed in the RFC 9727 API catalog at https://www.zenrows.com/.well-known/api-catalog. Use the spec for exact parameter names and types. Browser Sessions connects your own Puppeteer or Playwright code over WebSocket.
+
+No API key is needed to start: the local MCP server (`npx -y @zenrows/mcp`) and the CLI (`npx -y @zenrows/cli`) create a Free account (5,000 credits per month) on first use, which a person can claim later with the same key ([Agent signup and unclaimed accounts](https://docs.zenrows.com/authentication.md)). An agent can also pay per request with no account at all ([Agentic Payments](https://docs.zenrows.com/first-steps/agentic-payments.md)).
+
+This file is a curated index of every page in the navigation, and each link points to that page's Markdown version. The full text of every page is in [llms-full.txt](https://docs.zenrows.com/llms-full.txt), and these docs can be searched over MCP at `https://docs.zenrows.com/mcp`.
+
+## Get started
+
+- [Welcome to Zenrows](https://docs.zenrows.com/first-steps/welcome.md): The primitives (Fetch, Extract, Crawl, Batch, Browser Sessions) and the surfaces they run on.
+- [What is Zenrows?](https://docs.zenrows.com/first-steps/what-is-zenrows.md): What Zenrows is and why teams and AI agents use it for reliable web access.
+- [How to Use Zenrows](https://docs.zenrows.com/first-steps/how-to-use-zenrows.md): Get an API key, then the setup guide for Fetch, Extract, Crawl, Batch or Browser Sessions on each surface.
+- [Zenrows' Primitives](https://docs.zenrows.com/first-steps/our-products.md): Compare Fetch, Extract, Crawl, Batch and Browser Sessions and pick the right one.
+- [Quick Setup and First Request](https://docs.zenrows.com/first-steps/getting-started-guide.md): Create an account, get your API key, send your first request.
+- [Zenrows Pricing](https://docs.zenrows.com/first-steps/pricing.md): Plans, credits, cost multipliers, pay-per-success billing and the shared balance.
+- [Agentic Payments](https://docs.zenrows.com/first-steps/agentic-payments.md): AI agents buy and call Fetch and Extract at agents.zenrows.com over x402, MPP or a card, with no Zenrows account.
+- [Zenrows API Reference](https://docs.zenrows.com/api-reference.md): Every developer resource in one place: OpenAPI spec, authentication, SDKs and MCP.
+- [Zenrows API Authentication](https://docs.zenrows.com/authentication.md): Where to find your API key, how to send it to each API and the MCP server, and how agent-created accounts are claimed.
+- [API Error Codes](https://docs.zenrows.com/api-error-codes.md): Every API error code, what it means and the fix.
+- [API Versioning and Deprecation](https://docs.zenrows.com/api-versioning.md): How versions are retired, with twelve months' notice.
+
+## Fetch
+
+Fetch (formerly, Universal Scraper API) gets any page as clean content: `GET https://api.zenrows.com/v1/` plus parameters.
+
+- [Fetch API Reference](https://docs.zenrows.com/fetch/api-reference.md): Every Fetch parameter, authentication and pricing.
+- [Setting Up Fetch](https://docs.zenrows.com/fetch/setup.md): API key, authentication and a first request.
+- [Make Your First Request](https://docs.zenrows.com/fetch/first-request.md): First call in Python, Node.js, Go, Java, PHP, Ruby or cURL.
+- [Common Use Cases & Recipes](https://docs.zenrows.com/fetch/common-use-cases.md): Ready-to-use recipes for anti-bot bypass, rendering and extraction.
+- Anti-bot and proxies: [Adaptive Stealth Mode](https://docs.zenrows.com/fetch/features/adaptive-stealth-mode.md) (`mode=auto` picks the cheapest configuration that succeeds), [premium proxy](https://docs.zenrows.com/fetch/features/premium-proxy.md), [proxy country](https://docs.zenrows.com/fetch/features/proxy-country.md), [custom headers](https://docs.zenrows.com/fetch/features/headers.md).
+- Rendering: [JavaScript rendering](https://docs.zenrows.com/fetch/features/js-rendering.md), [wait](https://docs.zenrows.com/fetch/features/wait.md), [wait for a selector](https://docs.zenrows.com/fetch/features/wait-for.md), [JavaScript instructions](https://docs.zenrows.com/fetch/features/js-instructions.md) (click, fill, scroll), [block resources](https://docs.zenrows.com/fetch/features/block-resources.md).
+- Output: [JSON response](https://docs.zenrows.com/fetch/features/json-response.md) (with captured XHR), [Markdown](https://docs.zenrows.com/fetch/features/markdown.md), [plain text](https://docs.zenrows.com/fetch/features/plaintext.md), [PDF](https://docs.zenrows.com/fetch/features/pdf.md), [screenshot](https://docs.zenrows.com/fetch/features/screenshot.md), [output filters](https://docs.zenrows.com/fetch/features/output-filters.md), [CSS extractor](https://docs.zenrows.com/fetch/features/css-extractor.md), [download files](https://docs.zenrows.com/fetch/features/downloadfile.md), [Autoparse](https://docs.zenrows.com/fetch/features/autoparse.md) (deprecated in favor of Extract).
+- [Concurrency](https://docs.zenrows.com/fetch/features/concurrency.md): Plan concurrency limits and parallel requests.
+- [Other Features](https://docs.zenrows.com/fetch/features/other.md): Session ID, original status codes and POST requests.
+- [Fetch FAQ](https://docs.zenrows.com/fetch/faq.md): Cookies, sessions, proxies and output formats.
+- Troubleshooting: [basic guide](https://docs.zenrows.com/fetch/troubleshooting/troubleshooting-guide.md), [IP blocked or connection refused](https://docs.zenrows.com/fetch/troubleshooting/ip-address-blocked.md), [partial or empty responses](https://docs.zenrows.com/fetch/troubleshooting/empty-or-partialresponses.md), [proxy and geolocation](https://docs.zenrows.com/fetch/troubleshooting/troubleshooting-premium-proxies.md), [response too large (`413`)](https://docs.zenrows.com/fetch/troubleshooting/response-too-large.md), [advanced CSS selectors](https://docs.zenrows.com/fetch/troubleshooting/advanced-css-selectors.md), [CSS selector examples](https://docs.zenrows.com/fetch/troubleshooting/advanced-css-selector-examples.md).
+
+## Extract
+
+Extract turns a page into structured JSON: add `extract=auto` to a Fetch call.
+
+- [Introduction to Extract](https://docs.zenrows.com/extract/introduction.md): A tailored extraction per website, kept working when layouts change.
+- [Extract Setup](https://docs.zenrows.com/extract/setup.md): Make an Extract request and read the result.
+- [Extract API Reference](https://docs.zenrows.com/extract/endpoints.md): Which domains are served, and how to request a new one.
+
+## Crawl (New)
+
+Crawl takes one start URL and returns the pages it finds: `https://api.zenrows.com/v1/crawls`.
+
+- [Introduction to Crawl](https://docs.zenrows.com/crawl/introduction.md): How a crawl follows links from one start URL, and a first request.
+- [Crawl Setup](https://docs.zenrows.com/crawl/setup.md): Start a crawl, read results with a cursor, download them, get each page's HTML, stop it.
+- [Crawl Endpoints](https://docs.zenrows.com/crawl/endpoints.md): Parameters, response fields, statuses, limits, pricing and errors.
+
+## Batch
+
+Batch runs large lists of URLs as one managed job: `https://async.api.zenrows.com/v1`.
+
+- [Introduction to Batch](https://docs.zenrows.com/batch/introduction.md): Submit a job, track it and collect the results.
+- [Setting Up Batch](https://docs.zenrows.com/batch/setup.md): Authenticate, submit a first job and retrieve results.
+- [Batch API Reference](https://docs.zenrows.com/batch/developer-guide-restapi.md): Every Batch request over HTTP, in seven languages.
+- [Batch Troubleshooting](https://docs.zenrows.com/batch/troubleshooting.md): Submission errors, job states, downloads, webhooks and scheduling.
+- [Batch FAQ](https://docs.zenrows.com/batch/faq.md): Access, pricing, limits, options and results.
+
+## Browser Sessions
+
+Browser Sessions (formerly, Scraping Browser) is a cloud browser for pages that need real interaction, driven by your own CDP code.
+
+- [Introduction to Browser Sessions](https://docs.zenrows.com/browser-sessions/introduction.md): What it offers: residential proxies, geo-targeting and CDP.
+- [Setting Up Browser Sessions](https://docs.zenrows.com/browser-sessions/setup.md): Connection URL and parameters for Puppeteer or Playwright.
+- [Browser Sessions with Puppeteer](https://docs.zenrows.com/browser-sessions/get-started/puppeteer.md): Node.js and Pyppeteer.
+- [Browser Sessions with Playwright](https://docs.zenrows.com/browser-sessions/get-started/playwright.md): Python and Node.js.
+- [World Region](https://docs.zenrows.com/browser-sessions/features/world-region.md): Route a session through one world region.
+- [Country Targeting](https://docs.zenrows.com/browser-sessions/features/country.md): Route a session through one country.
+- [Session TTL](https://docs.zenrows.com/browser-sessions/features/session-ttl.md): Keep a session alive from 1 to 15 minutes.
+- [Practical Use Cases](https://docs.zenrows.com/browser-sessions/help/practical-use-cases.md): Screenshots, forms, infinite scroll and network interception.
+- [Browser Sessions FAQ](https://docs.zenrows.com/browser-sessions/faq.md): Sessions, CDP, proxies and limits.
+
+## CLI
+
+- [Zenrows CLI](https://docs.zenrows.com/cli/introduction.md): Install, authenticate and get a first result from the terminal.
+- [CLI: fetch](https://docs.zenrows.com/cli/fetch/introduction.md): Get any page as clean content from the terminal.
+- [CLI: extract](https://docs.zenrows.com/cli/extract/introduction.md): Structured JSON, chosen fields or Markdown from the terminal.
+- [CLI: crawl](https://docs.zenrows.com/cli/crawl/introduction.md): Collect the URLs behind one start page, and each page's HTML on request.
+- [CLI: batch](https://docs.zenrows.com/cli/batch/introduction.md): Run thousands of URLs as one job, with a cost check first.
+- [CLI: browser](https://docs.zenrows.com/cli/browser/introduction.md): Drive a real browser when simpler methods can't.
+- [Agent Toolkit](https://docs.zenrows.com/cli/agent-toolkit-overview.md): MCP, Skills, Templates, Workflows, Recipes and Evals for AI agents.
+- Agent Toolkit pieces: [MCP config](https://docs.zenrows.com/cli/mcp.md), [Skills](https://docs.zenrows.com/cli/skills.md), [Templates](https://docs.zenrows.com/cli/templates.md), [Workflows](https://docs.zenrows.com/cli/workflows.md), [Recipes](https://docs.zenrows.com/cli/recipes.md) (double as smoke tests), [Evals](https://docs.zenrows.com/cli/evals.md).
+- [CLI Troubleshooting](https://docs.zenrows.com/cli/troubleshooting.md): Read a run's trace and the next step for every error code.
+
+## SDKs
+
+- [Zenrows SDKs](https://docs.zenrows.com/sdk/overview.md): Which SDK covers which primitive.
+- [Fetch SDK Overview](https://docs.zenrows.com/fetch/sdk/overview.md): Python, Node.js and Go clients for Fetch.
+- [Extract with the SDKs](https://docs.zenrows.com/extract/sdk-overview.md): Use the Fetch client with `extract=auto`.
+- Crawl SDKs: [Python](https://docs.zenrows.com/crawl/sdk/python.md), [Node.js](https://docs.zenrows.com/crawl/sdk/nodejs.md) and [Go](https://docs.zenrows.com/crawl/sdk/go.md) clients that start a crawl, wait for it and read its URLs or HTML.
+- [Batch Python SDK](https://docs.zenrows.com/batch/sdk/python.md): Submit, track and collect Batch jobs in Python.
+- [Batch Node.js SDK](https://docs.zenrows.com/batch/sdk/nodejs.md): Submit, track and collect Batch jobs in Node.js.
+- [Browser Sessions with your own code](https://docs.zenrows.com/browser-sessions/sdk-overview.md): No separate SDK; one line in Puppeteer or Playwright.
+- Python SDK for Fetch: [introduction](https://docs.zenrows.com/fetch/sdk/python/introduction.md), [installation](https://docs.zenrows.com/fetch/sdk/python/installation.md), [quickstart](https://docs.zenrows.com/fetch/sdk/python/quickstart.md), [POST and PUT](https://docs.zenrows.com/fetch/sdk/python/post-put-requests.md), [async and concurrency](https://docs.zenrows.com/fetch/sdk/python/async-concurrency.md), [errors and retries](https://docs.zenrows.com/fetch/sdk/python/error-handling-and-retries.md), [response object](https://docs.zenrows.com/fetch/sdk/python/response-object.md), [custom headers](https://docs.zenrows.com/fetch/sdk/python/custom-headers.md), [FAQ](https://docs.zenrows.com/fetch/sdk/python/faq.md).
+- Node.js SDK for Fetch: [introduction](https://docs.zenrows.com/fetch/sdk/nodejs/introduction.md), [installation](https://docs.zenrows.com/fetch/sdk/nodejs/installation.md), [quickstart](https://docs.zenrows.com/fetch/sdk/nodejs/quickstart.md), [POST](https://docs.zenrows.com/fetch/sdk/nodejs/post-put-requests.md), [concurrency](https://docs.zenrows.com/fetch/sdk/nodejs/async-concurrency.md), [errors and retries](https://docs.zenrows.com/fetch/sdk/nodejs/error-handling-and-retries.md), [response object](https://docs.zenrows.com/fetch/sdk/nodejs/response-object.md), [custom headers](https://docs.zenrows.com/fetch/sdk/nodejs/custom-headers.md), [FAQ](https://docs.zenrows.com/fetch/sdk/nodejs/faq.md).
+- Go SDK for Fetch: [introduction](https://docs.zenrows.com/fetch/sdk/go/introduction.md), [installation](https://docs.zenrows.com/fetch/sdk/go/installation.md), [quickstart](https://docs.zenrows.com/fetch/sdk/go/quickstart.md), [POST and PUT](https://docs.zenrows.com/fetch/sdk/go/post-put-requests.md), [concurrency](https://docs.zenrows.com/fetch/sdk/go/async-concurrency.md), [errors and retries](https://docs.zenrows.com/fetch/sdk/go/error-handling-and-retries.md), [response object](https://docs.zenrows.com/fetch/sdk/go/response-object.md), [custom headers](https://docs.zenrows.com/fetch/sdk/go/custom-headers.md), [FAQ](https://docs.zenrows.com/fetch/sdk/go/faq.md).
+
+## MCP
+
+The hosted Zenrows MCP server is at `https://mcp.zenrows.com/mcp` (OAuth 2.1 or the API key as a Bearer token); the local one is the `@zenrows/mcp` npm package.
+
+- [Zenrows MCP Server](https://docs.zenrows.com/mcp/overview.md): Connect any MCP client; scrape, extract, Crawl, Batch and browser tools.
+- [MCP tool reference](https://docs.zenrows.com/mcp/tool-reference.md): Every tool's classification, auth, credits, errors and parameters.
+- [MCP Integrations](https://docs.zenrows.com/integrations/mcp/mcp-integrations.md): Every client and platform that connects through the MCP server.
+
+## Integrations
+
+- [Integration Options](https://docs.zenrows.com/integrations/overview.md): Every integration, by category.
+- AI assistants: [Claude connector](https://docs.zenrows.com/integrations/claude.md), [Claude Desktop](https://docs.zenrows.com/integrations/claude-desktop.md), [Claude Code](https://docs.zenrows.com/integrations/claude-code.md).
+- AI code editors: [Cursor](https://docs.zenrows.com/integrations/cursor.md), [Windsurf](https://docs.zenrows.com/integrations/windsurf.md), [VS Code](https://docs.zenrows.com/integrations/vscode.md), [Zed](https://docs.zenrows.com/integrations/zed.md), [JetBrains IDEs](https://docs.zenrows.com/integrations/jetbrains.md), [OpenCode](https://docs.zenrows.com/integrations/opencode.md), [Google Antigravity 2.0](https://docs.zenrows.com/integrations/antigravity-20.md), [Antigravity IDE](https://docs.zenrows.com/integrations/antigravity-ide.md).
+- Agent SDKs and frameworks: [Claude Agent SDK](https://docs.zenrows.com/integrations/claude-agent-sdk.md), [OpenAI Agents SDK](https://docs.zenrows.com/integrations/openai-agents-sdk.md), [Google ADK](https://docs.zenrows.com/integrations/google-adk.md), [LangChain](https://docs.zenrows.com/integrations/langchain.md), [LlamaIndex](https://docs.zenrows.com/integrations/llamaindex.md), [Flowise](https://docs.zenrows.com/integrations/flowise.md), [Dify](https://docs.zenrows.com/integrations/dify.md), [Mastra](https://docs.zenrows.com/integrations/mastra.md), [CrewAI](https://docs.zenrows.com/integrations/crewai.md).
+- AI tools: [OpenAI](https://docs.zenrows.com/integrations/openai.md), [Anthropic Claude API](https://docs.zenrows.com/integrations/anthropic-claude-api.md), [Clay](https://docs.zenrows.com/integrations/clay.md), [Lindy](https://docs.zenrows.com/integrations/lindy.md).
+- Agent platforms: [Claude Managed Agents](https://docs.zenrows.com/integrations/claude-managed-agents.md), [Hermes](https://docs.zenrows.com/integrations/hermes.md), [OpenClaw](https://docs.zenrows.com/integrations/openclaw.md).
+- No-code and automation: [Zapier](https://docs.zenrows.com/integrations/zapier.md), [Make](https://docs.zenrows.com/integrations/make.md), [n8n](https://docs.zenrows.com/integrations/n8n.md), [Pipedream](https://docs.zenrows.com/integrations/pipedream.md), [MuleSoft](https://docs.zenrows.com/integrations/mulesoft.md), [Node-RED](https://docs.zenrows.com/integrations/node-red.md).
+- Browser and scraping frameworks: [Playwright](https://docs.zenrows.com/integrations/playwright.md), [Puppeteer](https://docs.zenrows.com/integrations/puppeteer.md), [Scrapy](https://docs.zenrows.com/integrations/scrapy.md), [Selenium](https://docs.zenrows.com/integrations/selenium.md), [Undici](https://docs.zenrows.com/integrations/undici.md).
+- Captcha solvers: [2Captcha](https://docs.zenrows.com/integrations/2captcha.md).
+
+## Guides
+
+- Fetch by language: [Python with Requests](https://docs.zenrows.com/fetch/python.md), [Python Requests and BeautifulSoup](https://docs.zenrows.com/fetch/help/python-requests-and-beautifulsoup-integration.md), [Node.js with Axios](https://docs.zenrows.com/fetch/nodejs.md), [Node.js, Axios and Cheerio](https://docs.zenrows.com/fetch/help/javascript-nodejs-and-cheerio-integration.md), with concurrency and retries.
+
+## Academy
+
+- [Zenrows Academy](https://docs.zenrows.com/academy/introduction.md): How the course and recipes fit together.
+- [Choose a primitive](https://docs.zenrows.com/academy/choose-a-primitive.md): Which primitive fits each job.
+- [Connect your AI agent](https://docs.zenrows.com/academy/connect-your-ai-agent.md): Claude, Cursor, Codex or your own agent, over MCP and the CLI.
+- Foundations course: [1. first request](https://docs.zenrows.com/academy/foundations/first-request.md), [2. product to JSON](https://docs.zenrows.com/academy/foundations/extract-product-data.md), [3. discover with Crawl](https://docs.zenrows.com/academy/foundations/discover-every-product.md), [4. scrape with Batch](https://docs.zenrows.com/academy/foundations/scrape-at-scale.md), [5. automate a browser](https://docs.zenrows.com/academy/foundations/automate-a-browser.md), [6. run it daily](https://docs.zenrows.com/academy/foundations/run-on-a-schedule.md).
+- Fetch recipes: [protected sites](https://docs.zenrows.com/academy/fetch/protected-sites.md), [JavaScript pages](https://docs.zenrows.com/academy/fetch/javascript-pages.md), [geotargeting](https://docs.zenrows.com/academy/fetch/geotargeting.md), [Markdown for LLMs](https://docs.zenrows.com/academy/fetch/markdown-for-llms.md), [click, fill and scroll](https://docs.zenrows.com/academy/fetch/page-interactions.md), [screenshots and files](https://docs.zenrows.com/academy/fetch/screenshots-and-files.md), [sessions and forms](https://docs.zenrows.com/academy/fetch/sessions-and-forms.md), [concurrent requests](https://docs.zenrows.com/academy/fetch/concurrent-requests.md), [network requests](https://docs.zenrows.com/academy/capturing-network-requests.md).
+- Extract recipes: [structured JSON](https://docs.zenrows.com/academy/extract/auto-extraction.md), [listing pages](https://docs.zenrows.com/academy/extract/listing-pages.md), [CSS selectors](https://docs.zenrows.com/academy/how-to-extract-data.md), [tables and links](https://docs.zenrows.com/academy/extract/tables-to-csv.md), [schema validation](https://docs.zenrows.com/academy/extract/validate-with-a-schema.md), [prepare a new site](https://docs.zenrows.com/academy/extract/add-a-new-site.md).
+- Crawl (New) recipes: [from a start URL](https://docs.zenrows.com/academy/scrape-and-crawl-from-a-seed-url.md), [map a website](https://docs.zenrows.com/academy/crawl/map-a-website.md), [save a site section](https://docs.zenrows.com/academy/crawl/download-a-section.md), [new page alerts](https://docs.zenrows.com/academy/crawl/new-pages.md), [broken links](https://docs.zenrows.com/academy/crawl/broken-links.md).
+- Batch recipes: [a list of URLs](https://docs.zenrows.com/academy/scrape-from-a-list-of-urls.md), [start from a CSV](https://docs.zenrows.com/academy/batch/csv-input.md), [per-URL settings](https://docs.zenrows.com/academy/batch/per-task-settings.md), [open jobs](https://docs.zenrows.com/academy/batch/open-jobs.md), [retry failed tasks](https://docs.zenrows.com/academy/batch/retry-failed-tasks.md), [export results](https://docs.zenrows.com/academy/batch/export-results.md), [webhooks](https://docs.zenrows.com/academy/batch/webhooks.md), [scheduled jobs](https://docs.zenrows.com/academy/batch/scheduled-jobs.md).
+- Browser Sessions recipes: [Playwright or Puppeteer](https://docs.zenrows.com/academy/browser/connect-playwright-and-puppeteer.md), [browser agent](https://docs.zenrows.com/academy/browser/build-a-browser-agent.md), [reuse a login](https://docs.zenrows.com/academy/browser/login-and-reuse-sessions.md), [multi-step forms](https://docs.zenrows.com/academy/browser/fill-forms.md), [infinite scroll](https://docs.zenrows.com/academy/browser/infinite-scroll-and-pagination.md), [screenshots and PDFs](https://docs.zenrows.com/academy/browser/screenshots-and-pdfs.md), [AI assistants](https://docs.zenrows.com/academy/browser/ai-assistant-browsing.md), [parallel sessions](https://docs.zenrows.com/academy/browser/parallel-sessions.md).
+- Pipelines: [catalog to dataset](https://docs.zenrows.com/academy/pipelines/catalog-dataset.md), [website to RAG](https://docs.zenrows.com/academy/pipelines/website-to-rag.md), [price monitor](https://docs.zenrows.com/academy/build-price-monitoring.md), [change detection](https://docs.zenrows.com/academy/pipelines/change-detection.md), [browser fallback](https://docs.zenrows.com/academy/pipelines/fetch-with-browser-fallback.md), [research agent](https://docs.zenrows.com/academy/pipelines/research-agent.md), [migrate a scraper](https://docs.zenrows.com/academy/integrate-price-monitoring.md).
+- Use cases: [e-commerce](https://docs.zenrows.com/academy/use-cases/ecommerce.md), [real estate](https://docs.zenrows.com/academy/extract-property-data.md), [search engines](https://docs.zenrows.com/academy/use-cases/search-engine-results.md), [jobs](https://docs.zenrows.com/academy/use-cases/job-listings.md), [travel and reviews](https://docs.zenrows.com/academy/use-cases/travel-and-reviews.md).
+- By surface: [MCP prompts](https://docs.zenrows.com/academy/surfaces/mcp-prompts.md), [CLI workflows](https://docs.zenrows.com/academy/surfaces/cli-workflows.md).
+- Production: [response codes](https://docs.zenrows.com/academy/production/fix-common-errors.md), [retry failed requests](https://docs.zenrows.com/academy/retry-failed-requests.md), [control costs](https://docs.zenrows.com/academy/production/control-costs.md).
+
+## Account
+
+- [Your Billing page](https://docs.zenrows.com/first-steps/billing.md): Subscription, top-ups, payments and invoices.
+- [API Keys and Credit Caps](https://docs.zenrows.com/first-steps/api-key-credit-caps.md): Several keys, each with its own credit cap.
+- [Notifications and Usage Alerts](https://docs.zenrows.com/first-steps/manage-notifications.md): Email alerts and billing summaries.
+- [Change your account email](https://docs.zenrows.com/first-steps/change-email.md): Steps for Google, GitHub and password sign-in.
+- [Delete your account](https://docs.zenrows.com/first-steps/delete-account.md): What happens to your subscription, keys and data.
+- [General FAQ](https://docs.zenrows.com/first-steps/faq.md): Billing cycles, features and limits.
+
+## Optional
+
+- [Residential Proxies (Legacy)](https://docs.zenrows.com/legacy/residential-proxies/introduction.md): Standalone residential proxies. Also: [setup](https://docs.zenrows.com/legacy/residential-proxies/setup.md), [first request](https://docs.zenrows.com/legacy/residential-proxies/get-started/first-request.md), [world region](https://docs.zenrows.com/legacy/residential-proxies/features/world-region.md), [country](https://docs.zenrows.com/legacy/residential-proxies/features/country.md), [protocol and sticky sessions](https://docs.zenrows.com/legacy/residential-proxies/features/protocol-sticky-ttl.md), [FAQ](https://docs.zenrows.com/legacy/residential-proxies/faq.md).
+- Affiliates: [content guidelines](https://docs.zenrows.com/partners/affiliates/content-guidelines.md), [topics that convert](https://docs.zenrows.com/partners/affiliates/content-topics.md).
+- [llms-full.txt](https://docs.zenrows.com/llms-full.txt): The full text of every page in one file.
+- [Changelog](https://www.zenrows.com/changelog)
+- [Zenrows Status](https://status.zenrows.com/)
+- [Blog](https://www.zenrows.com/blog)
+- [Knowledge e-Books](https://www.zenrows.com/knowledgehub)
+- [Legal Pages](https://www.zenrows.com/legal)

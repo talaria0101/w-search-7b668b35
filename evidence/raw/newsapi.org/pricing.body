@@ -1,0 +1,636 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>Pricing - News API</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description">
+  <meta name="keywords" content="news api, api, news headlines">
+
+  <!-- Schema.org for Google -->
+  <meta itemprop="name" content="Pricing - News API">
+  <meta itemprop="description">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Pricing - News API">
+  <meta name="twitter:description">
+  <meta name="twitter:site" content="@NewsAPIorg">
+  <meta name="twitter:creator" content="@NewsAPIorg">
+  <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+  <meta name="og:title" content="Pricing - News API">
+  <meta name="og:description">
+  <meta name="og:url" content="https://newsapi.org">
+  <meta name="og:site_name" content="News API">
+  <meta name="og:locale" content="en_US">
+  <meta name="og:type" content="website">
+
+  <link rel="canonical" href="https://newsapi.org/pricing">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.9.0/tachyons.min.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-jsonview/1.2.3/jquery.jsonview.min.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Ladda/1.0.5/ladda-themeless.min.css" />
+  <link rel="stylesheet" href="/css/fonts.css?v=1.0.9637.29536" />
+  <link rel="stylesheet" href="/css/v2.css?v=1.0.9637.29536" />
+
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91285317-5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-91285317-5');
+  </script>
+
+</head>
+<body class="ma0">
+  <div class="center-l fixed left-0 mh3 mw6-l w-third-l right-0 top-1 z-5" id="alert-container">
+    
+  </div>
+
+  
+
+
+
+<style>
+  .nav__center a.active:after { background: #1a73e8; border-radius: 3px; bottom: -3px; display: block; left: 0; content: ''; height: 6px; position: absolute; right: 0; }
+</style>
+
+<!-- Top navbar & branding -->
+<header class="bb bg-white b--black-10 fixed left-0 top-0 right-0" style="z-index:10;">
+  <div class="w-90-l mw8 center flex justify-between items-center">
+    <div class="gs f2 fw5 ml2 ml0-l">
+      <a href="/">
+        <div class="bg-na-blue white" style="letter-spacing:-1px; padding:5px 0 5px 6px;">
+          News<span class="bg-white na-blue" style="margin:0 3px 0 8px; padding:0 8px;">API</span>
+        </div>
+      </a>
+    </div>
+        
+    <nav class="f4 gs overflow-hidden nav__center">
+      <div class="dn dib-l mr4">
+        <a class="color-inherit dib dim pv4 relative" href="/docs/get-started">Get started</a>
+      </div>
+      <div class="dn dib-l mr4">
+        <a class="color-inherit dib dim pv4 relative" href="/docs">Documentation</a>
+      </div>
+      <div class="dn dib-l">
+        <a class="active color-inherit dib dim pv4 relative" href="/pricing">Pricing</a>
+      </div>
+    </nav>
+
+    <nav class="f4 gs">
+        <div class="dn dib-l mr2">
+          <a class="br2 ba bw1 b--na-blue dim na-blue no-underline pv2 ph3" href="/login">Login</a>
+        </div>
+        <div class="dn dib-l">
+          <a class="ba br2 bw1 b--na-blue bg-na-blue dim no-underline pv2 ph3 white" href="/register">Get API key</a>
+        </div>
+
+      <div class="dn-l dib">
+        <button id="open-menu-btn" class="db f2 flex items-center pa3">
+          <i class="material-icons md-36">menu</i>
+        </button>
+        <div class="bg-white bb b--black-20 pa2 fixed left-0 right-0 h-100" id="menu" style="overflow:auto; top:-120%; transition: all 500ms ease-in-out; z-index:20">
+          <div class="absolute top-1 right-1">
+            <button id="close-menu-btn" class="color-inherit bn bg-white db f2 ph1 pv0">
+              <i class="material-icons md-36">close</i>
+            </button>
+          </div>
+          <ul class="list mv0 pa4 f2">
+            <li class="mb4">
+              <a class="color-inherit dim" href="/docs/get-started">Get started</a>
+            </li>
+            <li class="mb4">
+              <a class="color-inherit dim" href="/docs">Documentation</a>
+            </li>
+            <li class="mb4">
+              <a class="color-inherit dim" href="/pricing">Pricing</a>
+            </li>
+              <li class="bt b--black-10 pt4 mb4">
+                <a class="color-inherit dim" href="/login">Login</a>
+              </li>
+              <li class="">
+                <a class="dim bg-na-blue pv2 ph3 br2 white" href="/register">Get API key</a>
+              </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- END Top navbar & branding -->
+<script>
+  (function () {
+    const menu = document.querySelector('#menu');
+
+    const openMenuBtn = document.querySelector('#open-menu-btn');
+    openMenuBtn.addEventListener('click', function () {
+      menu.style.top = '0';
+    })
+
+    const closeMenuBtn = document.querySelector('#close-menu-btn');
+    closeMenuBtn.addEventListener('click', function () {
+      menu.style.top = '-100%';
+    })
+  })();
+</script>
+
+
+<div class="mw7 mb3 mt5-ns pt5 tc w-90 center lh-copy">
+  <h1 class="black-90 fw5 f2 mb2">Pricing</h1>
+  <p class="fw3 f3 mt0 gs">Free for development, options if you're commercial</p>
+</div>
+
+<div class="w-90 mw8 mb2 center tr">
+  <label class="fw3 f7 uppercase mr1 ttu">Billing yearly (20% discount)</label>
+  <button id="billing-toggle" type="button" class="btn btn-sm btn-toggle" data-toggle="button" aria-pressed="true" autocomplete="off">
+    <div class="handle"></div>
+  </button>
+  <script>
+        var plans = {
+            commercial: {
+                monthly: 449.00,
+                yearly: 359.00
+            },
+            performance: {
+                monthly: 1749.00,
+                yearly: 1399.00
+            }
+        }
+
+        $(document).ready(function () {
+            var billingPeriods = $('.billing-period');
+            var commercialPrice = $('#commercial-price');
+            var performancePrice = $('#performance-price');
+
+            $('#billing-toggle').on('click', function () {
+                var isYearly = !$(this).hasClass('active');
+
+                if (isYearly) {
+                    billingPeriods.text('yearly');
+                    commercialPrice.text(plans.commercial.yearly);
+                    performancePrice.text(plans.performance.yearly);
+                } else {
+                    billingPeriods.text('monthly');
+                    commercialPrice.text(plans.commercial.monthly);
+                    performancePrice.text(plans.performance.monthly);
+                }
+            })
+        })
+  </script>
+</div>
+
+<main class="flex-l justify-center w-90 mw8 center">
+
+  <!-- Developer -->
+  <div class="mb3 mr1-l w-25-l">
+    <div class="ba br2 b--black-10">
+      <table class="w-100">
+        <tr>
+          <td style="vertical-align:top;">
+            <div class="flex-l pa3 tc tl-l" style="border-bottom:2px solid #18D689;">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 40" version="1.1" class="mr3-l" style="height:50px; width:50px;">
+                <g>
+                  <path style="fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke:#4788C7;stroke-opacity:1;stroke-miterlimit:10;" d="M 10 11 L 1.75 20 L 10 29 "></path>
+                  <path style="fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke:#4788C7;stroke-opacity:1;stroke-miterlimit:10;" d="M 30 11 L 38.25 20 L 30 29 "></path>
+                  <path style="fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke:#4788C7;stroke-opacity:1;stroke-miterlimit:10;" d="M 15 35 L 25 5 "></path>
+                </g>
+              </svg>
+              <div>
+                <h2 class="fw3 ma0-l mv3">Developer</h2>
+                <div class="f2 mv2"><sup>$</sup>0</div>
+                <div class="f6">totally free, <br />start now</div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="bb b--black-10 v-top">
+            <p class="lh-copy ma0 pa3">For development and testing of all project types.<br />&nbsp;</p>
+          </td>
+        </tr>
+
+        <tr class="tc bg-na-grey-1">
+          <td class="lh-title ph2 pb3 pt4" style="height:100px;">
+            Search articles and get live top headlines <span tooltip="Query top headlines AND all articles for all the sources we index."><i class="material-icons" style="font-size:14px;">help</i></span>
+          </td>
+        </tr>
+        <tr class="tc bg-na-grey-1" style="height:83px;">
+          <td class="ph2 pv3" >
+            Articles have a 24 hour delay
+          </td>
+        </tr>
+        <tr class="tc bg-na-grey-1">
+          <td class="ph2 pv3" >
+            Search articles up to a month old
+          </td>
+        </tr>
+        <tr class="tc bg-na-grey-1"  style="height:100px">
+          <td class="ph2 pt3 pb4" >
+            CORS enabled for localhost <span tooltip="Requests can be made via the browser only while testing from localhost."><i class="material-icons" style="font-size:14px;">help</i></span>
+          </td>
+        </tr>
+
+        <!--<tr class="tc bg-na-grey-1">
+            <td class="pt3 pb4" colspan="2">
+                Caching for identical requests <span tooltip="If you make identical requests within a 5 minute window (example: from multiple clients or users) we serve from a cache and don't deduct from your monthly requests."><i class="material-icons" style="font-size:16px;">help</i></span>
+            </td>
+        </tr>-->
+
+        <tr class="bt b--black-10 tc bg-na-grey-1">
+          <td class="pb3 pt4 ph2 v-mid" style="height:100px;">
+            100 requests per day <span tooltip="You get 100 API requests every day."><i class="material-icons" style="font-size:14px;">help</i></span>
+          </td>
+        </tr>
+        <tr class="tc bg-na-grey-1">
+          <td class="pv3">
+            No extra requests available <span tooltip="If you need more requests you'll need our next plan up."><i class="material-icons" style="font-size:14px;">help</i></span>
+          </td>
+        </tr>
+        <tr class="tc bg-na-grey-1">
+          <td class="pv3">
+            No uptime SLA
+          </td>
+        </tr>
+        <tr class="tc bg-na-grey-1">
+          <td class="pt3 pb4">
+            Basic support <span tooltip="You're on your own, but we may be able to answer basic developer questions via email."><i class="material-icons" style="font-size:14px;">help</i></span>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <a class="f5 db ba no-underline ph4 pv3 br2 grow white tc gs" style="background:#18D689;" href="/register">Start with Developer</a>
+    </div>
+  </div>
+
+  <!-- Professional and Performance -->
+  <div class="mb3 mr1-l w-50-l">
+    <div class="ba br2 b--black-10 ">
+      <table class="w-100">
+        <tr>
+          <td class="br b--black-10" style="vertical-align:top; width:50%">
+            <div class="flex-l pa3 tc tl-l" style="border-bottom:2px solid #538AE4;">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 40" version="1.1" class="mr3-l" style="height:50px; width:50px;">
+                <g>
+                  <path style="fill:#DFF0FE;" d="M 3.5 1.5 L 34.5 1.5 L 34.5 38.5 L 3.5 38.5 Z "></path>
+                  <path style="fill:#4788C7;" d="M 34 2 L 34 38 L 4 38 L 4 2 L 34 2 M 35 1 L 3 1 L 3 39 L 35 39 Z "></path>
+                  <path style="fill:#B6DCFE;" d="M 16.5 27.5 L 21.5 27.5 L 21.5 38.5 L 16.5 38.5 Z "></path>
+                  <path style="fill:#4788C7;" d="M 21 28 L 21 38 L 17 38 L 17 28 L 21 28 M 22 27 L 16 27 L 16 39 L 22 39 Z "></path>
+                  <path style="fill:#B6DCFE;" d="M 16.5 6.5 L 21.5 6.5 L 21.5 10.5 L 16.5 10.5 Z "></path>
+                  <path style="fill:#4788C7;" d="M 21 7 L 21 10 L 17 10 L 17 7 L 21 7 M 22 6 L 16 6 L 16 11 L 22 11 Z "></path>
+                  <path style="fill:#B6DCFE;" d="M 24.5 6.5 L 29.5 6.5 L 29.5 10.5 L 24.5 10.5 Z "></path>
+                  <path style="fill:#4788C7;" d="M 29 7 L 29 10 L 25 10 L 25 7 L 29 7 M 30 6 L 24 6 L 24 11 L 30 11 Z "></path>
+                  <path style="fill:#B6DCFE;" d="M 8.5 6.5 L 13.5 6.5 L 13.5 10.5 L 8.5 10.5 Z "></path>
+                  <path style="fill:#4788C7;" d="M 13 7 L 13 10 L 9 10 L 9 7 L 13 7 M 14 6 L 8 6 L 8 11 L 14 11 Z "></path>
+                  <path style="fill:#B6DCFE;" d="M 16.5 13.5 L 21.5 13.5 L 21.5 17.5 L 16.5 17.5 Z "></path>
+                  <path style="fill:#4788C7;" d="M 21 14 L 21 17 L 17 17 L 17 14 L 21 14 M 22 13 L 16 13 L 16 18 L 22 18 Z "></path>
+                  <path style="fill:#B6DCFE;" d="M 24.5 13.5 L 29.5 13.5 L 29.5 17.5 L 24.5 17.5 Z "></path>
+                  <path style="fill:#4788C7;" d="M 29 14 L 29 17 L 25 17 L 25 14 L 29 14 M 30 13 L 24 13 L 24 18 L 30 18 Z "></path>
+                  <path style="fill:#B6DCFE;" d="M 8.5 13.5 L 13.5 13.5 L 13.5 17.5 L 8.5 17.5 Z "></path>
+                  <path style="fill:#4788C7;" d="M 13 14 L 13 17 L 9 17 L 9 14 L 13 14 M 14 13 L 8 13 L 8 18 L 14 18 Z "></path>
+                  <path style="fill:#B6DCFE;" d="M 16.5 20.5 L 21.5 20.5 L 21.5 24.5 L 16.5 24.5 Z "></path>
+                  <path style="fill:#4788C7;" d="M 21 21 L 21 24 L 17 24 L 17 21 L 21 21 M 22 20 L 16 20 L 16 25 L 22 25 Z "></path>
+                  <path style="fill:#B6DCFE;" d="M 24.5 20.5 L 29.5 20.5 L 29.5 24.5 L 24.5 24.5 Z "></path>
+                  <path style="fill:#4788C7;" d="M 29 21 L 29 24 L 25 24 L 25 21 L 29 21 M 30 20 L 24 20 L 24 25 L 30 25 Z "></path>
+                  <path style="fill:#B6DCFE;" d="M 8.5 20.5 L 13.5 20.5 L 13.5 24.5 L 8.5 24.5 Z "></path>
+                  <path style="fill:#4788C7;" d="M 13 21 L 13 24 L 9 24 L 9 21 L 13 21 M 14 20 L 8 20 L 8 25 L 14 25 Z "></path>
+                  <path style="fill:#B6DCFE;" d="M 24.5 27.5 L 29.5 27.5 L 29.5 31.5 L 24.5 31.5 Z "></path>
+                  <path style="fill:#4788C7;" d="M 29 28 L 29 31 L 25 31 L 25 28 L 29 28 M 30 27 L 24 27 L 24 32 L 30 32 Z "></path>
+                  <path style="fill:#B6DCFE;" d="M 8.5 27.5 L 13.5 27.5 L 13.5 31.5 L 8.5 31.5 Z "></path>
+                  <path style="fill:#4788C7;" d="M 13 28 L 13 31 L 9 31 L 9 28 L 13 28 M 14 27 L 8 27 L 8 32 L 14 32 Z "></path>
+                </g>
+              </svg>
+              <div>
+                <h2 class="fw3 ma0-l mv3">Business</h2>
+                <div class="f2 mv2"><sup>$</sup><span id="commercial-price">449</span></div>
+                <div class="f6">per month, <br />billed <span class="billing-period">monthly</span></div>
+              </div>
+            </div>
+          </td>
+
+          <td style="vertical-align:top; width:50%">
+            <div class="flex-l pa3 tc tl-l" style="border-bottom:2px solid #af53e4;">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 40" version="1.1" class="mr3-l" style="height:50px; width:50px;">
+                <g>
+                  <path style=" fill:#98CCFD;" d="M 13.5 9.5 L 13.5 6.5 L 21 6.5 C 21.726563 6.5 23.132813 7.304688 24.140625 7.996094 C 23.117188 8.691406 21.699219 9.5 21 9.5 Z "></path>
+                  <path style=" fill:#4788C7;" d="M 21 7 C 21.4375 7 22.335938 7.4375 23.226563 7.996094 C 22.320313 8.554688 21.40625 9 21 9 L 14 9 L 14 7 L 21 7 M 21 6 C 19.632813 6 13 6 13 6 L 13 10 C 13 10 19.675781 10 21 10 C 22.324219 10 25 8 25 8 C 25 8 22.367188 6 21 6 Z "></path>
+                  <path style=" fill:#98CCFD;" d="M 13.5 33.5 L 13.5 30.5 L 21 30.5 C 21.726563 30.5 23.132813 31.304688 24.140625 31.996094 C 23.117188 32.691406 21.699219 33.5 21 33.5 Z "></path>
+                  <path style=" fill:#4788C7;" d="M 21 31 C 21.4375 31 22.335938 31.4375 23.226563 31.996094 C 22.320313 32.554688 21.40625 33 21 33 L 14 33 L 14 31 L 21 31 M 21 30 C 19.632813 30 13 30 13 30 L 13 34 C 13 34 19.675781 34 21 34 C 22.324219 34 25 32 25 32 C 25 32 22.367188 30 21 30 Z "></path>
+                  <path style=" fill:#DFF0FE;" d="M 1.691406 27.5 L 3.5 22.082031 L 3.5 17.917969 L 1.691406 12.5 L 3.792969 12.5 L 7.5 16.207031 L 7.5 23.792969 L 3.792969 27.5 Z "></path>
+                  <path style=" fill:#4788C7;" d="M 3.585938 13 L 7 16.414063 L 7 23.585938 L 3.585938 27 L 2.386719 27 L 3.949219 22.316406 L 4 22.160156 L 4 17.839844 L 3.949219 17.683594 L 2.386719 13 L 3.585938 13 M 4 12 L 1 12 L 3 18 L 3 22 L 1 28 L 4 28 L 8 24 L 8 16 Z "></path>
+                  <path style=" fill:#B6DCFE;" d="M 9.5 38.5 L 9.5 1.5 L 11.761719 1.5 L 23.5 16.175781 L 23.5 23.824219 L 11.761719 38.5 Z "></path>
+                  <path style=" fill:#4788C7;" d="M 11.519531 2 L 23 16.351563 L 23 23.648438 L 11.519531 38 L 10 38 L 10 2 L 11.519531 2 M 12 1 L 9 1 L 9 39 L 12 39 L 24 24 L 24 16 Z "></path>
+                  <path style=" fill:#DFF0FE;" d="M 6 23.5 C 4.621094 23.5 3.5 22.378906 3.5 21 L 3.5 19 C 3.5 17.621094 4.621094 16.5 6 16.5 L 27 16.5 C 34.503906 16.5 37.546875 19.121094 38.351563 19.996094 C 37.539063 20.867188 34.464844 23.5 27 23.5 Z "></path>
+                  <path style=" fill:#4788C7;" d="M 27 17 C 33.453125 17 36.507813 19 37.632813 20 C 36.503906 21.003906 33.449219 23 27 23 L 6 23 C 4.898438 23 4 22.101563 4 21 L 4 19 C 4 17.898438 4.898438 17 6 17 L 27 17 M 27 16 L 6 16 C 4.34375 16 3 17.34375 3 19 L 3 21 C 3 22.65625 4.34375 24 6 24 L 27 24 C 36.332031 24 39 20 39 20 C 39 20 36.332031 16 27 16 Z "></path>
+                  <path style=" fill:#4788C7;" d="M 7 21 L 1 21 C 0.449219 21 0 20.550781 0 20 C 0 19.449219 0.449219 19 1 19 L 7 19 C 7.550781 19 8 19.449219 8 20 C 8 20.550781 7.550781 21 7 21 Z "></path>
+                  <path style=" fill:#4788C7;" d="M 14 2 L 10.667969 2 L 10.667969 1 L 13.332031 1 Z "></path>
+                  <path style=" fill:#4788C7;" d="M 14 38 L 10 38 L 10 39 L 13.332031 39 Z "></path>
+                  <path style=" fill:#4788C7;" d="M 29 21 L 27 21 C 26.449219 21 26 20.550781 26 20 C 26 19.449219 26.449219 19 27 19 L 29 19 C 29.550781 19 30 19.449219 30 20 C 30 20.550781 29.550781 21 29 21 Z "></path>
+                  <path style=" fill:#4788C7;" d="M 11.5 1 L 15.5 1 C 15.773438 1 16 1.226563 16 1.5 C 16 1.773438 15.773438 2 15.5 2 L 11.5 2 C 11.226563 2 11 1.773438 11 1.5 C 11 1.226563 11.226563 1 11.5 1 Z "></path>
+                  <path style=" fill:#4788C7;" d="M 13.5 38 L 15.5 38 C 15.773438 38 16 38.226563 16 38.5 C 16 38.773438 15.773438 39 15.5 39 L 13.5 39 C 13.226563 39 13 38.773438 13 38.5 C 13 38.226563 13.226563 38 13.5 38 Z "></path>
+                </g>
+              </svg>
+              <div>
+                <h2 class="fw3 ma0-l mv3">Advanced</h2>
+                <div class="f2 mv2"><sup>$</sup><span id="performance-price">1749</span></div>
+                <div class="f6">per month, <br />billed <span class="billing-period">monthly</span></div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="bb br b--black-10 v-top">
+            <p class="lh-copy ma0 pa3">For production and published commercial projects.<br />&nbsp;</p>
+          </td>
+          <td class="bb b--black-10 v-top">
+            <p class="lh-copy ma0 pa3">For larger projects that require exceptional resources.<br />&nbsp;</p>
+          </td>
+        </tr>
+
+        <tr class="tc bg-na-grey-1">
+          <td class="lh-title pb3 pt4" style="height:100px;" colspan="2">
+            Search all articles and get live top headlines <span tooltip="Query top headlines AND all articles for all the sources we index."><i class="material-icons" style="font-size:14px;">help</i></span>
+          </td>
+        </tr>
+        <tr class="tc bg-na-grey-1" style="height:83px;">
+          <td class="pv3" colspan="2">
+            New articles available in <strong>real-time</strong> <span tooltip="Articles are available in the API as soon as we discover them."><i class="material-icons" style="font-size:14px;">help</i></span>
+          </td>
+        </tr>
+        <tr class="tc bg-na-grey-1">
+          <td class="pv3" colspan="2">
+            Search articles up to <strong>5 years</strong> old <span tooltip="Our premium index has history dating back to October 2017."><i class="material-icons" style="font-size:14px;">help</i></span>
+          </td>
+        </tr>
+        <tr class="tc bg-na-grey-1" style="height:100px">
+          <td class="pt3 pb4" colspan="2">
+            CORS enabled for <strong>all origins</strong> <span tooltip="Requests can be made via the browser from all domains in production."><i class="material-icons" style="font-size:14px;">help</i></span>
+          </td>
+        </tr>
+
+        <!--<tr class="tc bg-na-grey-1">
+            <td class="pt3 pb4" colspan="2">
+                Caching for identical requests <span tooltip="If you make identical requests within a 5 minute window (example: from multiple clients or users) we serve from a cache and don't deduct from your monthly requests."><i class="material-icons" style="font-size:16px;">help</i></span>
+            </td>
+        </tr>-->
+
+        <tr class="bt b--black-10 tc bg-na-grey-1 lh-title" style="height:100px">
+          <td class="br b--black-10 pb3 pt4 ph3">
+            <strong>250,000</strong> requests per month included
+          </td>
+          <td class="pb3 pt4 ph3">
+            <strong>2,000,000</strong> requests per month included
+          </td>
+        </tr>
+        <tr class="tc bg-na-grey-1">
+          <td class="br b--black-10 pa3">
+            $0.0018 per extra request <span tooltip="If you exhaust your included monthly quota you will be charged for extras."><i class="material-icons" style="font-size:14px;">help</i></span>
+          </td>
+          <td class="pa3">
+            <strong>$0.0009</strong> per extra request <span tooltip="If you exhaust your included monthly quota you will be charged for extras."><i class="material-icons" style="font-size:14px;">help</i></span>
+          </td>
+        </tr>
+        <tr class="tc bg-na-grey-1">
+          <td class="br b--black-10 pv3">
+            No uptime SLA
+          </td>
+          <td class="pv3">
+            <strong>99.95% uptime SLA</strong> <span tooltip="We guarantee the API will be available 99.95% of the time."><i class="material-icons" style="font-size:14px;">help</i></span>
+          </td>
+        </tr>
+        <tr class="tc bg-na-grey-1">
+          <td class="br b--black-10 pt3 pb4">
+            <strong>Email support</strong> <span tooltip="Email or chat with us during US and European working hours."><i class="material-icons" style="font-size:14px;">help</i></span>
+          </td>
+          <td class="pt3 pb4">
+            <strong>Priority email support</strong> <span tooltip="Your support requests are placed at the top of the pile and are answered as soon as possible, usually within an hour during US and European working hours."><i class="material-icons" style="font-size:14px;">help</i></span>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="flex">
+      <a class="f5 dib ba no-underline ph4 pv3 br2 grow white bg-na-blue w-50 tc gs" href="/register?plan=1">Start with Business</a>
+      <a class="f5 dib ba no-underline ph4 pv3 br2 grow white w-50 tc gs" style="background:#af53e4;" href="/register?plan=1">Start with Advanced</a>
+    </div>
+  </div>
+
+  <!-- Enterprise -->
+  <div class="mb3 w-25-l">
+    <div class="ba br2 b--black-10">
+      <table class="w-100">
+        <tr>
+          <td style="vertical-align:top;">
+            <div class="flex-l pa3 tc tl-l" style="border-bottom:2px solid #ebb312;">
+              <img src="/images/star.png" class="mr3-l" style="height:50px; width:50px;"/>
+              <div>
+                <h2 class="fw3 ma0-l mv3">Enterprise</h2>
+                <div class="f2 mv2"><span style="font-size:2rem">Contact us</span></div>
+                <div class="f6">&nbsp;<br />&nbsp;</div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="bb b--black-10 v-top">
+            <p class="lh-copy ma0 pa3">For enterprise projects that require premium data or bespoke solutions.</p>
+          </td>
+        </tr>
+
+        <tr class="tc bg-na-grey-1">
+          <td class="lh-title ph2 pb3 pt4">
+            Access to <strong>extra articles and <br />an extended source library</strong> <span tooltip="Over 1M+ articles a day. And if we are not already tracking a source that you need, we will add it especially for you"><i class="material-icons" style="font-size:14px;">help</i></span>
+          </td>
+        </tr>
+        <tr class="tc bg-na-grey-1">
+          <td class="lh-title pv3">
+            Articles are enriched with <strong>20 additional data-points</strong> <span tooltip="All results contain the following extra data points: AI generated summary, SEO rank, all embedded links from the article, front page article tagging, topics, ORG PER &amp; LOC entities, IPTC IAB &amp; custom taxonomy, title and content sentiment, related stories, and journalist information"><i class="material-icons" style="font-size:14px;">help</i></span>
+          </td>
+        </tr>
+        <tr class="tc bg-na-grey-1">
+          <td class="pv3">
+            Article &amp; story clustering
+          </td>
+        </tr>
+        <tr class="tc bg-na-grey-1">
+          <td class="lh-title pt3 pb4">
+            Custom classifications, tagging,<br />&amp; information extraction
+          </td>
+        </tr>
+
+        <!--<tr class="tc bg-na-grey-1">
+          <td class="pt3 pb4" colspan="2">
+              Caching for identical requests <span tooltip="If you make identical requests within a 5 minute window (example: from multiple clients or users) we serve from a cache and don't deduct from your monthly requests."><i class="material-icons" style="font-size:16px;">help</i></span>
+          </td>
+      </tr>-->
+
+        <tr class="bt b--black-10 tc bg-na-grey-1">
+          <td class="lh-title pb3 pt4 v-mid" style="height:100px">
+            <strong>Unlimited</strong> requests
+          </td>
+        </tr>
+        <tr class="tc bg-na-grey-1">
+          <td class="pv3">
+            Add sources on demand
+          </td>
+        </tr>
+        <tr class="tc bg-na-grey-1">
+          <td class="lt-title pv3">
+            <strong>Custom SLA &amp; dedicated chat</strong> <span tooltip="Dedicated Slack and Teams rooms to converse directly with our team."><i class="material-icons" style="font-size:14px;">help</i></span>
+          </td>
+        </tr>
+        <tr class="tc bg-na-grey-1">
+          <td class="pt3 pb4">
+            <strong>On-premise deployment</strong> <span tooltip="For projects with a high security requirement we can deploy an API server on-site."><i class="material-icons" style="font-size:14px;">help</i></span>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <a class="f5 db ba no-underline ph4 pv3 br2 grow white tc gs" style="background:#ebb312;" href="/quote">Get a quote</a>
+    </div>
+  </div>
+</main>
+
+<!--
+<div class="br2 b--black-10 center mb3 ba-l flex-l mw8-l">
+    <div class="pa3" style="border-right:2px solid #ff8000;">Firehose</div>
+    <div class="pa3 bg-na-grey-1 b--black-10">We pipe everything straight through to your server</div>
+</div>
+-->
+
+<div class="mb4 mt5 tc mt4-l">
+  <h2 class="mb4 fw5 lh-copy users-header">Trusted by the best</h2>
+  <div class="users-logos">
+    <svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" height="50" viewBox="0 0 190 50" width="190" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"><g transform="matrix(1.25 0 0 -1.25 -279.62 519.24)"><g transform="matrix(.25 0 0 .25 224.45 297.78)"><path d="m0 37.789s18.553 76.025 21.514 88.365c3.456 14.403 9.6831 19.704 27.637 16.129l11.585-47.135c2.9362-11.708 4.9056-20.055 6.793-31.965h0.33203c1.3262 12.027 3.2146 20.292 5.6309 32.006 0 0 4.7159 21.398 7.1309 32.637 2.4214 11.235 9.1601 18.316 26.746 14.461l27.604-104.49h-22.287l-9.4238 45.176c-2.5337 13.15-4.8329 23.425-6.6055 35.455h-0.31445c-1.611-11.91-3.66-21.778-6.236-34.59l-9.8125-46.041h-23.221l-10.496 44.881c-2.9736 13.638-5.7548 24.651-7.5234 36.273h-0.32031c-1.8112-10.945-4.2236-24.786-6.8359-37.988 0 0-6.2359-32.101-8.4238-43.166l-23.471 0.003zm212.46 0v104.49h21.219v-22.188-82.307h-21.219zm298.85 0v77.084c0 10.628 2.0002 18.074 6.2793 22.623 3.7385 3.9785 9.8964 6.5547 17.275 6.5547 6.2735 0 12.446-1.1898 15.355-2.2734l-0.27343-16.582c-2.1646 0.53275-4.6548 0.95899-8.0606 0.95899-7.2281 0-9.6523-4.6294-9.6523-14.172v-29.492h18.48v-19.992h-18.48v-24.709h-20.924zm-346.27 24.223c-13.187 0-23.655 3.7026-29.361 7l4.1758 14.299c5.2221-3.2922 13.537-6.0176 21.41-6.0176 13.035-0.0335 15.166 7.3705 15.166 12.119v1.123c-28.403-0.04263-46.344 9.7858-46.344 29.82 0 12.232 9.133 23.695 25.014 23.695 9.776 0 17.952-3.8989 22.852-10.146h0.48047s3.2448 13.567 21.121 8.3789c-0.93912-5.6466-1.2441-11.667-1.2441-18.918v-27.914c0-17.791-7.5963-33.439-33.27-33.439zm126.93 0c-13.278 0-19.245 6.729-22.863 12.438h-0.31445v-10.666h-20.25v78.5h21.332v-46.037c0-2.1582 0.24663-4.4404 1-6.4258 1.7674-4.6351 6.0798-10.057 12.965-10.057 8.6072 0 12.635 7.277 12.635 17.779v44.74h21.309v-46.594c0-2.0602 0.28243-4.5417 0.88868-6.3633 1.7519-5.2724 6.4009-9.5625 12.801-9.5625 8.726 0 12.914 7.1504 12.914 19.508v43.012h21.324v-46.234c0-24.383-12.381-34.037-26.357-34.037-6.1896 0-11.075 1.552-15.492 4.2637-3.7128 2.2782-7.0362 5.5151-9.9414 9.7773h-0.31445c-3.38-8.46-11.31-14.041-21.64-14.041zm117.14 0c-13.184 0-23.65 3.7026-29.361 7l4.1816 14.299c5.217-3.2922 13.537-6.0176 21.406-6.0176 13.026-0.0335 15.162 7.3705 15.162 12.119v1.123c-28.399-0.04263-46.342 9.7858-46.342 29.82 0 12.232 9.1377 23.695 25.027 23.695 9.7682 0 17.947-3.8989 22.838-10.146h0.48243s3.2442 13.567 21.123 8.3789c-0.9405-5.6466-1.2422-11.667-1.2422-18.918v-27.914c0-17.791-7.5983-33.439-33.275-33.439zm88.586 0c-8.1686 0-17.462 5.2728-21.363 16.576h-0.5957v-14.805h-19.203v78.5h21.891v-40.197c0-2.1685 0.13148-4.0592 0.47461-5.793 1.619-8.4202 8.0595-13.803 17.303-13.803 2.5375 0 4.3536 0.27484 6.3184 0.55859v-20.551c-1.6475-0.33288-2.7743-0.48633-4.8242-0.48633zm-320.58 42.434v9.793c0 1.4486-0.12609 2.9432-0.52734 4.25-1.6422 5.4389-7.2766 10.035-14.32 10.035-5.8722 0-10.537-3.3327-10.537-10.383 0-10.784 11.871-13.765 25.385-13.695zm244.07 0v9.793c0 1.4486-0.12872 2.9432-0.52734 4.25-1.6422 5.4389-7.2746 10.035-14.318 10.035-5.8735 0-10.539-3.3327-10.539-10.383 0-10.784 11.871-13.765 25.385-13.695z" transform="matrix(.8 0 0 -.8 0 467.81)" fill="#007dc6" /><path d="m665.44 0c-6.8502 0-12.295 3.8254-12.295 8.4824l4.1602 47.107c0.45925 2.8381 3.9358 5.0273 8.1387 5.0273 4.2112-0.0055 7.6756-2.1928 8.1445-5.0273l4.18-47.107c0-4.6566-5.46-8.482-12.32-8.482zm-67.795 37.787c-3.5563 0.08438-7.5962 2.7769-10.166 7.2324-3.4368 5.9329-2.8278 12.563 1.1934 14.889l42.871 19.965c2.6782 0.99612 6.3156-0.90582 8.4219-4.5371 0.0003-0.000503-0.00029-0.0015 0-0.002 2.1161-3.6492 1.9523-7.7523-0.27539-9.5723l-38.72-27.158c-1.0056-0.58244-2.1368-0.84453-3.3223-0.81641zm135.59 0c-1.1852-0.02813-2.3147 0.23397-3.3184 0.81641l-38.725 27.158c-2.2145 1.8199-2.3787 5.9232-0.27343 9.5723l0.002 0.002c2.1141 3.6313 5.7397 5.5332 8.418 4.5371l42.89-19.964c4.0379-2.326 4.6166-8.9558 1.2031-14.889-2.5814-4.4556-6.628-7.148-10.184-7.2324zm-100.09 62.151c-0.55461-0.0075-1.0923 0.07818-1.5957 0.26758l-42.871 19.941c-4.0211 2.3362-4.6301 8.9688-1.1934 14.908 3.4264 5.9212 9.4659 8.7362 13.488 6.4141l38.723-27.137c2.228-1.8422 2.3924-5.9442 0.27539-9.5898l0.0176 0.008c-1.7116-2.9695-4.4404-4.7798-6.8438-4.8125zm64.609 0c-2.4006 0.0327-5.124 1.843-6.8398 4.8125l0.0156-0.008c-2.1066 3.6456-1.9435 7.7476 0.27148 9.5898l38.725 27.137c4.0146 2.3221 10.06-0.49281 13.502-6.4141 3.4135-5.9394 2.8348-12.572-1.2031-14.908l-42.877-19.941c-0.50337-0.1894-1.0398-0.27513-1.5938-0.26758zm-32.32 19.523c-4.1958 0.005-7.6644 2.1849-8.123 5.0156l-4.1602 47.105c0 4.6648 5.4447 8.4824 12.295 8.4824 6.863 0 12.318-3.8177 12.318-8.4824l-4.1699-47.105c-0.46891-2.8307-3.9333-5.0102-8.1445-5.0156h-0.0156z" transform="matrix(.8 0 0 -.8 0 467.81)" fill="#ffc220" /></g></g></svg>
+    <svg width="146" height="52" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">  <g>   <title>background</title>   <rect fill="#fff" id="canvas_background" height="54" width="148" y="-1" x="-1" />   <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">    <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%" />   </g>  </g>  <g> <image stroke="null" xlink:href="data:image/png;base64,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" id="svg_2" height="75.07501" width="143.00002" y="-10" x="1" />  </g> </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="234" height="50" viewBox="0 0 1033.746 220.695"><path d="M1033.746 99.838v-18.18h-22.576V53.395l-.76.234-21.205 6.488-.418.127v21.415h-33.469v-11.93c0-5.555 1.242-9.806 3.69-12.641 2.431-2.801 5.908-4.225 10.343-4.225 3.188 0 6.489.751 9.811 2.232l.833.372V36.321l-.392-.144c-3.099-1.114-7.314-1.675-12.539-1.675-6.585 0-12.568 1.433-17.786 4.273-5.221 2.844-9.328 6.904-12.205 12.066-2.867 5.156-4.322 11.111-4.322 17.701v13.116h-15.72v18.18h15.72v76.589h22.567V99.838h33.469v48.671c0 20.045 9.455 30.203 28.102 30.203 3.064 0 6.289-.359 9.582-1.062 3.352-.722 5.635-1.443 6.979-2.213l.297-.176v-18.348l-.918.607c-1.225.816-2.75 1.483-4.538 1.979-1.796.505-3.296.758-4.458.758-4.368 0-7.6-1.177-9.605-3.5-2.028-2.344-3.057-6.443-3.057-12.177V99.838h22.575zM866.635 160.26c-8.191 0-14.649-2.716-19.2-8.066-4.579-5.377-6.899-13.043-6.899-22.783 0-10.049 2.32-17.914 6.901-23.386 4.554-5.436 10.95-8.195 19.014-8.195 7.825 0 14.054 2.635 18.516 7.836 4.484 5.228 6.76 13.03 6.76 23.196 0 10.291-2.14 18.196-6.36 23.484-4.191 5.248-10.493 7.914-18.732 7.914m1.003-80.885c-15.627 0-28.039 4.579-36.889 13.61-8.844 9.032-13.328 21.531-13.328 37.153 0 14.838 4.377 26.773 13.011 35.468 8.634 8.698 20.384 13.104 34.921 13.104 15.148 0 27.313-4.643 36.159-13.799 8.845-9.146 13.326-21.527 13.326-36.784 0-15.07-4.205-27.094-12.502-35.731-8.301-8.641-19.977-13.021-34.698-13.021m-86.602 0c-10.63 0-19.423 2.719-26.14 8.08-6.758 5.393-10.186 12.466-10.186 21.025 0 4.449.74 8.401 2.196 11.753 1.465 3.363 3.732 6.324 6.744 8.809 2.989 2.465 7.603 5.047 13.717 7.674 5.14 2.115 8.973 3.904 11.408 5.314 2.38 1.382 4.069 2.771 5.023 4.124.927 1.324 1.397 3.136 1.397 5.372 0 6.367-4.768 9.465-14.579 9.465-3.639 0-7.79-.76-12.337-2.258a46.347 46.347 0 0 1-12.634-6.406l-.937-.672v21.727l.344.16c3.193 1.474 7.219 2.717 11.964 3.695 4.736.979 9.039 1.477 12.777 1.477 11.535 0 20.824-2.732 27.602-8.125 6.821-5.43 10.278-12.67 10.278-21.525 0-6.388-1.861-11.866-5.529-16.284-3.643-4.382-9.966-8.405-18.785-11.961-7.026-2.82-11.527-5.161-13.384-6.958-1.79-1.736-2.699-4.191-2.699-7.3 0-2.756 1.122-4.964 3.425-6.752 2.321-1.797 5.552-2.711 9.604-2.711 3.76 0 7.607.594 11.433 1.758 3.823 1.164 7.181 2.723 9.984 4.63l.922.63v-20.61l-.354-.152c-2.586-1.109-5.996-2.058-10.138-2.828-4.123-.765-7.863-1.151-11.116-1.151m-95.157 80.885c-8.189 0-14.649-2.716-19.199-8.066-4.58-5.377-6.896-13.041-6.896-22.783 0-10.049 2.319-17.914 6.901-23.386 4.55-5.436 10.945-8.195 19.013-8.195 7.822 0 14.051 2.635 18.514 7.836 4.485 5.228 6.76 13.03 6.76 23.196 0 10.291-2.141 18.196-6.361 23.484-4.191 5.248-10.49 7.914-18.732 7.914m1.006-80.885c-15.631 0-28.044 4.579-36.889 13.61-8.844 9.032-13.331 21.531-13.331 37.153 0 14.844 4.38 26.773 13.014 35.468 8.634 8.698 20.383 13.104 34.92 13.104 15.146 0 27.314-4.643 36.16-13.799 8.843-9.146 13.326-21.527 13.326-36.784 0-15.07-4.206-27.094-12.505-35.731-8.303-8.641-19.977-13.021-34.695-13.021M602.409 98.07V81.658h-22.292v94.767h22.292v-48.477c0-8.243 1.869-15.015 5.557-20.13 3.641-5.054 8.493-7.615 14.417-7.615 2.008 0 4.262.331 6.703.986 2.416.651 4.166 1.358 5.198 2.102l.937.679V81.496l-.361-.155c-2.076-.882-5.013-1.327-8.729-1.327-5.602 0-10.615 1.8-14.909 5.344-3.769 3.115-6.493 7.386-8.576 12.712h-.237zm-62.213-18.695c-10.227 0-19.349 2.193-27.108 6.516-7.775 4.333-13.788 10.519-17.879 18.385-4.073 7.847-6.141 17.013-6.141 27.235 0 8.954 2.005 17.171 5.968 24.413 3.965 7.254 9.577 12.929 16.681 16.865 7.094 3.931 15.293 5.924 24.371 5.924 10.594 0 19.639-2.118 26.891-6.295l.293-.168v-20.423l-.937.684c-3.285 2.393-6.956 4.303-10.906 5.679-3.94 1.375-7.532 2.07-10.682 2.07-8.747 0-15.769-2.737-20.866-8.133-5.108-5.403-7.698-12.99-7.698-22.537 0-9.607 2.701-17.389 8.024-23.131 5.307-5.725 12.342-8.629 20.908-8.629 7.327 0 14.467 2.481 21.222 7.381l.935.679V84.371l-.302-.17c-2.542-1.423-6.009-2.598-10.313-3.489-4.286-.889-8.478-1.337-12.461-1.337m-66.481 2.284h-22.292v94.766h22.292V81.659zm-10.918-40.371c-3.669 0-6.869 1.249-9.498 3.724-2.64 2.482-3.979 5.607-3.979 9.295 0 3.63 1.323 6.698 3.938 9.114 2.598 2.409 5.808 3.63 9.54 3.63 3.731 0 6.953-1.221 9.582-3.626 2.646-2.42 3.988-5.487 3.988-9.118 0-3.559-1.306-6.652-3.879-9.195-2.571-2.538-5.833-3.824-9.692-3.824m-55.62 33.379v101.758h22.75V44.189H398.44l-40.022 98.221-38.839-98.221H286.81v132.235h21.379V74.657h.734l41.013 101.768h16.134l40.373-101.758h.734z" fill="#706d6e"/><path d="M104.868 104.868H0V0h104.868v104.868z" fill="#f1511b"/><path d="M220.654 104.868H115.788V0h104.866v104.868z" fill="#80cc28"/><path d="M104.865 220.695H0V115.828h104.865v104.867z" fill="#00adef"/><path d="M220.654 220.695H115.788V115.828h104.866v104.867z" fill="#fbbc09"/></svg>
+    <svg width="135" height="50" xmlns="http://www.w3.org/2000/svg"> <g>  <rect fill="#fff" id="canvas_background" height="52" width="137" y="-1" x="-1" />  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">  <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%" />  </g> </g> <g>  <g stroke="null" id="svg_17">  <g stroke="null" transform="matrix(1.38533634581085,0,0,1.38533634581085,2.059280715334694,1.9223437019462457) " id="svg_4">  <g stroke="null" id="svg_5">  <g stroke="null" id="svg_6"> <path stroke="null" id="svg_7" d="m92.69314,9.38644c1.24,7.106 -18.105,16.412 -43.213,20.785c-25.105,4.373 -46.462,2.154 -47.7,-4.955c-1.237,-7.107 18.113,-16.41 43.218,-20.782c25.106,-4.375 46.459,-2.156 47.695,4.952z" fill="#034EA2" />  </g>  <g stroke="null" id="svg_8"> <g stroke="null" id="svg_9"> <polygon stroke="null" id="svg_10" points="69.06414151191711,19.935440063476562 68.93514370918274,12.546440124511719 71.26514554023743,12.546440124511719 71.26514554023743,21.85943603515625 67.9151394367218,21.85943603515625 65.59014248847961,14.216438293457031 65.5401394367218,14.216438293457031 65.66913723945618,21.85943603515625 63.35413479804993,21.85943603515625 63.35413479804993,12.546440124511719 66.84912991523743,12.546440124511719 69.01213955879211,19.935440063476562 " fill="#FFFFFF" /> <polygon stroke="null" id="svg_11" points="26.711140871047974,13.418434143066406 25.422139406204224,21.957435607910156 22.881139039993286,21.957435607910156 24.626141786575317,12.546440124511719 28.81213879585266,12.546440124511719 30.549145936965942,21.957435607910156 28.018140077590942,21.957435607910156 26.764142274856567,13.418434143066406 " fill="#FFFFFF" /> <polygon stroke="null" id="svg_12" points="37.68614315986633,19.740440368652344 38.84913754463196,12.546440124511719 42.68714261054993,12.546440124511719 42.89113736152649,21.957435607910156 40.53913235664368,21.957435607910156 40.47713589668274,13.496437072753906 40.42813992500305,13.496437072753906 38.85514187812805,21.957435607910156 36.4671413898468,21.957435607910156 34.89313626289368,13.496437072753906 34.8421413898468,13.496437072753906 34.783135652542114,21.957435607910156 32.426141023635864,21.957435607910156 32.63414120674133,12.546440124511719 36.47413754463196,12.546440124511719 37.63613247871399,19.740440368652344 " fill="#FFFFFF" /> <path stroke="null" id="svg_13" d="m18.91814,19.30244c0.092,0.228 0.064,0.521 0.021,0.698c-0.079,0.313 -0.291,0.632 -0.917,0.632c-0.59,0 -0.948,-0.338 -0.948,-0.855l0,-0.911l-2.524,0l-0.002,0.729c0,2.098 1.652,2.731 3.422,2.731c1.702,0 3.104,-0.582 3.327,-2.15c0.114,-0.813 0.029,-1.345 -0.01,-1.546c-0.397,-1.97 -3.969,-2.558 -4.235,-3.66c-0.045,-0.189 -0.032,-0.389 -0.01,-0.496c0.065,-0.3 0.271,-0.631 0.86,-0.631c0.55,0 0.875,0.34 0.875,0.854c0,0.173 0,0.581 0,0.581l2.347,0l0,-0.661c0,-2.05 -1.84,-2.37 -3.173,-2.37c-1.674,0 -3.042,0.553 -3.292,2.085c-0.068,0.423 -0.078,0.8 0.021,1.272c0.411,1.923 3.754,2.48 4.238,3.698z" fill="#FFFFFF" /> <path stroke="null" id="svg_14" d="m49.52014,19.28544c0.093,0.226 0.063,0.511 0.021,0.688c-0.077,0.312 -0.287,0.626 -0.909,0.626c-0.582,0 -0.937,-0.338 -0.937,-0.843l-0.002,-0.903l-2.498,0l-0.003,0.719c0,2.077 1.637,2.704 3.389,2.704c1.684,0 3.073,-0.574 3.292,-2.128c0.114,-0.807 0.033,-1.332 -0.008,-1.529c-0.395,-1.952 -3.931,-2.534 -4.194,-3.625c-0.045,-0.188 -0.032,-0.386 -0.009,-0.487c0.067,-0.302 0.269,-0.625 0.852,-0.625c0.545,0 0.863,0.332 0.863,0.842c0,0.171 0,0.575 0,0.575l2.329,0l0,-0.654c0,-2.028 -1.825,-2.346 -3.145,-2.346c-1.655,0 -3.012,0.546 -3.257,2.067c-0.068,0.417 -0.075,0.787 0.022,1.257c0.405,1.903 3.715,2.456 4.194,3.662z" fill="#FFFFFF" /> <path stroke="null" id="svg_15" d="m57.42514,20.54944c0.653,0 0.857,-0.452 0.902,-0.683c0.019,-0.102 0.024,-0.238 0.022,-0.36l0,-6.964l2.38,0l0,6.751c0.005,0.173 -0.012,0.529 -0.02,0.618c-0.167,1.757 -1.556,2.327 -3.285,2.327c-1.731,0 -3.121,-0.57 -3.286,-2.327c-0.008,-0.089 -0.025,-0.445 -0.02,-0.618l0,-6.751l2.378,0l0,6.964c0,0.122 0.004,0.259 0.022,0.36c0.051,0.231 0.249,0.683 0.907,0.683z" fill="#FFFFFF" /> <path stroke="null" id="svg_16" d="m77.05714,20.45044c0.682,0 0.92,-0.431 0.964,-0.682c0.017,-0.108 0.022,-0.239 0.021,-0.358l0,-1.366l-0.966,0l0,-1.374l3.337,0l0,2.526c-0.002,0.176 -0.006,0.306 -0.034,0.62c-0.157,1.712 -1.642,2.323 -3.31,2.323c-1.671,0 -3.154,-0.611 -3.313,-2.323c-0.027,-0.314 -0.031,-0.444 -0.034,-0.62l0.002,-3.963c0,-0.167 0.021,-0.463 0.039,-0.62c0.209,-1.759 1.635,-2.325 3.306,-2.325c1.669,0 3.13,0.563 3.303,2.325c0.031,0.3 0.021,0.62 0.021,0.62l0,0.314l-2.373,0l0,-0.527c0.002,0.001 -0.003,-0.224 -0.031,-0.358c-0.04,-0.208 -0.221,-0.686 -0.938,-0.686c-0.686,0 -0.887,0.452 -0.937,0.686c-0.029,0.124 -0.04,0.292 -0.04,0.444l0,4.304c-0.002,0.119 0.005,0.25 0.024,0.358c0.041,0.252 0.278,0.682 0.959,0.682z" fill="#FFFFFF" /> </g>  </g>  </g>  </g>  </g> </g> </svg>
+    <svg width="184" height="52" xmlns="http://www.w3.org/2000/svg">  <g>   <title>background</title>   <rect fill="#fff" id="canvas_background" height="54" width="186" y="-1" x="-1" />  </g>  <g>   <g stroke="null" id="svg_8">    <path stroke="null" id="svg_4" d="m42.23487,11.84045c-0.02928,-0.26349 -0.26349,-0.38059 -0.43914,-0.40987c-0.17566,-0.02928 -4.01086,-0.29276 -4.01086,-0.29276s-2.66414,-2.63487 -2.92763,-2.92763c-0.29276,-0.29276 -0.84901,-0.20493 -1.08322,-0.14638c-0.02928,0 -0.58553,0.17566 -1.49309,0.46842c-0.84901,-2.54704 -2.42993,-4.88914 -5.18191,-4.88914l-0.23421,0c-0.79046,-1.02467 -1.75658,-1.49309 -2.57632,-1.49309c-6.41151,0.02928 -9.45625,8.02171 -10.42237,12.09112c-2.48849,0.76118 -4.24507,1.31743 -4.47928,1.37599c-1.37599,0.43914 -1.43454,0.46842 -1.6102,1.78586c-0.14638,1.02467 -3.77664,29.12993 -3.77664,29.12993l28.3102,5.29901l15.34079,-3.30822c0,-0.02928 -5.38684,-36.41974 -5.41612,-36.68322zm-11.50559,-2.81053c-0.70263,0.23421 -1.52237,0.46842 -2.40066,0.73191l0,-0.52697c0,-1.58092 -0.23421,-2.86908 -0.58553,-3.86447c1.43454,0.20493 2.40066,1.81513 2.98618,3.65954zm-4.71349,-3.3375c0.38059,0.99539 0.64408,2.40066 0.64408,4.30362l0,0.26349c-1.55164,0.46842 -3.24967,0.99539 -4.9477,1.52237c0.96612,-3.63026 2.75197,-5.41612 4.30362,-6.08947zm2.81053,1.55164c0.26349,0 0.55625,0.08783 0.81974,0.26349c-2.04934,0.96612 -4.24507,3.39605 -5.18191,8.25592c-1.34671,0.40987 -2.69342,0.81974 -3.92303,1.20033c-3.60099,-7.02632 -1.02467,-13.05724 3.57171,-13.05724l4.71349,3.3375z" fill="#95BF47" />    <path stroke="null" id="svg_5" d="m41.79572,11.43059c-0.17566,-0.02928 -4.01086,-0.29276 -4.01086,-0.29276s-2.66414,-2.63487 -2.92763,-2.92763c-0.11711,-0.11711 -0.26349,-0.17566 -0.40987,-0.17566l-2.13717,43.79737l15.34079,-3.30822s-5.38684,-36.41974 -5.41612,-36.65395c-0.02928,-0.26349 -0.26349,-0.40987 -0.43914,-0.43914z" fill="#5E8E3E" />    <path stroke="null" id="svg_6" d="m27.09901,19.92072l-1.90296,5.62105s-1.66875,-0.87829 -3.68882,-0.87829c-2.98618,0 -3.13257,1.87368 -3.13257,2.34211c0,2.57632 6.70428,3.54243 6.70428,9.57336c0,4.74276 -3.01546,7.7875 -7.05559,7.7875c-4.85987,0 -7.34836,-3.01546 -7.34836,-3.01546l1.28816,-4.30362s2.54704,2.19572 4.71349,2.19572c1.40526,0 1.99079,-1.1125 1.99079,-1.93224c0,-3.36678 -5.50395,-3.51316 -5.50395,-9.01711c0,-4.62566 3.3375,-9.13421 10.04178,-9.13421c2.63487,0.02928 3.89375,0.76118 3.89375,0.76118z" fill="#FFF" />    <path stroke="null" id="svg_7" d="m65.53882,30.46019c-1.52237,-0.81974 -2.31283,-1.52237 -2.31283,-2.48849c0,-1.22961 1.08322,-2.02007 2.81053,-2.02007c1.99079,0 3.74737,0.81974 3.74737,0.81974l1.40526,-4.27434s-1.28816,-0.99539 -5.0648,-0.99539c-5.26974,0 -8.92928,3.01546 -8.92928,7.26053c0,2.40066 1.69803,4.24507 3.98158,5.5625c1.84441,1.05395 2.48849,1.78586 2.48849,2.89836c0,1.14178 -0.90757,2.04934 -2.63487,2.04934c-2.54704,0 -4.9477,-1.31743 -4.9477,-1.31743l-1.49309,4.27434s2.225,1.49309 5.94309,1.49309c5.41612,0 9.30987,-2.66414 9.30987,-7.46546c0.02928,-2.60559 -1.93224,-4.42072 -4.30362,-5.79671zm21.60592,-8.98783c-2.66414,0 -4.77204,1.25888 -6.38224,3.19112l-0.08783,-0.02928l2.31283,-12.12039l-6.03092,0l-5.85526,30.82796l6.03092,0l2.02007,-10.53947c0.79046,-3.98158 2.8398,-6.44079 4.77204,-6.44079c1.34671,0 1.87368,0.90757 1.87368,2.225c0,0.81974 -0.08783,1.84441 -0.26349,2.66414l-2.28355,12.06184l6.03092,0l2.37138,-12.47171c0.26349,-1.31743 0.43914,-2.89836 0.43914,-3.92303c-0.02928,-3.39605 -1.81513,-5.44539 -4.9477,-5.44539zm18.56118,0c-7.26053,0 -12.06184,6.55789 -12.06184,13.8477c0,4.68421 2.89836,8.43158 8.31447,8.43158c7.11414,0 11.94474,-6.38224 11.94474,-13.8477c0,-4.33289 -2.54704,-8.43158 -8.19737,-8.43158zm-2.95691,17.65362c-2.04934,0 -2.92763,-1.75658 -2.92763,-3.92303c0,-3.45461 1.78586,-9.10493 5.0648,-9.10493c2.13717,0 2.8398,1.84441 2.8398,3.63026c0,3.71809 -1.78586,9.3977 -4.97697,9.3977zm26.58289,-17.65362c-4.06941,0 -6.38224,3.57171 -6.38224,3.57171l-0.08783,0l0.35132,-3.22039l-5.32829,0c-0.26349,2.19572 -0.73191,5.50395 -1.22961,7.99243l-4.18651,22.07434l6.00164,0l1.66875,-8.92928l0.11711,0s1.22961,0.79046 3.54243,0.79046c7.08487,0 11.71053,-7.26053 11.71053,-14.60888c0.02928,-4.04013 -1.78586,-7.67039 -6.1773,-7.67039zm-5.76743,17.74145c-1.58092,0 -2.48849,-0.87829 -2.48849,-0.87829l0.99539,-5.65033c0.70263,-3.74737 2.66414,-6.26513 4.77204,-6.26513c1.84441,0 2.40066,1.69803 2.40066,3.30822c0,3.92303 -2.31283,9.48553 -5.67961,9.48553zm20.58125,-26.40724c-1.93224,0 -3.45461,1.52237 -3.45461,3.48388c0,1.78586 1.14178,3.01546 2.8398,3.01546l0.08783,0c1.87368,0 3.48388,-1.25888 3.54243,-3.48388c0,-1.75658 -1.17105,-3.01546 -3.01546,-3.01546zm-8.43158,30.50592l6.03092,0l4.09868,-21.37171l-6.0602,0m21.40099,-0.02928l-4.18651,0l0.20493,-0.99539c0.35132,-2.04934 1.58092,-3.89375 3.57171,-3.89375c1.08322,0 1.93224,0.29276 1.93224,0.29276l1.17105,-4.71349s-1.05395,-0.52697 -3.27895,-0.52697c-2.13717,0 -4.27434,0.6148 -5.91382,2.02007c-2.04934,1.75658 -3.01546,4.27434 -3.48388,6.82138l-0.17566,0.99539l-2.81053,0l-0.87829,4.53783l2.81053,0l-3.19112,16.86316l6.0602,0l3.19112,-16.86316l4.15724,0l0.81974,-4.53783zm14.52105,0.02928s-3.77664,9.5148 -5.47467,14.69671l-0.08783,0c-0.11711,-1.66875 -1.49309,-14.69671 -1.49309,-14.69671l-6.35296,0l3.63026,19.61513c0.08783,0.43914 0.02928,0.70263 -0.11711,0.99539c-0.70263,1.34671 -1.87368,2.66414 -3.27895,3.63026c-1.14178,0.81974 -2.40066,1.34671 -3.39605,1.69803l1.66875,5.12336c1.22961,-0.26349 3.74737,-1.25888 5.91382,-3.27895c2.75197,-2.57632 5.29901,-6.55789 7.90461,-11.97401l7.37763,-15.80921l-6.29441,0z" />   </g>  </g> </svg>
+    <svg width="116" height="50" xmlns="http://www.w3.org/2000/svg">  <defs>   <clipPath clipPathUnits="userSpaceOnUse" id="clipPath3183">    <path d="m-127.30132,381.62823l211.251,0l0,55.012l-211.251,0l0,-55.012z" id="path3185" />   </clipPath>   <clipPath clipPathUnits="userSpaceOnUse" id="clipPath3173">    <path d="m-126.50132,395.96323l211.251,0l0,43.077l-211.251,0l0,-43.077z" id="path3175" />   </clipPath>   <clipPath clipPathUnits="userSpaceOnUse" id="clipPath3143">    <path d="m-124.90132,381.62823l211.251,0l0,55.012l-211.251,0l0,-55.012z" id="path3145" />   </clipPath>   <clipPath clipPathUnits="userSpaceOnUse" id="clipPath3115">    <path d="m-127.30132,393.56323l211.251,0l0,43.077l-211.251,0l0,-43.077z" id="path3117" />   </clipPath>  </defs>  <metadata id="metadata4061">image/svg+xml</metadata>  <g>   <title>background</title>   <rect fill="none" id="canvas_background" height="52" width="118" y="-1" x="-1" />  </g>  <g>   <g stroke="null" id="svg_1">    <path fill="#ffffff" fill-rule="nonzero" d="m115.96438,47.61234l-110.04284,0l0,-44.97006l110.04284,0l0,44.97006z" id="path3167" />    <g stroke="null" id="g3169" transform="matrix(1.3440346717834473,0,0,-1.3440346717834473,170.95867672552475,584.4416040678702) ">     <g stroke="null" id="g3171" clip-path="url(#clipPath3173)">      <path stroke="#c12126" fill="none" stroke-width="1.018" stroke-miterlimit="4" d="m-44.11732,399.41623l-81.875,0l0,33.459l81.875,0l0,-33.459z" id="path3177" />     </g>    </g>    <g stroke="null" transform="matrix(1.3440346717834473,0,0,-1.3440346717834473,170.95867672552475,584.4416040678702) " id="g3187">     <path fill="#010101" fill-rule="nonzero" d="m-105.76582,413.06414c-0.477,-1.364 -1.178,-2.391 -2.111,-3.094c-0.931,-0.698 -2.07,-1.051 -3.413,-1.051c-1.884,0 -3.374,0.659 -4.466,1.972c-1.093,1.311 -1.638,3.109 -1.638,5.388c0,2.171 0.561,3.919 1.683,5.25c1.121,1.329 2.601,1.992 4.438,1.992c1.434,0 2.618,-0.366 3.552,-1.097c0.931,-0.732 1.564,-1.791 1.898,-3.184l-2.263,-0.625c-0.219,0.839 -0.61,1.498 -1.177,1.983c-0.566,0.482 -1.227,0.723 -1.981,0.723c-1.058,0 -1.933,-0.464 -2.611,-1.401c-0.682,-0.935 -1.025,-2.137 -1.025,-3.609c0,-1.563 0.343,-2.808 1.021,-3.741c0.682,-0.933 1.58,-1.4 2.695,-1.4c0.751,0 1.414,0.25 1.985,0.751c0.575,0.503 0.992,1.202 1.255,2.101l2.158,-0.958" id="path3189" />    </g>    <g stroke="null" transform="matrix(1.3440346717834473,0,0,-1.3440346717834473,170.95867672552475,584.4416040678702) " id="g3191">     <path fill="#010101" fill-rule="nonzero" d="m-100.97032,420.84864l2.639,0c0.86,0 1.495,-0.17 1.912,-0.508c0.416,-0.339 0.625,-0.859 0.625,-1.556c0,-0.71 -0.225,-1.254 -0.674,-1.628c-0.449,-0.375 -1.101,-0.56 -1.958,-0.56l-2.544,0l0,4.252m0,-11.748l0,5.416l2.477,0l3.016,-5.416l2.703,0l-3.302,5.733c0.911,0.356 1.595,0.87 2.055,1.548c0.464,0.679 0.691,1.514 0.691,2.499c0,1.366 -0.424,2.4 -1.273,3.099c-0.849,0.699 -2.112,1.046 -3.785,1.046l-4.952,0l0,-13.925l2.37,0z" id="path3193" />    </g>    <g stroke="null" transform="matrix(1.3440346717834473,0,0,-1.3440346717834473,170.95867672552475,584.4416040678702) " id="g3195">     <path fill="#010101" fill-rule="nonzero" d="m-87.80942,413.45204l1.879,6.495c0.045,0.173 0.082,0.361 0.114,0.562c0.034,0.201 0.058,0.43 0.077,0.681c0.033,-0.262 0.068,-0.494 0.107,-0.71c0.038,-0.215 0.085,-0.408 0.134,-0.573l1.898,-6.455l-4.209,0m3.516,9.574l-2.843,0l-4.358,-13.925l2.406,0l0.633,2.199l5.499,0l0.676,-2.199l2.484,0l-4.497,13.925z" id="path3197" />    </g>    <g stroke="null" transform="matrix(1.3440346717834473,0,0,-1.3440346717834473,170.95867672552475,584.4416040678702) " id="g3199">     <path fill="#010101" fill-rule="nonzero" d="m-77.20362,409.10094l0,13.925l2.29,0l5.38,-9.093c0.14,-0.236 0.269,-0.504 0.387,-0.801c0.113,-0.303 0.216,-0.623 0.306,-0.968c-0.075,0.385 -0.137,0.736 -0.178,1.059c-0.041,0.322 -0.059,0.564 -0.059,0.73l0,9.073l2.318,0l0,-13.925l-2.225,0l-5.423,9.11c-0.146,0.249 -0.281,0.521 -0.397,0.817c-0.114,0.295 -0.219,0.612 -0.309,0.954c0.071,-0.378 0.126,-0.731 0.169,-1.053c0.042,-0.325 0.064,-0.572 0.064,-0.737l0,-9.091l-2.323,0" id="path3201" />    </g>    <g stroke="null" transform="matrix(1.3440346717834473,0,0,-1.3440346717834473,170.95867672552475,584.4416040678702) " id="g3203">     <path fill="#010101" fill-rule="nonzero" d="m-49.15522,405.58143c0.231,0 0.401,-0.035 0.512,-0.109c0.106,-0.073 0.162,-0.189 0.162,-0.343c0,-0.152 -0.053,-0.259 -0.154,-0.326c-0.106,-0.07 -0.266,-0.104 -0.495,-0.104l-0.39,0l0,0.882l0.365,0m-0.971,-2.417l0.606,0l0,1.165l0.433,0l0.55,-1.165l0.672,0l-0.626,1.258c0.2,0.047 0.356,0.136 0.464,0.267c0.105,0.134 0.162,0.304 0.162,0.508c0,0.248 -0.102,0.441 -0.299,0.569c-0.205,0.127 -0.495,0.19 -0.885,0.19l-1.077,0l0,-2.792zm1.839,3.308c0.256,-0.109 0.49,-0.264 0.697,-0.472c0.202,-0.202 0.352,-0.432 0.454,-0.69c0.103,-0.256 0.152,-0.533 0.152,-0.833c0,-0.277 -0.054,-0.546 -0.162,-0.796c-0.106,-0.254 -0.262,-0.475 -0.461,-0.667c-0.207,-0.206 -0.442,-0.36 -0.704,-0.466c-0.262,-0.104 -0.537,-0.157 -0.828,-0.157c-0.27,0 -0.53,0.056 -0.786,0.165c-0.256,0.108 -0.486,0.264 -0.684,0.468c-0.199,0.206 -0.353,0.43 -0.459,0.686c-0.106,0.256 -0.156,0.521 -0.156,0.805c0,0.276 0.054,0.547 0.162,0.808c0.113,0.258 0.273,0.495 0.477,0.706c0.201,0.198 0.424,0.35 0.672,0.45c0.25,0.103 0.518,0.153 0.807,0.153c0.291,0 0.561,-0.055 0.819,-0.16m-1.771,0.358c-0.295,-0.122 -0.555,-0.298 -0.789,-0.531c-0.246,-0.244 -0.43,-0.517 -0.563,-0.827c-0.129,-0.306 -0.19,-0.627 -0.19,-0.956c0,-0.33 0.061,-0.643 0.184,-0.942c0.125,-0.299 0.307,-0.569 0.541,-0.804c0.237,-0.243 0.507,-0.431 0.813,-0.561c0.305,-0.129 0.624,-0.194 0.954,-0.194c0.326,0 0.641,0.064 0.946,0.191c0.305,0.124 0.576,0.304 0.821,0.541c0.238,0.234 0.42,0.499 0.545,0.802c0.123,0.296 0.189,0.622 0.189,0.967c0,0.336 -0.066,0.65 -0.185,0.949c-0.12,0.297 -0.299,0.564 -0.53,0.798c-0.238,0.245 -0.508,0.431 -0.813,0.556c-0.305,0.127 -0.627,0.187 -0.973,0.187c-0.342,0 -0.657,-0.057 -0.95,-0.176" id="path3205" />    </g>    <g stroke="null" transform="matrix(1.3440346717834473,0,0,-1.3440346717834473,170.95867672552475,584.4416040678702) " id="g3207">     <path fill="#010101" fill-rule="nonzero" d="m-62.29152,409.02923l0,13.927l9.25,0l0,-2.154l-6.88,0l0,-3.461l6.356,0l0,-2.124l-6.356,0l0,-4.015l7.157,0l0,-2.173l-9.527,0z" id="path3209" />    </g>   </g>  </g> </svg>
+  </div>
+</div>
+
+<style>
+  .users-header {
+    text-align: center;
+  }
+
+  @media screen and (min-width: 60em) {
+    .users-header:before, .users-header:after {
+      background-color: rgba(0,0,0,0.1);
+      content: "";
+      display: inline-block;
+      height: 1px;
+      position: relative;
+      vertical-align: middle;
+      width: 15%;
+    }
+
+  .users-header:before {
+    right: 0.5em;
+    margin-left: -50%;
+  }
+
+  .users-header:after {
+    left: 0.5em;
+    margin-right: -50%;
+  }
+}
+
+  .users-logos svg {
+    filter: grayscale(100%);
+    margin: 0 1rem 2rem;
+    opacity: 0.4;
+    transition: all 1s;
+  }
+
+  .users-logos svg:hover {
+    filter: none;
+    opacity: 1;
+  }  
+</style>
+
+<div class="pa5 bb bt bg-na-grey-1 b--black-10 mb5 lh-copy ph6-l ba-l br2-l center-l mw8-l">
+  <h2 class="f2 fw3">FAQs</h2>
+  <h3>What is a request?</h3>
+  <p>Any single HTTP request to any of our endpoints counts as a single request. The parameters or modifiers you provide, or the number of results you get back, do not affect your request count.</p>
+  <h3>What usage does the Developer plan permit?</h3>
+  <p>The Developer plan may be used for development and testing in a development environment only, and cannot be used in a staging or production environment (including internally). When the API is used outside of a development environment an upgrade to one of our subscriptions will be required to continue using the API.</p>
+  <h3>Is the full article content available with any plan?</h3>
+  <p>No, unfortunately we cannot provide the full content with our search results. However, you are able to use the URL included with each result to scrape this yourself if required.</p>
+  <h3>What happens if I exceed my monthly quota?</h3>
+  <p>You will be alerted ahead of time if you are going to exceed your quota. Then you can decide whether to be automatically billed for excess usage, or to pause usage until the next billing cycle.</p>
+  <h3>Can I pay via invoice and ACH/bank transfer?</h3>
+  <p>Yes! For annual subscriptions we can accept these payment methods.</p>
+  <h3>Can I cancel at any time?</h3>
+  <p>Of course! When you cancel, your plan will run until the end of the current paid period and you won't be charged again.</p>
+</div>
+
+<footer class="bg-na-coal">
+    <div class="mw7 w-80 mb3 flex-ns center white-80 fw1">
+        <div class="w-third-ns">
+            <h6 class="f4 fw5 mb2 white">News API</h6>
+            <div class="mv3"><a class="white-60 no-underline" href="/docs/get-started">Get started</a></div>
+            <div class="mv3"><a class="white-60 no-underline" href="/docs">Documentation</a></div>
+            <div class="mv3"><a class="white-60 no-underline" href="/sources">News sources</a></div>
+            <div class="mv3"><a class="white-60 no-underline" href="/pricing">Pricing</a></div>
+          <div class="mv3"><a class="white-60 no-underline" href="/s/google-news-api">Google News API</a></div>
+        </div>
+        <div class="w-third-ns">
+            <h6 class="f4 fw5 mb2 white">Company</h6>
+            <!--<div class="mv3">
+                <div style="width:100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                    <a class="white-60 no-underline" href="/blog/">Blog</a> - <a id="blog-latest-article-title" class="white-80"></a>
+                </div>
+            </div>-->
+            <div class="mv3"><a class="white-60 no-underline" href="/privacy" target="_blank">Privacy policy</a></div>
+            <div class="mv3"><a class="white-60 no-underline" href="/terms" target="_blank">Terms of service</a></div>
+        </div>
+        <div class="w-third-ns tr">
+            <h6 class="f4 fw5 mb2 white">Support</h6>
+            <div class="mv3"><a class="color-inherit no-underline" href="mailto:support@newsapi.org">Contact</a></div>
+            <div class="mv3"><a class="color-inherit no-underline" href="https://twitter.com/NewsAPIorg" target="_blank">Twitter</a></div>
+            <div class="mv3">&nbsp;</div>
+            <div class="mv3"><a class="color-inherit no-underline" href="https://github.com/News-API-gh" target="_blank"><i class="fa fa-github"></i> Github</a></div>
+        </div>
+    </div>
+    <div >
+        <p class="tc white f7 ma0 pv3"></p>
+    </div>
+
+    <script>
+        //const $blogLatestArticleTitle = $('#blog-latest-article-title');
+        //$.getJSON('https://newsapi.org/blog/feed/json', function (response) {
+        //    $blogLatestArticleTitle.text(response.items[0].title);
+        //    $blogLatestArticleTitle.attr('href', response.items[0].url);
+        //})
+    </script>
+</footer>
+
+<script src="/js/button.js"></script>
+
+  <script src="/js/jquery.jsonview.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js"></script>
+  <script src="/js/instant.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Ladda/1.0.5/spin.min.js"></script>
+  <script src="/js/ladda.js"></script>
+  <script src="/js/v2.js?v=1.0.9637.29536"></script>
+</body>
+</html>

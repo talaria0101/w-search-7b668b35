@@ -1,0 +1,311 @@
+# Anchor Browser Docs
+
+> ## Agent Instructions
+> Anchor Browser is cloud browser infrastructure for AI agents and automation: browser sessions you control over CDP or REST, natural-language web tasks, versioned automation tasks, managed authentication into third-party web apps (identities with MFA), persistent volumes and profiles, recordings, live view, batch sessions, webhooks, and network options including residential proxies, extra stealth, and captcha solving for sites that block standard browsers. AI agents should start at https://docs.anchorbrowser.io/for-agents, then get an API key with Agent Access at https://docs.anchorbrowser.io/quickstart/agent-access — no dashboard account required. Read those two pages before authentication or API calls.
+
+- [Documentation](https://docs.anchorbrowser.io/introduction.md): Cloud browsers for AI agents and automation: sessions over CDP or REST, natural-language web tasks, managed authentication, volumes, recordings, batch sessions, and stealth browsing. Get a key at https://docs.anchorbrowser.io/quickstart/agent-access.
+- [Agent Access](https://docs.anchorbrowser.io/quickstart/agent-access.md): Self-serve API key for agents. Solve a short puzzle — no dashboard account required.
+- [SDK Quick Start](https://docs.anchorbrowser.io/quickstart/use-via-sdk.md)
+- [Code Quick Start](https://docs.anchorbrowser.io/quickstart/use-via-code.md)
+- [API Quick Start](https://docs.anchorbrowser.io/quickstart/use-via-api.md)
+- [Task Examples](https://docs.anchorbrowser.io/examples/task-examples.md): Browse ready-made task examples in the Anchor library.
+- [Form Filling Automation](https://docs.anchorbrowser.io/examples/form-filling.md)
+- [Buyer Intent Discovery](https://docs.anchorbrowser.io/examples/buyer-intent.md)
+- [Configuration Collection](https://docs.anchorbrowser.io/examples/configuration-collection.md)
+- [Deep Research](https://docs.anchorbrowser.io/examples/research-task.md)
+- [Browser Sessions](https://docs.anchorbrowser.io/quickstart/browser-sessions.md): How cloud browser sessions work — what you get back, how to create one, and what you can configure at creation time.
+- [Create a Session](https://docs.anchorbrowser.io/quickstart/create-session.md): Create a cloud browser session and connect with Playwright or Puppeteer over CDP.
+- [Async Session](https://docs.anchorbrowser.io/essentials/async-session.md): Create browser sessions without blocking and poll until they are ready
+- [Batch Browser Sessions](https://docs.anchorbrowser.io/advanced/batch-browser-sessions.md): Create and manage multiple browser sessions simultaneously for large-scale automation tasks
+- [Control a Browser Session](https://docs.anchorbrowser.io/essentials/control-a-session.md): Ways to drive a cloud browser session — natural language, your own code, REST endpoints, or OS-level primitives.
+- [OS-Level Control](https://docs.anchorbrowser.io/advanced/os-level-control.md): Direct operating system control for precise browser automation and AI agent interactions
+- [Session Recording](https://docs.anchorbrowser.io/essentials/recording.md): Record browser sessions for debugging, analysis, and documentation
+- [Browser Extensions](https://docs.anchorbrowser.io/advanced/extensions.md): Upload and use custom browser extensions in your sessions
+- [Ad Blocker](https://docs.anchorbrowser.io/advanced/adblocker.md): Block ads, trackers, and unwanted content in your browser sessions
+- [Popup Blocker](https://docs.anchorbrowser.io/advanced/popup-blocker.md): Block cookie banners and consent dialogs in your browser sessions
+- [Sensitive Data Masking](https://docs.anchorbrowser.io/advanced/sensitive-data-masking.md): Automatically detect and mask sensitive data like passwords, emails, phone numbers, and credit cards in your browser sessions
+- [CA Certificates](https://docs.anchorbrowser.io/advanced/ca-certificates.md): Install custom CA certificates to trust internal services and private PKI in browser sessions.
+- [Session Timeout](https://docs.anchorbrowser.io/advanced/session-timeout.md)
+- [Session Tags](https://docs.anchorbrowser.io/advanced/session-tags.md): Organize and track browser sessions with custom labels
+- [Which task type?](https://docs.anchorbrowser.io/tasks/which-task-type.md): Anchor Browser supports two ways to control the browser: Perform Web Task and Automation Tasks.
+- [Perform Web Task](https://docs.anchorbrowser.io/agentic-browser-control/ai-task-completion.md): Run natural-language browser tasks with the perform-web-task API and agentTask SDK method.
+- [Async Perform Web Task](https://docs.anchorbrowser.io/agentic-browser-control/async-perform-web-task.md): Run perform-web-task asynchronously and poll for results
+- [Human-in-the-Loop](https://docs.anchorbrowser.io/agentic-browser-control/human-in-the-loop.md): Enable human intervention during AI agent task execution
+- [Secret Values](https://docs.anchorbrowser.io/agentic-browser-control/secret-values.md): Securely pass credentials and sensitive data to AI agents
+- [Agentic File Usage](https://docs.anchorbrowser.io/agentic-browser-control/agentic-file-usage.md): Upload ZIP files to browser sessions for AI agents to use
+- [Anthropic Computer Use](https://docs.anchorbrowser.io/agentic-browser-control/computer-use-agents/anthropic.md): Use Claude models with native computer use capabilities for browser automation
+- [Gemini Computer Use](https://docs.anchorbrowser.io/agentic-browser-control/computer-use-agents/gemini.md): Use Google Gemini models for screenshot-based browser automation
+- [OpenAI Computer Use](https://docs.anchorbrowser.io/agentic-browser-control/computer-use-agents/openai.md): Use OpenAI models with computer use capabilities for browser automation
+- [Yutori Browser Use](https://docs.anchorbrowser.io/agentic-browser-control/computer-use-agents/yutori.md): Build browser-use agents with Yutori n1 — state-of-the-art browser-use model
+- [Jev Browser Agent](https://docs.anchorbrowser.io/agentic-browser-control/computer-use-agents/jev.md): Fast browser automation that classifies the next action with TypeSafe Jev and types with the model of your choice
+- [Action Index](https://docs.anchorbrowser.io/advanced/action-index.md): Cached, proven web actions your agent can reuse to finish tasks faster, cheaper, and more reliably.
+- [Automation Tasks Overview](https://docs.anchorbrowser.io/tasks/overview.md): See how Automation Tasks work in the Anchor UI — demonstrate a flow, inspect the workflow, run it step by step, and apply self-healing fixes when sites change.
+- [Creating a Task](https://docs.anchorbrowser.io/tasks/creating-a-task.md): Create reusable browser tasks from a demonstration or prompt.
+- [Run a Task](https://docs.anchorbrowser.io/tasks/run-a-task.md): Execute an Automation Task via the API — inputs, identity, sessions, sync, and polling.
+- [Async execution](https://docs.anchorbrowser.io/advanced/async-automation-tasks.md): Run automation tasks asynchronously and poll for results.
+- [Self-healing](https://docs.anchorbrowser.io/advanced/self-healing.md): How Anchor keeps Automation Tasks reliable — agentic completion during runs and durable workflow improvements afterward.
+- [Code Tasks](https://docs.anchorbrowser.io/advanced/legacy-tasks.md): Write task automation as TypeScript, or hand-edit workflow JSON for fine-grained control.
+- [Network and Stealth](https://docs.anchorbrowser.io/network-and-stealth/overview.md): Get past IP blocks, bot detection, and CAPTCHAs on automated browser sessions.
+- [Proxy](https://docs.anchorbrowser.io/advanced/proxy.md)
+- [Bring Your Own Proxy](https://docs.anchorbrowser.io/advanced/bring-your-own-proxy.md): Use your own HTTP, HTTPS, or SOCKS5 proxy servers with Anchor Browser sessions.
+- [Dedicated Sticky IP](https://docs.anchorbrowser.io/advanced/dedicated-sticky-ip.md): Reserve a fixed IP address for a specific profile.
+- [Anchor VPN](https://docs.anchorbrowser.io/advanced/anchor-vpn.md): Integrated VPN egress that is secure, reliable, and fast - beyond what proxy setups can offer.
+- [Extra Stealth Mode](https://docs.anchorbrowser.io/essentials/stealth.md): Advanced anti-detection and browser fingerprinting protection for automated browsing
+- [Captcha Solving](https://docs.anchorbrowser.io/advanced/captcha-solving.md)
+- [Cloudflare Web Bot Auth](https://docs.anchorbrowser.io/advanced/cloudflare-web-bot-auth.md): Authenticate browser sessions with Cloudflare Web Bot Auth
+- [Web Unlocker](https://docs.anchorbrowser.io/advanced/web-unlocker.md): Fetch fully rendered HTML from any URL — including CAPTCHA- and bot-protected sites — with a single API call. No browser session, no proxy setup, billed only on success.
+- [Managed Authentication](https://docs.anchorbrowser.io/essentials/managed-authentication.md): Choose between browser profiles and the Applications + Identities model for persistent sign-in across sessions.
+- [Applications](https://docs.anchorbrowser.io/essentials/applications.md): Define target websites, authentication modes, and login flows for managed authentication.
+- [Identities](https://docs.anchorbrowser.io/essentials/authenticated-applications.md): Create and manage identities, then attach them to browser sessions for automatic sign-in.
+- [Email MFA](https://docs.anchorbrowser.io/advanced/email-otp.md): Email-based MFA for identity creation, reauthentication, and agent sessions.
+- [Custom MFA](https://docs.anchorbrowser.io/advanced/mfa.md): Inject MFA codes from your own systems during browser automation using event coordination.
+- [1Password](https://docs.anchorbrowser.io/integrations/1password.md): Securely inject 1Password secrets into your browser sessions
+- [Volumes](https://docs.anchorbrowser.io/advanced/volumes.md): Persistent storage that follows your browser sessions
+- [Bring Your Own Keys (BYOK)](https://docs.anchorbrowser.io/advanced/bring-your-own-key.md): Use your own LLM provider keys to power AI-driven browser automations
+- [File Upload](https://docs.anchorbrowser.io/advanced/file-upload.md)
+- [File Download](https://docs.anchorbrowser.io/advanced/file-download.md)
+- [P2P Download](https://docs.anchorbrowser.io/advanced/p2p-downloads.md): Receive download events in real time and fetch files directly from the browser
+- [Webhooks](https://docs.anchorbrowser.io/webhooks/overview.md): Receive real-time notifications when tasks, sessions and identities complete, fail, or need human input.
+- [Events](https://docs.anchorbrowser.io/webhooks/events.md): Catalog of webhook event types and the JSON payload each one carries.
+- [Signature verification](https://docs.anchorbrowser.io/webhooks/signature-verification.md): Verify that webhook requests really came from Anchor using HMAC-SHA256 and timestamp-based replay protection.
+- [Screenshot Webpage](https://docs.anchorbrowser.io/tools/screenshot-webpage.md): Get a fully javascript-rendered screenshot of a given webpage
+- [Execute Code Snippet](https://docs.anchorbrowser.io/tools/execute-code-snippet.md): Run a TypeScript snippet inside an existing browser session
+- [Demonstrations API](https://docs.anchorbrowser.io/advanced/demonstrations-api.md): Send a shareable link so someone can demonstrate a task and Anchor generates production-ready automation from it.
+- [Embedded Browser Live UI](https://docs.anchorbrowser.io/advanced/browser-live-view.md): Embed interactive browser sessions directly into your application
+- [Embedding End-User Authentication UI](https://docs.anchorbrowser.io/essentials/omniconnect.md): Anchor's embeddable flow so your end users can sign in to third-party sites from your product; identities power [authenticated browser sessions](/essentials/managed-authentication).
+- [MCP - Hosted Version](https://docs.anchorbrowser.io/advanced/mcp.md): Connect Cursor, Claude, ChatGPT, Grok, or any MCP client to Anchor: cloud browsers that get past bot detection, sign in with MFA, run deterministic site actions, and scale without concurrency limits.
+- [MCP - Open Source](https://docs.anchorbrowser.io/advanced/mcp-open-source.md): Self-host Anchor MCP server with customizable Playwright integration for your specific needs
+- [Sandboxes](https://docs.anchorbrowser.io/integrations/sandboxes.md): Run agent or automation code in a third-party sandbox and connect it to an Anchor cloud browser.
+- [CreateOS](https://docs.anchorbrowser.io/integrations/sandboxes/createos.md): Run agent code in a CreateOS sandbox and connect it to an Anchor cloud browser.
+- [Daytona](https://docs.anchorbrowser.io/integrations/sandboxes/daytona.md): Run agent code in a Daytona sandbox and connect it to an Anchor cloud browser.
+- [Tenki](https://docs.anchorbrowser.io/integrations/sandboxes/tenki.md): Run agent code in a Tenki sandbox and connect it to an Anchor cloud browser.
+- [Browser-use](https://docs.anchorbrowser.io/integrations/browseruse-deployment.md)
+- [Stagehand](https://docs.anchorbrowser.io/integrations/stagehand.md): Integrate Stagehand with Anchor Browser for AI-powered browser automation
+- [Groq GPT-OSS](https://docs.anchorbrowser.io/integrations/groq.md): Blazing Fast, Accurate Browser Agents
+- [n8n](https://docs.anchorbrowser.io/integrations/n8n.md): Integrate Anchor Browser with n8n for no-code automation workflows
+- [Make](https://docs.anchorbrowser.io/integrations/make.md): Integrate Anchor Browser with Make (formerly Integromat) for no-code automation workflows
+- [Zapier](https://docs.anchorbrowser.io/integrations/zapier.md): Integrate Anchor Browser with Zapier for no-code automation workflows
+- [CrewAI](https://docs.anchorbrowser.io/agent-frameworks/crewai.md)
+- [LangChain](https://docs.anchorbrowser.io/agent-frameworks/langchain.md)
+- [Custom Integration](https://docs.anchorbrowser.io/agent-frameworks/custom-agent-framework.md)
+- [Integrate Puppeteer with Anchor Browser](https://docs.anchorbrowser.io/integrations/open-source/puppeteer/index.md): Integrate Puppeteer and Anchor Browser
+- [Integrate Playwright with Anchor Browser](https://docs.anchorbrowser.io/integrations/open-source/playwright/index.md): Integrate Playwright and Anchor Browser
+- [Storybook](https://docs.anchorbrowser.io/integrations/open-source/playwright/e2e-testing/storybook.md): Test Storybook components with Playwright's component testing framework.
+- [Grafana](https://docs.anchorbrowser.io/integrations/open-source/playwright/e2e-testing/grafana.md): Test Grafana dashboards and monitoring workflows with Playwright's end-to-end testing framework.
+- [Apache Superset](https://docs.anchorbrowser.io/integrations/open-source/playwright/e2e-testing/apache-superset.md): Test Apache Superset dashboards and data visualization workflows with Playwright's end-to-end testing framework.
+- [OpenHands](https://docs.anchorbrowser.io/integrations/open-source/playwright/e2e-testing/openhands.md): Test OpenHands' AI-driven software development workflows with Playwright's end-to-end testing framework.
+- [Twenty](https://docs.anchorbrowser.io/integrations/open-source/playwright/e2e-testing/twenty.md): Test Twenty CRM workflows with Playwright's end-to-end testing framework.
+- [NetSuite](https://docs.anchorbrowser.io/integrations/open-source/playwright/business-applications/netsuite.md): Automate NetSuite business workflows with Playwright when APIs aren't available.
+- [SAP S/4HANA](https://docs.anchorbrowser.io/integrations/open-source/playwright/business-applications/sap-s4-hana.md): Automate SAP S/4HANA business workflows with Playwright when APIs aren't available.
+- [Sage Intact](https://docs.anchorbrowser.io/integrations/open-source/playwright/business-applications/sage-intact.md): Automate Sage Intacct financial workflows with Playwright when APIs aren't available.
+- [Salesforce](https://docs.anchorbrowser.io/integrations/open-source/playwright/business-applications/salesforce.md): Automate Salesforce CRM workflows with Playwright when APIs aren't available.
+- [Zendesk](https://docs.anchorbrowser.io/integrations/open-source/playwright/business-applications/zendesk.md): Automate Zendesk customer service workflows with Playwright when APIs aren't available.
+- [Tableau](https://docs.anchorbrowser.io/integrations/open-source/playwright/business-applications/tableau.md): Automate Tableau dashboard workflows with Playwright when APIs aren't available.
+- [Notion](https://docs.anchorbrowser.io/integrations/open-source/playwright/business-applications/notion.md): Automate Notion workspace workflows with Playwright when APIs aren't available.
+- [Jira](https://docs.anchorbrowser.io/integrations/open-source/playwright/business-applications/jira.md): Automate Jira project management workflows with Playwright when APIs aren't available.
+- [Attio](https://docs.anchorbrowser.io/integrations/open-source/playwright/business-applications/attio.md): Automate Attio CRM workflows with Playwright when APIs aren't available.
+- [Pipedrive](https://docs.anchorbrowser.io/integrations/open-source/playwright/business-applications/pipedrive.md): Automate Pipedrive CRM workflows with Playwright when APIs aren't available.
+- [HubSpot](https://docs.anchorbrowser.io/integrations/open-source/playwright/business-applications/hubspot.md): Automate HubSpot CRM workflows with Playwright when APIs aren't available.
+- [Dropbox](https://docs.anchorbrowser.io/integrations/open-source/playwright/business-applications/dropbox.md): Automate Dropbox file management workflows with Playwright when APIs aren't available.
+- [Clickup](https://docs.anchorbrowser.io/integrations/open-source/playwright/business-applications/clickup.md): Automate ClickUp project management workflows with Playwright when APIs aren't available.
+- [Monday](https://docs.anchorbrowser.io/integrations/open-source/playwright/business-applications/monday.md): Automate Monday.com project management workflows with Playwright when APIs aren't available.
+- [DocuSign](https://docs.anchorbrowser.io/integrations/open-source/playwright/business-applications/docusign.md): Automate DocuSign electronic signature workflows with Playwright when APIs aren't available.
+- [Airtable](https://docs.anchorbrowser.io/integrations/open-source/playwright/business-applications/airtable.md): Automate Airtable database workflows with Playwright when APIs aren't available.
+- [Figma](https://docs.anchorbrowser.io/integrations/open-source/playwright/business-applications/figma.md): Automate Figma design workflows with Playwright when APIs aren't available.
+- [Miro](https://docs.anchorbrowser.io/integrations/open-source/playwright/business-applications/miro.md): Automate Miro collaboration workflows with Playwright when APIs aren't available.
+- [Wrike](https://docs.anchorbrowser.io/integrations/open-source/playwright/business-applications/wrike.md): Automate Wrike project management workflows with Playwright when APIs aren't available.
+- [Bill.com](https://docs.anchorbrowser.io/integrations/open-source/playwright/business-applications/bill.md): Automate Bill.com accounts payable workflows with Playwright when APIs aren't available.
+- [UiPath](https://docs.anchorbrowser.io/integrations/open-source/playwright/business-applications/uipath.md): Automate UiPath RPA management workflows with Playwright when APIs aren't available.
+- [ServiceNow](https://docs.anchorbrowser.io/integrations/open-source/playwright/business-applications/servicenow.md): Automate ServiceNow IT service management workflows with Playwright when APIs aren't available.
+- [CrowdStrike](https://docs.anchorbrowser.io/integrations/open-source/playwright/business-applications/crowdstrike.md): Automate CrowdStrike security workflows with Playwright when APIs aren't available.
+- [BLM Form 3510](https://docs.anchorbrowser.io/integrations/open-source/playwright/government/USA/federal/blm-3510.md): Automate BLM mineral operations reporting workflows with Playwright when APIs aren't available.
+- [BOP Form BP-S0243](https://docs.anchorbrowser.io/integrations/open-source/playwright/government/USA/federal/bop-s243.md): Automate Bureau of Prisons inmate request workflows with Playwright when APIs aren't available.
+- [CBP Form 7501](https://docs.anchorbrowser.io/integrations/open-source/playwright/government/USA/federal/cbp-7501.md): Automate CBP Form 7501 entry documentation workflows with Playwright when APIs aren't available.
+- [CCC Form 941](https://docs.anchorbrowser.io/integrations/open-source/playwright/government/USA/federal/ccc-941.md): Automate USDA farm program income certification workflows with Playwright when APIs aren't available.
+- [CMS Form 10069](https://docs.anchorbrowser.io/integrations/open-source/playwright/government/USA/federal/cms-10069.md): Automate Medicare provider enrollment and certification workflows with Playwright when APIs aren't available.
+- [DOE Form 1845-0031](https://docs.anchorbrowser.io/integrations/open-source/playwright/government/USA/federal/doe-1845-0031.md): Automate federal student loan forbearance request workflows with Playwright when APIs aren't available.
+- [DOJ Form 361](https://docs.anchorbrowser.io/integrations/open-source/playwright/government/USA/federal/doj-361.md): Automate Department of Justice identity certification workflows with Playwright when APIs aren't available.
+- [EPA Form 8700-22](https://docs.anchorbrowser.io/integrations/open-source/playwright/government/USA/federal/epa-8200.md): Automate EPA hazardous waste notification workflows with Playwright when APIs aren't available.
+- [FDA Form 2579](https://docs.anchorbrowser.io/integrations/open-source/playwright/government/USA/federal/fda-2579.md): Automate FDA food facility registration workflows with Playwright when APIs aren't available.
+- [FinCEN 105 (CMIR)](https://docs.anchorbrowser.io/integrations/open-source/playwright/government/USA/federal/fincen-105.md): Automate FinCEN 105 currency reporting workflows with Playwright when APIs aren't available.
+- [FMCSA Form BMC-40](https://docs.anchorbrowser.io/integrations/open-source/playwright/government/USA/federal/fmcsa-bmc-40.md): Automate motor carrier surety bond and trust fund filing workflows with Playwright when APIs aren't available.
+- [FMCSA Form OP-1(P)](https://docs.anchorbrowser.io/integrations/open-source/playwright/government/USA/federal/fmcsa-op-1-p.md): Automate motor carrier passenger operating authority application workflows with Playwright when APIs aren't available.
+- [FMCSA Form OP-1](https://docs.anchorbrowser.io/integrations/open-source/playwright/government/USA/federal/fmcsa-op-1.md): Automate motor carrier operating authority application workflows with Playwright when APIs aren't available.
+- [Form 122A-1](https://docs.anchorbrowser.io/integrations/open-source/playwright/government/USA/federal/form-122a-1.md): Automate Chapter 7 bankruptcy means test and income statement workflows with Playwright when APIs aren't available.
+- [FS Form 5444](https://docs.anchorbrowser.io/integrations/open-source/playwright/government/USA/federal/fs-5444.md): Automate TreasuryDirect account authorization workflows with Playwright when APIs aren't available.
+- [FSA Form 578](https://docs.anchorbrowser.io/integrations/open-source/playwright/government/USA/federal/fsa-578.md): Automate USDA farm commodity storage report workflows with Playwright when APIs aren't available.
+- [IRS Form 8300](https://docs.anchorbrowser.io/integrations/open-source/playwright/government/USA/federal/irs-8300.md): Automate IRS Form 8300 cash payment reporting workflows with Playwright when APIs aren't available.
+- [IRS Form W-7](https://docs.anchorbrowser.io/integrations/open-source/playwright/government/USA/federal/irs-w7.md): Automate ITIN application workflows with Playwright when APIs aren't available.
+- [OWCP Form 915](https://docs.anchorbrowser.io/integrations/open-source/playwright/government/USA/federal/owcp-915.md): Automate federal workers' compensation claim workflows with Playwright when APIs aren't available.
+- [USCIS Form I-9](https://docs.anchorbrowser.io/integrations/open-source/playwright/government/USA/federal/ucis-i9.md): Automate employment eligibility verification workflows with Playwright when APIs aren't available.
+- [VA Form 21-526EZ](https://docs.anchorbrowser.io/integrations/open-source/playwright/government/USA/federal/va-21-526ez.md): Automate VA disability compensation application workflows with Playwright when APIs aren't available.
+- [Trust & Security](https://docs.anchorbrowser.io/security.md)
+- [Zero Data Retention (ZDR) Mode](https://docs.anchorbrowser.io/security/zdr-mode.md): Enhanced security mode that disables all video and log recordings to prevent sensitive data retention
+- [Pricing](https://docs.anchorbrowser.io/pricing.md): Simple, transparent pricing for Anchor Browser automation platform
+- [Agent Access guide](https://docs.anchorbrowser.io/api-reference/agent-access/agent-access-guide.md): Unauthenticated onboarding guide. This GET does **not** issue an API key. Follow the `next` field: GET `/v1/agent-access/challenge`, solve, then POST `/v1/agent-access` with `{ token, answer }`. Optional `identity_token` (OIDC JWT) grants more credits. Docs: https://docs.anchorbrowser.io/quickstart/…
+- [Create Agent Access project](https://docs.anchorbrowser.io/api-reference/agent-access/create-agent-access-project.md): Issue an Agent Access API key. Submit the challenge `token` and computed integer `answer` from GET /v1/agent-access/challenge. GET on this path returns a guide, not a key. Optional `identity_token` as an OIDC JWT grants more credits. `identity_provider` is optional when the JWT `iss` is Google (`htt…
+- [Get Agent Access challenge](https://docs.anchorbrowser.io/api-reference/agent-access/get-agent-access-challenge.md): Get a puzzle and token. Follow next and challenge.prompt, then POST /v1/agent-access with token and answer.
+- [Agent Access challenge data](https://docs.anchorbrowser.io/api-reference/agent-access/agent-access-challenge-data.md): Supporting data for an active Agent Access challenge. Path comes from the challenge response.
+- [Perform Web Task](https://docs.anchorbrowser.io/api-reference/ai-tools/perform-web-task.md): Start from a URL and perform the given task.
+- [Get Perform Web Task Status](https://docs.anchorbrowser.io/api-reference/ai-tools/get-perform-web-task-status.md): Get the status of an asynchronous perform-web-task execution by workflow ID.
+- [List Sessions History Page](https://docs.anchorbrowser.io/api-reference/browser-sessions/list-sessions-history-page.md): Retrieves a paginated list of sessions for the authenticated team with support for sorting and advanced filtering. This endpoint mirrors the backend session history-page filtering behavior.
+- [Start Browser Session](https://docs.anchorbrowser.io/api-reference/browser-sessions/start-browser-session.md): Allocates a new browser session for the user, with optional configurations for ad-blocking, captcha solving, proxy usage, and idle timeout.
+- [Start Browser Session (async)](https://docs.anchorbrowser.io/api-reference/browser-sessions/start-browser-session-async.md): Non-blocking variant of `POST /v1/sessions`. Returns a `request_id` immediately and provisions the underlying browser pod in the background. Poll `GET /v1/sessions/async/{request_id}/status` until `status` becomes `ready` to obtain the resolved `session_id`, `cdp_url` and `live_view_url`.
+- [Async Session Status](https://docs.anchorbrowser.io/api-reference/browser-sessions/async-session-status.md): Polling endpoint paired with `POST /v1/sessions/async`. Returns the current lifecycle `status` of the async request and, once the pod is up, the embedded `session` object containing `session_id`, `cdp_url` and `live_view_url`.
+- [End All Sessions](https://docs.anchorbrowser.io/api-reference/browser-sessions/end-all-sessions.md): Terminates all active browser sessions associated with the provided API key.
+- [List All Sessions Status](https://docs.anchorbrowser.io/api-reference/browser-sessions/list-all-sessions-status.md): Retrieves status information for all browser sessions associated with the API key.
+- [Get Sessions History](https://docs.anchorbrowser.io/api-reference/browser-sessions/get-sessions-history.md): Retrieves session usage analytics for the authenticated team.
+- [Get Browser Session](https://docs.anchorbrowser.io/api-reference/browser-sessions/get-browser-session.md): Retrieves detailed information about a specific browser session.
+- [End Browser Session](https://docs.anchorbrowser.io/api-reference/browser-sessions/end-browser-session.md): Deletes the browser session associated with the provided browser session ID. Requires a valid API key for authentication.
+- [Get Session Tags](https://docs.anchorbrowser.io/api-reference/browser-sessions/get-session-tags.md): Retrieves the tags associated with a specific browser session.
+- [Put Session Tags](https://docs.anchorbrowser.io/api-reference/browser-sessions/put-session-tags.md): Create or replace tags on a browser session. This overwrites any existing tags with the provided list. See [Session Tags](/advanced/session-tags).
+- [Delete Session Tags](https://docs.anchorbrowser.io/api-reference/browser-sessions/delete-session-tags.md): Clears all tags from a browser session.
+- [Get Browser Session Pages](https://docs.anchorbrowser.io/api-reference/browser-sessions/get-browser-session-pages.md): Retrieves a list of pages associated with a specific browser session.
+- [Upload Files](https://docs.anchorbrowser.io/api-reference/browser-sessions/upload-files.md): Upload files directly to a browser session for use with web forms and file inputs.
+- [List Session Downloads](https://docs.anchorbrowser.io/api-reference/browser-sessions/list-session-downloads.md): Retrieves metadata of files downloaded during a browser session. Requires a valid API key for authentication.
+- [Run a Task](https://docs.anchorbrowser.io/api-reference/tasks/run-a-task.md): Triggers execution of a task by ID using the non-deprecated Tasks endpoints.
+- [Get Task Run Status](https://docs.anchorbrowser.io/api-reference/tasks/get-task-run-status.md): Retrieves the current status and result of a task run in the non-deprecated Tasks endpoints.
+- [Generate a Task](https://docs.anchorbrowser.io/api-reference/tasks/generate-a-task.md): Starts asynchronous generation of a new task from a natural-language prompt. Poll `GET /v2/tasks/{taskId}/generation-status` until the status is `ready`.
+- [Get Task Generation Status](https://docs.anchorbrowser.io/api-reference/tasks/get-task-generation-status.md): Returns the generation status of a task created via `POST /v2/tasks/generate`.
+- [Execute Code Snippet](https://docs.anchorbrowser.io/api-reference/tools/execute-code-snippet.md): Run a TypeScript snippet in the sandbox against the browser session (query `sessionId` required).
+- [Web Unlocker](https://docs.anchorbrowser.io/api-reference/tools/web-unlocker.md): Fetch the fully rendered HTML of any URL — including CAPTCHA- and bot-protected sites — with a single sessionless request.
+- [Screenshot Webpage](https://docs.anchorbrowser.io/api-reference/tools/screenshot-webpage.md): This endpoint captures a screenshot of the specified webpage using Chromium. Users can customize the viewport dimensions and capture options.
+- [Get Page PDF](https://docs.anchorbrowser.io/api-reference/tools/get-page-pdf.md): Generates a PDF of the current page for a browser session and returns it as a binary PDF file.
+- [List Applications](https://docs.anchorbrowser.io/api-reference/applications/list-applications.md): Retrieves all applications for the authenticated team.
+- [Create Application](https://docs.anchorbrowser.io/api-reference/applications/create-application.md): Creates a new application for identity management.
+- [Get Application](https://docs.anchorbrowser.io/api-reference/applications/get-application.md): Retrieves details of a specific application by its ID.
+- [Delete Application](https://docs.anchorbrowser.io/api-reference/applications/delete-application.md): Deletes an existing application.
+- [List Application Identities](https://docs.anchorbrowser.io/api-reference/applications/list-application-identities.md): Retrieves all identities associated with a specific application.
+- [List Application Authentication Flows](https://docs.anchorbrowser.io/api-reference/applications/list-application-authentication-flows.md): Retrieves all authentication flows for a specific application.
+- [Create Authentication Flow](https://docs.anchorbrowser.io/api-reference/applications/create-authentication-flow.md): Creates a new authentication flow for an application.
+- [Delete Authentication Flow](https://docs.anchorbrowser.io/api-reference/applications/delete-authentication-flow.md): Deletes an existing authentication flow.
+- [Update Authentication Flow](https://docs.anchorbrowser.io/api-reference/applications/update-authentication-flow.md): Updates an existing authentication flow.
+- [Create Identity Token](https://docs.anchorbrowser.io/api-reference/applications/create-identity-token.md): Creates an identity token for a specific application. This token is used to initiate an authentication flow for linking user identities to the application.
+- [Create Identity](https://docs.anchorbrowser.io/api-reference/identities/create-identity.md): Creates a new identity for the given source. Credentials are optional.
+- [Get Identity](https://docs.anchorbrowser.io/api-reference/identities/get-identity.md): Retrieves details of a specific identity by its ID.
+- [Update Identity](https://docs.anchorbrowser.io/api-reference/identities/update-identity.md): Updates an existing identity's name, metadata, or credentials.
+- [Delete Identity](https://docs.anchorbrowser.io/api-reference/identities/delete-identity.md): Deletes an existing identity.
+- [Reauthenticate Identity](https://docs.anchorbrowser.io/api-reference/identities/reauthenticate-identity.md): Re-authenticates an identity on demand: validates the saved browser profile and runs login if it is no longer signed in, then persists the refreshed profile and tears the temporary session down. Equivalent to a session with `identity_skip_validation: false` that ends after auth.
+- [Start Dynamic Auth Flow](https://docs.anchorbrowser.io/api-reference/identities/start-dynamic-auth-flow.md): Starts (or restarts) a dynamic auth flow in an existing browser session. `session_id` is required in the path. Advances until the next presentation (`decision`, `form`, `detection_failed`, `authenticated`, or `failed`).
+- [Get Dynamic Auth Flow State](https://docs.anchorbrowser.io/api-reference/identities/get-dynamic-auth-flow-state.md): Read-only snapshot of an in-progress dynamic auth flow. Does not acquire the flow lock or mutate state.
+- [Resolve Dynamic Auth Flow Step](https://docs.anchorbrowser.io/api-reference/identities/resolve-dynamic-auth-flow-step.md): Advances the flow by answering the current step. The body depends on the last presentation's `type` — do not mix the two shapes:
+- [Finalize Dynamic Auth Flow](https://docs.anchorbrowser.io/api-reference/identities/finalize-dynamic-auth-flow.md): Persists the identity, browser profile, and captured credentials after the flow reaches `authenticated`. The response reports whether the saved login can be replayed unattended (`automatable`).
+- [List Profiles](https://docs.anchorbrowser.io/api-reference/profiles/list-profiles.md): Fetches all stored profiles.
+- [Create Profile](https://docs.anchorbrowser.io/api-reference/profiles/create-profile.md): Creates a new profile from a browser session. A Profile stores cookies, local storage, and cache.
+- [Get Profile](https://docs.anchorbrowser.io/api-reference/profiles/get-profile.md): Retrieves details of a specific profile by its name.
+- [Delete Profile](https://docs.anchorbrowser.io/api-reference/profiles/delete-profile.md): Deletes an existing profile by its name.
+- [Take Screenshot](https://docs.anchorbrowser.io/api-reference/os-level-control/take-screenshot.md): Takes a screenshot of the current browser session and returns it as an image.
+- [Mouse Click](https://docs.anchorbrowser.io/api-reference/os-level-control/mouse-click.md): Performs a mouse click at the specified coordinates
+- [Mouse Double Click](https://docs.anchorbrowser.io/api-reference/os-level-control/mouse-double-click.md): Performs a double click at the specified coordinates
+- [Mouse Down](https://docs.anchorbrowser.io/api-reference/os-level-control/mouse-down.md): Performs a mouse button down action at the specified coordinates
+- [Mouse Up](https://docs.anchorbrowser.io/api-reference/os-level-control/mouse-up.md): Performs a mouse button up action at the specified coordinates
+- [Mouse Move](https://docs.anchorbrowser.io/api-reference/os-level-control/mouse-move.md): Moves the mouse cursor to the specified coordinates
+- [Drag and Drop](https://docs.anchorbrowser.io/api-reference/os-level-control/drag-and-drop.md): Performs a drag and drop operation from start coordinates to end coordinates
+- [Scroll](https://docs.anchorbrowser.io/api-reference/os-level-control/scroll.md): Performs a scroll action at the specified coordinates
+- [Type Text](https://docs.anchorbrowser.io/api-reference/os-level-control/type-text.md): Types the specified text with optional delay between keystrokes
+- [Keyboard Shortcut](https://docs.anchorbrowser.io/api-reference/os-level-control/keyboard-shortcut.md): Performs a keyboard shortcut using the specified keys
+- [Get Clipboard Content](https://docs.anchorbrowser.io/api-reference/os-level-control/get-clipboard-content.md): Retrieves the current content of the clipboard
+- [Set Clipboard Content](https://docs.anchorbrowser.io/api-reference/os-level-control/set-clipboard-content.md): Sets the content of the clipboard
+- [Copy Selected Text](https://docs.anchorbrowser.io/api-reference/os-level-control/copy-selected-text.md): Copies the currently selected text to the clipboard
+- [Paste Text](https://docs.anchorbrowser.io/api-reference/os-level-control/paste-text.md): Pastes text at the current cursor position
+- [Navigate to URL](https://docs.anchorbrowser.io/api-reference/os-level-control/navigate-to-url.md): Navigates the browser session to the specified URL
+- [Pause Session Recording](https://docs.anchorbrowser.io/api-reference/session-recordings/pause-session-recording.md): Pauses the video recording for the specified browser session.
+- [Resume Session Recording](https://docs.anchorbrowser.io/api-reference/session-recordings/resume-session-recording.md): Resumes the video recording for the specified browser session.
+- [List Session Recordings](https://docs.anchorbrowser.io/api-reference/session-recordings/list-session-recordings.md): Retrieves the URLs of the browser session's video recordings. Requires a valid API key for authentication.
+- [Get Session Recording](https://docs.anchorbrowser.io/api-reference/session-recordings/get-session-recording.md): Downloads the primary recording file for the specified browser session. Returns the recording as an MP4 file.
+- [Delete Session Recording](https://docs.anchorbrowser.io/api-reference/session-recordings/delete-session-recording.md): Deletes a specific recording from a browser session. Use "primary" as the recording_id to delete the primary recording.
+- [List Agent Resources](https://docs.anchorbrowser.io/api-reference/agentic-capabilities/list-agent-resources.md): List all resources that have been uploaded to the browser session for agent use. Returns resource metadata including name, size, type, and last modified timestamp.
+- [Upload Agent Resources](https://docs.anchorbrowser.io/api-reference/agentic-capabilities/upload-agent-resources.md): Upload files as agent resources to a browser session using multipart/form-data.  If you upload a ZIP file, it will be automatically extracted and the files will be made available as agent resources (pass `extract=false` to keep the archive itself instead). If you upload a single file, it will be sav…
+- [Pause Agent](https://docs.anchorbrowser.io/api-reference/agentic-capabilities/pause-agent.md): Pauses the AI agent for the specified browser session.
+- [Resume Agent](https://docs.anchorbrowser.io/api-reference/agentic-capabilities/resume-agent.md): Resumes the AI agent for the specified browser session.
+- [List Pending Human Interventions](https://docs.anchorbrowser.io/api-reference/agentic-capabilities/list-pending-human-interventions.md): Returns all pending human-in-the-loop (HITL) requests across the team's active browser sessions. Each item includes the intervention request plus the session ID and tags for routing responses.
+- [Get Requested Human Interventions](https://docs.anchorbrowser.io/api-reference/agentic-capabilities/get-requested-human-interventions.md): Retrieves pending human-in-the-loop (HITL) requests for a specific active browser session. Requires `human_intervention: true` on the task that is running in the session. The agent pauses until a response is submitted via `POST /v1/sessions/{session_id}/agent/respond-to-human-intervention`.
+- [Respond to Human Intervention](https://docs.anchorbrowser.io/api-reference/agentic-capabilities/respond-to-human-intervention.md): Sends a response to a pending human-in-the-loop (HITL) request for the specified session. Resolving a request unblocks the agent and emits an `intervention.resolved` webhook event when `requestId` is provided.
+- [List Extensions](https://docs.anchorbrowser.io/api-reference/extensions/list-extensions.md): Get all extensions for the authenticated user
+- [Upload Extension](https://docs.anchorbrowser.io/api-reference/extensions/upload-extension.md): Upload a new browser extension as a ZIP file. The extension will be validated and stored for use in browser sessions.
+- [Get Extension Details](https://docs.anchorbrowser.io/api-reference/extensions/get-extension-details.md): Get details of a specific extension by its ID
+- [Delete Extension](https://docs.anchorbrowser.io/api-reference/extensions/delete-extension.md): Delete an extension and remove it from storage
+- [List Certificates](https://docs.anchorbrowser.io/api-reference/certificates/list-certificates.md): Get all CA certificates uploaded for the team
+- [Upload Certificate](https://docs.anchorbrowser.io/api-reference/certificates/upload-certificate.md): Upload a CA certificate to trust in browser sessions. Certificates are managed at the team level. Once uploaded, reference the certificate by name when creating sessions to trust services using that CA.
+- [Delete Certificate](https://docs.anchorbrowser.io/api-reference/certificates/delete-certificate.md): Delete a CA certificate by name. The certificate will be removed from storage and can no longer be used in new sessions.
+- [List Integrations](https://docs.anchorbrowser.io/api-reference/integrations/list-integrations.md): Retrieves all integrations for the authenticated team.
+- [Create Integration](https://docs.anchorbrowser.io/api-reference/integrations/create-integration.md): Creates a new integration with a third-party service like 1Password.  The integration can then be used in browser sessions to automatically load secrets and credentials.
+- [Delete Integration](https://docs.anchorbrowser.io/api-reference/integrations/delete-integration.md): Deletes an existing integration and removes its stored credentials.
+- [Wait for Event](https://docs.anchorbrowser.io/api-reference/event-coordination/wait-for-event.md): Waits for a specific event to be signaled by another process, workflow, or session.  This endpoint blocks until the event is signaled or the timeout is reached. Useful for coordinating between multiple browser sessions or workflows.
+- [Signal Event](https://docs.anchorbrowser.io/api-reference/event-coordination/signal-event.md): Signals an event with associated data, unblocking any clients waiting for this event. This enables coordination between different browser sessions, workflows, or external processes.
+- [List Batch Sessions](https://docs.anchorbrowser.io/api-reference/batch-sessions/list-batch-sessions.md): Lists all batch session requests for the authenticated team, with optional filtering by status and pagination support.
+- [Create Batch Sessions](https://docs.anchorbrowser.io/api-reference/batch-sessions/create-batch-sessions.md): Creates multiple browser sessions in a single batch operation. This endpoint allows you to create up to 5,000 browser sessions simultaneously with the same configuration.
+- [Get Batch Session Status](https://docs.anchorbrowser.io/api-reference/batch-sessions/get-batch-session-status.md): Retrieves detailed status information for a specific batch, including progress, individual session details, and any errors that occurred.
+- [Delete Batch Sessions](https://docs.anchorbrowser.io/api-reference/batch-sessions/delete-batch-sessions.md): Deletes all sessions in a batch. Running sessions will be terminated and all session data will be removed.
+- [Update Batch Session](https://docs.anchorbrowser.io/api-reference/batch-sessions/update-batch-session.md): Updates a batch session. Supports cancelling a running or pending batch, which terminates all running sessions in the batch.
+- [Retry Failed Batch Sessions](https://docs.anchorbrowser.io/api-reference/batch-sessions/retry-failed-batch-sessions.md): Retries failed sessions in a batch by creating new browser pods for each failed session. The batch status will be set back to 'processing'.
+- [List Tasks (Legacy)](https://docs.anchorbrowser.io/api-reference/tasks-legacy/list-tasks-legacy.md): Retrieves a paginated list of all tasks for the authenticated team. Tasks are returned  with their latest version information and metadata.
+- [Create Task (Legacy)](https://docs.anchorbrowser.io/api-reference/tasks-legacy/create-task-legacy.md): Creates a new task or updates an existing task with the same name. Tasks are reusable code snippets  that can be executed in browser sessions. Tasks support versioning with draft and published versions.
+- [Run Task (Legacy)](https://docs.anchorbrowser.io/api-reference/tasks-legacy/run-task-legacy.md): Executes a task in a browser session. The task can be run with a specific version or the latest version. Optionally, you can provide an existing session ID or let the system create a new one.
+- [Run Task by Name (Legacy)](https://docs.anchorbrowser.io/api-reference/tasks-legacy/run-task-by-name-legacy.md): Executes a task by its name, always using the latest version. This is a convenience endpoint for running tasks without needing to know the task ID.
+- [Get Task Metadata (Legacy)](https://docs.anchorbrowser.io/api-reference/tasks-legacy/get-task-metadata-legacy.md): Retrieves task metadata without the code content. Useful for getting task information without downloading the full task code.
+- [Update Task Metadata (Legacy)](https://docs.anchorbrowser.io/api-reference/tasks-legacy/update-task-metadata-legacy.md): Updates task metadata (name and description). This does not affect the task code or versions.
+- [Delete Task (Legacy)](https://docs.anchorbrowser.io/api-reference/tasks-legacy/delete-task-legacy.md): Soft deletes a task and all its versions. The task will no longer be accessible but the data is preserved for potential recovery.
+- [List Task Versions (Legacy)](https://docs.anchorbrowser.io/api-reference/tasks-legacy/list-task-versions-legacy.md): Retrieves all versions of a specific task, including draft and published versions.
+- [Get Latest Task Version (Legacy)](https://docs.anchorbrowser.io/api-reference/tasks-legacy/get-latest-task-version-legacy.md): Retrieves the latest version of a task, including the full code content.
+- [Get Task Draft (Legacy)](https://docs.anchorbrowser.io/api-reference/tasks-legacy/get-task-draft-legacy.md): Retrieves the draft version of a task, including the full code content.
+- [Create or Update Task Draft (Legacy)](https://docs.anchorbrowser.io/api-reference/tasks-legacy/create-or-update-task-draft-legacy.md): Creates or updates the draft version of a task. Draft versions are used for development and testing before publishing.
+- [Deploy Task (Legacy)](https://docs.anchorbrowser.io/api-reference/tasks-legacy/deploy-task-legacy.md): Deploys a task by creating a new version with auto-incremented version number. This is the recommended way to publish task changes.
+- [List Task Executions (Legacy)](https://docs.anchorbrowser.io/api-reference/tasks-legacy/list-task-executions-legacy.md): Retrieves execution history for a task, including success/failure status, execution times, and outputs. Results can be filtered by version and status.
+- [Get Task Execution Result (Legacy)](https://docs.anchorbrowser.io/api-reference/tasks-legacy/get-task-execution-result-legacy.md): Retrieves a single execution result by its ID. This endpoint is useful for polling execution status in async mode or retrieving detailed execution information.
+- [Get Task Version (Legacy)](https://docs.anchorbrowser.io/api-reference/tasks-legacy/get-task-version-legacy.md): Retrieves a specific version of a task, including the full code content.
+- [Publish Task Version (Legacy)](https://docs.anchorbrowser.io/api-reference/tasks-legacy/publish-task-version-legacy.md): Publishes a specific version of a task. This creates a new version if it doesn't exist, or updates an existing version's metadata.
+- [Delete Task Version (Legacy)](https://docs.anchorbrowser.io/api-reference/tasks-legacy/delete-task-version-legacy.md): Soft deletes a specific version of a task. The version will no longer be accessible but the data is preserved for potential recovery.
+- [Get Billing Info](https://docs.anchorbrowser.io/api-reference/billing/get-billing-info.md): Retrieves credit balance, current-period credit usage, tier, and billing limits for the authenticated project. Pass `from_date`, `to_date`, or `granularity` to additionally receive a `usage` time series of credits used per period, matching `GET /v1/sessions/history?metrics=credits_used`.
+- [List Webhooks](https://docs.anchorbrowser.io/api-reference/webhooks/list-webhooks.md): List every active webhook for the authenticated project. The signing secret is never included.
+- [Create Webhook](https://docs.anchorbrowser.io/api-reference/webhooks/create-webhook.md): Register a new HTTPS endpoint to receive events. The response includes a one-time `secret` (HMAC-SHA256 signing key) — store it; Anchor never returns it again. Up to 5 webhooks per project.
+- [Get Webhook](https://docs.anchorbrowser.io/api-reference/webhooks/get-webhook.md): Fetch a single webhook config. The signing secret is never returned.
+- [Delete Webhook](https://docs.anchorbrowser.io/api-reference/webhooks/delete-webhook.md): Soft-delete a webhook. New events stop fanning out immediately. The events history (`/v1/webhooks/{id}/events`) is still queryable for the retention window even after delete.
+- [Update Webhook](https://docs.anchorbrowser.io/api-reference/webhooks/update-webhook.md): Partial update — pass only the fields you want to change. Setting `enabled: false` immediately stops events from fanning out to this webhook (existing in-flight deliveries finish their attempts).
+- [Rotate Webhook Signing Secret](https://docs.anchorbrowser.io/api-reference/webhooks/rotate-webhook-signing-secret.md): Mint a new HMAC-SHA256 signing secret. The previous secret remains valid for 24 hours so you can update your verification code at your own pace, then drop the old secret.
+- [Send Test Event](https://docs.anchorbrowser.io/api-reference/webhooks/send-test-event.md): Fire a synthetic event of the given type through the real signing + retry path. Useful during development for confirming your endpoint can verify the signature and is reachable from Anchor's egress IPs.
+- [List Webhook Deliveries](https://docs.anchorbrowser.io/api-reference/webhooks/list-webhook-deliveries.md): Paginated history of every delivery attempt for this webhook (succeeded, failed, or dead-lettered). Filter by status, event type, or time range. Retention: 7 days.
+- [List Volumes](https://docs.anchorbrowser.io/api-reference/volumes/list-volumes.md): List the volumes of your team.
+- [Create Volume](https://docs.anchorbrowser.io/api-reference/volumes/create-volume.md): Create a persistent volume for your team. The volume is usually `ready` immediately; if the response says `creating`, poll `GET /v1/volumes/{volume_id}` until it is. Each team can have up to 10 volumes.
+- [Get Volume By Name](https://docs.anchorbrowser.io/api-reference/volumes/get-volume-by-name.md): Get a volume by its name.
+- [Get Volume](https://docs.anchorbrowser.io/api-reference/volumes/get-volume.md): Get a volume by its ID. Deleted volumes return `404`; use `GET /v1/volumes?include_deleted=true` to see them.
+- [Delete Volume](https://docs.anchorbrowser.io/api-reference/volumes/delete-volume.md): Delete a volume and every file in it. Refused while a running session has the volume mounted; end those sessions first.
+- [List Files](https://docs.anchorbrowser.io/api-reference/volume-files/list-files.md): List the contents of a folder in the volume (one level, like `ls`), or the whole tree with `recursive=true`. Files written by a running session appear here about a minute after the session stops writing to them.
+- [Upload File](https://docs.anchorbrowser.io/api-reference/volume-files/upload-file.md): Upload a file into the volume in one multipart request. For files larger than 10 MB use `POST /v1/volumes/{volume_id}/files/upload-url` instead.
+- [Delete Files](https://docs.anchorbrowser.io/api-reference/volume-files/delete-files.md): Delete one file (`path`) or everything under a folder (`prefix` with `recursive=true`).
+- [Create Upload URL](https://docs.anchorbrowser.io/api-reference/volume-files/create-upload-url.md): Get a pre-signed URL to upload a file of any size (up to 5 GB) directly to storage. `PUT` the file body to `signed_url` and send the returned `headers` unchanged.
+- [Get File Info](https://docs.anchorbrowser.io/api-reference/volume-files/get-file-info.md): Size, type and modification time of one file.
+- [Download File](https://docs.anchorbrowser.io/api-reference/volume-files/download-file.md): Get a pre-signed URL for a file. Pass `redirect=true` to be redirected to the file instead of receiving the URL.
+- [List All Paths](https://docs.anchorbrowser.io/api-reference/volume-files/list-all-paths.md): Flat list of every path in the volume, optionally under a prefix. Folders appear with a trailing slash (for example `downloads/`).
+- [Create Directory](https://docs.anchorbrowser.io/api-reference/volume-files/create-directory.md): Create an empty folder in the volume. Folders are also created implicitly when a file is uploaded to a path inside them.
+- [SDK Reference](https://docs.anchorbrowser.io/sdk-reference/overview.md): Install and configure the anchorbrowser TypeScript and Python SDKs
+- [Migrating from 0.x.x](https://docs.anchorbrowser.io/sdk-reference/migration.md): Upgrade from any pre-1.0.0 SDK release (0.x.x and 1.0.0-dev)
+- [AgentAccess](https://docs.anchorbrowser.io/sdk-reference/agentaccess.md): SDK reference for the AgentAccess resource (TypeScript & Python)
+- [Sessions](https://docs.anchorbrowser.io/sdk-reference/sessions.md): SDK reference for the Sessions resource (TypeScript & Python)
+- [Tools](https://docs.anchorbrowser.io/sdk-reference/tools.md): SDK reference for the Tools resource (TypeScript & Python)
+- [Profiles](https://docs.anchorbrowser.io/sdk-reference/profiles.md): SDK reference for the Profiles resource (TypeScript & Python)
+- [Identities](https://docs.anchorbrowser.io/sdk-reference/identities.md): SDK reference for the Identities resource (TypeScript & Python)
+- [Applications](https://docs.anchorbrowser.io/sdk-reference/applications.md): SDK reference for the Applications resource (TypeScript & Python)
+- [Webhooks](https://docs.anchorbrowser.io/sdk-reference/webhooks.md): SDK reference for the Webhooks resource (TypeScript & Python)
+- [Tasks](https://docs.anchorbrowser.io/sdk-reference/tasks.md): SDK reference for the Tasks resource (TypeScript & Python)
+- [BatchSessions](https://docs.anchorbrowser.io/sdk-reference/batchsessions.md): SDK reference for the BatchSessions resource (TypeScript & Python)
+- [Recordings](https://docs.anchorbrowser.io/sdk-reference/recordings.md): SDK reference for the Recordings resource (TypeScript & Python)
+- [Agent](https://docs.anchorbrowser.io/sdk-reference/agent.md): SDK reference for the Agent resource (TypeScript & Python)
+- [Events](https://docs.anchorbrowser.io/sdk-reference/events.md): SDK reference for the Events resource (TypeScript & Python)
+- [Extensions](https://docs.anchorbrowser.io/sdk-reference/extensions.md): SDK reference for the Extensions resource (TypeScript & Python)
+- [Volumes](https://docs.anchorbrowser.io/sdk-reference/volumes.md): SDK reference for the Volumes resource (TypeScript & Python)
+- [Certificates](https://docs.anchorbrowser.io/sdk-reference/certificates.md): SDK reference for the Certificates resource (TypeScript & Python)
+- [Integrations](https://docs.anchorbrowser.io/sdk-reference/integrations.md): SDK reference for the Integrations resource (TypeScript & Python)
+- [Billing](https://docs.anchorbrowser.io/sdk-reference/billing.md): SDK reference for the Billing resource (TypeScript & Python)
+
+## OpenAPI Specs
+
+- [legacy_openapi](/legacy_openapi.yaml)
+- [openapi](/openapi.yaml)
+
+## Optional
+
+- [Interactive Playground](https://app.anchorbrowser.io/)
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

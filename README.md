@@ -73,3 +73,15 @@ python3 gateway_router.py --fetch "https://example.com"
 ## License
 
 This work is released under the 0BSD License. See `LICENSE` for details.
+
+---
+
+## Additional evidence-backed research set
+
+The `report/`, `data/`, `evidence/` and `scripts/` directories hold a second,
+independent pass at the same prompt. Unlike the catalog above, every figure in
+that set cites a captured artefact with an HTTP code and a sha256 in
+`evidence/index.tsv`. Start at `report/00-methodology.md`.
+
+The two sets were captured separately and are not reconciled with each other.
+The catalog above is unchanged.

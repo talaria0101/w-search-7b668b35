@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Trafilatura is a Python package and command-line tool to gather text from the web and turn raw HTML into structured data. It handles web crawling, downloads, scraping, and extraction of main texts, metadata and comments." lang="en" name="description" xml:lang="en" />
+<meta property="og:title" content="Trafilatura: discover web content, extract text and metadata" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://trafilatura.readthedocs.io/index.html" />
+<meta property="og:site_name" content="Trafilatura" />
+<meta property="og:description" content="Python package Python versions Code Coverage Downloads Reference DOI: 10.18653/v1/2021.acl-demo.15, Trafilatura command-line demo Description: Trafilatura is a comprehensive Python package and comm..." />
+<meta property="og:image" content="https://raw.githubusercontent.com/adbar/trafilatura/master/docs/trafilatura-logo.png" />
+<meta property="og:image:alt" content="Trafilatura" />
+
+    <title>Trafilatura: discover web content, extract text and metadata &#8212; Trafilatura 2.3.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="_static/documentation_options.js?v=67b02a41"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('consent', 'default', {
+                    'ad_storage': 'denied',
+                    'ad_user_data': 'denied',
+                    'ad_personalization': 'denied',
+                    'analytics_storage': 'denied'
+                });
+            </script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-K3R5QCVDF1"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-K3R5QCVDF1');
+            </script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://trafilatura.readthedocs.io/index.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installation" href="installation.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.3.1" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  <script async type="text/javascript" src="/_/static/javascript/readthedocs-addons.js"></script><meta name="readthedocs-project-slug" content="trafilatura" /><meta name="readthedocs-version-slug" content="latest" /><meta name="readthedocs-resolver-filename" content="/" /><meta name="readthedocs-http-status" content="200" /></head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/trafilatura-logo.png" class="logo__image only-light" alt="Trafilatura 2.3.1 documentation - Home"/>
+    <img src="_static/trafilatura-logo.png" class="logo__image only-dark pst-js-only" alt="Trafilatura 2.3.1 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="quickstart.html">
+    Quickstart
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="usage.html">
+    Usage
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorials.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="faq.html">
+    FAQ
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="troubleshooting.html">
+    Troubleshooting
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="extraction-overview.html">
+    How extraction works
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="evaluation.html">
+    Benchmarks and evaluation
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="corefunctions.html">
+    Core functions
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="settings.html">
+    Settings and customization
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="deprecations.html">
+    Deprecations and migration
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="used-by.html">
+    Uses & citations
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="tests.html">
+    Running the tests
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="background.html">
+    Background
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://adrien.barbaresi.eu/blog/tag/trafilatura.html">
+    Blog
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/adbar/trafilatura" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="quickstart.html">
+    Quickstart
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="usage.html">
+    Usage
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorials.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="troubleshooting.html">
+    Troubleshooting
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="extraction-overview.html">
+    How extraction works
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="evaluation.html">
+    Benchmarks and evaluation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="corefunctions.html">
+    Core functions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="settings.html">
+    Settings and customization
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="deprecations.html">
+    Deprecations and migration
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="used-by.html">
+    Uses & citations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tests.html">
+    Running the tests
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="background.html">
+    Background
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://adrien.barbaresi.eu/blog/tag/trafilatura.html">
+    Blog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/adbar/trafilatura" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="trafilatura-discover-web-content-extract-text-and-metadata">
+<h1>Trafilatura: discover web content, extract text and metadata<a class="headerlink" href="#trafilatura-discover-web-content-extract-text-and-metadata" title="Link to this heading">#</a></h1>
+<a class="reference external image-reference" href="https://pypi.python.org/pypi/trafilatura"><img alt="Python package" src="https://img.shields.io/pypi/v/trafilatura.svg" />
+</a>
+<a class="reference external image-reference" href="https://pypi.python.org/pypi/trafilatura"><img alt="Python versions" src="https://img.shields.io/pypi/pyversions/trafilatura.svg" />
+</a>
+<a class="reference external image-reference" href="https://codecov.io/gh/adbar/trafilatura"><img alt="Code Coverage" src="https://img.shields.io/codecov/c/github/adbar/trafilatura.svg" />
+</a>
+<a class="reference external image-reference" href="https://pepy.tech/project/trafilatura"><img alt="Downloads" src="https://static.pepy.tech/badge/trafilatura/month" />
+</a>
+<a class="reference external image-reference" href="https://aclanthology.org/2021.acl-demo.15/"><img alt="Reference DOI: 10.18653/v1/2021.acl-demo.15" src="https://img.shields.io/badge/DOI-10.18653%2Fv1%2F2021.acl--demo.15-blue" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference external image-reference" href="https://trafilatura.readthedocs.org/"><img alt="Trafilatura command-line demo" class="align-center" src="_images/trafilatura-demo.gif" style="width: 85%;" />
+</a>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading">#</a></h2>
+<p>Trafilatura is a comprehensive <strong>Python package and command-line tool</strong> designed to <strong>gather text from the Web and turn raw HTML into structured, meaningful data</strong>. It includes all necessary discovery and text processing components to perform <strong>web crawling, downloads, scraping, and extraction</strong> of main texts, metadata and comments. It aims at staying <strong>handy and modular</strong>: no database is required, the output can be converted to commonly used formats.</p>
+<p>Going from raw HTML to essential parts, it <strong>focuses on the actual content</strong>, <strong>avoids noise</strong> caused by recurring elements (headers, footers, boilerplate), and <strong>makes sense of the data and metadata</strong>. The extractor strikes a balance between limiting noise (precision) and including all valid parts (recall). It is <strong>robust and reasonably fast</strong>.</p>
+<p>Trafilatura is <a class="reference external" href="used-by.html">widely used</a> across <a class="reference external" href="https://github.com/adbar/trafilatura/network/dependents">thousands of projects</a>, including by HuggingFace, IBM, Microsoft Research, NVIDIA, the Allen Institute for AI, Stanford, and the Internet Archive.</p>
+<section id="features">
+<h3>Features<a class="headerlink" href="#features" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Advanced web crawling and text discovery:
+- Support for sitemaps (TXT, XML) and feeds (ATOM, JSON, RSS)
+- Smart crawling and URL management (filtering and deduplication)</p></li>
+<li><p>Parallel processing of online and offline input:
+- Live URLs, efficient and polite processing of download queues
+- Previously downloaded HTML files and parsed HTML trees</p></li>
+<li><p>Robust and configurable extraction of key elements:
+- Main text (own rule-based extractor with jusText and readability-lxml as fallbacks)
+- Metadata (title, author, date, site name, categories and tags)
+- Formatting and structure: paragraphs, titles, lists, quotes, code, line breaks, in-line text formatting
+- Optional elements: comments, links, images, tables
+- Optional add-ons: language detection, speed optimizations</p></li>
+<li><p>Multiple output formats:
+- TXT and Markdown
+- CSV
+- JSON
+- HTML, XML and <a class="reference external" href="https://tei-c.org/">XML-TEI</a></p></li>
+</ul>
+</section>
+<section id="evaluation">
+<h3>Evaluation<a class="headerlink" href="#evaluation" title="Link to this heading">#</a></h3>
+<p>Trafilatura consistently outperforms other open-source libraries in text extraction benchmarks. The <a class="reference external" href="evaluation.html">benchmark section</a> details alternatives and results, the <a class="reference external" href="https://github.com/adbar/trafilatura/blob/master/tests/README.rst">evaluation readme</a> describes how to reproduce the evaluation.</p>
+</section>
+</section>
+<section id="quick-start">
+<h2>Quick start<a class="headerlink" href="#quick-start" title="Link to this heading">#</a></h2>
+<p>Primary installation method is with a Python package manager: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">trafilatura</span></code> (→ <a class="reference external" href="installation.html">installation documentation</a>).</p>
+<p>With Python:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">trafilatura</span><span class="w"> </span><span class="kn">import</span> <span class="n">fetch_url</span><span class="p">,</span> <span class="n">extract</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">downloaded</span> <span class="o">=</span> <span class="n">fetch_url</span><span class="p">(</span><span class="s1">'https://github.blog/2019-03-29-leader-spotlight-erin-spiceland/'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">extract</span><span class="p">(</span><span class="n">downloaded</span><span class="p">)</span>
+<span class="go">'Erin Spiceland is a software engineer and ...'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">extract</span><span class="p">(</span><span class="n">downloaded</span><span class="p">,</span> <span class="n">output_format</span><span class="o">=</span><span class="s2">"json"</span><span class="p">,</span> <span class="n">with_metadata</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">'{"title": "Leader spotlight: Erin Spiceland", ...}'</span>
+</pre></div>
+</div>
+<p>On the command-line:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>trafilatura<span class="w"> </span>-u<span class="w"> </span><span class="s2">"https://github.blog/2019-03-29-leader-spotlight-erin-spiceland/"</span>
+<span class="c1"># outputs main content and comments as plain text ...</span>
+</pre></div>
+</div>
+<p>For more see <a class="reference external" href="usage.html">usage documentation</a> and <a class="reference external" href="tutorials.html">tutorials</a>.</p>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/rEOoItpzlVw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p>See the <a class="reference external" href="https://www.youtube.com/watch?v=8GkiOM17t0Q&amp;list=PL-pKWbySIRGMgxXQOtGIz1-nbfYLvqrci">video tutorials playlist</a> (multiple languages).</p>
+</section>
+<section id="license">
+<h2>License<a class="headerlink" href="#license" title="Link to this heading">#</a></h2>
+<p>This package is distributed under the <a class="reference external" href="https://www.apache.org/licenses/LICENSE-2.0.html">Apache 2.0 license</a>.</p>
+<p>Versions prior to v1.8.0 are under GPLv3+ license.</p>
+</section>
+<section id="support">
+<h2>Support<a class="headerlink" href="#support" title="Link to this heading">#</a></h2>
+<p><strong>If you value this software or depend on it for your product, consider
+sponsoring it and contributing to its codebase.</strong> Your support
+<a class="reference external" href="https://github.com/sponsors/adbar">on GitHub</a> or <a class="reference external" href="https://ko-fi.com/adbarbaresi">ko-fi.com</a>
+will help maintain and enhance this package.
+Visit the <a class="reference external" href="https://github.com/adbar/trafilatura/blob/master/CONTRIBUTING.md">Contributing page</a>
+for more information.</p>
+</section>
+<section id="context">
+<h2>Context<a class="headerlink" href="#context" title="Link to this heading">#</a></h2>
+<p>This work started as a PhD project at the crossroads of linguistics and NLP.
+This expertise has been instrumental in shaping Trafilatura over the years.
+Initially launched to create text databases for research purposes
+at the Berlin-Brandenburg Academy of Sciences (DWDS and ZDL units),
+this package continues to be maintained and its future depends on community support.</p>
+<p><em>Trafilatura</em> is an Italian word for <a class="reference external" href="https://en.wikipedia.org/wiki/Wire_drawing">wire drawing</a> symbolizing the refinement and conversion process. It is also the way shapes of pasta are formed.</p>
+<section id="author">
+<h3>Author<a class="headerlink" href="#author" title="Link to this heading">#</a></h3>
+<p>Reach out via the software repository or the <a class="reference external" href="https://adrien.barbaresi.eu/">contact page</a> for inquiries, collaborations, or feedback. See also social networks for the latest updates.</p>
+<ul class="simple">
+<li><p>Barbaresi, A. <a class="reference external" href="https://aclanthology.org/2021.acl-demo.15/">Trafilatura: A Web Scraping Library and Command-Line Tool for Text Discovery and Extraction</a>, Proceedings of ACL/IJCNLP 2021: System Demonstrations, 2021, p. 122-131.</p></li>
+<li><p>Barbaresi, A. “<a class="reference external" href="https://hal.archives-ouvertes.fr/hal-02447264/document">Generic Web Content Extraction with Open-Source Software</a>”, Proceedings of KONVENS 2019, Kaleidoscope Abstracts, 2019.</p></li>
+<li><p>Barbaresi, A. “<a class="reference external" href="https://hal.archives-ouvertes.fr/hal-01371704v2/document">Efficient construction of metadata-enhanced web corpora</a>”, Proceedings of the <a class="reference external" href="https://www.sigwac.org.uk/wiki/WAC-X">10th Web as Corpus Workshop (WAC-X)</a>, 2016.</p></li>
+</ul>
+</section>
+<section id="citing-trafilatura">
+<h3>Citing Trafilatura<a class="headerlink" href="#citing-trafilatura" title="Link to this heading">#</a></h3>
+<p>Trafilatura is widely used in the academic domain, chiefly for data acquisition. Here is how to cite it:</p>
+<a class="reference external image-reference" href="https://aclanthology.org/2021.acl-demo.15/"><img alt="Reference DOI: 10.18653/v1/2021.acl-demo.15" src="https://img.shields.io/badge/DOI-10.18653%2Fv1%2F2021.acl--demo.15-blue" />
+</a>
+<a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.3460969"><img alt="Zenodo archive DOI: 10.5281/zenodo.3460969" src="https://zenodo.org/badge/DOI/10.5281/zenodo.3460969.svg" />
+</a>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>@inproceedings<span class="o">{</span>barbaresi-2021-trafilatura,
+<span class="w">  </span><span class="nv">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{{</span>Trafilatura:<span class="w"> </span>A<span class="w"> </span>Web<span class="w"> </span>Scraping<span class="w"> </span>Library<span class="w"> </span>and<span class="w"> </span>Command-Line<span class="w"> </span>Tool<span class="w"> </span><span class="k">for</span><span class="w"> </span>Text<span class="w"> </span>Discovery<span class="w"> </span>and<span class="w"> </span>Extraction<span class="o">}}</span>,
+<span class="w">  </span><span class="nv">author</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Barbaresi, Adrien"</span>,
+<span class="w">  </span><span class="nv">booktitle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Proceedings of the Joint Conference of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing: System Demonstrations"</span>,
+<span class="w">  </span><span class="nv">pages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"122--131"</span>,
+<span class="w">  </span><span class="nv">publisher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Association for Computational Linguistics"</span>,
+<span class="w">  </span><span class="nv">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"https://aclanthology.org/2021.acl-demo.15"</span>,
+<span class="w">  </span><span class="nv">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2021</span>,
+<span class="o">}</span>
+</pre></div>
+</div>
+</section>
+<section id="software-ecosystem">
+<h3>Software ecosystem<a class="headerlink" href="#software-ecosystem" title="Link to this heading">#</a></h3>
+<p>Jointly developed plugins and additional packages also contribute to the field of web data extraction and analysis:</p>
+<a class="reference internal image-reference" href="_images/software-ecosystem.png"><img alt="Diagram of trafilatura and related packages (htmldate, courlan, jusText)" class="align-center" src="_images/software-ecosystem.png" style="width: 65%;" />
+</a>
+<p>Corresponding posts can be found on
+<a class="reference external" href="https://adrien.barbaresi.eu/blog/tag/trafilatura.html">Bits of Language</a>.
+The blog covers a range of topics from technical how-tos, updates on new
+features, to discussions on text mining challenges and solutions.</p>
+</section>
+</section>
+</section>
+<section id="further-documentation">
+<h1>Further documentation<a class="headerlink" href="#further-documentation" title="Link to this heading">#</a></h1>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#python">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#trafilatura-package">Trafilatura package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#additional-functionality">Additional functionality</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#with-python">With Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#on-the-command-line">On the command-line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#further-steps">Further steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage-python.html">Python usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage-cli.html">Command-line usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage-gui.html">Graphical user interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage-r.html">Usage with R</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage-api.html">API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="downloads.html">Download web pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crawls.html">Web crawling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deduplication.html">Deduplication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="url-management.html">URL management</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides &amp; tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial-corpus.html">Tutorial: Building a web corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial-frequencies.html">Tutorial: Word frequency lists from web pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial-tei.html">Tutorial: Validation of TEI files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial-dwds.html">Tutorial: DWDS-Korpusdaten reproduzieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial-chromadb.html">Tutorial: Text embedding with ChromaDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial-rag.html">Tutorial: Retrieval-augmented generation (RAG)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial-datasets.html">Tutorial: Building a training corpus with Hugging Face Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#blog-posts">Blog posts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#videos">Videos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#external-resources">External resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#how-to-extract-text-from-a-webpage-in-python">How to extract text from a webpage in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#which-extraction-function-should-i-use">Which extraction function should I use?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#how-does-trafilatura-compare-to-beautifulsoup-or-scrapy">How does Trafilatura compare to BeautifulSoup or Scrapy?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#how-to-extract-from-local-html-files">How to extract from local HTML files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#how-to-process-many-pages-efficiently">How to process many pages efficiently</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#how-to-customize-what-gets-extracted">How to customize what gets extracted</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#how-to-use-results-with-pandas-or-other-tools">How to use results with pandas or other tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#how-to-handle-large-or-slow-pages">How to handle large or slow pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#what-are-common-output-format-gotchas">What are common output format gotchas?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#debugging">Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#extraction-problems">Extraction problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#download-problems">Download problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#performance-problems">Performance problems</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="extraction-overview.html">How extraction works</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="extraction-overview.html#pipeline-at-a-glance">Pipeline at a glance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extraction-overview.html#stages">Stages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extraction-overview.html#extraction-modes">Extraction modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extraction-overview.html#metadata">Metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extraction-overview.html#output-formatting">Output formatting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="evaluation.html">Benchmarks and evaluation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="evaluation.html#external-evaluations">External evaluations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="evaluation.html#alternatives">Alternatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="evaluation.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="evaluation.html#results-2026-10-02">Results (2026-10-02)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="evaluation.html#older-results">Older results</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="corefunctions.html">Core functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="corefunctions.html#extraction">Extraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corefunctions.html#link-discovery">Link discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corefunctions.html#helpers">Helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corefunctions.html#xml-processing">XML processing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="settings.html">Settings and customization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="settings.html#configuration-file">Configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="settings.html#package-settings">Package settings</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deprecations.html">Deprecations and migration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deprecations.html#python-version-support">Python version support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deprecations.html#migrating-to-v2">Migrating to v2</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="used-by.html">Uses &amp; citations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="used-by.html#notable-projects-using-this-software">Notable projects using this software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="used-by.html#citations-in-papers">Citations in papers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="used-by.html#publications-citing-trafilatura">Publications citing Trafilatura</a></li>
+<li class="toctree-l2"><a class="reference internal" href="used-by.html#publications-citing-htmldate">Publications citing Htmldate</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>For version history and changes see the <a class="reference external" href="https://github.com/adbar/trafilatura/blob/master/HISTORY.md">changelog</a>.</p>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tests.html">Running the tests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#running-the-test-suite">Running the test suite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#type-checking-and-code-style">Type checking and code style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#benchmark-and-evaluation">Benchmark and evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#building-the-documentation">Building the documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Background</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="background.html">Background</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="compendium.html">Compendium: Web texts in linguistics and humanities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sources.html">Finding sources for web corpora</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpus-data.html">Working with corpus data</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="installation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Installation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Trafilatura: discover web content, extract text and metadata</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#features">Features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation">Evaluation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-start">Quick start</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license">License</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#support">Support</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#context">Context</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#author">Author</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#citing-trafilatura">Citing Trafilatura</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#software-ecosystem">Software ecosystem</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#further-documentation">Further documentation</a><ul class="pst-show_toc_level nav section-nav flex-column">
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/index.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Adrien Barbaresi.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.22.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

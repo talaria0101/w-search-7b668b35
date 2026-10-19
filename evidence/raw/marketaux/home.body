@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Free stock market and finance news API | marketaux</title>
+    <meta name="description" content="Free finance and stock market news and analysis API in JSON format for over 80 markets and over 5,000 sources.">
+    <meta name="keywords" content="stock news api,market news api,finance news api,business news api,json news api,stock market data">
+    <meta name="author" content="marketaux">
+    <meta itemprop="name" content="marketaux">
+    <meta itemprop="description" content="Free finance and stock market news and analysis API in JSON format for over 80 markets and over 5,000 sources.">
+    <meta name="og:title" content="marketaux">
+    <meta name="og:description" content="Free finance and stock market news and analysis API in JSON format for over 80 markets and over 5,000 sources.">
+    <meta name="og:url" content="https://www.marketaux.com">
+    <meta name="og:site_name" content="marketaux">
+    <meta name="og:locale" content="en_US">
+    <meta name="og:type" content="website">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+    <meta name="csrf-token" content="0e9SDWqOWuXE74bT1KCQjXlVCIc8wZIVVKiudJLf">
+    <link rel="canonical" href="https://www.marketaux.com">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="60x60" href="https://www.marketaux.com/website_assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.marketaux.com/website_assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.marketaux.com/website_assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="https://www.marketaux.com/website_assets/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="https://www.marketaux.com/website_assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Web Fonts  -->
+    <link href="https://www.marketaux.com/website_assets/css/fonts/PoppinsFont/font.css" rel="stylesheet" type="text/css">
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="https://www.marketaux.com/website_assets/vendor/bootstrap/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://www.marketaux.com/website_assets/vendor/fontawesome-free/css/all.min.css">
+
+    <link rel="stylesheet" href="https://www.marketaux.com/website_assets/vendor/prism/prism.css">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="https://www.marketaux.com/website_assets/css/theme.css">
+    <link rel="stylesheet" href="https://www.marketaux.com/website_assets/css/theme-elements.css">
+
+    <!-- Demo CSS -->
+    <link rel="stylesheet" href="https://www.marketaux.com/website_assets/css/demos/demo-sass.css">
+
+    <!-- Skin CSS -->
+    <link rel="stylesheet" href="https://www.marketaux.com/website_assets/css/skins/skin-sass.css">
+
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" href="https://www.marketaux.com/website_assets/css/custom.css">
+
+    <!-- Head Libs -->
+    <script src="https://www.marketaux.com/website_assets/vendor/modernizr/modernizr.min.js" type="faa9f177a72d00a9ad73573d-text/javascript"></script>
+
+    
+</head>
+<body data-spy="scroll" data-target=".header-nav-main nav" data-offset="100">
+
+<div class="body">
+    <header id="header" class="header-transparent header-effect-shrink" data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'shrink', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyChangeLogo': false, 'stickyStartAt': 30, 'stickyHeaderContainerHeight': 70}">
+        <div class="header-body border-top-0">
+            <div class="header-container container px-lg-4">
+                <div class="header-row px-lg-3">
+                    <div class="header-column">
+                        <div class="header-row">
+                            <div class="header-logo header-logo-sticky-change" style="width: 200px; height: 60px;">
+                                <a href="https://www.marketaux.com">
+                                    <img class="header-logo-non-sticky opacity-0" alt="marketaux" width="200" src="https://www.marketaux.com/website_assets/img/marketaux-light.svg">
+                                    <img class="header-logo-sticky opacity-0" alt="marketaux" width="200" src="https://www.marketaux.com/website_assets/img/marketaux-dark.svg">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-column justify-content">
+                        <div class="header-row">
+                            <div class="header-nav header-nav-line header-nav-bottom-line header-nav-light-text justify-content">
+                                <div class="header-nav-main header-nav-main-square header-nav-main-dropdown-no-borders header-nav-main-effect-2 header-nav-main-sub-effect-1">
+                                    <nav class="collapse">
+                                        <ul class="nav nav-pills" id="mainNav">
+                                            <li><a data-hash data-hash-offset="60" href="https://www.marketaux.com" class="dropdown-item active">HOME</a></li>
+                                            <li><a data-hash data-hash-offset="60" href="https://www.marketaux.com/documentation" class="dropdown-item ">DOCUMENTATION</a></li>
+                                            <li><a data-hash data-hash-offset="60" href="https://www.marketaux.com/pricing" class="dropdown-item ">PRICING</a></li>
+                                            <li><a data-hash data-hash-offset="60" href="https://www.marketaux.com/contact" class="dropdown-item ">CONTACT US</a></li>
+                                                                                        <li><a data-hash data-hash-offset="60" href="https://www.marketaux.com/login" class="dropdown-item ">LOGIN</a></li>
+                                            <li><a data-hash data-hash-offset="60" href="https://www.marketaux.com/register" class="dropdown-item ">SIGN UP</a></li>
+                                                                                    </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-column d-lg-none">
+                        <div class="header-row justify-content-end">
+                            <button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main nav">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+        <div role="main" class="main">
+
+        <section class="section bg-primary curved-border position-relative border-0 m-0" style="height:100vh;" id="intro">
+
+            <div class="position-absolute" style="top: 25%; left: 16%;">
+                <img src="https://www.marketaux.com/website_assets/img/icons/icon-1.png" class="img-fluid" alt="" data-plugin-float-element data-plugin-options="{'startPos': 'none', 'speed': 3, 'transition': true}" />
+            </div>
+            <div class="position-absolute" style="top: 42%; left: 10%;">
+                <img src="https://www.marketaux.com/website_assets/img/icons/icon-2.png" class="img-fluid" alt="" data-plugin-float-element data-plugin-options="{'startPos': 'none', 'speed': 3.5, 'transition': true, 'horizontal': true}" />
+            </div>
+            <div class="position-absolute" style="top: 60%; left: 20%;">
+                <img src="https://www.marketaux.com/website_assets/img/icons/icon-3.png" class="img-fluid" alt="" data-plugin-float-element data-plugin-options="{'startPos': 'none', 'speed': 2.5, 'transition': true}" />
+            </div>
+            <div class="position-absolute" style="top: 22%; right: 25%;">
+                <img src="https://www.marketaux.com/website_assets/img/icons/icon-4.png" class="img-fluid" alt="" data-plugin-float-element data-plugin-options="{'startPos': 'none', 'speed': 2, 'transition': true, 'horizontal': true}" />
+            </div>
+            <div class="position-absolute" style="top: 49%; right: 16%;">
+                <img src="https://www.marketaux.com/website_assets/img/icons/icon-5.png" class="img-fluid" alt="" data-plugin-float-element data-plugin-options="{'startPos': 'none', 'speed': 3, 'transition': true}" />
+            </div>
+            <div class="position-absolute" style="top: 71%; right: 13%;">
+                <img src="https://www.marketaux.com/website_assets/img/icons/icon-6.png" class="img-fluid" alt="" data-plugin-float-element data-plugin-options="{'startPos': 'none', 'speed': 2.5, 'transition': true, 'horizontal': true}" />
+            </div>
+
+            <div class="container pt-5 mt-5">
+                <div class="row justify-content-center pt-5 mt-5">
+                    <div class="col-lg-7 text-center pt-3">
+                        <h1 class="text-color-light font-weight-extra-bold text-12 line-height-2">Free stock market and financial news API</h1>
+                        <div>
+                            <p class="text-color-light opacity-6 text-5 pb-3 mb-4">Instant access to global stock market and finance news also including funds, crypto and more along with comprehensive sentiment analysis.</p>
+                        </div>
+                        <a href="https://www.marketaux.com/register" class="btn btn-light text-color-dark custom-secondary-font font-weight-bold text-3 px-5 py-3">GET FREE API KEY</a>
+                        <a href="https://www.marketaux.com/documentation" class="btn btn-dark custom-secondary-font font-weight-bold text-3 px-5 py-3 ml-4">VIEW DOCUMENTATION</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="custom-animated-circles">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+
+        </section>
+
+        <div class="custom-screens-carousel">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col">
+                        <div class="carousel-ipad pt-3 px-3">
+                            <div class="text-left ml-1">
+                                <div class="apple_dot bg-danger border border-color-danger"></div>
+                                <div class="apple_dot bg-warning border border-color-warning"></div>
+                                <div class="apple_dot bg-success border border-color-success"></div>
+                            </div>
+                            <div class="nav-style-1 m-0 scrollbar-style-1">
+
+                                <div>
+                                    <pre class="code-dark mb-4 scrollbar-style-1" style="min-height:700px; max-height: 700px;">
+                                        <code class="language-json">
+                                            {
+    &quot;meta&quot;: {
+        &quot;found&quot;: 6250,
+        &quot;returned&quot;: 5,
+        &quot;limit&quot;: 5,
+        &quot;page&quot;: 1
+    },
+    &quot;data&quot;: [
+        {
+            &quot;uuid&quot;: &quot;2ff933ad-da95-4506-b803-3d906121585a&quot;,
+            &quot;title&quot;: &quot;IBEX: AI BPO Could Be The Next Growth Driver (NASDAQ:IBEX)&quot;,
+            &quot;description&quot;: &quot;IBEX Limited trades at a 30% forward EV/EBITDA premium to peers, justified by 3x higher forward EBITDA growth. Find out why IBEX stock is a Buy.&quot;,
+            &quot;keywords&quot;: &quot;&quot;,
+            &quot;snippet&quot;: &quot;IBEX Limited ( IBEX ) is rated as a &#039;Buy&#039;. Compared to other BPO peers, the company&#039;s forward EBITDA is expected to see 3x the growth rate, which justifies the ...&quot;,
+            &quot;url&quot;: &quot;https://seekingalpha.com/article/4955093-ibex-stock-ai-bpo-could-be-the-next-growth-driver&quot;,
+            &quot;image_url&quot;: &quot;https://static.seekingalpha.com/cdn/s3/uploads/getty_images/2242072348/image_2242072348.jpg?io=getty-c-w1536&quot;,
+            &quot;language&quot;: &quot;en&quot;,
+            &quot;published_at&quot;: &quot;2026-10-19T04:11:35.000000Z&quot;,
+            &quot;source&quot;: &quot;seekingalpha.com&quot;,
+            &quot;relevance_score&quot;: null,
+            &quot;entities&quot;: [
+                {
+                    &quot;symbol&quot;: &quot;IBEX&quot;,
+                    &quot;name&quot;: &quot;IBEX Limited&quot;,
+                    &quot;exchange&quot;: null,
+                    &quot;exchange_long&quot;: null,
+                    &quot;country&quot;: &quot;us&quot;,
+                    &quot;type&quot;: &quot;equity&quot;,
+                    &quot;industry&quot;: &quot;Technology&quot;,
+                    &quot;match_score&quot;: 46.374,
+                    &quot;sentiment_score&quot;: 0.3818,
+                    &quot;highlights&quot;: [
+                        {
+                            &quot;highlight&quot;: &quot;IBEX: AI BPO Could Be The Next Growth Driver (&lt;em&gt;NASDAQ:IBEX&lt;/em&gt;)&quot;,
+                            &quot;sentiment&quot;: 0.3818,
+                            &quot;highlighted_in&quot;: &quot;title&quot;
+                        }
+                    ]
+                }
+            ],
+            &quot;similar&quot;: []
+        },
+        {
+            &quot;uuid&quot;: &quot;f12375a7-3c6d-40e7-ba58-083f226980d7&quot;,
+            &quot;title&quot;: &quot;Spinoff Odds &amp; Ends: KFC, Kenvue &amp; GE Vernova&quot;,
+            &quot;description&quot;: &quot;Twelve spinoff stories: KFC&#039;s break with Pepsi, Kenvue&#039;s takeover, GE Vernova&#039;s power deal, Solventum&#039;s strategic review, and more. Copy&quot;,
+            &quot;keywords&quot;: &quot;&quot;,
+            &quot;snippet&quot;: &quot;A former spinoff is moving toward a takeover, another is lining up a sale of one of its own divisions, and KFC is finally ending a corporate relationship that d...&quot;,
+            &quot;url&quot;: &quot;https://www.stockspinoffs.com/2026/10/19/spinoff-odds-ends-october-18-2026/&quot;,
+            &quot;image_url&quot;: &quot;&quot;,
+            &quot;language&quot;: &quot;en&quot;,
+            &quot;published_at&quot;: &quot;2026-10-19T04:10:24.000000Z&quot;,
+            &quot;source&quot;: &quot;stockspinoffs.com&quot;,
+            &quot;relevance_score&quot;: null,
+            &quot;entities&quot;: [
+                {
+                    &quot;symbol&quot;: &quot;JNJ&quot;,
+                    &quot;name&quot;: &quot;Johnson &amp; Johnson&quot;,
+                    &quot;exchange&quot;: null,
+                    &quot;exchange_long&quot;: null,
+                    &quot;country&quot;: &quot;us&quot;,
+                    &quot;type&quot;: &quot;equity&quot;,
+                    &quot;industry&quot;: &quot;Healthcare&quot;,
+                    &quot;match_score&quot;: 14.50304,
+                    &quot;sentiment_score&quot;: -0.6249,
+                    &quot;highlights&quot;: [
+                        {
+                            &quot;highlight&quot;: &quot;Kenvue emerged from &lt;em&gt;Johnson&lt;/em&gt; &amp; &lt;[+260 characters]&quot;,
+                            &quot;sentiment&quot;: -0.6249,
+                            &quot;highlighted_in&quot;: &quot;main_text&quot;
+                        }
+                    ]
+                }
+            ],
+            &quot;similar&quot;: []
+        },
+        {
+            &quot;uuid&quot;: &quot;dd13389f-7193-4d97-8cd5-e67f8ef59144&quot;,
+            &quot;title&quot;: &quot;Christina Nadin is second Filipina to walk Victoria’s Secret runway&quot;,
+            &quot;description&quot;: &quot;MANILA, Philippines — Filipino-Irish-British model Christina Nadin made history as the second Filipina to walk the runway of the Victoria’s Secret Fashion Show, eight years after fellow Filipina model Kelsey Merritt broke ground at the fashion event.&quot;,
+            &quot;keywords&quot;: &quot;Christina, Nadin, is, second, Filipina, to, walk, Victoria’s, Secret, runway&quot;,
+            &quot;snippet&quot;: &quot;MANILA, Philippines — Filipino-Irish-British model Christina Nadin made history as the second Filipina to walk the runway of the Victoria’s Secret Fashion S...&quot;,
+            &quot;url&quot;: &quot;https://www.manilatimes.net/2026/10/19/entertainment-lifestyle/show-times/christina-nadin-is-second-filipina-to-walk-victorias-secret-runway/2448309&quot;,
+            &quot;image_url&quot;: &quot;https://manilatimes.net/manilatimes/uploads/images/2026/10/19/1265339.jpeg&quot;,
+            &quot;language&quot;: &quot;en&quot;,
+            &quot;published_at&quot;: &quot;2026-10-19T04:03:43.000000Z&quot;,
+            &quot;source&quot;: &quot;manilatimes.net&quot;,
+            &quot;relevance_score&quot;: null,
+            &quot;entities&quot;: [
+                {
+                    &quot;symbol&quot;: &quot;SONY&quot;,
+                    &quot;name&quot;: &quot;Sony Group Corporation&quot;,
+                    &quot;exchange&quot;: null,
+                    &quot;exchange_long&quot;: null,
+                    &quot;country&quot;: &quot;us&quot;,
+                    &quot;type&quot;: &quot;equity&quot;,
+                    &quot;industry&quot;: &quot;Technology&quot;,
+                    &quot;match_score&quot;: 13.192569,
+                    &quot;sentiment_score&quot;: -0.1531,
+                    &quot;highlights&quot;: [
+                        {
+                            &quot;highlight&quot;: &quot;Among those who attended the event at &lt;e[+81 characters]&quot;,
+                            &quot;sentiment&quot;: -0.1531,
+                            &quot;highlighted_in&quot;: &quot;main_text&quot;
+                        }
+                    ]
+                }
+            ],
+            &quot;similar&quot;: []
+        },
+        {
+            &quot;uuid&quot;: &quot;d574b4cd-fb3a-42cd-ac6f-d8257f6e5ae0&quot;,
+            &quot;title&quot;: &quot;Intelligent Scopes Unveils the ISC 100: The Solution Enabling Urology AI to Work Beside Any Cystoscopy Tower - No Replacement, No Rewiring, No Cloud&quot;,
+            &quot;description&quot;: &quot;Compact edge platform brings ISC’s AI software to the point of care on NVIDIA Jetson; first software device, CystoSmart™, cleared in Brazil and Singapore&quot;,
+            &quot;keywords&quot;: &quot;Intelligent, Scopes, Unveils, the, ISC, 100:, The, Solution, Enabling, Urology, AI, to, Work, Beside, Any, Cystoscopy, Tower, -, No, Replacement, , No, Rewiring, , No, Cloud&quot;,
+            &quot;snippet&quot;: &quot;Compact edge platform brings ISC’s AI software to the point of care on NVIDIA Jetson; first software device, CystoSmart™, cleared in Brazil and Singapore\n\nI...&quot;,
+            &quot;url&quot;: &quot;https://www.manilatimes.net/2026/10/19/tmt-newswire/globenewswire/intelligent-scopes-unveils-the-isc-100-the-solution-enabling-urology-ai-to-work-beside-any-cystoscopy-tower-no-replacement-no-rewiring-no-cloud/2448291&quot;,
+            &quot;image_url&quot;: &quot;https://manilatimes.net/manilatimes/uploads/images/2026/10/19/1265305.jpg&quot;,
+            &quot;language&quot;: &quot;en&quot;,
+            &quot;published_at&quot;: &quot;2026-10-19T03:38:02.000000Z&quot;,
+            &quot;source&quot;: &quot;manilatimes.net&quot;,
+            &quot;relevance_score&quot;: null,
+            &quot;entities&quot;: [
+                {
+                    &quot;symbol&quot;: &quot;NVDA&quot;,
+                    &quot;name&quot;: &quot;NVIDIA Corporation&quot;,
+                    &quot;exchange&quot;: null,
+                    &quot;exchange_long&quot;: null,
+                    &quot;country&quot;: &quot;us&quot;,
+                    &quot;type&quot;: &quot;equity&quot;,
+                    &quot;industry&quot;: &quot;Technology&quot;,
+                    &quot;match_score&quot;: 16.259026,
+                    &quot;sentiment_score&quot;: 0.079433,
+                    &quot;highlights&quot;: [
+                        {
+                            &quot;highlight&quot;: &quot;Compact edge platform brings ISC’s AI [+323 characters]&quot;,
+                            &quot;sentiment&quot;: 0.765,
+                            &quot;highlighted_in&quot;: &quot;main_text&quot;
+                        },
+                        {
+                            &quot;highlight&quot;: &quot;The ISC 100 at a glance\n\nEdge high-perfo[+324 characters]&quot;,
+                            &quot;sentiment&quot;: -0.5267,
+                            &quot;highlighted_in&quot;: &quot;main_text&quot;
+                        },
+                        {
+                            &quot;highlight&quot;: &quot;&lt;em&gt;NVIDIA&lt;/em&gt; and Jetson are trademark[+187 characters]&quot;,
+                            &quot;sentiment&quot;: 0,
+                            &quot;highlighted_in&quot;: &quot;main_text&quot;
+                        }
+                    ]
+                }
+            ],
+            &quot;similar&quot;: []
+        },
+        {
+            &quot;uuid&quot;: &quot;b8ca9491-16a3-431c-a0a1-77158afd5914&quot;,
+            &quot;title&quot;: &quot;‘Keep expectations low’: Anand Mahindra’s nostalgic post about visiting Rishikesh gets mixed response on social media&quot;,
+            &quot;description&quot;: &quot;Anand Mahindra shared nostalgic memories of Rishikesh, recalling its restaurants and hills from his filmmaking days. Social media users responded with their own memories and reflections on the changes.&quot;,
+            &quot;keywords&quot;: &quot;anand mahindra instagram, Anand Mahindra, Chairperson of Mahindra and Mahindra, anand mahindra instagram id, anand mahindra net worth, anand mahindra net worth in rupees, anand mahindra daughter, anand mahindra mail id, anand mahindra family, anand mahindra net worth in rupees 2026, rishikesh distance, rishikesh to dehradun distance, rishikesh to haridwar distance, rishikesh hotels, rishikesh to mussoorie distance, rishikesh to nainital distance, rishikesh to delhi distance, rishikesh to delhi bus, rishikesh railway station, rishikesh bus stand&quot;,
+            &quot;snippet&quot;: &quot;Anand Mahindra shared photos of Rishikesh on social media, recalling his filmmaking days. He remembered visiting Chotiwala restaurant regularly while working on...&quot;,
+            &quot;url&quot;: &quot;https://www.livemint.com/news/trends/keep-expectations-low-anand-mahindra-s-nostalgic-post-about-visiting-rishikesh-gets-mixed-response-on-social-media-11792380379249.html&quot;,
+            &quot;image_url&quot;: &quot;https://www.livemint.com/lm-img/img/2026/10/19/1600x900/logo/Rishi_1792380725317_bAlB_1792380733246_VIlw_bf6dac8c-0b7d-46b4-a188-2f9bd5610e27_EYPG.jpg&quot;,
+            &quot;language&quot;: &quot;en&quot;,
+            &quot;published_at&quot;: &quot;2026-10-19T03:32:58.000000Z&quot;,
+            &quot;source&quot;: &quot;livemint.com&quot;,
+            &quot;relevance_score&quot;: null,
+            &quot;entities&quot;: [
+                {
+                    &quot;symbol&quot;: &quot;SONY&quot;,
+                    &quot;name&quot;: &quot;Sony Group Corporation&quot;,
+                    &quot;exchange&quot;: null,
+                    &quot;exchange_long&quot;: null,
+                    &quot;country&quot;: &quot;us&quot;,
+                    &quot;type&quot;: &quot;equity&quot;,
+                    &quot;industry&quot;: &quot;Technology&quot;,
+                    &quot;match_score&quot;: 11.830726,
+                    &quot;sentiment_score&quot;: 0.1027,
+                    &quot;highlights&quot;: [
+                        {
+                            &quot;highlight&quot;: &quot;Neal Street Productions is producing it [+297 characters]&quot;,
+                            &quot;sentiment&quot;: 0.1027,
+                            &quot;highlighted_in&quot;: &quot;main_text&quot;
+                        }
+                    ]
+                }
+            ],
+            &quot;similar&quot;: []
+        }
+    ]
+}
+                                        </code>
+                                    </pre>
+                                    Example response
+                                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container my-5">
+            <div class="row text-center py-5">
+                <div class="col px-5">
+                    <h1 class="word-rotator-title font-weight-bold text-9 mb-3">
+                        marketaux is Incredibly Powerful and Easy-to-Use
+                    </h1>
+                    <p class="lead px-5 mb-0">
+                        Get the latest financial and stock market news from top news sources. Use our API to access clean and relevant financial news and analysis.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <section class="section m-0 mt-4 border-0 p-relative" id="features">
+            <div class="container">
+                <div class="row py-2 align-items-center justify-content-center">
+                    <div class="col-lg-6 text-center">
+                        <img class="img-fluid" src="https://www.marketaux.com/website_assets/img/home/43.png" alt="Entity tracking illustration">
+                    </div>
+                    <div class="col-lg-6 text-center text-lg-left">
+                        <h2 class="text-color-dark font-weight-bold text-6 mb-1">Over 200,000 entities tracked every minute</h2>
+                        <p class="lead">We track over 80 global markets with news from more than 5,000 quality sources in 30+ languages.</p>
+                        <p>Concise analysis of only relevant text allows us to generate superior analytics for stocks and other entities.</p>
+                        <a href="https://www.marketaux.com/news/country/us" class="btn btn-dark custom-secondary-font font-weight-bold text-3 px-5 py-3 mt-3">VIEW SUPPORTED ENTITIES</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="custom-animated-circles custom-animated-circles-primary custom-animated-circles-pos-3 d-none d-block-md">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+        </section>
+
+        <section class="section bg-transparent m-0 border-0">
+            <div class="container">
+                <div class="row py-2 align-items-center justify-content-center">
+                    <div class="col-lg-6 text-center text-lg-left">
+                        <h2 class="text-color-dark font-weight-bold text-6 mb-1">Advanced language processing technology</h2>
+                        <p class="lead">Our NLP technology allows us to identify critical details within news articles.</p>
+                        <p>Our tracked entities include stocks, indices, ETFs, commodities, mutual funds, futures, currencies and crypto, complete with relevant analysis.</p>
+                        <a href="https://www.marketaux.com/register" class="btn btn-dark custom-secondary-font font-weight-bold text-3 px-5 py-3 mt-3">GET FREE API KEY</a>
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <img class="img-fluid" src="https://www.marketaux.com/website_assets/img/home/42.png" alt="Advanced natural language processing technology illustration">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-height-3 curved-border curved-border-top m-0 border-0" id="faqs">
+            <div class="container">
+                <div class="row py-2">
+                    <div class="col text-center">
+                        <h2 class="text-color-dark font-weight-bold text-7 mb-1">Frequent Asked Questions</h2>
+                    </div>
+                </div>
+                <div class="row py-3 align-items-center justify-content-center">
+                    <div class="col-sm-9">
+                        <div class="toggle toggle-minimal toggle-primary" data-plugin-toggle>
+                                                            <section class="toggle active">
+                                    <a class="toggle-title">Do I have to pay?</a>
+                                    <div class="toggle-content">
+                                        <p class="pb-3">Our service is 100% free to use on our free plan - no payment details are required.</p>
+                                    </div>
+                                </section>
+                                                            <section class="toggle active">
+                                    <a class="toggle-title">What counts as an API request?</a>
+                                    <div class="toggle-content">
+                                        <p class="pb-3">Each time the API is used to access financial news or analysis data, 1 API request is added to your daily usage. The number of requests allowed for your account depends on which subscription plan you are on.</p>
+                                    </div>
+                                </section>
+                                                            <section class="toggle active">
+                                    <a class="toggle-title">Can I pay annually?</a>
+                                    <div class="toggle-content">
+                                        <p class="pb-3">Yes, paying annually will provide you 2 months free per year (20% discount). To register for a yearly plan, simply go to our pricing page while logged in and select a plan and you will be prompted to pay monthly or annually.</p>
+                                    </div>
+                                </section>
+                                                    </div>
+                    </div>
+                </div>
+                <div class="row py-2">
+                    <div class="col text-center">
+                        <a href="https://www.marketaux.com/faq" class="btn btn-light text-color-dark custom-secondary-font font-weight-bold text-3 px-5 py-3">SEE ALL FAQs</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer id="footer" class="bg-color-secondary border-top-0 mt-0">
+        <div class="footer-copyright bg-color-primary bg-color-scale-overlay bg-color-scale-overlay-1">
+            <div class="bg-color-scale-overlay-wrapper">
+                <div class="container py-2 px-0">
+                    <div class="row py-4">
+                        <div class="col-lg-5 d-flex align-items-center justify-content-center justify-content-lg-start mb-4 mb-lg-0">
+                            <p class="text-color-light">marketaux © Copyright 2026</p>
+                        </div>
+                        <div class="col-lg-6 d-flex align-items-center justify-content-center justify-content-lg-end">
+                            <nav id="sub-menu">
+                                <ul>
+                                    <li class="border-0"><i class="fas fa-angle-right text-color-light"></i><a href="https://www.marketaux.com/news/country/us" class="ml-1 text-decoration-none text-color-light"> API Overview</a></li>
+                                    <li class="border-0"><i class="fas fa-angle-right text-color-light"></i><a href="https://www.marketaux.com/faq" class="ml-1 text-decoration-none text-color-light"> FAQs</a></li>
+                                    <li class="border-0"><i class="fas fa-angle-right text-color-light"></i><a href="https://www.marketaux.com/tos" class="ml-1 text-decoration-none text-color-light"> Terms and Conditions</a></li>
+                                    <li class="border-0"><i class="fas fa-angle-right text-color-light"></i><a href="https://www.marketaux.com/privacy" class="ml-1 text-decoration-none text-color-light"> Privacy</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- Vendor -->
+<script src="https://www.marketaux.com/website_assets/vendor/jquery/jquery.min.js" type="faa9f177a72d00a9ad73573d-text/javascript"></script>
+<script src="https://www.marketaux.com/website_assets/vendor/bootstrap/js/bootstrap.min.js" type="faa9f177a72d00a9ad73573d-text/javascript"></script>
+
+<!--(remove-empty-lines-end)-->
+
+<!-- Theme Base, Components and Settings -->
+<script src="https://www.marketaux.com/website_assets/js/theme.js" type="faa9f177a72d00a9ad73573d-text/javascript"></script>
+
+<!-- Theme Initialization Files -->
+<script src="https://www.marketaux.com/website_assets/js/theme.init.js" type="faa9f177a72d00a9ad73573d-text/javascript"></script>
+
+<script src="https://www.marketaux.com/website_assets/vendor/prism/prism.js" type="faa9f177a72d00a9ad73573d-text/javascript"></script>
+
+
+
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="faa9f177a72d00a9ad73573d-|49" defer></script></body>
+</html>

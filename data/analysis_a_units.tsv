@@ -1,0 +1,20 @@
+provider	category	provider_class	monthly_requests_per_account	basis	source	include_in_total
+Keenable	search	core	100000	100,000 requests/month (documented)	https://docs.keenable.ai/llms.txt	yes
+StackExchange API	social	adjacent	300000	10,000 requests/day x 30 days (documented keyed quota)	https://api.stackexchange.com/docs/throttle	yes
+Open-Meteo	weather	adjacent	300000	300,000 calls/month (documented free non-commercial tier)	https://open-meteo.com/en/pricing	yes
+TinyFish	fetch	core	30000	1,000 fetch URLs/day x 30 days	https://docs.tinyfish.ai/llms.txt	yes
+Currents API	news	core	7500	250 requests/day x 30 days	https://currentsapi.services/en/pricing	yes
+Parallel	search	core	5000	"Up to 5,000 requests/month" (documented)	https://parallel.ai/pricing	yes
+NewsAPI.org	news	core	3000	100 requests/day x 30 days (developer plan)	https://newsapi.org/pricing	yes
+Marketaux	news	core	3000	100 requests/day x 30 days	https://www.marketaux.com/pricing	yes
+Google Programmable Search	search	core	3000	100 queries/day x 30 days	https://developers.google.com/custom-search/v1/overview	yes
+You.com	search	core	3000	100 Web Search queries/day x 30 days	https://you.com/docs/llms.txt	yes
+Exa	search	core	2500	$10 credits/month at $4 per 1,000 instant searches	https://exa.ai/docs/admin/billing.md	yes
+Tavily	search	core	1000	1,000 credits/month; basic search = 1 credit	https://docs.tavily.com/documentation/api-credits.md	yes
+Brave Search API	search	core	1000	$5 free credit/month at $5 per 1,000 queries	https://brave.com/search/api/	yes
+AnyAPI	fetch	core	300	300 requests/month	https://anyapi.io/pricing	yes
+SerpApi	serp	core	250	250 searches/month	https://serpapi.com/pricing	yes
+Microlink	fetch	core	100	100 requests/month	https://microlink.io/pricing	yes
+Cloro	fetch	core	71	500 credits/month at 7 credits per request (worst case)	https://cloro.dev/pricing	yes
+Zenserp	serp	core	50	50 searches/month	https://zenserp.com/pricing	yes
+Anchor Browser	browser	core	50	5 credits/month at 0.1 credit per completed task	https://anchorbrowser.io/pricing	yes

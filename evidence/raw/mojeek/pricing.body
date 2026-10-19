@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="referrer" content="origin" />
+	<meta name="HandheldFriendly" content="True" />
+	<meta name="MobileOptimized" content="320" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>404 Page Not Found - Mojeek</title>
+	<link rel="stylesheet" type="text/css" href="/css/style.css" />
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<style>
+		h1{font-size: 72px; letter-spacing: 3px; line-height: 80px; margin: 40px 0 16px 0;}
+		.sf2, .btn{width: 100%; margin-top: 24px;}
+		p{width: 100%;}
+		.mojeekbot{width:100%; margin-top: 24px;}
+		h2{letter-spacing: 0.5px; white-space: normal; margin-bottom: 24px;}
+		h3{white-space: normal;}
+		.container{padding: 0;}
+		@media (min-width: 768px) {
+			.row{height:480px;}
+			.col-12-xs, .col-7-md, .col-6, .col-5-md{height: 100%; display:flex; align-content: flex-end; flex-wrap: wrap;}
+			.container{max-width:1200px; display: flex; align-items: center; margin-top: 80px;}
+			.sf2, .btn{width: 80%; margin-top: 24px;}
+		}
+	</style>
+</head>
+<body class="home">
+	<div class="header">
+		<div class="left">
+			<a href="https://www.mojeek.com"><img src="/logos/logo_cc.svg" alt="Mojeek"></a>
+		</div>
+		<div class="right">
+			<ul class="pre-nav">
+				<li><a href="/">Web</a></li>
+				<li><a href="/images">Images</a></li>
+				<li><a href="/news">News</a></li>
+				<li><a href="/emotions">Emotions</a><sup>demo</sup></li>
+			</ul>
+			<div class="hamburger-ctn" tabindex="0" role="button">
+				<input class="hamburger-check js-hamburger" id="hamburger-check" type="checkbox">
+				<label aria-label="Menu" data-tooltip="down" for="hamburger-check" class="hamburger">
+				<span></span><span></span><span></span>
+				</label>
+				<nav class="main-nav">
+					<ul>
+						<li><input class="hide" type="checkbox" id="check-company"><label tabindex="0" role="button" for="check-company">Company<span class="svg-icon chevron-down"></span></label>
+							<ul><li><a href="/about/"><span class="svg-icon in-lo"></span>About</a></li><li><a href="/about/press/"><span class="svg-icon in-pm"></span>Press &amp; Media</a></li><li><a href="/about/careers/"><span class="svg-icon in-cr"></span>Careers</a></li><li><a href="/about/contact"><span class="svg-icon in-ct"></span>Contact Us</a></li></ul>
+						</li>
+						<li><input class="hide" type="checkbox" id="check-products"><label tabindex="0" role="button" for="check-products">Products<span class="svg-icon chevron-down"></span></label>
+							<ul><li><a href="/ads/"><span class="svg-icon in-av"></span>Mojeek Ads</a></li><li><a href="/services/search/web-search-api/"><span class="svg-icon in-ap"></span>Web Search API</a></li><li><a href="/services/search/site-search-api/"><span class="svg-icon in-ss"></span>Site Search API</a></li><li><a href="/services/search/searchbox.html"><span class="svg-icon in-sb"></span>Simple Search Boxes</a></li></ul>
+						</li>
+						<li><input class="hide" type="checkbox" id="check-help &amp; support"><label tabindex="0" role="button" for="check-help &amp; support">Help &amp; Support<span class="svg-icon chevron-down"></span></label>
+							<ul><li><a href="/support/"><span class="svg-icon in-su"></span>Support</a></li><li><a href="/support/browsers/"><span class="svg-icon in-br"></span>Desktop</a></li><li><a href="/support/smartphones/"><span class="svg-icon in-mo"></span>Mobile</a></li><li><a href="/support/api/"><span class="svg-icon in-pi"></span>API Docs</a></li></ul>
+						</li>
+						<li><a href="https://blog.mojeek.com">Blog</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<div class="container">
+			<div class="grid">
+				<div class="row">
+					<div class="col-12-xs col-6-md col-6 text-left">
+						<h1>404</h1>
+						<h2>We can't seem to find the page you are looking for.<br>Ironic, we know...<br></h2>
+						<h3 class="green" >Lets try and find something else!</h3>
+						<div class="sf2">
+							<form method="get" action="/search" name="sf2">
+								<input type="text" class="js-search-input" autofocus maxlength="256" name="q" value="" placeholder="Search the web using Mojeek" tabindex="0" />
+								<a href="#" class="js-clear-search-btn" tabindex="0" role="button" style="visibility: visible;">&#x2715;</a>
+								<button type="submit" tabindex="0">
+									<span class="svg-icon search"></span>
+								</button>
+							</form>
+						</div>
+						<div class="sf2">
+							<form method="get" action="/search" name="sf2">
+								<input type="text" class="js-search-input" maxlength="256" name="q" placeholder="Search for a page on our site" tabindex="0" />
+								<input type="hidden" name="site" value="mojeek.com" />
+								<a href="#" class="js-clear-search-btn" tabindex="0" role="button" style="visibility: visible;">&#x2715;</a>
+								<button type="submit" tabindex="0">
+									<span class="svg-icon search"></span>
+								</button>
+							</form>
+						</div>
+						<p><a href="/" class="btn btn-primary">Go to homepage</a></p>
+					</div>
+					<div class="col-12-xs col-6-md col-6">
+						<img class="mojeekbot" src="/images/mojeekbot-404.svg" alt="Mojeek bot 404 image">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="/js/vendor/jquery-3.2.1.min.js"></script>
+	<script src="/js/main.js"></script>
+	<script src="/js/page_specific/search.js"></script>
+</body>
+</html>

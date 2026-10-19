@@ -1,0 +1,35 @@
+section	key	value
+credit_kind	recurring	70
+credit_kind	one-time	20
+credit_kind	trial	12
+credit_kind	none	11
+credit_kind	dup	10
+credit_kind	unknown	5
+maturity	established	56
+maturity	emerging	37
+maturity	niche	16
+maturity	major	15
+maturity	unknown	4
+delivery	hosted	119
+delivery	self-hosted	6
+delivery	library	3
+card	no	99
+card	unknown	15
+card	yes	14
+category_volume	social	300000
+category_volume	weather	300000
+category_volume	search	115500
+category_volume	fetch	30471
+category_volume	news	13500
+category_volume	serp	300
+category_volume	browser	50
+signup	TinyFish	Get $8 in Wallet funds
+signup	Diffbot	Students get Startup tier free
+signup	Parallel	Up to $80 at signup + $5/mo credits; up to $250 startups
+signup	Jina Reader/Search	10M tokens
+signup	You.com	$100 credit
+signup	Context.dev	10K Logo Link requests
+signup	Exa	$10 onboarding
+signup	Apify	$500 for 6 months (new)
+signup	Valyu	$20 with work email
+signup	Linkup	$5,000 credits for startups (application)

@@ -1,0 +1,575 @@
+<!DOCTYPE html><html lang="en" data-theme="light" data-theme-default="dark"><head><meta charset="utf-8" /><script>(function () { try { var valid = ["light", "dark", "system"]; var m = document.cookie.match(/(?:^|;\s*)cb-theme=([^;]+)/); var pref = m ? decodeURIComponent(m[1]) : null; if (!valid.includes(pref)) { var ls = null; try { ls = localStorage.getItem("cb-theme"); } catch (e) {} pref = valid.includes(ls) ? ls : null; } var t = pref === "light" || pref === "dark" ? pref : pref === "system" ? (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : 'dark'; document.documentElement.setAttribute("data-theme", t); } catch (e) {} })();</script><link rel="preload" as="font" type="font/woff2" crossorigin="" href="/assets/css/Sora/Sora-700-latin.woff2" /><link rel="preload" as="font" type="font/woff2" crossorigin="" href="/assets/css/Sora/Sora-800-latin.woff2" /><link rel="preload" as="font" type="font/woff2" crossorigin="" href="/assets/css/Inter/Inter-400-latin.woff2" /><link rel="preload" as="font" type="font/woff2" crossorigin="" href="/assets/css/JetBrainsMono/JetBrainsMono-400-latin.woff2" /><link rel="preload" as="font" type="font/woff2" crossorigin="" href="/assets/css/JetBrainsMono/JetBrainsMono-500-latin.woff2" /><style>/* Arial adjusted to Sora / Inter metrics (see the Source Serif 4 fallback in
+ * webfonts.css for why): same-size pre-swap paint keeps LCP at first paint. */
+@font-face {
+  font-family: 'Sora-fallback';
+  src: local('Arial');
+  size-adjust: 115.8%;
+  ascent-override: 83.8%;
+  descent-override: 25%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Inter-fallback';
+  src: local('Arial');
+  size-adjust: 107.5%;
+  ascent-override: 90.1%;
+  descent-override: 22.4%;
+  line-gap-override: 0%;
+}
+/* V14.6 redesign fonts, self-hosted (PC-8278). Generated from Google
+ * Fonts static instances: Sora 400-800, Inter 400-700, JetBrains Mono
+ * 400-600; latin + latin-ext subsets. Regenerate with
+ * scripts/fonts/fetch-fonts-v14.py. Do not hand-edit. */
+
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/css/Sora/Sora-400-latin-ext.woff2') format('woff2');
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+    U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/css/Sora/Sora-400-latin.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/assets/css/Sora/Sora-500-latin-ext.woff2') format('woff2');
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+    U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/assets/css/Sora/Sora-500-latin.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/assets/css/Sora/Sora-600-latin-ext.woff2') format('woff2');
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+    U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/assets/css/Sora/Sora-600-latin.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/assets/css/Sora/Sora-700-latin-ext.woff2') format('woff2');
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+    U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/assets/css/Sora/Sora-700-latin.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/assets/css/Sora/Sora-800-latin-ext.woff2') format('woff2');
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+    U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/assets/css/Sora/Sora-800-latin.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/css/Inter/Inter-400-latin-ext.woff2') format('woff2');
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+    U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/css/Inter/Inter-400-latin.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 450;
+  font-display: swap;
+  src: url('/assets/css/Inter/Inter-450-latin-ext.woff2') format('woff2');
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+    U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 450;
+  font-display: swap;
+  src: url('/assets/css/Inter/Inter-450-latin.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/assets/css/Inter/Inter-500-latin-ext.woff2') format('woff2');
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+    U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/assets/css/Inter/Inter-500-latin.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/assets/css/Inter/Inter-600-latin-ext.woff2') format('woff2');
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+    U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/assets/css/Inter/Inter-600-latin.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/assets/css/Inter/Inter-700-latin-ext.woff2') format('woff2');
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+    U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/assets/css/Inter/Inter-700-latin.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/css/JetBrainsMono/JetBrainsMono-400-latin-ext.woff2') format('woff2');
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+    U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/css/JetBrainsMono/JetBrainsMono-400-latin.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/assets/css/JetBrainsMono/JetBrainsMono-500-latin-ext.woff2') format('woff2');
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+    U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/assets/css/JetBrainsMono/JetBrainsMono-500-latin.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/assets/css/JetBrainsMono/JetBrainsMono-600-latin-ext.woff2') format('woff2');
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+    U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/assets/css/JetBrainsMono/JetBrainsMono-600-latin.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Cyrillic subsets (ru) — vendored from Google Fonts css2; same family names
+   + Cyrillic unicode-range so the browser auto-selects these for ru text. */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/css/Inter/Inter-400-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/assets/css/Inter/Inter-500-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/assets/css/Inter/Inter-600-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/assets/css/Inter/Inter-700-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/css/JetBrainsMono/JetBrainsMono-400-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/assets/css/JetBrainsMono/JetBrainsMono-500-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/assets/css/JetBrainsMono/JetBrainsMono-600-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+</style><meta http-equiv="x-ua-compatible" content="ie=edge" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="color-scheme" content="light dark" /><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" /><title>Pricing: One Rate Card for Every Product | Crawlbase</title><meta property="og:title" content="Pricing: One Rate Card for Every Product | Crawlbase" /><meta name="description" content="One pay as you go rate card covers the Crawling API, the Crawler, Smart AI Proxy and Cloud Storage. Pay only for successful requests. Start free." /><meta property="og:description" content="One pay as you go rate card covers the Crawling API, the Crawler, Smart AI Proxy and Cloud Storage. Pay only for successful requests. Start free." /><meta property="og:type" content="website" /><meta property="og:image" content="https://crawlbase.com/assets/images/open-graph/open-graph-pricing-b8a3c72323.png" /><meta property="og:image:secure_url" content="https://crawlbase.com/assets/images/open-graph/open-graph-pricing-b8a3c72323.png" /><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" /><meta property="og:image:alt" content="Pricing: One Rate Card for Every Product | Crawlbase" /><meta property="og:url" content="https://crawlbase.com/pricing" /><meta property="og:site_name" content="Crawlbase" /><meta property="og:locale" content="en_US" /><meta property="og:locale:alternate" content="de_DE" /><meta property="og:locale:alternate" content="fr_FR" /><meta property="og:locale:alternate" content="ru_RU" /><meta property="og:locale:alternate" content="zh_CN" /><meta name="twitter:card" content="summary_large_image" /><meta name="twitter:site" content="@Crawlbase" /><meta name="twitter:title" content="Pricing: One Rate Card for Every Product | Crawlbase" /><meta name="twitter:description" content="One pay as you go rate card covers the Crawling API, the Crawler, Smart AI Proxy and Cloud Storage. Pay only for successful requests. Start free." /><meta name="twitter:image" content="https://crawlbase.com/assets/images/open-graph/open-graph-pricing-b8a3c72323.png" /><meta name="twitter:image:alt" content="Pricing: One Rate Card for Every Product | Crawlbase" /><meta name="twitter:creator" content="@Crawlbase" /><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Crawlbase",
+  "url": "https://crawlbase.com",
+  "logo": "https://crawlbase.com/assets/images/crawlbase-logo@2x.png",
+  "description": "Crawlbase is a web data infrastructure platform for developers, data teams, and AI builders to reliably access and extract real-time web data at scale. It provides tools such as a Crawling API and Smart AI Proxy to crawl websites, process JavaScript-heavy pages, and bypass anti-bot protections, while enabling retrieval-augmented workflows via the Web MCP Server and supporting large-scale crawling, storage, and automation.",
+  "email": "support@crawlbase.com",
+  "sameAs": ["https://github.com/crawlbase", "https://linkedin.com/company/crawlbase", "https://www.youtube.com/@CrawlbaseChannel"],
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "email": "support@crawlbase.com",
+      "availableLanguage": ["English", "German", "French", "Russian", "Chinese"]
+    }
+  ],
+  "knowsAbout": ["Web Data Infrastructure", "Web Crawling", "Web Scraping", "Web Unblocking", "JavaScript Rendering", "Anti-bot Mitigation", "Proxy Networks", "Model Context Protocol (MCP)", "Retrieval-Augmented Generation (RAG)", "AI Workflows"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Crawlbase Product Suite",
+    "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Crawling API",
+          "url": "https://crawlbase.com/crawling-api-avoid-captchas-blocks",
+          "description": "Scrape websites that block bots or require JavaScript rendering, without dealing with CAPTCHAs, IP bans, or anti-bot infrastructure."
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Smart AI Proxy",
+          "url": "https://crawlbase.com/smart-proxy",
+          "description": "AI-powered proxy for scraping blocked websites, dynamically adapting to anti-bot defenses, intelligently rotating IPs, and maximizing request success rates for reliable data extraction at scale."
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Enterprise Crawler",
+          "url": "https://crawlbase.com/anonymous-crawler-asynchronous-scraping",
+          "description": "Run asynchronous, large-scale crawling jobs across JavaScript-heavy pages with queueing and callbacks, ideal for high-volume continuous data collection and automation workflows."
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cloud Storage",
+          "url": "https://crawlbase.com/cloud-storage-for-crawling-and-scraping",
+          "description": "A programmatic storage and retrieval layer for scraping workflows, enabling persistence of scraped results, access to stored records, and bulk operations via API for scalable data pipelines and AI-ready applications. Free tier available."
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Web MCP Server (Model Context Protocol)",
+          "url": "https://crawlbase.com/mcp",
+          "description": "Enables AI agents and MCP-compatible clients to receive live web data by bridging them with Crawlbase's real-time scraping infrastructure, supporting retrieval-augmented workflows and up-to-date AI applications."
+        }
+      }
+    }
+  ]
+}
+}</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Crawlbase",
+  "url": "https://crawlbase.com",
+  "inLanguage": ["en", "de", "fr", "ru", "zh-CN"],
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": { "@type": "EntryPoint", "urlTemplate": "https://crawlbase.com/docs?q={search_term_string}" },
+    "query-input": "required name=search_term_string"
+  }
+}</script><link rel="stylesheet" media="screen" type="text/css" href="/assets/css/landing-cbe4ee30e7.css" /><link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" /><link rel="shortcut icon" href="/favicon.ico" /><link rel="icon" type="image/svg+xml" href="/favicon.svg" /><link rel="icon" type="image/png" href="/assets/images/favicon-16-b7aec125db.png" sizes="16x16" /><link rel="icon" type="image/png" href="/assets/images/favicon-32-03c66e7df4.png" sizes="32x32" /><link rel="apple-touch-icon" href="/assets/images/favicon-apple-180-18242c289e.png" sizes="180x180" /><meta name="msapplication-TileColor" content="#55679d" /><meta name="theme-color" content="#171268" /><meta name="csrf-param" content="authenticity_token" /><meta name="csrf-token" content="101vBv25ODlhQLF6KBInl8TkkUl6lvQwkDIbTor2GOhJyB90ULKsJrJI4tco3JHAlCl82nry0oi3WCmhr6rZ_A==" /><link rel="alternate" type="text/markdown" title="Crawlbase docs index for LLMs" href="/llms.txt" /><link rel="canonical" href="https://crawlbase.com/pricing" /><link rel="alternate" hreflang="en" href="https://crawlbase.com/pricing" /><link rel="alternate" hreflang="zh-CN" href="https://zh-cn.crawlbase.com/pricing" /><link rel="alternate" hreflang="de" href="https://de.crawlbase.com/pricing" /><link rel="alternate" hreflang="fr" href="https://fr.crawlbase.com/pricing" /><link rel="alternate" hreflang="ru" href="https://ru.crawlbase.com/pricing" /><link rel="alternate" hreflang="x-default" href="https://crawlbase.com/pricing" /><script>window.__cookieConsentRequired = false;</script><script>window.cbThirdParty = (function () {
+  var queue = [], fired = false;
+  function fire() {
+    if (fired) return;
+    fired = true;
+    queue.forEach(function (f) { try { f(); } catch (e) {} });
+    queue = [];
+  }
+  ["pointerdown", "keydown", "scroll", "touchstart"].forEach(function (ev) {
+    addEventListener(ev, fire, { once: true, passive: true, capture: true });
+  });
+  if (document.cookie.indexOf("_signup_conversion=") !== -1) {
+    document.addEventListener("DOMContentLoaded", fire);
+  }
+  return function (f) { fired ? f() : queue.push(f); };
+})();
+// Non-Google pixels read the raw page URL, so they skip token pages entirely.
+window.cbPixel = (function () {
+  var tokenRoute = /\/(login\/(?:code|link)|workspace-invite|unsubscribe)\/[^\/?#]+|\/users\/[^\/?#]+\/(reset-password|confirm-email)|[?&]token=/.test(location.href);
+  return function (f) { if (!tokenRoute) cbThirdParty(f); };
+})();</script><script>window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+let consent = { ad_storage: "granted", ad_user_data: "granted", ad_personalization: "granted", analytics_storage: "granted" };
+if (window.__cookieConsentRequired) {
+  consent = { ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied", analytics_storage: "denied" };
+  const storageCookie = localStorage.getItem("cb_cookies");
+  if (storageCookie !== null) {
+    try { consent = JSON.parse(storageCookie); } catch { /* keep deny default */ }
+  }
+}
+gtag("consent", "default", consent);
+gtag("js", new Date());
+// Keep single-use sign-in, reset, confirm, invite, unsubscribe and newsletter-confirm tokens out of GA4 and Ads.
+var cbRedact = function (u) {
+  return String(u || "")
+    .replace(/\/(login\/(?:code|link)|workspace-invite|unsubscribe)\/[^\/?#]+/, "/$1/redacted")
+    .replace(/\/users\/[^\/?#]+\/(reset-password|confirm-email)/, "/users/redacted/$1")
+    .replace(/([?&])token=[^&#]*/, "$1token=redacted");
+};
+var cbPage = {};
+if (cbRedact(location.href) !== location.href) {
+  cbPage.page_location = cbRedact(location.href);
+  cbPage.page_path = cbRedact(location.pathname);
+}
+if (cbRedact(document.referrer) !== document.referrer) cbPage.page_referrer = cbRedact(document.referrer);
+if (Object.keys(cbPage).length) gtag("set", cbPage);
+gtag("config", "G-KKP28RNNBB");
+gtag("config", "AW-909224591");</script><script>cbPixel(function () {
+  if (window.__cookieConsentRequired) {
+    var consent = { ad_storage: "denied" };
+    var stored = localStorage.getItem("cb_cookies");
+    if (stored) { try { consent = JSON.parse(stored); } catch { /* keep deny default */ } }
+    if (consent.ad_storage !== "granted") return;
+  }
+  !(function (w, d) {
+    if (w.rdt) return;
+    var p = (w.rdt = function () { p.sendEvent ? p.sendEvent.apply(p, arguments) : p.callQueue.push(arguments); });
+    p.callQueue = [];
+    var t = d.createElement("script");
+    t.src = "https://www.redditstatic.com/ads/pixel.js?pixel_id=t2_4rdhnorf";
+    t.async = true;
+    var s = d.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(t, s);
+  })(window, document);
+  rdt("init", "t2_4rdhnorf");
+  rdt("track", "PageVisit");
+});</script><script>cbThirdParty(function () {
+  var match = document.cookie.split("; ").find(function (c) { return c.indexOf("_signup_conversion=") === 0; });
+  if (!match) return;
+  var raw = decodeURIComponent(match.split("=")[1] || "");
+  if (!raw) return;
+  var parts = raw.split("|");
+  var method = parts[0];
+  var conversionId = parts[1] || "";
+  if (!method) return;
+  if (window.gtag) {
+    var adsPayload = { send_to: "AW-909224591/fQUiCLagkKYBEI_VxrED" };
+    if (conversionId) adsPayload.transaction_id = conversionId;
+    gtag("event", "conversion", adsPayload);
+    gtag("event", "sign_up", { method: method });
+  }
+  if (window.rdt) {
+    var rdtPayload = { currency: "USD", value: 100 };
+    if (conversionId) rdtPayload.conversionId = conversionId;
+    rdt("track", "SignUp", rdtPayload);
+  }
+  document.cookie = "_signup_conversion=; path=/; max-age=0";
+});</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Crawlbase", "item": "https://crawlbase.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Pricing", "item": "https://crawlbase.com/pricing" }
+  ]
+}</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What counts as a request?", "acceptedAnswer": { "@type": "Answer", "text": "Only successful requests are billed. A request that fails or is blocked costs nothing, whatever the site or rendering mode." } },
+    { "@type": "Question", "name": "How do I start free?", "acceptedAnswer": { "@type": "Answer", "text": "Every new account starts with 1,000 free credits and no card on file, and completing setup steps grows that to up to 5,000. The free credits work across every product." } },
+    { "@type": "Question", "name": "Can I cap what I spend?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Set an optional hard spend cap in the dashboard and usage stops before the bill passes it. Raise, lower or remove it any time." } },
+    { "@type": "Question", "name": "Do credits expire, and does the allowance reset?", "acceptedAnswer": { "@type": "Answer", "text": "Pay as you go bills in arrears for what you actually used, so there is nothing to expire. A subscription's credit block resets with each monthly cycle." } },
+    { "@type": "Question", "name": "What happens past a subscription's included credits?", "acceptedAnswer": { "@type": "Answer", "text": "Usage continues as pay as you go on the same rate card, at the bracket your volume already reached. Prefer a hard stop? Turn pay as you go off and requests pause at the block instead." } },
+    { "@type": "Question", "name": "How do storage and screenshots bill?", "acceptedAnswer": { "@type": "Answer", "text": "From the same balance. Storing a page costs 0.5 credits per month it is kept, and a screenshot capture costs 2 credits." } },
+    { "@type": "Question", "name": "What about very high volume?", "acceptedAnswer": { "@type": "Answer", "text": "Enterprise adds custom volume, SLAs and invoicing. Talk to sales about a plan for your program." } }
+  ]
+}</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Crawlbase",
+  "description": "One pay as you go system for the Crawling API, Crawler, Smart AI Proxy, Cloud Storage and Screenshots, with optional monthly credit subscriptions.",
+  "url": "https://crawlbase.com/pricing",
+  "brand": { "@type": "Organization", "name": "Crawlbase", "url": "https://crawlbase.com/" },
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "USD",
+    "lowPrice": "0",
+    "highPrice": "599",
+    "offerCount": 5,
+    "offers": [
+      { "@type": "Offer", "name": "Pay as you go", "price": "0", "priceCurrency": "USD", "description": "No monthly fee. Graduated rates from $3.00 down to $0.02 per 1,000 successful requests." },
+      { "@type": "Offer", "name": "Starter (monthly)", "price": "99", "priceCurrency": "USD", "description": "200,000 credits per month" },
+      { "@type": "Offer", "name": "Scale 500K (monthly)", "price": "199", "priceCurrency": "USD", "description": "500,000 credits per month" },
+      { "@type": "Offer", "name": "Scale 1M (monthly)", "price": "349", "priceCurrency": "USD", "description": "1,000,000 credits per month" },
+      { "@type": "Offer", "name": "Growth (monthly)", "price": "599", "priceCurrency": "USD", "description": "2,000,000 credits per month" }
+    ]
+  }
+}</script></head><body class="pricing landing"><nav id="nav" class="js-nav"><div class="wrap nav-inner"><a class="brand" href="/"><span class="mark"><svg class="brand-mark-svg" viewBox="0 0 46 47" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect class="brand-mark-tile" x="0.8" y="1.3" width="44.4" height="44.4" rx="10.2"></rect><path class="brand-mark-wave" d="M27.6525 12.8821C26.2298 12.2988 24.7075 12 23.1568 12C21.6061 12 20.0981 12.2988 18.6612 12.8821C17.1816 13.4796 15.8443 14.3616 14.7062 15.4998L18.6612 19.4548C21.1366 16.9793 25.177 16.9793 27.6525 19.4548L31.6075 15.4998C30.4693 14.3616 29.1463 13.4796 27.6525 12.8821Z"></path><path class="brand-mark-wave" d="M18.6612 28.4463L14.7062 32.4013C15.8443 33.5394 17.1816 34.4215 18.6612 35.0332C20.0981 35.6165 21.6061 35.9011 23.1568 35.9011C24.7075 35.9011 26.2156 35.6023 27.6525 35.019C29.132 34.4215 30.4693 33.5394 31.6075 32.4013L27.6525 28.4463C25.177 30.936 21.1366 30.9217 18.6612 28.4463Z"></path><path class="brand-mark-dot" d="M15.574 27.0516C17.2947 27.0516 18.6896 25.6567 18.6896 23.936C18.6896 22.2152 17.2947 20.8203 15.574 20.8203C13.8532 20.8203 12.4583 22.2152 12.4583 23.936C12.4583 25.6567 13.8532 27.0516 15.574 27.0516Z"></path></svg></span>crawlbase</a><div class="nav-links"><div class="js-nav-item nav-item"><button class="js-nav-trigger nav-trigger" type="button" aria-haspopup="true" aria-expanded="false" data-track-dropdown="products">Products<svg><use xlink:href="/assets/images/sprite-539325c6b9.symbol.svg#chevron-down"></use></svg></button><div class="nav-dropdown is-menu"><a class="nav-mi" href="/crawling-api-avoid-captchas-blocks"><span class="mi-name">Crawling API</span><span class="mi-desc">Scrape any page with JavaScript rendering and anti-bot handling.</span></a><a class="nav-mi" href="/anonymous-crawler-asynchronous-scraping"><span class="mi-name">Enterprise Crawler</span><span class="mi-desc">Asynchronous crawling at scale, delivered to storage.</span></a><a class="nav-mi" href="/smart-proxy"><span class="mi-name">Smart AI Proxy</span><span class="mi-desc">Rotating residential proxies behind one endpoint.</span></a><a class="nav-mi" href="/cloud-storage-for-crawling-and-scraping"><span class="mi-name">Cloud Storage</span><span class="mi-desc">Store and retrieve crawl results on demand.</span></a><a class="nav-mi" href="/mcp"><span class="mi-name">Web MCP Server</span><span class="mi-desc">Live web data for AI agents over MCP.</span></a></div></div><div class="js-nav-item nav-item"><button class="js-nav-trigger nav-trigger" type="button" aria-haspopup="true" aria-expanded="false" data-track-dropdown="developers">Developers<svg><use xlink:href="/assets/images/sprite-539325c6b9.symbol.svg#chevron-down"></use></svg></button><div class="nav-dropdown is-menu"><a class="nav-mi" href="/docs"><span class="mi-name">Documentation</span><span class="mi-desc">Guides and API reference to start building.</span></a><a class="nav-mi" href="/crawling-libraries-sdk"><span class="mi-name">Libraries and SDKs</span><span class="mi-desc">Official clients for Python, Node, Ruby, PHP and Go.</span></a><a class="nav-mi" href="/docs/api-playground"><span class="mi-name">Playground</span><span class="mi-desc">Try the API live in your browser.</span></a><a class="nav-mi" href="/cookbook"><span class="mi-name">Scraping Cookbook</span><span class="mi-desc">Per-site recipes measured on real traffic.</span></a><a class="nav-mi" href="/docs/integrations"><span class="mi-name">Integrations</span><span class="mi-desc">Connect Crawlbase to the tools you already use.</span></a><a class="nav-mi" href="/blog/topic/engineering/"><span class="mi-name">Tutorials</span><span class="mi-desc">Step-by-step web scraping walkthroughs.</span></a><a class="nav-mi" href="/console/support"><span class="mi-name">Support</span><span class="mi-desc">Reach our team for help, anytime.</span></a><a class="nav-mi" href="/request-feature"><span class="mi-name">Request a Feature</span><span class="mi-desc">Tell us what to build next.</span></a><a class="nav-mi" href="https://status.crawlbase.com" target="_blank" rel="noopener"><span class="mi-name">Product Status</span><span class="mi-desc">Live uptime and incident history.</span></a></div></div><div class="js-nav-item nav-item has-mega"><button class="js-nav-trigger nav-trigger" type="button" aria-haspopup="true" aria-expanded="false" data-track-dropdown="use_cases">Use Cases<svg><use xlink:href="/assets/images/sprite-539325c6b9.symbol.svg#chevron-down"></use></svg></button><div class="nav-dropdown is-mega"><span class="nd-label">Managed scrapers</span><div class="nd-cols"><a href="/ecommerce-scraping">eCommerce</a><a href="/amazon-scraper">Amazon</a><a href="/walmart-scraper">Walmart</a><a href="/linkedin-scraper">LinkedIn</a><a href="/facebook-scraper">Facebook</a><a href="/google-serp-scraper">Google</a><a href="/tripadvisor-crawling">Tripadvisor</a><a href="/scrape-duckduckgo">DuckDuckGo</a><a href="/product-hunt-scraping">Product Hunt</a><a href="/scrape-yahoo">Yahoo</a><a href="/expedia-scraping">Expedia</a><a href="/generative-ai-data">Generative AI</a><a href="/crawl-reddit">Reddit</a><a href="/glassdoor-scraping">Glassdoor</a><a href="/scraping-stack-overflow">Stack Overflow</a><a href="/scraping-stack-exchange">Stack Exchange</a><a href="/quora-scraper">Quora</a><a href="/scrape-duolingo">Duolingo</a><a href="/scrape-exercism">Exercism</a><a href="/scrape-kaggle">Kaggle</a><a href="/scrape-leetcode">LeetCode</a><a href="/bing-scraper">Bing</a><a href="/ebay-scraper">eBay</a><a href="/yandex-serp-scraping">Yandex</a><a href="/scrape-hotels">Hotels.com</a><a href="/scraping-best-buy">BestBuy</a><a href="/github-scraping">GitHub</a><a href="/scraping-target">Target</a><a href="/scrape-kayak">Kayak</a><a href="/crawl-zillow">Zillow</a><a href="/washington-post-scraping">Washington Post</a><a href="/crawl-bloomberg">Bloomberg</a><a href="/scrape-scribd">Scribd</a><a href="/deviantart-scraping">DeviantArt</a><a href="/scraping-booking">Booking</a><a href="/airbnb-scraper">Airbnb</a><a href="/aliexpress-scraper">AliExpress</a><a href="/scrape-olx">OLX</a><a href="/immobilienscout24-scraper">Immobilienscout24</a><a href="/crawl-daum">Daum</a><a href="/eventbrite-scraper">Eventbrite</a><a href="/g2-scraper">G2</a><a href="/galaxus-scraper">Galaxus</a></div></div></div><div class="js-nav-item nav-item has-mega"><button class="js-nav-trigger nav-trigger" type="button" aria-haspopup="true" aria-expanded="false" data-track-dropdown="resources">Resources<svg><use xlink:href="/assets/images/sprite-539325c6b9.symbol.svg#chevron-down"></use></svg></button><div class="nav-dropdown is-groups"><div class="nd-group"><span class="nd-label">Resources</span><a href="/blog/">Blog</a><a href="/customers-success-stories">Success Stories</a><a href="https://www.youtube.com/@CrawlbaseChannel" target="_blank" rel="noopener">Videos</a><a href="/ebook-amazon-scraping">eBook</a><a href="https://www.trustpilot.com/review/crawlbase.com" target="_blank" rel="noopener">Reviews</a></div><div class="nd-group"><span class="nd-label">Company</span><a href="/contact">Contact Sales</a><a href="/console/support">Technical Support</a><a href="/about-us">About us</a><a href="/enterprise">Enterprise Solutions</a><a href="/affiliates">Become a Partner</a></div><div class="nd-group"><span class="nd-label">Compare</span><a href="/crawlbase-vs-scraperapi">vs ScraperAPI</a><a href="/crawlbase-vs-oxylabs">vs Oxylabs</a><a href="/crawlbase-vs-apify">vs Apify</a><a href="/crawlbase-vs-scrapingbee">vs ScrapingBee</a><a href="/crawlbase-vs-octoparse">vs Octoparse</a><a href="/crawlbase-vs-zyte">vs Zyte</a></div></div></div><a class="nav-link" href="/pricing">Pricing</a></div><div class="nav-cta"><a class="btn btn-ghost" href="/contact" data-track-cta="contact_sales" data-track-location="nav">Talk to Sales</a><button class="js-toggle-theme theme-toggle" type="button" aria-label="Switch theme" title="Switch theme"><svg data-theme-icon="dark"><use xlink:href="/assets/images/sprite-539325c6b9.symbol.svg#docs-topbar-sun"></use></svg><svg data-theme-icon="light"><use xlink:href="/assets/images/sprite-539325c6b9.symbol.svg#docs-topbar-moon"></use></svg></button><a class="btn btn-ghost" href="/docs" data-track-cta="docs" data-track-location="nav">Docs</a><a class="btn btn-primary" href="/login?signup=pricing" data-track-cta="create_account" data-track-location="nav">Start free</a><button class="js-nav-toggle nav-toggle" type="button" aria-label="Open menu" aria-expanded="false"><svg class="m"><use xlink:href="/assets/images/sprite-539325c6b9.symbol.svg#docs-topbar-menu"></use></svg><svg class="x"><use xlink:href="/assets/images/sprite-539325c6b9.symbol.svg#close"></use></svg></button></div></div></nav><div class="irail" aria-hidden="true"><div class="cell live">LIVE</div><div class="cell"><span class="lab">UPTIME</span><span class="on">99.99%</span></div><div class="cell"><span class="lab">LATENCY</span><span class="js-rail-latency ic">142ms</span></div><div class="cell opt"><span class="lab">REQ/S</span><span class="js-rail-rps ic">20,700</span></div><div class="cell opt"><span class="lab">SUCCESS</span><span class="on">99%</span></div><div class="cell grow"></div><div class="cell opt" title="Section indicator"><span class="lab">SEC</span><span class="js-rail-sec on">00 / BOOT</span></div><div class="cell opt"><span class="lab">REGIONS</span><span class="ic">30</span></div><div class="cell"><span class="lab">NET</span><span class="on">OPERATIONAL</span></div></div><main><header class="hero"><div class="wrap hero-grid"><div><span class="kicker">Pricing</span><h1>One pricing system.<br /><span class="soft">Every product.</span></h1><p class="hero-sub">The Crawling API with screenshots, the Crawler, Smart AI Proxy and Cloud Storage all draw from one credit balance, on one rate card.<br />Pay only for successful requests. Start free, no credit card.</p><div class="hero-actions"><a class="btn btn-primary" href="/login?signup=pricing" data-track-cta="start_free" data-track-location="pricing_hero">Start free<svg><use xlink:href="/assets/images/sprite-539325c6b9.symbol.svg#arrow-right-color"></use></svg></a><a class="btn btn-secondary" href="/enterprise" data-track-cta="contact_sales" data-track-location="pricing_hero">Talk to sales</a></div><div class="hero-meta"><span><span class="dot green"></span>Up to 5,000 requests free</span><span>Only successful requests billed</span><span>Rates fall as volume grows</span></div></div><div><svg class="flow" viewBox="0 0 680 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Any URL is sent to Crawlbase, which routes, renders and extracts, then returns the fully rendered HTML, structured JSON, or a screenshot."><text class="fl-zone" x="40" y="40">Any URL</text><text class="fl-zone" x="640" y="40" text-anchor="end">HTML · JSON · Image</text><rect class="fl-engine" x="34" y="248" width="180" height="44" rx="0"></rect><text class="fl-fn" x="50" y="269" font-size="13">any-website.com</text><text class="fl-fn" x="50" y="285" font-size="13" opacity=".7">/any/path</text><path class="fl-line" d="M214 270 C244 270 250 270 270 270"></path><path class="req req-a" pathLength="100" d="M214 270 C244 270 250 270 270 270"></path><rect class="fl-engine" x="270" y="196" width="150" height="148" rx="0"></rect><path class="fl-tick" d="M282 208 h-8 M282 208 v-8" transform="translate(-2,-2)"></path><path class="fl-tick" d="M408 208 h8 M408 208 v-8" transform="translate(2,-2)"></path><path class="fl-tick" d="M282 332 h-8 M282 332 v8" transform="translate(-2,2)"></path><path class="fl-tick" d="M408 332 h8 M408 332 v8" transform="translate(2,2)"></path><text class="fl-title" x="345" y="232" text-anchor="middle" font-size="17">Crawlbase</text><line class="fl-div" x1="294" y1="248" x2="396" y2="248"></line><g class="fl-fn"><circle class="fl-dot" cx="306" cy="270" r="2.4"></circle><text x="318" y="275">Route</text><circle class="fl-dot" cx="306" cy="294" r="2.4"></circle><text x="318" y="299">Render</text><circle class="fl-dot" cx="306" cy="318" r="2.4"></circle><text x="318" y="323">Extract</text></g><path class="fl-line" d="M420 270 C474 270 490 156 512 156"></path><path class="fl-line" d="M420 270 H512"></path><path class="fl-line" d="M420 270 C474 270 490 384 512 384"></path><path class="req req-out1" pathLength="100" d="M420 270 C474 270 490 156 512 156"></path><path class="req req-out2" pathLength="100" d="M420 270 H512"></path><path class="req req-out3" pathLength="100" d="M420 270 C474 270 490 384 512 384"></path><g><rect class="fl-node" x="512" y="148" width="14" height="14" rx="0"></rect><rect class="fl-node" x="512" y="263" width="14" height="14" rx="0"></rect><rect class="fl-node" x="512" y="377" width="14" height="14" rx="0"></rect></g><g class="fl-name" text-anchor="start"><text x="538" y="160">Rendered HTML</text><text x="538" y="275">Structured JSON</text><text x="538" y="389">Screenshot</text></g><g class="fl-fn" text-anchor="start" font-size="10.5"><text x="538" y="176" opacity=".7">crawling-api</text><text x="538" y="291" opacity=".7">generic-extractor</text><text x="538" y="405" opacity=".7">screenshot=true</text></g><text class="fl-event" x="340" y="524" text-anchor="middle">any-website.com · rendered · 200</text></svg></div></div></header><div class="rule"></div><section id="ways"><div class="wrap"><div class="sec-head"><span class="eyebrow"><b>01</b> Two ways to pay</span><h2>Pay as you go, or subscribe.</h2><p>Every account starts on pay as you go. A subscription is optional: a monthly credit block at a lower effective rate, on the same rate card.</p></div><div class="ways"><div class="way"><span class="way-name">Pay as you go</span><div class="way-price"><span class="way-amt">$0</span><span class="way-per">monthly fee</span></div><p class="way-body">No monthly fee and no card to start. You are charged only for successful requests, at graduated rates that fall as your volume grows.</p><ul class="way-points"><li><svg class="plan-tick" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.2 3.2L13 5"></path></svg><span>Rates from $3.00 down to $0.02 per 1,000</span></li><li><svg class="plan-tick" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.2 3.2L13 5"></path></svg><span>Optional hard spend cap</span></li><li><svg class="plan-tick" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.2 3.2L13 5"></path></svg><span>Billed monthly in arrears, for what you used</span></li></ul><a class="btn btn-primary" href="/login?signup=pricing" data-track-cta="start_free" data-track-location="pricing_paygo">Start free<svg><use xlink:href="/assets/images/sprite-539325c6b9.symbol.svg#arrow-right-color"></use></svg></a></div><div class="way"><span class="way-name">Subscription</span><div class="way-price"><span class="way-amt">From $99</span><span class="way-per">/ mo</span></div><p class="way-body">A monthly block of credits at a lower effective rate. Usage past the block continues as pay as you go on the same ladder, at the bracket your volume already reached.</p><ul class="way-points"><li><svg class="plan-tick" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.2 3.2L13 5"></path></svg><span>200K to 2M credits included monthly</span></li><li><svg class="plan-tick" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.2 3.2L13 5"></path></svg><span>Overage continues on the same rate card</span></li><li><svg class="plan-tick" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.2 3.2L13 5"></path></svg><span>Yearly billing: 1 month free, 8% off</span></li></ul><a class="btn btn-secondary" href="#plans" data-track-cta="see_plans" data-track-location="pricing_subscribe">See the plans</a></div></div><div class="way-ent"><p class="way-ent-lead">Enterprise: custom volume, SLA and invoicing.</p><a class="inl" href="/enterprise">Talk to sales &rarr;</a></div></div></section><div class="rule"></div><section id="estimator"><div class="wrap"><div class="sec-head"><span class="eyebrow"><b>02</b> Pay as you go</span><h2>One graduated ladder, like income tax.</h2><p>Volume fills each bracket at that bracket's own rate, so no single rate ever applies to everything. Drag the volume to see the exact bill.</p></div><div class="js-estimator pricing-console"><div class="pc-controls"><div class="pc-field"><div class="pc-vol-head"><span class="pc-label">Monthly successful requests</span><span class="js-est-vol-out pc-vol">100k / mo</span></div><input class="js-est-vol pc-slider" type="range" min="3" max="9" step="0.01" value="5" aria-label="Monthly successful requests" /><div class="pc-scale"><span>1K</span><span>100K</span><span>10M</span><span>1B</span></div></div><div class="pc-field"><span class="pc-label">Site difficulty</span><div class="js-est-cx pc-seg"><button class="is-active" type="button" data-mult="1">Standard &times;1</button><button type="button" data-mult="1.5">Moderate &times;1.5</button><button type="button" data-mult="2">Complex &times;2</button></div><p class="pc-hint">Most of the web is standard. A small set of heavily defended sites carries a higher multiplier, applied automatically.</p></div><div class="pc-field"><span class="pc-label">Request type</span><div class="js-est-type pc-seg"><button class="is-active" type="button" data-js="0">Regular</button><button type="button" data-js="1">JavaScript &times;2</button></div></div></div><div class="pc-readout"><span class="pc-readout-label">Estimated monthly cost</span><div class="pc-amount"><span class="js-est-total pc-amount-num">$76.40</span><span class="pc-amount-unit">/ mo</span></div><div class="pc-rate"><span class="js-est-blended">≈ $0.76</span> blended per 1,000 requests</div><div class="pc-rate"><span class="js-est-credits">100,000</span> credits spent</div><p class="pc-free">Up to 5,000 requests free. No credit card.</p><a class="btn btn-primary" href="/login?signup=pricing" data-track-cta="start_free" data-track-location="pricing_estimator">Start free<svg><use xlink:href="/assets/images/sprite-539325c6b9.symbol.svg#arrow-right-color"></use></svg></a><a class="pc-ent" href="/enterprise" data-track-cta="contact_sales" data-track-location="pricing_estimator">Crawling over 1B a month? Talk to us &rarr;</a></div></div><div class="pc-ladder"><div class="pc-ladder-head"><span>The rate card</span><span class="pc-ladder-meta">per 1,000 successful requests</span></div><div class="pc-ladder-grid"><div class="js-est-row pc-row is-on" data-from="0"><span class="pc-row-band">First 1K</span><span class="pc-row-rate">$3.00</span></div><div class="js-est-row pc-row is-on" data-from="1000"><span class="pc-row-band">Next 10K</span><span class="pc-row-rate">$2.00</span></div><div class="js-est-row pc-row is-on" data-from="11000"><span class="pc-row-band">Next 100K</span><span class="pc-row-rate">$0.60</span></div><div class="js-est-row pc-row" data-from="111000"><span class="pc-row-band">Next 1M</span><span class="pc-row-rate">$0.50</span></div><div class="js-est-row pc-row" data-from="1111000"><span class="pc-row-band">Next 10M</span><span class="pc-row-rate">$0.10</span></div><div class="js-est-row pc-row" data-from="11111000"><span class="pc-row-band">Next 100M</span><span class="pc-row-rate">$0.05</span></div><div class="js-est-row pc-row" data-from="111111000"><span class="pc-row-band">Next 1B</span><span class="pc-row-rate">$0.04</span></div><div class="js-est-row pc-row" data-from="1111111000"><span class="pc-row-band">Beyond</span><span class="pc-row-rate">$0.02</span></div></div><p class="pc-ladder-note">The card shows standard requests. Site difficulty and JavaScript rendering multiply a group's ladder total, and the estimate above applies them exactly.</p><div class="pc-examples"><span class="pc-examples-head">Worked examples <span class="pc-ladder-meta">standard requests</span></span><div class="pc-example-row"><div class="pc-example"><span class="pc-example-vol">100K requests</span><span class="pc-example-cost">$76.40</span><span class="pc-example-rate">&asymp; $0.76 per 1,000</span></div><div class="pc-example"><span class="pc-example-vol">1M requests</span><span class="pc-example-cost">$527.50</span><span class="pc-example-rate">&asymp; $0.53 per 1,000</span></div><div class="pc-example"><span class="pc-example-vol">10M requests</span><span class="pc-example-cost">$1,471.90</span><span class="pc-example-rate">&asymp; $0.15 per 1,000</span></div></div></div></div></div></section><div class="rule"></div><section id="plans"><div class="wrap"><div class="sec-head"><span class="eyebrow"><b>03</b> Subscriptions</span><h2>Optional plans, cheaper per credit.</h2><p>A subscription buys a monthly credit block at a lower effective rate. The block resets monthly, and usage past it continues as pay as you go on the same rate card.</p></div><div class="plans-toggle js-plans-toggle" role="group" aria-label="Billing cycle"><button class="is-active" type="button" data-cycle="monthly">Monthly</button><button type="button" data-cycle="yearly">Yearly <span class="plans-badge">1 month free</span></button></div><div class="js-plans plans-grid"><div class="plan"><div class="plan-head"><span class="plan-name">Starter</span><span class="plan-tagline">200K credits / mo</span></div><div class="plan-price"><span class="plan-cost is-monthly"><span class="plan-amt">$99</span><span class="plan-per">/ mo</span></span><span class="plan-cost is-yearly"><span class="plan-amt">$1,089</span><span class="plan-per">/ yr</span></span><span class="plan-save is-yearly">1 month free &middot; 8% off</span></div><span class="plan-rate">&asymp; $0.50 per 1k credits</span><a class="js-plan-cta btn btn-secondary" href="/login?signup=pricing&amp;return_to=%2Fconsole%2Fbilling%3Fplan%3Dstarter" data-track-cta="plan_starter" data-track-location="pricing_plans">Get started</a></div><div class="plan"><div class="plan-head"><span class="plan-name">Scale 500K</span><span class="plan-tagline">500K credits / mo</span></div><div class="plan-price"><span class="plan-cost is-monthly"><span class="plan-amt">$199</span><span class="plan-per">/ mo</span></span><span class="plan-cost is-yearly"><span class="plan-amt">$2,189</span><span class="plan-per">/ yr</span></span><span class="plan-save is-yearly">1 month free &middot; 8% off</span></div><span class="plan-rate">&asymp; $0.40 per 1k credits</span><a class="js-plan-cta btn btn-secondary" href="/login?signup=pricing&amp;return_to=%2Fconsole%2Fbilling%3Fplan%3Dscale-500k" data-track-cta="plan_scale-500k" data-track-location="pricing_plans">Get started</a></div><div class="plan is-featured"><span class="plan-tag">Most popular</span><div class="plan-head"><span class="plan-name">Scale 1M</span><span class="plan-tagline">1M credits / mo</span></div><div class="plan-price"><span class="plan-cost is-monthly"><span class="plan-amt">$349</span><span class="plan-per">/ mo</span></span><span class="plan-cost is-yearly"><span class="plan-amt">$3,839</span><span class="plan-per">/ yr</span></span><span class="plan-save is-yearly">1 month free &middot; 8% off</span></div><span class="plan-rate">&asymp; $0.35 per 1k credits</span><a class="js-plan-cta btn btn-primary" href="/login?signup=pricing&amp;return_to=%2Fconsole%2Fbilling%3Fplan%3Dscale-1m" data-track-cta="plan_scale-1m" data-track-location="pricing_plans">Get started</a></div><div class="plan"><div class="plan-head"><span class="plan-name">Growth</span><span class="plan-tagline">2M credits / mo</span></div><div class="plan-price"><span class="plan-cost is-monthly"><span class="plan-amt">$599</span><span class="plan-per">/ mo</span></span><span class="plan-cost is-yearly"><span class="plan-amt">$6,589</span><span class="plan-per">/ yr</span></span><span class="plan-save is-yearly">1 month free &middot; 8% off</span></div><span class="plan-rate">&asymp; $0.30 per 1k credits</span><a class="js-plan-cta btn btn-secondary" href="/login?signup=pricing&amp;return_to=%2Fconsole%2Fbilling%3Fplan%3Dscale-2m" data-track-cta="plan_scale-2m" data-track-location="pricing_plans">Get started</a></div></div><p class="plans-note">Every plan draws on the same balance across every product, and past the block pay as you go continues at the bracket your volume already reached. Need more than 2M credits a month? <a class="inl" href="/enterprise">Talk to us about enterprise &rarr;</a></p></div></section><div class="rule"></div><section id="included"><div class="wrap"><div class="sec-head"><span class="eyebrow"><b>04</b> Included everywhere</span><h2>Included in every plan, both ways to pay.</h2><p>The things others sell as add-ons are part of every Crawlbase request, on pay as you go and on every subscription alike.</p></div><div class="ref-grid"><div class="rcell"><div class="rl"><span>INCLUDED / 01</span><b>$0 on fails</b></div><h3>Success-only billing</h3><p>A request that fails or is blocked is never billed, whatever the site or rendering mode.</p></div><div class="rcell"><div class="rl"><span>INCLUDED / 02</span><b>every product</b></div><h3>One balance</h3><p>The Crawling API with screenshots, the Crawler, Smart AI Proxy and Cloud Storage all draw from the same credits.</p></div><div class="rcell"><div class="rl"><span>INCLUDED / 03</span><b>automatic</b></div><h3>Falling rates</h3><p>The graduated ladder applies to everyone. Growth alone moves you into cheaper brackets, no plan change needed.</p></div><div class="rcell"><div class="rl"><span>INCLUDED / 04</span><b>no add-on</b></div><h3>Proxies and anti-bot</h3><p>Rotating residential proxies, CAPTCHA and block handling are part of every request, never a separate bill.</p></div><div class="rcell"><div class="rl"><span>INCLUDED / 05</span><b>&times;2</b></div><h3>JavaScript rendering</h3><p>A real browser render doubles the request, and that is the whole story. There is no browser tier.</p></div><div class="rcell"><div class="rl"><span>INCLUDED / 06</span><b>100+</b></div><h3>Built-in scrapers</h3><p>Structured JSON from the sites that matter, at the same request price as raw HTML.</p></div><div class="rcell"><div class="rl"><span>INCLUDED / 07</span><b>hard stop</b></div><h3>Spend caps</h3><p>Cap the account or a single workspace and usage pauses before the bill passes it.</p></div><div class="rcell"><div class="rl"><span>INCLUDED / 08</span><b>all accounts</b></div><h3>Support for everyone</h3><p>A human answers every account, free tier included. Nothing about support sits behind a plan.</p></div></div></div></section><div class="rule"></div><section id="credits"><div class="wrap"><div class="sec-head"><span class="eyebrow"><b>05</b> How credits work</span><h2>One credit is one standard request.</h2><p>Everything converts into the same balance, so one number tells you where you stand across every product.</p></div><div class="ref-grid"><div class="rcell"><div class="rl"><span>CREDITS / 01</span><b>1 credit</b></div><h3>Standard request</h3><p>One successful request to a standard site spends exactly one credit.</p></div><div class="rcell"><div class="rl"><span>CREDITS / 02</span><b>&times;2</b></div><h3>JavaScript rendering</h3><p>Rendering in a real browser doubles the credits of any request, whatever the site tier.</p></div><div class="rcell"><div class="rl"><span>CREDITS / 03</span><b>0.5 credits</b></div><h3>Cloud Storage</h3><p>Half a credit keeps one stored page for a month, drawn from the same balance.</p></div><div class="rcell"><div class="rl"><span>CREDITS / 04</span><b>2 credits</b></div><h3>Screenshots</h3><p>A full-page capture through the Crawling API spends two credits.</p></div></div><div class="pc-ladder"><div class="pc-ladder-head"><span>Site difficulty multipliers</span><span class="pc-ladder-meta">scale a group's whole ladder total</span></div><div class="pc-ladder-grid"><div class="pc-row is-on"><span class="pc-row-band">Standard</span><span class="pc-row-rate">×1</span></div><div class="pc-row is-on"><span class="pc-row-band">Moderate</span><span class="pc-row-rate">×1.5</span></div><div class="pc-row is-on"><span class="pc-row-band">Complex</span><span class="pc-row-rate">×2</span></div><div class="pc-row is-on"><span class="pc-row-band">Complex I</span><span class="pc-row-rate">×3</span></div><div class="pc-row is-on"><span class="pc-row-band">Complex II</span><span class="pc-row-rate">×4.5</span></div><div class="pc-row is-on"><span class="pc-row-band">Extreme</span><span class="pc-row-rate">×9</span></div><div class="pc-row is-on"><span class="pc-row-band">Extreme I</span><span class="pc-row-rate">×13.5</span></div><div class="pc-row is-on"><span class="pc-row-band">Extreme II</span><span class="pc-row-rate">×20</span></div></div><p class="pc-ladder-note">Most sites are standard. Heavily defended sites carry a higher tier, applied automatically, and JavaScript rendering doubles any tier.</p></div></div></section><div class="rule"></div><section id="faq"><div class="wrap"><div class="sec-head"><span class="eyebrow"><b>06</b> FAQ</span><h2>Pricing questions.</h2></div><div class="faq-list"><div class="faq-item js-faq-item open"><button class="js-faq-q faq-q" type="button"><span class="qn">Q.01</span><span class="qt">What counts as a request?</span><span class="qx">+</span></button><div class="faq-a"><div class="faq-a-in">Only successful requests are billed. A request that fails or is blocked costs nothing, whatever the site or rendering mode.</div></div></div><div class="faq-item js-faq-item"><button class="js-faq-q faq-q" type="button"><span class="qn">Q.02</span><span class="qt">How do I start free?</span><span class="qx">+</span></button><div class="faq-a"><div class="faq-a-in">Every new account starts with 1,000 free credits and no card on file, and completing setup steps grows that to up to 5,000. The free credits work across every product.</div></div></div><div class="faq-item js-faq-item"><button class="js-faq-q faq-q" type="button"><span class="qn">Q.03</span><span class="qt">Can I cap what I spend?</span><span class="qx">+</span></button><div class="faq-a"><div class="faq-a-in">Yes. Set an optional hard spend cap in the dashboard and usage stops before the bill passes it. Raise, lower or remove it any time.</div></div></div><div class="faq-item js-faq-item"><button class="js-faq-q faq-q" type="button"><span class="qn">Q.04</span><span class="qt">Do credits expire, and does the allowance reset?</span><span class="qx">+</span></button><div class="faq-a"><div class="faq-a-in">Pay as you go bills in arrears for what you actually used, so there is nothing to expire. A subscription's credit block resets with each monthly cycle.</div></div></div><div class="faq-item js-faq-item"><button class="js-faq-q faq-q" type="button"><span class="qn">Q.05</span><span class="qt">What happens past a subscription&#39;s included credits?</span><span class="qx">+</span></button><div class="faq-a"><div class="faq-a-in">Usage continues as pay as you go on the same rate card, at the bracket your volume already reached. Prefer a hard stop? Turn pay as you go off and requests pause at the block instead.</div></div></div><div class="faq-item js-faq-item"><button class="js-faq-q faq-q" type="button"><span class="qn">Q.06</span><span class="qt">How do storage and screenshots bill?</span><span class="qx">+</span></button><div class="faq-a"><div class="faq-a-in">From the same balance. Storing a page costs 0.5 credits per month it is kept, and a screenshot capture costs 2 credits.</div></div></div><div class="faq-item js-faq-item"><button class="js-faq-q faq-q" type="button"><span class="qn">Q.07</span><span class="qt">What about very high volume?</span><span class="qx">+</span></button><div class="faq-a"><div class="faq-a-in">Enterprise adds custom volume, SLAs and invoicing. <a class="inl" href="/enterprise">Talk to sales</a> about a plan for your program.</div></div></div></div></div></section><section class="cta-band"><div class="wrap"><div class="cta-inner"><h2>Start free.<br />Scale when you are ready.<span class="hcaret" aria-hidden="true"></span></h2><p>Up to 5,000 requests free, no credit card. One balance across every product.</p><div class="cta-actions"><a class="btn btn-primary" href="/login?signup=pricing" data-track-cta="start_free" data-track-location="pricing_footer_cta">Start free<svg><use xlink:href="/assets/images/sprite-539325c6b9.symbol.svg#arrow-right-color"></use></svg></a><a class="btn btn-secondary" href="/enterprise" data-track-cta="contact_sales" data-track-location="pricing_footer_cta">Talk to sales</a></div></div></div></section></main><section class="colophon" aria-hidden="true"><span class="colophon-cap">[ web data infrastructure / since 2017 ]</span><div class="colophon-word">CRAWLBASE<span class="sq"></span></div></section><footer><div class="wrap"><div class="foot-grid"><div class="foot-brand"><a class="brand" href="/"><span class="mark"><svg class="brand-mark-svg" viewBox="0 0 46 47" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect class="brand-mark-tile" x="0.8" y="1.3" width="44.4" height="44.4" rx="10.2"></rect><path class="brand-mark-wave" d="M27.6525 12.8821C26.2298 12.2988 24.7075 12 23.1568 12C21.6061 12 20.0981 12.2988 18.6612 12.8821C17.1816 13.4796 15.8443 14.3616 14.7062 15.4998L18.6612 19.4548C21.1366 16.9793 25.177 16.9793 27.6525 19.4548L31.6075 15.4998C30.4693 14.3616 29.1463 13.4796 27.6525 12.8821Z"></path><path class="brand-mark-wave" d="M18.6612 28.4463L14.7062 32.4013C15.8443 33.5394 17.1816 34.4215 18.6612 35.0332C20.0981 35.6165 21.6061 35.9011 23.1568 35.9011C24.7075 35.9011 26.2156 35.6023 27.6525 35.019C29.132 34.4215 30.4693 33.5394 31.6075 32.4013L27.6525 28.4463C25.177 30.936 21.1366 30.9217 18.6612 28.4463Z"></path><path class="brand-mark-dot" d="M15.574 27.0516C17.2947 27.0516 18.6896 25.6567 18.6896 23.936C18.6896 22.2152 17.2947 20.8203 15.574 20.8203C13.8532 20.8203 12.4583 22.2152 12.4583 23.936C12.4583 25.6567 13.8532 27.0516 15.574 27.0516Z"></path></svg></span>crawlbase</a><p>Infrastructure for extracting, rendering and delivering web data. Operating since 2017.</p><div class="foot-social"><a href="https://github.com/crawlbase" aria-label="Crawlbase on GitHub" target="_blank" rel="noopener"><svg><use xlink:href="/assets/images/sprite-539325c6b9.symbol.svg#footer-github"></use></svg></a><a href="https://linkedin.com/company/crawlbase" aria-label="Crawlbase on LinkedIn" target="_blank" rel="noopener"><svg><use xlink:href="/assets/images/sprite-539325c6b9.symbol.svg#footer-linkedin"></use></svg></a><a href="https://www.youtube.com/@CrawlbaseChannel" aria-label="Crawlbase on YouTube" target="_blank" rel="noopener"><svg><use xlink:href="/assets/images/sprite-539325c6b9.symbol.svg#footer-youtube"></use></svg></a></div></div><div class="foot-col"><h3>Products</h3><a href="/crawling-api-avoid-captchas-blocks">Crawling API</a><a href="/anonymous-crawler-asynchronous-scraping">Enterprise Crawler</a><a href="/smart-proxy">Smart AI Proxy</a><a href="/cloud-storage-for-crawling-and-scraping">Cloud Storage</a><a href="/mcp">Web MCP Server</a></div><div class="foot-col"><h3>Scrapers</h3><a href="/amazon-scraper">Amazon</a><a href="/walmart-scraper">Walmart</a><a href="/google-serp-scraper">Google SERP</a><a href="/linkedin-scraper">LinkedIn</a><a href="/docs/scrapers">All scrapers</a></div><div class="foot-col"><h3>Developers</h3><a href="/docs">Documentation</a><a href="/docs/crawling-api">API reference</a><a href="/docs/api-playground">Playground</a><a href="/cookbook">Scraping Cookbook</a><a href="/docs/integrations">Integrations</a><a href="/crawling-libraries-sdk">SDKs</a><a href="https://status.crawlbase.com" rel="noopener" target="_blank">Status</a></div><div class="foot-col"><h3>Company</h3><a href="/about-us">About</a><a href="/blog/">Blog</a><a href="/customers-success-stories">Customers</a><a href="/affiliates">Affiliates</a><a href="/pricing">Pricing</a><a href="/frequently-asked-questions-faq">FAQ</a><a href="/contact">Contact</a></div></div><div class="foot-bottom"><div class="lang-switch js-lang-switch"><button class="lang-switch-trigger js-lang-switch-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="EN · Select language"><svg class="lang-switch-globe"><use xlink:href="/assets/images/sprite-539325c6b9.symbol.svg#globe-icon"></use></svg><span class="lang-switch-code">EN</span><svg class="lang-switch-caret"><use xlink:href="/assets/images/sprite-539325c6b9.symbol.svg#chevron-down"></use></svg></button><div class="lang-switch-menu" role="listbox"><a class="lang-switch-option is-current" href="https://crawlbase.com/pricing" role="option" hreflang="en"><span class="lang-switch-label">English</span><span class="lang-switch-badge">EN</span></a><a class="lang-switch-option" href="https://de.crawlbase.com/pricing" role="option" hreflang="de"><span class="lang-switch-label">Deutsch</span><span class="lang-switch-badge">DE</span></a><a class="lang-switch-option" href="https://fr.crawlbase.com/pricing" role="option" hreflang="fr"><span class="lang-switch-label">Français</span><span class="lang-switch-badge">FR</span></a><a class="lang-switch-option" href="https://ru.crawlbase.com/pricing" role="option" hreflang="ru"><span class="lang-switch-label">Русский</span><span class="lang-switch-badge">RU</span></a><a class="lang-switch-option" href="https://zh-cn.crawlbase.com/pricing" role="option" hreflang="zh-CN"><span class="lang-switch-label">中文</span><span class="lang-switch-badge">ZH</span></a></div></div><span>© 2026 Crawlbase. All rights reserved.</span><div class="right"><a class="foot-net" href="https://status.crawlbase.com" target="_blank" rel="noopener"><span class="dot green"></span>NET / STATUS</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></div></footer><script>window.cbThirdParty && cbThirdParty(function () { window.vgo && vgo('process'); });var NS = NS || {};NS.appVersion = "579a8309";NS.apiHost = "https://api.crawlbase.com";</script><script src="/assets/js/landing-bundle-ea6c9ee02e.js" async=""></script><script>cbThirdParty(function () {
+  var s = document.createElement("script");
+  s.async = true;
+  s.src = "https://www.googletagmanager.com/gtag/js?id=G-KKP28RNNBB";
+  document.head.appendChild(s);
+});</script><script src="https://app.helpkey.co/widget.js" data-helpkey-key="hk_widget_23ERbmEb8WQ91A8aWL2VgiUs0L2JtVSncebw_4-uPiE" async=""></script><script>var loadInterval = setInterval(function() { if (window.loadModule) { clearInterval(loadInterval); loadModule('common.js');loadModule('pages/landing.js'); } }, 50);</script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4cd7626e84d2fc5',t:'MTc5MjM4ODU2OA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>

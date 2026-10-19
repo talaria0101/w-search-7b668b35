@@ -1,0 +1,2537 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-669N8EJ8QH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-669N8EJ8QH');
+
+    var overrideReferrer = false;
+    if (overrideReferrer) {
+      gtag('set', 'page_referrer', 'https://serpapi.com');
+    }
+  </script>
+
+
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="A0LV_YDaSgDhLM_mmfhySvMQqQEzIiqipgI3QOo0Hu1F7Qr6qnb0EN-vXPp1MOxuRgIioGimKSRjI_YrIR7WCA" />
+
+      
+  <title>SerpApi: Google Search API</title>
+  <meta name="description" content="SerpApi is a real-time API to access Google search results. We handle proxies, solve captchas, and parse all rich structured data for you.">
+  <meta name="keywords" content="serp, api, serp api, serpapi, google search api, google search results api">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#377FEA">
+<meta name="apple-mobile-web-app-title" content="SerpApi">
+<meta name="application-name" content="SerpApi">
+
+    <link rel="canonical" href="https://serpapi.com/" />
+
+    
+<meta property="og:site_name" content="SerpApi">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SerpApi: Google Search API" />
+<meta property="og:description" content="SerpApi is a real-time API to access Google search results. We handle proxies, solve captchas, and parse all rich structured data for you." />
+<meta property="og:url" content="https://serpapi.com/" />
+<meta property="og:image" content="https://serpapi.com/assets/landing/card-bc65413084f4c590615bdbeda67df9addc3c508854a61d75fb68300342aa35fe.png">
+<meta property="og:image:alt" content="SerpApi screenshot">
+<meta name="twitter:site" content="@serpapi" />
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="alternate" type="application/rss+xml" title="SerpApi Blog" href="https://serpapi.com/blog/rss/">
+<link rel="alternate" type="application/rss+xml" title="SerpApi YouTube" href="https://www.youtube.com/feeds/videos.xml?channel_id=UCUgIHlYBOD3yA3yDIRhg_mg">
+
+    <link rel="stylesheet" media="all" href="/assets/fontawesome-175d2a6f50e90c8369a071e18dcdd26e8318fb8262cd5344f8b936908a2e1f59.css" />
+    <link rel="stylesheet" media="all" href="/assets/fontawesome-all-859dacb17de7ff576e0239fab418e6f00052400387b1b4c37d77ba57c8b6453a.css" />
+
+    <link rel="stylesheet" href="/landing-theme/html/layout-1/css/less/style.css?version=1.9">
+
+    
+  <link rel="stylesheet" href="/select2/select2.min.css">
+  <link rel="stylesheet" media="all" href="/assets/landing/homepage-37460042f4bdfa902254a9388f371106802bb040ee36102616c733387a8d0444.css" />
+
+  <link rel="stylesheet" media="all" href="/assets/landing/enterprise-section-a3fbcdfafd51d18faf3e02359a206d92e147a4dff87f73f973023c048b193e4d.css" />
+
+
+    <script src="/assets/landing_pages-8f8145e22a2351fabe5943e7af1a83287ed38e2123a928b2e1269102f047df58.js" media="all"></script>
+
+    
+  <script src="/assets/homepage-f30ae96e5b351b2f28f1ed749fb3bb4dc5146973862e01111debe1caa3d6a991.js"></script>
+
+  <script src="https://www.google.com/recaptcha/api.js?onload=renderRecaptcha&render=explicit" async defer></script>
+  <script>
+    function renderRecaptcha() {
+      utils.getAccountData().then((data) => {
+        if (!data.api_key) RecaptchaSearchLoad();
+        RecaptchaFormLoad();
+      });
+    }
+  </script>
+
+
+    <meta name="turbolinks-visit-control" content="reload">
+  </head>
+
+  <body data-turbolinks="false">
+      <script>
+    utils.getAccountData().then(function(data) {
+      if (!data.impersonating) return;
+
+      fetch("/impersonation").then(function(response) { return response.text(); }).then(function(html) {
+        document.body.insertAdjacentHTML("beforeend", html);
+        if (window.Intercom) Intercom("update", { hide_default_launcher: true });
+      });
+    });
+  </script>
+
+
+    
+
+
+
+<div class="header-wrap">
+  <header id="header" class="pt-4 pb-5 dropdown-container">
+  <div class="container p-0">
+    <nav class="navbar navbar-toggleable-md navbar-dark bg-faded p-0">
+      <button id="show" class="navbar-toggler navbar-show navbar-toggler-right pr-0" type="button">
+        <i class="fas fa-bars"></i>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img alt="SerpApi home" class="img-fluid mr-5" src="/assets/SerpApi-gentle-white-dc708ed0b09596cd08db74108b88af298123eeb384e872716b61d2a0ba1a1e03.png" />
+      </a>
+      <div class="collapse navbar-collapse align-items-center">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item mr-2 enable-dropdown" data-template="documentation-dropdown-template">
+            <a class="nav-link" href="/search-engine-apis">APIs</a>
+          </li>
+          <li class="nav-item mr-2 enable-dropdown" data-template="industries-dropdown-template">
+            <a class="nav-link" href="#">Solutions</a>
+          </li>
+          <li class="nav-item mr-1 enable-dropdown" data-template="integrations-dropdown-template">
+            <a class="nav-link" href="/integrations">Integrations</a>
+          </li>
+          <li class="nav-item mr-1 enable-dropdown" data-template="features-dropdown-template">
+            <a class="nav-link" href="/#features">Features</a>
+          </li>
+          <li class="nav-item mr-1 enable-dropdown" data-template="pricing-dropdown-template">
+            <a class="nav-link" href="/pricing">Pricing</a>
+          </li>
+          <li class="nav-item mr-1 enable-dropdown" data-template="resources-dropdown-template">
+            <a class="nav-link" href="#" >Company</a>
+          </li>
+        </ul>
+        <div class="wrap-reg">
+          <div class="auth-skeleton"></div>
+          <div class="auth-buttons">
+            <a href="/dashboard"><span class="navbar-text sign-in">Sign In</span></a>
+            <a href="/users/sign_up" class="font-weight-bold"><span class="navbar-text">Register</span></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div id="header-mobile">
+  <div class="container p-0 h-100">
+    <div class="top-overflow">
+      <div class="top py-4">
+
+        <a class="navbar-brand" href="/">
+          <img alt="SerpApi home" class="img-fluid mr-5" src="/assets/SerpApi-gentle-white-dc708ed0b09596cd08db74108b88af298123eeb384e872716b61d2a0ba1a1e03.png" />
+        </a>
+
+        <div class="ml-auto">
+          <button id="hide" class="navbar-toggler navbar-hide navbar-toggler-right pr-1 pt-0" type="button">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <ul class="navbar-nav mr-auto mt-3">
+          <li class="nav-item mr-3">
+            <a class="nav-link" href="/search-engine-apis">APIs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/integrations">Integrations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#features">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pricing">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/use-cases">Use cases</a>
+          </li>
+          <li class="nav-item mr-2">
+            <a class="nav-link" href="/team">Team</a>
+          </li>
+          <li class="nav-item mr-2">
+            <a class="nav-link" href="/careers">Careers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/faq">FAQ</a>
+          </li>
+          <li class="nav-item mr-3">
+            <a class="nav-link" href="/#contact">Contact us</a>
+          </li>
+        </ul>
+        <div class="wrap-reg mb-5">
+          <div class="auth-skeleton"></div>
+          <div class="auth-buttons">
+            <a href="/dashboard"><span class="navbar-text sign-in">Sign In</span></a>
+            <a href="/users/sign_up" class="font-weight-bold"><span class="navbar-text">Register</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<template id="pricing-dropdown-template">
+  <main>
+    <div class="title">
+      <h5 class="mb-1 font-weight-bold">Pricing</h5>
+      <p>Choose the plan that suits you best.</p>
+    </div>
+    <ul class="p-0 columns-2">
+      <li><a href="/pricing"><i class="mr-2 fas fa-box-open"></i>Standard</a></li>
+      <li><a href="/enterprise"><i class="mr-2 fas fa-rocket-launch"></i>Enterprise</a></li>
+    </ul>
+  </main>
+</template>
+
+<template id="documentation-dropdown-template">
+  <div class="menu-apis-list">
+    <main>
+      <div class="title">
+        <h5 class="mb-1 font-weight-bold">APIs</h5>
+        <p>Explore all search engines we support or check out our <a href="/search-engine-apis">complete API list.</a></p>
+      </div>
+      <ul class="p-0 columns-5">
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fab fa-google"></i>
+            <a href="/search-api">
+              <span>Google Search API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fab fa-google"></i>
+            <a href="/google-light-api">
+              <span>Google Light Search API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-robot"></i>
+            <a href="/google-ai-mode-api">
+              <span>Google AI Mode API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-robot"></i>
+            <a href="/google-ai-overview-api">
+              <span>Google AI Overview API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <img alt="" class="mr-2" src="/demo-redesign/icons/static/a-secure-d-gray.svg" />
+            <a href="/google-ads-api">
+              <span>Google Ads API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-eye"></i>
+            <a href="/google-ads-transparency-center-api">
+              <span>Google Ads Transparency API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-magic"></i>
+            <a href="/google-autocomplete-api">
+              <span>Google Autocomplete API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-calendar-alt"></i>
+            <a href="/google-events-api">
+              <span>Google Events API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-landmark"></i>
+            <a href="/google-finance-api">
+              <span>Google Finance API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-analytics"></i>
+            <a href="/google-finance-markets">
+              <span>Google Finance Markets API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-plane-departure"></i>
+            <a href="/google-flights-api">
+              <span>Google Flights API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-magic"></i>
+            <a href="/google-flights-autocomplete-api">
+              <span>Google Flights Autocomplete API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-badge-percent"></i>
+            <a href="/google-flights-deals-api">
+              <span>Google Flights Deals API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-comments"></i>
+            <a href="/google-forums-api">
+              <span>Google Forums API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-sparkles"></i>
+            <a href="/google-gemini-api">
+              <span>Google Gemini API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-bed"></i>
+            <a href="/google-hotels-api">
+              <span>Google Hotels API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-magic"></i>
+            <a href="/google-hotels-autocomplete-api">
+              <span>Google Hotels Autocomplete API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-image"></i>
+            <a href="/google-hotels-photos-api">
+              <span>Google Hotels Photos API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-star"></i>
+            <a href="/google-hotels-reviews-api">
+              <span>Google Hotels Reviews API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-images"></i>
+            <a href="/google-images-api">
+              <span>Google Images API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-images"></i>
+            <a href="/google-images-light-api">
+              <span>Google Images Light API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-image-polaroid"></i>
+            <a href="/google-images-related-content-api">
+              <span>Google Images Related Content API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-telescope"></i>
+            <a href="/google-immersive-product-api">
+              <span>Google Immersive Product API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-briefcase"></i>
+            <a href="/google-jobs-api">
+              <span>Google Jobs API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-camera"></i>
+            <a href="/google-lens-api">
+              <span>Google Lens API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-map-marker-alt"></i>
+            <a href="/google-local-api">
+              <span>Google Local API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <img alt="" class="mr-2" src="/demo-redesign/icons/static/a-secure-d-gray.svg" />
+            <a href="/google-local-services-api">
+              <span>Google Local Services API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-globe-americas"></i>
+            <a href="/google-maps-api">
+              <span>Google Maps API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-magic"></i>
+            <a href="/google-maps-autocomplete-api">
+              <span>Google Maps Autocomplete API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-user-edit"></i>
+            <a href="/google-maps-contributor-reviews-api">
+              <span>Google Maps Contributor Reviews API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-directions"></i>
+            <a href="/google-maps-directions-api">
+              <span>Google Maps Directions API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-images"></i>
+            <a href="/google-maps-photos-api">
+              <span>Google Maps Photos API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-bars"></i>
+            <a href="/google-maps-posts-api">
+              <span>Google Maps Posts API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-star"></i>
+            <a href="/google-maps-reviews-api">
+              <span>Google Maps Reviews API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-newspaper"></i>
+            <a href="/google-news-api">
+              <span>Google News API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-newspaper"></i>
+            <a href="/google-news-light-api">
+              <span>Google News Light API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-file-certificate"></i>
+            <a href="/google-patents-api">
+              <span>Google Patents API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-list"></i>
+            <a href="/google-patents-details-api">
+              <span>Google Patents Details API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-book-alt"></i>
+            <a href="/google-play-books">
+              <span>Google Play Books API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-gamepad"></i>
+            <a href="/google-play-games">
+              <span>Google Play Games API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-film-alt"></i>
+            <a href="/google-play-movies">
+              <span>Google Play Movies API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-shapes"></i>
+            <a href="/google-play-product-api">
+              <span>Google Play Product API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fab fa-google-play"></i>
+            <a href="/google-play-api">
+              <span>Google Play Store API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-tags"></i>
+            <a href="/google-product-api">
+              <span>Google Product API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-question-square"></i>
+            <a href="/google-related-questions-api">
+              <span>Google Related Questions API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-image"></i>
+            <a href="/google-reverse-image">
+              <span>Google Reverse Image API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-graduation-cap"></i>
+            <a href="/google-scholar-api">
+              <span>Google Scholar API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-user-graduate"></i>
+            <a href="/google-scholar-author-api">
+              <span>Google Scholar Author API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-file-search"></i>
+            <a href="/google-scholar-case-law-api">
+              <span>Google Scholar Case Law API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-shopping-cart"></i>
+            <a href="/google-shopping-api">
+              <span>Google Shopping API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-shopping-cart"></i>
+            <a href="/google-shopping-light-api">
+              <span>Google Shopping Light API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-film-alt"></i>
+            <a href="/google-short-videos-api">
+              <span>Google Short Videos API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-running"></i>
+            <a href="/google-sports-api">
+              <span>Google Sports API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <img alt="" class="mr-2" src="/demo-redesign/icons/static/google-travel-explore-gray.svg?v=1.1" />
+            <a href="/google-travel-explore-api">
+              <span>Google Travel Explore API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-chart-line"></i>
+            <a href="/google-trends-api">
+              <span>Google Trends API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-magic"></i>
+            <a href="/google-trends-autocomplete">
+              <span>Google Trends Autocomplete API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-user-chart"></i>
+            <a href="/google-trends-trending-now">
+              <span>Google Trends Trending Now API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-video"></i>
+            <a href="/google-videos-api">
+              <span>Google Videos API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-video"></i>
+            <a href="/google-videos-light-api">
+              <span>Google Videos Light API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <img alt="" class="mr-2" src="/demo-redesign/icons/static/airbnb-gray.svg" />
+            <a href="/airbnb-search-api">
+              <span>Airbnb Search API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fab fa-amazon"></i>
+            <a href="/amazon-search-api">
+              <span>Amazon Search API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-magic"></i>
+            <a href="/amazon-autocomplete-api">
+              <span>Amazon Autocomplete API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-tags"></i>
+            <a href="/amazon-product-api">
+              <span>Amazon Product API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fab fa-app-store"></i>
+            <a href="/apple-app-store">
+              <span>Apple App Store API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-globe-americas"></i>
+            <a href="/apple-maps-api">
+              <span>Apple Maps API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-map-marker-alt"></i>
+            <a href="/apple-maps-places-api">
+              <span>Apple Maps Places API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-tags"></i>
+            <a href="/apple-product">
+              <span>Apple App Store Product API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-star"></i>
+            <a href="/apple-reviews">
+              <span>Apple App Store Reviews API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <img alt="" class="mr-2" src="/demo-redesign/icons/static/baidu-gray.svg?version=1.2" />
+            <a href="/baidu-search-api">
+              <span>Baidu Search API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-newspaper"></i>
+            <a href="/baidu-news-api">
+              <span>Baidu News API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <img alt="" class="mr-2" src="/demo-redesign/icons/static/bing-gray.svg?version=1.2" />
+            <a href="/bing-search-api">
+              <span>Bing Search API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-robot"></i>
+            <a href="/bing-copilot-api">
+              <span>Bing Copilot API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-images"></i>
+            <a href="/bing-images-api">
+              <span>Bing Images API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-globe-americas"></i>
+            <a href="/bing-maps-api">
+              <span>Bing Maps API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-newspaper"></i>
+            <a href="/bing-news-api">
+              <span>Bing News API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-tags"></i>
+            <a href="/bing-product-api">
+              <span>Bing Product API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-image"></i>
+            <a href="/bing-reverse-image-api">
+              <span>Bing Reverse Image API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-shopping-cart"></i>
+            <a href="/bing-shopping-api">
+              <span>Bing Shopping API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-video"></i>
+            <a href="/bing-videos-api">
+              <span>Bing Videos API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-robot"></i>
+            <a href="/brave-ai-mode-api">
+              <span>Brave AI Mode API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-robot"></i>
+            <a href="/duck-ai-api">
+              <span>Duck AI API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <img alt="" class="mr-2" src="/demo-redesign/icons/static/duckduckgo-gray.svg?v=1.1" />
+            <a href="/duckduckgo-search-api">
+              <span>DuckDuckGo Search API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <img alt="" class="mr-2" src="/demo-redesign/icons/static/duckduckgo-gray.svg?v=1.1" />
+            <a href="/duckduckgo-light-api">
+              <span>DuckDuckGo Light API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-globe-americas"></i>
+            <a href="/duckduckgo-maps-api">
+              <span>DuckDuckGo Maps API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-newspaper"></i>
+            <a href="/duckduckgo-news-api">
+              <span>DuckDuckGo News API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <img alt="" class="mr-2" src="/demo-redesign/icons/static/ebay-gray.svg?version=1.2" />
+            <a href="/ebay-search-api">
+              <span>eBay Search API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-tags"></i>
+            <a href="/ebay-product-api">
+              <span>eBay Product API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-user-plus"></i>
+            <a href="/ebay-seller-api">
+              <span>eBay Seller API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-globe"></i>
+            <a href="/extract-api">
+              <span>Extract API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fab fa-facebook"></i>
+            <a href="/facebook-profile-api">
+              <span>Facebook Profile API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <img alt="" class="mr-2" src="/demo-redesign/icons/static/home_depot-gray.svg?version=1.3" />
+            <a href="/home-depot-search-api">
+              <span>The Home Depot Search API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-tags"></i>
+            <a href="/home-depot-product">
+              <span>The Home Depot Product API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-star"></i>
+            <a href="/home-depot-product-reviews">
+              <span>The Home Depot Reviews API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fab fa-instagram"></i>
+            <a href="/instagram-profile-api">
+              <span>Instagram Profile API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <img alt="" class="mr-2" src="/demo-redesign/icons/static/naver-grey.svg" />
+            <a href="/naver-search-api">
+              <span>Naver Search API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-robot"></i>
+            <a href="/naver-ai-mode-api">
+              <span>Naver AI Mode API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-robot"></i>
+            <a href="/naver-ai-overview-api">
+              <span>Naver AI Overview API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <img alt="" class="mr-2" src="/demo-redesign/icons/static/open-table-gray.svg" />
+            <a href="/open-table-reviews-api">
+              <span>OpenTable Reviews API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-database"></i>
+            <a href="/search-index-api">
+              <span>Search Index</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <img alt="" class="mr-2" src="/demo-redesign/icons/static/target-gray.svg" />
+            <a href="/target-search-api">
+              <span>Target Search API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <img alt="" class="mr-2" src="/demo-redesign/icons/static/tripadvisor-gray.svg?v=1.1" />
+            <a href="/tripadvisor-search-api">
+              <span>Tripadvisor Search API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-map-marker-alt"></i>
+            <a href="/tripadvisor-place-api">
+              <span>Tripadvisor Place API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-star"></i>
+            <a href="/tripadvisor-reviews-api">
+              <span>Tripadvisor Reviews API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <img alt="" class="mr-2" src="/demo-redesign/icons/static/walmart-gray.svg" />
+            <a href="/walmart-search-api">
+              <span>Walmart Search API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-tags"></i>
+            <a href="/walmart-product-api">
+              <span>Walmart Product API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-star"></i>
+            <a href="/walmart-product-reviews-api">
+              <span>Walmart Reviews API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fab fa-yahoo"></i>
+            <a href="/yahoo-search-api">
+              <span>Yahoo! Search API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-image"></i>
+            <a href="/yahoo-images-api">
+              <span>Yahoo! Images API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-fire"></i>
+            <a href="/yahoo-trends-api">
+              <span>Yahoo! Trends API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-video"></i>
+            <a href="/yahoo-videos-api">
+              <span>Yahoo! Videos API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fab fa-yandex-international"></i>
+            <a href="/yandex-search-api">
+              <span>Yandex Search API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-image"></i>
+            <a href="/yandex-images-api">
+              <span>Yandex Images API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-video"></i>
+            <a href="/yandex-videos-api">
+              <span>Yandex Videos API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fab fa-yelp"></i>
+            <a href="/yelp-search-api">
+              <span>Yelp Search API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-map-marker-alt"></i>
+            <a href="/yelp-place">
+              <span>Yelp Place API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-star"></i>
+            <a href="/yelp-reviews-api">
+              <span>Yelp Reviews API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fab fa-youtube"></i>
+            <a href="/youtube-search-api">
+              <span>YouTube Search API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-tv"></i>
+            <a href="/youtube-channel-api">
+              <span>YouTube Channel API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-play-circle"></i>
+            <a href="/youtube-video-api">
+              <span>YouTube Video API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-closed-captioning"></i>
+            <a href="/youtube-video-transcript">
+              <span>YouTube Video Transcript API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <img alt="" class="mr-2" src="/demo-redesign/icons/static/zillow-gray.svg" />
+            <a href="/zillow-search-api">
+              <span>Zillow Search API</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-cogs"></i>
+            <a href="/account-api">
+              <span>Extra APIs</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="mr-2 fas fa-life-ring"></i>
+            <a href="/api-status-and-error-codes">
+              <span>Status and Error Codes</span>
+            </a>
+          </li>
+      </ul>
+    </main>
+
+    <footer>
+      <ul class="p-0 columns-5">
+        <li class="d-flex align-items-center"><i class="mr-2 fas fa-heartbeat"></i><a href="https://status.serpapi.com/" target="_blank" rel="noopener noreferrer">API Status</a></li>
+        <li class="d-flex align-items-center"><i class="mr-2 fas fa-chart-line"></i><a href="/api-metrics">API Metrics</a></li>
+        <li class="d-flex align-items-center"><i class="mr-2 fas fa-map"></i><a target="_blank" href="https://github.com/serpapi/public-roadmap/">Public Roadmap</a></li>
+        <li class="d-flex align-items-center"><i class="mr-2 fas fa-file"></i><a href="/release-notes">Release Notes</a></li>
+        <li class="d-flex align-items-center"><i class="mr-2 fas fa-code"></i><a href="/playground">Playground</a></li>
+      </ul>
+    </footer>
+  </div>
+</template>
+
+<template id="industries-dropdown-template">
+  <div>
+    <main class="d-flex">
+      <div class="pr-4 border-right-light">
+        <div class="title">
+          <h5 class="mb-1 font-weight-bold">By Industry</h5>
+          <p>Find the right data solutions tailored to your market.</p>
+        </div>
+        <ul class="p-0 columns-2">
+            <li>
+              <a href="/search-engine-apis/web-search-discovery"><i class="mr-2 fas fa-search"></i>Web Search &amp; Discovery
+              </a>
+            </li>
+            <li>
+              <a href="/search-engine-apis/ecommerce-retail"><i class="mr-2 fas fa-shopping-cart"></i>Ecommerce &amp; Retail
+              </a>
+            </li>
+            <li>
+              <a href="/search-engine-apis/ai-llm-insights"><i class="mr-2 fas fa-robot"></i>AI &amp; LLM Insights
+              </a>
+            </li>
+            <li>
+              <a href="/search-engine-apis/advertising"><img alt="" class="mr-2" src="/demo-redesign/icons/static/a-secure-d-gray.svg" />Advertising
+              </a>
+            </li>
+            <li>
+              <a href="/search-engine-apis/events-entertainment"><i class="mr-2 fas fa-calendar-alt"></i>Events &amp; Entertainment
+              </a>
+            </li>
+            <li>
+              <a href="/search-engine-apis/finance-markets"><i class="mr-2 fas fa-landmark"></i>Finance &amp; Markets
+              </a>
+            </li>
+            <li>
+              <a href="/search-engine-apis/travel-hospitality"><i class="mr-2 fas fa-plane"></i>Travel &amp; Hospitality
+              </a>
+            </li>
+            <li>
+              <a href="/search-engine-apis/images-visual-search"><i class="mr-2 fas fa-images"></i>Images &amp; Visual Search
+              </a>
+            </li>
+            <li>
+              <a href="/search-engine-apis/jobs-careers"><i class="mr-2 fas fa-briefcase"></i>Jobs &amp; Careers
+              </a>
+            </li>
+            <li>
+              <a href="/search-engine-apis/local-maps"><i class="mr-2 fas fa-map-marker-alt"></i>Local &amp; Maps
+              </a>
+            </li>
+            <li>
+              <a href="/search-engine-apis/news-media"><i class="mr-2 fas fa-newspaper"></i>News &amp; Media
+              </a>
+            </li>
+            <li>
+              <a href="/search-engine-apis/academic-legal-research"><i class="mr-2 fas fa-graduation-cap"></i>Academic &amp; Legal Research
+              </a>
+            </li>
+            <li>
+              <a href="/search-engine-apis/app-stores-digital-content"><i class="mr-2 fas fa-mobile-alt"></i>App Stores &amp; Digital Content
+              </a>
+            </li>
+            <li>
+              <a href="/search-engine-apis/trends-analytics"><i class="mr-2 fas fa-chart-line"></i>Trends &amp; Analytics
+              </a>
+            </li>
+            <li>
+              <a href="/search-engine-apis/video-multimedia"><i class="mr-2 fas fa-video"></i>Video &amp; Multimedia
+              </a>
+            </li>
+            <li>
+              <a href="/search-engine-apis/social-media"><i class="mr-2 fas fa-users"></i>Social Media
+              </a>
+            </li>
+        </ul>
+      </div>
+      <div class="pl-4">
+        <div class="title">
+          <h5 class="mb-1 font-weight-bold">By Use Case</h5>
+          <p>Automate your projects with structured SERP data.</p>
+        </div>
+        <ul class="p-0 columns-2">
+            <li><a href="/use-cases/seo"><i class="mr-2 fas fa-search"></i>SEO</a></li>
+            <li><a href="/use-cases/local-seo"><i class="mr-2 fas fa-search-location"></i>Local SEO</a></li>
+            <li><a href="/use-cases/web-search-api"><i class="mr-2 fas fa-globe"></i>Web Search API</a></li>
+            <li><a href="/use-cases/ai-search-engine-api"><i class="mr-2 fas fa-microchip"></i>AI Search Engine API</a></li>
+            <li><a href="/use-cases/ai-seo-geo-api"><i class="mr-2 fas fa-binoculars"></i>AI SEO (GEO)</a></li>
+            <li><a href="/use-cases/product-research-tool-api"><i class="mr-2 fas fa-shopping-bag"></i>Product Research</a></li>
+            <li><a href="/use-cases/background-check-automation"><i class="mr-2 fas fa-user-check"></i>Background Check Automation</a></li>
+            <li><a href="/use-cases/machine-learning-and-artificial-intelligence"><i class="mr-2 fas fa-user-robot"></i>AI Models</a></li>
+            <li><a href="/use-cases/news-monitoring"><i class="mr-2 fas fa-newspaper"></i>News Monitoring</a></li>
+            <li><a href="/use-cases/voice-assistant"><i class="mr-2 fas fa-microphone"></i>Voice Assistant</a></li>
+            <li><a href="/use-cases/price-monitoring"><i class="mr-2 fas fa-tags"></i>Price Monitoring</a></li>
+            <li><a href="/use-cases/travel-information"><i class="mr-2 fas fa-plane"></i>Travel Information</a></li>
+            <li><a href="/use-cases/copyright-checker-tool"><i class="mr-2 fas fa-copyright"></i>Copyright Checker Tool</a></li>
+            <li><a href="/use-cases/cyber-threat-intelligence"><i class="mr-2 fas fa-user-secret"></i>Cyber Threat Intelligence</a></li>
+        </ul>
+      </div>
+    </main>
+  </div>
+</template>
+
+<template id="integrations-dropdown-template">
+  <main>
+    <div class="title">
+      <h5 class="mb-1 font-weight-bold">Easy Integrations</h5>
+      <p>Start integration with your preferred language.</p>
+    </div>
+    <ul class="p-0 columns-2">
+        <li>
+          <a class="d-inline-block" href="/integrations/ruby">
+            <img alt="ruby&#39;s icon" class="mr-2 align-text-top" src="/assets/integrations/ic-ruby-gray-bd803990653cec9ccfbf37a694bfffe3aab4127b125842efdd02212327c7daf4.svg" /><!--
+            -->Ruby<!--
+          --></a>
+        </li>
+        <li>
+          <a class="d-inline-block" href="/integrations/python">
+            <i class="mr-2 align-text-top fab fa-python"></i><!--
+            -->Python<!--
+          --></a>
+        </li>
+        <li>
+          <a class="d-inline-block" href="/integrations/javascript">
+            <i class="mr-2 align-text-top fab fa-js-square"></i><!--
+            -->JavaScript<!--
+          --></a>
+        </li>
+        <li>
+          <a class="d-inline-block" href="/integrations/go">
+            <img alt="go&#39;s icon" class="mr-2 align-text-top" src="/assets/integrations/ic-golang-gray-0842c13ea569bdd3971c99b6dac4b5e90f9ffaa58e49f71cf8b56451eb48caac.svg" /><!--
+            -->Golang<!--
+          --></a>
+        </li>
+        <li>
+          <a class="d-inline-block" href="/integrations/php">
+            <i class="mr-2 align-text-top fab fa-php"></i><!--
+            -->PHP<!--
+          --></a>
+        </li>
+        <li>
+          <a class="d-inline-block" href="/integrations/java">
+            <i class="mr-2 align-text-top fab fa-java"></i><!--
+            -->Java<!--
+          --></a>
+        </li>
+        <li>
+          <a class="d-inline-block" href="/integrations/rust">
+            <i class="mr-2 align-text-top fab fa-rust"></i><!--
+            -->Rust<!--
+          --></a>
+        </li>
+        <li>
+          <a class="d-inline-block" href="/integrations/dotnet">
+            <img alt="dotnet&#39;s icon" class="mr-2 align-text-top" src="/assets/integrations/ic-dotnet-gray-ab9d83f6e4dc82b1bf2c33971bebd1ef5c35dd9f45ff9c8fdeab44bf823c5394.svg" /><!--
+            -->.NET<!--
+          --></a>
+        </li>
+        <li>
+          <a class="d-inline-block" href="/integrations/mcp">
+            <img alt="mcp&#39;s icon" class="mr-2 align-text-top" src="/assets/integrations/ic-mcp-gray-962de92dc1a4f0a945f8cd5b1fd48ff7b8f20b9429301d72f22828f734e9ac4a.svg" /><!--
+            -->MCP<!--
+          --></a>
+        </li>
+        <li>
+          <a class="d-inline-block" href="/integrations/swift">
+            <i class="mr-2 align-text-top fab fa-swift"></i><!--
+            -->Swift<!--
+          --></a>
+        </li>
+        <li>
+          <a class="d-inline-block" href="/integrations/cpp">
+            <img alt="cpp&#39;s icon" class="mr-2 align-text-top" src="/assets/integrations/ic-cpp-gray-5cf1af907f75df6fcdb8c57cb6ed31226e731f82d5b07c144ca06f14d3f9a9f3.svg" /><!--
+            -->C++<!--
+          --></a>
+        </li>
+        <li>
+          <a class="d-inline-block" href="/integrations/cli">
+            <i class="mr-2 align-text-top fas fa-terminal"></i><!--
+            -->CLI<!--
+          --></a>
+        </li>
+    </ul>
+  </main>
+</template>
+
+<template id="features-dropdown-template">
+  <main>
+    <div class="title">
+      <h5 class="mb-1 font-weight-bold">Features</h5>
+      <p>Dive deeper into our advanced features.</p>
+    </div>
+    <ul class="p-0 columns-2">
+      <li><a href="/xray"><i class="mr-2 fas fa-skeleton"></i>X-Ray</a></li>
+      <li><a href="/zero-trace-mode"><i class="mr-2 fas fa-cactus"></i>ZeroTrace Mode</a></li>
+      <li><a href="/us-legal-shield"><i class="mr-2 fas fa-shield-alt"></i>U.S. Legal Shield</a></li>
+      <li><a href="/json-restrictor"><i class="mr-2 fas fa-snake"></i>JSON Restrictor</a></li>
+      <li><a href="/team-management"><i class="mr-2 fas fa-users"></i>Team Management</a></li>
+      <li><a href="/ludicrous-speed"><i class="mr-2 fas fa-rabbit-fast"></i>Ludicrous Speed</a></li>
+      <li><a href="/ludicrous-speed-max"><i class="mr-2 max fas fa-rabbit-fast"></i>Ludicrous Speed Max</a></li>
+      <li><a href="/pixel-position"><i class="mr-2 fas fa-browser"></i>Pixel Position</a></li>
+      <li><a href="/markdown-output"><i class="mr-2 fab fa-markdown"></i>Markdown Output</a></li>
+    </ul>
+  </main>
+</template>
+
+<template id="resources-dropdown-template">
+  <main>
+    <div class="title">
+      <h5 class="mb-1 font-weight-bold">Company</h5>
+      <p>Explore company information and helpful guides.</p>
+    </div>
+    <ul class="p-0 columns-2">
+      <li><a href="/team"><i class="mr-2 fas fa-users"></i>Team</a></li>
+      <li><a href="/security"><i class="mr-2 fas fa-lock"></i>Security</a></li>
+      <li><a href="/faq"><i class="mr-2 fas fa-question-circle"></i>FAQ</a></li>
+      <li><a href="https://serpapi.com/blog"><i class="mr-2 fas fa-book"></i>Blog</a></li>
+      <li><a target="_blank" href="https://www.youtube.com/@serpapi"><i class="mr-2 fas fa-video"></i>YouTube</a></li>
+      <li><a href="/release-notes"><i class="mr-2 fas fa-file"></i>Release notes</a></li>
+      <li><a href="/media"><i class="mr-2 fas fa-pencil"></i>Media kit</a></li>
+    </ul>
+  </main>
+  <footer>
+    <ul class="p-0 columns-2">
+      <li><a href="/careers"><i class="mr-2 fas fa-briefcase"></i>Careers</a></li>
+      <li><a href="/#contact"><i class="mr-2 fas fa-envelope"></i>Contact us</a></li>
+    </ul>
+  </footer>
+</template>
+
+<script>
+  const authButtons = document.querySelectorAll('.wrap-reg .auth-buttons');
+
+  function showAuthButtons(showDashboard) {
+    document.querySelectorAll('.wrap-reg .auth-skeleton').forEach((el) => el.style.display = 'none');
+    authButtons.forEach(el => el.style.display = 'flex');
+    if (showDashboard) authButtons.forEach(el => {
+      el.innerHTML = '<a href="/dashboard" class="font-weight-bold"><span class="navbar-text">Dashboard</span></a>';
+    });
+  }
+
+  $(document).ready(function() {
+    utils.getAccountData().then((data) => {
+      showAuthButtons(!!data.api_key);
+    });
+  });
+</script>
+
+
+  <section id="demo" class="hero">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-lg-12">
+          <h1 class="title pt-3 mb-4">Google Search API</h1>
+          <h2 class="lead mb-3">Scrape Google and other search engines from our fast, easy, and complete API.</h2>
+        </div>
+      </div>
+      <div data-react-class="HomepageDemo" data-react-props="{&quot;root_url&quot;:&quot;https://serpapi.com/&quot;,&quot;q&quot;:&quot;Coffee&quot;,&quot;location&quot;:&quot;Austin, Texas, United States&quot;,&quot;output&quot;:&quot;json&quot;,&quot;hl&quot;:&quot;en&quot;,&quot;gl&quot;:&quot;us&quot;,&quot;google_domain&quot;:&quot;google.com&quot;,&quot;hl_options&quot;:[[&quot;af&quot;,&quot;Afrikaans&quot;],[&quot;ak&quot;,&quot;Akan&quot;],[&quot;sq&quot;,&quot;Albanian&quot;],[&quot;ws&quot;,&quot;Samoa&quot;],[&quot;am&quot;,&quot;Amharic&quot;],[&quot;ar&quot;,&quot;Arabic&quot;],[&quot;hy&quot;,&quot;Armenian&quot;],[&quot;az&quot;,&quot;Azerbaijani&quot;],[&quot;eu&quot;,&quot;Basque&quot;],[&quot;be&quot;,&quot;Belarusian&quot;],[&quot;bem&quot;,&quot;Bemba&quot;],[&quot;bn&quot;,&quot;Bengali&quot;],[&quot;bh&quot;,&quot;Bihari&quot;],[&quot;bs&quot;,&quot;Bosnian&quot;],[&quot;br&quot;,&quot;Breton&quot;],[&quot;bg&quot;,&quot;Bulgarian&quot;],[&quot;bt&quot;,&quot;Bhutanese&quot;],[&quot;km&quot;,&quot;Cambodian&quot;],[&quot;ca&quot;,&quot;Catalan&quot;],[&quot;chr&quot;,&quot;Cherokee&quot;],[&quot;ny&quot;,&quot;Chichewa&quot;],[&quot;co&quot;,&quot;Corsican&quot;],[&quot;hr&quot;,&quot;Croatian&quot;],[&quot;cs&quot;,&quot;Czech&quot;],[&quot;da&quot;,&quot;Danish&quot;],[&quot;nl&quot;,&quot;Dutch&quot;],[&quot;en&quot;,&quot;English&quot;],[&quot;eo&quot;,&quot;Esperanto&quot;],[&quot;et&quot;,&quot;Estonian&quot;],[&quot;ee&quot;,&quot;Ewe&quot;],[&quot;fo&quot;,&quot;Faroese&quot;],[&quot;tl&quot;,&quot;Filipino&quot;],[&quot;fi&quot;,&quot;Finnish&quot;],[&quot;fr&quot;,&quot;French&quot;],[&quot;fy&quot;,&quot;Frisian&quot;],[&quot;gaa&quot;,&quot;Ga&quot;],[&quot;gl&quot;,&quot;Galician&quot;],[&quot;ka&quot;,&quot;Georgian&quot;],[&quot;de&quot;,&quot;German&quot;],[&quot;el&quot;,&quot;Greek&quot;],[&quot;kl&quot;,&quot;Greenlandic&quot;],[&quot;gn&quot;,&quot;Guarani&quot;],[&quot;gu&quot;,&quot;Gujarati&quot;],[&quot;ht&quot;,&quot;Haitian Creole&quot;],[&quot;ha&quot;,&quot;Hausa&quot;],[&quot;haw&quot;,&quot;Hawaiian&quot;],[&quot;iw&quot;,&quot;Hebrew&quot;],[&quot;he&quot;,&quot;Hebrew&quot;],[&quot;hi&quot;,&quot;Hindi&quot;],[&quot;hu&quot;,&quot;Hungarian&quot;],[&quot;is&quot;,&quot;Icelandic&quot;],[&quot;ig&quot;,&quot;Igbo&quot;],[&quot;id&quot;,&quot;Indonesian&quot;],[&quot;ia&quot;,&quot;Interlingua&quot;],[&quot;ga&quot;,&quot;Irish&quot;],[&quot;it&quot;,&quot;Italian&quot;],[&quot;ja&quot;,&quot;Japanese&quot;],[&quot;jw&quot;,&quot;Javanese&quot;],[&quot;kn&quot;,&quot;Kannada&quot;],[&quot;kk&quot;,&quot;Kazakh&quot;],[&quot;rw&quot;,&quot;Kinyarwanda&quot;],[&quot;rn&quot;,&quot;Kirundi&quot;],[&quot;kg&quot;,&quot;Kongo&quot;],[&quot;ko&quot;,&quot;Korean&quot;],[&quot;kri&quot;,&quot;Krio (Sierra Leone)&quot;],[&quot;ku&quot;,&quot;Kurdish&quot;],[&quot;ckb&quot;,&quot;Kurdish (Soranî)&quot;],[&quot;ky&quot;,&quot;Kyrgyz&quot;],[&quot;lo&quot;,&quot;Laothian&quot;],[&quot;la&quot;,&quot;Latin&quot;],[&quot;lv&quot;,&quot;Latvian&quot;],[&quot;ln&quot;,&quot;Lingala&quot;],[&quot;lt&quot;,&quot;Lithuanian&quot;],[&quot;loz&quot;,&quot;Lozi&quot;],[&quot;lg&quot;,&quot;Luganda&quot;],[&quot;ach&quot;,&quot;Luo&quot;],[&quot;mk&quot;,&quot;Macedonian&quot;],[&quot;mg&quot;,&quot;Malagasy&quot;],[&quot;ms&quot;,&quot;Malay&quot;],[&quot;ml&quot;,&quot;Malayalam&quot;],[&quot;mt&quot;,&quot;Maltese&quot;],[&quot;mv&quot;,&quot;Maldives&quot;],[&quot;mi&quot;,&quot;Maori&quot;],[&quot;mr&quot;,&quot;Marathi&quot;],[&quot;mfe&quot;,&quot;Mauritian Creole&quot;],[&quot;mo&quot;,&quot;Moldavian&quot;],[&quot;mn&quot;,&quot;Mongolian&quot;],[&quot;my&quot;,&quot;Myanmar&quot;],[&quot;ne&quot;,&quot;Nepali&quot;],[&quot;pcm&quot;,&quot;Nigerian Pidgin&quot;],[&quot;nso&quot;,&quot;Northern Sotho&quot;],[&quot;no&quot;,&quot;Norwegian&quot;],[&quot;nn&quot;,&quot;Norwegian (Nynorsk)&quot;],[&quot;oc&quot;,&quot;Occitan&quot;],[&quot;or&quot;,&quot;Oriya&quot;],[&quot;om&quot;,&quot;Oromo&quot;],[&quot;ps&quot;,&quot;Pashto&quot;],[&quot;fa&quot;,&quot;Persian&quot;],[&quot;pl&quot;,&quot;Polish&quot;],[&quot;pt&quot;,&quot;Portuguese&quot;],[&quot;pa&quot;,&quot;Punjabi&quot;],[&quot;qu&quot;,&quot;Quechua&quot;],[&quot;ro&quot;,&quot;Romanian&quot;],[&quot;rm&quot;,&quot;Romansh&quot;],[&quot;nyn&quot;,&quot;Runyakitara&quot;],[&quot;ru&quot;,&quot;Russian&quot;],[&quot;gd&quot;,&quot;Scots Gaelic&quot;],[&quot;sr&quot;,&quot;Serbian&quot;],[&quot;sh&quot;,&quot;Serbo-Croatian&quot;],[&quot;st&quot;,&quot;Sesotho&quot;],[&quot;tn&quot;,&quot;Setswana&quot;],[&quot;crs&quot;,&quot;Seychellois Creole&quot;],[&quot;sn&quot;,&quot;Shona&quot;],[&quot;sd&quot;,&quot;Sindhi&quot;],[&quot;si&quot;,&quot;Sinhalese&quot;],[&quot;sk&quot;,&quot;Slovak&quot;],[&quot;sl&quot;,&quot;Slovenian&quot;],[&quot;so&quot;,&quot;Somali&quot;],[&quot;es&quot;,&quot;Spanish&quot;],[&quot;su&quot;,&quot;Sundanese&quot;],[&quot;sw&quot;,&quot;Swahili&quot;],[&quot;sv&quot;,&quot;Swedish&quot;],[&quot;tg&quot;,&quot;Tajik&quot;],[&quot;ta&quot;,&quot;Tamil&quot;],[&quot;tt&quot;,&quot;Tatar&quot;],[&quot;te&quot;,&quot;Telugu&quot;],[&quot;th&quot;,&quot;Thai&quot;],[&quot;ti&quot;,&quot;Tigrinya&quot;],[&quot;to&quot;,&quot;Tonga&quot;],[&quot;lua&quot;,&quot;Tshiluba&quot;],[&quot;tum&quot;,&quot;Tumbuka&quot;],[&quot;tr&quot;,&quot;Turkish&quot;],[&quot;tk&quot;,&quot;Turkmen&quot;],[&quot;tw&quot;,&quot;Twi&quot;],[&quot;ug&quot;,&quot;Uighur&quot;],[&quot;uk&quot;,&quot;Ukrainian&quot;],[&quot;ur&quot;,&quot;Urdu&quot;],[&quot;uz&quot;,&quot;Uzbek&quot;],[&quot;vu&quot;,&quot;Vanuatu&quot;],[&quot;vi&quot;,&quot;Vietnamese&quot;],[&quot;cy&quot;,&quot;Welsh&quot;],[&quot;wo&quot;,&quot;Wolof&quot;],[&quot;xh&quot;,&quot;Xhosa&quot;],[&quot;yi&quot;,&quot;Yiddish&quot;],[&quot;yo&quot;,&quot;Yoruba&quot;],[&quot;zu&quot;,&quot;Zulu&quot;],[&quot;af-na&quot;,&quot;Afrikaans (Namibia)&quot;],[&quot;af-za&quot;,&quot;Afrikaans (South Africa)&quot;],[&quot;am-et&quot;,&quot;Amharic (Ethiopia)&quot;],[&quot;ar-001&quot;,&quot;Arabic (World)&quot;],[&quot;ar-ae&quot;,&quot;Arabic (United Arab Emirates)&quot;],[&quot;ar-bh&quot;,&quot;Arabic (Bahrain)&quot;],[&quot;ar-dj&quot;,&quot;Arabic (Djibouti)&quot;],[&quot;ar-dz&quot;,&quot;Arabic (Algeria)&quot;],[&quot;ar-eg&quot;,&quot;Arabic (Egypt)&quot;],[&quot;ar-eh&quot;,&quot;Arabic (Western Sahara)&quot;],[&quot;ar-er&quot;,&quot;Arabic (Eritrea)&quot;],[&quot;ar-il&quot;,&quot;Arabic (Israel)&quot;],[&quot;ar-iq&quot;,&quot;Arabic (Iraq)&quot;],[&quot;ar-jo&quot;,&quot;Arabic (Jordan)&quot;],[&quot;ar-km&quot;,&quot;Arabic (Comoros)&quot;],[&quot;ar-kw&quot;,&quot;Arabic (Kuwait)&quot;],[&quot;ar-lb&quot;,&quot;Arabic (Lebanon)&quot;],[&quot;ar-ly&quot;,&quot;Arabic (Libya)&quot;],[&quot;ar-ma&quot;,&quot;Arabic (Morocco)&quot;],[&quot;ar-mr&quot;,&quot;Arabic (Mauritania)&quot;],[&quot;ar-om&quot;,&quot;Arabic (Oman)&quot;],[&quot;ar-ps&quot;,&quot;Arabic (Palestinian Territories)&quot;],[&quot;ar-qa&quot;,&quot;Arabic (Qatar)&quot;],[&quot;ar-sa&quot;,&quot;Arabic (Saudi Arabia)&quot;],[&quot;ar-sd&quot;,&quot;Arabic (Sudan)&quot;],[&quot;ar-so&quot;,&quot;Arabic (Somalia)&quot;],[&quot;ar-ss&quot;,&quot;Arabic (South Sudan)&quot;],[&quot;ar-sy&quot;,&quot;Arabic (Syria)&quot;],[&quot;ar-td&quot;,&quot;Arabic (Chad)&quot;],[&quot;ar-tn&quot;,&quot;Arabic (Tunisia)&quot;],[&quot;ar-ye&quot;,&quot;Arabic (Yemen)&quot;],[&quot;as-in&quot;,&quot;Assamese (India)&quot;],[&quot;az-az&quot;,&quot;Azerbaijani (Azerbaijan)&quot;],[&quot;be-by&quot;,&quot;Belarusian (Belarus)&quot;],[&quot;bg-bg&quot;,&quot;Bulgarian (Bulgaria)&quot;],[&quot;bn-bd&quot;,&quot;Bangla (Bangladesh)&quot;],[&quot;bn-in&quot;,&quot;Bangla (India)&quot;],[&quot;bo-cn&quot;,&quot;Tibetan (China mainland)&quot;],[&quot;bo-in&quot;,&quot;Tibetan (India)&quot;],[&quot;br-fr&quot;,&quot;Breton (France)&quot;],[&quot;bs-ba&quot;,&quot;Bosnian (Bosnia \u0026 Herzegovina)&quot;],[&quot;ca-ad&quot;,&quot;Catalan (Andorra)&quot;],[&quot;ca-es&quot;,&quot;Catalan (Spain)&quot;],[&quot;ca-fr&quot;,&quot;Catalan (France)&quot;],[&quot;ca-it&quot;,&quot;Catalan (Italy)&quot;],[&quot;ccp-bd&quot;,&quot;Chakma (Bangladesh)&quot;],[&quot;ccp-in&quot;,&quot;Chakma (India)&quot;],[&quot;ceb-ph&quot;,&quot;Cebuano (Philippines)&quot;],[&quot;chr-us&quot;,&quot;Cherokee (United States)&quot;],[&quot;ckb-iq&quot;,&quot;Kurdish, Sorani (Iraq)&quot;],[&quot;ckb-ir&quot;,&quot;Kurdish, Sorani (Iran)&quot;],[&quot;co-fr&quot;,&quot;Corsican (France)&quot;],[&quot;cs-cz&quot;,&quot;Czech (Czechia)&quot;],[&quot;cy-gb&quot;,&quot;Welsh (United Kingdom)&quot;],[&quot;da-dk&quot;,&quot;Danish (Denmark)&quot;],[&quot;da-gl&quot;,&quot;Danish (Greenland)&quot;],[&quot;de-at&quot;,&quot;German (Austria)&quot;],[&quot;de-be&quot;,&quot;German (Belgium)&quot;],[&quot;de-ch&quot;,&quot;German (Switzerland)&quot;],[&quot;de-de&quot;,&quot;German (Germany)&quot;],[&quot;de-it&quot;,&quot;German (Italy)&quot;],[&quot;de-li&quot;,&quot;German (Liechtenstein)&quot;],[&quot;de-lu&quot;,&quot;German (Luxembourg)&quot;],[&quot;ee-gh&quot;,&quot;Ewe (Ghana)&quot;],[&quot;ee-tg&quot;,&quot;Ewe (Togo)&quot;],[&quot;el-cy&quot;,&quot;Greek (Cyprus)&quot;],[&quot;el-gr&quot;,&quot;Greek (Greece)&quot;],[&quot;en-001&quot;,&quot;English (World)&quot;],[&quot;en-150&quot;,&quot;English (Europe)&quot;],[&quot;en-ad&quot;,&quot;English (Andorra)&quot;],[&quot;en-ae&quot;,&quot;English (United Arab Emirates)&quot;],[&quot;en-ag&quot;,&quot;English (Antigua \u0026 Barbuda)&quot;],[&quot;en-ai&quot;,&quot;English (Anguilla)&quot;],[&quot;en-al&quot;,&quot;English (Albania)&quot;],[&quot;en-ar&quot;,&quot;English (Argentina)&quot;],[&quot;en-as&quot;,&quot;English (American Samoa)&quot;],[&quot;en-at&quot;,&quot;English (Austria)&quot;],[&quot;en-au&quot;,&quot;English (Australia)&quot;],[&quot;en-ba&quot;,&quot;English (Bosnia \u0026 Herzegovina)&quot;],[&quot;en-bb&quot;,&quot;English (Barbados)&quot;],[&quot;en-bd&quot;,&quot;English (Bangladesh)&quot;],[&quot;en-be&quot;,&quot;English (Belgium)&quot;],[&quot;en-bg&quot;,&quot;English (Bulgaria)&quot;],[&quot;en-bi&quot;,&quot;English (Burundi)&quot;],[&quot;en-bm&quot;,&quot;English (Bermuda)&quot;],[&quot;en-br&quot;,&quot;English (Brazil)&quot;],[&quot;en-bs&quot;,&quot;English (Bahamas)&quot;],[&quot;en-bw&quot;,&quot;English (Botswana)&quot;],[&quot;en-bz&quot;,&quot;English (Belize)&quot;],[&quot;en-ca&quot;,&quot;English (Canada)&quot;],[&quot;en-cc&quot;,&quot;English (Cocos (Keeling) Islands)&quot;],[&quot;en-ch&quot;,&quot;English (Switzerland)&quot;],[&quot;en-ck&quot;,&quot;English (Cook Islands)&quot;],[&quot;en-cl&quot;,&quot;English (Chile)&quot;],[&quot;en-cm&quot;,&quot;English (Cameroon)&quot;],[&quot;en-cn&quot;,&quot;English (China mainland)&quot;],[&quot;en-co&quot;,&quot;English (Colombia)&quot;],[&quot;en-cx&quot;,&quot;English (Christmas Island)&quot;],[&quot;en-cy&quot;,&quot;English (Cyprus)&quot;],[&quot;en-cz&quot;,&quot;English (Czechia)&quot;],[&quot;en-de&quot;,&quot;English (Germany)&quot;],[&quot;en-dg&quot;,&quot;English (Diego Garcia)&quot;],[&quot;en-dk&quot;,&quot;English (Denmark)&quot;],[&quot;en-dm&quot;,&quot;English (Dominica)&quot;],[&quot;en-ee&quot;,&quot;English (Estonia)&quot;],[&quot;en-er&quot;,&quot;English (Eritrea)&quot;],[&quot;en-es&quot;,&quot;English (Spain)&quot;],[&quot;en-fi&quot;,&quot;English (Finland)&quot;],[&quot;en-fj&quot;,&quot;English (Fiji)&quot;],[&quot;en-fk&quot;,&quot;English (Falkland Islands)&quot;],[&quot;en-fm&quot;,&quot;English (Micronesia)&quot;],[&quot;en-fr&quot;,&quot;English (France)&quot;],[&quot;en-gb&quot;,&quot;English (United Kingdom)&quot;],[&quot;en-gd&quot;,&quot;English (Grenada)&quot;],[&quot;en-gg&quot;,&quot;English (Guernsey)&quot;],[&quot;en-gh&quot;,&quot;English (Ghana)&quot;],[&quot;en-gi&quot;,&quot;English (Gibraltar)&quot;],[&quot;en-gm&quot;,&quot;English (Gambia)&quot;],[&quot;en-gr&quot;,&quot;English (Greece)&quot;],[&quot;en-gu&quot;,&quot;English (Guam)&quot;],[&quot;en-gy&quot;,&quot;English (Guyana)&quot;],[&quot;en-hk&quot;,&quot;English (Hong Kong)&quot;],[&quot;en-hr&quot;,&quot;English (Croatia)&quot;],[&quot;en-hu&quot;,&quot;English (Hungary)&quot;],[&quot;en-id&quot;,&quot;English (Indonesia)&quot;],[&quot;en-ie&quot;,&quot;English (Ireland)&quot;],[&quot;en-il&quot;,&quot;English (Israel)&quot;],[&quot;en-im&quot;,&quot;English (Isle of Man)&quot;],[&quot;en-in&quot;,&quot;English (India)&quot;],[&quot;en-io&quot;,&quot;English (British Indian Ocean Territory)&quot;],[&quot;en-is&quot;,&quot;English (Iceland)&quot;],[&quot;en-it&quot;,&quot;English (Italy)&quot;],[&quot;en-je&quot;,&quot;English (Jersey)&quot;],[&quot;en-jm&quot;,&quot;English (Jamaica)&quot;],[&quot;en-jp&quot;,&quot;English (Japan)&quot;],[&quot;en-ke&quot;,&quot;English (Kenya)&quot;],[&quot;en-ki&quot;,&quot;English (Kiribati)&quot;],[&quot;en-kn&quot;,&quot;English (St. Kitts \u0026 Nevis)&quot;],[&quot;en-kr&quot;,&quot;English (South Korea)&quot;],[&quot;en-ky&quot;,&quot;English (Cayman Islands)&quot;],[&quot;en-lc&quot;,&quot;English (St. Lucia)&quot;],[&quot;en-lr&quot;,&quot;English (Liberia)&quot;],[&quot;en-ls&quot;,&quot;English (Lesotho)&quot;],[&quot;en-lt&quot;,&quot;English (Lithuania)&quot;],[&quot;en-lu&quot;,&quot;English (Luxembourg)&quot;],[&quot;en-lv&quot;,&quot;English (Latvia)&quot;],[&quot;en-me&quot;,&quot;English (Montenegro)&quot;],[&quot;en-mg&quot;,&quot;English (Madagascar)&quot;],[&quot;en-mh&quot;,&quot;English (Marshall Islands)&quot;],[&quot;en-mm&quot;,&quot;English (Myanmar (Burma))&quot;],[&quot;en-mo&quot;,&quot;English (Macao)&quot;],[&quot;en-mp&quot;,&quot;English (Northern Mariana Islands)&quot;],[&quot;en-ms&quot;,&quot;English (Montserrat)&quot;],[&quot;en-mt&quot;,&quot;English (Malta)&quot;],[&quot;en-mu&quot;,&quot;English (Mauritius)&quot;],[&quot;en-mv&quot;,&quot;English (Maldives)&quot;],[&quot;en-mw&quot;,&quot;English (Malawi)&quot;],[&quot;en-mx&quot;,&quot;English (Mexico)&quot;],[&quot;en-my&quot;,&quot;English (Malaysia)&quot;],[&quot;en-na&quot;,&quot;English (Namibia)&quot;],[&quot;en-nf&quot;,&quot;English (Norfolk Island)&quot;],[&quot;en-ng&quot;,&quot;English (Nigeria)&quot;],[&quot;en-nl&quot;,&quot;English (Netherlands)&quot;],[&quot;en-no&quot;,&quot;English (Norway)&quot;],[&quot;en-nr&quot;,&quot;English (Nauru)&quot;],[&quot;en-nu&quot;,&quot;English (Niue)&quot;],[&quot;en-nz&quot;,&quot;English (New Zealand)&quot;],[&quot;en-pg&quot;,&quot;English (Papua New Guinea)&quot;],[&quot;en-ph&quot;,&quot;English (Philippines)&quot;],[&quot;en-pk&quot;,&quot;English (Pakistan)&quot;],[&quot;en-pl&quot;,&quot;English (Poland)&quot;],[&quot;en-pn&quot;,&quot;English (Pitcairn Islands)&quot;],[&quot;en-pr&quot;,&quot;English (Puerto Rico)&quot;],[&quot;en-pt&quot;,&quot;English (Portugal)&quot;],[&quot;en-pw&quot;,&quot;English (Palau)&quot;],[&quot;en-ro&quot;,&quot;English (Romania)&quot;],[&quot;en-rs&quot;,&quot;English (Serbia)&quot;],[&quot;en-ru&quot;,&quot;English (Russia)&quot;],[&quot;en-rw&quot;,&quot;English (Rwanda)&quot;],[&quot;en-sa&quot;,&quot;English (Saudi Arabia)&quot;],[&quot;en-sb&quot;,&quot;English (Solomon Islands)&quot;],[&quot;en-sc&quot;,&quot;English (Seychelles)&quot;],[&quot;en-sd&quot;,&quot;English (Sudan)&quot;],[&quot;en-se&quot;,&quot;English (Sweden)&quot;],[&quot;en-sg&quot;,&quot;English (Singapore)&quot;],[&quot;en-sh&quot;,&quot;English (St. Helena)&quot;],[&quot;en-si&quot;,&quot;English (Slovenia)&quot;],[&quot;en-sk&quot;,&quot;English (Slovakia)&quot;],[&quot;en-sl&quot;,&quot;English (Sierra Leone)&quot;],[&quot;en-ss&quot;,&quot;English (South Sudan)&quot;],[&quot;en-sx&quot;,&quot;English (Sint Maarten)&quot;],[&quot;en-sz&quot;,&quot;English (Eswatini)&quot;],[&quot;en-tc&quot;,&quot;English (Turks \u0026 Caicos Islands)&quot;],[&quot;en-th&quot;,&quot;English (Thailand)&quot;],[&quot;en-tk&quot;,&quot;English (Tokelau)&quot;],[&quot;en-to&quot;,&quot;English (Tonga)&quot;],[&quot;en-tr&quot;,&quot;English (Turkey)&quot;],[&quot;en-tt&quot;,&quot;English (Trinidad \u0026 Tobago)&quot;],[&quot;en-tv&quot;,&quot;English (Tuvalu)&quot;],[&quot;en-tw&quot;,&quot;English (Taiwan)&quot;],[&quot;en-tz&quot;,&quot;English (Tanzania)&quot;],[&quot;en-ua&quot;,&quot;English (Ukraine)&quot;],[&quot;en-ug&quot;,&quot;English (Uganda)&quot;],[&quot;en-um&quot;,&quot;English (U.S. Outlying Islands)&quot;],[&quot;en-us&quot;,&quot;English (United States)&quot;],[&quot;en-vc&quot;,&quot;English (St. Vincent \u0026 Grenadines)&quot;],[&quot;en-vg&quot;,&quot;English (British Virgin Islands)&quot;],[&quot;en-vi&quot;,&quot;English (U.S. Virgin Islands)&quot;],[&quot;en-vu&quot;,&quot;English (Vanuatu)&quot;],[&quot;en-ws&quot;,&quot;English (Samoa)&quot;],[&quot;en-za&quot;,&quot;English (South Africa)&quot;],[&quot;en-zm&quot;,&quot;English (Zambia)&quot;],[&quot;en-zw&quot;,&quot;English (Zimbabwe)&quot;],[&quot;eo-001&quot;,&quot;Esperanto (World)&quot;],[&quot;es-419&quot;,&quot;Spanish (Latin America)&quot;],[&quot;es-ag&quot;,&quot;Spanish (Antigua \u0026 Barbuda)&quot;],[&quot;es-ai&quot;,&quot;Spanish (Anguilla)&quot;],[&quot;es-ar&quot;,&quot;Spanish (Argentina)&quot;],[&quot;es-aw&quot;,&quot;Spanish (Aruba)&quot;],[&quot;es-bb&quot;,&quot;Spanish (Barbados)&quot;],[&quot;es-bl&quot;,&quot;Spanish (St. Barthélemy)&quot;],[&quot;es-bm&quot;,&quot;Spanish (Bermuda)&quot;],[&quot;es-bo&quot;,&quot;Spanish (Bolivia)&quot;],[&quot;es-bq&quot;,&quot;Spanish (Caribbean Netherlands)&quot;],[&quot;es-br&quot;,&quot;Spanish (Brazil)&quot;],[&quot;es-bs&quot;,&quot;Spanish (Bahamas)&quot;],[&quot;es-bz&quot;,&quot;Spanish (Belize)&quot;],[&quot;es-ca&quot;,&quot;Spanish (Canada)&quot;],[&quot;es-cl&quot;,&quot;Spanish (Chile)&quot;],[&quot;es-co&quot;,&quot;Spanish (Colombia)&quot;],[&quot;es-cr&quot;,&quot;Spanish (Costa Rica)&quot;],[&quot;es-cu&quot;,&quot;Spanish (Cuba)&quot;],[&quot;es-cw&quot;,&quot;Spanish (Curaçao)&quot;],[&quot;es-dm&quot;,&quot;Spanish (Dominica)&quot;],[&quot;es-do&quot;,&quot;Spanish (Dominican Republic)&quot;],[&quot;es-ea&quot;,&quot;Spanish (Ceuta \u0026 Melilla)&quot;],[&quot;es-ec&quot;,&quot;Spanish (Ecuador)&quot;],[&quot;es-es&quot;,&quot;Spanish (Spain)&quot;],[&quot;es-fk&quot;,&quot;Spanish (Falkland Islands)&quot;],[&quot;es-gd&quot;,&quot;Spanish (Grenada)&quot;],[&quot;es-gf&quot;,&quot;Spanish (French Guiana)&quot;],[&quot;es-gl&quot;,&quot;Spanish (Greenland)&quot;],[&quot;es-gp&quot;,&quot;Spanish (Guadeloupe)&quot;],[&quot;es-gq&quot;,&quot;Spanish (Equatorial Guinea)&quot;],[&quot;es-gt&quot;,&quot;Spanish (Guatemala)&quot;],[&quot;es-gy&quot;,&quot;Spanish (Guyana)&quot;],[&quot;es-hn&quot;,&quot;Spanish (Honduras)&quot;],[&quot;es-ht&quot;,&quot;Spanish (Haiti)&quot;],[&quot;es-ic&quot;,&quot;Spanish (Canary Islands)&quot;],[&quot;es-kn&quot;,&quot;Spanish (St. Kitts \u0026 Nevis)&quot;],[&quot;es-ky&quot;,&quot;Spanish (Cayman Islands)&quot;],[&quot;es-lc&quot;,&quot;Spanish (St. Lucia)&quot;],[&quot;es-mf&quot;,&quot;Spanish (St. Martin)&quot;],[&quot;es-mq&quot;,&quot;Spanish (Martinique)&quot;],[&quot;es-ms&quot;,&quot;Spanish (Montserrat)&quot;],[&quot;es-mx&quot;,&quot;Spanish (Mexico)&quot;],[&quot;es-ni&quot;,&quot;Spanish (Nicaragua)&quot;],[&quot;es-pa&quot;,&quot;Spanish (Panama)&quot;],[&quot;es-pe&quot;,&quot;Spanish (Peru)&quot;],[&quot;es-ph&quot;,&quot;Spanish (Philippines)&quot;],[&quot;es-pm&quot;,&quot;Spanish (St. Pierre \u0026 Miquelon)&quot;],[&quot;es-pr&quot;,&quot;Spanish (Puerto Rico)&quot;],[&quot;es-py&quot;,&quot;Spanish (Paraguay)&quot;],[&quot;es-sr&quot;,&quot;Spanish (Suriname)&quot;],[&quot;es-sv&quot;,&quot;Spanish (El Salvador)&quot;],[&quot;es-sx&quot;,&quot;Spanish (Sint Maarten)&quot;],[&quot;es-tc&quot;,&quot;Spanish (Turks \u0026 Caicos Islands)&quot;],[&quot;es-tt&quot;,&quot;Spanish (Trinidad \u0026 Tobago)&quot;],[&quot;es-us&quot;,&quot;Spanish (United States)&quot;],[&quot;es-uy&quot;,&quot;Spanish (Uruguay)&quot;],[&quot;es-vc&quot;,&quot;Spanish (St. Vincent \u0026 Grenadines)&quot;],[&quot;es-ve&quot;,&quot;Spanish (Venezuela)&quot;],[&quot;es-vg&quot;,&quot;Spanish (British Virgin Islands)&quot;],[&quot;es-vi&quot;,&quot;Spanish (U.S. Virgin Islands)&quot;],[&quot;et-ee&quot;,&quot;Estonian (Estonia)&quot;],[&quot;eu-es&quot;,&quot;Basque (Spain)&quot;],[&quot;fa-af&quot;,&quot;Persian (Afghanistan)&quot;],[&quot;fa-ir&quot;,&quot;Persian (Iran)&quot;],[&quot;fi-fi&quot;,&quot;Finnish (Finland)&quot;],[&quot;fil-ph&quot;,&quot;Filipino (Philippines)&quot;],[&quot;fo-dk&quot;,&quot;Faroese (Denmark)&quot;],[&quot;fo-fo&quot;,&quot;Faroese (Faroe Islands)&quot;],[&quot;fr-be&quot;,&quot;French (Belgium)&quot;],[&quot;fr-bf&quot;,&quot;French (Burkina Faso)&quot;],[&quot;fr-bi&quot;,&quot;French (Burundi)&quot;],[&quot;fr-bj&quot;,&quot;French (Benin)&quot;],[&quot;fr-bl&quot;,&quot;French (St. Barthélemy)&quot;],[&quot;fr-ca&quot;,&quot;French (Canada)&quot;],[&quot;fr-cd&quot;,&quot;French (Congo - Kinshasa)&quot;],[&quot;fr-cf&quot;,&quot;French (Central African Republic)&quot;],[&quot;fr-cg&quot;,&quot;French (Congo - Brazzaville)&quot;],[&quot;fr-ch&quot;,&quot;French (Switzerland)&quot;],[&quot;fr-ci&quot;,&quot;French (Côte d’Ivoire)&quot;],[&quot;fr-cm&quot;,&quot;French (Cameroon)&quot;],[&quot;fr-dj&quot;,&quot;French (Djibouti)&quot;],[&quot;fr-dz&quot;,&quot;French (Algeria)&quot;],[&quot;fr-fr&quot;,&quot;French (France)&quot;],[&quot;fr-ga&quot;,&quot;French (Gabon)&quot;],[&quot;fr-gf&quot;,&quot;French (French Guiana)&quot;],[&quot;fr-gn&quot;,&quot;French (Guinea)&quot;],[&quot;fr-gp&quot;,&quot;French (Guadeloupe)&quot;],[&quot;fr-gq&quot;,&quot;French (Equatorial Guinea)&quot;],[&quot;fr-ht&quot;,&quot;French (Haiti)&quot;],[&quot;fr-km&quot;,&quot;French (Comoros)&quot;],[&quot;fr-lu&quot;,&quot;French (Luxembourg)&quot;],[&quot;fr-ma&quot;,&quot;French (Morocco)&quot;],[&quot;fr-mc&quot;,&quot;French (Monaco)&quot;],[&quot;fr-mf&quot;,&quot;French (St. Martin)&quot;],[&quot;fr-mg&quot;,&quot;French (Madagascar)&quot;],[&quot;fr-ml&quot;,&quot;French (Mali)&quot;],[&quot;fr-mq&quot;,&quot;French (Martinique)&quot;],[&quot;fr-mr&quot;,&quot;French (Mauritania)&quot;],[&quot;fr-mu&quot;,&quot;French (Mauritius)&quot;],[&quot;fr-nc&quot;,&quot;French (New Caledonia)&quot;],[&quot;fr-ne&quot;,&quot;French (Niger)&quot;],[&quot;fr-pf&quot;,&quot;French (French Polynesia)&quot;],[&quot;fr-pm&quot;,&quot;French (St. Pierre \u0026 Miquelon)&quot;],[&quot;fr-re&quot;,&quot;French (Réunion)&quot;],[&quot;fr-rw&quot;,&quot;French (Rwanda)&quot;],[&quot;fr-sc&quot;,&quot;French (Seychelles)&quot;],[&quot;fr-sn&quot;,&quot;French (Senegal)&quot;],[&quot;fr-sy&quot;,&quot;French (Syria)&quot;],[&quot;fr-td&quot;,&quot;French (Chad)&quot;],[&quot;fr-tg&quot;,&quot;French (Togo)&quot;],[&quot;fr-tn&quot;,&quot;French (Tunisia)&quot;],[&quot;fr-vu&quot;,&quot;French (Vanuatu)&quot;],[&quot;fr-wf&quot;,&quot;French (Wallis \u0026 Futuna)&quot;],[&quot;fr-yt&quot;,&quot;French (Mayotte)&quot;],[&quot;fy-nl&quot;,&quot;Western Frisian (Netherlands)&quot;],[&quot;ga-ie&quot;,&quot;Irish (Ireland)&quot;],[&quot;gaa-gh&quot;,&quot;Ga (Ghana)&quot;],[&quot;gd-gb&quot;,&quot;Scottish Gaelic (United Kingdom)&quot;],[&quot;gl-es&quot;,&quot;Galician (Spain)&quot;],[&quot;gn-py&quot;,&quot;Guarani (Paraguay)&quot;],[&quot;gsw-ch&quot;,&quot;Swiss German (Switzerland)&quot;],[&quot;gsw-fr&quot;,&quot;Swiss German (France)&quot;],[&quot;gsw-li&quot;,&quot;Swiss German (Liechtenstein)&quot;],[&quot;gu-in&quot;,&quot;Gujarati (India)&quot;],[&quot;ha-gh&quot;,&quot;Hausa (Ghana)&quot;],[&quot;ha-ne&quot;,&quot;Hausa (Niger)&quot;],[&quot;ha-ng&quot;,&quot;Hausa (Nigeria)&quot;],[&quot;haw-us&quot;,&quot;Hawaiian (United States)&quot;],[&quot;he-il&quot;,&quot;Hebrew (Israel)&quot;],[&quot;hi-in&quot;,&quot;Hindi (India)&quot;],[&quot;hr-ba&quot;,&quot;Croatian (Bosnia \u0026 Herzegovina)&quot;],[&quot;hr-hr&quot;,&quot;Croatian (Croatia)&quot;],[&quot;hu-hu&quot;,&quot;Hungarian (Hungary)&quot;],[&quot;hy-am&quot;,&quot;Armenian (Armenia)&quot;],[&quot;id-id&quot;,&quot;Indonesian (Indonesia)&quot;],[&quot;ig-ng&quot;,&quot;Igbo (Nigeria)&quot;],[&quot;is-is&quot;,&quot;Icelandic (Iceland)&quot;],[&quot;it-ch&quot;,&quot;Italian (Switzerland)&quot;],[&quot;it-it&quot;,&quot;Italian (Italy)&quot;],[&quot;it-sm&quot;,&quot;Italian (San Marino)&quot;],[&quot;it-va&quot;,&quot;Italian (Vatican City)&quot;],[&quot;ja-jp&quot;,&quot;Japanese (Japan)&quot;],[&quot;jv-id&quot;,&quot;Javanese (Indonesia)&quot;],[&quot;ka-ge&quot;,&quot;Georgian (Georgia)&quot;],[&quot;kk-kz&quot;,&quot;Kazakh (Kazakhstan)&quot;],[&quot;km-kh&quot;,&quot;Khmer (Cambodia)&quot;],[&quot;kn-in&quot;,&quot;Kannada (India)&quot;],[&quot;ko-kp&quot;,&quot;Korean (North Korea)&quot;],[&quot;ko-kr&quot;,&quot;Korean (South Korea)&quot;],[&quot;ku-tr&quot;,&quot;Kurdish (Turkey)&quot;],[&quot;ky-kg&quot;,&quot;Kyrgyz (Kyrgyzstan)&quot;],[&quot;lb-lu&quot;,&quot;Luxembourgish (Luxembourg)&quot;],[&quot;lg-ug&quot;,&quot;Ganda (Uganda)&quot;],[&quot;ln-ao&quot;,&quot;Lingala (Angola)&quot;],[&quot;ln-cd&quot;,&quot;Lingala (Congo - Kinshasa)&quot;],[&quot;ln-cf&quot;,&quot;Lingala (Central African Republic)&quot;],[&quot;ln-cg&quot;,&quot;Lingala (Congo - Brazzaville)&quot;],[&quot;lo-la&quot;,&quot;Lao (Laos)&quot;],[&quot;lv-lv&quot;,&quot;Latvian (Latvia)&quot;],[&quot;mfe-mu&quot;,&quot;Morisyen (Mauritius)&quot;],[&quot;mg-mg&quot;,&quot;Malagasy (Madagascar)&quot;],[&quot;mi-nz&quot;,&quot;Maori (New Zealand)&quot;],[&quot;mk-mk&quot;,&quot;Macedonian (North Macedonia)&quot;],[&quot;ml-in&quot;,&quot;Malayalam (India)&quot;],[&quot;mn-mn&quot;,&quot;Mongolian (Mongolia)&quot;],[&quot;mr-in&quot;,&quot;Marathi (India)&quot;],[&quot;ms-bn&quot;,&quot;Malay (Brunei)&quot;],[&quot;ms-my&quot;,&quot;Malay (Malaysia)&quot;],[&quot;ms-sg&quot;,&quot;Malay (Singapore)&quot;],[&quot;mt-mt&quot;,&quot;Maltese (Malta)&quot;],[&quot;my-mm&quot;,&quot;Burmese (Myanmar (Burma))&quot;],[&quot;nb-no&quot;,&quot;Norwegian Bokmål (Norway)&quot;],[&quot;nb-sj&quot;,&quot;Norwegian Bokmål (Svalbard \u0026 Jan Mayen)&quot;],[&quot;ne-in&quot;,&quot;Nepali (India)&quot;],[&quot;ne-np&quot;,&quot;Nepali (Nepal)&quot;],[&quot;nl-aw&quot;,&quot;Dutch (Aruba)&quot;],[&quot;nl-be&quot;,&quot;Dutch (Belgium)&quot;],[&quot;nl-bq&quot;,&quot;Dutch (Caribbean Netherlands)&quot;],[&quot;nl-cw&quot;,&quot;Dutch (Curaçao)&quot;],[&quot;nl-nl&quot;,&quot;Dutch (Netherlands)&quot;],[&quot;nl-sr&quot;,&quot;Dutch (Suriname)&quot;],[&quot;nl-sx&quot;,&quot;Dutch (Sint Maarten)&quot;],[&quot;nn-no&quot;,&quot;Norwegian Nynorsk (Norway)&quot;],[&quot;nso-za&quot;,&quot;Northern Sotho (South Africa)&quot;],[&quot;ny-mw&quot;,&quot;Nyanja (Malawi)&quot;],[&quot;nyn-ug&quot;,&quot;Nyankole (Uganda)&quot;],[&quot;oc-fr&quot;,&quot;Occitan (France)&quot;],[&quot;om-et&quot;,&quot;Oromo (Ethiopia)&quot;],[&quot;om-ke&quot;,&quot;Oromo (Kenya)&quot;],[&quot;or-in&quot;,&quot;Odia (India)&quot;],[&quot;pa-in&quot;,&quot;Punjabi (India)&quot;],[&quot;pl-pl&quot;,&quot;Polish (Poland)&quot;],[&quot;ps-af&quot;,&quot;Pashto (Afghanistan)&quot;],[&quot;ps-pk&quot;,&quot;Pashto (Pakistan)&quot;],[&quot;pt-ao&quot;,&quot;Portuguese (Angola)&quot;],[&quot;pt-br&quot;,&quot;Portuguese (Brazil)&quot;],[&quot;pt-ch&quot;,&quot;Portuguese (Switzerland)&quot;],[&quot;pt-cv&quot;,&quot;Portuguese (Cape Verde)&quot;],[&quot;pt-fr&quot;,&quot;Portuguese (France)&quot;],[&quot;pt-gq&quot;,&quot;Portuguese (Equatorial Guinea)&quot;],[&quot;pt-gw&quot;,&quot;Portuguese (Guinea-Bissau)&quot;],[&quot;pt-lu&quot;,&quot;Portuguese (Luxembourg)&quot;],[&quot;pt-mo&quot;,&quot;Portuguese (Macao)&quot;],[&quot;pt-mz&quot;,&quot;Portuguese (Mozambique)&quot;],[&quot;pt-pt&quot;,&quot;Portuguese (Portugal)&quot;],[&quot;pt-st&quot;,&quot;Portuguese (São Tomé \u0026 Príncipe)&quot;],[&quot;pt-tl&quot;,&quot;Portuguese (Timor-Leste)&quot;],[&quot;qu-bo&quot;,&quot;Quechua (Bolivia)&quot;],[&quot;qu-ec&quot;,&quot;Quechua (Ecuador)&quot;],[&quot;qu-pe&quot;,&quot;Quechua (Peru)&quot;],[&quot;rm-ch&quot;,&quot;Romansh (Switzerland)&quot;],[&quot;rn-bi&quot;,&quot;Rundi (Burundi)&quot;],[&quot;ro-md&quot;,&quot;Romanian (Moldova)&quot;],[&quot;ro-ro&quot;,&quot;Romanian (Romania)&quot;],[&quot;ru-by&quot;,&quot;Russian (Belarus)&quot;],[&quot;ru-kg&quot;,&quot;Russian (Kyrgyzstan)&quot;],[&quot;ru-kz&quot;,&quot;Russian (Kazakhstan)&quot;],[&quot;ru-md&quot;,&quot;Russian (Moldova)&quot;],[&quot;ru-ru&quot;,&quot;Russian (Russia)&quot;],[&quot;ru-ua&quot;,&quot;Russian (Ukraine)&quot;],[&quot;rw-rw&quot;,&quot;Kinyarwanda (Rwanda)&quot;],[&quot;sa-in&quot;,&quot;Sanskrit (India)&quot;],[&quot;scn-it&quot;,&quot;Sicilian (Italy)&quot;],[&quot;sd-pk&quot;,&quot;Sindhi (Pakistan)&quot;],[&quot;se-fi&quot;,&quot;Northern Sami (Finland)&quot;],[&quot;si-lk&quot;,&quot;Sinhala (Sri Lanka)&quot;],[&quot;sk-sk&quot;,&quot;Slovak (Slovakia)&quot;],[&quot;sl-si&quot;,&quot;Slovenian (Slovenia)&quot;],[&quot;sn-zw&quot;,&quot;Shona (Zimbabwe)&quot;],[&quot;so-dj&quot;,&quot;Somali (Djibouti)&quot;],[&quot;so-et&quot;,&quot;Somali (Ethiopia)&quot;],[&quot;so-ke&quot;,&quot;Somali (Kenya)&quot;],[&quot;so-so&quot;,&quot;Somali (Somalia)&quot;],[&quot;sq-al&quot;,&quot;Albanian (Albania)&quot;],[&quot;sq-mk&quot;,&quot;Albanian (North Macedonia)&quot;],[&quot;sq-xk&quot;,&quot;Albanian (Kosovo)&quot;],[&quot;sr-ba&quot;,&quot;Serbian (Bosnia \u0026 Herzegovina)&quot;],[&quot;sr-me&quot;,&quot;Serbian (Montenegro)&quot;],[&quot;sr-rs&quot;,&quot;Serbian (Serbia)&quot;],[&quot;sr-xk&quot;,&quot;Serbian (Kosovo)&quot;],[&quot;st-ls&quot;,&quot;Southern Sotho (Lesotho)&quot;],[&quot;st-za&quot;,&quot;Southern Sotho (South Africa)&quot;],[&quot;sv-ax&quot;,&quot;Swedish (Åland Islands)&quot;],[&quot;sv-fi&quot;,&quot;Swedish (Finland)&quot;],[&quot;sv-se&quot;,&quot;Swedish (Sweden)&quot;],[&quot;sw-cd&quot;,&quot;Swahili (Congo - Kinshasa)&quot;],[&quot;sw-ke&quot;,&quot;Swahili (Kenya)&quot;],[&quot;sw-tz&quot;,&quot;Swahili (Tanzania)&quot;],[&quot;sw-ug&quot;,&quot;Swahili (Uganda)&quot;],[&quot;ta-in&quot;,&quot;Tamil (India)&quot;],[&quot;ta-lk&quot;,&quot;Tamil (Sri Lanka)&quot;],[&quot;ta-my&quot;,&quot;Tamil (Malaysia)&quot;],[&quot;ta-sg&quot;,&quot;Tamil (Singapore)&quot;],[&quot;te-in&quot;,&quot;Telugu (India)&quot;],[&quot;tg-tj&quot;,&quot;Tajik (Tajikistan)&quot;],[&quot;th-th&quot;,&quot;Thai (Thailand)&quot;],[&quot;ti-er&quot;,&quot;Tigrinya (Eritrea)&quot;],[&quot;ti-et&quot;,&quot;Tigrinya (Ethiopia)&quot;],[&quot;tk-tm&quot;,&quot;Turkmen (Turkmenistan)&quot;],[&quot;tn-bw&quot;,&quot;Tswana (Botswana)&quot;],[&quot;tn-za&quot;,&quot;Tswana (South Africa)&quot;],[&quot;to-to&quot;,&quot;Tongan (Tonga)&quot;],[&quot;tr-cy&quot;,&quot;Turkish (Cyprus)&quot;],[&quot;tr-tr&quot;,&quot;Turkish (Turkey)&quot;],[&quot;tt-ru&quot;,&quot;Tatar (Russia)&quot;],[&quot;ug-cn&quot;,&quot;Uyghur (China mainland)&quot;],[&quot;uk-ua&quot;,&quot;Ukrainian (Ukraine)&quot;],[&quot;ur-in&quot;,&quot;Urdu (India)&quot;],[&quot;ur-pk&quot;,&quot;Urdu (Pakistan)&quot;],[&quot;uz-uz&quot;,&quot;Uzbek (Uzbekistan)&quot;],[&quot;vi-vn&quot;,&quot;Vietnamese (Vietnam)&quot;],[&quot;wo-sn&quot;,&quot;Wolof (Senegal)&quot;],[&quot;xh-za&quot;,&quot;Xhosa (South Africa)&quot;],[&quot;yi-001&quot;,&quot;Yiddish (World)&quot;],[&quot;yo-bj&quot;,&quot;Yoruba (Benin)&quot;],[&quot;yo-ng&quot;,&quot;Yoruba (Nigeria)&quot;],[&quot;yue-cn&quot;,&quot;Cantonese (China mainland)&quot;],[&quot;yue-hk&quot;,&quot;Cantonese (Hong Kong)&quot;],[&quot;zh-cn&quot;,&quot;Chinese (China mainland)&quot;],[&quot;zh-hk&quot;,&quot;Chinese (Hong Kong)&quot;],[&quot;zh-mo&quot;,&quot;Chinese (Macao)&quot;],[&quot;zh-sg&quot;,&quot;Chinese (Singapore)&quot;],[&quot;zh-tw&quot;,&quot;Chinese (Taiwan)&quot;],[&quot;zu-za&quot;,&quot;Zulu (South Africa)&quot;]],&quot;gl_options&quot;:[[&quot;af&quot;,&quot;Afghanistan&quot;],[&quot;al&quot;,&quot;Albania&quot;],[&quot;dz&quot;,&quot;Algeria&quot;],[&quot;as&quot;,&quot;American Samoa&quot;],[&quot;ad&quot;,&quot;Andorra&quot;],[&quot;ao&quot;,&quot;Angola&quot;],[&quot;ai&quot;,&quot;Anguilla&quot;],[&quot;aq&quot;,&quot;Antarctica&quot;],[&quot;ag&quot;,&quot;Antigua and Barbuda&quot;],[&quot;ar&quot;,&quot;Argentina&quot;],[&quot;am&quot;,&quot;Armenia&quot;],[&quot;aw&quot;,&quot;Aruba&quot;],[&quot;au&quot;,&quot;Australia&quot;],[&quot;at&quot;,&quot;Austria&quot;],[&quot;az&quot;,&quot;Azerbaijan&quot;],[&quot;bs&quot;,&quot;Bahamas&quot;],[&quot;bh&quot;,&quot;Bahrain&quot;],[&quot;bd&quot;,&quot;Bangladesh&quot;],[&quot;bb&quot;,&quot;Barbados&quot;],[&quot;by&quot;,&quot;Belarus&quot;],[&quot;be&quot;,&quot;Belgium&quot;],[&quot;bz&quot;,&quot;Belize&quot;],[&quot;bj&quot;,&quot;Benin&quot;],[&quot;bm&quot;,&quot;Bermuda&quot;],[&quot;bt&quot;,&quot;Bhutan&quot;],[&quot;bo&quot;,&quot;Bolivia&quot;],[&quot;ba&quot;,&quot;Bosnia and Herzegovina&quot;],[&quot;bw&quot;,&quot;Botswana&quot;],[&quot;bv&quot;,&quot;Bouvet Island&quot;],[&quot;br&quot;,&quot;Brazil&quot;],[&quot;io&quot;,&quot;British Indian Ocean Territory&quot;],[&quot;bn&quot;,&quot;Brunei Darussalam&quot;],[&quot;bg&quot;,&quot;Bulgaria&quot;],[&quot;bf&quot;,&quot;Burkina Faso&quot;],[&quot;bi&quot;,&quot;Burundi&quot;],[&quot;kh&quot;,&quot;Cambodia&quot;],[&quot;cm&quot;,&quot;Cameroon&quot;],[&quot;ca&quot;,&quot;Canada&quot;],[&quot;cv&quot;,&quot;Cape Verde&quot;],[&quot;ky&quot;,&quot;Cayman Islands&quot;],[&quot;cf&quot;,&quot;Central African Republic&quot;],[&quot;td&quot;,&quot;Chad&quot;],[&quot;cl&quot;,&quot;Chile&quot;],[&quot;cn&quot;,&quot;China&quot;],[&quot;cx&quot;,&quot;Christmas Island&quot;],[&quot;cc&quot;,&quot;Cocos (Keeling) Islands&quot;],[&quot;co&quot;,&quot;Colombia&quot;],[&quot;km&quot;,&quot;Comoros&quot;],[&quot;cg&quot;,&quot;Congo&quot;],[&quot;cd&quot;,&quot;Congo, the Democratic Republic of the&quot;],[&quot;ck&quot;,&quot;Cook Islands&quot;],[&quot;cr&quot;,&quot;Costa Rica&quot;],[&quot;ci&quot;,&quot;Cote D&#39;ivoire&quot;],[&quot;hr&quot;,&quot;Croatia&quot;],[&quot;cu&quot;,&quot;Cuba&quot;],[&quot;cy&quot;,&quot;Cyprus&quot;],[&quot;cz&quot;,&quot;Czech Republic&quot;],[&quot;dk&quot;,&quot;Denmark&quot;],[&quot;dj&quot;,&quot;Djibouti&quot;],[&quot;dm&quot;,&quot;Dominica&quot;],[&quot;do&quot;,&quot;Dominican Republic&quot;],[&quot;ec&quot;,&quot;Ecuador&quot;],[&quot;eg&quot;,&quot;Egypt&quot;],[&quot;sv&quot;,&quot;El Salvador&quot;],[&quot;gq&quot;,&quot;Equatorial Guinea&quot;],[&quot;er&quot;,&quot;Eritrea&quot;],[&quot;ee&quot;,&quot;Estonia&quot;],[&quot;et&quot;,&quot;Ethiopia&quot;],[&quot;fk&quot;,&quot;Falkland Islands (Malvinas)&quot;],[&quot;fo&quot;,&quot;Faroe Islands&quot;],[&quot;fj&quot;,&quot;Fiji&quot;],[&quot;fi&quot;,&quot;Finland&quot;],[&quot;fr&quot;,&quot;France&quot;],[&quot;gf&quot;,&quot;French Guiana&quot;],[&quot;pf&quot;,&quot;French Polynesia&quot;],[&quot;tf&quot;,&quot;French Southern Territories&quot;],[&quot;ga&quot;,&quot;Gabon&quot;],[&quot;gm&quot;,&quot;Gambia&quot;],[&quot;ge&quot;,&quot;Georgia&quot;],[&quot;de&quot;,&quot;Germany&quot;],[&quot;gh&quot;,&quot;Ghana&quot;],[&quot;gi&quot;,&quot;Gibraltar&quot;],[&quot;gr&quot;,&quot;Greece&quot;],[&quot;gl&quot;,&quot;Greenland&quot;],[&quot;gd&quot;,&quot;Grenada&quot;],[&quot;gp&quot;,&quot;Guadeloupe&quot;],[&quot;gu&quot;,&quot;Guam&quot;],[&quot;gt&quot;,&quot;Guatemala&quot;],[&quot;gg&quot;,&quot;Guernsey&quot;],[&quot;gn&quot;,&quot;Guinea&quot;],[&quot;gw&quot;,&quot;Guinea-Bissau&quot;],[&quot;gy&quot;,&quot;Guyana&quot;],[&quot;ht&quot;,&quot;Haiti&quot;],[&quot;hm&quot;,&quot;Heard Island and Mcdonald Islands&quot;],[&quot;va&quot;,&quot;Holy See (Vatican City State)&quot;],[&quot;hn&quot;,&quot;Honduras&quot;],[&quot;hk&quot;,&quot;Hong Kong&quot;],[&quot;hu&quot;,&quot;Hungary&quot;],[&quot;is&quot;,&quot;Iceland&quot;],[&quot;in&quot;,&quot;India&quot;],[&quot;id&quot;,&quot;Indonesia&quot;],[&quot;ir&quot;,&quot;Iran, Islamic Republic of&quot;],[&quot;iq&quot;,&quot;Iraq&quot;],[&quot;ie&quot;,&quot;Ireland&quot;],[&quot;im&quot;,&quot;Isle of Man&quot;],[&quot;il&quot;,&quot;Israel&quot;],[&quot;it&quot;,&quot;Italy&quot;],[&quot;je&quot;,&quot;Jersey&quot;],[&quot;jm&quot;,&quot;Jamaica&quot;],[&quot;jp&quot;,&quot;Japan&quot;],[&quot;jo&quot;,&quot;Jordan&quot;],[&quot;kz&quot;,&quot;Kazakhstan&quot;],[&quot;ke&quot;,&quot;Kenya&quot;],[&quot;ki&quot;,&quot;Kiribati&quot;],[&quot;kp&quot;,&quot;Korea, Democratic People&#39;s Republic of&quot;],[&quot;kr&quot;,&quot;Korea, Republic of&quot;],[&quot;kw&quot;,&quot;Kuwait&quot;],[&quot;kg&quot;,&quot;Kyrgyzstan&quot;],[&quot;la&quot;,&quot;Lao People&#39;s Democratic Republic&quot;],[&quot;lv&quot;,&quot;Latvia&quot;],[&quot;lb&quot;,&quot;Lebanon&quot;],[&quot;ls&quot;,&quot;Lesotho&quot;],[&quot;lr&quot;,&quot;Liberia&quot;],[&quot;ly&quot;,&quot;Libyan Arab Jamahiriya&quot;],[&quot;li&quot;,&quot;Liechtenstein&quot;],[&quot;lt&quot;,&quot;Lithuania&quot;],[&quot;lu&quot;,&quot;Luxembourg&quot;],[&quot;mo&quot;,&quot;Macao&quot;],[&quot;mk&quot;,&quot;North Macedonia&quot;],[&quot;mg&quot;,&quot;Madagascar&quot;],[&quot;mw&quot;,&quot;Malawi&quot;],[&quot;my&quot;,&quot;Malaysia&quot;],[&quot;mv&quot;,&quot;Maldives&quot;],[&quot;ml&quot;,&quot;Mali&quot;],[&quot;mt&quot;,&quot;Malta&quot;],[&quot;mh&quot;,&quot;Marshall Islands&quot;],[&quot;mq&quot;,&quot;Martinique&quot;],[&quot;mr&quot;,&quot;Mauritania&quot;],[&quot;mu&quot;,&quot;Mauritius&quot;],[&quot;yt&quot;,&quot;Mayotte&quot;],[&quot;mx&quot;,&quot;Mexico&quot;],[&quot;fm&quot;,&quot;Micronesia, Federated States of&quot;],[&quot;md&quot;,&quot;Moldova, Republic of&quot;],[&quot;mc&quot;,&quot;Monaco&quot;],[&quot;mn&quot;,&quot;Mongolia&quot;],[&quot;me&quot;,&quot;Montenegro&quot;],[&quot;ms&quot;,&quot;Montserrat&quot;],[&quot;ma&quot;,&quot;Morocco&quot;],[&quot;mz&quot;,&quot;Mozambique&quot;],[&quot;mm&quot;,&quot;Myanmar&quot;],[&quot;na&quot;,&quot;Namibia&quot;],[&quot;nr&quot;,&quot;Nauru&quot;],[&quot;np&quot;,&quot;Nepal&quot;],[&quot;nl&quot;,&quot;Netherlands&quot;],[&quot;an&quot;,&quot;Netherlands Antilles&quot;],[&quot;nc&quot;,&quot;New Caledonia&quot;],[&quot;nz&quot;,&quot;New Zealand&quot;],[&quot;ni&quot;,&quot;Nicaragua&quot;],[&quot;ne&quot;,&quot;Niger&quot;],[&quot;ng&quot;,&quot;Nigeria&quot;],[&quot;nu&quot;,&quot;Niue&quot;],[&quot;nf&quot;,&quot;Norfolk Island&quot;],[&quot;mp&quot;,&quot;Northern Mariana Islands&quot;],[&quot;no&quot;,&quot;Norway&quot;],[&quot;om&quot;,&quot;Oman&quot;],[&quot;pk&quot;,&quot;Pakistan&quot;],[&quot;pw&quot;,&quot;Palau&quot;],[&quot;ps&quot;,&quot;Palestinian Territory, Occupied&quot;],[&quot;pa&quot;,&quot;Panama&quot;],[&quot;pg&quot;,&quot;Papua New Guinea&quot;],[&quot;py&quot;,&quot;Paraguay&quot;],[&quot;pe&quot;,&quot;Peru&quot;],[&quot;ph&quot;,&quot;Philippines&quot;],[&quot;pn&quot;,&quot;Pitcairn&quot;],[&quot;pl&quot;,&quot;Poland&quot;],[&quot;pt&quot;,&quot;Portugal&quot;],[&quot;pr&quot;,&quot;Puerto Rico&quot;],[&quot;qa&quot;,&quot;Qatar&quot;],[&quot;re&quot;,&quot;Reunion&quot;],[&quot;ro&quot;,&quot;Romania&quot;],[&quot;ru&quot;,&quot;Russian Federation&quot;],[&quot;rw&quot;,&quot;Rwanda&quot;],[&quot;sh&quot;,&quot;Saint Helena&quot;],[&quot;kn&quot;,&quot;Saint Kitts and Nevis&quot;],[&quot;lc&quot;,&quot;Saint Lucia&quot;],[&quot;pm&quot;,&quot;Saint Pierre and Miquelon&quot;],[&quot;vc&quot;,&quot;Saint Vincent and the Grenadines&quot;],[&quot;ws&quot;,&quot;Samoa&quot;],[&quot;sm&quot;,&quot;San Marino&quot;],[&quot;st&quot;,&quot;Sao Tome and Principe&quot;],[&quot;sa&quot;,&quot;Saudi Arabia&quot;],[&quot;sn&quot;,&quot;Senegal&quot;],[&quot;rs&quot;,&quot;Serbia&quot;],[&quot;sc&quot;,&quot;Seychelles&quot;],[&quot;sl&quot;,&quot;Sierra Leone&quot;],[&quot;sg&quot;,&quot;Singapore&quot;],[&quot;sk&quot;,&quot;Slovakia&quot;],[&quot;si&quot;,&quot;Slovenia&quot;],[&quot;sb&quot;,&quot;Solomon Islands&quot;],[&quot;so&quot;,&quot;Somalia&quot;],[&quot;za&quot;,&quot;South Africa&quot;],[&quot;gs&quot;,&quot;South Georgia and the South Sandwich Islands&quot;],[&quot;es&quot;,&quot;Spain&quot;],[&quot;lk&quot;,&quot;Sri Lanka&quot;],[&quot;sd&quot;,&quot;Sudan&quot;],[&quot;sr&quot;,&quot;Suriname&quot;],[&quot;sj&quot;,&quot;Svalbard and Jan Mayen&quot;],[&quot;sz&quot;,&quot;Swaziland&quot;],[&quot;se&quot;,&quot;Sweden&quot;],[&quot;ch&quot;,&quot;Switzerland&quot;],[&quot;sy&quot;,&quot;Syrian Arab Republic&quot;],[&quot;tw&quot;,&quot;Taiwan, Province of China&quot;],[&quot;tj&quot;,&quot;Tajikistan&quot;],[&quot;tz&quot;,&quot;Tanzania, United Republic of&quot;],[&quot;th&quot;,&quot;Thailand&quot;],[&quot;tl&quot;,&quot;Timor-Leste&quot;],[&quot;tg&quot;,&quot;Togo&quot;],[&quot;tk&quot;,&quot;Tokelau&quot;],[&quot;to&quot;,&quot;Tonga&quot;],[&quot;tt&quot;,&quot;Trinidad and Tobago&quot;],[&quot;tn&quot;,&quot;Tunisia&quot;],[&quot;tr&quot;,&quot;Turkiye&quot;],[&quot;tm&quot;,&quot;Turkmenistan&quot;],[&quot;tc&quot;,&quot;Turks and Caicos Islands&quot;],[&quot;tv&quot;,&quot;Tuvalu&quot;],[&quot;ug&quot;,&quot;Uganda&quot;],[&quot;ua&quot;,&quot;Ukraine&quot;],[&quot;ae&quot;,&quot;United Arab Emirates&quot;],[&quot;uk&quot;,&quot;United Kingdom&quot;],[&quot;gb&quot;,&quot;United Kingdom&quot;],[&quot;us&quot;,&quot;United States&quot;],[&quot;um&quot;,&quot;United States Minor Outlying Islands&quot;],[&quot;uy&quot;,&quot;Uruguay&quot;],[&quot;uz&quot;,&quot;Uzbekistan&quot;],[&quot;vu&quot;,&quot;Vanuatu&quot;],[&quot;ve&quot;,&quot;Venezuela&quot;],[&quot;vn&quot;,&quot;Viet Nam&quot;],[&quot;vg&quot;,&quot;Virgin Islands, British&quot;],[&quot;vi&quot;,&quot;Virgin Islands, U.S.&quot;],[&quot;wf&quot;,&quot;Wallis and Futuna&quot;],[&quot;eh&quot;,&quot;Western Sahara&quot;],[&quot;ye&quot;,&quot;Yemen&quot;],[&quot;zm&quot;,&quot;Zambia&quot;],[&quot;zw&quot;,&quot;Zimbabwe&quot;]],&quot;google_domain_options&quot;:[[&quot;google.ad&quot;,[&quot;ad&quot;,&quot;Andorra&quot;,&quot;ca&quot;]],[&quot;google.ae&quot;,[&quot;ae&quot;,&quot;United Arab Emirates&quot;,&quot;ar&quot;]],[&quot;google.al&quot;,[&quot;al&quot;,&quot;Albania&quot;,&quot;sq&quot;]],[&quot;google.am&quot;,[&quot;am&quot;,&quot;Armenia&quot;,&quot;hy&quot;]],[&quot;google.as&quot;,[&quot;as&quot;,&quot;American Samoa&quot;,&quot;en&quot;]],[&quot;google.at&quot;,[&quot;at&quot;,&quot;Austria&quot;,&quot;de&quot;]],[&quot;google.az&quot;,[&quot;az&quot;,&quot;Azerbaijan&quot;,&quot;az&quot;]],[&quot;google.ba&quot;,[&quot;ba&quot;,&quot;Bosnia and Herzegovina&quot;,&quot;bs&quot;]],[&quot;google.be&quot;,[&quot;be&quot;,&quot;Belgium&quot;,&quot;nl&quot;]],[&quot;google.bf&quot;,[&quot;bf&quot;,&quot;Burkina Faso&quot;,&quot;fr&quot;]],[&quot;google.bg&quot;,[&quot;bg&quot;,&quot;Bulgaria&quot;,&quot;bg&quot;]],[&quot;google.bi&quot;,[&quot;bi&quot;,&quot;Burundi&quot;,&quot;fr&quot;]],[&quot;google.bj&quot;,[&quot;bj&quot;,&quot;Benin&quot;,&quot;fr&quot;]],[&quot;google.bs&quot;,[&quot;bs&quot;,&quot;Bahamas&quot;,&quot;en&quot;]],[&quot;google.bt&quot;,[&quot;bt&quot;,&quot;Bhutan&quot;,&quot;bt&quot;]],[&quot;google.by&quot;,[&quot;by&quot;,&quot;Belarus&quot;,&quot;be&quot;]],[&quot;google.ca&quot;,[&quot;ca&quot;,&quot;Canada&quot;,&quot;en&quot;]],[&quot;google.cd&quot;,[&quot;cg&quot;,&quot;Democratic Republic of the Congo&quot;,&quot;fr&quot;]],[&quot;google.cf&quot;,[&quot;cf&quot;,&quot;Central African Republic&quot;,&quot;fr&quot;]],[&quot;google.cg&quot;,[&quot;cg&quot;,&quot;Republic of the Congo&quot;,&quot;fr&quot;]],[&quot;google.ch&quot;,[&quot;ch&quot;,&quot;Switzerland&quot;,&quot;de&quot;]],[&quot;google.ci&quot;,[&quot;ci&quot;,&quot;Ivory Coast&quot;,&quot;fr&quot;]],[&quot;google.cl&quot;,[&quot;cl&quot;,&quot;Chile&quot;,&quot;es&quot;]],[&quot;google.cm&quot;,[&quot;cm&quot;,&quot;Cameroon&quot;,&quot;en&quot;]],[&quot;google.co.ao&quot;,[&quot;ao&quot;,&quot;Angola&quot;,&quot;pt&quot;]],[&quot;google.co.bw&quot;,[&quot;bw&quot;,&quot;Botswana&quot;,&quot;en&quot;]],[&quot;google.co.ck&quot;,[&quot;ck&quot;,&quot;Cook Islands&quot;,&quot;en&quot;]],[&quot;google.co.cr&quot;,[&quot;cr&quot;,&quot;Costa Rica&quot;,&quot;es&quot;]],[&quot;google.co.id&quot;,[&quot;id&quot;,&quot;Indonesia&quot;,&quot;id&quot;]],[&quot;google.co.il&quot;,[&quot;il&quot;,&quot;Israel&quot;,&quot;iw&quot;]],[&quot;google.co.in&quot;,[&quot;in&quot;,&quot;India&quot;,&quot;hi&quot;]],[&quot;google.co.jp&quot;,[&quot;jp&quot;,&quot;Japan&quot;,&quot;ja&quot;]],[&quot;google.co.ke&quot;,[&quot;ke&quot;,&quot;Kenya&quot;,&quot;en&quot;]],[&quot;google.co.kr&quot;,[&quot;kr&quot;,&quot;South Korea&quot;,&quot;ko&quot;]],[&quot;google.co.ls&quot;,[&quot;ls&quot;,&quot;Lesotho&quot;,&quot;en&quot;]],[&quot;google.co.ma&quot;,[&quot;ma&quot;,&quot;Morocco&quot;,&quot;ar&quot;]],[&quot;google.co.mz&quot;,[&quot;mz&quot;,&quot;Mozambique&quot;,&quot;pt&quot;]],[&quot;google.co.nz&quot;,[&quot;nz&quot;,&quot;New Zealand&quot;,&quot;en&quot;]],[&quot;google.co.th&quot;,[&quot;th&quot;,&quot;Thailand&quot;,&quot;th&quot;]],[&quot;google.co.tz&quot;,[&quot;tz&quot;,&quot;Tanzania&quot;,&quot;sw&quot;]],[&quot;google.co.ug&quot;,[&quot;ug&quot;,&quot;Uganda&quot;,&quot;en&quot;]],[&quot;google.co.uk&quot;,[&quot;uk&quot;,&quot;United Kingdom&quot;,&quot;en&quot;]],[&quot;google.co.uz&quot;,[&quot;uz&quot;,&quot;Uzbekistan&quot;,&quot;uz&quot;]],[&quot;google.co.ve&quot;,[&quot;ve&quot;,&quot;Venezuela&quot;,&quot;es&quot;]],[&quot;google.co.vi&quot;,[&quot;vi&quot;,&quot;United States Virgin Islands&quot;,&quot;en&quot;]],[&quot;google.co.za&quot;,[&quot;za&quot;,&quot;South Africa&quot;,&quot;af&quot;]],[&quot;google.co.zm&quot;,[&quot;zm&quot;,&quot;Zambia&quot;,&quot;en&quot;]],[&quot;google.co.zw&quot;,[&quot;zw&quot;,&quot;Zimbabwe&quot;,&quot;en&quot;]],[&quot;google.com&quot;,[&quot;us&quot;,&quot;United States&quot;,&quot;en&quot;]],[&quot;google.com.af&quot;,[&quot;af&quot;,&quot;Afghanistan&quot;,&quot;ps&quot;]],[&quot;google.com.ag&quot;,[&quot;ag&quot;,&quot;Antigua and Barbuda&quot;,&quot;en&quot;]],[&quot;google.com.ai&quot;,[&quot;ai&quot;,&quot;Anguilla&quot;,&quot;en&quot;]],[&quot;google.com.ar&quot;,[&quot;ar&quot;,&quot;Argentina&quot;,&quot;es&quot;]],[&quot;google.com.au&quot;,[&quot;au&quot;,&quot;Australia&quot;,&quot;en&quot;]],[&quot;google.com.bd&quot;,[&quot;bd&quot;,&quot;Bangladesh&quot;,&quot;bn&quot;]],[&quot;google.com.bh&quot;,[&quot;bh&quot;,&quot;Bahrain&quot;,&quot;ar&quot;]],[&quot;google.com.bn&quot;,[&quot;bn&quot;,&quot;Brunei&quot;,&quot;ms&quot;]],[&quot;google.com.bo&quot;,[&quot;bo&quot;,&quot;Bolivia&quot;,&quot;es&quot;]],[&quot;google.com.br&quot;,[&quot;br&quot;,&quot;Brazil&quot;,&quot;pt&quot;]],[&quot;google.com.bz&quot;,[&quot;bz&quot;,&quot;Belize&quot;,&quot;en&quot;]],[&quot;google.com.co&quot;,[&quot;co&quot;,&quot;Colombia&quot;,&quot;es&quot;]],[&quot;google.com.cu&quot;,[&quot;cu&quot;,&quot;Cuba&quot;,&quot;es&quot;]],[&quot;google.com.cy&quot;,[&quot;cy&quot;,&quot;Cyprus&quot;,&quot;el&quot;]],[&quot;google.com.do&quot;,[&quot;do&quot;,&quot;Dominican Republic&quot;,&quot;es&quot;]],[&quot;google.com.ec&quot;,[&quot;ec&quot;,&quot;Ecuador&quot;,&quot;es&quot;]],[&quot;google.com.eg&quot;,[&quot;eg&quot;,&quot;Egypt&quot;,&quot;ar&quot;]],[&quot;google.com.et&quot;,[&quot;et&quot;,&quot;Ethiopia&quot;,&quot;am&quot;]],[&quot;google.com.fj&quot;,[&quot;fj&quot;,&quot;Fiji&quot;,&quot;en&quot;]],[&quot;google.com.gh&quot;,[&quot;gh&quot;,&quot;Ghana&quot;,&quot;en&quot;]],[&quot;google.com.gi&quot;,[&quot;gi&quot;,&quot;Gibraltar&quot;,&quot;en&quot;]],[&quot;google.com.gt&quot;,[&quot;gt&quot;,&quot;Guatemala&quot;,&quot;es&quot;]],[&quot;google.com.hk&quot;,[&quot;hk&quot;,&quot;Hong Kong&quot;,&quot;en&quot;]],[&quot;google.com.jm&quot;,[&quot;jm&quot;,&quot;Jamaica&quot;,&quot;en&quot;]],[&quot;google.com.kh&quot;,[&quot;kh&quot;,&quot;Cambodia&quot;,&quot;km&quot;]],[&quot;google.com.kw&quot;,[&quot;kw&quot;,&quot;Kuwait&quot;,&quot;ar&quot;]],[&quot;google.com.lb&quot;,[&quot;lb&quot;,&quot;Lebanon&quot;,&quot;ar&quot;]],[&quot;google.com.ly&quot;,[&quot;ly&quot;,&quot;Libya&quot;,&quot;ar&quot;]],[&quot;google.com.mm&quot;,[&quot;mm&quot;,&quot;Myanmar&quot;,&quot;my&quot;]],[&quot;google.com.mt&quot;,[&quot;mt&quot;,&quot;Malta&quot;,&quot;mt&quot;]],[&quot;google.com.mx&quot;,[&quot;mx&quot;,&quot;Mexico&quot;,&quot;es&quot;]],[&quot;google.com.my&quot;,[&quot;my&quot;,&quot;Malaysia&quot;,&quot;ms&quot;]],[&quot;google.com.na&quot;,[&quot;na&quot;,&quot;Namibia&quot;,&quot;en&quot;]],[&quot;google.com.ng&quot;,[&quot;ng&quot;,&quot;Nigeria&quot;,&quot;en&quot;]],[&quot;google.com.ni&quot;,[&quot;ni&quot;,&quot;Nicaragua&quot;,&quot;es&quot;]],[&quot;google.com.np&quot;,[&quot;np&quot;,&quot;Nepal&quot;,&quot;ne&quot;]],[&quot;google.com.om&quot;,[&quot;om&quot;,&quot;Oman&quot;,&quot;ar&quot;]],[&quot;google.com.pa&quot;,[&quot;pa&quot;,&quot;Panama&quot;,&quot;es&quot;]],[&quot;google.com.pe&quot;,[&quot;pe&quot;,&quot;Peru&quot;,&quot;es&quot;]],[&quot;google.com.pg&quot;,[&quot;pg&quot;,&quot;Papua New Guinea&quot;,&quot;en&quot;]],[&quot;google.com.ph&quot;,[&quot;ph&quot;,&quot;Philippines&quot;,&quot;tl&quot;]],[&quot;google.com.pk&quot;,[&quot;pk&quot;,&quot;Pakistan&quot;,&quot;en&quot;]],[&quot;google.com.pr&quot;,[&quot;pr&quot;,&quot;Puerto Rico&quot;,&quot;es&quot;]],[&quot;google.com.py&quot;,[&quot;py&quot;,&quot;Paraguay&quot;,&quot;es&quot;]],[&quot;google.com.qa&quot;,[&quot;qa&quot;,&quot;Qatar&quot;,&quot;ar&quot;]],[&quot;google.com.sa&quot;,[&quot;sa&quot;,&quot;Saudi Arabia&quot;,&quot;ar&quot;]],[&quot;google.com.sb&quot;,[&quot;sb&quot;,&quot;Solomon Islands&quot;,&quot;en&quot;]],[&quot;google.com.sg&quot;,[&quot;sg&quot;,&quot;Singapore&quot;,&quot;en&quot;]],[&quot;google.com.sl&quot;,[&quot;sl&quot;,&quot;Sierra Leone&quot;,&quot;en&quot;]],[&quot;google.com.sv&quot;,[&quot;sv&quot;,&quot;El Salvador&quot;,&quot;es&quot;]],[&quot;google.com.tj&quot;,[&quot;tj&quot;,&quot;Tajikistan&quot;,&quot;tg&quot;]],[&quot;google.com.tr&quot;,[&quot;tr&quot;,&quot;Turkiye&quot;,&quot;tr&quot;]],[&quot;google.com.tr&quot;,[&quot;tr&quot;,&quot;Turkey&quot;,&quot;tr&quot;]],[&quot;google.com.tw&quot;,[&quot;tw&quot;,&quot;Taiwan&quot;,&quot;zh-tw&quot;]],[&quot;google.com.ua&quot;,[&quot;ua&quot;,&quot;Ukraine&quot;,&quot;uk&quot;]],[&quot;google.com.uy&quot;,[&quot;uy&quot;,&quot;Uruguay&quot;,&quot;es&quot;]],[&quot;google.com.vc&quot;,[&quot;vc&quot;,&quot;Saint Vincent and the Grenadines&quot;,&quot;en&quot;]],[&quot;google.com.vn&quot;,[&quot;vn&quot;,&quot;Vietnam&quot;,&quot;vi&quot;]],[&quot;google.cv&quot;,[&quot;cv&quot;,&quot;Cape Verde&quot;,&quot;pt&quot;]],[&quot;google.cz&quot;,[&quot;cz&quot;,&quot;Czech Republic&quot;,&quot;cs&quot;]],[&quot;google.de&quot;,[&quot;de&quot;,&quot;Germany&quot;,&quot;de&quot;]],[&quot;google.dj&quot;,[&quot;dj&quot;,&quot;Djibouti&quot;,&quot;ar&quot;]],[&quot;google.dk&quot;,[&quot;dk&quot;,&quot;Denmark&quot;,&quot;da&quot;]],[&quot;google.dm&quot;,[&quot;dm&quot;,&quot;Dominica&quot;,&quot;en&quot;]],[&quot;google.dz&quot;,[&quot;dz&quot;,&quot;Algeria&quot;,&quot;ar&quot;]],[&quot;google.ee&quot;,[&quot;ee&quot;,&quot;Estonia&quot;,&quot;et&quot;]],[&quot;google.es&quot;,[&quot;es&quot;,&quot;Spain&quot;,&quot;es&quot;]],[&quot;google.fi&quot;,[&quot;fi&quot;,&quot;Finland&quot;,&quot;fi&quot;]],[&quot;google.fm&quot;,[&quot;fm&quot;,&quot;Micronesia, Federated States of&quot;,&quot;en&quot;]],[&quot;google.fr&quot;,[&quot;fr&quot;,&quot;France&quot;,&quot;fr&quot;]],[&quot;google.ga&quot;,[&quot;ga&quot;,&quot;Gabon&quot;,&quot;fr&quot;]],[&quot;google.ge&quot;,[&quot;ge&quot;,&quot;Georgia&quot;,&quot;ka&quot;]],[&quot;google.gl&quot;,[&quot;gl&quot;,&quot;Greenland&quot;,&quot;kl&quot;]],[&quot;google.gm&quot;,[&quot;gm&quot;,&quot;Gambia&quot;,&quot;en&quot;]],[&quot;google.gp&quot;,[&quot;gp&quot;,&quot;Guadeloupe&quot;,&quot;fr&quot;]],[&quot;google.gr&quot;,[&quot;gr&quot;,&quot;Greece&quot;,&quot;el&quot;]],[&quot;google.gy&quot;,[&quot;gy&quot;,&quot;Guyana&quot;,&quot;en&quot;]],[&quot;google.hn&quot;,[&quot;hn&quot;,&quot;Honduras&quot;,&quot;es&quot;]],[&quot;google.hr&quot;,[&quot;hr&quot;,&quot;Croatia&quot;,&quot;hr&quot;]],[&quot;google.ht&quot;,[&quot;ht&quot;,&quot;Haiti&quot;,&quot;fr&quot;]],[&quot;google.hu&quot;,[&quot;hu&quot;,&quot;Hungary&quot;,&quot;hu&quot;]],[&quot;google.ie&quot;,[&quot;ie&quot;,&quot;Ireland&quot;,&quot;en&quot;]],[&quot;google.iq&quot;,[&quot;iq&quot;,&quot;Iraq&quot;,&quot;ar&quot;]],[&quot;google.is&quot;,[&quot;is&quot;,&quot;Iceland&quot;,&quot;is&quot;]],[&quot;google.it&quot;,[&quot;it&quot;,&quot;Italy&quot;,&quot;it&quot;]],[&quot;google.je&quot;,[&quot;je&quot;,&quot;Jersey&quot;,&quot;en&quot;]],[&quot;google.jo&quot;,[&quot;jo&quot;,&quot;Jordan&quot;,&quot;ar&quot;]],[&quot;google.kg&quot;,[&quot;kg&quot;,&quot;Kyrgyzstan&quot;,&quot;ky&quot;]],[&quot;google.ki&quot;,[&quot;ki&quot;,&quot;Kiribati&quot;,&quot;en&quot;]],[&quot;google.kz&quot;,[&quot;kz&quot;,&quot;Kazakhstan&quot;,&quot;kk&quot;]],[&quot;google.la&quot;,[&quot;la&quot;,&quot;Laos&quot;,&quot;lo&quot;]],[&quot;google.li&quot;,[&quot;li&quot;,&quot;Liechtenstein&quot;,&quot;de&quot;]],[&quot;google.lk&quot;,[&quot;lk&quot;,&quot;Sri Lanka&quot;,&quot;si&quot;]],[&quot;google.lt&quot;,[&quot;lt&quot;,&quot;Lithuania&quot;,&quot;lt&quot;]],[&quot;google.lu&quot;,[&quot;lu&quot;,&quot;Luxembourg&quot;,&quot;fr&quot;]],[&quot;google.lv&quot;,[&quot;lv&quot;,&quot;Latvia&quot;,&quot;lv&quot;]],[&quot;google.md&quot;,[&quot;md&quot;,&quot;Moldova&quot;,&quot;ro&quot;]],[&quot;google.mg&quot;,[&quot;mg&quot;,&quot;Madagascar&quot;,&quot;fr&quot;]],[&quot;google.mk&quot;,[&quot;mk&quot;,&quot;Macedonia&quot;,&quot;mk&quot;]],[&quot;google.ml&quot;,[&quot;ml&quot;,&quot;Mali&quot;,&quot;fr&quot;]],[&quot;google.mn&quot;,[&quot;mn&quot;,&quot;Mongolia&quot;,&quot;mn&quot;]],[&quot;google.ms&quot;,[&quot;ms&quot;,&quot;Montserrat&quot;,&quot;en&quot;]],[&quot;google.mu&quot;,[&quot;mu&quot;,&quot;Mauritius&quot;,&quot;en&quot;]],[&quot;google.mv&quot;,[&quot;mv&quot;,&quot;Maldives&quot;,&quot;mv&quot;]],[&quot;google.mw&quot;,[&quot;mw&quot;,&quot;Malawi&quot;,&quot;en&quot;]],[&quot;google.ne&quot;,[&quot;ne&quot;,&quot;Niger&quot;,&quot;fr&quot;]],[&quot;google.nl&quot;,[&quot;nl&quot;,&quot;Netherlands&quot;,&quot;nl&quot;]],[&quot;google.no&quot;,[&quot;no&quot;,&quot;Norway&quot;,&quot;no&quot;]],[&quot;google.nr&quot;,[&quot;nr&quot;,&quot;Nauru&quot;,&quot;en&quot;]],[&quot;google.nu&quot;,[&quot;nu&quot;,&quot;Niue&quot;,&quot;en&quot;]],[&quot;google.pl&quot;,[&quot;pl&quot;,&quot;Poland&quot;,&quot;pl&quot;]],[&quot;google.ps&quot;,[&quot;ps&quot;,&quot;Palestine&quot;,&quot;ar&quot;]],[&quot;google.pt&quot;,[&quot;pt&quot;,&quot;Portugal&quot;,&quot;pt&quot;]],[&quot;google.ro&quot;,[&quot;ro&quot;,&quot;Romania&quot;,&quot;ro&quot;]],[&quot;google.rs&quot;,[&quot;rs&quot;,&quot;Serbia&quot;,&quot;sr&quot;]],[&quot;google.ru&quot;,[&quot;ru&quot;,&quot;Russia&quot;,&quot;ru&quot;]],[&quot;google.rw&quot;,[&quot;rw&quot;,&quot;Rwanda&quot;,&quot;rw&quot;]],[&quot;google.sc&quot;,[&quot;sc&quot;,&quot;Seychelles&quot;,&quot;fr&quot;]],[&quot;google.se&quot;,[&quot;se&quot;,&quot;Sweden&quot;,&quot;sv&quot;]],[&quot;google.sh&quot;,[&quot;sh&quot;,&quot;Saint Helena, Ascension and Tristan da Cunha&quot;,&quot;en&quot;]],[&quot;google.si&quot;,[&quot;si&quot;,&quot;Slovenia&quot;,&quot;sl&quot;]],[&quot;google.sk&quot;,[&quot;sk&quot;,&quot;Slovakia&quot;,&quot;sk&quot;]],[&quot;google.sm&quot;,[&quot;sm&quot;,&quot;San Marino&quot;,&quot;it&quot;]],[&quot;google.sn&quot;,[&quot;sn&quot;,&quot;Senegal&quot;,&quot;fr&quot;]],[&quot;google.so&quot;,[&quot;so&quot;,&quot;Somalia&quot;,&quot;so&quot;]],[&quot;google.sr&quot;,[&quot;sr&quot;,&quot;Suriname&quot;,&quot;nl&quot;]],[&quot;google.td&quot;,[&quot;td&quot;,&quot;Chad&quot;,&quot;ar&quot;]],[&quot;google.tg&quot;,[&quot;tg&quot;,&quot;Togo&quot;,&quot;fr&quot;]],[&quot;google.tk&quot;,[&quot;tk&quot;,&quot;Tokelau&quot;,&quot;en&quot;]],[&quot;google.tl&quot;,[&quot;tl&quot;,&quot;Timor-Leste&quot;,&quot;pt&quot;]],[&quot;google.tm&quot;,[&quot;tm&quot;,&quot;Turkmenistan&quot;,&quot;tk&quot;]],[&quot;google.tn&quot;,[&quot;tn&quot;,&quot;Tunisia&quot;,&quot;ar&quot;]],[&quot;google.to&quot;,[&quot;to&quot;,&quot;Tonga&quot;,&quot;en&quot;]],[&quot;google.tt&quot;,[&quot;tt&quot;,&quot;Trinidad and Tobago&quot;,&quot;en&quot;]],[&quot;google.vg&quot;,[&quot;vg&quot;,&quot;British Virgin Islands&quot;,&quot;en&quot;]],[&quot;google.vu&quot;,[&quot;vu&quot;,&quot;Vanuatu&quot;,&quot;vu&quot;]],[&quot;google.ws&quot;,[&quot;ws&quot;,&quot;Samoa&quot;,&quot;ws&quot;]]]}" data-react-cache-id="HomepageDemo-0" style="min-height: 100px;"></div>
+      <div class="row">
+        <div id="grecaptcha_search"></div>
+        <div class="col-6 text-right d-lg-block live-preview-block">
+          <div id="demoV3-results-html" class="global-results-container">
+            <div id="iframeResultsContainer"><iframe id="iframeResults"></iframe></div>
+          </div>
+        </div>
+        <div class="col-6 d-lg-block live-preview-block json-wrap">
+          <div id="results-json"></div>
+        </div>
+        <div class="playground-para">
+          <a href="/playground" target="_blank">Play with more parameters and search engines<img src="/landing-theme/html/layout-1/img/external-link-alt-solid.svg" alt="" /></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<section class="features features-1 pt-5 mt-5 pb-5 mb-4">
+  <div class="container">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 text-center mt-4 preamble">
+      <h4 class="title mt-0 mb-4">Easy Integration</h4>
+    </div>
+    <div id="integrationsMountPoint" class="integrationsMountPoint"></div>
+  </div>
+</section>
+
+<section id="features" class="features features-1 p-0">
+  <div class="part with-bg pt-5 pb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 text-center mt-4 preamble">
+          <h4 class="title mt-0 mb-3">Advanced Features</h4>
+          <p class="lead mb-5">Leverage our infrastructure (IPs across the globe, full browser cluster, and CAPTCHA solving technology), and exploit our structured SERP data in the way you want.</p>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <div class="single-feature text-center p-5 rounded">
+            <img src="/ballicons/SVG/rocket.svg" alt="" class="img-fluid mb-4 pb-2 rounded-circle">
+            <h5 class="title mt-0 mb-3 font-weight-bold">Real Time and Real Results</h5>
+            <p class="mb-0">
+              Each API request runs immediately – no&nbsp;waiting for results.<br /><br />
+              In addition, each API request runs in a full browser, and we'll even solve all CAPTCHAs, completely mimicking what a human would do.
+              This guarantees that you get what users truly see.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <div class="single-feature text-center p-5 rounded">
+            <img src="/ballicons/SVG/map.svg" alt="" class="img-fluid mb-4 pb-2 rounded-circle">
+            <h5 class="title mt-0 mb-3 font-weight-bold">Accurate Locations</h5>
+            <p class="mb-0">
+              Get Google results from anywhere in the world with our "location" parameter.<br /><br />
+              SerpApi uses Google’s geolocated, encrypted params and routes your request through the proxy server nearest to your desired location to ensure accuracy. Get locations at our <a href="/locations-api">locations endpoint</a>.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <div class="single-feature text-center p-5 rounded">
+            <img src="/ballicons/SVG/box.svg" alt="" class="img-fluid mb-4 pb-2 rounded-circle">
+            <h5 class="title mt-0 mb-3 font-weight-bold">JSON and Markdown Output</h5>
+            <p class="mb-0">
+              Regular organic results are available as well as Maps, Local, Stories, Shopping,
+              Direct Answer, and Knowledge Graph.<br /><br />Lots of structured data is available for each result,
+              including links, addresses, tweets, prices, thumbnails, ratings, reviews, rich snippets, and more.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-12 mb-4">
+          <div class="single-feature p-5 rounded text-lg-left text-center">
+            <div class="row">
+              <div class="col-lg-3 col-12 text-center">
+                <img src="/ballicons/SVG/shield.svg" alt="U.S. Legal Shield" class="img-fluid mb-4 pb-2 rounded-circle">
+              </div>
+              <div class="col-lg-9 col-12">
+                <h5 class="title mt-0 mb-3 font-weight-bold">U.S. Legal Shield</h5>
+                <p class="mb-0 pr-0 pr-lg-2">
+                  Our <a href="/us-legal-shield">U.S. Legal Shield</a> covers the scraping and parsing of search engine data, as long as your use of the data or service is not illegal. Such illegal use includes, by way of example and not limitation, copyright infringement, DMCA violations, other intellectual property infringement, privacy violations, fraud, harassment, cybercrime, terrorism, child exploitation, denial-of-service attacks, or war crimes. 
+                  In short, we assume liability for the lawful collection of public search data, but not for how that data is ultimately used.
+                  Included with the Production Plan and above, with up to $2 million in coverage.
+                </p>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 text-center mt-4 preamble mt-5 pt-4">
+  <h4 class="title mt-0 mb-3">Simple Pricing</h4>
+  <p class="lead">Month-to-month contract. Cancel anytime.</p>
+</div>
+
+
+<section id="pricing" class="mx-3 pb-0">
+  <div class="container d-flex p-0 flex-wrap mx-auto justify-content-center pb-3 mb-5">
+      <div class="col-lg-3 plan-item p-0">
+        <div class="box-wrapper d-flex flex-column align-items-center text-center">
+          <div class="h4 plan-header d-flex flex-column align-items-center px-5 pb-4 m-0 w-100">
+            <i class="mb-3 mr-0 fad fa-stars"></i>
+            <span class="py-1">Starter</span>
+            <div class="d-flex align-items-end mt-3">
+              <div class="d-flex align-items-center">
+                <span>$</span>
+                <span class="h2 my-0 mx-2 font-weight-bold">25</span>
+              </div>
+              <span class="h6 mb-1">/ month</span>
+            </div>
+            <a class="button button-transparent mt-4 plan-button" href="/users/sign_up?plan=starter_v4">Get Started</a>
+          </div>
+          <div class="plan-body pt-3 pb-4 px-4 m-0 w-100">
+            <div class="d-flex py-2 align-items-center">
+              <i class="check-green pr-1 fas fa-check text-left check-icon"></i>
+              <span class="text-left"><span class="font-weight-bold">1,000</span> searches per month</span>
+            </div>
+            <div class="d-flex py-2 align-items-center">
+              <i class="check-green pr-1 fas fa-check text-left check-icon"></i>
+              <span class="text-left"><span class="font-weight-bold">200</span> throughput per hour<i class="enable-tooltip opacity-3 ml-2 fad fa-question-circle" data-tippy-theme="light-border" data-tippy-allowhtml="true" data-tippy-content="<div class='tip'><b>200 successful searches per hour</b> is the <b>guaranteed throughput</b> for this plan. To improve performance, distribute your searches evenly throughout the hour and across multiple hours.</div>" aria-expanded="false"></i></span>
+            </div>
+              <div class="d-flex py-2 align-items-center">
+                <i class="check-gray pr-1 fas fa-times text-left check-icon"></i>
+                <span class="text-left">U.S. Legal Shield<i class="enable-tooltip opacity-3 ml-2 fad fa-question-circle" data-tippy-theme="light-border" data-tippy-allowhtml="true" data-tippy-content="<div class='tip'>U.S. Legal Shield provides up to $2 million in coverage for the scraping and parsing of search engine data, as long as your use of the data or service is not illegal.</div>" aria-expanded="false"></i></span>
+                <span></span>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 plan-item p-0">
+        <div class="box-wrapper d-flex flex-column align-items-center text-center">
+          <div class="h4 plan-header d-flex flex-column align-items-center px-5 pb-4 m-0 w-100">
+            <i class="mb-3 mr-0 fad fa-window-alt"></i>
+            <span class="py-1">Developer</span>
+            <div class="d-flex align-items-end mt-3">
+              <div class="d-flex align-items-center">
+                <span>$</span>
+                <span class="h2 my-0 mx-2 font-weight-bold">75</span>
+              </div>
+              <span class="h6 mb-1">/ month</span>
+            </div>
+            <a class="button button-transparent mt-4 plan-button" href="/users/sign_up?plan=developer_v4">Get Started</a>
+          </div>
+          <div class="plan-body pt-3 pb-4 px-4 m-0 w-100">
+            <div class="d-flex py-2 align-items-center">
+              <i class="check-green pr-1 fas fa-check text-left check-icon"></i>
+              <span class="text-left"><span class="font-weight-bold">5,000</span> searches per month</span>
+            </div>
+            <div class="d-flex py-2 align-items-center">
+              <i class="check-green pr-1 fas fa-check text-left check-icon"></i>
+              <span class="text-left"><span class="font-weight-bold">1,000</span> throughput per hour<i class="enable-tooltip opacity-3 ml-2 fad fa-question-circle" data-tippy-theme="light-border" data-tippy-allowhtml="true" data-tippy-content="<div class='tip'><b>1,000 successful searches per hour</b> is the <b>guaranteed throughput</b> for this plan. To improve performance, distribute your searches evenly throughout the hour and across multiple hours.</div>" aria-expanded="false"></i></span>
+            </div>
+              <div class="d-flex py-2 align-items-center">
+                <i class="check-gray pr-1 fas fa-times text-left check-icon"></i>
+                <span class="text-left">U.S. Legal Shield<i class="enable-tooltip opacity-3 ml-2 fad fa-question-circle" data-tippy-theme="light-border" data-tippy-allowhtml="true" data-tippy-content="<div class='tip'>U.S. Legal Shield provides up to $2 million in coverage for the scraping and parsing of search engine data, as long as your use of the data or service is not illegal.</div>" aria-expanded="false"></i></span>
+                <span></span>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 plan-item p-0 most-popular">
+          <div class="px-2 pt-2 pb-5 w-100 text-center plan-highlight">Most popular</div>
+        <div class="box-wrapper d-flex flex-column align-items-center text-center">
+          <div class="h4 plan-header d-flex flex-column align-items-center px-5 pb-4 m-0 w-100">
+            <i class="mb-3 mr-0 fad fa-layer-group"></i>
+            <span class="py-1">Production</span>
+            <div class="d-flex align-items-end mt-3">
+              <div class="d-flex align-items-center">
+                <span>$</span>
+                <span class="h2 my-0 mx-2 font-weight-bold">150</span>
+              </div>
+              <span class="h6 mb-1">/ month</span>
+            </div>
+            <a class="button button-blue mt-4 plan-button" href="/users/sign_up?plan=production_v4">Get Started</a>
+          </div>
+          <div class="plan-body pt-3 pb-4 px-4 m-0 w-100">
+            <div class="d-flex py-2 align-items-center">
+              <i class="check-green pr-1 fas fa-check text-left check-icon"></i>
+              <span class="text-left"><span class="font-weight-bold">15,000</span> searches per month</span>
+            </div>
+            <div class="d-flex py-2 align-items-center">
+              <i class="check-green pr-1 fas fa-check text-left check-icon"></i>
+              <span class="text-left"><span class="font-weight-bold">3,000</span> throughput per hour<i class="enable-tooltip opacity-3 ml-2 fad fa-question-circle" data-tippy-theme="light-border" data-tippy-allowhtml="true" data-tippy-content="<div class='tip'><b>3,000 successful searches per hour</b> is the <b>guaranteed throughput</b> for this plan. To improve performance, distribute your searches evenly throughout the hour and across multiple hours.</div>" aria-expanded="false"></i></span>
+            </div>
+              <div class="d-flex py-2 align-items-center">
+                <i class="check-green pr-1 fas fa-check text-left check-icon"></i>
+                <span class="text-left">U.S. Legal Shield<i class="enable-tooltip opacity-3 ml-2 fad fa-question-circle" data-tippy-theme="light-border" data-tippy-allowhtml="true" data-tippy-content="<div class='tip'>U.S. Legal Shield provides up to $2 million in coverage for the scraping and parsing of search engine data, as long as your use of the data or service is not illegal.</div>" aria-expanded="false"></i></span>
+                <span></span>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 plan-item p-0">
+        <div class="box-wrapper d-flex flex-column align-items-center text-center">
+          <div class="h4 plan-header d-flex flex-column align-items-center px-5 pb-4 m-0 w-100">
+            <i class="mb-3 mr-0 fad fa-atom-alt"></i>
+            <span class="py-1">Big Data</span>
+            <div class="d-flex align-items-end mt-3">
+              <div class="d-flex align-items-center">
+                <span>$</span>
+                <span class="h2 my-0 mx-2 font-weight-bold">275</span>
+              </div>
+              <span class="h6 mb-1">/ month</span>
+            </div>
+            <a class="button button-transparent mt-4 plan-button" href="/users/sign_up?plan=bigdata_v4">Get Started</a>
+          </div>
+          <div class="plan-body pt-3 pb-4 px-4 m-0 w-100">
+            <div class="d-flex py-2 align-items-center">
+              <i class="check-green pr-1 fas fa-check text-left check-icon"></i>
+              <span class="text-left"><span class="font-weight-bold">30,000</span> searches per month</span>
+            </div>
+            <div class="d-flex py-2 align-items-center">
+              <i class="check-green pr-1 fas fa-check text-left check-icon"></i>
+              <span class="text-left"><span class="font-weight-bold">6,000</span> throughput per hour<i class="enable-tooltip opacity-3 ml-2 fad fa-question-circle" data-tippy-theme="light-border" data-tippy-allowhtml="true" data-tippy-content="<div class='tip'><b>6,000 successful searches per hour</b> is the <b>guaranteed throughput</b> for this plan. To improve performance, distribute your searches evenly throughout the hour and across multiple hours.</div>" aria-expanded="false"></i></span>
+            </div>
+              <div class="d-flex py-2 align-items-center">
+                <i class="check-green pr-1 fas fa-check text-left check-icon"></i>
+                <span class="text-left">U.S. Legal Shield<i class="enable-tooltip opacity-3 ml-2 fad fa-question-circle" data-tippy-theme="light-border" data-tippy-allowhtml="true" data-tippy-content="<div class='tip'>U.S. Legal Shield provides up to $2 million in coverage for the scraping and parsing of search engine data, as long as your use of the data or service is not illegal.</div>" aria-expanded="false"></i></span>
+                <span></span>
+              </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="container d-flex p-0 pt-5 border-top-light mx-auto">
+    <div class="flex-50 pt-3 pr-5">
+      <h5 class="mb-5 pr-3 h4">Flexible options for every stage</h5>
+      <p class="mb-4 pr-3 lead">Start for free, upgrade as you grow, or contact our team about an enterprise plan tailored to your volume, performance, and compliance needs.</p>
+      <a href="/pricing#all-plans">View all plans</a>
+    </div>
+    <div class="d-flex flex-50 pt-3 flex-wrap">
+      <div class="col-lg-6 plan-item p-0">
+        <div class="box-wrapper d-flex flex-column align-items-center text-center">
+          <div class="h4 plan-header d-flex flex-column align-items-center px-5 pb-4 m-0 w-100">
+            <span class="py-1">Free</span>
+            <div class="d-flex align-items-end my-3">
+              <div class="d-flex align-items-center">
+                <span>$</span>
+                <span class="h2 my-0 mx-2 font-weight-bold">0</span>
+              </div>
+              <span class="h6 mb-1">/ month</span>
+            </div>
+            <a class="button button-transparent mt-4 plan-button" href="/users/sign_up?plan=free">Get Started</a>
+          </div>
+          <div class="plan-body pt-3 pb-4 px-4 m-0 w-100">
+            <div class="d-flex py-2 align-items-center">
+              <i class="check-gray pr-1 fas fa-check text-left check-icon"></i>
+              <span class="text-left"><span class="font-weight-bold">250</span> searches per month</span>
+            </div>
+            <div class="d-flex py-2 align-items-center">
+              <i class="check-gray pr-1 fas fa-check text-left check-icon"></i>
+              <span class="text-left"><span class="font-weight-bold">50</span> throughput per hour<i class="enable-tooltip opacity-3 ml-2 fad fa-question-circle" data-tippy-theme="light-border" data-tippy-allowhtml="true" data-tippy-content="<div class='tip'><b>50 successful searches per hour</b> is the <b>guaranteed throughput</b> for this plan. To improve performance, distribute your searches evenly throughout the hour and across multiple hours.</div>" aria-expanded="false"></i></span>
+            </div>
+            <div class="d-flex py-2 align-items-center">
+              <i class="check-gray pr-1 fas fa-times text-left check-icon"></i>
+              <span class="text-left">U.S. Legal Shield<i class="enable-tooltip opacity-3 ml-2 fad fa-question-circle" data-tippy-theme="light-border" data-tippy-allowhtml="true" data-tippy-content="<div class='tip'>U.S. Legal Shield provides up to $2 million in coverage for the scraping and parsing of search engine data, as long as your use of the data or service is not illegal.</div>" aria-expanded="false"></i></span>
+              <span></span>
+            </div>
+            <div class="d-flex py-2 align-items-center">
+              <i class="check-gray pr-1 fas fa-times text-left check-icon"></i>
+              <span class="text-left">ZeroTrace Mode<i class="enable-tooltip opacity-3 ml-2 fad fa-question-circle" data-tippy-theme="light-border" data-tippy-allowhtml="true" data-tippy-content="<div class='tip'>ZeroTrace Mode prevents search data from being stored on our systems. When enabled, we do not retain search parameters, queries, or results, and each request is discarded after completion, reducing traceability and supporting privacy and compliance requirements.</div>" aria-expanded="false"></i></span>
+            </div>
+            <div class="d-flex py-2 align-items-center">
+              <i class="check-gray pr-1 fas fa-times text-left check-icon"></i>
+              <span class="text-left">Priority support</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 plan-item p-0 most-popular enterprise">
+        <div class="box-wrapper d-flex flex-column align-items-center text-center">
+          <div class="h4 plan-header d-flex flex-column align-items-center px-3 pb-4 m-0 w-100">
+            <span class="pb-1 pt-3">Enterprise</span>
+            <div class="h6 my-3">
+              <span class="d-block mb-2">Contact sales for pricing</span>
+              <span class="font-weight-bold">contact@serpapi.com</span>
+            </div>
+            <a class="button button-transparent mt-3 plan-button" href="/#contact">Contact us</a>
+          </div>
+          <div class="plan-body pt-3 pb-4 px-4 m-0 w-100">
+            <div class="d-flex py-2 align-items-center">
+              <i class="check-green pr-1 fas fa-check text-left check-icon"></i>
+              <span class="text-left">Custom searches per month</span>
+            </div>
+            <div class="d-flex py-2 align-items-center">
+              <i class="check-green pr-1 fas fa-check text-left check-icon"></i>
+              <span class="text-left">Custom throughput per hour</span>
+            </div>
+            <div class="d-flex py-2 align-items-center">
+              <i class="check-green pr-1 fas fa-check text-left check-icon"></i>
+              <span class="text-left">U.S. Legal Shield<i class="enable-tooltip opacity-3 ml-2 fad fa-question-circle" data-tippy-theme="light-border" data-tippy-allowhtml="true" data-tippy-content="<div class='tip'>U.S. Legal Shield provides up to $2 million in coverage for the scraping and parsing of search engine data, as long as your use of the data or service is not illegal.</div>" aria-expanded="false"></i></span>
+              <span></span>
+            </div>
+            <div class="d-flex py-2 align-items-center">
+              <i class="check-green pr-1 fas fa-check text-left check-icon"></i>
+              <span class="text-left">ZeroTrace Mode<i class="enable-tooltip opacity-3 ml-2 fad fa-question-circle" data-tippy-theme="light-border" data-tippy-allowhtml="true" data-tippy-content="<div class='tip'>ZeroTrace Mode prevents search data from being stored on our systems. When enabled, we do not retain search parameters, queries, or results, and each request is discarded after completion, reducing traceability and supporting privacy and compliance requirements.</div>" aria-expanded="false"></i></span>
+            </div>
+            <div class="d-flex py-2 align-items-center">
+              <i class="check-green pr-1 fas fa-check text-left check-icon"></i>
+              <span class="text-left">Priority support</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="enterprise-ready-section" class="d-flex flex-column">
+  <div class="container">
+    <div class="title pb-3 mb-5 d-flex justify-content-between align-items-start text-left">
+      <div>
+        <h3 class="mb-3">Enterprise-grade security & support</h3>
+        <p>Engineered for total data privacy, industry-leading compliance, and guaranteed global reliability.</p>
+      </div>
+      <div class="d-flex">
+        <img alt="SerpApi SOC 2 Type II" src="/assets/security_page/soc2-1f04c6195e8a42bfc90ca38c737bfe84afee7d3cc68c611967e83343900d8270.png" />
+        <img alt="SerpApi ISO 27001" class="ml-3" src="/assets/security_page/ISO27001-ece658830a54860c97088a8857e4054e6072e6568a89a72ec90dfe7c011169b1.png" />
+        <img alt="SerpApi ISO 27701" class="ml-3" src="/assets/security_page/ISO27701-f46af525163bff1b3eb30e55215c9c03f0096982973de0d39d66e4a5fde9843d.png" />
+      </div>
+    </div>
+    <ul class="d-flex">
+      <li>
+        <h4 class="d-flex mb-3">
+          <span class="fa-stack mr-2">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-database fa-stack-1x fa-inverse"></i>
+          </span>ZeroTrace Mode</h4>
+        <p>With ZeroTrace Mode enabled, we don't store your search parameters, files, or data. Once a search completes, it's as if it never happened.</p>
+      </li>
+      <li>
+        <h4 class="d-flex mb-3">
+          <span class="fa-stack mr-2">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-lock-alt fa-stack-1x fa-inverse"></i>
+          </span>Security & Compliance</h4>
+        <p>We're SOC 2 Type II, SOC 3, and ISO 27001 certified - Independently audited controls for security, availability, and confidentiality.</p>
+      </li>
+      <li>
+        <h4 class="d-flex mb-3">
+          <span class="fa-stack mr-2">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-user-shield fa-stack-1x fa-inverse"></i>
+          </span>Premium support</h4>
+        <p>Get help from a global team of experts, ready to guide you through any issue. Backed by uptime SLAs of up to 99.97%.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="customers" class="pt-5">
+  <div class="container pb-5 pl-5 pr-5 mt-5">
+    <div class="text-center">
+      <h2 class="mb-3">They trust us</h2>
+      <p class="lead mb-5">You are in good company. Join them.</p>
+    </div>
+    <div class="d-flex flex-wrap justify-content-center align-items-center pb-5 pl-5 pr-5 mt-5">
+        <div class="img px-4 py-3 w-100"><img alt="Nvidia" src="/assets/they_trust_us/nvidia-f6aef93c646a6c2a270355bdc6f4ef2c3bd2387ba13fe96e1df0f252671047c5.svg" /></div>
+        <div class="img px-4 py-3 w-100"><img alt="Shopify" src="/assets/they_trust_us/shopify-3c81ac3bcad10eec68700a6d803fb53bf82b4b86718efd46ada57c251e6881e1.svg" /></div>
+        <div class="img px-4 py-3 w-100"><img alt="Perplexity" src="/assets/they_trust_us/perplexity-91ee04700ccfae8810e002b6b9f2fa7fd1b754dc246d58e6c29de45013b48825.svg" /></div>
+        <div class="img px-4 py-3 w-100"><img alt="Adobe" src="/assets/they_trust_us/adobe-54213e56d564e8174ec2de6aa5f91907aebadc38215f4c3597d1e9b83cce127a.svg" /></div>
+        <div class="img px-4 py-3 w-100"><img alt="Samsung" src="/assets/they_trust_us/samsung-586d5e2accb43c4a87afc4e8a5bcb22ac51c9a610deffc8cc1e678dc7ec41473.svg" /></div>
+        <div class="img px-4 py-3 w-100"><img alt="KPMG" src="/assets/they_trust_us/kpmg-6148c3dd449898c254f9734003ae845410af3c5ff89affcc8498cf8335a64d24.svg" /></div>
+        <div class="img px-4 py-3 w-100"><img alt="Ahrefs" src="/assets/they_trust_us/ahrefs-d7e94eea8486aa9827442c32cd2bb84c2ccf16f34e465cd8fde9918ac2b08d0b.svg" /></div>
+        <div class="img px-4 py-3 w-100"><img alt="Grubhub" src="/assets/they_trust_us/grubhub-412503dc714c1cea29fc6312ce8e6241a840644d39c7d3676e979cbcaedfaaa5.svg" /></div>
+        <div class="img px-4 py-3 w-100"><img alt="AI21 Labs" src="/assets/they_trust_us/ai21_labs-99130e54735f2d15b7a8a987851c9c14cfa3f9d5fa1f0dc94d70ac35db517e15.svg" /></div>
+        <div class="img px-4 py-3 w-100"><img alt="Salesforce" src="/assets/they_trust_us/salesforce-7d9b201ad6e004461fd650d312d0ee85f9a54bd343e8a1d6784b06b506024c15.svg" /></div>
+        <div class="img px-4 py-3 w-100"><img alt="Thomson Reuters" src="/assets/they_trust_us/thomson_reuters-737571a18eea2623d86ddd80cf83a9dd8fb56a603c8c03bc294f204ca12fcdd5.svg" /></div>
+        <div class="img px-4 py-3 w-100"><img alt="Morgan Stanley" src="/assets/they_trust_us/morgan_stanley-385a9779ff55c01a07d9f6b35b683d4f91b74839e67c399597599cfe40b5b406.svg" /></div>
+        <div class="img px-4 py-3 w-100"><img alt="United Nations" src="/assets/they_trust_us/un-db425e5e8b13851ed1a242c3667ae82af4ce459865fb471e801a5954a444ab75.svg" /></div>
+        <div class="img px-4 py-3 w-100"><img alt="Experian" src="/assets/they_trust_us/experian-8773285de164ba7496a8912fd50c1aa7b14cbb018b686eb1d6d6609ab508e966.svg" /></div>
+        <div class="img px-4 py-3 w-100"><img alt="BrightLocal" src="/assets/they_trust_us/bright_local-7f79a54553c8a2c4b4c15c5dbd31a0d1625bcd093737145c303623cbe79e8625.svg" /></div>
+    </div>
+  </div>
+</section>
+
+
+<section id="FAQ" class="pricing pt-5 pb-5 faq">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 text-center mt-4 preamble">
+        <h4 class="title mt-0 mb-5">FAQ</h4>
+        <div class="faq-block">
+          <div class="question">How are searches counted?</div>
+          <div class="answer">Only successful searches are counted towards your monthly searches. Cached, errored, and failed searches are not.  The number of results returned per response will not affect the number of credits used - responses with 100 results or empty result sets will both cost 1 search credit.</div>
+        </div>
+        <div class="faq-block">
+          <div class="question">What's your guaranteed throughput?</div>
+          <div class="answer">The hourly throughput limit for plans with under 1 million searches per month is 20% of your plan volume. For example, the Developer Plan includes 5,000 searches per month, so subscribers to the Developer Plan can use up to 1,000 successful searches per hour. For plans with 1 million or more searches per month, the hourly throughput is 100,000 + 1% of your plan volume. While we have no other specific rate limit, we recommend spreading your searches evenly throughout each hour for the best performance.</div>
+        </div>
+        <div class="faq-block">
+          <div class="question">What if I need more volume?</div>
+          <div class="answer">If you need more volume, we can offer you custom plans that fit your needs. Contact us for more information or check out our <a href='/pricing#all-plans'>standard plans</a>.</div>
+        </div>
+        <div class="faq-block">
+          <div class="question">Do you provide SLA guarantees?</div>
+          <div class="answer">We provide a 99.95% SLA guarantee with all plans. The SLA guarantee comes with a 100% penalty, and we offer credits up to 100% of the monthly price of your plan on your next invoice.</div>
+        </div>
+        <div class="faq-block">
+          <div class="question">What’s your refund policy?</div>
+          <div class="answer">We offer full refund within 7 days of the day you subscribed to a plan unless you've used more than 20% of your searches.</div>
+        </div>
+        <div class="faq-block mb-3">
+          <div class="question">What are scraper legal protections?</div>
+          <div class="answer">
+            Our U.S. Legal Shield covers the scraping and parsing of search engine data, as long as your use of the data or service is not illegal.
+            Such illegal use includes, by way of example and not limitation, copyright infringement, DMCA violations, other intellectual property infringement, privacy violations, fraud, harassment, cybercrime, terrorism, child exploitation, denial-of-service attacks, or war crimes.
+            In short, we assume liability for the lawful collection of public search data (scraping, parsing, and related actions), but not for how that data is ultimately used.
+            U.S. Legal Shield is included with the Production Plan and above, with up to $2 million in coverage. <a href="/us-legal-shield">Learn more.</a>
+          </div>
+        </div>
+        <p class="lead mb-5">For more answers visit our <a href="/faq">FAQ</a> page</p>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    $(document).on("click", ".faq-block .question", function(event){
+      event.preventDefault();
+      $(this).next('.answer').slideToggle(200);
+    });
+  </script>
+</section>
+
+<section id="contact" class="newsletter pt-5 pb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 text-center mt-4 preamble">
+        <h4 class="title mt-0 mb-3">Contact Us</h4>
+        <p class="mb-5">
+          Questions, get a quote, special needs, or just say hi.<br />
+          We would love to hear from you!
+        </p>
+      </div>
+      <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-12 offset-sm-0">
+        <div id="grecaptcha_form"></div>
+        <div data-react-class="MessageForm" data-react-props="{}" data-react-cache-id="MessageForm-0"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="grid-wrapper container p-0 mb-5">
+    <div class="docu-wrapper">
+      <h1 class="column-wrapper columns-3">APIs</h1>
+      <ul class="column-wrapper columns-3 m-0 justify-content-between">
+          <li class="py-1">
+            <a href="/search-api">
+              <i class="text-center mr-2 fab fa-google"></i><!--
+            -->Google Search API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-light-api">
+              <i class="text-center mr-2 fab fa-google"></i><!--
+            -->Google Light Search API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-ai-mode-api">
+              <i class="text-center mr-2 fas fa-robot"></i><!--
+            -->Google AI Mode API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-ai-overview-api">
+              <i class="text-center mr-2 fas fa-robot"></i><!--
+            -->Google AI Overview API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-ads-api">
+              <img alt="" class="text-center mr-2" src="/demo-redesign/icons/static/a-secure-d.svg" /><!--
+            -->Google Ads API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-ads-transparency-center-api">
+              <i class="text-center mr-2 fas fa-eye"></i><!--
+            -->Google Ads Transparency API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-autocomplete-api">
+              <i class="text-center mr-2 fas fa-magic"></i><!--
+            -->Google Autocomplete API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-events-api">
+              <i class="text-center mr-2 fas fa-calendar-alt"></i><!--
+            -->Google Events API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-finance-api">
+              <i class="text-center mr-2 fas fa-landmark"></i><!--
+            -->Google Finance API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-finance-markets">
+              <i class="text-center mr-2 fas fa-analytics"></i><!--
+            -->Google Finance Markets API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-flights-api">
+              <i class="text-center mr-2 fas fa-plane-departure"></i><!--
+            -->Google Flights API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-flights-autocomplete-api">
+              <i class="text-center mr-2 fas fa-magic"></i><!--
+            -->Google Flights Autocomplete API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-flights-deals-api">
+              <i class="text-center mr-2 fas fa-badge-percent"></i><!--
+            -->Google Flights Deals API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-forums-api">
+              <i class="text-center mr-2 fas fa-comments"></i><!--
+            -->Google Forums API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-gemini-api">
+              <i class="text-center mr-2 fas fa-sparkles"></i><!--
+            -->Google Gemini API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-hotels-api">
+              <i class="text-center mr-2 fas fa-bed"></i><!--
+            -->Google Hotels API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-hotels-autocomplete-api">
+              <i class="text-center mr-2 fas fa-magic"></i><!--
+            -->Google Hotels Autocomplete API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-hotels-photos-api">
+              <i class="text-center mr-2 fas fa-image"></i><!--
+            -->Google Hotels Photos API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-hotels-reviews-api">
+              <i class="text-center mr-2 fas fa-star"></i><!--
+            -->Google Hotels Reviews API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-images-api">
+              <i class="text-center mr-2 fas fa-images"></i><!--
+            -->Google Images API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-images-light-api">
+              <i class="text-center mr-2 fas fa-images"></i><!--
+            -->Google Images Light API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-images-related-content-api">
+              <i class="text-center mr-2 fas fa-image-polaroid"></i><!--
+            -->Google Images Related Content API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-immersive-product-api">
+              <i class="text-center mr-2 fas fa-telescope"></i><!--
+            -->Google Immersive Product API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-jobs-api">
+              <i class="text-center mr-2 fas fa-briefcase"></i><!--
+            -->Google Jobs API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-lens-api">
+              <i class="text-center mr-2 fas fa-camera"></i><!--
+            -->Google Lens API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-local-api">
+              <i class="text-center mr-2 fas fa-map-marker-alt"></i><!--
+            -->Google Local API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-local-services-api">
+              <img alt="" class="text-center mr-2" src="/demo-redesign/icons/static/a-secure-d.svg" /><!--
+            -->Google Local Services API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-maps-api">
+              <i class="text-center mr-2 fas fa-globe-americas"></i><!--
+            -->Google Maps API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-maps-autocomplete-api">
+              <i class="text-center mr-2 fas fa-magic"></i><!--
+            -->Google Maps Autocomplete API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-maps-contributor-reviews-api">
+              <i class="text-center mr-2 fas fa-user-edit"></i><!--
+            -->Google Maps Contributor Reviews API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-maps-directions-api">
+              <i class="text-center mr-2 fas fa-directions"></i><!--
+            -->Google Maps Directions API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-maps-photos-api">
+              <i class="text-center mr-2 fas fa-images"></i><!--
+            -->Google Maps Photos API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-maps-posts-api">
+              <i class="text-center mr-2 fas fa-bars"></i><!--
+            -->Google Maps Posts API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-maps-reviews-api">
+              <i class="text-center mr-2 fas fa-star"></i><!--
+            -->Google Maps Reviews API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-news-api">
+              <i class="text-center mr-2 fas fa-newspaper"></i><!--
+            -->Google News API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-news-light-api">
+              <i class="text-center mr-2 fas fa-newspaper"></i><!--
+            -->Google News Light API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-patents-api">
+              <i class="text-center mr-2 fas fa-file-certificate"></i><!--
+            -->Google Patents API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-patents-details-api">
+              <i class="text-center mr-2 fas fa-list"></i><!--
+            -->Google Patents Details API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-play-books">
+              <i class="text-center mr-2 fas fa-book-alt"></i><!--
+            -->Google Play Books API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-play-games">
+              <i class="text-center mr-2 fas fa-gamepad"></i><!--
+            -->Google Play Games API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-play-movies">
+              <i class="text-center mr-2 fas fa-film-alt"></i><!--
+            -->Google Play Movies API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-play-product-api">
+              <i class="text-center mr-2 fas fa-shapes"></i><!--
+            -->Google Play Product API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-play-api">
+              <i class="text-center mr-2 fab fa-google-play"></i><!--
+            -->Google Play Store API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-product-api">
+              <i class="text-center mr-2 fas fa-tags"></i><!--
+            -->Google Product API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-related-questions-api">
+              <i class="text-center mr-2 fas fa-question-square"></i><!--
+            -->Google Related Questions API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-reverse-image">
+              <i class="text-center mr-2 fas fa-image"></i><!--
+            -->Google Reverse Image API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-scholar-api">
+              <i class="text-center mr-2 fas fa-graduation-cap"></i><!--
+            -->Google Scholar API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-scholar-author-api">
+              <i class="text-center mr-2 fas fa-user-graduate"></i><!--
+            -->Google Scholar Author API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-scholar-case-law-api">
+              <i class="text-center mr-2 fas fa-file-search"></i><!--
+            -->Google Scholar Case Law API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-shopping-api">
+              <i class="text-center mr-2 fas fa-shopping-cart"></i><!--
+            -->Google Shopping API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-shopping-light-api">
+              <i class="text-center mr-2 fas fa-shopping-cart"></i><!--
+            -->Google Shopping Light API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-short-videos-api">
+              <i class="text-center mr-2 fas fa-film-alt"></i><!--
+            -->Google Short Videos API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-sports-api">
+              <i class="text-center mr-2 fas fa-running"></i><!--
+            -->Google Sports API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-travel-explore-api">
+              <img alt="" class="text-center mr-2" src="/demo-redesign/icons/static/google-travel-explore.svg?v=1.1" /><!--
+            -->Google Travel Explore API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-trends-api">
+              <i class="text-center mr-2 fas fa-chart-line"></i><!--
+            -->Google Trends API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-trends-autocomplete">
+              <i class="text-center mr-2 fas fa-magic"></i><!--
+            -->Google Trends Autocomplete API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-trends-trending-now">
+              <i class="text-center mr-2 fas fa-user-chart"></i><!--
+            -->Google Trends Trending Now API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-videos-api">
+              <i class="text-center mr-2 fas fa-video"></i><!--
+            -->Google Videos API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/google-videos-light-api">
+              <i class="text-center mr-2 fas fa-video"></i><!--
+            -->Google Videos Light API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/airbnb-search-api">
+              <img alt="" class="text-center mr-2" src="/demo-redesign/icons/static/airbnb.svg" /><!--
+            -->Airbnb Search API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/amazon-search-api">
+              <i class="text-center mr-2 fab fa-amazon"></i><!--
+            -->Amazon Search API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/amazon-autocomplete-api">
+              <i class="text-center mr-2 fas fa-magic"></i><!--
+            -->Amazon Autocomplete API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/amazon-product-api">
+              <i class="text-center mr-2 fas fa-tags"></i><!--
+            -->Amazon Product API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/apple-app-store">
+              <i class="text-center mr-2 fab fa-app-store"></i><!--
+            -->Apple App Store API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/apple-maps-api">
+              <i class="text-center mr-2 fas fa-globe-americas"></i><!--
+            -->Apple Maps API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/apple-maps-places-api">
+              <i class="text-center mr-2 fas fa-map-marker-alt"></i><!--
+            -->Apple Maps Places API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/apple-product">
+              <i class="text-center mr-2 fas fa-tags"></i><!--
+            -->Apple App Store Product API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/apple-reviews">
+              <i class="text-center mr-2 fas fa-star"></i><!--
+            -->Apple App Store Reviews API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/baidu-search-api">
+              <img alt="" class="text-center mr-2" src="/demo-redesign/icons/static/baidu.svg?version=1.2" /><!--
+            -->Baidu Search API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/baidu-news-api">
+              <i class="text-center mr-2 fas fa-newspaper"></i><!--
+            -->Baidu News API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/bing-search-api">
+              <img alt="" class="text-center mr-2" src="/demo-redesign/icons/static/bing.svg?version=1.2" /><!--
+            -->Bing Search API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/bing-copilot-api">
+              <i class="text-center mr-2 fas fa-robot"></i><!--
+            -->Bing Copilot API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/bing-images-api">
+              <i class="text-center mr-2 fas fa-images"></i><!--
+            -->Bing Images API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/bing-maps-api">
+              <i class="text-center mr-2 fas fa-globe-americas"></i><!--
+            -->Bing Maps API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/bing-news-api">
+              <i class="text-center mr-2 fas fa-newspaper"></i><!--
+            -->Bing News API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/bing-product-api">
+              <i class="text-center mr-2 fas fa-tags"></i><!--
+            -->Bing Product API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/bing-reverse-image-api">
+              <i class="text-center mr-2 fas fa-image"></i><!--
+            -->Bing Reverse Image API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/bing-shopping-api">
+              <i class="text-center mr-2 fas fa-shopping-cart"></i><!--
+            -->Bing Shopping API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/bing-videos-api">
+              <i class="text-center mr-2 fas fa-video"></i><!--
+            -->Bing Videos API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/brave-ai-mode-api">
+              <i class="text-center mr-2 fas fa-robot"></i><!--
+            -->Brave AI Mode API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/duck-ai-api">
+              <i class="text-center mr-2 fas fa-robot"></i><!--
+            -->Duck AI API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/duckduckgo-search-api">
+              <img alt="" class="text-center mr-2" src="/demo-redesign/icons/static/duckduckgo.svg?v=1.1" /><!--
+            -->DuckDuckGo Search API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/duckduckgo-light-api">
+              <img alt="" class="text-center mr-2" src="/demo-redesign/icons/static/duckduckgo.svg?v=1.1" /><!--
+            -->DuckDuckGo Light API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/duckduckgo-maps-api">
+              <i class="text-center mr-2 fas fa-globe-americas"></i><!--
+            -->DuckDuckGo Maps API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/duckduckgo-news-api">
+              <i class="text-center mr-2 fas fa-newspaper"></i><!--
+            -->DuckDuckGo News API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/ebay-search-api">
+              <img alt="" class="text-center mr-2" src="/demo-redesign/icons/static/ebay.svg?version=1.2" /><!--
+            -->eBay Search API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/ebay-product-api">
+              <i class="text-center mr-2 fas fa-tags"></i><!--
+            -->eBay Product API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/ebay-seller-api">
+              <i class="text-center mr-2 fas fa-user-plus"></i><!--
+            -->eBay Seller API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/extract-api">
+              <i class="text-center mr-2 fas fa-globe"></i><!--
+            -->Extract API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/facebook-profile-api">
+              <i class="text-center mr-2 fab fa-facebook"></i><!--
+            -->Facebook Profile API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/home-depot-search-api">
+              <img alt="" class="text-center mr-2" src="/demo-redesign/icons/static/home-depot.svg?version=1.3" /><!--
+            -->The Home Depot Search API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/home-depot-product">
+              <i class="text-center mr-2 fas fa-tags"></i><!--
+            -->The Home Depot Product API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/home-depot-product-reviews">
+              <i class="text-center mr-2 fas fa-star"></i><!--
+            -->The Home Depot Reviews API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/instagram-profile-api">
+              <i class="text-center mr-2 fab fa-instagram"></i><!--
+            -->Instagram Profile API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/naver-search-api">
+              <img alt="" class="text-center mr-2" src="/demo-redesign/icons/static/naver-white.svg" /><!--
+            -->Naver Search API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/naver-ai-mode-api">
+              <i class="text-center mr-2 fas fa-robot"></i><!--
+            -->Naver AI Mode API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/naver-ai-overview-api">
+              <i class="text-center mr-2 fas fa-robot"></i><!--
+            -->Naver AI Overview API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/open-table-reviews-api">
+              <img alt="" class="text-center mr-2" src="/demo-redesign/icons/static/open-table.svg" /><!--
+            -->OpenTable Reviews API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/search-index-api">
+              <i class="text-center mr-2 fas fa-database"></i><!--
+            -->Search Index    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/target-search-api">
+              <img alt="" class="text-center mr-2" src="/demo-redesign/icons/static/target.svg" /><!--
+            -->Target Search API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/tripadvisor-search-api">
+              <img alt="" class="text-center mr-2" src="/demo-redesign/icons/static/tripadvisor.svg?v=1.1" /><!--
+            -->Tripadvisor Search API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/tripadvisor-place-api">
+              <i class="text-center mr-2 fas fa-map-marker-alt"></i><!--
+            -->Tripadvisor Place API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/tripadvisor-reviews-api">
+              <i class="text-center mr-2 fas fa-star"></i><!--
+            -->Tripadvisor Reviews API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/walmart-search-api">
+              <img alt="" class="text-center mr-2" src="/demo-redesign/icons/static/walmart.svg" /><!--
+            -->Walmart Search API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/walmart-product-api">
+              <i class="text-center mr-2 fas fa-tags"></i><!--
+            -->Walmart Product API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/walmart-product-reviews-api">
+              <i class="text-center mr-2 fas fa-star"></i><!--
+            -->Walmart Reviews API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/yahoo-search-api">
+              <i class="text-center mr-2 fab fa-yahoo"></i><!--
+            -->Yahoo! Search API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/yahoo-images-api">
+              <i class="text-center mr-2 fas fa-image"></i><!--
+            -->Yahoo! Images API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/yahoo-trends-api">
+              <i class="text-center mr-2 fas fa-fire"></i><!--
+            -->Yahoo! Trends API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/yahoo-videos-api">
+              <i class="text-center mr-2 fas fa-video"></i><!--
+            -->Yahoo! Videos API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/yandex-search-api">
+              <i class="text-center mr-2 fab fa-yandex-international"></i><!--
+            -->Yandex Search API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/yandex-images-api">
+              <i class="text-center mr-2 fas fa-image"></i><!--
+            -->Yandex Images API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/yandex-videos-api">
+              <i class="text-center mr-2 fas fa-video"></i><!--
+            -->Yandex Videos API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/yelp-search-api">
+              <i class="text-center mr-2 fab fa-yelp"></i><!--
+            -->Yelp Search API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/yelp-place">
+              <i class="text-center mr-2 fas fa-map-marker-alt"></i><!--
+            -->Yelp Place API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/yelp-reviews-api">
+              <i class="text-center mr-2 fas fa-star"></i><!--
+            -->Yelp Reviews API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/youtube-search-api">
+              <i class="text-center mr-2 fab fa-youtube"></i><!--
+            -->YouTube Search API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/youtube-channel-api">
+              <i class="text-center mr-2 fas fa-tv"></i><!--
+            -->YouTube Channel API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/youtube-video-api">
+              <i class="text-center mr-2 fas fa-play-circle"></i><!--
+            -->YouTube Video API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/youtube-video-transcript">
+              <i class="text-center mr-2 fas fa-closed-captioning"></i><!--
+            -->YouTube Video Transcript API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/zillow-search-api">
+              <img alt="" class="text-center mr-2" src="/demo-redesign/icons/static/zillow.svg" /><!--
+            -->Zillow Search API    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/account-api">
+              <i class="text-center mr-2 fas fa-cogs"></i><!--
+            -->Extra APIs    
+            </a>
+          </li>
+          <li class="py-1">
+            <a href="/api-status-and-error-codes">
+              <i class="text-center mr-2 fas fa-life-ring"></i><!--
+            -->Status and Error Codes    
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="d-flex justify-content-between about-and-contact">
+      <div>
+        <h1>About</h1>
+        <ul class="list-unstyled m-0">
+          <li class="py-1"><a href="/">Home</a></li>
+          <li class="py-1"><a href="/search-engine-apis">APIs</a></li>
+          <li class="py-1"><a href="https://status.serpapi.com/">Status</a></li>
+          <li class="py-1"><a href="/integrations">Integrations</a></li>
+          <li class="py-1"><a href="/#features">Features</a></li>
+          <li class="py-1"><a href="/pricing">Pricing</a></li>
+          <li class="py-1"><a href="/use-cases">Use cases</a></li>
+          <li class="py-1"><a href="/team">Team</a></li>
+          <li class="py-1"><a href="/careers">Careers</a></li>
+          <li class="py-1"><a href="/faq">FAQ</a></li>
+          <li class="py-1"><a href="/legal">Legal</a></li>
+          <li class="py-1"><a href="/security">Security</a></li>
+          <li class="py-1"><a href="/#contact">Contact us</a></li>
+          <li class="py-1"><a href="https://serpapi.com/blog/">Blog</a></li>
+          <li class="py-1"><a href="/media">Media Kit</a></li>
+        </ul>
+      </div>
+      <div>
+        <h1>Contact</h1>
+        <ul class="list-unstyled m-0">
+          <li class="py-1">SerpApi, LLC</li>
+          <li class="py-1">5540 N Lamar Blvd #12</li>
+          <li class="py-1">Austin, TX 78751</li>
+          <li>&nbsp;</li>
+          <li class="py-1">+1 (512) 666-8245</li>
+          <li class="py-1"><a href="mailto:contact@serpapi.com">contact@serpapi.com</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="our-values container p-0 d-flex my-5 py-5 justify-content-between ">
+    <div class="w-100">
+      <h1 class="pb-3 d-flex justify-content-between">
+        <span>Our Values</span>
+        <a href="/">
+          <img alt="SerpApi" src="/assets/serpapi-text-logo-621a467e3b1e907622c18a6ac81455032e9784d6a86e81a1b4f6407d3f0120a6.svg" />
+        </a>
+      </h1>
+      <p>We value full transparency and painful honesty both in our internal and external communications. We believe a world with complete and open transparency is a better world.</p>
+    </div>
+  </div>
+
+  <div class="container p-0">
+    <div class="col-md-12 d-lg-flex align-items-end p-0">
+      <p class="copyrights mb-2"><i class="fa-solid fa-heart"></i>Built with love in Austin, TX. © 2026 SerpApi, LLC.</p>
+      <ul class="social list-unstyled d-flex flex-wrap ml-auto m-0">
+        <li class="mr-3">
+          <a class="enable-tooltip" rel="nofollow" href="https://github.com/serpapi/" target="_blank" data-tippy-content="GitHub">
+            <i class="fa-brands fa-github" aria-label="GitHub"></i>
+          </a>
+        </li>
+        <li class="mr-3">
+          <a class="enable-tooltip" rel="nofollow" href="https://www.youtube.com/@serpapi" target="_blank" data-tippy-content="YouTube">
+            <i class="fa-brands fa-youtube" aria-label="YouTube"></i>
+          </a>
+        </li>
+        <li class="mr-3">
+          <a class="enable-tooltip" rel="nofollow" href="https://bsky.app/profile/serpapi.com" target="_blank" data-tippy-content="Bluesky">
+            <i class="fa-brands fa-bluesky" aria-label="Bluesky"></i>
+          </a>
+        </li>
+        <li class="mr-3">
+          <a class="enable-tooltip" rel="nofollow" href="https://x.com/serpapi" target="_blank" data-tippy-content="X/Twitter">
+            <i class="fa-brands fa-x-twitter" aria-label="X/Twitter"></i>
+          </a>
+        </li>
+        <li class="mr-3">
+          <a class="enable-tooltip" rel="nofollow" href="https://www.instagram.com/serpapicom/" target="_blank" data-tippy-content="Instagram">
+            <i class="fa-brands fa-instagram" aria-label="Instagram"></i>
+          </a>
+        </li>
+        <li class="mr-3">
+          <a class="enable-tooltip" rel="nofollow" href="https://www.facebook.com/serpapicom/" target="_blank" data-tippy-content="Facebook">
+            <i class="fa-brands fa-facebook" aria-label="Facebook"></i>
+          </a>
+        </li>
+        <li class="mr-3">
+          <a class="enable-tooltip" rel="nofollow" href="https://www.linkedin.com/company/serpapi/" target="_blank" data-tippy-content="LinkedIn">
+            <i class="fa-brands fa-linkedin" aria-label="LinkedIn"></i>
+          </a>
+        </li>
+        <li>
+          <a class="enable-tooltip" rel="nofollow" href="https://medium.com/serpapi" target="_blank" data-tippy-content="Medium">
+            <i class="fa-brands fa-medium" aria-label="Medium"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+
+    <!--jQuery, tether &  Bootstrap JS.-->
+    <script src="/landing-theme/html/layout-1/js/tether.min.js"></script>
+    <script src="/landing-theme/html/layout-1/js/bootstrap.min.js"></script>
+
+    
+  <script src="/select2/select2.min.js"></script>
+  <script type="text/javascript" src="/loading.io/loading-bar.js"></script>
+
+
+    <script>
+    window.intercomSettings = {
+      app_id: "yzck75jr"
+    };
+</script>
+
+<script>
+  (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/yzck75jr';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
+</script>
+
+  </body>
+</html>

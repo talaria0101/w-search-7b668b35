@@ -1,0 +1,119 @@
+# Linkup API Documentation
+
+- [Introduction](https://docs.linkup.so/pages/documentation/get-started/introduction.md): The production-grade web search API for AI.
+- [Quickstart](https://docs.linkup.so/pages/documentation/get-started/quickstart.md): Integrate with Linkup in 5 minutes
+- [For AI agents](https://docs.linkup.so/pages/documentation/get-started/for-agents.md): Download the Linkup knowledge pack for agents: what you can build, which API to call, and how to write optimized queries and workflows.
+- [Search overview](https://docs.linkup.so/pages/documentation/endpoints/search/overview.md): Agentic web search with four depths and three output types: sources and snippets, sourced answers, or structured JSON.
+- [Search best practices](https://docs.linkup.so/pages/documentation/endpoints/search/best-practices.md): Depth selection, per-depth query patterns, source filtering, and schema design for /search.
+- [Search for AI agents](https://docs.linkup.so/pages/documentation/endpoints/search/for-agents.md): Self-contained /search integration prompt for coding agents (Cursor, Claude Code, etc.) and tool-using LLMs.
+- [Fetch overview](https://docs.linkup.so/pages/documentation/endpoints/fetch/overview.md): Real-time page content extractor. Clean, LLM-ready markdown from any public URL — HTML or PDF — with optional typed JSON from the same page.
+- [Fetch best practices](https://docs.linkup.so/pages/documentation/endpoints/fetch/best-practices.md): Retrieval modes, JavaScript rendering, structured JSON from a known URL, pairing /fetch with /search, and operational constraints.
+- [Fetch for AI agents](https://docs.linkup.so/pages/documentation/endpoints/fetch/for-agents.md): Self-contained /fetch integration prompt for coding agents and tool-using LLMs that need full page content or typed JSON from a known URL.
+- [Research overview](https://docs.linkup.so/pages/documentation/endpoints/research/overview.md): Research agent that navigates the web to produce sourced answers, from precise factual claims to multi-section reports.
+- [Research best practices](https://docs.linkup.so/pages/documentation/endpoints/research/best-practices.md): Mode and reasoning-depth selection, question phrasing, polling, and failure handling for /research.
+- [Research for AI agents](https://docs.linkup.so/pages/documentation/endpoints/research/for-agents.md): Self-contained /research integration prompt for coding agents and tool-using LLMs that need multi-step web research.
+- [Tasks overview](https://docs.linkup.so/pages/documentation/endpoints/tasks/overview.md): Asynchronous batch wrapper around /search, /fetch, and /research.
+- [Tasks best practices](https://docs.linkup.so/pages/documentation/endpoints/tasks/best-practices.md): When to use /tasks, batch sizing, polling strategy, error handling, and cost considerations.
+- [Tasks for AI agents](https://docs.linkup.so/pages/documentation/endpoints/tasks/for-agents.md): Self-contained /tasks integration prompt for coding agents that need to run Linkup searches asynchronously in batch.
+- [Extract overview](https://docs.linkup.so/pages/documentation/endpoints/extract/overview.md): Closed-beta agent that turns a web page into structured rows of data, delivered as a downloadable NDJSON file.
+- [Extract best practices](https://docs.linkup.so/pages/documentation/endpoints/extract/best-practices.md): Query phrasing, schema design, URL verification, polling, and failure handling for /extract.
+- [Extract for AI agents](https://docs.linkup.so/pages/documentation/endpoints/extract/for-agents.md): Self-contained /extract integration prompt for coding agents that need structured data extraction from the web (closed beta).
+- [Pricing](https://docs.linkup.so/pages/documentation/platform/pricing.md): How the Linkup API pricing system works
+- [Authentication](https://docs.linkup.so/pages/documentation/platform/authentication.md): Authenticate with the Linkup API
+- [x402 Payment Protocol](https://docs.linkup.so/pages/documentation/platform/x402.md): Pay per request with USDC on Base. No account needed.
+- [Errors](https://docs.linkup.so/pages/documentation/platform/errors.md): Linkup API errors and how to handle them
+- [Rate Limits](https://docs.linkup.so/pages/documentation/platform/rate-limits.md)
+- [Migrating from SerpAPI](https://docs.linkup.so/pages/documentation/tutorials/migrating-from-serpapi.md): Guide for switching from SerpAPI to Linkup
+- [Migrating from Tavily](https://docs.linkup.so/pages/documentation/tutorials/migrating-from-tavily.md): Guide for switching from Tavily Search and Extract to Linkup Search and Fetch
+- [Migrating from Exa](https://docs.linkup.so/pages/documentation/tutorials/migrating-from-exa.md): Guide for switching from Exa Search, Contents, and Answer to Linkup Search and Fetch
+- [Structured Output Guide](https://docs.linkup.so/pages/documentation/tutorials/structured-output-guide.md): How to take advantage of Structured Outputs
+- [Source Filtering](https://docs.linkup.so/pages/documentation/tutorials/filtering.md): How to filter your search on sources.
+- [Find LinkedIn Profiles](https://docs.linkup.so/pages/documentation/tutorials/linkedin-profile.md): A practical guide to quickly locate official LinkedIn home‑page URLs for companies or people
+- [Signup Radar ](https://docs.linkup.so/pages/documentation/tutorials/signup-radar.md): Building a signup radar to get to know your new users
+- [Company Intelligence Engine](https://docs.linkup.so/pages/documentation/tutorials/company-intelligence/company-intelligence.md): Build a real-time company research system using the Linkup API.
+- [Peers Finder](https://docs.linkup.so/pages/documentation/tutorials/peers-finder/peers-finder.md): Learn how to find comparable companies using the Linkup API with Google Sheets
+- [Company Descriptions Generator](https://docs.linkup.so/pages/documentation/tutorials/company-descriptions.md): Building a tool to generate rich company descriptions using Linkup API
+- [Automating Lead Qualification](https://docs.linkup.so/pages/documentation/tutorials/company-data-enrichment.md): Learn how to automatically research and score your leads using Linkup AI to prioritize high-value prospects
+- [Meeting Prep](https://docs.linkup.so/pages/documentation/tutorials/meeting-prep/meeting-prep.md): Build a meeting prep agent using Linkup inside Xpander
+- [Frequently Asked Questions](https://docs.linkup.so/pages/faq/faq.md)
+- [Typescript SDK](https://docs.linkup.so/pages/sdk/js/js.md): How to use Linkup Javascript SDK natively in your apps.
+- [Python SDK](https://docs.linkup.so/pages/sdk/python/python.md): How to use Linkup Python SDK natively in your apps.
+- [OpenAI SDK](https://docs.linkup.so/pages/sdk/open-ai/open-ai.md): How to use OpenAI SDK natively in your apps.
+- [CLI](https://docs.linkup.so/pages/sdk/cli/cli.md): How to use the Linkup CLI from your terminal and scripts.
+- [/search](https://docs.linkup.so/pages/documentation/endpoints/search/reference.md): The `/search` endpoint allows you to retrieve web content.
+- [/fetch](https://docs.linkup.so/pages/documentation/endpoints/fetch/reference.md): The `/fetch` endpoint allows you to fetch a single webpage from a given URL.
+- [/research](https://docs.linkup.so/pages/documentation/endpoints/research/post.md): The `POST /research` method creates an asynchronous research task which can perform a comprehensive web research.
+- [/research](https://docs.linkup.so/pages/documentation/endpoints/research/list.md): The `GET /research` method, without research task identifier, lists all created research tasks for the authenticated organization, with pagination.
+- [/research/:id](https://docs.linkup.so/pages/documentation/endpoints/research/get.md): The `GET /research/:id` method, with research task identifier, retrieves a specific research task information.
+- [/tasks](https://docs.linkup.so/pages/documentation/endpoints/tasks/post.md): The `/tasks` endpoint allows you to run Linkup's `/search`, `/fetch`, and `/research` calls in batch and asynchronously.
+- [/tasks](https://docs.linkup.so/pages/documentation/endpoints/tasks/list.md): The `GET /tasks` method, without a task identifier, lists all created tasks for the authenticated organization, with pagination.
+- [/tasks/:id](https://docs.linkup.so/pages/documentation/endpoints/tasks/get.md): The `GET /tasks/:id` method, with task identifier, retrieves a specific task information.
+- [/extract](https://docs.linkup.so/pages/documentation/endpoints/extract/post.md): [BETA] The `POST /extract` method creates an asynchronous extract task.
+- [/extract](https://docs.linkup.so/pages/documentation/endpoints/extract/list.md): [BETA] The `GET /extract` method, without extract task identifier, lists all created extract tasks for the authenticated organization, with pagination.
+- [/extract/:id](https://docs.linkup.so/pages/documentation/endpoints/extract/get.md): [BETA] The `GET /extract/:id` method, with extract task identifier, retrieves a specific extract task information.
+- [/credits/balance](https://docs.linkup.so/pages/documentation/endpoints/account/balance.md): The `/credits/balance` endpoint allows you to retrieve your current credits balance.
+- [Integrations](https://docs.linkup.so/pages/integrations/integrations.md): How to integrate Linkup in your application.
+- [Linkup MCP Server](https://docs.linkup.so/pages/integrations/mcp/mcp.md): Linkup MCP Server allows you to use the Linkup API in your MCP clients.
+- [Linkup Skills](https://docs.linkup.so/pages/integrations/linkup-skill.md): Reusable knowledge modules that teach AI agents how to use Linkup effectively
+- [Linkup + OpenClaw](https://docs.linkup.so/pages/integrations/openclaw/openclaw.md): Integrate Linkup with OpenClaw to give your self-hosted agent real-time web search via the clawhub skill registry
+- [Vercel AI SDK](https://docs.linkup.so/pages/integrations/vercel-ai-sdk.md): How to use Linkup with the Vercel AI SDK
+- [Langchain](https://docs.linkup.so/pages/integrations/langchain.md): How to use Linkup with our Langchain SDK
+- [CrewAI](https://docs.linkup.so/pages/integrations/crewai.md): Use Linkup as a web search tool with CrewAI multi-agent systems
+- [LlamaIndex](https://docs.linkup.so/pages/integrations/llama-index.md): How to use Linkup in LlamaIndex
+- [Huggingface](https://docs.linkup.so/pages/integrations/huggingface.md): How to use Linkup with Huggingface
+- [Agno](https://docs.linkup.so/pages/integrations/agno/agno.md): How to use Linkup with Agno
+- [Composio](https://docs.linkup.so/pages/integrations/composio/composio.md): How to use Linkup in Composio
+- [Keywords AI](https://docs.linkup.so/pages/integrations/keywordsai.md): How to use Keywords AI with Linkup to call 300+ LLMs and get LLM observability
+- [Chainlit Chatbot](https://docs.linkup.so/pages/integrations/chatbot/build-your-chatbot.md): Connect your Chainlit chatbot to the internet with Linkup
+- [SurfSense](https://docs.linkup.so/pages/integrations/surfsense/surfsense.md): How to use Linkup with SurfSense
+- [FriendliAI](https://docs.linkup.so/pages/integrations/friendliai/friendliai.md): Use Linkup as a web search tool for LLMs served by FriendliAI
+- [Cerebras](https://docs.linkup.so/pages/integrations/cerebras.md): Use Linkup as a real-time web search tool for models served on Cerebras' ultra-fast inference platform
+- [Baseten](https://docs.linkup.so/pages/integrations/baseten/baseten.md): Use Linkup as a real-time web search tool for models served on Baseten's serverless inference platform
+- [SambaNova](https://docs.linkup.so/pages/integrations/sambanova/sambanova.md): Use Linkup as a real-time web search tool for models served on SambaCloud's high-speed inference platform
+- [Clay](https://docs.linkup.so/pages/integrations/clay/clay.md): Enrich Companies in Clay using Linkup Web Search
+- [Cargo](https://docs.linkup.so/pages/integrations/cargo/cargo.md): Search the web and enrich records in Cargo with Linkup
+- [Softr](https://docs.linkup.so/pages/integrations/softr/softr.md): Add web search and page fetch to Softr workflows
+- [Zapier](https://docs.linkup.so/pages/integrations/zapier/zapier.md): Integrate Linkup in Zapier to augment your workflows
+- [Make](https://docs.linkup.so/pages/integrations/make/make.md): How to connect Make to web search
+- [n8n](https://docs.linkup.so/pages/integrations/n8n/n8n.md): Use the official Linkup node in n8n
+- [Dify](https://docs.linkup.so/pages/integrations/dify/dify.md): Integrate Linkup with Dify to enhance your AI workflows
+- [Pipedream](https://docs.linkup.so/pages/integrations/pipedream/pipedream.md): How to use Linkup in Pipedream
+- [Xpander](https://docs.linkup.so/pages/integrations/xpander/xpander.md): Integrate Linkup with Xpander to enhance your AI workflows
+- [Linkup + Claude](https://docs.linkup.so/pages/integrations/linkup-claude.md): Use Claude's function calling capabilities to integrate with Linkup
+- [Linkup + OpenAI](https://docs.linkup.so/pages/integrations/linkup-openai.md): Use OpenAI's function calling capabilities to integrate with Linkup
+- [Linkup + Mistral](https://docs.linkup.so/pages/integrations/linkup-mistral.md): Use Mistral AI's function calling capabilities to integrate with Linkup
+- [Lovable](https://docs.linkup.so/pages/integrations/lovable/lovable.md): How to use Linkup with Lovable
+- [Google Sheet](https://docs.linkup.so/pages/integrations/google-sheet/google-sheet.md): How to use Linkup in Google Sheet
+- [Linkup Flash (Alpha)](https://docs.linkup.so/pages/changelog/flash-depth.md): _Released: September 2026_
+- [Fetch structured output](https://docs.linkup.so/pages/changelog/fetch-structured-output.md): _Released: August 2026_
+- [Fetch Pro mode](https://docs.linkup.so/pages/changelog/fetch-pro-mode.md): _Released: August 2026_
+- [Extract Endpoint](https://docs.linkup.so/pages/changelog/extract-endpoint.md): _Released: June 2026 (closed beta)_
+- [Linkup CLI](https://docs.linkup.so/pages/changelog/cli.md): _Released: June 2026_
+- [USD Pricing](https://docs.linkup.so/pages/changelog/usd-pricing.md): _Released: May 2026_
+- [Research Endpoint](https://docs.linkup.so/pages/changelog/research-endpoint.md): _Released: May 2026_
+- [Tasks Endpoint](https://docs.linkup.so/pages/changelog/tasks-endpoint.md): _Released: April 2026_
+- [x402 Payment Protocol](https://docs.linkup.so/pages/changelog/x402.md): _Released: March 2026_
+- [Fast Depth](https://docs.linkup.so/pages/changelog/fast-depth.md): _Released: February 2026_
+- [maxResults parameter](https://docs.linkup.so/pages/changelog/max-results.md): _Released: November 14, 2025_
+- [Fetch Endpoint](https://docs.linkup.so/pages/changelog/fetch-endpoint.md): _Released: September 12, 2025_
+- [URL Filtering](https://docs.linkup.so/pages/changelog/urlfiltering.md): _Released: jun 20, 2025_
+- [Dates Filtering](https://docs.linkup.so/pages/changelog/datefiltering.md): _Released: March 19, 2024_
+- [Adding Images](https://docs.linkup.so/pages/changelog/addingimages.md): _Released: January 07, 2025_
+- [Overview](https://docs.linkup.so/pages/security-and-privacy/overview.md): Security and privacy documentation for security reviews: certifications, data processing model, and available controls.
+- [Data processing and privacy](https://docs.linkup.so/pages/security-and-privacy/data-processing-privacy.md): Default query processing regions, GDPR scope for customer data, ZDR, and enterprise processing controls.
+- [Security and compliance](https://docs.linkup.so/pages/security-and-privacy/security-compliance.md): Security controls, certifications, encryption, access management, and vulnerability practices.
+- [Content safety and index controls](https://docs.linkup.so/pages/security-and-privacy/content-safety-index-controls.md): Default content filtering categories, quality scoring, ethical crawling, and enterprise index configuration options.
+- [Frequently Asked Questions](https://docs.linkup.so/pages/security-and-privacy/faq.md): Common security and privacy questions for security and compliance reviews.
+
+## OpenAPI Specs
+
+- [openapi](https://api.linkup.so/v1/openapi.json)
+
+## Optional
+
+- [Playground](https://app.linkup.so/playground)
+- [Discord](https://discord.com/invite/9q9mCYJa86)
+- [Talk to us](https://calendar.app.google/zNUZz7RxgMMk9pKW7)
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

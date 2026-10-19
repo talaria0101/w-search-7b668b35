@@ -1,0 +1,10 @@
+404	261	https://scraperbox.com/pricing	/workspace/w-search-7b668b35/evidence/alt5/001_scraperbox.com_pricing.body
+fetch.sh: line 11: /workspace/w-search-7b668b35/evidence/alt5/002_proxiesapi.com_pricing.body: No such file or directory
+000		https://proxiesapi.com/pricing	/workspace/w-search-7b668b35/evidence/alt5/002_proxiesapi.com_pricing.body
+404	4511	https://serpdog.io/pricing	/workspace/w-search-7b668b35/evidence/alt5/003_serpdog.io_pricing.body
+200	2472	https://api.crossref.org/works?rows=1	/workspace/w-search-7b668b35/evidence/alt5/004_api.crossref.org_works_rows_1.body
+422	154	https://api.unpaywall.org/v2/10.1038/nature12373?email=test@example.com	/workspace/w-search-7b668b35/evidence/alt5/005_api.unpaywall.org_v2_10.1038_nature12373_email_test_example.com.body
+200	69858	https://docs.mistral.ai/llms.txt	/workspace/w-search-7b668b35/evidence/alt5/006_docs.mistral.ai_llms.txt.body
+200	17307	https://scraperbox.com/	/workspace/w-search-7b668b35/evidence/alt5/007_scraperbox.com_.body
+fetch.sh: line 11: /workspace/w-search-7b668b35/evidence/alt5/008_proxiesapi.com_.body: No such file or directory
+000		https://proxiesapi.com/	/workspace/w-search-7b668b35/evidence/alt5/008_proxiesapi.com_.body

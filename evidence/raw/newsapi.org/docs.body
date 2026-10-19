@@ -1,0 +1,406 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>Documentation - News API</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description">
+  <meta name="keywords" content="news api, api, news headlines">
+
+  <!-- Schema.org for Google -->
+  <meta itemprop="name" content="Documentation - News API">
+  <meta itemprop="description">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Documentation - News API">
+  <meta name="twitter:description">
+  <meta name="twitter:site" content="@NewsAPIorg">
+  <meta name="twitter:creator" content="@NewsAPIorg">
+  <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+  <meta name="og:title" content="Documentation - News API">
+  <meta name="og:description">
+  <meta name="og:url" content="https://newsapi.org">
+  <meta name="og:site_name" content="News API">
+  <meta name="og:locale" content="en_US">
+  <meta name="og:type" content="website">
+
+  <link rel="canonical" href="https://newsapi.org/docs">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.9.0/tachyons.min.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-jsonview/1.2.3/jquery.jsonview.min.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Ladda/1.0.5/ladda-themeless.min.css" />
+  <link rel="stylesheet" href="/css/fonts.css?v=1.0.9637.29536" />
+  <link rel="stylesheet" href="/css/v2.css?v=1.0.9637.29536" />
+
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91285317-5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-91285317-5');
+  </script>
+
+</head>
+<body class="ma0">
+  <div class="center-l fixed left-0 mh3 mw6-l w-third-l right-0 top-1 z-5" id="alert-container">
+    
+  </div>
+
+  
+
+<style>
+  .docs { margin-top:4rem; }
+
+  .index { bottom: 0; left: 0; overflow-y: auto; position:fixed; top:4rem; width: 208px; }
+  .index a:hover, .index a.active { color: #1a73e8 }
+  .index ul ul ul li a.active { position: relative; }
+  .index ul ul ul li a.active:before { background: #1a73e8; bottom: -5px; content: ''; display: block; left: calc(-1rem - 2px); position: absolute; top: -5px; width: 2px; }
+
+  .content { background: #fff; transform: translate3d(0,0,0); }
+  .content h2 { margin-top: 4rem; }
+  .content pre mark { background: transparent; color: #F7C223; }
+  .content.nav-open { transition: all 0.3s; transform: translate3d(209px,0,0); }
+
+  article { min-height: 100vh; padding: 5px 0; }
+  article p, article li { line-height: 1.7em; }
+  article ul { padding-left: 3rem; }
+
+  .language-btns { background: #111; box-shadow: 0 0 1px 0; display:flex; justify-content:center; padding: 17px 15px; }
+  .language-btns button { color: #999; cursor: pointer; }
+  .language-btns button.active { color: #1a73e8; cursor: pointer; }
+
+  .content__row { margin: 2rem 0; }
+  .content__row:after { display:none; }
+  .content__row-left { padding:1rem;  }
+  .content__row-right { background:#272b2d; padding:1rem; }
+  .content__row-right pre, .content__row-right .json-wrapper { background: #272b2d; margin-bottom: 2rem; padding: 15px; }
+  .content__row-right hr { border-top:1px solid rgba(255,255,255,0.2); margin:60px 0; }
+  .content__row-right code { color: #dde4e8; }
+  .content__row-right .json-wrapper .prop { color: #dde4e8; }
+  .content__row-right .json-wrapper .string { color: #18D689; }
+  .content__row-right .json-wrapper .num { color: #2191ef; }
+
+  .json-wrapper { max-height: 400px; }
+
+  #toggle-nav-btn { background: none; border: 1px solid #eee; border-left: none; display:flex; position: absolute; left: 0; outline: none; padding: 8px; top: 20px; }
+
+  @media screen and (min-width: 60em) {
+    .full-width > header > div { margin-left: 1rem; margin-right: 1rem; max-width: none; width: auto; }
+
+    .docs { margin-top:5.5rem; }
+    .index { top:5.5rem; }
+    .content { margin-left:209px; }
+
+    article { background: linear-gradient(-90deg, #2D3134 50%, #ffffff 50%); }
+
+    .language-btns { justify-content:start; position: fixed; right: 0; top: 0; width: 50%; }
+
+    .content__row:after { clear: both; content: ''; display: table; }
+    .content__row-left { float: left; padding: 0 2rem; width: 50%; }
+    .content__row-right { float: right; padding: 3rem 1rem 0 1rem; width: 50%; }
+
+    #toggle-nav-btn { display: none; }
+  }
+</style>
+
+<div class="full-width">
+
+
+<style>
+  .nav__center a.active:after { background: #1a73e8; border-radius: 3px; bottom: -3px; display: block; left: 0; content: ''; height: 6px; position: absolute; right: 0; }
+</style>
+
+<!-- Top navbar & branding -->
+<header class="bb bg-white b--black-10 fixed left-0 top-0 right-0" style="z-index:10;">
+  <div class="w-90-l mw8 center flex justify-between items-center">
+    <div class="gs f2 fw5 ml2 ml0-l">
+      <a href="/">
+        <div class="bg-na-blue white" style="letter-spacing:-1px; padding:5px 0 5px 6px;">
+          News<span class="bg-white na-blue" style="margin:0 3px 0 8px; padding:0 8px;">API</span>
+        </div>
+      </a>
+    </div>
+        
+    <nav class="f4 gs overflow-hidden nav__center">
+      <div class="dn dib-l mr4">
+        <a class="color-inherit dib dim pv4 relative" href="/docs/get-started">Get started</a>
+      </div>
+      <div class="dn dib-l mr4">
+        <a class="active color-inherit dib dim pv4 relative" href="/docs">Documentation</a>
+      </div>
+      <div class="dn dib-l">
+        <a class="color-inherit dib dim pv4 relative" href="/pricing">Pricing</a>
+      </div>
+    </nav>
+
+    <nav class="f4 gs">
+        <div class="dn dib-l mr2">
+          <a class="br2 ba bw1 b--na-blue dim na-blue no-underline pv2 ph3" href="/login">Login</a>
+        </div>
+        <div class="dn dib-l">
+          <a class="ba br2 bw1 b--na-blue bg-na-blue dim no-underline pv2 ph3 white" href="/register">Get API key</a>
+        </div>
+
+      <div class="dn-l dib">
+        <button id="open-menu-btn" class="db f2 flex items-center pa3">
+          <i class="material-icons md-36">menu</i>
+        </button>
+        <div class="bg-white bb b--black-20 pa2 fixed left-0 right-0 h-100" id="menu" style="overflow:auto; top:-120%; transition: all 500ms ease-in-out; z-index:20">
+          <div class="absolute top-1 right-1">
+            <button id="close-menu-btn" class="color-inherit bn bg-white db f2 ph1 pv0">
+              <i class="material-icons md-36">close</i>
+            </button>
+          </div>
+          <ul class="list mv0 pa4 f2">
+            <li class="mb4">
+              <a class="color-inherit dim" href="/docs/get-started">Get started</a>
+            </li>
+            <li class="mb4">
+              <a class="color-inherit dim" href="/docs">Documentation</a>
+            </li>
+            <li class="mb4">
+              <a class="color-inherit dim" href="/pricing">Pricing</a>
+            </li>
+              <li class="bt b--black-10 pt4 mb4">
+                <a class="color-inherit dim" href="/login">Login</a>
+              </li>
+              <li class="">
+                <a class="dim bg-na-blue pv2 ph3 br2 white" href="/register">Get API key</a>
+              </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- END Top navbar & branding -->
+<script>
+  (function () {
+    const menu = document.querySelector('#menu');
+
+    const openMenuBtn = document.querySelector('#open-menu-btn');
+    openMenuBtn.addEventListener('click', function () {
+      menu.style.top = '0';
+    })
+
+    const closeMenuBtn = document.querySelector('#close-menu-btn');
+    closeMenuBtn.addEventListener('click', function () {
+      menu.style.top = '-100%';
+    })
+  })();
+</script>
+
+</div>
+
+<div class="docs">
+  <nav class="index br b--black-10">
+    <div class="bb b--black-10 flex flex-between gs items-center pa3">
+      <div>Version</div>
+      <select class="bn bg-white">
+        <option selected="selected">2</option>
+        <option>1</option>
+      </select>
+    </div>
+    <ul class="list lh-title pa3">
+      <li class="mb3">
+        <a class="black-90 f4 fw5 gs" href="/docs/get-started">Get started</a>
+        <ul class="list mv2">
+          <li class="bl bw1 pl3" style="border-color:#e8eaed;">
+            <a class="color-inherit f6" href="/docs/get-started#search">Searching for news articles</a>
+          </li>
+          <li class="bl bw1 pl3 pt2" style="border-color:#e8eaed;">
+            <a class="color-inherit f6" href="/docs/get-started#top-headlines">Get curated breaking news headlines</a>
+          </li>
+        </ul>
+      </li>
+      <li class="mv3">
+        <a class="active black-90 f4 fw5 gs" href="/docs">Documentation</a>
+        <ul class="list">
+          <li class="mv2">
+            <a class="color-inherit f5 fw5 gs" href="/docs/authentication">Authentication</a>
+          </li>
+          <li class="mv2">
+            <a class="color-inherit f5 fw5 gs mv3" href="/docs/endpoints">Endpoints</a>
+            <ul class="list mv2">
+              <li class="bl bw1 pl3" style="border-color:#e8eaed;">
+                <a class="color-inherit f6" href="/docs/endpoints/everything">Everything</a>
+              </li>
+              <li class="bl bw1 pl3 pt2" style="border-color:#e8eaed;">
+                <a class="color-inherit f6" href="/docs/endpoints/top-headlines">Top headlines</a>
+                <ul class="list mv2">
+                  <li class="bl bw1 pl3" style="border-color:#e8eaed;">
+                    <a class="color-inherit f6" href="/docs/endpoints/sources">Sources</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="mv2">
+            <a href="/docs/errors" class="color-inherit f5 fw5 gs">Errors</a>
+          </li>
+          <li class="mv2">
+            <a href="/docs/client-libraries" class="color-inherit f5 fw5 gs">Client libraries</a>
+            <ul class="list mv2">
+              <li class="bl bw1 pl3" style="border-color:#e8eaed;">
+                <a href="/docs/client-libraries/node-js" class="color-inherit f6">Node.js</a>
+              </li>
+              <li class="bl bw1 pl3 pt2" style="border-color:#e8eaed;">
+                <a href="/docs/client-libraries/ruby" class="color-inherit f6">Ruby</a>
+              </li>
+              <li class="bl bw1 pl3 pt2" style="border-color:#e8eaed;">
+                <a href="/docs/client-libraries/python" class="color-inherit f6">Python</a>
+              </li>
+              <li class="bl bw1 pl3 pt2" style="border-color:#e8eaed;">
+                <a href="/docs/client-libraries/php" class="color-inherit f6">PHP</a>
+              </li>
+              <li class="bl bw1 pl3 pt2" style="border-color:#e8eaed;">
+                <a href="/docs/client-libraries/java" class="color-inherit f6">Java</a>
+              </li>
+              <li class="bl bw1 pl3 pt2" style="border-color:#e8eaed;">
+                <a href="/docs/client-libraries/csharp" class="color-inherit f6">C#</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <main class="content">
+    <button id="toggle-nav-btn"><i class="material-icons">chevron_right</i></button>
+    
+    
+
+<article>
+  <div class="content__row">
+    <div class="content__row-left">
+      <h1 class="black-90 fw3">Documentation</h1>
+
+      <p>News API is a simple HTTP REST API for searching and retrieving live articles from all over the web. It can help you answer questions like:</p>
+      <ul>
+        <li>What top stories is TechCrunch running right now?</li>
+        <li>What new articles were published about the next iPhone today?</li>
+        <li>Has my company or product been mentioned or reviewed by any blogs recently?</li>
+      </ul>
+      <p>You can search for articles with any combination of the following criteria:</p>
+      <ul>
+        <li><strong>Keyword or phrase</strong>. Eg: find all articles containing the word 'Microsoft'.</li>
+        <li><strong>Date published</strong>. Eg: find all articles published yesterday.</li>
+        <li><strong>Source domain name</strong>. Eg: find all articles published on thenextweb.com.</li>
+        <li><strong>Language</strong>. Eg: find all articles written in English.</li>
+      </ul>
+      <p>You can sort the results in the following orders:</p>
+      <ul>
+        <li>Date published</li>
+        <li>Relevancy to search keyword</li>
+        <li>Popularity of source</li>
+      </ul>
+      <p>You need an API key to use the API - this is a unique key that identifies your requests. They're free while you're in development.</p>
+      <p class="mv4"><a class="ba br2 bw1 b--na-blue bg-na-blue gs dim no-underline pv2 ph3 white" href="/register">Get API key</a></p>
+
+      <p class="alert-info flex items-center pa2"><i class="material-icons mh2">help_outline</i> If you are logged in you will see your live API key in all the examples.</p>
+
+      <hr />
+
+      <div class="flex justify-end">
+        <a href="/docs/authentication" class="flex items-center justify-end no-underline">Authentication<i class="material-icons ml2">arrow_forward</i></a>
+      </div>
+
+      <!--<hr />
+
+  <h2 id="caching">Caching</h2>
+  <p>By default News API will cache the results of your queries so that if identical requests come in shortly after, for example from multiple clients, they won't drain your monthly query allowance. A cached result will last for <strong>5 minutes</strong>.</p>
+  <p>You can identify if a result has been cached by checking the <code>X-Cached-Result</code> header on the API response. If the <code>X-Cached-Result</code> header is marked as <code>true</code> then the result is a cached response. The <code>X-Cache-Expires</code> and <code>X-Cache-Remaining</code> headers will also be populated to tell you when the result will expire. The <code>Date</code> header shows you when the request was originally made, so you can use this to calculate current age.</p>
+
+  <p>You can disable this functionality on a request level so that the request doesn't return a cached result, nor will it be cached itself. This way it the request will return the freshest data. To do this simply send the <code>X-No-Cache = true</code> HTTP header with your request. You will be able to verify that a response hasn't been cached by checking for the <code>X-Cached-Result = false</code> header on the response.</p>
+  -->
+    </div>
+  </div>
+</article>
+
+<script src="/js/codebox.js"></script>
+
+<script src="/js/prism.js"></script>
+<link rel="stylesheet" href="/css/prism-light.css" />
+<footer class="bg-na-coal">
+    <div class="mw7 w-80 mb3 flex-ns center white-80 fw1">
+        <div class="w-third-ns">
+            <h6 class="f4 fw5 mb2 white">News API</h6>
+            <div class="mv3"><a class="white-60 no-underline" href="/docs/get-started">Get started</a></div>
+            <div class="mv3"><a class="white-60 no-underline" href="/docs">Documentation</a></div>
+            <div class="mv3"><a class="white-60 no-underline" href="/sources">News sources</a></div>
+            <div class="mv3"><a class="white-60 no-underline" href="/pricing">Pricing</a></div>
+          <div class="mv3"><a class="white-60 no-underline" href="/s/google-news-api">Google News API</a></div>
+        </div>
+        <div class="w-third-ns">
+            <h6 class="f4 fw5 mb2 white">Company</h6>
+            <!--<div class="mv3">
+                <div style="width:100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                    <a class="white-60 no-underline" href="/blog/">Blog</a> - <a id="blog-latest-article-title" class="white-80"></a>
+                </div>
+            </div>-->
+            <div class="mv3"><a class="white-60 no-underline" href="/privacy" target="_blank">Privacy policy</a></div>
+            <div class="mv3"><a class="white-60 no-underline" href="/terms" target="_blank">Terms of service</a></div>
+        </div>
+        <div class="w-third-ns tr">
+            <h6 class="f4 fw5 mb2 white">Support</h6>
+            <div class="mv3"><a class="color-inherit no-underline" href="mailto:support@newsapi.org">Contact</a></div>
+            <div class="mv3"><a class="color-inherit no-underline" href="https://twitter.com/NewsAPIorg" target="_blank">Twitter</a></div>
+            <div class="mv3">&nbsp;</div>
+            <div class="mv3"><a class="color-inherit no-underline" href="https://github.com/News-API-gh" target="_blank"><i class="fa fa-github"></i> Github</a></div>
+        </div>
+    </div>
+    <div >
+        <p class="tc white f7 ma0 pv3"></p>
+    </div>
+
+    <script>
+        //const $blogLatestArticleTitle = $('#blog-latest-article-title');
+        //$.getJSON('https://newsapi.org/blog/feed/json', function (response) {
+        //    $blogLatestArticleTitle.text(response.items[0].title);
+        //    $blogLatestArticleTitle.attr('href', response.items[0].url);
+        //})
+    </script>
+</footer>
+  </main>
+</div>
+
+<script src="/js/codecarousel.js?v=1.0.9637.29536"></script>
+<script>
+  $('.code-carousel').codeCarousel();
+
+  $(document).ready(function () {
+    $('#toggle-nav-btn').click(function () {
+      $('.content').toggleClass('nav-open');
+    })
+  })
+</script>
+
+<script src="/js/codebox.js"></script>
+<script src="/js/prism.js"></script>
+<link rel="stylesheet" href="/css/prism-light.css" />
+
+  <script src="/js/jquery.jsonview.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js"></script>
+  <script src="/js/instant.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Ladda/1.0.5/spin.min.js"></script>
+  <script src="/js/ladda.js"></script>
+  <script src="/js/v2.js?v=1.0.9637.29536"></script>
+</body>
+</html>

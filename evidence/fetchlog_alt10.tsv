@@ -1,0 +1,3 @@
+200	49288	https://open-meteo.com/en/pricing	evidence/alt10/001_open-meteo.com_en_pricing.body
+200	607291	https://open-meteo.com/en/docs	evidence/alt10/002_open-meteo.com_en_docs.body
+200	322	https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current=temperature_2m	evidence/alt10/003_api.open-meteo.com_v1_forecast_latitude_52.52_longitude_13.41_current_temperature_2m.body

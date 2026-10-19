@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="YaCy Suchmaschine search engine spider harvester indexer p2p peer network open free download software development">
+    <meta name="copyright" content="Michael Peter Christen">
+
+    <meta name="description" content="YaCy P2P - Decentralized Search Engine">
+    <meta name="author" content="Michael Christen">
+    <link rel="canonical" href="https://yacy.net/">
+    <link rel="img/favicon.ico">
+
+    
+    <title>Home - YaCy</title>
+    
+
+    <link href="css/hack.min.css" rel="stylesheet">
+    <link href="css/latolatinfonts.css" rel="stylesheet">
+    <link href="css/bootstrap-custom.css" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/cinder.css" rel="stylesheet">
+    <link href="css/highlight.css" rel="stylesheet">
+    <!-- <link href="css/latostyle.css" rel="stylesheet">-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+     
+</head>
+
+<body class="homepage" >
+    <script src="js/jquery.min.js"></script>
+    <script src="js/fontawesome-all.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+    (function () {
+        function resetDesktopNavigation() {
+            if (!window.matchMedia || !window.matchMedia('(min-width: 992px)').matches) {
+                return;
+            }
+            var menu = document.getElementById('site-navbar-menu');
+            var toggle = document.querySelector('.site-navbar .navbar-toggle');
+            if (!menu) {
+                return;
+            }
+            menu.classList.remove('in', 'collapsing');
+            menu.style.height = '';
+            if (toggle) {
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+        }
+        window.addEventListener('resize', resetDesktopNavigation);
+        document.addEventListener('DOMContentLoaded', resetDesktopNavigation);
+    }());
+    </script>
+    <script src="js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>var base_url = "."</script>
+    
+    <script src="js/base.js"></script>
+    <script src="search/main.js"></script>
+
+    <div class="navbar navbar-default navbar-fixed-top site-navbar" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#site-navbar-menu" aria-expanded="false" aria-controls="site-navbar-menu">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            <a class="navbar-brand" href=".">
+<!--YaCy-->
+<img src="img/YaCyLogo2011_60.png" alt="YaCy" height="40">
+</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div id="site-navbar-menu" class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li class="active">
+                        <a href=".">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="demonstration_tutorial_screenshot/">Demo</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="download_installation/">Download</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="docs/">Docs</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="faq/">FAQ</a>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a href="https://community.searchlab.eu"><img src="img/discourse_icon.png" alt="YaCy User Forum" height="16" width="16"> User Forum</a>
+            </li>
+	    <li>
+                <a href="https://chatgpt.com/g/g-h7fLnaDuI-yacy-support"><img src="img/openai-white-logomark.png" alt="YaCy Support GPT" height="16" width="16"> Support GPT</a>
+            </li>
+	    <li>
+                <a href="https://yacystats.de"><img src="img/yacy-stats-transparent.svg" alt="yacystats" height="24" width="33"> Stats</a>
+            </li>
+		    <!--
+                    <li class="disabled">
+                        <a rel="prev" >
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="next" href="demonstration_tutorial_screenshot/">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+		    -->
+		    <li>
+                       <a href="https://github.com/yacy/yacy_search_server">
+                           <i class="fab fa-github"></i> GitHub
+                       </a>
+                   </li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-12" role="main">
+
+<style>
+body.homepage {
+  overflow-x: hidden;
+}
+.home-hero {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  margin: 28px 0 44px 0;
+}
+.home-hero-copy {
+  flex: 0 0 36%;
+}
+.home-hero-logo {
+  width: 170px;
+  height: auto;
+  margin-bottom: 22px;
+}
+.home-hero h1 {
+  margin-top: 0;
+  font-size: 44px;
+  line-height: 1.1;
+}
+.home-hero-copy p {
+  font-size: 18px;
+  line-height: 1.55;
+}
+.home-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+.home-hero-screenshot {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.home-hero-screenshot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(255,255,255,0.22);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.35);
+}
+.use-case-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 24px 0 42px 0;
+}
+.use-case-card {
+  background-color: #4E5D6C;
+  padding: 18px;
+}
+.use-case-card h2 {
+  margin-top: 0;
+}
+.use-case-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto 14px auto;
+}
+.network-picture {
+  display: block;
+  width: 100%;
+  max-width: 1170px;
+  height: auto;
+  margin: 18px auto 0 auto;
+}
+@media (max-width: 991px) {
+  .home-hero {
+    display: block;
+    overflow-x: hidden;
+  }
+  .home-hero-copy {
+    margin-bottom: 26px;
+  }
+  .home-hero h1 {
+    font-size: 36px;
+    overflow-wrap: anywhere;
+  }
+  .home-hero-actions {
+    display: block;
+  }
+  .home-hero-actions .btn {
+    display: block;
+    width: 100%;
+    margin: 0;
+    white-space: normal;
+  }
+  .home-hero-actions .btn + .btn {
+    margin-top: 10px;
+  }
+  .use-case-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 767px) {
+  .home-hero-copy,
+  .home-hero-screenshot {
+    max-width: 360px;
+  }
+}
+@media (max-width: 480px) {
+  .home-hero {
+    margin-top: 18px;
+  }
+  .home-hero h1 {
+    font-size: 32px;
+  }
+  .home-hero-copy p {
+    font-size: 16px;
+  }
+}
+</style>
+
+<section class="home-hero">
+  <div class="home-hero-copy">
+    <img class="home-hero-logo" src="img/YaCyLogo2011_240.png" alt="YaCy">
+    <h1>YaCy is free software for your own search engine.</h1>
+    <p>YaCy is free search engine software for local search, organization-wide search portals, and a decentralized peer-to-peer web index.</p>
+    <div class="home-hero-actions">
+      <a class="btn btn-success btn-lg" href="/download_installation/" role="button">Download YaCy</a>
+      <a class="btn btn-default btn-lg" href="https://yacy.searchlab.eu/Status.html" role="button">Try Demo</a>
+    </div>
+  </div>
+  <div class="home-hero-screenshot">
+    <img src="img/screenshot_search_result.png" alt="YaCy search results interface">
+  </div>
+</section>
+
+<h2 id="choose-how-you-want-to-use-yacy">Choose how you want to use YaCy</h2>
+<p>Run YaCy locally, build a search portal for your organization, or join the decentralized peer-to-peer search network.</p>
+<div class="use-case-grid">
+  <div id="mode-p2p" class="use-case-card">
+    <h2>P2P Mode</h2>
+    <img src="img/usecase_freeworld.png" alt="YaCy Use Case: Freeworld">
+    <p>Web Search by the people, for the people: decentralized, all users are equal, no central, no search request storage, shared index.</p>
+  </div>
+  <div id="mode-portal" class="use-case-card">
+    <h2>Your Search Portal</h2>
+    <img src="img/usecase_webportal.png" alt="YaCy Use Case: Web Portal">
+    <p>Your YaCy installation is independent from other peers. Define your own web index and start your own web crawl.</p>
+  </div>
+  <div id="mode-intranet" class="use-case-card">
+    <h2>Intranet Search</h2>
+    <img src="img/usecase_intranet.png" alt="YaCy Use Case: Intranet">
+    <p>Create a search portal for your intranet, web pages or your (shared) file system.</p>
+  </div>
+</div>
+
+<h2 id="decentralization">Decentralization</h2>
+<p>YaCy does not depend on a central search provider. In peer-to-peer mode, many independently run devices contribute to a shared search index, so no single company or server controls the network.</p>
+<p>Here is a live image of the YaCy network:</p>
+<p><img id="NetworkPicture" class="network-picture" src="https://yacy.searchlab.eu/NetworkPicture.png?width=1170&height=878&bgcolor=2C3E4F&pal=10080&pol=10080&coronaangle=0" alt="YaCy P2P Network" width="1170" height="878" /></p>
+<script type="text/javascript">
+    networkImageWidth = 1170;
+    networkImageHeight = 878;
+    imagestub = "https://yacy.searchlab.eu/NetworkPicture.png?width=" + networkImageWidth + "&height=" + networkImageHeight + "&bgcolor=2C3E4F&pal=10080&pol=10080&coronaangle=";
+    imageanimindex = 0;
+    imageloadindex = 0;
+    imagecycles = 0;
+    imagearray = new Array(6);
+    setTimeout("initanimation()", 100);
+    setTimeout("doanimation()", 1000);
+    function initanimation() {
+      handle = new Date().getTime();
+      for (j = 0; j < 6; j++) initanimationphase(j, handle);
+    }
+    function initanimationphase(phase, handle) {
+      imagearray[phase] = new Image(networkImageWidth, networkImageHeight);
+      angle = phase * 60;
+      imagearray[phase].src = imagestub + angle + "&handle=" + handle;
+    }
+    function doanimation() {
+      var networkPicture = document.getElementById("NetworkPicture");
+      if (networkPicture != null) {
+        networkPicture.src = imagearray[imageanimindex].src;
+        imageanimindex++;
+        if (imageanimindex == 6) { imageanimindex = 0; }
+        imagecycles++;
+        if (imagecycles == 25) {
+          initanimationphase(imageloadindex, new Date().getTime());
+          imageloadindex++;
+          if (imageloadindex == 6) { imageloadindex = 0; }
+          imagecycles = 0;
+        }
+        setTimeout("doanimation()", 100);
+      }
+    }
+  </script></div>
+        
+        
+    </div>
+
+    <br/><br/>
+    <footer class="col-md-12 text-center" style="background-color:#000000;" >
+<div class="container" style="text-align:left; font-size:13px; padding-top:30px;">
+      <div class="row">
+        <div class="col-md-3" style="padding-left:15px; padding-right:15px;">
+          <h3>Products</h3>
+          <p>YaCy is both the name of a project and the name of a software. Our main 'product' (it's free-software) is the YaCy Search Server.</p>
+        </div>
+        <div class="col-md-3" style="padding-right:15px;">
+          <h3>GDPR Compliance</h3>
+          <p>YaCy has a strong connection to privacy-aware tools. As such it does not collect personalized data. It also has no 'phoning-home' integrated. This web page does not use cookies. However, linked services may have cookies.</p>
+       </div>
+        <div class="col-md-3" style="padding-right:15px;">
+          <h3>Company</h3>
+          <p>The brand 'YaCy' is owned by a private company. While the software YaCy is a non-profit, we also provide consulting for YaCy and search-related business topics. To run the non-profit YaCy project we heavily depend on community support either as contribution to our software and documentation or as donations. Please donate! To contact us, please see&nbsp;<a href="impressum/">Impressum</a>
+
+
+
+</p>
+        </div>
+        <div class="col-md-3" style="padding-right:15px;">
+          <h3>Follow Us</h3>
+          <ul>
+	    <li>YaCy Community: <a href="https://community.searchlab.eu/">community.searchlab.eu</a></li>
+	    <li>Patreon: <a href="https://patreon.com/orbiterlab">patreon.com/orbiterlab</a></li>
+	    <li>Mastodon: <a rel="me" href="https://sigmoid.social/@orbiterlab">@orbiterlab@sigmoid.social</a></li>
+	    <li>Twitter: <a href="https://twitter.com/yacy_search">@yacy_search</a></li>
+	    <li>Github Sponsors: <a href="https://github.com/sponsors/Orbiter">github.com/sponsors/Orbiter</a></li>
+	    <li>YaCy Tutorials: <a href="https://www.youtube.com/YaCyTutorials">youtube.com/YaCyTutorials</a></li>
+	    <li>GitHub: <a href="https://github.com/yacy">yacy_search_server</a></li>
+	  </ul>
+        </div>
+      </div>
+</div>
+
+
+        
+        <p>
+        <!--
+	<small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+	-->
+
+        
+        
+    </footer>
+    
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

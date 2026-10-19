@@ -1,0 +1,1699 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="generator" content="mkdocs-1.6.1, mkdocs-terminal-4.7.0">
+    
+    <meta name="description" content="🚀🤖 Crawl4AI, Open-source LLM-Friendly Web Crawler & Scraper"> 
+     
+    <link rel="icon" type="image/png" sizes="192x192" href="/img/android-chrome-192x192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="/img/android-chrome-512x512.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+<link rel="shortcut icon" type="image/png" sizes="48x48" href="/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png" />
+<title>404 - Crawl4AI Documentation (v0.9.x)</title>
+
+
+
+<link href="/css/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+<link href="/css/fontawesome/css/solid.min.css" rel="stylesheet">
+<link href="/css/normalize.css" rel="stylesheet">
+<link href="/css/terminal.css" rel="stylesheet">
+<link href="/css/theme.css" rel="stylesheet">
+<link href="/css/theme.tile_grid.css" rel="stylesheet">
+<link href="/css/theme.footer.css" rel="stylesheet">
+<!-- dark color palette -->
+<link href="/css/palettes/dark.css" rel="stylesheet">
+
+<!-- page layout -->
+<style>
+/* initially set page layout to a one column grid */
+.terminal-mkdocs-main-grid {
+    display: grid;
+    grid-column-gap: 1.4em;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+/*  
+*   when side navigation is not hidden, use a two column grid.  
+*   if the screen is too narrow, fall back to the initial one column grid layout.
+*   in this case the main content will be placed under the navigation panel. 
+*/
+@media only screen and (min-width: 70em) {
+    .terminal-mkdocs-main-grid {
+        grid-template-columns: 4fr 9fr;
+    }
+}</style>
+
+
+
+    
+    <link href="/assets/layout.css" rel="stylesheet"> 
+    <link href="/assets/styles.css" rel="stylesheet"> 
+    <link href="/assets/highlight.css" rel="stylesheet"> 
+    <link href="/assets/dmvendor.css" rel="stylesheet"> 
+    <link href="/assets/feedback-overrides.css" rel="stylesheet"> 
+    <link href="/assets/page_actions.css" rel="stylesheet"> 
+    <link href="/assets/cloud-banner.css" rel="stylesheet">  
+    
+    
+
+<script>
+    document.documentElement.setAttribute("data-theme", "dark");
+</script>
+<script>
+/* the cloud banner's state before the first paint: big (default) · small (after close) · off (after
+   "don't show this again"); a signed-in cloud user (the c4_sess sign-in marker cookie on .crawl4ai.com) gets small */
+(function(){try{var v=JSON.parse(localStorage.getItem("c4-cloud-banner")||"null");var s=(v&&v.version===1)?v.state:"big";
+if(s==="big"&&/(^|; )c4_sess=1(;|$)/.test(document.cookie))s="small";document.documentElement.setAttribute("data-c4b",s);}
+catch(e){document.documentElement.setAttribute("data-c4b","big");}})();
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pushfeedback/dist/pushfeedback/pushfeedback.css">
+
+<style>
+    :root {
+        /* brand */
+        --feedback-primary-color: #09b5a5;
+        --feedback-highlight-color: #fed500;
+
+
+        /* align with the value you really use in :root */
+        --header-height: 65px;
+
+        /* Push modal content down */
+        --feedback-modal-content-position-top: var(--header-height);
+
+        --feedback-modal-modal-wrapper-z-index: 1100;
+        /*  >  header’s 1000 */
+        --feedback-modal-content-z-index: 1101;
+    }
+
+    feedback-modal::part(overlay) {
+        top: var(--header-height);
+        /* start below header */
+        height: calc(100vh - var(--header-height));
+        /* fill the rest */
+
+
+    }
+</style>
+<script type="module"
+    src="https://cdn.jsdelivr.net/npm/pushfeedback@latest/dist/pushfeedback/pushfeedback.esm.js"></script>
+
+
+    
+    <!-- search css support -->
+<link href="/css/search/bootstrap-modal.css" rel="stylesheet">
+<!-- search scripts -->
+<script>
+    var base_url = "/",
+    shortcuts = "{}";
+</script>
+<script src="/js/jquery/jquery-1.10.1.min.js" defer></script>
+<script src="/js/bootstrap/bootstrap.min.js" defer></script>
+<script src="/js/mkdocs/base.js" defer></script>
+    
+    
+    
+    
+    <script src="https://www.googletagmanager.com/gtag/js?id=G-58W0K2ZQ25"></script>
+    
+    <script src="/assets/gtag.js"></script>
+    
+    <script src="/assets/highlight.min.js"></script>
+    
+    <script src="/assets/highlight_init.js"></script>
+    
+    <script src="https://buttons.github.io/buttons.js"></script>
+    
+    <script src="/assets/toc.js"></script>
+    
+    <script src="/assets/github_stats.js"></script>
+    
+    <script src="/assets/selection_ask_ai.js"></script>
+    
+    <script src="/assets/copy_code.js"></script>
+    
+    <script src="/assets/floating_ask_ai_button.js"></script>
+    
+    <script src="/assets/mobile_menu.js"></script>
+    
+    <script src="/assets/cloud-banner.js"></script>
+    
+    <script src="/assets/page_actions.js?v=20251006"></script>
+    
+    <script src="/search/main.js"></script>
+    
+
+    
+</head>
+
+<body class="terminal">
+<div class="container">
+    <div class="terminal-nav">
+        <header class="terminal-logo">
+            <div id="mkdocs-terminal-site-name" class="logo terminal-prompt"><a href="https://docs.crawl4ai.com/" class="no-style">Crawl4AI Documentation (v0.9.x)</a></div>
+        </header>
+        
+        <nav class="terminal-menu">
+            
+            <ul vocab="https://schema.org/" typeof="BreadcrumbList">
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="/." class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Home</span>
+                    </a>
+                    <meta property="position" content="0">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="/stats/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Growth</span>
+                    </a>
+                    <meta property="position" content="1">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="/core/ask-ai/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Ask AI</span>
+                    </a>
+                    <meta property="position" content="2">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="/core/quickstart/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Quick Start</span>
+                    </a>
+                    <meta property="position" content="3">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="/core/examples/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Code Examples</span>
+                    </a>
+                    <meta property="position" content="4">
+                </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="/branding/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Brand Book</span>
+                    </a>
+                    <meta property="position" content="5">
+                </li>
+                
+                
+                
+                
+                
+                    
+                    
+
+
+<li property="itemListElement" typeof="ListItem">
+    <a href="#" class="menu-item" data-toggle="modal" data-target="#mkdocs_search_modal" property="item" typeof="SearchAction">
+        <i aria-hidden="true" class="fa fa-search"></i> <span property="name">Search</span>
+    </a>
+    <meta property="position" content="6">
+</li>
+                    
+            </ul>
+            
+        </nav>
+    </div>
+</div>
+<div id="c4b" class="c4b-wrap">
+
+  <section class="c4b-big" aria-label="Crawl4AI Cloud is live">
+    <div class="c4b-in">
+      <div class="c4b-text">
+        <div class="c4b-eyebrow"><span class="c4b-tag">New</span> good news for everyone who runs Crawl4AI</div>
+        <h2 class="c4b-title">Crawl4AI <em>Cloud</em> is live.<br>The same crawler, hosted.</h2>
+        <p class="c4b-lead">No browsers to run, no proxies to buy, no cookies to babysit. One key with <b>free credits every month</b>, and your AI agent can <b>scrape, extract, search, read Google's results page (SERP) and answer questions</b> through the same engine you already use. Free: 10 a minute, 2 at a time, 1,000 credits every month. Plans: 120 a minute, 10 at a time, from $10 a month.</p>
+        <p class="c4b-oss"><b>Always open source, forever.</b> The library stays here and stays free. The cloud is for the days you want to build fast and let us run the infrastructure.</p>
+        <div class="c4b-cta">
+          <a class="c4b-btn" href="https://crawl4ai.com/?ref=docs-banner" data-c4b-ev="banner_key_clicked">Get a key, free credits every month →</a>
+          <a class="c4b-btn c4b-ghost" href="https://crawl4ai.com/?ref=docs-banner" data-c4b-ev="banner_cloud_clicked">See Crawl4AI Cloud</a>
+        </div>
+        <div class="c4b-meta"><span>no card</span><span><b>free credit</b> to start · soft launch: prices can change, what you buy stays yours</span><span>EU · Singapore · US</span><span>MCP built in</span></div>
+      </div>
+      <div class="c4b-paste" aria-label="Paste this into your agent">
+        <div class="c4b-tabs" role="tablist">
+          <button type="button" role="tab" aria-selected="true" data-c4b-client="claude">Claude Code</button>
+          <button type="button" role="tab" aria-selected="false" data-c4b-client="codex">Codex</button>
+          <button type="button" role="tab" aria-selected="false" data-c4b-client="opencode">OpenCode</button>
+          <button type="button" role="tab" aria-selected="false" data-c4b-client="cursor">Cursor</button>
+          <button type="button" role="tab" aria-selected="false" data-c4b-client="curl">curl</button>
+        </div>
+        <pre class="c4b-code" id="c4b-code"></pre>
+        <div class="c4b-foot"><span>Paste it once. Your agent gets the whole web.</span><a href="https://crawl4ai.com/docs?ref=docs-banner" data-c4b-ev="banner_docs_clicked">cloud docs →</a></div>
+      </div>
+    </div>
+    <button type="button" class="c4b-x" aria-label="Close" data-c4b-act="close">×</button>
+    <label class="c4b-hide"><input type="checkbox" id="c4b-never"> don't show this again</label>
+  </section>
+
+  <div class="c4b-small">
+    <span class="c4b-star">★</span>
+    <span class="c4b-t"><b>Crawl4AI Cloud is live</b> — the same crawler, hosted. Get a key with free credits every month and paste one line into your agent.</span>
+    <span class="c4b-sp"></span>
+    <a class="c4b-go" href="https://crawl4ai.com/?ref=docs-banner" data-c4b-ev="banner_key_clicked">Get a key →</a>
+    <button type="button" data-c4b-act="expand">show</button>
+  </div>
+
+</div>
+
+        
+    <div class="container">
+        <div class="terminal-mkdocs-main-grid"><aside id="terminal-mkdocs-side-panel"><nav>
+  
+    <ul class="terminal-mkdocs-side-nav-items">
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/.">Home</a>
+        
+    
+    
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/stats/">Growth</a>
+        
+    
+    
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/core/ask-ai/">Ask AI</a>
+        
+    
+    
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/core/quickstart/">Quick Start</a>
+        
+    
+    
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/core/examples/">Code Examples</a>
+        
+    
+    
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+
+        
+            
+    
+        
+        
+            
+            
+            <span class="
+        
+    
+
+    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">Apps</span>
+        
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/apps/">Demo Apps</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/apps/c4a-script/">C4A-Script Editor</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/apps/llmtxt/">LLM Context Builder</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/marketplace/">Marketplace</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/marketplace/admin/">Marketplace Admin</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+
+        
+            
+    
+        
+        
+            
+            
+            <span class="
+        
+    
+
+    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">Setup & Installation</span>
+        
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/core/installation/">Installation</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/core/self-hosting/">Self-Hosting Guide</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+
+        
+            
+    
+        
+        
+            
+            
+            <span class="
+        
+    
+
+    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">Blog & Changelog</span>
+        
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/blog/">Blog Home</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="https://github.com/unclecode/crawl4ai/blob/main/CHANGELOG.md">Changelog</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+
+        
+            
+    
+        
+        
+            
+            
+            <span class="
+        
+    
+
+    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">Core</span>
+        
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/core/cli/">Command Line Interface</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/core/simple-crawling/">Simple Crawling</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/core/deep-crawling/">Deep Crawling</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/core/adaptive-crawling/">Adaptive Crawling</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/core/url-seeding/">URL Seeding</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/core/domain-mapping/">Domain Mapping</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/core/c4a-script/">C4A-Script</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/core/crawler-result/">Crawler Result</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/core/browser-crawler-config/">Browser, Crawler & LLM Config</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/core/markdown-generation/">Markdown Generation</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/core/fit-markdown/">Fit Markdown</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/core/page-interaction/">Page Interaction</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/core/content-selection/">Content Selection</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/core/cache-modes/">Cache Modes</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/core/local-files/">Local Files & Raw HTML</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/core/link-media/">Link & Media</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+
+        
+            
+    
+        
+        
+            
+            
+            <span class="
+        
+    
+
+    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">Advanced</span>
+        
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/advanced/advanced-features/">Overview</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/advanced/adaptive-strategies/">Adaptive Strategies</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/advanced/virtual-scroll/">Virtual Scroll</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/advanced/file-downloading/">File Downloading</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/advanced/lazy-loading/">Lazy Loading</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/advanced/hooks-auth/">Hooks & Auth</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/advanced/proxy-security/">Proxy & Security</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/advanced/anti-bot-and-fallback/">Anti-Bot & Fallback</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/advanced/undetected-browser/">Undetected Browser</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/advanced/session-management/">Session Management</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/advanced/multi-url-crawling/">Multi-URL Crawling</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/advanced/crawl-dispatcher/">Crawl Dispatcher</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/advanced/identity-based-crawling/">Identity Based Crawling</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/advanced/ssl-certificate/">SSL Certificate</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/advanced/network-console-capture/">Network & Console Capture</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/advanced/pdf-parsing/">PDF Parsing</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+
+        
+            
+    
+        
+        
+            
+            
+            <span class="
+        
+    
+
+    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">Extraction</span>
+        
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/extraction/no-llm-strategies/">LLM-Free Strategies</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/extraction/llm-strategies/">LLM Strategies</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/extraction/clustring-strategies/">Clustering Strategies</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/extraction/chunking/">Chunking</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+
+        
+            
+    
+        
+        
+            
+            
+            <span class="
+        
+    
+
+    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">API Reference</span>
+        
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/api/async-webcrawler/">AsyncWebCrawler</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/api/arun/">arun()</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/api/arun_many/">arun_many()</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/api/parameters/">Browser, Crawler & LLM Config</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/api/crawl-result/">CrawlResult</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/api/strategies/">Strategies</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/api/c4a-script-reference/">C4A-Script Reference</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/branding/">Brand Book</a>
+        
+    
+    
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+
+        
+            
+    
+        
+        
+            
+            
+            <span class="
+        
+    
+
+    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">Community</span>
+        
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/CONTRIBUTING/">Contributing Guide</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="https://github.com/unclecode/crawl4ai/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="https://github.com/unclecode/crawl4ai/blob/main/CONTRIBUTORS.md">Contributors</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+
+        
+            
+    
+        
+        
+            
+            
+            <span class="
+        
+    
+
+    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">Legal</span>
+        
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/privacy/">Privacy Policy</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/terms/">Terms of Service</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="/support/">Support</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+    </ul>
+  
+</nav>
+</aside>
+            <main id="terminal-mkdocs-main-content">
+<br>
+<div class="terminal-alert terminal-alert-error">The page you requested could not be found.</div>
+<a href="https://docs.crawl4ai.com/"><button class="btn btn-default">Return Home</button></a>
+
+            </main>
+        </div>
+        <hr>
+<feedback-button project="w8plzp8vjp" button-style="dark" button-position="center-right" modal-position="sidebar-right">
+    >
+    Feedback
+</feedback-button>
+
+    </div>
+
+    
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="alertdialog" aria-modal="true" aria-labelledby="searchModalLabel">
+    <div class="modal-dialog modal-lg" role="search">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="searchModalLabel">Search</h5>
+                <button type="button" class="close btn btn-default btn-ghost" data-dismiss="modal"><span aria-hidden="true">x</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p id="searchInputLabel">Type to start searching</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" aria-labelledby="searchInputLabel" placeholder="" id="mkdocs-search-query" title="Please enter search terms here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No document matches found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</body>
+
+</html>

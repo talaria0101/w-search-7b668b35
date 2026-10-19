@@ -1,0 +1,45 @@
+# Serply
+
+> Serply is a REST API (and hosted MCP server) for live search-engine results and page scraping: Google Search, News, Maps, Images, Jobs, Scholar, Video, Bing, Amazon products, eBay, and Reddit as structured JSON, plus any URL as markdown or HTML. Built for developers and AI agents; prepaid credits, 2,500 free to start.
+
+- Base URL: `https://api.serply.io`. Authenticate every request with an `X-Api-Key` header.
+- Hosted MCP server: `https://api.serply.io/mcp` (same API key). Docs: https://serply.io/mcp.md
+- Free tier: 2,500 credits on signup, no card, valid for 30 days. Sign up: https://app.serply.io/users/sign_up
+- Billing: prepaid credit packs, no subscription. 1 credit = 1 successful uncached request; cached and failed requests are free. Purchased credits never expire.
+- Location and device: optional `X-Proxy-Location` header picks one of 14 proxy regions (`US`, `EU`, `GB`, `DE`, `JP`, and others; see the endpoint docs) and `X-User-Agent` picks `desktop` (default) or `mobile`.
+- Agent skill file (Claude/Agent Skills format): https://serply.io/skill.md
+
+## APIs
+
+- [Google Search API](https://serply.io/docs/resources/google-search.md): `GET /v1/search`. Organic Google results with search operators, site: filters, and date ranges. Overview: https://serply.io/google-search-api
+- [Google News API](https://serply.io/docs/resources/google-news.md): `GET /v1/news`. Real-time Google News headlines and topic clusters. Overview: https://serply.io/google-news-api
+- [Google Maps API](https://serply.io/docs/resources/google-maps.md): `GET /v1/maps/search`. Places with name, address, coordinates, rating, phone, and hours. Overview: https://serply.io/google-maps-api
+- [Google Images API](https://serply.io/docs/resources/google-images.md): `GET /v1/image`. Image results with thumbnails, dimensions, and source URLs. Overview: https://serply.io/google-images-api
+- [Google Jobs API](https://serply.io/docs/resources/google-jobs.md): `GET /v1/job/search`. Job listings with remote/hybrid flags, salary ranges, and benefits. Overview: https://serply.io/google-jobs-api
+- [Google Scholar API](https://serply.io/docs/resources/google-scholar.md): `GET /v1/scholar`. Academic papers with citation counts and metadata. Overview: https://serply.io/google-scholar-api
+- [Google Video API](https://serply.io/docs/resources/google-video.md): `GET /v1/video`. Video results with duration, view counts, and channel data. Overview: https://serply.io/google-video-api
+- [Bing Search API](https://serply.io/docs/resources/bing-search.md): `GET /v1/b/search`. Bing results, including ads and shopping ads Google does not return. Overview: https://serply.io/bing-search-api
+- [Product Search API (Amazon)](https://serply.io/docs/resources/google-product.md): `GET /v1/product/search`. Amazon listings with ASIN, price, Prime eligibility, and bestseller status. Overview: https://serply.io/google-product-api
+- [eBay Search API](https://serply.io/docs/resources/ebay.md): `GET /v1/ebay/search`. eBay listings with price, condition, seller feedback, and shipping. Overview: https://serply.io/ebay-api
+- [Reddit API](https://serply.io/docs/resources/reddit.md): `GET /v1/reddit/{subreddit,post,user,comments}`. Subreddit listings, posts, user history, and comment threads, no OAuth. Overview: https://serply.io/reddit-api
+- [Web Scraping API](https://serply.io/docs/resources/requests.md): `POST /v1/request`. Any URL as clean markdown or raw HTML, CAPTCHAs handled. Overview: https://serply.io/web-scraping-api
+
+## Pricing
+
+- [Pricing](https://serply.io/pricing.md): Prepaid credit packs from $5, free tier, and how credits are counted
+
+## Guides
+
+- [Introduction](https://serply.io/docs/guides/introduction.md): Serply API documentation - perform web searches and gather real-time market data. Search Google, Bing, News, and Products with JSON responses and geo-targeting.
+- [Quickstart](https://serply.io/docs/guides/quickstart.md): Get started with Serply API in minutes. Learn how to make your first Google Search API request with code examples in JavaScript, Python, and cURL.
+- [MCP Server](https://serply.io/mcp.md): Connect Claude, Cursor, or any MCP client to the hosted Serply MCP server - fourteen tools for live Google Search, Bing, News, Scholar, Maps, Reddit, and web scraping. One config line, nothing to deploy.
+- [SDKs](https://serply.io/docs/guides/sdks.md): Serply API code examples and integration guides for JavaScript, Python, cURL, C#, and Java. Get started quickly with our example code repository.
+- [Authentication](https://serply.io/docs/guides/authentication.md): Learn how to authenticate Serply API requests using your API key. Includes security best practices, rate limits, and example code for secure API integration.
+- [Pagination](https://serply.io/docs/guides/pagination.md): Page through Serply API search results using the num and start parameters. How page size is capped, how to detect the last page, and how billing works per request.
+- [Errors](https://serply.io/docs/guides/errors.md): Understand Serply API error responses, HTTP status codes, and rate limits. Learn how to handle errors gracefully with JavaScript and Python code examples.
+- [Webhooks](https://serply.io/docs/guides/webhooks.md): The Serply REST API does not offer outbound webhooks. How to get near-real-time results by polling instead, and why cached responses make it inexpensive.
+- [Google Search Operators](https://serply.io/docs/guides/search-operators)
+- [Agent Skill](https://serply.io/docs/guides/agent-skill.md): Install the Serply Agent Skill so Claude and other Skill-compatible agents know how to call the Serply API and MCP server without re-explaining it every session.
+- [Strands Agents](https://serply.io/docs/guides/strands.md): Give a Strands Agents agent live Google Search, Scholar, News, Maps, Reddit and page scraping by pointing its MCPClient at the hosted Serply MCP server with one header.
+
+For the full text of every page in one file, see https://serply.io/llms-full.txt

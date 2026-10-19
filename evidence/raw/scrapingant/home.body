@@ -1,0 +1,1274 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><title>ScrapingAnt — Web Scraping API, Proxies, and AI Extraction in One Stack</title><meta name="description" content="ScrapingAnt is a Web Scraping API for builders: Headless Chrome, 3M+ rotating proxies, AI extraction, hosted MCP server for AI agents — one credit pool, one key. 10K free credits, no card."><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="canonical" href="https://scrapingant.com/"><meta name="robots" content="index,follow"><!-- Open Graph / Twitter --><meta property="og:type" content="website"><meta property="og:site_name" content="ScrapingAnt"><meta property="og:locale" content="en_US"><meta property="og:title" content="ScrapingAnt — Web Scraping API, Proxies, and AI Extraction in One Stack"><meta property="og:description" content="ScrapingAnt is a Web Scraping API for builders: Headless Chrome, 3M+ rotating proxies, AI extraction, hosted MCP server for AI agents — one credit pool, one key. 10K free credits, no card."><meta property="og:url" content="https://scrapingant.com/"><meta property="og:image" content="https://scrapingant.com/og/index.png"><meta property="og:image:alt" content="ScrapingAnt — Web data infrastructure for builders"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@scrapingant"><meta name="twitter:title" content="ScrapingAnt — Web Scraping API, Proxies, and AI Extraction in One Stack"><meta name="twitter:description" content="ScrapingAnt is a Web Scraping API for builders: Headless Chrome, 3M+ rotating proxies, AI extraction, hosted MCP server for AI agents — one credit pool, one key. 10K free credits, no card."><meta name="twitter:image" content="https://scrapingant.com/og/index.png"><!-- JSON-LD: Organization + WebSite (site-wide), plus any per-page blocks. --><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"ScrapingAnt","url":"https://scrapingant.com","logo":"https://scrapingant.com/images/scrapingant.png","sameAs":["https://github.com/scrapingant","https://www.linkedin.com/company/scrapingant","https://twitter.com/scrapingant","https://www.facebook.com/scrapingant"],"contactPoint":{"@type":"ContactPoint","contactType":"customer support","url":"https://scrapingant.com/#contact","availableLanguage":["English"]}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"ScrapingAnt","url":"https://scrapingant.com"}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"ScrapingAnt Web Scraping API","description":"Web Scraping API with Headless Chrome rendering, 3M+ rotating residential and datacenter proxies, parallel concurrency, and AI-powered extraction — behind one API.","brand":{"@type":"Brand","name":"ScrapingAnt"},"url":"https://scrapingant.com/","image":"https://scrapingant.com/og/index.png","offers":{"@type":"Offer","priceCurrency":"USD","price":"0","availability":"https://schema.org/InStock","url":"https://app.scrapingant.com/signup"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is ScrapingAnt?","acceptedAnswer":{"@type":"Answer","text":"<p>ScrapingAnt is a web data infrastructure platform — a single API that gives you headless Chrome rendering, 3M+ rotating proxies, parallel concurrency, and AI-powered extraction. We handle the messy parts (CAPTCHA avoidance, IP rotation, anti-bot fingerprinting) so your code stays clean.</p>"}},{"@type":"Question","name":"What is an API credit?","acceptedAnswer":{"@type":"Answer","text":"<p>Each subscription includes a monthly pool of API credits. Most requests cost between 1 and 25 credits depending on the options you enable (proxy type, JavaScript rendering, etc.). The default request — Chrome rendering with standard proxies — costs 10 credits.</p>"}},{"@type":"Question","name":"I'm not a developer — can you build a scraper for me?","acceptedAnswer":{"@type":"Answer","text":"<p>Yes. We regularly build custom scraping pipelines for clients who'd rather buy than build. We also partner with development agencies, so projects of any size are covered.</p>"}},{"@type":"Question","name":"Do I need a credit card to start the free trial?","acceptedAnswer":{"@type":"Answer","text":"<p>No. The free plan includes 10,000 API credits every month with no credit card required. You only enter payment details if you upgrade.</p>"}},{"@type":"Question","name":"How does the MCP server work?","acceptedAnswer":{"@type":"Answer","text":"<p>One install command in Claude Code, Cursor, or Windsurf adds three tools your agent can call: get_web_page_html, get_web_page_markdown, and get_web_page_text. The agent uses your ScrapingAnt API credits, so the same plan covers both direct API calls and MCP usage.</p>"}}]}</script><!-- Favicon --><link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"><link rel="apple-touch-icon" href="/images/webclip.png"><!-- Fonts (IBM Plex Mono via Google Fonts) --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap"><!-- Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-1ZZGTD3KKH"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-1ZZGTD3KKH');
+    </script><link rel="stylesheet" href="/_astro/BaseLayout.BozbCsHw.css">
+<style>.hp-contact{padding:96px 0 110px;background:#1a1a1a;color:#fff;font-family:var(--c-mono)}.hp-contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center}.hp-contact-eyebrow{display:inline-block;font-size:12px;letter-spacing:1.5px;color:#f5a623;font-weight:700;text-transform:uppercase;margin-bottom:14px}.hp-contact-h{font-size:36px;line-height:1.15;color:#fff;margin:0 0 18px;font-weight:700;letter-spacing:-.6px}.hp-contact-h .hp-mark{background:linear-gradient(180deg,transparent 62%,#f5a623 62%,#f5a623 92%,transparent 92%);padding:0 4px}.hp-contact-body{font-size:16px;color:#ffffffb3;line-height:1.6;margin:0 0 26px}.hp-contact-quote{background:#ffffff0a;border-left:3px solid #f5a623;border-radius:8px;padding:18px 20px;margin-bottom:22px}.hp-contact-quote p{font-size:15px;line-height:1.55;color:#ffffffd9;margin:0 0 10px;font-style:italic}.hp-contact-author{display:flex;align-items:center;gap:12px}.hp-contact-author img{width:40px;height:40px;border-radius:50%;object-fit:cover;flex-shrink:0}.hp-contact-author-name{font-size:14px;color:#fff;font-weight:700;line-height:1.3;font-style:normal}.hp-contact-author-role{font-size:12px;color:#ffffff8c;line-height:1.3;margin-top:2px}.hp-contact-card{background:#ffffff0a;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:30px}.hp-form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}.hp-form-row--single{grid-template-columns:1fr}.hp-form-input{width:100%;padding:12px 14px;background:#ffffff0f;border:1px solid rgba(255,255,255,.12);border-radius:8px;color:#fff;font-family:inherit;font-size:14.5px;transition:border-color .15s,background .15s;box-sizing:border-box}.hp-form-input:focus{outline:none;border-color:#f5a623;background:#ffffff14}.hp-form-input::placeholder{color:#fff6}textarea.hp-form-input{resize:vertical;min-height:96px;font-family:inherit}.hp-form-submit{width:100%;padding:14px 22px;background:#f5a623;color:#1a1a1a;border:0;border-radius:8px;font-weight:700;cursor:pointer;font-size:15px;transition:transform .15s,background .15s;font-family:inherit;margin-top:4px}.hp-form-submit:hover{transform:translateY(-1px);background:#ffb937}.hp-form-note{font-size:12px;color:#ffffff80;margin:12px 0 0;text-align:center}.w-form-done,.w-form-fail{display:none}.w-form-done.hp-show,.w-form-fail.hp-show{display:block}.hp-contact-card.hp-submitted form{display:none}.hp-form-success,.hp-form-error{padding:14px 16px;border-radius:8px;margin-top:12px;font-size:14px}.hp-form-success{background:#27ae6026;color:#abe338;border:1px solid rgba(39,174,96,.3)}.hp-form-error{background:#e74c3c26;color:#ff8a7a;border:1px solid rgba(231,76,60,.3)}@media(max-width:900px){.hp-contact{padding:64px 0 72px}.hp-contact-grid{grid-template-columns:1fr;gap:36px}.hp-contact-h{font-size:28px}.hp-contact-card{padding:22px}.hp-form-row{grid-template-columns:1fr}}
+</style>
+<link rel="stylesheet" href="/_astro/index@_@astro.DO9REBjV.css"></head> <body> <div class="hp-utilbar"> <span class="hp-utilbar-pill">NEW</span>
+ScrapingAnt MCP for Claude Code, Cursor &amp; Windsurf —
+<a href="/mcp-server-web-scraping">try it free →</a> </div> <header class="hp-nav" id="hp-nav" data-astro-cid-dmqpwcec> <div class="hp-nav-container" data-astro-cid-dmqpwcec> <a href="/" class="hp-nav-logo" aria-label="ScrapingAnt home" data-astro-cid-dmqpwcec>scraping<span data-astro-cid-dmqpwcec>ant</span></a> <nav class="hp-nav-menu" aria-label="Primary" data-astro-cid-dmqpwcec> <!-- Products mega-menu --> <div class="hp-nav-item hp-nav-item--has-menu" data-astro-cid-dmqpwcec> <button class="hp-nav-trigger" aria-expanded="false" aria-haspopup="true" type="button" data-astro-cid-dmqpwcec>
+Products
+<svg class="hp-nav-chev" viewBox="0 0 12 12" fill="none" aria-hidden="true" data-astro-cid-dmqpwcec><path d="M2.5 4.5L6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-dmqpwcec></path></svg> </button> <div class="hp-nav-mega" role="menu" data-astro-cid-dmqpwcec> <div class="hp-nav-mega-grid" data-astro-cid-dmqpwcec> <div class="hp-nav-mega-col" data-astro-cid-dmqpwcec> <h4 data-astro-cid-dmqpwcec>Core API</h4> <a class="hp-nav-mega-item" href="/javascript-rendering-web-scraping-api" data-astro-cid-dmqpwcec> <span class="hp-nav-mega-icon" data-astro-cid-dmqpwcec><svg viewBox="0 0 18 18" fill="none" data-astro-cid-dmqpwcec><rect x="2" y="3" width="14" height="11" rx="1.6" stroke="currentColor" stroke-width="1.4" data-astro-cid-dmqpwcec></rect><path d="M2 6h14" stroke="currentColor" stroke-width="1.4" data-astro-cid-dmqpwcec></path><circle cx="4.5" cy="4.5" r="0.7" fill="currentColor" data-astro-cid-dmqpwcec></circle></svg></span> <div data-astro-cid-dmqpwcec> <div class="hp-nav-mega-title" data-astro-cid-dmqpwcec>Web Scraping API</div> <div class="hp-nav-mega-desc" data-astro-cid-dmqpwcec>Headless Chrome + rotating proxies in one endpoint.</div> </div> </a> <a class="hp-nav-mega-item" href="/llm-ready-data-extraction" data-astro-cid-dmqpwcec> <span class="hp-nav-mega-icon" data-astro-cid-dmqpwcec><svg viewBox="0 0 18 18" fill="none" data-astro-cid-dmqpwcec><path d="M3 3h12v12H3z" stroke="currentColor" stroke-width="1.4" data-astro-cid-dmqpwcec></path><path d="M5.5 6.5h7M5.5 9h7M5.5 11.5h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" data-astro-cid-dmqpwcec></path></svg></span> <div data-astro-cid-dmqpwcec> <div class="hp-nav-mega-title" data-astro-cid-dmqpwcec>LLM-ready Markdown</div> <div class="hp-nav-mega-desc" data-astro-cid-dmqpwcec>Pages as clean Markdown or JSON, no parsing.</div> </div> </a> <a class="hp-nav-mega-item" href="/custom-scraping-solution" data-astro-cid-dmqpwcec> <span class="hp-nav-mega-icon" data-astro-cid-dmqpwcec><svg viewBox="0 0 18 18" fill="none" data-astro-cid-dmqpwcec><path d="M9 2l2 4 4 .6-3 3 .7 4.4L9 12l-3.7 2 .7-4.4-3-3L7 6l2-4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" data-astro-cid-dmqpwcec></path></svg></span> <div data-astro-cid-dmqpwcec> <div class="hp-nav-mega-title" data-astro-cid-dmqpwcec>Custom Datasets</div> <div class="hp-nav-mega-desc" data-astro-cid-dmqpwcec>Send a brief — we scrape and deliver in your format.</div> </div> </a> </div> <div class="hp-nav-mega-col" data-astro-cid-dmqpwcec> <h4 data-astro-cid-dmqpwcec>AI &amp; Agents</h4> <a class="hp-nav-mega-item" href="/ai-data-scraper" data-astro-cid-dmqpwcec> <span class="hp-nav-mega-icon" data-astro-cid-dmqpwcec><svg viewBox="0 0 18 18" fill="none" data-astro-cid-dmqpwcec><polygon points="9,2 15,5.5 15,12.5 9,16 3,12.5 3,5.5" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" data-astro-cid-dmqpwcec></polygon><text x="9" y="11" text-anchor="middle" font-family="monospace" font-size="6" fill="currentColor" font-weight="700" data-astro-cid-dmqpwcec>AI</text></svg></span> <div data-astro-cid-dmqpwcec> <div class="hp-nav-mega-title" data-astro-cid-dmqpwcec>AI Data Scraper</div> <div class="hp-nav-mega-desc" data-astro-cid-dmqpwcec>Plain English in, structured JSON out. Zero selectors.</div> </div> </a> <a class="hp-nav-mega-item" href="/mcp-server-web-scraping" data-astro-cid-dmqpwcec> <span class="hp-nav-mega-icon" data-astro-cid-dmqpwcec><svg viewBox="0 0 18 18" fill="none" data-astro-cid-dmqpwcec><rect x="2" y="3" width="5" height="4" rx="1" stroke="currentColor" stroke-width="1.4" data-astro-cid-dmqpwcec></rect><rect x="11" y="3" width="5" height="4" rx="1" stroke="currentColor" stroke-width="1.4" data-astro-cid-dmqpwcec></rect><rect x="6.5" y="11" width="5" height="4" rx="1" stroke="currentColor" stroke-width="1.4" data-astro-cid-dmqpwcec></rect><path d="M4.5 7.5v2.5M13.5 7.5v2.5M9 11V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" data-astro-cid-dmqpwcec></path></svg></span> <div data-astro-cid-dmqpwcec> <div class="hp-nav-mega-title" data-astro-cid-dmqpwcec>MCP Server</div> <div class="hp-nav-mega-desc" data-astro-cid-dmqpwcec>Native tools for Claude Code, Cursor, Windsurf.</div> </div> </a> <a class="hp-nav-mega-item" href="/claude-code-mcp" data-astro-cid-dmqpwcec> <span class="hp-nav-mega-icon" data-astro-cid-dmqpwcec><svg viewBox="0 0 18 18" fill="none" data-astro-cid-dmqpwcec><path d="M9 2l5 3v5l-5 3-5-3V5l5-3z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" data-astro-cid-dmqpwcec></path><path d="M5.5 7L9 9l3.5-2M9 9v5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-dmqpwcec></path></svg></span> <div data-astro-cid-dmqpwcec> <div class="hp-nav-mega-title" data-astro-cid-dmqpwcec>Claude Code MCP</div> <div class="hp-nav-mega-desc" data-astro-cid-dmqpwcec>Add live web access to Claude Code in 30 seconds.</div> </div> </a> </div> <div class="hp-nav-mega-col" data-astro-cid-dmqpwcec> <h4 data-astro-cid-dmqpwcec>Proxies</h4> <a class="hp-nav-mega-item" href="/residential-proxies" data-astro-cid-dmqpwcec> <span class="hp-nav-mega-icon" data-astro-cid-dmqpwcec><svg viewBox="0 0 18 18" fill="none" data-astro-cid-dmqpwcec><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.4" data-astro-cid-dmqpwcec></circle><ellipse cx="9" cy="9" rx="6" ry="2.5" stroke="currentColor" stroke-width="1.2" data-astro-cid-dmqpwcec></ellipse><path d="M9 3v12" stroke="currentColor" stroke-width="1.2" data-astro-cid-dmqpwcec></path></svg></span> <div data-astro-cid-dmqpwcec> <div class="hp-nav-mega-title" data-astro-cid-dmqpwcec>Residential Proxies</div> <div class="hp-nav-mega-desc" data-astro-cid-dmqpwcec>3M+ IPs across 100+ countries, per-request rotation.</div> </div> </a> <a class="hp-nav-mega-item" href="/datacenter-proxies" data-astro-cid-dmqpwcec> <span class="hp-nav-mega-icon" data-astro-cid-dmqpwcec><svg viewBox="0 0 18 18" fill="none" data-astro-cid-dmqpwcec><rect x="3" y="3" width="12" height="3.5" rx="0.6" stroke="currentColor" stroke-width="1.4" data-astro-cid-dmqpwcec></rect><rect x="3" y="7.5" width="12" height="3.5" rx="0.6" stroke="currentColor" stroke-width="1.4" data-astro-cid-dmqpwcec></rect><rect x="3" y="12" width="12" height="3.5" rx="0.6" stroke="currentColor" stroke-width="1.4" data-astro-cid-dmqpwcec></rect><circle cx="5.5" cy="4.75" r="0.7" fill="currentColor" data-astro-cid-dmqpwcec></circle><circle cx="5.5" cy="9.25" r="0.7" fill="currentColor" data-astro-cid-dmqpwcec></circle><circle cx="5.5" cy="13.75" r="0.7" fill="currentColor" data-astro-cid-dmqpwcec></circle></svg></span> <div data-astro-cid-dmqpwcec> <div class="hp-nav-mega-title" data-astro-cid-dmqpwcec>Datacenter Proxies</div> <div class="hp-nav-mega-desc" data-astro-cid-dmqpwcec>High-speed sticky sessions for volume scraping.</div> </div> </a> </div> </div> <div class="hp-nav-mega-foot" data-astro-cid-dmqpwcec> <span class="hp-nav-mega-foot-text" data-astro-cid-dmqpwcec><strong data-astro-cid-dmqpwcec>10,000 free credits</strong> every month — no credit card.</span> <a href="https://app.scrapingant.com/signup" class="hp-nav-mega-foot-link" data-astro-cid-dmqpwcec>Start free →</a> </div> </div> </div> <a href="/#pricing" class="hp-nav-link" data-astro-cid-dmqpwcec>Pricing</a> <!-- Resources mega-menu --> <div class="hp-nav-item hp-nav-item--has-menu" data-astro-cid-dmqpwcec> <button class="hp-nav-trigger" aria-expanded="false" aria-haspopup="true" type="button" data-astro-cid-dmqpwcec>
+Resources
+<svg class="hp-nav-chev" viewBox="0 0 12 12" fill="none" aria-hidden="true" data-astro-cid-dmqpwcec><path d="M2.5 4.5L6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-dmqpwcec></path></svg> </button> <div class="hp-nav-mega" role="menu" data-astro-cid-dmqpwcec> <div class="hp-nav-mega-grid" data-astro-cid-dmqpwcec> <div class="hp-nav-mega-col" data-astro-cid-dmqpwcec> <h4 data-astro-cid-dmqpwcec>Learn</h4> <a class="hp-nav-mega-item" href="https://docs.scrapingant.com/" target="_blank" rel="noopener" data-astro-cid-dmqpwcec> <span class="hp-nav-mega-icon" data-astro-cid-dmqpwcec><svg viewBox="0 0 18 18" fill="none" data-astro-cid-dmqpwcec><path d="M3 3h8c1.5 0 2.5 1 2.5 2.5V15H5.5C4 15 3 14 3 12.5V3z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" data-astro-cid-dmqpwcec></path><path d="M3 12.5C3 14 4 15 5.5 15H15" stroke="currentColor" stroke-width="1.4" data-astro-cid-dmqpwcec></path></svg></span> <div data-astro-cid-dmqpwcec> <div class="hp-nav-mega-title" data-astro-cid-dmqpwcec>Documentation</div> <div class="hp-nav-mega-desc" data-astro-cid-dmqpwcec>API reference, parameters, code samples.</div> </div> </a> <a class="hp-nav-mega-item" href="https://scrapingant.com/blog/" data-astro-cid-dmqpwcec> <span class="hp-nav-mega-icon" data-astro-cid-dmqpwcec><svg viewBox="0 0 18 18" fill="none" data-astro-cid-dmqpwcec><rect x="2.5" y="3" width="13" height="12" rx="1.4" stroke="currentColor" stroke-width="1.4" data-astro-cid-dmqpwcec></rect><path d="M5 6.5h8M5 9h8M5 11.5h5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" data-astro-cid-dmqpwcec></path></svg></span> <div data-astro-cid-dmqpwcec> <div class="hp-nav-mega-title" data-astro-cid-dmqpwcec>Blog</div> <div class="hp-nav-mega-desc" data-astro-cid-dmqpwcec>Tutorials, language guides, product updates.</div> </div> </a> <a class="hp-nav-mega-item" href="https://docs.scrapingant.com/web-scraping-101/what-is-web-scraping" target="_blank" rel="noopener" data-astro-cid-dmqpwcec> <span class="hp-nav-mega-icon" data-astro-cid-dmqpwcec><svg viewBox="0 0 18 18" fill="none" data-astro-cid-dmqpwcec><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.4" data-astro-cid-dmqpwcec></circle><path d="M9 5.5v3l2 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" data-astro-cid-dmqpwcec></path></svg></span> <div data-astro-cid-dmqpwcec> <div class="hp-nav-mega-title" data-astro-cid-dmqpwcec>Web Scraping 101</div> <div class="hp-nav-mega-desc" data-astro-cid-dmqpwcec>Beginner guide to scraping the modern web.</div> </div> </a> </div> <div class="hp-nav-mega-col" data-astro-cid-dmqpwcec> <h4 data-astro-cid-dmqpwcec>Compare</h4> <a class="hp-nav-mega-item" href="/playwright-alternative-web-scraping-api" data-astro-cid-dmqpwcec> <span class="hp-nav-mega-icon" data-astro-cid-dmqpwcec><svg viewBox="0 0 18 18" fill="none" data-astro-cid-dmqpwcec><rect x="2.5" y="4" width="6" height="10" rx="1" stroke="currentColor" stroke-width="1.4" data-astro-cid-dmqpwcec></rect><rect x="9.5" y="4" width="6" height="10" rx="1" stroke="currentColor" stroke-width="1.4" data-astro-cid-dmqpwcec></rect></svg></span> <div data-astro-cid-dmqpwcec> <div class="hp-nav-mega-title" data-astro-cid-dmqpwcec>vs Playwright</div> <div class="hp-nav-mega-desc" data-astro-cid-dmqpwcec>When you'd rather not run browsers in-house.</div> </div> </a> <a class="hp-nav-mega-item" href="/playwright-mcp-alternative" data-astro-cid-dmqpwcec> <span class="hp-nav-mega-icon" data-astro-cid-dmqpwcec><svg viewBox="0 0 18 18" fill="none" data-astro-cid-dmqpwcec><rect x="2" y="4" width="14" height="10" rx="1" stroke="currentColor" stroke-width="1.4" data-astro-cid-dmqpwcec></rect><path d="M5 8l2 2-2 2M9 12h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-dmqpwcec></path></svg></span> <div data-astro-cid-dmqpwcec> <div class="hp-nav-mega-title" data-astro-cid-dmqpwcec>vs Playwright MCP</div> <div class="hp-nav-mega-desc" data-astro-cid-dmqpwcec>Save tokens — no local browser per request.</div> </div> </a> <a class="hp-nav-mega-item" href="/tavily-alternative-web-access-for-ai-agents" data-astro-cid-dmqpwcec> <span class="hp-nav-mega-icon" data-astro-cid-dmqpwcec><svg viewBox="0 0 18 18" fill="none" data-astro-cid-dmqpwcec><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.4" data-astro-cid-dmqpwcec></circle><path d="M3 9c2-3 10-3 12 0M3 9c2 3 10 3 12 0M9 3c-2 2-2 10 0 12M9 3c2 2 2 10 0 12" stroke="currentColor" stroke-width="1.2" data-astro-cid-dmqpwcec></path></svg></span> <div data-astro-cid-dmqpwcec> <div class="hp-nav-mega-title" data-astro-cid-dmqpwcec>vs Tavily</div> <div class="hp-nav-mega-desc" data-astro-cid-dmqpwcec>Full-page HTML, not search snippets.</div> </div> </a> <a class="hp-nav-mega-item" href="/scraperapi-alternative" data-astro-cid-dmqpwcec> <span class="hp-nav-mega-icon" data-astro-cid-dmqpwcec><svg viewBox="0 0 18 18" fill="none" data-astro-cid-dmqpwcec><path d="M3 9l3-3M3 9l3 3M3 9h6M15 9l-3-3M15 9l-3 3M15 9H9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" data-astro-cid-dmqpwcec></path></svg></span> <div data-astro-cid-dmqpwcec> <div class="hp-nav-mega-title" data-astro-cid-dmqpwcec>vs ScraperAPI</div> <div class="hp-nav-mega-desc" data-astro-cid-dmqpwcec>Drop-in replacement, lower per-credit cost.</div> </div> </a> </div> <div class="hp-nav-mega-col" data-astro-cid-dmqpwcec> <h4 data-astro-cid-dmqpwcec>Connect</h4> <a class="hp-nav-mega-item" href="https://github.com/ScrapingAnt" target="_blank" rel="noopener" data-astro-cid-dmqpwcec> <span class="hp-nav-mega-icon" data-astro-cid-dmqpwcec><svg viewBox="0 0 18 18" fill="none" data-astro-cid-dmqpwcec><path d="M9 1.5C4.86 1.5 1.5 4.86 1.5 9c0 3.32 2.15 6.13 5.13 7.13.38.07.5-.16.5-.36 0-.18-.01-.66-.01-1.29-2.09.45-2.53-1.01-2.53-1.01-.34-.87-.83-1.1-.83-1.1-.68-.46.05-.45.05-.45.75.05 1.15.77 1.15.77.67 1.14 1.75.81 2.18.62.07-.48.26-.81.47-1-1.67-.19-3.42-.83-3.42-3.71 0-.82.29-1.49.77-2.02-.08-.19-.34-.95.07-1.99 0 0 .63-.2 2.06.77a7.2 7.2 0 0 1 1.87-.25c.64 0 1.27.09 1.87.25 1.43-.97 2.06-.77 2.06-.77.41 1.04.15 1.8.07 1.99.48.53.77 1.2.77 2.02 0 2.89-1.76 3.52-3.43 3.7.27.23.51.69.51 1.4 0 1.01-.01 1.83-.01 2.07 0 .2.13.43.51.36 2.97-.99 5.12-3.81 5.12-7.13 0-4.14-3.36-7.5-7.5-7.5z" fill="currentColor" data-astro-cid-dmqpwcec></path></svg></span> <div data-astro-cid-dmqpwcec> <div class="hp-nav-mega-title" data-astro-cid-dmqpwcec>GitHub</div> <div class="hp-nav-mega-desc" data-astro-cid-dmqpwcec>SDKs, examples, MCP server source.</div> </div> </a> <a class="hp-nav-mega-item" href="https://www.capterra.com/p/214735/ScrapingAnt/reviews/" target="_blank" rel="noopener" data-astro-cid-dmqpwcec> <span class="hp-nav-mega-icon" data-astro-cid-dmqpwcec><svg viewBox="0 0 18 18" fill="none" data-astro-cid-dmqpwcec><path d="M9 2l2.2 4.5 5 .7-3.6 3.5.85 5L9 13.4l-4.5 2.4.85-5L1.8 7.2l5-.7L9 2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" data-astro-cid-dmqpwcec></path></svg></span> <div data-astro-cid-dmqpwcec> <div class="hp-nav-mega-title" data-astro-cid-dmqpwcec>Capterra Reviews</div> <div class="hp-nav-mega-desc" data-astro-cid-dmqpwcec>5.0 stars from real ScrapingAnt users.</div> </div> </a> <a class="hp-nav-mega-item" href="https://scrapingant.com/legal/affiliate/" data-astro-cid-dmqpwcec> <span class="hp-nav-mega-icon" data-astro-cid-dmqpwcec><svg viewBox="0 0 18 18" fill="none" data-astro-cid-dmqpwcec><path d="M5 9l3 3 5-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-dmqpwcec></path><circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.4" data-astro-cid-dmqpwcec></circle></svg></span> <div data-astro-cid-dmqpwcec> <div class="hp-nav-mega-title" data-astro-cid-dmqpwcec>Affiliate Program</div> <div class="hp-nav-mega-desc" data-astro-cid-dmqpwcec>Earn for every customer you refer.</div> </div> </a> </div> </div> <div class="hp-nav-mega-foot" data-astro-cid-dmqpwcec> <span class="hp-nav-mega-foot-text" data-astro-cid-dmqpwcec>Have a question?</span> <a href="/#contact" class="hp-nav-mega-foot-link" data-astro-cid-dmqpwcec>Talk to sales →</a> </div> </div> </div> <!-- Docs dropdown --> <div class="hp-nav-item hp-nav-item--has-menu" data-astro-cid-dmqpwcec> <button class="hp-nav-trigger" aria-expanded="false" aria-haspopup="true" type="button" data-astro-cid-dmqpwcec>
+Docs
+<svg class="hp-nav-chev" viewBox="0 0 12 12" fill="none" aria-hidden="true" data-astro-cid-dmqpwcec><path d="M2.5 4.5L6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-dmqpwcec></path></svg> </button> <div class="hp-nav-mega hp-nav-mega--small" role="menu" data-astro-cid-dmqpwcec> <div class="hp-nav-mega-grid" data-astro-cid-dmqpwcec> <div class="hp-nav-mega-col" data-astro-cid-dmqpwcec> <a class="hp-nav-mega-item" href="https://docs.scrapingant.com/" target="_blank" rel="noopener" data-astro-cid-dmqpwcec> <span class="hp-nav-mega-icon" data-astro-cid-dmqpwcec><svg viewBox="0 0 18 18" fill="none" data-astro-cid-dmqpwcec><path d="M3 3h8c1.5 0 2.5 1 2.5 2.5V15H5.5C4 15 3 14 3 12.5V3z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" data-astro-cid-dmqpwcec></path><path d="M3 12.5C3 14 4 15 5.5 15H15" stroke="currentColor" stroke-width="1.4" data-astro-cid-dmqpwcec></path><path d="M6 6.5h5M6 9h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" data-astro-cid-dmqpwcec></path></svg></span> <div data-astro-cid-dmqpwcec> <div class="hp-nav-mega-title" data-astro-cid-dmqpwcec>Scraping API Docs</div> <div class="hp-nav-mega-desc" data-astro-cid-dmqpwcec>Endpoints, parameters, code samples.</div> </div> </a> <a class="hp-nav-mega-item" href="https://proxydocs.scrapingant.com/" target="_blank" rel="noopener" data-astro-cid-dmqpwcec> <span class="hp-nav-mega-icon" data-astro-cid-dmqpwcec><svg viewBox="0 0 18 18" fill="none" data-astro-cid-dmqpwcec><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.4" data-astro-cid-dmqpwcec></circle><ellipse cx="9" cy="9" rx="6" ry="2.5" stroke="currentColor" stroke-width="1.2" data-astro-cid-dmqpwcec></ellipse><path d="M9 3v12" stroke="currentColor" stroke-width="1.2" data-astro-cid-dmqpwcec></path></svg></span> <div data-astro-cid-dmqpwcec> <div class="hp-nav-mega-title" data-astro-cid-dmqpwcec>Proxies Docs</div> <div class="hp-nav-mega-desc" data-astro-cid-dmqpwcec>Residential &amp; datacenter proxy setup.</div> </div> </a> </div> </div> </div> </div> </nav> <div class="hp-nav-cta" data-astro-cid-dmqpwcec> <a href="https://app.scrapingant.com/login" class="hp-nav-signin" data-astro-cid-dmqpwcec>Sign in</a> <a href="https://app.scrapingant.com/signup" class="hp-nav-start" data-astro-cid-dmqpwcec>Start free</a> </div> <button class="hp-nav-hamburger" aria-label="Open menu" aria-expanded="false" type="button" id="hp-nav-toggle" data-astro-cid-dmqpwcec> <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" data-astro-cid-dmqpwcec><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" data-astro-cid-dmqpwcec></path></svg> </button> </div> </header> <script>
+  (function () {
+    var nav = document.getElementById('hp-nav');
+    var btn = document.getElementById('hp-nav-toggle');
+    if (!nav || !btn) return;
+    btn.addEventListener('click', function () {
+      var open = nav.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    nav.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        if (nav.classList.contains('is-open')) {
+          nav.classList.remove('is-open');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  })();
+</script> <main>  <div class="hp-page">      <section class="hp-hero">
+        <div class="hp-container">
+          <div class="hp-hero-grid">
+            <div class="hp-hero-copy">
+              <a href="#reviews" class="hp-capterra">
+                <span class="hp-capterra-stars">★★★★★</span>
+                <span class="hp-capterra-text"><strong>5.0</strong> on Capterra</span>
+              </a>
+              <h1 class="hp-h1">Web data <span class="hp-mark">infrastructure</span> for builders.</h1>
+              <p class="hp-sub">Headless Chrome, 3M+ rotating proxies, parallel concurrency, and AI extraction — behind one API.</p>
+              <div class="hp-cta-row">
+                <a class="hp-btn hp-btn-primary" href="https://app.scrapingant.com/signup">Get 10,000 free credits</a>
+                <a class="hp-btn hp-btn-secondary" href="#solutions">See solutions</a>
+              </div>
+              <p class="hp-cta-note">10,000 free credits every month · no credit card required</p>
+              <div class="hp-code" data-hp-code>
+                <div class="hp-code-tabs" role="tablist">
+                  <button class="hp-code-tab is-active" data-lang="curl" type="button">curl</button>
+                  <button class="hp-code-tab" data-lang="python" type="button">Python</button>
+                  <button class="hp-code-tab" data-lang="node" type="button">Node</button>
+                </div><pre class="hp-code-pane is-active" data-lang="curl"><code><span class="cm"># Render any page, fully JS-executed, in one call</span>
+$ curl <span class="cs">'https://api.scrapingant.com/v2/general'</span> \
+    --data-urlencode <span class="cs">'url=https://example.com'</span> \
+    -H <span class="cs">'x-api-key: <span class="cp">YOUR_API_KEY</span>'</span></code></pre><pre class="hp-code-pane" data-lang="python"><code><span class="ck">import</span> requests
+
+r = requests.get(
+    <span class="cs">'https://api.scrapingant.com/v2/general'</span>,
+    params={<span class="cs">'url'</span>: <span class="cs">'https://example.com'</span>},
+    headers={<span class="cs">'x-api-key'</span>: <span class="cs">'<span class="cp">YOUR_API_KEY</span>'</span>},
+)
+print(r.text)</code></pre><pre class="hp-code-pane" data-lang="node"><code><span class="ck">const</span> res = <span class="ck">await</span> fetch(
+  <span class="cs">'https://api.scrapingant.com/v2/general?'</span> +
+  <span class="ck">new</span> URLSearchParams({ url: <span class="cs">'https://example.com'</span> }),
+  { headers: { <span class="cs">'x-api-key'</span>: <span class="cs">'<span class="cp">YOUR_API_KEY</span>'</span> } },
+);
+console.log(<span class="ck">await</span> res.text());</code></pre>
+              </div>
+            </div>
+            <div class="hp-hero-art">
+              <svg viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg" aria-label="ScrapingAnt extracting data from multiple browser windows in parallel">
+                <ellipse cx="260" cy="260" rx="225" ry="210" stroke="#1a1a1a" stroke-width="1.5" stroke-dasharray="3 7" opacity="0.35" fill="none"/>
+                <ellipse cx="260" cy="260" rx="155" ry="145" stroke="#1a1a1a" stroke-width="1.2" stroke-dasharray="3 6" opacity="0.25" fill="none"/>
+                <g transform="translate(40, 60)">
+                  <rect x="0" y="0" width="100" height="76" rx="8" fill="#fff" stroke="#1a1a1a" stroke-width="1.8"/>
+                  <line x1="0" y1="18" x2="100" y2="18" stroke="#1a1a1a" stroke-width="1.6"/>
+                  <circle cx="9" cy="9" r="2.2" fill="#f5a623"/>
+                  <circle cx="18" cy="9" r="2.2" fill="#1a1a1a" opacity="0.25"/>
+                  <circle cx="27" cy="9" r="2.2" fill="#1a1a1a" opacity="0.25"/>
+                  <rect x="14" y="56" width="8" height="14" fill="#f5a623"/>
+                  <rect x="28" y="48" width="8" height="22" fill="#f5a623"/>
+                  <rect x="42" y="40" width="8" height="30" fill="#1a1a1a"/>
+                  <rect x="56" y="52" width="8" height="18" fill="#f5a623"/>
+                  <rect x="70" y="44" width="8" height="26" fill="#f5a623"/>
+                  <line x1="14" y1="28" x2="60" y2="28" stroke="#1a1a1a" stroke-width="1.4" opacity="0.5"/>
+                  <line x1="14" y1="36" x2="48" y2="36" stroke="#1a1a1a" stroke-width="1.4" opacity="0.4"/>
+                </g>
+                <g transform="translate(380, 50)">
+                  <rect x="0" y="0" width="105" height="80" rx="8" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="1.8"/>
+                  <line x1="0" y1="18" x2="105" y2="18" stroke="#fff" stroke-width="1.6" opacity="0.2"/>
+                  <circle cx="9" cy="9" r="2.2" fill="#f5a623"/>
+                  <circle cx="18" cy="9" r="2.2" fill="#fff" opacity="0.25"/>
+                  <circle cx="27" cy="9" r="2.2" fill="#fff" opacity="0.25"/>
+                  <text x="14" y="36" font-family="monospace" font-size="9" fill="#ffd803" font-weight="700">{</text>
+                  <text x="22" y="48" font-family="monospace" font-size="8" fill="#fff" opacity="0.85">"price":</text>
+                  <text x="62" y="48" font-family="monospace" font-size="8" fill="#abe338">42.00</text>
+                  <text x="22" y="60" font-family="monospace" font-size="8" fill="#fff" opacity="0.85">"stock":</text>
+                  <text x="62" y="60" font-family="monospace" font-size="8" fill="#abe338">true</text>
+                  <text x="14" y="72" font-family="monospace" font-size="9" fill="#ffd803" font-weight="700">}</text>
+                </g>
+                <g transform="translate(30, 360)">
+                  <rect x="0" y="0" width="110" height="84" rx="8" fill="#fff" stroke="#1a1a1a" stroke-width="1.8"/>
+                  <line x1="0" y1="18" x2="110" y2="18" stroke="#1a1a1a" stroke-width="1.6"/>
+                  <circle cx="9" cy="9" r="2.2" fill="#f5a623"/>
+                  <circle cx="18" cy="9" r="2.2" fill="#1a1a1a" opacity="0.25"/>
+                  <circle cx="27" cy="9" r="2.2" fill="#1a1a1a" opacity="0.25"/>
+                  <rect x="14" y="28" width="60" height="6" rx="2" fill="#1a1a1a"/>
+                  <rect x="14" y="40" width="84" height="4" rx="2" fill="#1a1a1a" opacity="0.35"/>
+                  <rect x="14" y="50" width="76" height="4" rx="2" fill="#1a1a1a" opacity="0.35"/>
+                  <rect x="14" y="60" width="68" height="4" rx="2" fill="#1a1a1a" opacity="0.35"/>
+                  <rect x="14" y="70" width="42" height="6" rx="2" fill="#f5a623"/>
+                </g>
+                <g transform="translate(388, 376)">
+                  <rect x="0" y="0" width="98" height="76" rx="8" fill="#fff" stroke="#1a1a1a" stroke-width="1.8"/>
+                  <line x1="0" y1="18" x2="98" y2="18" stroke="#1a1a1a" stroke-width="1.6"/>
+                  <circle cx="9" cy="9" r="2.2" fill="#f5a623"/>
+                  <circle cx="18" cy="9" r="2.2" fill="#1a1a1a" opacity="0.25"/>
+                  <circle cx="27" cy="9" r="2.2" fill="#1a1a1a" opacity="0.25"/>
+                  <rect x="14" y="28" width="22" height="20" rx="3" fill="#f5a623"/>
+                  <rect x="40" y="28" width="22" height="20" rx="3" fill="#1a1a1a"/>
+                  <rect x="66" y="28" width="22" height="20" rx="3" fill="#f5a623" opacity="0.5"/>
+                  <rect x="14" y="52" width="22" height="16" rx="3" fill="#1a1a1a" opacity="0.35"/>
+                  <rect x="40" y="52" width="22" height="16" rx="3" fill="#f5a623" opacity="0.7"/>
+                  <rect x="66" y="52" width="22" height="16" rx="3" fill="#1a1a1a"/>
+                </g>
+                <g transform="translate(0, 220)">
+                  <rect x="0" y="0" width="80" height="56" rx="8" fill="#fff" stroke="#1a1a1a" stroke-width="1.8"/>
+                  <line x1="0" y1="14" x2="80" y2="14" stroke="#1a1a1a" stroke-width="1.6"/>
+                  <circle cx="7" cy="7" r="1.8" fill="#f5a623"/>
+                  <rect x="10" y="22" width="60" height="10" rx="5" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+                  <circle cx="64" cy="27" r="3" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+                  <line x1="66" y1="29" x2="69" y2="32" stroke="#1a1a1a" stroke-width="1.2"/>
+                  <rect x="10" y="38" width="44" height="3" fill="#1a1a1a" opacity="0.35"/>
+                  <rect x="10" y="44" width="36" height="3" fill="#1a1a1a" opacity="0.35"/>
+                </g>
+                <circle cx="260" cy="260" r="108" fill="#fff" opacity="0.18"/>
+                <circle cx="260" cy="260" r="86" fill="#fff" opacity="0.22"/>
+                <g transform="translate(260, 260)">
+                  <rect x="-118" y="-44" width="236" height="88" rx="20" fill="#1a1a1a"/>
+                  <circle cx="-92" cy="0" r="10" fill="#ffd803"/>
+                  <circle cx="-92" cy="0" r="4" fill="#1a1a1a"/>
+                  <text x="14" y="-4" text-anchor="middle" font-family="monospace" font-size="20" fill="#ffd803" font-weight="700">SCRAPINGANT</text>
+                  <line x1="-72" y1="8" x2="100" y2="8" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+                  <text x="14" y="24" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" opacity="0.55">api · proxies · ai · mcp</text>
+                </g>
+                <g stroke="#1a1a1a" stroke-width="1.8" fill="none" stroke-dasharray="4 5" opacity="0.55" stroke-linecap="round">
+                  <path d="M 175 220 Q 150 180 110 138"/>
+                  <path d="M 345 220 Q 370 180 410 130"/>
+                  <path d="M 175 300 Q 150 340 120 396"/>
+                  <path d="M 345 300 Q 370 340 410 400"/>
+                  <path d="M 152 260 Q 120 260 90 250"/>
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="hp-solutions" id="solutions">
+        <div class="hp-container">
+          <h2 class="hp-solutions-h">One platform. Six ways in.</h2>
+          <p class="hp-solutions-sub">Pick the entry point that fits your stack. Every plan unlocks them all.</p>
+          <div class="hp-solutions-grid">
+
+            <a class="hp-sol-card" href="/javascript-rendering-web-scraping-api">
+              <div class="hp-sol-art">
+                <svg viewBox="0 0 180 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect x="20" y="22" width="140" height="76" rx="8" fill="#fff" stroke="#1a1a1a" stroke-width="1.6"/>
+                  <line x1="20" y1="38" x2="160" y2="38" stroke="#1a1a1a" stroke-width="1.4"/>
+                  <circle cx="28" cy="30" r="2.2" fill="#f5a623"/>
+                  <circle cx="36" cy="30" r="2.2" fill="#1a1a1a" opacity="0.25"/>
+                  <circle cx="44" cy="30" r="2.2" fill="#1a1a1a" opacity="0.25"/>
+                  <text x="90" y="64" text-anchor="middle" font-family="monospace" font-size="14" fill="#1a1a1a" font-weight="700">/v2/general</text>
+                  <rect x="46" y="74" width="88" height="8" rx="3" fill="#f5a623"/>
+                  <rect x="56" y="86" width="68" height="4" rx="2" fill="#1a1a1a" opacity="0.3"/>
+                </svg>
+              </div>
+              <h3 class="hp-sol-h">Web Scraping API</h3>
+              <p class="hp-sol-body">One endpoint, real Chrome, rotating proxies. Curl-friendly.</p>
+              <span class="hp-sol-link">Explore the API →</span>
+            </a>
+
+            <a class="hp-sol-card" href="/llm-ready-data-extraction">
+              <div class="hp-sol-art">
+                <svg viewBox="0 0 180 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect x="22" y="26" width="56" height="70" rx="6" fill="#fff" stroke="#1a1a1a" stroke-width="1.5"/>
+                  <text x="50" y="46" text-anchor="middle" font-family="monospace" font-size="9" fill="#666">&lt;html&gt;</text>
+                  <text x="50" y="60" text-anchor="middle" font-family="monospace" font-size="9" fill="#666">&lt;div&gt;...</text>
+                  <text x="50" y="74" text-anchor="middle" font-family="monospace" font-size="9" fill="#666">&lt;/div&gt;</text>
+                  <path d="M 84 60 L 96 60 L 96 56 L 104 60 L 96 64 L 96 60 Z" fill="#f5a623"/>
+                  <rect x="108" y="26" width="50" height="70" rx="6" fill="#1a1a1a"/>
+                  <text x="133" y="44" text-anchor="middle" font-family="monospace" font-size="10" fill="#ffd803" font-weight="700">MD</text>
+                  <line x1="116" y1="56" x2="150" y2="56" stroke="#fff" stroke-width="1" opacity="0.4"/>
+                  <line x1="116" y1="64" x2="146" y2="64" stroke="#fff" stroke-width="1" opacity="0.4"/>
+                  <line x1="116" y1="72" x2="142" y2="72" stroke="#fff" stroke-width="1" opacity="0.4"/>
+                  <line x1="116" y1="80" x2="148" y2="80" stroke="#fff" stroke-width="1" opacity="0.4"/>
+                </svg>
+              </div>
+              <h3 class="hp-sol-h">LLM-ready Markdown</h3>
+              <p class="hp-sol-body">Get pages as clean Markdown or JSON. No parsing, no XPath.</p>
+              <span class="hp-sol-link">See extraction →</span>
+            </a>
+
+            <a class="hp-sol-card" href="/ai-data-scraper">
+              <div class="hp-sol-art">
+                <svg viewBox="0 0 180 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <polygon points="90,18 124,38 124,82 90,102 56,82 56,38" fill="#f5a623" stroke="#1a1a1a" stroke-width="1.6"/>
+                  <text x="90" y="68" text-anchor="middle" font-family="monospace" font-size="22" fill="#1a1a1a" font-weight="700">AI</text>
+                  <g fill="#1a1a1a">
+                    <path d="M 44 28 L 47 32 L 51 28 L 47 31 Z"/>
+                    <circle cx="138" cy="34" r="2.4"/>
+                    <path d="M 36 78 L 39 82 L 42 78 L 39 81 Z"/>
+                    <circle cx="142" cy="86" r="2"/>
+                  </g>
+                  <g transform="translate(90, 110)">
+                    <ellipse cx="0" cy="0" rx="9" ry="6" fill="#1a1a1a"/>
+                    <ellipse cx="0" cy="-8" rx="6" ry="5" fill="#1a1a1a"/>
+                    <ellipse cx="0" cy="-15" rx="6.5" ry="5.5" fill="#1a1a1a"/>
+                    <circle cx="-2.5" cy="-16" r="1" fill="#fff"/>
+                    <circle cx="2.5" cy="-16" r="1" fill="#fff"/>
+                    <g stroke="#1a1a1a" stroke-width="1.4" fill="none" stroke-linecap="round">
+                      <path d="M -7 -1 L -13 -2"/><path d="M -8 3 L -14 5"/>
+                      <path d="M 7 -1 L 13 -2"/><path d="M 8 3 L 14 5"/>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+              <h3 class="hp-sol-h">AI Data Scraper</h3>
+              <p class="hp-sol-body">Describe data in plain English, get structured JSON back. Zero selectors.</p>
+              <span class="hp-sol-link">Try AI scraping →</span>
+            </a>
+
+            <a class="hp-sol-card" href="/mcp-server-web-scraping">
+              <div class="hp-sol-art">
+                <svg viewBox="0 0 180 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect x="20" y="20" width="40" height="32" rx="5" fill="#1a1a1a"/>
+                  <text x="40" y="40" text-anchor="middle" font-family="monospace" font-size="8" fill="#fff" font-weight="700">Claude</text>
+                  <rect x="70" y="20" width="40" height="32" rx="5" fill="#1a1a1a"/>
+                  <text x="90" y="40" text-anchor="middle" font-family="monospace" font-size="8" fill="#fff" font-weight="700">Cursor</text>
+                  <rect x="120" y="20" width="40" height="32" rx="5" fill="#1a1a1a"/>
+                  <text x="140" y="40" text-anchor="middle" font-family="monospace" font-size="8" fill="#fff" font-weight="700">Windsurf</text>
+                  <g stroke="#f5a623" stroke-width="2" fill="none" stroke-linecap="round">
+                    <path d="M 40 56 Q 40 80 90 92"/>
+                    <path d="M 90 56 Q 90 76 90 92"/>
+                    <path d="M 140 56 Q 140 80 90 92"/>
+                  </g>
+                  <rect x="46" y="86" width="88" height="20" rx="6" fill="#1a1a1a"/>
+                  <text x="90" y="99" text-anchor="middle" font-family="monospace" font-size="9" fill="#ffd803" font-weight="700">SCRAPINGANT</text>
+                </svg>
+              </div>
+              <h3 class="hp-sol-h">MCP Server</h3>
+              <p class="hp-sol-body">Native tools for Claude Code, Cursor, Windsurf. 30-second install.</p>
+              <span class="hp-sol-link">Connect to your IDE →</span>
+            </a>
+
+            <a class="hp-sol-card" href="/residential-proxies">
+              <div class="hp-sol-art">
+                <svg viewBox="0 0 180 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="90" cy="60" r="42" fill="#fff5e0" stroke="#1a1a1a" stroke-width="1.6"/>
+                  <g stroke="#1a1a1a" stroke-width="0.9" fill="none" opacity="0.4">
+                    <ellipse cx="90" cy="60" rx="42" ry="14"/>
+                    <ellipse cx="90" cy="60" rx="42" ry="28"/>
+                    <ellipse cx="90" cy="60" rx="14" ry="42"/>
+                    <ellipse cx="90" cy="60" rx="28" ry="42"/>
+                  </g>
+                  <g fill="#f5a623" opacity="0.85">
+                    <path d="M 70 50 Q 80 44 92 48 Q 96 56 88 60 Q 76 60 70 50 Z"/>
+                    <path d="M 100 64 Q 112 60 116 70 Q 110 76 100 72 Q 96 68 100 64 Z"/>
+                  </g>
+                  <g>
+                    <g transform="translate(60, 36)"><path d="M 0 0 Q -7 -10 -7 -14 A 7 7 0 0 1 7 -14 Q 7 -10 0 0 Z" fill="#1a1a1a"/><circle cx="0" cy="-14" r="2.5" fill="#fff5e0"/></g>
+                    <g transform="translate(120, 38)"><path d="M 0 0 Q -7 -10 -7 -14 A 7 7 0 0 1 7 -14 Q 7 -10 0 0 Z" fill="#1a1a1a"/><circle cx="0" cy="-14" r="2.5" fill="#fff5e0"/></g>
+                    <g transform="translate(72, 92)"><path d="M 0 0 Q -7 -10 -7 -14 A 7 7 0 0 1 7 -14 Q 7 -10 0 0 Z" fill="#1a1a1a"/><circle cx="0" cy="-14" r="2.5" fill="#fff5e0"/></g>
+                    <g transform="translate(112, 92)"><path d="M 0 0 Q -7 -10 -7 -14 A 7 7 0 0 1 7 -14 Q 7 -10 0 0 Z" fill="#1a1a1a"/><circle cx="0" cy="-14" r="2.5" fill="#fff5e0"/></g>
+                  </g>
+                </svg>
+              </div>
+              <h3 class="hp-sol-h">Residential Proxies</h3>
+              <p class="hp-sol-body">3M+ IPs across 100+ countries. Rotate per request, geo-target by code.</p>
+              <span class="hp-sol-link">Browse proxy plans →</span>
+            </a>
+
+            <a class="hp-sol-card" href="/datacenter-proxies">
+              <div class="hp-sol-art">
+                <svg viewBox="0 0 180 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect x="56" y="22" width="68" height="20" rx="3" fill="#fff" stroke="#1a1a1a" stroke-width="1.5"/>
+                  <circle cx="64" cy="32" r="2.5" fill="#abe338"/>
+                  <circle cx="72" cy="32" r="2.5" fill="#f5a623"/>
+                  <rect x="82" y="29" width="36" height="2" fill="#1a1a1a" opacity="0.3"/>
+                  <rect x="82" y="34" width="28" height="2" fill="#1a1a1a" opacity="0.3"/>
+                  <rect x="56" y="50" width="68" height="20" rx="3" fill="#fff" stroke="#1a1a1a" stroke-width="1.5"/>
+                  <circle cx="64" cy="60" r="2.5" fill="#abe338"/>
+                  <circle cx="72" cy="60" r="2.5" fill="#abe338"/>
+                  <rect x="82" y="57" width="36" height="2" fill="#1a1a1a" opacity="0.3"/>
+                  <rect x="82" y="62" width="32" height="2" fill="#1a1a1a" opacity="0.3"/>
+                  <rect x="56" y="78" width="68" height="20" rx="3" fill="#fff" stroke="#1a1a1a" stroke-width="1.5"/>
+                  <circle cx="64" cy="88" r="2.5" fill="#abe338"/>
+                  <circle cx="72" cy="88" r="2.5" fill="#f5a623"/>
+                  <rect x="82" y="85" width="36" height="2" fill="#1a1a1a" opacity="0.3"/>
+                  <rect x="82" y="90" width="24" height="2" fill="#1a1a1a" opacity="0.3"/>
+                  <g stroke="#f5a623" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-dasharray="3 3">
+                    <path d="M 28 32 L 56 32"/>
+                    <path d="M 28 60 L 56 60"/>
+                    <path d="M 28 88 L 56 88"/>
+                    <path d="M 124 32 L 152 32"/>
+                    <path d="M 124 60 L 152 60"/>
+                    <path d="M 124 88 L 152 88"/>
+                  </g>
+                  <g fill="#f5a623">
+                    <circle cx="28" cy="32" r="3"/>
+                    <circle cx="28" cy="60" r="3"/>
+                    <circle cx="28" cy="88" r="3"/>
+                    <circle cx="152" cy="32" r="3"/>
+                    <circle cx="152" cy="60" r="3"/>
+                    <circle cx="152" cy="88" r="3"/>
+                  </g>
+                </svg>
+              </div>
+              <h3 class="hp-sol-h">Datacenter Proxies</h3>
+              <p class="hp-sol-body">High-speed datacenter IPs with sticky sessions. Built for volume scraping.</p>
+              <span class="hp-sol-link">See DC plans →</span>
+            </a>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="hp-feature" id="how-it-works">
+        <div class="hp-container">
+          <div class="hp-feat-grid">
+            <div class="hp-feat-art">
+              <svg viewBox="0 0 460 360" xmlns="http://www.w3.org/2000/svg" aria-label="Ants pulling data in parallel into a single API">
+                <g transform="translate(230, 60)">
+                  <rect x="-115" y="-30" width="230" height="60" rx="14" fill="#1a1a1a"/>
+                  <text x="0" y="6" text-anchor="middle" font-family="monospace" font-size="22" fill="#ffd803" font-weight="700">SCRAPINGANT</text>
+                  <text x="0" y="22" text-anchor="middle" font-family="monospace" font-size="9" fill="#fff" opacity="0.6">/v2/general</text>
+                </g>
+                <g stroke="#f5a623" stroke-width="2.4" fill="none" stroke-linecap="round">
+                  <path d="M 60 220 Q 60 130 230 90"/>
+                  <path d="M 170 230 Q 170 150 230 100"/>
+                  <path d="M 290 230 Q 290 150 230 100"/>
+                  <path d="M 400 220 Q 400 130 230 90"/>
+                </g>
+                <g fill="#f5a623">
+                  <circle cx="80" cy="170" r="4"/>
+                  <circle cx="180" cy="180" r="4"/>
+                  <circle cx="290" cy="180" r="4"/>
+                  <circle cx="380" cy="170" r="4"/>
+                </g>
+                <g transform="translate(60, 260)">
+                  <g stroke="#1a1a1a" stroke-width="2" fill="none" stroke-linecap="round">
+                    <path d="M -14 -8 L -28 -16"/><path d="M -16 0 L -32 -2"/><path d="M -14 8 L -28 16"/>
+                    <path d="M 14 -8 L 28 -16"/><path d="M 16 0 L 32 -2"/><path d="M 14 8 L 28 16"/>
+                  </g>
+                  <ellipse cx="0" cy="22" rx="20" ry="16" fill="#1a1a1a"/>
+                  <ellipse cx="0" cy="0" rx="13" ry="11" fill="#1a1a1a"/>
+                  <ellipse cx="0" cy="-22" rx="14" ry="13" fill="#1a1a1a"/>
+                  <circle cx="-5" cy="-23" r="2" fill="#fff"/><circle cx="5" cy="-23" r="2" fill="#fff"/>
+                  <rect x="-18" y="-60" width="36" height="22" rx="3" fill="#fff" stroke="#1a1a1a" stroke-width="1.4"/>
+                  <line x1="-18" y1="-54" x2="18" y2="-54" stroke="#1a1a1a" stroke-width="1.2"/>
+                  <rect x="-14" y="-50" width="20" height="3" fill="#f5a623"/>
+                  <rect x="-14" y="-45" width="14" height="2" fill="#1a1a1a" opacity="0.4"/>
+                </g>
+                <g transform="translate(170, 270)">
+                  <g stroke="#1a1a1a" stroke-width="2" fill="none" stroke-linecap="round">
+                    <path d="M -14 -8 L -28 -16"/><path d="M -16 0 L -32 -2"/><path d="M -14 8 L -28 16"/>
+                    <path d="M 14 -8 L 28 -16"/><path d="M 16 0 L 32 -2"/><path d="M 14 8 L 28 16"/>
+                  </g>
+                  <ellipse cx="0" cy="22" rx="20" ry="16" fill="#1a1a1a"/>
+                  <ellipse cx="0" cy="0" rx="13" ry="11" fill="#1a1a1a"/>
+                  <ellipse cx="0" cy="-22" rx="14" ry="13" fill="#1a1a1a"/>
+                  <circle cx="-5" cy="-23" r="2" fill="#fff"/><circle cx="5" cy="-23" r="2" fill="#fff"/>
+                  <rect x="-18" y="-60" width="36" height="22" rx="3" fill="#1a1a1a"/>
+                  <line x1="-18" y1="-54" x2="18" y2="-54" stroke="#fff" stroke-width="1" opacity="0.3"/>
+                  <text x="0" y="-44" text-anchor="middle" font-family="monospace" font-size="8" fill="#ffd803" font-weight="700">{ }</text>
+                </g>
+                <g transform="translate(290, 270)">
+                  <g stroke="#1a1a1a" stroke-width="2" fill="none" stroke-linecap="round">
+                    <path d="M -14 -8 L -28 -16"/><path d="M -16 0 L -32 -2"/><path d="M -14 8 L -28 16"/>
+                    <path d="M 14 -8 L 28 -16"/><path d="M 16 0 L 32 -2"/><path d="M 14 8 L 28 16"/>
+                  </g>
+                  <ellipse cx="0" cy="22" rx="20" ry="16" fill="#1a1a1a"/>
+                  <ellipse cx="0" cy="0" rx="13" ry="11" fill="#1a1a1a"/>
+                  <ellipse cx="0" cy="-22" rx="14" ry="13" fill="#1a1a1a"/>
+                  <circle cx="-5" cy="-23" r="2" fill="#fff"/><circle cx="5" cy="-23" r="2" fill="#fff"/>
+                  <rect x="-18" y="-60" width="36" height="22" rx="3" fill="#fff" stroke="#1a1a1a" stroke-width="1.4"/>
+                  <line x1="-18" y1="-54" x2="18" y2="-54" stroke="#1a1a1a" stroke-width="1.2"/>
+                  <rect x="-14" y="-50" width="14" height="2.5" fill="#1a1a1a" opacity="0.6"/>
+                  <rect x="-14" y="-46" width="20" height="2.5" fill="#1a1a1a" opacity="0.4"/>
+                  <rect x="-14" y="-42" width="10" height="2.5" fill="#f5a623"/>
+                </g>
+                <g transform="translate(400, 260)">
+                  <g stroke="#1a1a1a" stroke-width="2" fill="none" stroke-linecap="round">
+                    <path d="M -14 -8 L -28 -16"/><path d="M -16 0 L -32 -2"/><path d="M -14 8 L -28 16"/>
+                    <path d="M 14 -8 L 28 -16"/><path d="M 16 0 L 32 -2"/><path d="M 14 8 L 28 16"/>
+                  </g>
+                  <ellipse cx="0" cy="22" rx="20" ry="16" fill="#1a1a1a"/>
+                  <ellipse cx="0" cy="0" rx="13" ry="11" fill="#1a1a1a"/>
+                  <ellipse cx="0" cy="-22" rx="14" ry="13" fill="#1a1a1a"/>
+                  <circle cx="-5" cy="-23" r="2" fill="#fff"/><circle cx="5" cy="-23" r="2" fill="#fff"/>
+                  <rect x="-18" y="-60" width="36" height="22" rx="3" fill="#fff" stroke="#1a1a1a" stroke-width="1.4"/>
+                  <line x1="-18" y1="-54" x2="18" y2="-54" stroke="#1a1a1a" stroke-width="1.2"/>
+                  <rect x="-14" y="-50" width="6" height="6" fill="#f5a623"/>
+                  <rect x="-6" y="-50" width="6" height="6" fill="#f5a623" opacity="0.5"/>
+                  <rect x="2" y="-50" width="6" height="6" fill="#1a1a1a"/>
+                </g>
+                <g transform="translate(230, 330)">
+                  <rect x="-85" y="-14" width="170" height="28" rx="14" fill="#fff5e0" stroke="#f5a623" stroke-width="1.5"/>
+                  <text x="0" y="5" text-anchor="middle" font-family="monospace" font-size="13" fill="#1a1a1a" font-weight="700">×1000 in parallel</text>
+                </g>
+              </svg>
+            </div>
+            <div class="hp-feat-copy">
+              <span class="hp-eyebrow">Infrastructure</span>
+              <h2 class="hp-h2">Unlimited <span class="hp-mark">parallel requests</span>.</h2>
+              <p class="hp-feat-body">ScrapingAnt scales horizontally — fire 1,000 requests in parallel without queues, throttling, or worker management. The cluster auto-allocates Chrome instances and proxies on every request, so a tiny script and a Fortune 500 pipeline behave the same.</p>
+              <ul class="hp-checks">
+                <li class="hp-check"><svg class="hp-check-icon" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-9" stroke="#27ae60" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>No concurrency cap on any plan</li>
+                <li class="hp-check"><svg class="hp-check-icon" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-9" stroke="#27ae60" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Auto-scaling Chrome cluster</li>
+                <li class="hp-check"><svg class="hp-check-icon" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-9" stroke="#27ae60" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Per-request proxy and geo-targeting</li>
+              </ul>
+              <blockquote class="hp-quote">
+                <img class="hp-quote-img" src="/images/e57164aafb18d9a888776c96cf159368.jpg" alt="" loading="lazy">
+                <div>
+                  <p class="hp-quote-text">“Great communication with co-founders helped me to get the job done. Great proxy diversity and good price.”</p>
+                  <p class="hp-quote-name"><strong>Andrii M.</strong> · Senior Software Engineer</p>
+                </div>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="hp-feature hp-feature--alt">
+        <div class="hp-container">
+          <div class="hp-feat-grid hp-feat-grid--art-right">
+            <div class="hp-feat-copy">
+              <span class="hp-eyebrow">Headless browsers</span>
+              <h2 class="hp-h2">Render any web page <span class="hp-mark">like a real browser</span>.</h2>
+              <p class="hp-feat-body">Every request runs in a fresh, isolated Chrome instance. Single-page apps, lazy-loaded content, infinite scroll, custom JavaScript snippets — all work out of the box. You stop managing a fleet of headless browsers; we already do.</p>
+              <ul class="hp-checks">
+                <li class="hp-check"><svg class="hp-check-icon" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-9" stroke="#27ae60" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Latest Chromium, fresh each request</li>
+                <li class="hp-check"><svg class="hp-check-icon" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-9" stroke="#27ae60" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Custom <code style="background:#fff5e0;padding:1px 6px;border-radius:4px;font-size:14px;">js_snippet</code> and wait-for-selector</li>
+                <li class="hp-check"><svg class="hp-check-icon" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-9" stroke="#27ae60" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Custom cookies, headers, and proxy fingerprint</li>
+              </ul>
+              <a href="/javascript-rendering-web-scraping-api" class="hp-feat-link">Explore JavaScript rendering →</a>
+            </div>
+            <div class="hp-feat-art">
+              <svg viewBox="0 0 460 360" xmlns="http://www.w3.org/2000/svg" aria-label="Chrome browser rendering a page on a desktop monitor">
+                <ellipse cx="230" cy="320" rx="180" ry="14" fill="#1a1a1a" opacity="0.08"/>
+                <rect x="60" y="280" width="340" height="8" rx="2" fill="#1a1a1a"/>
+                <rect x="80" y="288" width="6" height="34" fill="#1a1a1a"/>
+                <rect x="374" y="288" width="6" height="34" fill="#1a1a1a"/>
+                <rect x="220" y="260" width="20" height="22" fill="#1a1a1a"/>
+                <rect x="200" y="278" width="60" height="6" rx="2" fill="#1a1a1a"/>
+                <rect x="60" y="60" width="340" height="206" rx="14" fill="#1a1a1a"/>
+                <rect x="68" y="68" width="324" height="190" rx="8" fill="#fff"/>
+                <rect x="68" y="68" width="324" height="32" rx="8" fill="#f1f1f1"/>
+                <circle cx="84" cy="84" r="4" fill="#ed6a5e"/>
+                <circle cx="98" cy="84" r="4" fill="#f4be4f"/>
+                <circle cx="112" cy="84" r="4" fill="#61c454"/>
+                <rect x="138" y="76" width="234" height="16" rx="8" fill="#fff" stroke="#ddd" stroke-width="1"/>
+                <text x="148" y="87" font-family="monospace" font-size="9" fill="#666">scrapingant.com</text>
+                <rect x="84" y="116" width="120" height="10" rx="3" fill="#1a1a1a"/>
+                <rect x="84" y="132" width="200" height="5" rx="2" fill="#1a1a1a" opacity="0.4"/>
+                <rect x="84" y="142" width="180" height="5" rx="2" fill="#1a1a1a" opacity="0.4"/>
+                <rect x="84" y="152" width="160" height="5" rx="2" fill="#1a1a1a" opacity="0.4"/>
+                <g transform="translate(84, 178)">
+                  <line x1="0" y1="60" x2="240" y2="60" stroke="#1a1a1a" stroke-width="1" opacity="0.3"/>
+                  <rect x="10" y="40" width="20" height="20" fill="#f5a623" opacity="0.5"/>
+                  <rect x="40" y="28" width="20" height="32" fill="#f5a623"/>
+                  <rect x="70" y="14" width="20" height="46" fill="#f5a623"/>
+                  <rect x="100" y="22" width="20" height="38" fill="#1a1a1a"/>
+                  <rect x="130" y="6" width="20" height="54" fill="#f5a623"/>
+                  <rect x="160" y="18" width="20" height="42" fill="#f5a623" opacity="0.7"/>
+                  <rect x="190" y="34" width="20" height="26" fill="#1a1a1a"/>
+                </g>
+                <g transform="translate(118, 256)">
+                  <rect x="-12" y="0" width="22" height="20" rx="2" fill="#f5a623"/>
+                  <path d="M 10 4 Q 18 4 18 12 Q 18 18 10 18" fill="none" stroke="#f5a623" stroke-width="2.4"/>
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="hp-feature">
+        <div class="hp-container">
+          <div class="hp-feat-grid">
+            <div class="hp-feat-art">
+              <svg viewBox="0 0 460 360" xmlns="http://www.w3.org/2000/svg" aria-label="Globe with rotating proxies in 100+ countries">
+                <circle cx="230" cy="180" r="125" fill="#fff5e0" stroke="#1a1a1a" stroke-width="2"/>
+                <g stroke="#1a1a1a" stroke-width="1" fill="none" opacity="0.35">
+                  <ellipse cx="230" cy="180" rx="125" ry="42"/>
+                  <ellipse cx="230" cy="180" rx="125" ry="84"/>
+                  <ellipse cx="230" cy="180" rx="125" ry="120"/>
+                </g>
+                <g stroke="#1a1a1a" stroke-width="1" fill="none" opacity="0.35">
+                  <line x1="230" y1="55" x2="230" y2="305"/>
+                  <ellipse cx="230" cy="180" rx="42" ry="125"/>
+                  <ellipse cx="230" cy="180" rx="84" ry="125"/>
+                </g>
+                <g fill="#f5a623" opacity="0.85">
+                  <path d="M 165 140 Q 180 120 205 125 Q 220 135 215 155 Q 200 165 175 160 Q 160 155 165 140 Z"/>
+                  <path d="M 240 130 Q 270 125 285 140 Q 290 160 280 180 Q 260 175 245 165 Q 235 150 240 130 Z"/>
+                  <path d="M 200 200 Q 220 195 235 210 Q 230 235 215 240 Q 195 235 195 220 Q 195 205 200 200 Z"/>
+                  <path d="M 280 210 Q 300 215 305 230 Q 295 245 280 240 Q 270 230 280 210 Z"/>
+                </g>
+                <g transform="translate(150, 105)">
+                  <path d="M 0 0 Q -10 -16 -10 -22 A 10 10 0 0 1 10 -22 Q 10 -16 0 0 Z" fill="#1a1a1a"/>
+                  <circle cx="0" cy="-22" r="4" fill="#fff5e0"/>
+                </g>
+                <g transform="translate(305, 92)">
+                  <path d="M 0 0 Q -10 -16 -10 -22 A 10 10 0 0 1 10 -22 Q 10 -16 0 0 Z" fill="#1a1a1a"/>
+                  <circle cx="0" cy="-22" r="4" fill="#fff5e0"/>
+                </g>
+                <g transform="translate(108, 200)">
+                  <path d="M 0 0 Q -10 -16 -10 -22 A 10 10 0 0 1 10 -22 Q 10 -16 0 0 Z" fill="#1a1a1a"/>
+                  <circle cx="0" cy="-22" r="4" fill="#fff5e0"/>
+                </g>
+                <g transform="translate(355, 200)">
+                  <path d="M 0 0 Q -10 -16 -10 -22 A 10 10 0 0 1 10 -22 Q 10 -16 0 0 Z" fill="#1a1a1a"/>
+                  <circle cx="0" cy="-22" r="4" fill="#fff5e0"/>
+                </g>
+                <g transform="translate(140, 270)">
+                  <path d="M 0 0 Q -10 -16 -10 -22 A 10 10 0 0 1 10 -22 Q 10 -16 0 0 Z" fill="#1a1a1a"/>
+                  <circle cx="0" cy="-22" r="4" fill="#fff5e0"/>
+                </g>
+                <g transform="translate(315, 280)">
+                  <path d="M 0 0 Q -10 -16 -10 -22 A 10 10 0 0 1 10 -22 Q 10 -16 0 0 Z" fill="#1a1a1a"/>
+                  <circle cx="0" cy="-22" r="4" fill="#fff5e0"/>
+                </g>
+                <g transform="translate(70, 150)">
+                  <path d="M 0 0 Q -10 -16 -10 -22 A 10 10 0 0 1 10 -22 Q 10 -16 0 0 Z" fill="#f5a623"/>
+                  <circle cx="0" cy="-22" r="4" fill="#1a1a1a"/>
+                </g>
+                <g transform="translate(390, 150)">
+                  <path d="M 0 0 Q -10 -16 -10 -22 A 10 10 0 0 1 10 -22 Q 10 -16 0 0 Z" fill="#f5a623"/>
+                  <circle cx="0" cy="-22" r="4" fill="#1a1a1a"/>
+                </g>
+                <g transform="translate(230, 320)">
+                  <rect x="-105" y="-16" width="210" height="32" rx="16" fill="#1a1a1a"/>
+                  <text x="0" y="6" text-anchor="middle" font-family="monospace" font-size="14" fill="#ffd803" font-weight="700">3,000,000+ proxies</text>
+                </g>
+                <g fill="#f5a623" opacity="0.6">
+                  <circle cx="195" cy="93" r="2"/><circle cx="240" cy="86" r="2"/><circle cx="275" cy="86" r="2"/>
+                  <circle cx="125" cy="184" r="2"/><circle cx="335" cy="180" r="2"/>
+                  <circle cx="200" cy="262" r="2"/><circle cx="265" cy="269" r="2"/>
+                </g>
+              </svg>
+            </div>
+            <div class="hp-feat-copy">
+              <span class="hp-eyebrow">Proxies</span>
+              <h2 class="hp-h2">3M+ rotating proxies, <span class="hp-mark">billed by GB</span>.</h2>
+              <p class="hp-feat-body">Standalone HTTP/HTTPS proxies for direct use — residential and datacenter pools across 100+ countries. Country, state, and city targeting in the proxy username; sticky sessions on demand; unlimited concurrency. Bandwidth-priced, separate from API credits.</p>
+              <ul class="hp-checks">
+                <li class="hp-check"><svg class="hp-check-icon" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-9" stroke="#27ae60" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Residential &amp; datacenter pools</li>
+                <li class="hp-check"><svg class="hp-check-icon" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-9" stroke="#27ae60" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Country / state / city targeting via <code style="background:#fff5e0;padding:1px 6px;border-radius:4px;font-size:14px;">customer-USER-country-us</code></li>
+                <li class="hp-check"><svg class="hp-check-icon" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-9" stroke="#27ae60" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Sticky sessions, unlimited concurrency, billed by GB</li>
+              </ul>
+              <div class="hp-feat-links">
+                <a href="/residential-proxies" class="hp-feat-link">Residential proxies →</a>
+                <a href="/datacenter-proxies" class="hp-feat-link">Datacenter proxies →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="hp-feature hp-feature--alt">
+        <div class="hp-container">
+          <div class="hp-feat-grid hp-feat-grid--art-right">
+            <div class="hp-feat-copy">
+              <span class="hp-eyebrow">AI extraction</span>
+              <h2 class="hp-h2">Skip the parsing — get <span class="hp-mark">clean data</span>.</h2>
+              <p class="hp-feat-body">Describe what you need in plain English and get back JSON. Or grab the page as LLM-ready Markdown with one parameter. No CSS selectors, no XPath, no broken parsers when the site re-skins.</p>
+              <ul class="hp-checks">
+                <li class="hp-check"><svg class="hp-check-icon" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-9" stroke="#27ae60" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>HTML → JSON via natural-language prompt</li>
+                <li class="hp-check"><svg class="hp-check-icon" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-9" stroke="#27ae60" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>LLM-ready Markdown with one parameter</li>
+                <li class="hp-check"><svg class="hp-check-icon" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-9" stroke="#27ae60" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Per-field extraction rules</li>
+              </ul>
+              <div class="hp-feat-links">
+                <a href="/llm-ready-data-extraction" class="hp-feat-link">LLM-ready Markdown →</a>
+                <a href="/ai-data-scraper" class="hp-feat-link">AI data extractor →</a>
+              </div>
+            </div>
+            <div class="hp-feat-art">
+              <svg viewBox="0 0 460 360" xmlns="http://www.w3.org/2000/svg" aria-label="HTML transformed by AI into clean JSON">
+                <g transform="translate(40, 100)">
+                  <rect x="0" y="0" width="120" height="160" rx="12" fill="#fff" stroke="#1a1a1a" stroke-width="1.8"/>
+                  <rect x="0" y="0" width="120" height="26" rx="12" fill="#1a1a1a"/>
+                  <rect x="0" y="14" width="120" height="12" fill="#1a1a1a"/>
+                  <text x="60" y="18" text-anchor="middle" font-family="monospace" font-size="11" fill="#fff" font-weight="700">HTML</text>
+                  <text x="10" y="44" font-family="monospace" font-size="8" fill="#666">&lt;div class="p_4"&gt;</text>
+                  <text x="14" y="56" font-family="monospace" font-size="8" fill="#666">&lt;span&gt;$42&lt;/span&gt;</text>
+                  <text x="14" y="68" font-family="monospace" font-size="8" fill="#666">&lt;b&gt;In stock&lt;/b&gt;</text>
+                  <text x="10" y="80" font-family="monospace" font-size="8" fill="#666">&lt;/div&gt;</text>
+                  <text x="10" y="96" font-family="monospace" font-size="8" fill="#666">&lt;ul id="x_z9"&gt;</text>
+                  <text x="14" y="108" font-family="monospace" font-size="8" fill="#666">&lt;li&gt;Blue&lt;/li&gt;</text>
+                  <text x="14" y="120" font-family="monospace" font-size="8" fill="#666">&lt;li&gt;Red&lt;/li&gt;</text>
+                  <text x="10" y="132" font-family="monospace" font-size="8" fill="#666">&lt;/ul&gt;</text>
+                  <text x="10" y="148" font-family="monospace" font-size="8" fill="#666" opacity="0.5">...</text>
+                </g>
+                <g transform="translate(180, 177)">
+                  <path d="M 0 0 L 14 0 L 14 -7 L 28 3 L 14 13 L 14 6 L 0 6 Z" fill="#f5a623" stroke="#1a1a1a" stroke-width="1.5" stroke-linejoin="round"/>
+                </g>
+                <g transform="translate(255, 180)">
+                  <polygon points="0,-50 43,-25 43,25 0,50 -43,25 -43,-25" fill="#f5a623" stroke="#1a1a1a" stroke-width="2.2"/>
+                  <text x="0" y="6" text-anchor="middle" font-family="monospace" font-size="22" fill="#1a1a1a" font-weight="700">AI</text>
+                </g>
+                <g transform="translate(306, 177)">
+                  <path d="M 0 0 L 14 0 L 14 -7 L 28 3 L 14 13 L 14 6 L 0 6 Z" fill="#f5a623" stroke="#1a1a1a" stroke-width="1.5" stroke-linejoin="round"/>
+                </g>
+                <g transform="translate(348, 100)">
+                  <rect x="0" y="0" width="120" height="160" rx="12" fill="#1a1a1a"/>
+                  <text x="60" y="18" text-anchor="middle" font-family="monospace" font-size="11" fill="#ffd803" font-weight="700">JSON</text>
+                  <text x="14" y="46" font-family="monospace" font-size="9" fill="#ffd803" font-weight="700">{</text>
+                  <text x="22" y="62" font-family="monospace" font-size="9" fill="#fff">"price":</text>
+                  <text x="68" y="62" font-family="monospace" font-size="9" fill="#abe338">42</text>
+                  <text x="22" y="78" font-family="monospace" font-size="9" fill="#fff">"stock":</text>
+                  <text x="68" y="78" font-family="monospace" font-size="9" fill="#abe338">true</text>
+                  <text x="22" y="94" font-family="monospace" font-size="9" fill="#fff">"colors":</text>
+                  <text x="22" y="108" font-family="monospace" font-size="9" fill="#abe338">["Blue",</text>
+                  <text x="32" y="122" font-family="monospace" font-size="9" fill="#abe338">"Red"]</text>
+                  <text x="14" y="142" font-family="monospace" font-size="9" fill="#ffd803" font-weight="700">}</text>
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="hp-feature">
+        <div class="hp-container">
+          <div class="hp-feat-grid">
+            <div class="hp-feat-art">
+              <svg viewBox="0 0 460 360" xmlns="http://www.w3.org/2000/svg" aria-label="MCP server connecting Claude Code, Cursor, and Windsurf to ScrapingAnt">
+                <g transform="translate(50, 50)">
+                  <rect x="0" y="0" width="100" height="76" rx="10" fill="#1a1a1a"/>
+                  <rect x="6" y="6" width="88" height="64" rx="6" fill="#fff"/>
+                  <rect x="6" y="6" width="88" height="14" rx="6" fill="#f5f5f5"/>
+                  <circle cx="13" cy="13" r="2" fill="#ed6a5e"/>
+                  <circle cx="20" cy="13" r="2" fill="#f4be4f"/>
+                  <circle cx="27" cy="13" r="2" fill="#61c454"/>
+                  <text x="50" y="42" text-anchor="middle" font-family="monospace" font-size="9" fill="#1a1a1a" font-weight="700">Claude Code</text>
+                  <rect x="14" y="50" width="36" height="3" fill="#1a1a1a" opacity="0.4"/>
+                  <rect x="14" y="56" width="50" height="3" fill="#f5a623"/>
+                  <rect x="14" y="62" width="28" height="3" fill="#1a1a1a" opacity="0.3"/>
+                </g>
+                <g transform="translate(180, 50)">
+                  <rect x="0" y="0" width="100" height="76" rx="10" fill="#1a1a1a"/>
+                  <rect x="6" y="6" width="88" height="64" rx="6" fill="#fff"/>
+                  <rect x="6" y="6" width="88" height="14" rx="6" fill="#f5f5f5"/>
+                  <circle cx="13" cy="13" r="2" fill="#ed6a5e"/>
+                  <circle cx="20" cy="13" r="2" fill="#f4be4f"/>
+                  <circle cx="27" cy="13" r="2" fill="#61c454"/>
+                  <text x="50" y="42" text-anchor="middle" font-family="monospace" font-size="9" fill="#1a1a1a" font-weight="700">Cursor</text>
+                  <rect x="14" y="50" width="44" height="3" fill="#1a1a1a" opacity="0.4"/>
+                  <rect x="14" y="56" width="32" height="3" fill="#f5a623"/>
+                  <rect x="14" y="62" width="38" height="3" fill="#1a1a1a" opacity="0.3"/>
+                </g>
+                <g transform="translate(310, 50)">
+                  <rect x="0" y="0" width="100" height="76" rx="10" fill="#1a1a1a"/>
+                  <rect x="6" y="6" width="88" height="64" rx="6" fill="#fff"/>
+                  <rect x="6" y="6" width="88" height="14" rx="6" fill="#f5f5f5"/>
+                  <circle cx="13" cy="13" r="2" fill="#ed6a5e"/>
+                  <circle cx="20" cy="13" r="2" fill="#f4be4f"/>
+                  <circle cx="27" cy="13" r="2" fill="#61c454"/>
+                  <text x="50" y="42" text-anchor="middle" font-family="monospace" font-size="9" fill="#1a1a1a" font-weight="700">Windsurf</text>
+                  <rect x="14" y="50" width="40" height="3" fill="#1a1a1a" opacity="0.4"/>
+                  <rect x="14" y="56" width="48" height="3" fill="#f5a623"/>
+                  <rect x="14" y="62" width="24" height="3" fill="#1a1a1a" opacity="0.3"/>
+                </g>
+                <g stroke="#f5a623" stroke-width="2.5" fill="none" stroke-linecap="round">
+                  <path d="M 100 126 L 100 200 Q 100 230 230 240"/>
+                  <path d="M 230 126 L 230 240"/>
+                  <path d="M 360 126 L 360 200 Q 360 230 230 240"/>
+                </g>
+                <g font-family="monospace" font-size="10" fill="#1a1a1a" font-weight="700">
+                  <rect x="84" y="166" width="32" height="18" rx="9" fill="#fff" stroke="#f5a623" stroke-width="1.5"/>
+                  <text x="100" y="178" text-anchor="middle">MCP</text>
+                  <rect x="214" y="166" width="32" height="18" rx="9" fill="#fff" stroke="#f5a623" stroke-width="1.5"/>
+                  <text x="230" y="178" text-anchor="middle">MCP</text>
+                  <rect x="344" y="166" width="32" height="18" rx="9" fill="#fff" stroke="#f5a623" stroke-width="1.5"/>
+                  <text x="360" y="178" text-anchor="middle">MCP</text>
+                </g>
+                <g transform="translate(230, 270)">
+                  <rect x="-125" y="-30" width="250" height="60" rx="14" fill="#1a1a1a"/>
+                  <text x="0" y="3" text-anchor="middle" font-family="monospace" font-size="18" fill="#ffd803" font-weight="700">SCRAPINGANT</text>
+                  <text x="0" y="20" text-anchor="middle" font-family="monospace" font-size="9" fill="#fff" opacity="0.55">html · markdown · text</text>
+                </g>
+              </svg>
+            </div>
+            <div class="hp-feat-copy">
+              <span class="hp-eyebrow">MCP server</span>
+              <h2 class="hp-h2">Plug it straight into your <span class="hp-mark">AI agent</span>.</h2>
+              <p class="hp-feat-body">One MCP server, three tools (HTML, Markdown, text). Works in Claude Code, Cursor, Windsurf, and any other MCP-aware editor. Your agent reads the open web in 30 seconds.</p>
+              <code class="hp-cmd">claude mcp add scrapingant --transport http https://api.scrapingant.com/mcp -H "x-api-key: &lt;KEY&gt;"</code>
+              <a href="/mcp-server-web-scraping" class="hp-feat-link">Explore the MCP server →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="hp-usecases">
+        <div class="hp-container">
+          <h2 class="hp-usecases-h">Six ways teams use <span class="hp-mark-dark">ScrapingAnt</span>.</h2>
+          <p class="hp-usecases-sub">From real-estate price monitoring to AI agents reading the open web — one API does it all.</p>
+          <div class="hp-usecases-grid">
+            <a class="hp-uc-card" href="/price-scraping-api">
+              <div class="hp-uc-icon"><svg viewBox="0 0 20 20" fill="none"><path d="M3 17l5-7 4 4 5-9" stroke="#1a1a1a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <h3 class="hp-uc-h">Price monitoring</h3>
+              <p class="hp-uc-body">Track competitor pricing across thousands of SKUs in real time, with proxies that don't get blocked.</p>
+            </a>
+            <a class="hp-uc-card" href="/google-search-api">
+              <div class="hp-uc-icon"><svg viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="6" stroke="#1a1a1a" stroke-width="2.2"/><path d="M14 14l4 4" stroke="#1a1a1a" stroke-width="2.4" stroke-linecap="round"/></svg></div>
+              <h3 class="hp-uc-h">SERP &amp; search results</h3>
+              <p class="hp-uc-body">Scrape Google, Bing, and Yandex result pages with a single endpoint — JSON or raw HTML.</p>
+            </a>
+            <a class="hp-uc-card" href="/real-estate-scraping-api">
+              <div class="hp-uc-icon"><svg viewBox="0 0 20 20" fill="none"><path d="M3 9l7-5 7 5v8a1 1 0 01-1 1h-4v-5H8v5H4a1 1 0 01-1-1V9z" stroke="#1a1a1a" stroke-width="2" stroke-linejoin="round"/></svg></div>
+              <h3 class="hp-uc-h">Real estate &amp; classifieds</h3>
+              <p class="hp-uc-body">Pull listings, prices, and history from any portal — even when they hide behind JavaScript.</p>
+            </a>
+            <a class="hp-uc-card" href="/lead-generation-scraping-api">
+              <div class="hp-uc-icon"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3.2" stroke="#1a1a1a" stroke-width="2"/><path d="M3 17c1-3.5 4-5 7-5s6 1.5 7 5" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/></svg></div>
+              <h3 class="hp-uc-h">Lead generation</h3>
+              <p class="hp-uc-body">Build B2B contact lists from directories, professional networks, and company sites at scale.</p>
+            </a>
+            <a class="hp-uc-card" href="/mcp-server-web-scraping">
+              <div class="hp-uc-icon"><svg viewBox="0 0 20 20" fill="none"><path d="M5 3h10v14l-5-3-5 3V3z" stroke="#1a1a1a" stroke-width="2" stroke-linejoin="round"/><circle cx="10" cy="9" r="2.2" fill="#1a1a1a"/></svg></div>
+              <h3 class="hp-uc-h">AI agents on the web</h3>
+              <p class="hp-uc-body">Give your agent live web access via MCP or direct API — clean Markdown, ready for the LLM.</p>
+            </a>
+            <a class="hp-uc-card" href="/review-scraping-api">
+              <div class="hp-uc-icon"><svg viewBox="0 0 20 20" fill="none"><path d="M3 5h14v9H7l-4 4V5z" stroke="#1a1a1a" stroke-width="2" stroke-linejoin="round"/><circle cx="7" cy="9.5" r="1" fill="#1a1a1a"/><circle cx="11" cy="9.5" r="1" fill="#1a1a1a"/></svg></div>
+              <h3 class="hp-uc-h">Brand &amp; content monitoring</h3>
+              <p class="hp-uc-body">Watch reviews, news, and forums for mentions and sentiment shifts — across every region you care about.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      (function () {
+        var blocks = document.querySelectorAll('[data-hp-code]');
+        blocks.forEach(function (block) {
+          var tabs = block.querySelectorAll('.hp-code-tab');
+          var panes = block.querySelectorAll('.hp-code-pane');
+          tabs.forEach(function (tab) {
+            tab.addEventListener('click', function () {
+              var lang = tab.getAttribute('data-lang');
+              tabs.forEach(function (t) { t.classList.toggle('is-active', t === tab); });
+              panes.forEach(function (p) { p.classList.toggle('is-active', p.getAttribute('data-lang') === lang); });
+            });
+          });
+        });
+      })();
+    </script>
+    <div id="pricing" class="section bg-gray-1"><img src="/images/Doodle-4-White.svg" alt="" class="doodle-right-4"><img src="/images/Doodle-Left-1-White.svg" loading="lazy" alt="" class="doodle-right-bottom">
+      <style>
+        #pricing .pricing-scroll-hint { display: none; }
+        #pricing .pricing-fade-right { display: none; }
+        @media (max-width: 720px) {
+          #pricing .pricing-scroll-hint {
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+            font-size: 13px;
+            color: rgba(255,255,255,0.6);
+            animation: pricingSwipe 2.4s ease-in-out infinite;
+          }
+          #pricing .pricing-table-wrapper { min-width: 0 !important; margin-top: 10px !important; }
+          #pricing table { min-width: 620px !important; font-size: 13px !important; }
+          #pricing thead th, #pricing tbody td { padding: 12px 10px !important; }
+          #pricing thead th:first-child, #pricing tbody td:first-child { min-width: 150px !important; }
+          #pricing .plan-name { font-size: 17px !important; }
+          #pricing .plan-price { font-size: 26px !important; }
+          #pricing .pricing-fade-right {
+            display: block !important;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 40px;
+            background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.5));
+            pointer-events: none;
+            border-radius: 0 12px 12px 0;
+          }
+        }
+        @keyframes pricingSwipe {
+          0%, 100% { transform: translateX(0); }
+          50% { transform: translateX(6px); }
+        }
+      </style>
+      <div class="container restricted-pricing-container">
+        <div class="text-pill-wrapper">
+          <div class="text-pill bg-primary-4">
+            <h6>Pricing</h6>
+          </div>
+        </div>
+        <div class="section-title">
+          <h2 class="large-heading-a no-space-bottom">Industry leading pricing that scales with your business.</h2>
+          <div class="large-text" style="margin-top: 12px; color: rgba(255,255,255,0.7);">Compare plans side by side. Every tier includes 10,000 free credits to start.</div>
+        </div>
+        <!-- Swipe hint (mobile only) -->
+        <div class="pricing-scroll-hint"><span>&#128072;</span><span>Swipe to compare all 5 plans</span><span>&#128073;</span></div>
+        <!-- Comparison Table -->
+        <div class="pricing-table-wrapper" style="margin-top: 40px; position: relative; overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 12px; background: rgba(255,255,255,0.02);">
+          <div class="pricing-fade-right"></div>
+          <table style="width: 100%; min-width: 860px; border-collapse: separate; border-spacing: 0; color: #fff; font-size: 14px;">
+            <thead>
+              <tr>
+                <th style="padding: 28px 14px 20px; text-align: left; vertical-align: bottom; background: #1f1f1f; position: sticky; left: 0; z-index: 2; min-width: 200px; border-bottom: 1px solid rgba(255,255,255,0.08);">
+                  <div style="font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.1em;">Plans</div>
+                </th>
+                <th style="padding: 28px 14px 20px; text-align: center; vertical-align: bottom; background: transparent; border-bottom: 1px solid rgba(255,255,255,0.08);">
+                  <div class="plan-name" style="font-size: 20px; font-weight: 700; margin-bottom: 6px; white-space: nowrap;">Enthusiast</div>
+                  <div style="font-size: 13px; color: rgba(255,255,255,0.55); margin-bottom: 14px; white-space: nowrap;">100K credits / mo</div>
+                  <div class="plan-price" style="font-size: 34px; font-weight: 700; line-height: 1;">$19<span style="font-size: 14px; font-weight: 400; color: rgba(255,255,255,0.55);">/mo</span></div>
+                </th>
+                <th style="padding: 0 14px 20px; text-align: center; vertical-align: bottom; background: rgba(245,166,35,0.1); border-left: 2px solid #f5a623; border-right: 2px solid #f5a623; border-bottom: 1px solid rgba(255,255,255,0.08); position: relative;">
+                  <div style="background: #f5a623; color: #1a1a1a; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 6px 14px; border-radius: 0 0 8px 8px; display: inline-block; margin-bottom: 16px;">&#9733; Most Popular</div>
+                  <div class="plan-name" style="font-size: 20px; font-weight: 700; margin-bottom: 6px; color: #f5a623; white-space: nowrap;">Startup</div>
+                  <div style="font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 14px; white-space: nowrap;">500K credits / mo</div>
+                  <div class="plan-price" style="font-size: 34px; font-weight: 700; line-height: 1;">$49<span style="font-size: 14px; font-weight: 400; color: rgba(255,255,255,0.6);">/mo</span></div>
+                </th>
+                <th style="padding: 28px 14px 20px; text-align: center; vertical-align: bottom; background: transparent; border-bottom: 1px solid rgba(255,255,255,0.08);">
+                  <div class="plan-name" style="font-size: 20px; font-weight: 700; margin-bottom: 6px; white-space: nowrap;">Business</div>
+                  <div style="font-size: 13px; color: rgba(255,255,255,0.55); margin-bottom: 14px; white-space: nowrap;">3M credits / mo</div>
+                  <div class="plan-price" style="font-size: 34px; font-weight: 700; line-height: 1;">$249<span style="font-size: 14px; font-weight: 400; color: rgba(255,255,255,0.55);">/mo</span></div>
+                </th>
+                <th style="padding: 28px 14px 20px; text-align: center; vertical-align: bottom; background: transparent; border-bottom: 1px solid rgba(255,255,255,0.08);">
+                  <div class="plan-name" style="font-size: 20px; font-weight: 700; margin-bottom: 6px; white-space: nowrap;">Business Pro</div>
+                  <div style="font-size: 13px; color: rgba(255,255,255,0.55); margin-bottom: 14px; white-space: nowrap;">8M credits / mo</div>
+                  <div class="plan-price" style="font-size: 34px; font-weight: 700; line-height: 1;">$599<span style="font-size: 14px; font-weight: 400; color: rgba(255,255,255,0.55);">/mo</span></div>
+                </th>
+                <th style="padding: 28px 14px 20px; text-align: center; vertical-align: bottom; background: transparent; border-bottom: 1px solid rgba(255,255,255,0.08);">
+                  <div class="plan-name" style="font-size: 20px; font-weight: 700; margin-bottom: 6px; white-space: nowrap;">Custom</div>
+                  <div style="font-size: 13px; color: rgba(255,255,255,0.55); margin-bottom: 14px; white-space: nowrap;">10M+ credits / mo</div>
+                  <div class="plan-price" style="font-size: 34px; font-weight: 700; line-height: 1;">$699+<span style="font-size: 14px; font-weight: 400; color: rgba(255,255,255,0.55);">/mo</span></div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 14px 12px; font-weight: 600; background: #1f1f1f; position: sticky; left: 0; z-index: 1; color: #fff; border-bottom: 1px solid rgba(255,255,255,0.06);">Monthly API credits</td>
+                <td style="padding: 14px 12px; text-align: center; color: rgba(255,255,255,0.85); border-bottom: 1px solid rgba(255,255,255,0.06);">100,000</td>
+                <td style="padding: 14px 12px; text-align: center; font-weight: 700; color: #fff; background: rgba(245,166,35,0.08); border-left: 2px solid #f5a623; border-right: 2px solid #f5a623; border-bottom: 1px solid rgba(255,255,255,0.06);">500,000</td>
+                <td style="padding: 14px 12px; text-align: center; color: rgba(255,255,255,0.85); border-bottom: 1px solid rgba(255,255,255,0.06);">3,000,000</td>
+                <td style="padding: 14px 12px; text-align: center; color: rgba(255,255,255,0.85); border-bottom: 1px solid rgba(255,255,255,0.06);">8,000,000</td>
+                <td style="padding: 14px 12px; text-align: center; color: rgba(255,255,255,0.85); border-bottom: 1px solid rgba(255,255,255,0.06);">10M+</td>
+              </tr>
+              <tr>
+                <td style="padding: 14px 12px; font-weight: 600; background: #1f1f1f; position: sticky; left: 0; z-index: 1; color: #fff; border-bottom: 1px solid rgba(255,255,255,0.06);">Support channel</td>
+                <td style="padding: 14px 12px; text-align: center; color: rgba(255,255,255,0.85); border-bottom: 1px solid rgba(255,255,255,0.06);">Email</td>
+                <td style="padding: 14px 12px; text-align: center; color: #fff; background: rgba(245,166,35,0.08); border-left: 2px solid #f5a623; border-right: 2px solid #f5a623; border-bottom: 1px solid rgba(255,255,255,0.06);">Priority email</td>
+                <td style="padding: 14px 12px; text-align: center; color: rgba(255,255,255,0.85); border-bottom: 1px solid rgba(255,255,255,0.06);">Priority email</td>
+                <td style="padding: 14px 12px; text-align: center; color: rgba(255,255,255,0.85); border-bottom: 1px solid rgba(255,255,255,0.06);">Priority email</td>
+                <td style="padding: 14px 12px; text-align: center; color: rgba(255,255,255,0.85); border-bottom: 1px solid rgba(255,255,255,0.06);">Priority + dedicated</td>
+              </tr>
+              <tr>
+                <td style="padding: 14px 12px; font-weight: 600; background: #1f1f1f; position: sticky; left: 0; z-index: 1; color: #fff; border-bottom: 1px solid rgba(255,255,255,0.06);">Integration help</td>
+                <td style="padding: 14px 12px; text-align: center; color: rgba(255,255,255,0.85); border-bottom: 1px solid rgba(255,255,255,0.06);">Docs only</td>
+                <td style="padding: 14px 12px; text-align: center; color: #fff; background: rgba(245,166,35,0.08); border-left: 2px solid #f5a623; border-right: 2px solid #f5a623; border-bottom: 1px solid rgba(255,255,255,0.06);">Custom code snippets</td>
+                <td style="padding: 14px 12px; text-align: center; color: rgba(255,255,255,0.85); border-bottom: 1px solid rgba(255,255,255,0.06);">Debug sessions</td>
+                <td style="padding: 14px 12px; text-align: center; color: rgba(255,255,255,0.85); border-bottom: 1px solid rgba(255,255,255,0.06);">Priority debug sessions</td>
+                <td style="padding: 14px 12px; text-align: center; color: rgba(255,255,255,0.85); border-bottom: 1px solid rgba(255,255,255,0.06);">Full enterprise onboarding</td>
+              </tr>
+              <tr>
+                <td style="padding: 14px 12px; font-weight: 600; background: #1f1f1f; position: sticky; left: 0; z-index: 1; color: #fff; border-bottom: 1px solid rgba(255,255,255,0.06);">Expert assistance</td>
+                <td style="padding: 14px 12px; text-align: center; color: #666; border-bottom: 1px solid rgba(255,255,255,0.06);">&mdash;</td>
+                <td style="padding: 14px 12px; text-align: center; background: rgba(245,166,35,0.08); border-left: 2px solid #f5a623; border-right: 2px solid #f5a623; border-bottom: 1px solid rgba(255,255,255,0.06);"><img src="/images/check-small.svg" alt="included" style="width: 20px; height: 20px; filter: invert(62%) sepia(78%) saturate(1053%) hue-rotate(5deg) brightness(102%) contrast(96%);"></td>
+                <td style="padding: 14px 12px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.06);"><img src="/images/check-small.svg" alt="included" style="width: 20px; height: 20px; filter: brightness(0) invert(1);"></td>
+                <td style="padding: 14px 12px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.06);"><img src="/images/check-small.svg" alt="included" style="width: 20px; height: 20px; filter: brightness(0) invert(1);"></td>
+                <td style="padding: 14px 12px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.06);"><img src="/images/check-small.svg" alt="included" style="width: 20px; height: 20px; filter: brightness(0) invert(1);"></td>
+              </tr>
+              <tr>
+                <td style="padding: 14px 12px; font-weight: 600; background: #1f1f1f; position: sticky; left: 0; z-index: 1; color: #fff; border-bottom: 1px solid rgba(255,255,255,0.06);">Custom proxy pools</td>
+                <td style="padding: 14px 12px; text-align: center; color: #666; border-bottom: 1px solid rgba(255,255,255,0.06);">&mdash;</td>
+                <td style="padding: 14px 12px; text-align: center; color: #666; background: rgba(245,166,35,0.08); border-left: 2px solid #f5a623; border-right: 2px solid #f5a623; border-bottom: 1px solid rgba(255,255,255,0.06);">&mdash;</td>
+                <td style="padding: 14px 12px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.06);"><img src="/images/check-small.svg" alt="included" style="width: 20px; height: 20px; filter: brightness(0) invert(1);"></td>
+                <td style="padding: 14px 12px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.06);"><img src="/images/check-small.svg" alt="included" style="width: 20px; height: 20px; filter: brightness(0) invert(1);"></td>
+                <td style="padding: 14px 12px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.06);"><img src="/images/check-small.svg" alt="included" style="width: 20px; height: 20px; filter: brightness(0) invert(1);"></td>
+              </tr>
+              <tr>
+                <td style="padding: 14px 12px; font-weight: 600; background: #1f1f1f; position: sticky; left: 0; z-index: 1; color: #fff; border-bottom: 1px solid rgba(255,255,255,0.06);">Custom anti-bot avoidances</td>
+                <td style="padding: 14px 12px; text-align: center; color: #666; border-bottom: 1px solid rgba(255,255,255,0.06);">&mdash;</td>
+                <td style="padding: 14px 12px; text-align: center; color: #666; background: rgba(245,166,35,0.08); border-left: 2px solid #f5a623; border-right: 2px solid #f5a623; border-bottom: 1px solid rgba(255,255,255,0.06);">&mdash;</td>
+                <td style="padding: 14px 12px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.06);"><img src="/images/check-small.svg" alt="included" style="width: 20px; height: 20px; filter: brightness(0) invert(1);"></td>
+                <td style="padding: 14px 12px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.06);"><img src="/images/check-small.svg" alt="included" style="width: 20px; height: 20px; filter: brightness(0) invert(1);"></td>
+                <td style="padding: 14px 12px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.06);"><img src="/images/check-small.svg" alt="included" style="width: 20px; height: 20px; filter: brightness(0) invert(1);"></td>
+              </tr>
+              <tr>
+                <td style="padding: 14px 12px; font-weight: 600; background: #1f1f1f; position: sticky; left: 0; z-index: 1; color: #fff; border-bottom: 1px solid rgba(255,255,255,0.06);">Dedicated account manager</td>
+                <td style="padding: 14px 12px; text-align: center; color: #666; border-bottom: 1px solid rgba(255,255,255,0.06);">&mdash;</td>
+                <td style="padding: 14px 12px; text-align: center; color: #666; background: rgba(245,166,35,0.08); border-left: 2px solid #f5a623; border-right: 2px solid #f5a623; border-bottom: 1px solid rgba(255,255,255,0.06);">&mdash;</td>
+                <td style="padding: 14px 12px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.06);"><img src="/images/check-small.svg" alt="included" style="width: 20px; height: 20px; filter: brightness(0) invert(1);"></td>
+                <td style="padding: 14px 12px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.06);"><img src="/images/check-small.svg" alt="included" style="width: 20px; height: 20px; filter: brightness(0) invert(1);"></td>
+                <td style="padding: 14px 12px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.06);"><img src="/images/check-small.svg" alt="included" style="width: 20px; height: 20px; filter: brightness(0) invert(1);"></td>
+              </tr>
+              <tr>
+                <td style="padding: 24px 12px; background: #1f1f1f; position: sticky; left: 0; z-index: 1;"></td>
+                <td style="padding: 24px 12px; text-align: center;">
+                  <a href="https://app.scrapingant.com/signup" style="display: inline-block; box-sizing: border-box; background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.35); padding: 12px 22px; border-radius: 8px; font-weight: 600; font-size: 14px; line-height: 1.2; white-space: nowrap; text-decoration: none;">Start Free</a>
+                </td>
+                <td style="padding: 24px 12px; text-align: center; background: rgba(245,166,35,0.08); border-left: 2px solid #f5a623; border-right: 2px solid #f5a623; border-bottom: 2px solid #f5a623;">
+                  <a href="https://app.scrapingant.com/signup" style="display: inline-block; box-sizing: border-box; background: #f5a623; color: #1a1a1a; border: 1px solid #f5a623; padding: 12px 22px; border-radius: 8px; font-weight: 700; font-size: 14px; line-height: 1.2; white-space: nowrap; text-decoration: none; box-shadow: 0 4px 14px rgba(245,166,35,0.35);">Start Free &rarr;</a>
+                </td>
+                <td style="padding: 24px 12px; text-align: center;">
+                  <a href="https://app.scrapingant.com/signup" style="display: inline-block; box-sizing: border-box; background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.35); padding: 12px 22px; border-radius: 8px; font-weight: 600; font-size: 14px; line-height: 1.2; white-space: nowrap; text-decoration: none;">Start Free</a>
+                </td>
+                <td style="padding: 24px 12px; text-align: center;">
+                  <a href="https://app.scrapingant.com/signup" style="display: inline-block; box-sizing: border-box; background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.35); padding: 12px 22px; border-radius: 8px; font-weight: 600; font-size: 14px; line-height: 1.2; white-space: nowrap; text-decoration: none;">Start Free</a>
+                </td>
+                <td style="padding: 24px 12px; text-align: center;">
+                  <a href="#contact" style="display: inline-block; box-sizing: border-box; background: #fff; color: #1a1a1a; border: 1px solid #fff; padding: 12px 22px; border-radius: 8px; font-weight: 700; font-size: 14px; line-height: 1.2; white-space: nowrap; text-decoration: none;">Talk to Sales</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Overage reassurance -->
+        <div style="margin-top: 28px; max-width: 720px; margin-left: auto; margin-right: auto; background: linear-gradient(135deg, rgba(245,166,35,0.12), rgba(245,166,35,0.04)); border: 1px solid rgba(245,166,35,0.35); border-radius: 12px; padding: 18px 22px; display: flex; align-items: center; gap: 16px;">
+          <div style="font-size: 28px; line-height: 1; flex-shrink: 0;">&#9889;</div>
+          <div style="color: rgba(255,255,255,0.9); font-size: 14px; line-height: 1.55;">
+            <div style="color: #f5a623; font-weight: 700; margin-bottom: 2px;">Hit your limit mid-month?</div>
+            Restart your plan instantly &mdash; no waiting for the next billing cycle. Credits refresh the moment you pay, so scraping never has to stop.
+          </div>
+        </div>
+        <!-- Trust strip -->
+        <div style="margin-top: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;">
+          <div style="background: rgba(255,255,255,0.06); padding: 10px 18px; border-radius: 999px; color: rgba(255,255,255,0.9); font-size: 14px;"><span style="color: #27ae60; font-weight: 700; margin-right: 6px;">&#10003;</span>10,000 free credits every month</div>
+          <div style="background: rgba(255,255,255,0.06); padding: 10px 18px; border-radius: 999px; color: rgba(255,255,255,0.9); font-size: 14px;"><span style="color: #27ae60; font-weight: 700; margin-right: 6px;">&#10003;</span>No credit card required</div>
+          <div style="background: rgba(255,255,255,0.06); padding: 10px 18px; border-radius: 999px; color: rgba(255,255,255,0.9); font-size: 14px;"><span style="color: #27ae60; font-weight: 700; margin-right: 6px;">&#10003;</span>Pay only for successful scrapes &mdash; failed requests cost 0</div>
+        </div>
+      </div>
+    </div>
+    <style>
+      .hp-reviews { padding: 96px 0 110px; background: #fafaf7; }
+      .hp-reviews-head { text-align: center; max-width: 720px; margin: 0 auto 56px; }
+      .hp-reviews-eyebrow { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 1.5px; color: #f5a623; font-weight: 700; text-transform: uppercase; margin-bottom: 14px; }
+      .hp-reviews-h { font-family: 'IBM Plex Mono', monospace; font-size: 38px; line-height: 1.15; color: #1a1a1a; margin: 0 0 14px; font-weight: 700; letter-spacing: -0.6px; }
+      .hp-reviews-h .hp-mark { background: linear-gradient(180deg, transparent 62%, #ffd803 62%, #ffd803 92%, transparent 92%); padding: 0 4px; }
+      .hp-reviews-sub { font-family: 'IBM Plex Mono', monospace; font-size: 16px; color: #666; line-height: 1.55; margin: 0 0 22px; }
+      .hp-reviews-capterra { display: inline-flex; align-items: center; gap: 10px; background: #fff; border: 1px solid #ececec; padding: 8px 14px; border-radius: 999px; text-decoration: none; box-shadow: 0 2px 6px rgba(0,0,0,0.04); transition: transform 0.15s, box-shadow 0.15s; font-family: 'IBM Plex Mono', monospace; }
+      .hp-reviews-capterra:hover { transform: translateY(-1px); box-shadow: 0 6px 14px rgba(0,0,0,0.08); }
+      .hp-reviews-capterra .hp-capterra-stars { color: #f5a623; font-size: 14px; letter-spacing: 1px; }
+      .hp-reviews-capterra .hp-capterra-text { font-size: 13px; color: #1a1a1a; font-weight: 600; }
+      .hp-reviews-capterra .hp-capterra-text strong { font-weight: 700; }
+      .hp-reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+      .hp-review { background: #fff; border: 1px solid #ececec; border-radius: 14px; padding: 26px 24px 22px; margin: 0; display: flex; flex-direction: column; gap: 16px; transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s; font-family: 'IBM Plex Mono', monospace; }
+      .hp-review:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.05); border-color: #f5a623; }
+      .hp-review-stars { color: #f5a623; font-size: 15px; letter-spacing: 3px; }
+      .hp-review-text { font-size: 14.5px; line-height: 1.6; color: #333; flex: 1; margin: 0; font-style: italic; font-family: 'IBM Plex Mono', monospace; }
+      .hp-review-text strong { color: #1a1a1a; font-weight: 700; font-style: normal; }
+      .hp-review-author { display: flex; align-items: center; gap: 12px; padding-top: 14px; border-top: 1px solid #f0f0f0; }
+      .hp-review-author img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+      .hp-review-author-name { font-size: 14px; color: #1a1a1a; font-weight: 700; line-height: 1.3; }
+      .hp-review-author-role { font-size: 12px; color: #777; line-height: 1.3; margin-top: 2px; }
+      @media (max-width: 1024px) {
+        .hp-reviews-h { font-size: 30px; }
+        .hp-reviews-grid { grid-template-columns: repeat(2, 1fr); }
+        .hp-review:nth-child(3) { grid-column: 1 / -1; max-width: 540px; margin: 0 auto; }
+      }
+      @media (max-width: 640px) {
+        .hp-reviews { padding: 64px 0 72px; }
+        .hp-reviews-h { font-size: 26px; }
+        .hp-reviews-grid { grid-template-columns: 1fr; }
+        .hp-review:nth-child(3) { max-width: none; }
+      }
+    </style>
+    <section id="reviews" class="hp-reviews">
+      <div class="hp-container">
+        <div class="hp-reviews-head">
+          <span class="hp-reviews-eyebrow">Customers</span>
+          <h2 class="hp-reviews-h">What teams are <span class="hp-mark">saying</span>.</h2>
+          <p class="hp-reviews-sub">From solo developers shipping side projects to enterprise pipelines at Fortune 500s.</p>
+          <a href="https://www.capterra.com/p/214735/ScrapingAnt/reviews/" target="_blank" rel="noopener" class="hp-reviews-capterra">
+            <span class="hp-capterra-stars">★★★★★</span>
+            <span class="hp-capterra-text"><strong>5.0</strong> on Capterra →</span>
+          </a>
+        </div>
+        <div class="hp-reviews-grid">
+          <blockquote class="hp-review">
+            <div class="hp-review-stars">★★★★★</div>
+            <p class="hp-review-text">“Onboarding and API integration was smooth and clear. Everything works great. The support was excellent. <strong>Overall a great scraper.</strong>”</p>
+            <div class="hp-review-author">
+              <img src="/images/5521ce5758e089d7d7f5d226a2e995c3.jpg" alt="" loading="lazy">
+              <div>
+                <div class="hp-review-author-name">Illia K.</div>
+                <div class="hp-review-author-role">Android Software Developer</div>
+              </div>
+            </div>
+          </blockquote>
+          <blockquote class="hp-review">
+            <div class="hp-review-stars">★★★★★</div>
+            <p class="hp-review-text">“Great communication with co-founders helped me to get the job done. <strong>Great proxy diversity</strong> and good price.”</p>
+            <div class="hp-review-author">
+              <img src="/images/e57164aafb18d9a888776c96cf159368.jpg" alt="" loading="lazy">
+              <div>
+                <div class="hp-review-author-name">Andrii M.</div>
+                <div class="hp-review-author-role">Senior Software Engineer</div>
+              </div>
+            </div>
+          </blockquote>
+          <blockquote class="hp-review">
+            <div class="hp-review-stars">★★★★★</div>
+            <p class="hp-review-text">“This product <strong>helps me to scale and extend my business</strong>. The API is easy to integrate and support is really good.”</p>
+            <div class="hp-review-author">
+              <img src="/images/Dmytro-T..jpg" alt="" loading="lazy">
+              <div>
+                <div class="hp-review-author-name">Dmytro T.</div>
+                <div class="hp-review-author-role">Senior Software Engineer</div>
+              </div>
+            </div>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+    <style>
+      /* FAQ */
+      .hp-faq { padding: 96px 0 110px; background: #fff; font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace; }
+      .hp-faq-grid { display: grid; grid-template-columns: 0.85fr 1.5fr; gap: 64px; align-items: start; }
+      .hp-faq-eyebrow { display: inline-block; font-size: 12px; letter-spacing: 1.5px; color: #f5a623; font-weight: 700; text-transform: uppercase; margin-bottom: 14px; }
+      .hp-faq-h { font-size: 38px; line-height: 1.15; color: #1a1a1a; margin: 0 0 18px; font-weight: 700; letter-spacing: -0.6px; }
+      .hp-faq-h .hp-mark { background: linear-gradient(180deg, transparent 62%, #ffd803 62%, #ffd803 92%, transparent 92%); padding: 0 4px; }
+      .hp-faq-sub { font-size: 15.5px; color: #555; line-height: 1.6; margin: 0; }
+      .hp-faq-sub a { color: #1a1a1a; text-decoration: none; border-bottom: 2px solid #ffd803; padding-bottom: 1px; font-weight: 600; }
+      .hp-faq-sub a:hover { color: #f5a623; }
+      .hp-faq-list { display: flex; flex-direction: column; }
+      .hp-faq-list details { border-top: 1px solid #ececec; }
+      .hp-faq-list details:last-child { border-bottom: 1px solid #ececec; }
+      .hp-faq-list summary { cursor: pointer; padding: 22px 4px; font-size: 17px; font-weight: 600; color: #1a1a1a; display: flex; justify-content: space-between; align-items: center; gap: 16px; list-style: none; transition: color 0.15s; }
+      .hp-faq-list summary::-webkit-details-marker { display: none; }
+      .hp-faq-list summary::after { content: '+'; flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: #fff5e0; color: #f5a623; font-size: 22px; font-weight: 700; display: flex; align-items: center; justify-content: center; transition: transform 0.2s, background 0.2s; line-height: 1; }
+      .hp-faq-list summary:hover { color: #f5a623; }
+      .hp-faq-list details[open] > summary { color: #f5a623; }
+      .hp-faq-list details[open] > summary::after { transform: rotate(45deg); background: #f5a623; color: #fff; }
+      .hp-faq-answer { padding: 0 4px 22px; color: #444; line-height: 1.65; font-size: 15px; }
+      .hp-faq-answer a { color: #1a1a1a; text-decoration: none; border-bottom: 1.5px solid #ffd803; padding-bottom: 1px; font-weight: 600; }
+      .hp-faq-answer a:hover { color: #f5a623; }
+
+      /* Contact */
+      .hp-contact { padding: 96px 0 110px; background: #1a1a1a; color: #fff; font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace; }
+      .hp-contact-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 64px; align-items: center; }
+      .hp-contact-eyebrow { display: inline-block; font-size: 12px; letter-spacing: 1.5px; color: #f5a623; font-weight: 700; text-transform: uppercase; margin-bottom: 14px; }
+      .hp-contact-h { font-size: 36px; line-height: 1.15; color: #fff; margin: 0 0 18px; font-weight: 700; letter-spacing: -0.6px; }
+      .hp-contact-h .hp-mark { background: linear-gradient(180deg, transparent 62%, #f5a623 62%, #f5a623 92%, transparent 92%); padding: 0 4px; }
+      .hp-contact-body { font-size: 16px; color: rgba(255,255,255,0.7); line-height: 1.6; margin: 0 0 26px; }
+      .hp-contact-quote { background: rgba(255,255,255,0.04); border-left: 3px solid #f5a623; border-radius: 8px; padding: 18px 20px; margin-bottom: 22px; }
+      .hp-contact-quote p { font-size: 15px; line-height: 1.55; color: rgba(255,255,255,0.85); margin: 0 0 10px; font-style: italic; }
+      .hp-contact-author { display: flex; align-items: center; gap: 12px; }
+      .hp-contact-author img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+      .hp-contact-author-name { font-size: 14px; color: #fff; font-weight: 700; line-height: 1.3; font-style: normal; }
+      .hp-contact-author-role { font-size: 12px; color: rgba(255,255,255,0.55); line-height: 1.3; margin-top: 2px; }
+      .hp-contact-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 30px; }
+      .hp-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+      .hp-form-row--single { grid-template-columns: 1fr; }
+      .hp-form-input { width: 100%; padding: 12px 14px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; color: #fff; font-family: inherit; font-size: 14.5px; transition: border-color 0.15s, background 0.15s; box-sizing: border-box; }
+      .hp-form-input:focus { outline: none; border-color: #f5a623; background: rgba(255,255,255,0.08); }
+      .hp-form-input::placeholder { color: rgba(255,255,255,0.4); }
+      textarea.hp-form-input { resize: vertical; min-height: 96px; font-family: inherit; }
+      .hp-form-submit { width: 100%; padding: 14px 22px; background: #f5a623; color: #1a1a1a; border: 0; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 15px; transition: transform 0.15s, background 0.15s; font-family: inherit; margin-top: 4px; }
+      .hp-form-submit:hover { transform: translateY(-1px); background: #ffb937; }
+      .hp-form-note { font-size: 12px; color: rgba(255,255,255,0.5); margin: 12px 0 0; text-align: center; }
+      .hp-form-success, .hp-form-error { display: none; padding: 14px 16px; border-radius: 8px; margin-top: 12px; font-size: 14px; }
+      .w-form-done .hp-form-success { display: block; background: rgba(39,174,96,0.15); color: #abe338; border: 1px solid rgba(39,174,96,0.3); }
+      .w-form-fail .hp-form-error { display: block; background: rgba(231,76,60,0.15); color: #ff8a7a; border: 1px solid rgba(231,76,60,0.3); }
+
+      @media (max-width: 900px) {
+        .hp-faq { padding: 64px 0 72px; }
+        .hp-faq-grid { grid-template-columns: 1fr; gap: 28px; }
+        .hp-faq-h { font-size: 28px; }
+        .hp-contact { padding: 64px 0 72px; }
+        .hp-contact-grid { grid-template-columns: 1fr; gap: 36px; }
+        .hp-contact-h { font-size: 28px; }
+        .hp-contact-card { padding: 22px; }
+        .hp-form-row { grid-template-columns: 1fr; }
+      }
+    </style>
+    <section class="hp-faq" id="faq">
+      <div class="hp-container">
+        <div class="hp-faq-grid">
+          <div class="hp-faq-side">
+            <span class="hp-faq-eyebrow">FAQ</span>
+            <h2 class="hp-faq-h">Frequently asked <span class="hp-mark">questions</span>.</h2>
+            <p class="hp-faq-sub">Still curious? <a href="#contact">Get in touch</a> with our team — we usually reply within hours.</p>
+          </div>
+          <div class="hp-faq-list">
+            <details>
+              <summary>What is ScrapingAnt?</summary>
+              <div class="hp-faq-answer">
+                <p>ScrapingAnt is a web data infrastructure platform — a single API that gives you headless Chrome rendering, 3M+ rotating proxies, parallel concurrency, and AI-powered extraction. We handle the messy parts (CAPTCHA avoidance, IP rotation, anti-bot fingerprinting) so your code stays clean.</p>
+                <p>We also offer custom scraping engagements for teams that need a managed solution rather than building one in-house.</p>
+              </div>
+            </details>
+            <details>
+              <summary>What is an API credit?</summary>
+              <div class="hp-faq-answer">
+                <p>Each subscription includes a monthly pool of API credits. Most requests cost between 1 and 25 credits depending on the options you enable (proxy type, JavaScript rendering, etc.). The default request — Chrome rendering with standard proxies — costs 10 credits. <a href="https://docs.scrapingant.com/api-credits-usage" target="_blank" rel="noopener">See the full cost breakdown →</a></p>
+              </div>
+            </details>
+            <details>
+              <summary>I'm not a developer — can you build a scraper for me?</summary>
+              <div class="hp-faq-answer">
+                <p>Yes. We regularly build custom scraping pipelines for clients who'd rather buy than build. We also partner with development agencies, so projects of any size are covered. <a href="#contact">Tell us what you need</a> and we'll scope it.</p>
+              </div>
+            </details>
+            <details>
+              <summary>Do I need a credit card to start the free trial?</summary>
+              <div class="hp-faq-answer">
+                <p>No. The free plan includes 10,000 API credits every month with no credit card required. You only enter payment details if you upgrade.</p>
+              </div>
+            </details>
+            <details>
+              <summary>How does the MCP server work?</summary>
+              <div class="hp-faq-answer">
+                <p>One install command in Claude Code, Cursor, or Windsurf adds three tools your agent can call: <code style="background:#fff5e0;padding:1px 6px;border-radius:4px;font-size:13px;">get_web_page_html</code>, <code style="background:#fff5e0;padding:1px 6px;border-radius:4px;font-size:13px;">get_web_page_markdown</code>, and <code style="background:#fff5e0;padding:1px 6px;border-radius:4px;font-size:13px;">get_web_page_text</code>. The agent uses your ScrapingAnt API credits, so the same plan covers both direct API calls and MCP usage. <a href="/mcp-server-web-scraping">See the MCP guide →</a></p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+</div> <section class="hp-contact" id="contact"> <div class="hp-container"> <div class="hp-contact-grid"> <div class="hp-contact-copy"> <span class="hp-contact-eyebrow">Talk to us</span> <h2 class="hp-contact-h">Need a <span class="hp-mark">custom plan</span>?</h2> <p class="hp-contact-body">High-volume crawls, dedicated proxy pools, custom datasets, or specific anti-bot tuning — drop us a line and a real human gets back within a few hours.</p> <blockquote class="hp-contact-quote"> <p>“Our clients are pleasantly surprised by the response speed of our team.”</p> <div class="hp-contact-author"> <img src="/images/oleg-cartoon-image.jpg" alt="" loading="lazy"> <div> <div class="hp-contact-author-name">Oleg Kulyk</div> <div class="hp-contact-author-role">Founder, ScrapingAnt</div> </div> </div> </blockquote> </div> <div class="hp-contact-card w-form"> <form id="wf-form-contact-us" name="wf-form-contact-us" data-name="contact-us" action="https://app.scrapingant.com/external/contact_us" method="post"> <div class="hp-form-row"> <input class="hp-form-input" maxlength="256" name="first_name" placeholder="First name" type="text" required> <input class="hp-form-input" maxlength="256" name="last_name" placeholder="Last name" type="text" required> </div> <div class="hp-form-row"> <input class="hp-form-input" maxlength="256" name="company" placeholder="Company" type="text" required> <input class="hp-form-input" maxlength="256" name="email" placeholder="Work email" type="email" required> </div> <div class="hp-form-row hp-form-row--single"> <textarea class="hp-form-input" maxlength="2000" name="message" placeholder="What are you trying to scrape? Volume, target sites, timeline if you have one." required></textarea> </div> <input type="hidden" name="type" value="contact-us"> <div data-sitekey="6LekbYgiAAAAAB8-nQKo9jjBcDsyYJcnteyK9tVd" class="w-form-formrecaptcha g-recaptcha" style="margin: 12px 0;"></div> <input type="submit" data-wait="Sending..." class="hp-form-submit" value="Talk to sales"> <p class="hp-form-note">A real human replies within a few hours · we don&#39;t share your email</p> </form> <div class="w-form-done"> <div class="hp-form-success">Thanks — we'll be in touch shortly.</div> </div> <div class="w-form-fail"> <div class="hp-form-error">Something went wrong submitting the form. Please try again or email us directly.</div> </div> </div> </div> </div> </section>  <script>
+  (function () {
+    const form = document.getElementById('wf-form-contact-us');
+    if (!form || form.dataset.hpBound) return;
+    form.dataset.hpBound = '1';
+    const card = form.closest('.hp-contact-card');
+    const done = card && card.querySelector('.w-form-done');
+    const fail = card && card.querySelector('.w-form-fail');
+
+    // user_source is set by /js/first-traffic-source.js as a cookie scoped to .scrapingant.com.
+    // On localhost (or first visit before the script ran) the cookie won't be present, so we
+    // compute the same value inline as a fallback so the API never sees a missing field.
+    function readCookie(name) {
+      const eq = name + '=';
+      const parts = document.cookie ? document.cookie.split(';') : [];
+      for (let i = 0; i < parts.length; i++) {
+        const c = parts[i].replace(/^\s+/, '');
+        if (c.indexOf(eq) === 0) return c.substring(eq.length);
+      }
+      return null;
+    }
+    function computeUserSource() {
+      const utmMedium = new URLSearchParams(window.location.search).get('medium');
+      if (utmMedium) {
+        if (utmMedium.indexOf('cpc') !== -1 || utmMedium.indexOf('ppc') !== -1) return 'paid';
+        if (utmMedium.indexOf('referral') !== -1) return 'referral';
+        return 'organic';
+      }
+      const ref = document.referrer || '';
+      if (ref) {
+        if (ref.indexOf('google') !== -1 || ref.indexOf('bing') !== -1 || ref.indexOf('yahoo') !== -1) return 'organic';
+        return 'referral';
+      }
+      return 'direct';
+    }
+    function readUserSource() {
+      return readCookie('user_source') || computeUserSource();
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = form.querySelector('input[type="submit"]');
+      const originalLabel = submitBtn ? submitBtn.value : '';
+      if (submitBtn) {
+        submitBtn.value = submitBtn.dataset.wait || 'Sending...';
+        submitBtn.disabled = true;
+      }
+
+      try {
+        // API at app.scrapingant.com/external/contact_us expects a JSON object,
+        // not multipart form-data, and requires a top-level user_source field.
+        const data = Object.fromEntries(new FormData(form).entries());
+        data.user_source = readUserSource();
+        const resp = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+        if (!resp.ok) throw new Error('Bad response: ' + resp.status);
+        if (card) card.classList.add('hp-submitted');
+        if (done) done.classList.add('hp-show');
+        if (fail) fail.classList.remove('hp-show');
+      } catch (err) {
+        if (fail) fail.classList.add('hp-show');
+        if (done) done.classList.remove('hp-show');
+        if (submitBtn) {
+          submitBtn.value = originalLabel;
+          submitBtn.disabled = false;
+        }
+      }
+    });
+  })();
+</script> <script>
+    (function () {
+      var blocks = document.querySelectorAll('[data-hp-code]');
+      blocks.forEach(function (block) {
+        var tabs = block.querySelectorAll('.hp-code-tab');
+        var panes = block.querySelectorAll('.hp-code-pane');
+        tabs.forEach(function (tab) {
+          tab.addEventListener('click', function () {
+            var lang = tab.getAttribute('data-lang');
+            tabs.forEach(function (t) { t.classList.toggle('is-active', t === tab); });
+            panes.forEach(function (p) { p.classList.toggle('is-active', p.getAttribute('data-lang') === lang); });
+          });
+        });
+      });
+    })();
+  </script>  </main> <section class="hp-finalcta" data-astro-cid-66itwakk> <div class="hp-container" data-astro-cid-66itwakk> <div class="hp-finalcta-inner" data-astro-cid-66itwakk> <h2 class="hp-finalcta-h" data-astro-cid-66itwakk>Ready to scrape <span class="hp-mark">the web</span>?</h2> <p class="hp-finalcta-sub" data-astro-cid-66itwakk>10,000 free credits every month. No credit card. Pay only for successful requests.</p> <div class="hp-finalcta-row" data-astro-cid-66itwakk> <a class="hp-btn hp-btn-primary" href="https://app.scrapingant.com/signup" data-astro-cid-66itwakk>Get 10,000 free credits</a> <a class="hp-btn hp-btn-secondary" href="/#contact" data-astro-cid-66itwakk>Talk to sales</a> </div> <p class="hp-finalcta-note" data-astro-cid-66itwakk>Sign up in under 30 seconds — no card, no commitment.</p> </div> </div> </section> <footer class="hp-footer" data-astro-cid-sz7xmlte> <div class="hp-container" data-astro-cid-sz7xmlte> <div class="hp-footer-grid" data-astro-cid-sz7xmlte> <div class="hp-footer-brand" data-astro-cid-sz7xmlte> <a href="/" class="hp-footer-logo" data-astro-cid-sz7xmlte>scraping<span data-astro-cid-sz7xmlte>ant</span></a> <p class="hp-footer-tagline" data-astro-cid-sz7xmlte>Web data infrastructure for builders. Headless Chrome, 3M+ rotating proxies, parallel concurrency, and AI extraction — behind one API.</p> <div class="hp-footer-socials" data-astro-cid-sz7xmlte> <a href="https://github.com/ScrapingAnt" target="_blank" rel="noopener" aria-label="GitHub" data-astro-cid-sz7xmlte><svg viewBox="0 0 16 16" aria-hidden="true" data-astro-cid-sz7xmlte><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z" data-astro-cid-sz7xmlte></path></svg></a> <a href="https://linkedin.com/company/scrapingant" target="_blank" rel="noopener" aria-label="LinkedIn" data-astro-cid-sz7xmlte><svg viewBox="0 0 16 16" aria-hidden="true" data-astro-cid-sz7xmlte><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6.001h2.276v1.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.19zM3.558 4.96a1.376 1.376 0 1 1-.001-2.751 1.376 1.376 0 0 1 0 2.751zm1.187 8.675h-2.37V6.001h2.37v7.634zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0h.001z" data-astro-cid-sz7xmlte></path></svg></a> <a href="https://twitter.com/ScrapingAnt" target="_blank" rel="noopener" aria-label="X / Twitter" data-astro-cid-sz7xmlte><svg viewBox="0 0 16 16" aria-hidden="true" data-astro-cid-sz7xmlte><path d="M12.6 1.5h2.45L9.7 7.61 16 15.5h-4.93l-3.86-5-4.42 5H.34l5.71-6.53L0 1.5h5.05l3.49 4.6L12.6 1.5zm-.86 12.55h1.36L4.32 2.88H2.86l8.88 11.17z" data-astro-cid-sz7xmlte></path></svg></a> <a href="https://www.facebook.com/scrapingant" target="_blank" rel="noopener" aria-label="Facebook" data-astro-cid-sz7xmlte><svg viewBox="0 0 16 16" aria-hidden="true" data-astro-cid-sz7xmlte><path d="M16 8.05C16 3.6 12.42 0 8 0S0 3.6 0 8.05c0 4.02 2.93 7.35 6.75 7.95v-5.62H4.72V8.05h2.03V6.28c0-2.01 1.2-3.12 3.02-3.12.87 0 1.79.16 1.79.16v1.97h-1.01c-.99 0-1.3.62-1.3 1.26v1.5h2.22l-.36 2.33h-1.86V16C13.07 15.4 16 12.07 16 8.05z" data-astro-cid-sz7xmlte></path></svg></a> </div> </div> <div class="hp-footer-col" data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>Product</h4> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/javascript-rendering-web-scraping-api" data-astro-cid-sz7xmlte>Web Scraping API</a></li> <li data-astro-cid-sz7xmlte><a href="/llm-ready-data-extraction" data-astro-cid-sz7xmlte>LLM-ready Markdown</a></li> <li data-astro-cid-sz7xmlte><a href="/ai-data-scraper" data-astro-cid-sz7xmlte>AI Data Scraper</a></li> <li data-astro-cid-sz7xmlte><a href="/mcp-server-web-scraping" data-astro-cid-sz7xmlte>MCP Server</a></li> <li data-astro-cid-sz7xmlte><a href="/custom-scraping-solution" data-astro-cid-sz7xmlte>Custom Datasets</a></li> <li data-astro-cid-sz7xmlte><a href="/#pricing" data-astro-cid-sz7xmlte>Pricing</a></li> </ul> </div> <div class="hp-footer-col" data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>Proxies</h4> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/residential-proxies" data-astro-cid-sz7xmlte>Residential Proxies</a></li> <li data-astro-cid-sz7xmlte><a href="/datacenter-proxies" data-astro-cid-sz7xmlte>Datacenter Proxies</a></li> </ul> </div> <div class="hp-footer-col" data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>Resources</h4> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="https://docs.scrapingant.com/" target="_blank" rel="noopener" data-astro-cid-sz7xmlte>Documentation</a></li> <li data-astro-cid-sz7xmlte><a href="https://scrapingant.com/blog/" data-astro-cid-sz7xmlte>Blog</a></li> <li data-astro-cid-sz7xmlte><a href="https://docs.scrapingant.com/web-scraping-101/what-is-web-scraping" target="_blank" rel="noopener" data-astro-cid-sz7xmlte>Web Scraping 101</a></li> <li data-astro-cid-sz7xmlte><a href="https://scrapingant.com/legal/affiliate/" data-astro-cid-sz7xmlte>Affiliate Program</a></li> <li data-astro-cid-sz7xmlte><a href="https://www.capterra.com/p/214735/ScrapingAnt/reviews/" target="_blank" rel="noopener" data-astro-cid-sz7xmlte>Capterra Reviews</a></li> </ul> </div> <div class="hp-footer-col" data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>Better with</h4> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/playwright-alternative-web-scraping-api" data-astro-cid-sz7xmlte>Playwright Alternative</a></li> <li data-astro-cid-sz7xmlte><a href="/playwright-mcp-alternative" data-astro-cid-sz7xmlte>Playwright MCP Alternative</a></li> <li data-astro-cid-sz7xmlte><a href="/tavily-alternative-web-access-for-ai-agents" data-astro-cid-sz7xmlte>Tavily Alternative</a></li> <li data-astro-cid-sz7xmlte><a href="/scraperapi-alternative" data-astro-cid-sz7xmlte>ScraperAPI Alternative</a></li> <li data-astro-cid-sz7xmlte><a href="/claude-code-mcp" data-astro-cid-sz7xmlte>Claude Code MCP</a></li> </ul> </div> </div> <div class="hp-footer-deep" data-astro-cid-sz7xmlte> <div class="hp-footer-deep-grid" data-astro-cid-sz7xmlte> <div data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>Web Scraping Guides</h4> <ul class="hp-footer-deep-list" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="https://docs.scrapingant.com/web-scraping-101/what-is-web-scraping" target="_blank" rel="noopener" data-astro-cid-sz7xmlte>What is Web Scraping?</a></li> <li data-astro-cid-sz7xmlte><a href="https://scrapingant.com/blog/is-web-scraping-legal" data-astro-cid-sz7xmlte>Is Web Scraping Legal?</a></li> <li data-astro-cid-sz7xmlte><a href="https://scrapingant.com/blog/main-proxy-types" data-astro-cid-sz7xmlte>10 Main Proxy Types</a></li> <li data-astro-cid-sz7xmlte><a href="https://scrapingant.com/blog/residential-vs-datacenter-proxy-webscraping" data-astro-cid-sz7xmlte>Datacenter vs Residential Proxies</a></li> <li data-astro-cid-sz7xmlte><a href="https://scrapingant.com/blog/top-open-source-proxy-scrapers" data-astro-cid-sz7xmlte>Best Proxy Scraping Tools</a></li> <li data-astro-cid-sz7xmlte><a href="https://scrapingant.com/blog/data-scraping-challenges" data-astro-cid-sz7xmlte>Overcoming Scraping Challenges</a></li> <li data-astro-cid-sz7xmlte><a href="https://scrapingant.com/blog/avoid-ip-rate-limiting" data-astro-cid-sz7xmlte>IP Rate-Limiting Avoidance</a></li> <li data-astro-cid-sz7xmlte><a href="https://scrapingant.com/blog/how-to-use-rotating-proxies-with-puppeteer" data-astro-cid-sz7xmlte>Rotating Proxies with Puppeteer</a></li> <li data-astro-cid-sz7xmlte><a href="https://scrapingant.com/blog/scrape-dynamic-website-with-python" data-astro-cid-sz7xmlte>Scraping Dynamic Sites in Python</a></li> <li data-astro-cid-sz7xmlte><a href="https://scrapingant.com/blog/top-5-popular-python-libraries-for-web-scraping-in-2020" data-astro-cid-sz7xmlte>Web Scraping with Python</a></li> <li data-astro-cid-sz7xmlte><a href="https://scrapingant.com/blog/web-scraping-java" data-astro-cid-sz7xmlte>Web Scraping with Java</a></li> <li data-astro-cid-sz7xmlte><a href="https://scrapingant.com/blog/web-scraping-javascript" data-astro-cid-sz7xmlte>Web Scraping with NodeJS</a></li> <li data-astro-cid-sz7xmlte><a href="https://scrapingant.com/blog/deno-web-scraping" data-astro-cid-sz7xmlte>Web Scraping with Deno</a></li> <li data-astro-cid-sz7xmlte><a href="https://scrapingant.com/blog/r-web-scraping" data-astro-cid-sz7xmlte>Web Scraping with R</a></li> <li data-astro-cid-sz7xmlte><a href="https://scrapingant.com/blog/web-scraping-php" data-astro-cid-sz7xmlte>Web Scraping with PHP</a></li> <li data-astro-cid-sz7xmlte><a href="https://scrapingant.com/blog/web-scraping-go" data-astro-cid-sz7xmlte>Web Scraping with Go</a></li> <li data-astro-cid-sz7xmlte><a href="https://scrapingant.com/blog/web-scraping-haskell" data-astro-cid-sz7xmlte>Web Scraping with Haskell</a></li> </ul> </div> <div data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>Industry Use Cases</h4> <ul class="hp-footer-deep-list" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="https://scrapingant.com/blog/booking-data-scraping" data-astro-cid-sz7xmlte>Booking.com Real Estate Scraping</a></li> <li data-astro-cid-sz7xmlte><a href="https://scrapingant.com/blog/sneakers-scraping-api" data-astro-cid-sz7xmlte>Sneaker Price Data Collection</a></li> <li data-astro-cid-sz7xmlte><a href="https://scrapingant.com/blog/best-web-scraping-api-freelance" data-astro-cid-sz7xmlte>Best Scraping APIs for Freelancers</a></li> <li data-astro-cid-sz7xmlte><a href="https://scrapingant.com/blog/nft-data-collection" data-astro-cid-sz7xmlte>Smart NFT Decisions</a></li> <li data-astro-cid-sz7xmlte><a href="https://scrapingant.com/blog/data-collection-for-hr-processes" data-astro-cid-sz7xmlte>Data Collection for HR</a></li> <li data-astro-cid-sz7xmlte><a href="https://scrapingant.com/blog/data-collection-for-ecommerce" data-astro-cid-sz7xmlte>eCommerce Data Collection</a></li> <li data-astro-cid-sz7xmlte><a href="https://scrapingant.com/blog/how-companies-use-web-scraping" data-astro-cid-sz7xmlte>How Companies Use Web Scraping</a></li> <li data-astro-cid-sz7xmlte><a href="https://scrapingant.com/blog/web-scraping-for-hospitality" data-astro-cid-sz7xmlte>Web Scraping for Hospitality</a></li> <li data-astro-cid-sz7xmlte><a href="https://scrapingant.com/blog/web-scraping-for-price-monitoring" data-astro-cid-sz7xmlte>Web Scraping for Price Monitoring</a></li> <li data-astro-cid-sz7xmlte><a href="https://scrapingant.com/blog/web-scraping-for-real-estate" data-astro-cid-sz7xmlte>Web Scraping for Real Estate</a></li> <li data-astro-cid-sz7xmlte><a href="https://scrapingant.com/blog/web-scraping-for-data-scientists" data-astro-cid-sz7xmlte>Web Scraping for Data Scientists</a></li> <li data-astro-cid-sz7xmlte><a href="https://scrapingant.com/blog/web-scraping-for-price-monitoring" data-astro-cid-sz7xmlte>Collect Data from TikTok</a></li> <li data-astro-cid-sz7xmlte><a href="/claude-code-mcp" data-astro-cid-sz7xmlte>Claude Code MCP</a></li> </ul> </div> </div> </div> <div class="hp-footer-bottom" data-astro-cid-sz7xmlte> <div data-astro-cid-sz7xmlte>© <span id="hp-year" data-astro-cid-sz7xmlte>2026</span> ScrapingAnt · Powered by <a href="https://scrapingant.com" target="_blank" rel="noopener" class="hp-footer-dataant" data-astro-cid-sz7xmlte>DATAANT</a></div> <div class="hp-footer-bottom-links" data-astro-cid-sz7xmlte> <a href="https://scrapingant.com/legal/terms-of-use" data-astro-cid-sz7xmlte>Terms</a> <a href="https://scrapingant.com/legal/privacy-policy" data-astro-cid-sz7xmlte>Privacy</a> <a href="https://scrapingant.com/legal/cookies-policy" data-astro-cid-sz7xmlte>Cookies</a> </div> </div> </div> </footer> <script>
+  (function () {
+    var y = document.getElementById('hp-year');
+    if (y) y.textContent = new Date().getFullYear();
+  })();
+</script> <div class="hp-cookie-banner" id="hp-cookie-banner" hidden> <span class="hp-cookie-text">
+By browsing this site, you agree to our <a href="https://scrapingant.com/legal/cookies-policy">Cookies Policy</a>.
+</span> <button type="button" class="hp-cookie-close" id="hp-cookie-close" aria-label="Dismiss cookie notice"> <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"> <path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path> </svg> </button> </div>  <script>
+  (function () {
+    var KEY = 'sa_cookie_dismissed';
+    var el = document.getElementById('hp-cookie-banner');
+    var btn = document.getElementById('hp-cookie-close');
+    if (!el || !btn) return;
+    try {
+      if (localStorage.getItem(KEY) === '1') return;
+    } catch (e) { /* localStorage may be unavailable */ }
+    el.hidden = false;
+    btn.addEventListener('click', function () {
+      el.hidden = true;
+      try { localStorage.setItem(KEY, '1'); } catch (e) { /* noop */ }
+    });
+  })();
+</script> <!-- Bottom global scripts (reCAPTCHA, intercom, traffic source, tapfiliate). --> <script async defer src="https://www.google.com/recaptcha/api.js"></script> <script src="/js/first-traffic-source.js"></script> <!-- Tapfiliate affiliate tracking — drops cookies and surfaces the click ref to Paddle. --> <script async src="https://script.tapfiliate.com/tapfiliate.js"></script> <script>
+      (function (t, a, p) {
+        t.TapfiliateObject = a;
+        t[a] = t[a] || function () { (t[a].q = t[a].q || []).push(arguments); };
+      })(window, 'tap');
+      tap('create', '22854-224f32', { integration: 'paddle' });
+      tap('detect');
+    </script> <script>
+      window.intercomSettings = { api_base: 'https://api-iam.intercom.io', app_id: 't3pdq8ur' };
+    </script> <script>
+      (function () {
+        var w = window; var ic = w.Intercom;
+        if (typeof ic === 'function') { ic('reattach_activator'); ic('update', w.intercomSettings); }
+        else {
+          var d = document;
+          var i = function () { i.c(arguments); };
+          i.q = []; i.c = function (a) { i.q.push(a); };
+          w.Intercom = i;
+          var l = function () {
+            var s = d.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'https://widget.intercom.io/widget/t3pdq8ur';
+            var x = d.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(s, x);
+          };
+          if (document.readyState === 'complete') { l(); }
+          else if (w.attachEvent) { w.attachEvent('onload', l); }
+          else { w.addEventListener('load', l, false); }
+        }
+      })();
+    </script> </body> </html>

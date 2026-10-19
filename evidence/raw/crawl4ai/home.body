@@ -1,0 +1,1445 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#070708">
+<meta name="color-scheme" content="dark">
+<title>Crawl4AI - README</title>
+<meta name="description" content="Crawl4AI, the #1 open-source LLM-friendly web crawler, now cloud-hosted. Turn any URL into clean Markdown, typed JSON, or search results. Free to self-host, hosted so you skip the ops.">
+<link rel="canonical" href="https://api.crawl4ai.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Crawl4AI">
+<meta property="og:title" content="Crawl4AI - the open-source crawler, now hosted">
+<meta property="og:description" content="Turn any URL into clean Markdown, typed JSON, or search results. Free to self-host, hosted so you skip the ops.">
+<meta property="og:url" content="https://api.crawl4ai.com/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Crawl4AI - the open-source crawler, now hosted">
+<meta name="twitter:description" content="Turn any URL into clean Markdown, typed JSON, or search results. The library is free forever; hosted means zero setup.">
+<link rel="icon" type="image/svg+xml" href="/assets/logo.cc61ca8c.svg">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/DankMono-W500.33075101.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/DankMono-W700.53051ed7.woff2">
+<script>/* set the theme before first paint (no flash): stored choice, else the OS setting */
+(function(){try{var t=localStorage.getItem("c4theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+/* first-touch attribution: stash a ?ref= slug in the c4_src cookie so signup records where the user came from (never overwrite) */
+(function(){try{var m=location.search.match(/[?&]ref=([a-zA-Z0-9_-]{1,40})/);if(m&&!/(^|;\s*)c4_src=/.test(document.cookie))document.cookie="c4_src="+m[1]+"; Path=/; Max-Age="+(90*86400)+"; SameSite=Lax"+(location.protocol==="https:"?"; Secure":"");
+/* the ad click id (Google: gclid, and the iOS forms gbraid / wbraid): first touch, 90 days, never overwritten; read at signup for the conversion report */
+var g=location.search.match(/[?&](gclid|gbraid|wbraid)=([A-Za-z0-9_-]{1,120})/);if(g&&!/(^|;\s*)c4_gclid=/.test(document.cookie))document.cookie="c4_gclid="+g[2]+"; Path=/; Max-Age="+(90*86400)+"; SameSite=Lax"+(location.protocol==="https:"?"; Secure":"");}catch(e){}})();</script>
+<style>
+/* Dank Mono, thickened from its regular drawing: normal text uses the 500 file, bold the 700 file; 300 is the original regular, 800 extra bold */
+@font-face{font-family:"dm";font-weight:300;font-style:normal;font-display:swap;src:url(/assets/DankMono-Regular.0ca792d9.woff2) format("woff2")}
+@font-face{font-family:"dm";font-weight:400;font-style:normal;font-display:swap;src:url(/assets/DankMono-W500.33075101.woff2) format("woff2")}
+@font-face{font-family:"dm";font-weight:700;font-style:normal;font-display:swap;src:url(/assets/DankMono-W700.53051ed7.woff2) format("woff2")}
+@font-face{font-family:"dm";font-weight:800;font-style:normal;font-display:swap;src:url(/assets/DankMono-W800.9725284f.woff2) format("woff2")}
+@font-face{font-family:"dm";font-weight:400;font-style:italic;font-display:swap;src:url(/assets/DankMono-Italic-W500.ea5d2192.woff2) format("woff2")}
+@font-face{font-family:"dm";font-weight:700;font-style:italic;font-display:swap;src:url(/assets/DankMono-Italic-W700.aebc2076.woff2) format("woff2")}
+.mark{height:.86em;width:.86em;vertical-align:-.08em;margin-right:.12em}
+
+  :root{
+    --bg:#070708;--surf:#0d0d10;--code:#0a0a0c;--line:rgba(233,233,237,.10);--cyl:rgba(74,230,229,.20);--hair:rgba(233,233,237,.06);
+    --text:#e8e9ed;--muted:#a3abba;--dim:#8b857a;--cyan:#4AE6E5;--teal:#09b5a5;--mag:#f380f5;--pink:#ff3c74;--star:#fed500;--on:#052220;
+    --mono:"dm",ui-monospace,"SF Mono","JetBrains Mono","Menlo","Monaco","Liberation Mono",monospace;
+    --sans:"dm",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;}
+
+  /* ===== light theme (warm): the whole page goes light, code/panels included ===== */
+  :root[data-theme="light"]{
+    --bg:#f4efe6;--surf:#fffdf8;--code:#efe9dd;--line:rgba(64,52,38,.15);--cyl:rgba(8,145,156,.34);--hair:rgba(64,52,38,.08);
+    --text:#2b2620;--muted:#61584c;--dim:#968c7c;--cyan:#08919c;--teal:#0a8578;--mag:#b8279b;--pink:#d81b55;--star:#9a6b06;--on:#ffffff;}
+  :root[data-theme="light"] body{background-image:radial-gradient(900px 480px at 88% -12%,rgba(8,145,156,.07),transparent 60%);font-weight:700}
+  :root[data-theme="light"] .shield,:root[data-theme="light"] .shield .k,:root[data-theme="light"] .shield .v{font-weight:400}  /* keep the badges at normal weight */
+  /* white / emphasis text needs a warm-dark ink on the light page */
+  :root[data-theme="light"] h1,:root[data-theme="light"] h2,:root[data-theme="light"] blockquote b,
+  :root[data-theme="light"] ul.md li b,:root[data-theme="light"] .path h3,:root[data-theme="light"] .quip b,
+  :root[data-theme="light"] .prow .tier,:root[data-theme="light"] .tfield .target,
+  :root[data-theme="light"] .mintform input,:root[data-theme="light"] .rec .meta b{color:#2b2620}
+  :root[data-theme="light"] .prow .amt[style]{color:#2b2620!important}  /* beats the inline color:#fff */
+  /* app-shell bars go light */
+  :root[data-theme="light"] .appbar{background:rgba(255,253,248,.85);border-bottom-color:var(--line)}
+  :root[data-theme="light"] .appbar .brand{color:#2b2620}
+  :root[data-theme="light"] .tabbar{background:rgba(255,253,248,.92);border-top-color:var(--line)}
+  /* code + terminal panels: light surfaces, darkened syntax colors so they read on cream */
+  :root[data-theme="light"] .tfield{background:#faf6ee}
+  :root[data-theme="light"] .out{background:#faf6ee}  /* lighter than the fence so the result panel separates */
+  :root[data-theme="light"] .out pre{color:#2b2620}
+  :root[data-theme="light"] .out .k{color:#0a6cb0}
+  :root[data-theme="light"] .out .s,:root[data-theme="light"] .cmd .str{color:#1a7f37}
+  :root[data-theme="light"] .out::-webkit-scrollbar-thumb{background:rgba(0,0,0,.22);border-color:#efe9dd}
+  :root[data-theme="light"] .prow:first-child{background:#e9e1d3;color:var(--dim)}
+  /* theme toggle button */
+  .themetog{font-family:var(--mono);font-size:13px;color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:8px;padding:5px 9px;cursor:pointer;line-height:1;flex:none;align-self:center}
+  .themetog:hover{color:var(--text);border-color:var(--cyl)}
+  .tabrow .sess{margin-left:auto;align-self:center}   /* signed-in status sits at the far top-right */
+
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(900px 480px at 88% -12%,rgba(74,230,229,.10),transparent 60%);}
+  ::selection{background:var(--cyan);color:var(--on)}
+  a{color:var(--cyan);text-decoration:none}a:hover{text-decoration:underline}
+  .doc{max-width:860px;margin:0 auto;padding:34px 22px 70px}
+  .tabrow{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;flex-wrap:wrap}
+  .filetab{display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:12.5px;color:var(--muted);
+    border:1px solid var(--line);border-bottom:0;border-radius:10px 10px 0 0;padding:9px 13px;background:var(--surf);width:max-content}
+  .filetab .dot{width:9px;height:9px;border-radius:50%;background:var(--cyan)}
+  /* top-bar doors: left = open-source origin, right = the hosted product */
+  .tabl{display:flex;align-items:flex-end;gap:16px}
+  .tabr{display:flex;align-items:center;gap:14px;align-self:center;margin-bottom:3px}
+  @property --ossang{syntax:"<angle>";initial-value:0deg;inherits:false}
+  /* rotating-gold-border pill: outer = the animated border, inner = the fill that flips gold on hover */
+  .oss{align-self:center;display:inline-block;padding:1.5px;border-radius:11px;text-decoration:none;
+    background:conic-gradient(from var(--ossang),#7a5c12,var(--star) 90deg,#7a5c12 180deg,#3a2e12 270deg,#7a5c12);
+    animation:ossspin 5s linear infinite}
+  .oss:hover{text-decoration:none}
+  .ossin{display:block;border-radius:9.5px;padding:2px 13px;background:var(--bg);color:var(--text);text-decoration:none;
+    font-family:var(--mono);font-size:12.5px;font-weight:600;white-space:nowrap;transition:background-color .2s ease,color .2s ease}
+  .oss:hover .ossin{background:var(--star);color:var(--on)}
+  .oss .s{color:var(--star);transition:color .2s ease}
+  .oss:hover .s{color:var(--on)}
+  .oss .ossdim{color:var(--muted);font-weight:400;transition:color .2s ease}
+  .oss:hover .ossdim{color:var(--on);opacity:.65}
+  @keyframes ossspin{to{--ossang:360deg}}
+  @media(prefers-reduced-motion:reduce){.oss{animation:none}}
+  .signin{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-decoration:none;white-space:nowrap}
+  .signin:hover{color:var(--text)}
+  .tabr .getk.deskk{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:600;color:var(--on);
+    background:var(--cyan);border:0;border-radius:8px;padding:7px 14px;cursor:pointer;line-height:1}
+  .tabr .getk.deskk:hover{filter:brightness(1.06)}
+  .sheet{position:relative;border:1px solid var(--line);border-radius:0 12px 12px 12px;background:linear-gradient(180deg,rgba(255,255,255,.015),transparent 240px);padding:30px 30px 34px}
+  @media(max-width:620px){.sheet{padding:22px 18px}}
+  .eyebrow{display:flex;align-items:center;gap:9px;flex-wrap:wrap;font-family:var(--mono);font-size:13.5px;color:var(--cyan);margin:0 0 12px}
+  .tagpill{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;color:var(--on);background:var(--cyan);border-radius:5px;padding:2px 7px;font-weight:700}
+  .ebshort{display:none}  /* mobile-only short eyebrow (see the app-shell media block) */
+  h1{font-family:var(--mono);font-size:clamp(26px,5vw,36px);margin:0;color:#fff;letter-spacing:-.02em;font-weight:700}
+  h1 .cloud{color:var(--cyan);font-weight:500}
+  h1 .h1sub{display:none}   /* the phone shows it between the two title lines (recipes.css) */
+  .sub{color:var(--muted);font-size:16px;margin:8px 0 0}
+  /* launch-wave scarcity — subtle text line (no fill; a small pulsing dot + the count) */
+  .seatstrip{display:inline-flex;align-items:center;gap:8px;margin:12px 0 0;font-family:var(--mono);font-size:13px;color:var(--muted)}
+  .seatstrip b{font-weight:700;color:var(--cyan)}
+  .seatstrip .sdot{width:7px;height:7px;border-radius:50%;background:var(--cyan);animation:seatpulse 1.8s ease-in-out infinite}
+  .seatstrip.closed .sdot{background:var(--dim);animation:none}
+  @keyframes seatpulse{0%,100%{opacity:.3}50%{opacity:1}}
+  @media (prefers-reduced-motion:reduce){.seatstrip .sdot{animation:none}}
+  .mseats{margin:10px 0 0;font-family:var(--mono);font-size:12.5px;font-weight:600;color:var(--cyan)}
+  /* authentic proof: the real Trendshift #1 card (their SVG, inlined) + shields.io-shaped badges */
+  .proof{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px;margin:18px 0 0}
+  .trend{position:absolute;top:20px;right:26px;z-index:3;line-height:0;transition:transform .15s}
+  .trend:hover{transform:translateY(-2px)}
+  .trend svg{width:176px;height:auto;display:block;filter:drop-shadow(0 5px 18px rgba(74,14,153,.45))}
+  @media(max-width:760px){.trend{position:static;top:auto;right:auto}.trend svg{width:190px}}
+  .badges{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0 0}
+  .shield{display:inline-flex;height:20px;border-radius:4px;overflow:hidden;text-decoration:none;white-space:nowrap;
+    font-family:Verdana,Geneva,"DejaVu Sans",sans-serif;font-size:11px;line-height:20px}
+  .shield .k{background:#555;color:#fff;padding:0 7px}
+  .shield .v{color:#fff;padding:0 7px}
+  .shield.blue .v{background:#007ec6}.shield.green .v{background:#4c1}
+  .shield.discord .v{background:#5865f2}.shield.gold .v{background:#dfb317}
+  a.b:hover{text-decoration:none;border-color:var(--cyl)}
+  blockquote{border-left:3px solid var(--teal);margin:22px 0 0;padding:2px 0 2px 16px;color:var(--text)}
+  blockquote b{color:#fff}
+  h2{font-family:var(--mono);font-size:18px;color:#fff;margin:36px 0 0;padding-top:22px;border-top:1px solid var(--hair);font-weight:650;display:flex;gap:9px;align-items:baseline;flex-wrap:wrap}
+  h2 .h{color:var(--teal);font-weight:400}
+  h2 .tag{font-family:var(--sans);font-size:13px;color:var(--dim);font-weight:400;white-space:nowrap}
+  p{margin:12px 0 0}.lead{color:var(--muted)}
+  .fence{margin:16px 0 0;border:1px solid var(--line);border-radius:11px;overflow:hidden;background:var(--code);font-family:var(--mono)}
+  .fbar{display:flex;align-items:center;gap:8px;padding:8px 11px;border-bottom:1px solid var(--hair)}
+  .fromdocs{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;font-family:var(--mono);font-size:13px;line-height:1.5;color:var(--text);background:rgba(217,164,65,.10);border:1px solid rgba(217,164,65,.45);border-radius:10px;padding:12px 14px;margin:0 0 16px}
+  .fromdocs[hidden]{display:none}.fromdocs .tagpill{background:#d9a441;color:#1a1200}.fromdocs b{color:var(--text)}.fromdocs .getk{margin-left:auto;background:#d9a441;border-color:#d9a441;color:#1a1200}
+  .agtabs{display:flex;gap:2px;flex-wrap:wrap;margin:0 0 4px}
+  .at{font-family:var(--mono);font-size:12px;color:var(--dim);background:transparent;border:0;padding:5px 10px;border-radius:6px;cursor:pointer}
+  .at[aria-selected=true]{color:var(--cyan);background:rgba(74,230,229,.10);box-shadow:inset 0 0 0 1px var(--cyl)}
+  .rec[hidden]{display:none}
+  .connected{font-family:var(--mono);font-size:12px;color:#d9a441;padding:4px 0 8px}.connected[hidden]{display:none}
+  .ftabs{display:flex;gap:2px}
+  .ft{font-family:var(--mono);font-size:12px;color:var(--dim);background:transparent;border:0;padding:5px 10px;border-radius:6px;cursor:pointer}
+  .ft[aria-selected=true]{color:var(--cyan);background:rgba(74,230,229,.10);box-shadow:inset 0 0 0 1px var(--cyl)}
+  .ep{margin-left:auto;font-size:11px;color:var(--dim)}.ep .m{color:var(--teal)}
+  .fbody{padding:13px 14px}
+  .targetrow{display:flex;align-items:center;gap:10px;background:transparent;border:0;padding:2px 0;margin-bottom:12px}
+  .targetrow .verb{font-family:var(--mono);font-size:12.5px;color:var(--muted);flex:none}
+  .targetrow .verb span{color:var(--mag)}
+  .tfield{flex:1;min-width:0;display:flex;align-items:center;gap:8px;background:#0a0a0c;border:1px solid var(--cyl);border-radius:8px;padding:8px 10px;cursor:text;transition:border-color .15s,box-shadow .15s}
+  .tfield.pulse{animation:pulseGlow 2.2s ease .5s 1 both}
+  @keyframes pulseGlow{0%,100%{box-shadow:0 0 0 0 rgba(74,230,229,0)}35%{box-shadow:0 0 0 3px rgba(74,230,229,.18)}}
+  .tfield:hover{border-color:var(--cyan)}
+  .tfield:focus-within{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(74,230,229,.14);animation:none}
+  .tfield .target{flex:1;min-width:0;background:transparent;border:0;outline:none;color:#fff;font-family:var(--mono);font-size:12.8px;caret-color:var(--cyan)}
+  .tfield .target::placeholder{color:var(--dim)}
+  .pen{flex:none;font-family:var(--mono);font-size:11px;color:var(--dim);border:1px solid var(--line);border-radius:5px;padding:2px 6px;transition:.15s}
+  .tfield:focus-within .pen{color:var(--cyan);border-color:var(--cyl);background:rgba(74,230,229,.08)}
+  .pen .peni::before{content:"✎"}
+  .pen .peni{font-style:normal}
+  .pen::after{content:" edit"}
+  .tfield:focus-within .pen::after{content:" run"}
+  .tfield:focus-within .pen .peni::before{content:"↵"}
+  .targetrow .run{flex:none;margin:0}
+  @keyframes runPulse{0%,100%{box-shadow:0 0 0 0 rgba(74,230,229,0)}50%{box-shadow:0 0 0 5px rgba(74,230,229,.16)}}
+  .targetrow .run[data-run]{animation:runPulse 2.4s ease-in-out infinite}
+  .targetrow .run[data-run]:hover{animation:none;box-shadow:0 0 0 3px rgba(74,230,229,.3)}
+  .live{font-family:var(--mono);font-size:11px;color:var(--teal)}
+  .cmd{margin:0;white-space:pre-wrap;word-break:break-word;font-size:12.7px;line-height:1.6;opacity:.85}
+  .cmd .p{color:var(--cyan)}.cmd .fl{color:var(--mag)}.cmd .str{color:#bdf3c0}.cmd .tok{color:var(--cyan);background:rgba(74,230,229,.1);border-radius:4px;padding:0 3px}
+  .rr{display:flex;gap:9px;align-items:center;margin-top:12px;flex-wrap:wrap}
+  .run.est{margin-left:6px;background:transparent;color:#d9a441;border:1px solid rgba(217,164,65,.5)}
+  .estline{font-family:var(--mono);font-size:12px;color:#d9a441;padding:2px 0 6px 2px}
+  .run{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--on);background:var(--cyan);border:0;border-radius:7px;padding:7px 13px;cursor:pointer}
+  .run:active{transform:translateY(1px)}
+  .cpy{font-family:var(--mono);font-size:11.5px;color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:7px;padding:7px 11px;cursor:pointer}
+  .cpy:hover{color:var(--text);border-color:var(--cyl)}
+  .rr .ok{margin-left:auto;font-size:11px;color:var(--teal);opacity:0;transition:.3s}.rr .ok.show{opacity:1}
+  .out{margin-top:12px;min-height:120px;max-height:360px;overflow:auto;padding:12px;background:#131315;border-radius:8px;
+    scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.2) transparent}
+  .out::-webkit-scrollbar{width:9px;height:9px}
+  .out::-webkit-scrollbar-track{background:transparent}
+  .out::-webkit-scrollbar-thumb{background:rgba(255,255,255,.17);border-radius:8px;border:2px solid #131315}
+  .out::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,.32)}
+  .out pre{margin:0;white-space:pre-wrap;word-break:break-word;font-size:12.3px;line-height:1.55;color:#d5d7dd}
+  .out .rr{margin-top:11px}
+  .out .k{color:#8fd6ff}.out .s{color:#bdf3c0}.out .n{color:var(--mag)}.out .h{color:var(--cyan)}.out .err{color:var(--pink)}
+  .out .caret{display:inline-block;width:7px;height:13px;background:var(--cyan);vertical-align:-2px;animation:bl 1s steps(1) infinite}
+  @keyframes bl{50%{opacity:0}}.ph{color:var(--dim)}
+  .tokbtn{cursor:pointer;border:0;font:inherit;display:inline-flex;align-items:center;gap:5px;line-height:inherit}
+  .tokbtn svg{opacity:.75}
+  .tokbtn:hover{background:rgba(74,230,229,.22)}
+  #mintpop,#entpop,#sharepop{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(7,7,8,.65);backdrop-filter:blur(3px);z-index:50;padding:20px}
+  #mintpop.open,#entpop.open,#sharepop.open{display:flex}
+  .sharecard{background:var(--surf);border:1px solid var(--cyl);border-radius:14px;padding:20px;max-width:520px;width:100%;font-family:var(--mono);box-shadow:0 18px 60px rgba(0,0,0,.55);max-height:90vh;overflow:auto}
+  .sharecard .mt{font-size:13px;color:var(--teal);margin:0 0 12px}
+  .sharethumb{width:100%;border-radius:10px;border:1px solid var(--line);display:block;margin:0 0 14px;background:#0a0b0d;aspect-ratio:1200/630}
+  .sharerow{display:flex;gap:8px;margin:0 0 12px}
+  .sharerow input{flex:1;min-width:0;background:transparent;border:1px solid var(--line);border-radius:8px;color:var(--text);font-family:var(--mono);font-size:12.5px;padding:10px 11px;outline:none}
+  .sharerow input:focus{border-color:var(--cyan)}
+  .sharerow .scopy{border:0;background:var(--cyan);color:var(--on);font-weight:600;font-size:12.5px;padding:10px 16px;border-radius:8px;cursor:pointer;white-space:nowrap}
+  .sharebtns{display:flex;flex-wrap:wrap;gap:8px}
+  .sharebtns a{flex:1;min-width:96px;text-align:center;text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:9px 10px;color:var(--text);font-size:12.5px}
+  .sharebtns a:hover{border-color:var(--cyl);color:var(--cyan)}
+  .sharenote{font-size:12px;color:var(--muted);margin:13px 0 0;line-height:1.5}
+  .entcard{background:var(--surf);border:1px solid var(--cyl);border-radius:13px;padding:22px 22px 20px;max-width:460px;width:100%;font-family:var(--mono);box-shadow:0 18px 60px rgba(0,0,0,.55);max-height:88vh;overflow:auto}
+  .entcard .mt{font-size:13px;color:var(--teal);margin:0 0 8px}
+  .entcard .mb{font-size:13px;color:var(--muted);line-height:1.6;margin:0 0 14px}
+  .entf{display:flex;flex-direction:column;gap:9px}
+  .entf input,.entf textarea{background:transparent;border:1px solid var(--line);border-radius:8px;color:var(--text);font-family:var(--mono);font-size:13px;padding:10px 12px;outline:none;width:100%;box-sizing:border-box}
+  .entf input:focus,.entf textarea:focus{border-color:var(--cyan)}
+  .entf textarea{resize:vertical;min-height:64px}
+  .entf .entsend{border:0;background:var(--cyan);color:var(--on);font-weight:600;font-size:13px;padding:11px 14px;border-radius:8px;cursor:pointer;margin-top:2px}
+  .entf .entsend:disabled{opacity:.6;cursor:default}
+  .enterr{color:var(--pink);font-size:12px;margin:2px 0 0}
+  .mintcard{background:var(--surf);border:1px solid var(--cyl);border-radius:13px;padding:22px 22px 20px;max-width:460px;width:100%;font-family:var(--mono);box-shadow:0 18px 60px rgba(0,0,0,.55),0 0 0 4px rgba(74,230,229,.05)}
+  .mintcard .mt{font-size:13px;color:var(--teal);margin:0 0 8px}
+  .mintcard .mb{font-size:13.5px;color:var(--muted);line-height:1.7;margin:0 0 14px}
+  .mintcard .mb b{color:var(--text)}
+  .mintform{display:flex;border:1px solid var(--cyan);border-radius:9px;overflow:hidden;animation:mintGlow 1.6s ease infinite}
+  @keyframes mintGlow{0%,100%{box-shadow:0 0 0 0 rgba(74,230,229,.10)}50%{box-shadow:0 0 0 4px rgba(74,230,229,.22)}}
+  .mintform input{flex:1;min-width:0;background:transparent;border:0;outline:none;color:#fff;font-family:var(--mono);font-size:13px;padding:11px 13px;caret-color:var(--cyan)}
+  .mintform input::placeholder{color:var(--dim)}
+  .mintform button{border:0;background:var(--cyan);color:var(--on);font-family:var(--mono);font-size:12.5px;font-weight:600;padding:11px 14px;cursor:pointer;white-space:nowrap}
+  .mintkey{display:block;background:var(--code);border:1px solid var(--cyl);border-radius:9px;padding:11px 13px;color:var(--cyan);font-size:12.5px;word-break:break-all;margin:0 0 8px;cursor:pointer}.mintkeyrow{display:flex;gap:8px;margin:0 0 14px}.mintkeyrow button{font-family:var(--mono);font-size:11.5px;color:var(--cyan);background:rgba(74,230,229,.08);border:1px solid var(--cyl);border-radius:7px;padding:6px 11px;cursor:pointer}
+  .mintdone{width:100%;border:0;background:var(--cyan);color:var(--on);font-family:var(--mono);font-size:13px;font-weight:600;border-radius:9px;padding:11px;cursor:pointer}
+  .mintx{float:right;border:0;background:transparent;color:var(--dim);font-family:var(--mono);font-size:15px;cursor:pointer;margin:-6px -6px 0 0;padding:6px}
+  .mintx:hover{color:var(--text)}
+  .minterr{font-size:12.5px;color:var(--pink);margin:10px 0 0;line-height:1.6}
+  .mintalt{display:flex;gap:9px;margin-top:14px;flex-wrap:wrap}
+  .mintalt a{font-size:12px;font-weight:600;color:var(--on);background:var(--cyan);border-radius:8px;padding:9px 13px;text-decoration:none}
+  .mintalt button{font-size:12px;color:var(--text);background:transparent;border:1px solid var(--line);border-radius:8px;padding:9px 13px;cursor:pointer;font-family:var(--mono)}
+  .mintalt button:hover{border-color:var(--cyl)}
+  .note{color:var(--dim);font-size:13.5px;font-family:var(--mono)}
+  ul.md{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-direction:column;gap:9px}
+  ul.md li{position:relative;padding-left:17px;font-size:15px}ul.md li b{color:#fff;font-family:var(--mono);font-size:13.5px}
+  ul.md li::before{content:"-";color:var(--teal);position:absolute;left:0;top:0}
+  .recs{display:flex;flex-direction:column;gap:9px;margin-top:14px}
+  .rec{display:grid;grid-template-columns:1fr;background:var(--code);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  @media(min-width:640px){.rec{grid-template-columns:172px 1fr}}
+  .rec .meta{padding:11px 14px;border-bottom:1px solid var(--hair);font-family:var(--mono)}
+  @media(min-width:640px){.rec .meta{border-bottom:0;border-right:1px solid var(--hair)}}
+  .rec .meta b{display:block;font-size:13px;color:#fff}.rec .meta span{font-size:11.5px;color:var(--dim)}
+  .rec .meta .soon{display:inline-block;margin-left:6px;font-size:9.5px;letter-spacing:.08em;color:var(--mag);border:1px solid rgba(243,128,245,.35);border-radius:4px;padding:0 5px;vertical-align:1px}
+  .rec .line{display:flex;align-items:center;gap:10px;padding:10px 12px;min-width:0}
+  .rec .body{display:flex;flex-direction:column;gap:2px;padding:8px 0 4px;min-width:0}
+  .rec .body .line{padding:4px 12px 6px}
+  .rec .body .agtabs{padding:0 10px}
+  .rec .where{font-family:var(--mono);font-size:11.5px;color:var(--dim);padding:4px 12px 0}
+  .rec .line code{font-family:var(--mono);font-size:12.3px;color:var(--text);white-space:nowrap;overflow-x:auto;flex:1;min-width:0}
+  .rec .line code .p{color:var(--cyan)}.rec .line code .a{color:var(--teal)}.rec .line code .tok{color:var(--cyan)}
+  .rec .cp{flex:none;font-family:var(--mono);font-size:11px;color:var(--cyan);background:rgba(74,230,229,.08);border:1px solid var(--cyl);border-radius:6px;padding:5px 9px;cursor:pointer}
+  .rec .cp:hover{background:rgba(74,230,229,.16)}
+  .paths{display:grid;grid-template-columns:1fr;gap:12px;margin-top:14px}
+  @media(min-width:640px){.paths{grid-template-columns:1fr 1fr}}
+  .path{border:1px solid var(--line);border-radius:11px;padding:16px;background:var(--surf)}
+  .path.hosted{border-color:var(--cyl);box-shadow:inset 0 0 0 1px rgba(74,230,229,.06)}
+  .path .pt{font-family:var(--mono);font-size:12.5px;color:var(--teal);letter-spacing:.04em}
+  .path.hosted .pt{color:var(--cyan)}
+  .path h3{font-family:var(--mono);font-size:16px;color:#fff;margin:8px 0 0;font-weight:650}
+  .path p{margin:9px 0 0;font-size:14.5px;color:var(--muted)}
+  .path .pact{margin-top:13px}
+  .path .pill{font-family:var(--mono);font-size:12px;color:var(--on);background:var(--cyan);border:0;border-radius:8px;padding:8px 13px;cursor:pointer;font-weight:600;text-decoration:none;display:inline-block}
+  .path .ghost{font-family:var(--mono);font-size:12px;color:var(--text);border:1px solid var(--line);border-radius:8px;padding:8px 13px;text-decoration:none;display:inline-block}
+  .quip{margin-top:14px;font-family:var(--mono);font-size:13px;color:var(--muted);border-left:3px solid var(--cyan);padding-left:14px}
+  .quip b{color:#fff}
+  .ptab{margin-top:14px;border:1px solid var(--line);border-radius:11px;overflow:hidden;font-family:var(--mono);font-size:13px}
+  .prow{display:grid;grid-template-columns:1.1fr 1fr 1.5fr;gap:0;border-top:1px solid var(--hair)}
+  .prow:first-child{border-top:0;background:#131317;color:var(--dim);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase}
+  .prow>div{padding:11px 14px;min-width:0;overflow-x:auto;white-space:nowrap}
+  .prow.free .tier{color:var(--cyan)}.prow .tier{color:#fff}
+  .prow .amt{color:var(--star)}.prow.credit .tier{color:#d9a441}.prow.credit .amt{color:#d9a441}.prow.soon .amt{color:var(--mag)}.prow .amt small{color:var(--muted)}
+  .prow .for{color:var(--muted);white-space:normal}
+  .prow .cta{display:inline-block;color:var(--on);background:var(--cyan);border-radius:6px;padding:4px 10px;font-size:11.5px;cursor:pointer;font-weight:600}
+  .prow .cta.ln{background:transparent;color:var(--cyan);border:1px solid var(--cyl)}
+  .logos{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+  .logos .logo{font-family:var(--mono);font-size:12.5px;color:var(--muted);border:1px dashed var(--line);border-radius:8px;padding:10px 16px}
+  .phil{margin-top:16px;background:var(--code);border:1px solid var(--hair);border-left:3px solid var(--mag);border-radius:0 10px 10px 0;padding:14px 16px;font-family:var(--mono);font-size:13px;color:var(--text);line-height:1.7}
+  .phil .c{color:var(--dim)}.phil .cy{color:var(--cyan)}
+  footer{margin-top:30px;border-top:1px solid var(--hair);padding-top:16px;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;font-family:var(--mono);font-size:12.5px;color:var(--dim)}
+  footer a{color:var(--muted)}
+  #toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(16px);opacity:0;background:#fff;color:#070708;font-family:var(--mono);font-size:13px;padding:10px 15px;border-radius:9px;pointer-events:none;transition:.2s;z-index:60}#toast.show{opacity:1;transform:translateX(-50%)}#toast b{color:var(--teal)}
+  .fbar{flex-wrap:wrap}
+  .run:disabled{opacity:.55;cursor:progress;transform:none}
+  .sess{font-family:var(--mono);font-size:12.5px;color:var(--muted);padding:5px 2px;display:none;align-items:center;gap:7px;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis;margin-bottom:2px}
+  .sess.on{display:inline-flex}
+  .sess b{color:var(--text)}.sess a{color:var(--cyan);text-decoration:none}
+  .run:disabled{animation:none}
+  .instr-row{display:none;align-items:center;gap:10px;margin:-4px 0 12px;flex-wrap:wrap}
+  .instr-row .tfield{min-width:0}
+  .runghost{visibility:hidden;pointer-events:none}
+  .egs{display:flex;gap:7px;flex-wrap:wrap;margin:-4px 0 12px}
+  .egs button{font-family:var(--mono);font-size:11px;color:var(--muted);background:transparent;border:1px dashed var(--line);border-radius:14px;padding:3px 10px;cursor:pointer}
+  .egs button:hover{color:var(--cyan);border-color:var(--cyl)}
+  .instr-row.on{display:flex}
+  .deep-row{display:none;align-items:center;gap:8px;margin:-4px 0 12px;font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+  .deep-row.on{display:flex}
+  .deep-row label{display:inline-flex;align-items:center;gap:8px;cursor:pointer;color:var(--muted)}
+  .deep-row input{accent-color:var(--cyan);width:14px;height:14px;cursor:pointer}
+  .deep-row .dhint{color:var(--muted)}
+  .xtag{display:inline-block;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:#f5a300;border:1px solid #f5a300;border-radius:3px;padding:0 4px;margin-left:5px;vertical-align:middle;opacity:.85}
+  .ft .xtag{font-size:8px;padding:0 3px}
+  .instr-row .verb2{font-family:var(--mono);font-size:12.5px;color:var(--muted);flex:none}
+  h2 .anch{opacity:0;font-weight:400;color:var(--dim);font-size:14px;text-decoration:none;transition:opacity .15s}
+  h2:hover .anch{opacity:1}
+  h2 .anch:hover{color:var(--cyan)}
+  .soonchip{flex:none;font-family:var(--mono);font-size:11px;color:var(--dim);border:1px dashed var(--line);border-radius:6px;padding:5px 9px;cursor:default}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:2px;border-radius:6px}
+  @media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+
+  /* ===================== mobile app-shell =====================
+     Inert above 680px (desktop pays zero bytes of layout change).
+     Below it the page becomes a native-feeling app: a fixed top
+     app-bar + a bottom tab bar, content scrolling between them,
+     and the card sections turn into horizontal swipe rails. */
+  .appbar,.tabbar{display:none}
+  @media(max-width:680px){
+    /* --- fixed top app-bar --- */
+    .appbar{display:flex;position:fixed;top:0;left:0;right:0;z-index:40;align-items:center;gap:10px;
+      height:calc(52px + env(safe-area-inset-top));padding:env(safe-area-inset-top) 15px 0;
+      background:rgba(7,7,8,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--hair)}
+    .appbar .brand{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-weight:700;font-size:15px;color:#fff}
+    .appbar .brand .mark{height:18px;width:18px;margin:0}
+    .appbar .adot{width:7px;height:7px;border-radius:50%;background:var(--teal);display:none}
+    .appbar .adot.on{display:inline-block}
+    .appbar .themetog{margin-left:auto;font-size:14px;padding:6px 9px}
+    .appbar .getk{margin-left:8px;font-family:var(--mono);font-size:12px;font-weight:600;color:var(--on);
+      background:var(--cyan);border:0;border-radius:8px;padding:8px 13px;cursor:pointer}
+    /* --- fixed bottom tab bar --- */
+    .tabbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:40;
+      padding:0 6px env(safe-area-inset-bottom);height:calc(58px + env(safe-area-inset-bottom));
+      background:rgba(7,7,8,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--hair)}
+    .tabbar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+      font-family:var(--mono);font-size:10px;color:var(--dim);text-decoration:none;padding-top:8px;min-width:0}
+    .tabbar a:hover{text-decoration:none}
+    .tabbar a .ic{font-size:16px;line-height:1}
+    .tabbar a[aria-current=true]{color:var(--cyan)}
+    .tabbar a.key{color:var(--cyan)}
+    /* --- clear the fixed chrome --- */
+    body{padding-top:calc(52px + env(safe-area-inset-top));padding-bottom:calc(58px + env(safe-area-inset-bottom))}
+    .doc{padding:14px 15px 26px}
+    .tabrow .filetab{display:none}      /* the app-bar replaces the README tab chrome */
+    .tabrow .themetog{display:none}     /* the app-bar carries the theme toggle on mobile */
+    .sheet{border:0;border-radius:0;padding:4px 0 0;background:none}
+    .trend{position:static;top:auto;right:auto}
+    /* --- hero text shape --- */
+    .tabrow .sess,.tabrow .sess.on{display:none}  /* app-bar dot shows signed-in; drop the long line */
+    .tabrow .oss,.tabrow .signin,.tabrow .getk{display:none}  /* desktop-only doors; the app-bar carries Get-a-key on mobile */
+    .eyebrow{font-size:12px;margin:0 0 10px;flex-wrap:nowrap}
+    .ebfull{display:none}.ebshort{display:inline}  /* short teaser fits without orphan-wrapping */
+    h1{font-size:24px;line-height:1.16}
+    h1 .cloud{display:block;margin-top:1px}       /* "now available on Cloud" as its own clean line */
+    .sub{font-size:14.5px}
+    /* hero proof: WRAP so every badge is visible - no hidden horizontal scroll */
+    .proof{flex-wrap:wrap;gap:9px 10px;margin-top:16px}
+    .shield.hide-m{display:none}                  /* drop the long python-versions badge on phones */
+    /* the logo strip stays a swipe row */
+    .logos{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:2px}
+    .logos>*{flex:none}
+    .logos::-webkit-scrollbar,.recs::-webkit-scrollbar,.paths::-webkit-scrollbar,
+    .ptab::-webkit-scrollbar,.egs::-webkit-scrollbar{display:none}
+    /* --- playground: a full-width, thumb-reach Run --- */
+    .targetrow{flex-wrap:wrap}
+    .targetrow .verb{order:1}
+    .targetrow .tfield{order:2;flex-basis:100%}
+    .targetrow .run{order:3;width:100%;margin-top:9px;padding:12px;font-size:13px}
+    /* iOS zooms any input under 16px on focus - pin them to 16px on mobile so it never does */
+    .tfield .target,.mintform input,.minterr,#mintpop input{font-size:16px}
+    /* example chips: one swipe row (not a wrapped clump); the active one is lit */
+    .egs{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin:-2px 0 12px;padding:2px 0}
+    .egs button{flex:none}
+    .egs button.on{color:var(--cyan);border-style:solid;border-color:var(--cyl);background:rgba(74,230,229,.08)}
+    /* curl command: compact so the long token wraps tidily instead of sprawling */
+    .cmd{font-size:11px;line-height:1.75}
+    .fbody{padding:12px}
+    .ep{font-size:10px}
+    /* ===== horizontal scroll cards (the native pattern) ===== */
+    .recs,.paths{display:flex;flex-direction:row;flex-wrap:nowrap;overflow-x:auto;gap:12px;
+      scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;
+      margin:14px 0 0;padding:2px 0 4px}  /* sit in the 15px content inset - first card lines up with the text */
+    .recs .rec,.paths .path{flex:0 0 84%;scroll-snap-align:start;grid-template-columns:1fr}
+    .paths .path{display:flex;flex-direction:column}
+    /* pricing table -> swipeable tier cards */
+    .ptab{border:0;overflow:visible;display:flex;flex-wrap:nowrap;overflow-x:auto;gap:12px;
+      scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;
+      border-radius:0;margin:14px 0 0;padding:2px 0 4px}
+    .ptab .prow:first-child{display:none}     /* the table header row is meaningless as a card */
+    .ptab .prow{display:flex;flex-direction:column;gap:9px;flex:0 0 80%;scroll-snap-align:start;
+      border:1px solid var(--line);border-radius:12px;background:var(--surf);padding:16px}
+    .ptab .prow.free{border-color:var(--cyl);box-shadow:inset 0 0 0 1px rgba(74,230,229,.06)}
+    .ptab .prow>div{padding:0;white-space:normal;overflow:visible}
+    .ptab .prow .tier{font-size:15px}
+    .ptab .prow .amt{font-size:20px}
+    .ptab .prow .for{font-size:12.5px}
+  }
+.ghnote{margin-top:14px;font-family:var(--mono);font-size:13px;color:var(--muted);border-left:3px solid #4493f8;padding:2px 0 2px 14px}
+.ghnote .t{color:#4493f8;font-weight:600;margin-bottom:4px}
+:root[data-theme="light"] .ghnote{border-left-color:#0969da}:root[data-theme="light"] .ghnote .t{color:#0969da}
+[data-if][hidden]{display:none!important}
+.tryline{margin:14px 0 0;font-family:var(--mono);font-size:13px;color:var(--muted)}.tryline b{color:var(--cyan)}
+.ptab .prow{grid-template-columns:150px minmax(0,1.3fr) minmax(0,1.7fr)}
+.bill{display:inline-flex;margin:16px 0 0;border:1px solid var(--line);border-radius:9px;overflow:hidden;font-family:var(--mono);font-size:13px}
+.bill button{background:none;border:0;color:var(--muted);padding:7px 14px;cursor:pointer;font:inherit}.bill button.on{background:var(--hair);color:#fff}
+.bill button b{color:var(--cyan);font-weight:600}:root[data-theme="light"] .bill button.on{color:#111}
+.amt .billed{display:block;font-size:12px;color:var(--muted);font-weight:400;margin-top:2px}
+@media (max-width:640px){.ptab .prow{grid-template-columns:96px minmax(0,1fr) minmax(0,1.2fr)}}
+.costline b{color:var(--cyan);font-weight:600}
+.cmph{margin:22px 0 0;font-family:var(--mono);font-size:14px;color:#fff;font-weight:700}.cmph small{color:var(--muted);font-weight:400;font-size:12px;margin-left:8px}
+.cmp{margin-top:10px;border:1px solid var(--line);border-radius:11px;overflow:hidden;font-family:var(--mono);font-size:13px}
+.crow{display:grid;grid-template-columns:minmax(0,1.6fr) repeat(3,minmax(0,1fr));border-top:1px solid var(--hair)}.crow:first-child{border-top:0}
+.crow>div{padding:9px 12px}.crow.h{color:var(--muted);font-size:12px}.crow .who small,.crow small{display:block;color:var(--muted);font-size:11.5px}
+.crow.us{background:rgba(74,230,229,.05)}.crow.us>div{color:var(--cyan)}.crow .na{color:var(--muted)}
+.cmpnote{margin:8px 0 0;font-family:var(--mono);font-size:12.5px;color:var(--muted)}.cmpnote b{color:var(--cyan);font-weight:600}
+@media (max-width:640px){.crow{grid-template-columns:minmax(0,1.25fr) repeat(3,minmax(0,1fr));font-size:12px}.crow>div{padding:8px}}
+.costline{display:block;margin-top:10px;font-family:var(--mono);font-size:12.5px;color:var(--muted);background:var(--code);border:1px solid var(--line);border-radius:8px;padding:9px 12px;overflow-x:auto;white-space:nowrap}
+</style>
+</head>
+<body>
+<noscript><div style="font-family:monospace;color:#f5a300;background:#0d0d10;border:1px solid rgba(233,233,237,.1);border-radius:9px;padding:10px 14px;max-width:820px;margin:20px auto 0">the playground needs JavaScript - the docs at <a style="color:#4AE6E5" href="https://docs.crawl4ai.com">docs.crawl4ai.com</a> work without it</div></noscript>
+<a href="#playground" style="position:absolute;left:-9999px" onfocus="this.style.left='8px';this.style.top='8px';this.style.zIndex=99;this.style.background='#0d0d10';this.style.padding='8px 12px';this.style.borderRadius='8px'" onblur="this.style.left='-9999px'">skip to playground</a>
+<header class="appbar">
+  <span class="brand"><svg class="mark" aria-hidden="true"  viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_458_1421)"><path d="M255.747 50.2417C256.982 50.2517 257.735 50.1469 258.707 50.9487C259.67 51.7425 259.846 52.5798 259.703 53.8315C259.544 55.2129 258.42 56.1162 257.52 57.1284C257.244 57.4498 256.968 57.7717 256.693 58.0942C256.09 58.8015 255.485 59.5069 254.877 60.2104C253.908 61.3377 252.969 62.4893 252.031 63.6431C250.041 66.0713 247.988 68.4466 245.944 70.8286C243.976 73.1226 242.012 75.4198 240.106 77.7651C238.813 79.3532 237.481 80.9053 236.145 82.4575C234.898 83.9073 233.666 85.3694 232.432 86.8306C232.024 87.3129 231.616 87.7946 231.207 88.2759C229.956 89.7488 228.711 91.2258 227.491 92.7241C225.867 94.7174 224.199 96.6735 222.535 98.6323C220.928 100.524 219.335 102.425 217.768 104.35C217.008 105.274 216.236 106.187 215.46 107.098C214.527 108.196 213.607 109.3 212.713 110.431C211.343 112.16 209.896 113.822 208.457 115.494C206.549 117.713 204.672 119.956 202.824 122.225C201.407 123.949 199.956 125.643 198.511 127.343C196.904 129.235 195.311 131.137 193.744 133.063C192.854 134.145 191.948 135.212 191.04 136.279C190.197 137.273 189.365 138.276 188.543 139.289C187.681 140.35 186.801 141.392 185.905 142.425C181.494 147.51 180.176 148.535 180.323 151.464C180.323 153.662 182.261 155.443 183.793 157.073C183.826 157.111 186.491 160.228 187.769 161.842C189.06 163.471 190.394 165.054 191.75 166.627C192.644 167.665 193.522 168.712 194.385 169.775C195.391 171.014 196.42 172.229 197.461 173.437C198.727 174.906 199.966 176.392 201.188 177.897C201.938 178.811 202.701 179.714 203.467 180.615C204.675 182.035 205.861 183.472 207.038 184.918C207.792 185.835 208.558 186.741 209.327 187.646C210.534 189.067 211.72 190.504 212.897 191.95C213.651 192.867 214.417 193.773 215.186 194.677C216.393 196.098 217.579 197.535 218.756 198.981C219.51 199.898 220.277 200.804 221.045 201.708C222.253 203.129 223.439 204.566 224.616 206.012C225.505 207.094 226.412 208.161 227.319 209.228C228.162 210.222 228.994 211.226 229.816 212.238C230.828 213.482 231.864 214.703 232.911 215.917C234.176 217.386 235.415 218.872 236.637 220.377C237.387 221.292 238.151 222.194 238.916 223.095C239.899 224.251 240.871 225.415 241.828 226.593C242.84 227.837 243.876 229.058 244.922 230.273C246.189 231.743 247.429 233.23 248.652 234.737C249.255 235.471 249.867 236.196 250.484 236.918C252.051 238.753 253.567 240.621 255.04 242.532C255.466 243.084 255.899 243.615 256.355 244.143C257.376 245.351 257.713 246.209 257.696 247.8C257.427 248.771 257.092 249.209 256.348 249.902C255.382 250.125 254.429 250.1 253.442 250.087C253 250.091 252.999 250.09 252.548 250.093C251.571 250.098 250.595 250.093 249.618 250.086C248.937 250.087 248.257 250.087 247.577 250.088C246.149 250.089 244.721 250.085 243.293 250.077C241.47 250.067 239.646 250.069 237.823 250.075C236.417 250.078 235.01 250.075 233.604 250.071C232.932 250.069 232.259 250.069 231.587 250.071C230.644 250.072 229.701 250.066 228.757 250.058C228.346 250.061 228.346 250.061 227.926 250.064C224.727 250.018 222.022 248.905 219.727 246.679C217.688 244.505 215.812 242.178 213.936 239.864C213.202 238.966 212.456 238.079 211.707 237.195C211.572 237.036 211.437 236.876 211.298 236.712C210.885 236.226 210.472 235.74 210.059 235.253C208.313 233.199 206.579 231.138 204.877 229.047C204.118 228.124 203.345 227.211 202.57 226.3C201.436 224.967 200.332 223.614 199.245 222.243C198.389 221.182 197.506 220.145 196.623 219.107C195.549 217.844 194.498 216.564 193.452 215.278C192.692 214.354 191.919 213.442 191.144 212.531C190.21 211.433 189.29 210.328 188.397 209.198C187.443 207.994 186.453 206.826 185.45 205.664C184.273 204.299 183.123 202.92 182.004 201.506C179.712 198.635 177.358 195.815 174.958 193.034C173.871 191.771 172.812 190.487 171.761 189.193C171.011 188.278 170.249 187.375 169.483 186.474C168.276 185.053 167.089 183.617 165.912 182.171C165.022 181.089 164.116 180.022 163.208 178.955C162.365 177.96 161.533 176.958 160.711 175.946C159.554 174.523 158.365 173.129 157.165 171.742C156.466 170.932 156.445 170.947 155.111 169.279C153.369 167.101 153.076 165.683 150.723 165.683C149.268 165.674 148.202 165.672 147.034 166.644C145.931 167.76 144.946 168.981 143.97 170.208C143.214 171.153 142.436 172.076 141.651 172.998C140.463 174.396 139.291 175.807 138.132 177.23C137.065 178.539 135.99 179.842 134.915 181.145C134.022 182.229 133.13 183.314 132.239 184.399C130.54 186.467 128.833 188.527 127.1 190.566C125.826 192.066 124.582 193.59 123.34 195.117C122.925 195.623 122.51 196.131 122.095 196.637C121.329 197.573 120.564 198.51 119.803 199.451C118.159 201.482 116.505 203.502 114.811 205.492C113.531 206.997 112.282 208.525 111.036 210.058C109.501 211.946 107.948 213.818 106.373 215.672C105.523 216.673 104.686 217.683 103.858 218.701C102.76 220.05 101.639 221.379 100.513 222.705C99.6643 223.705 98.8269 224.714 97.9985 225.732C96.9004 227.081 95.7803 228.41 94.6538 229.736C93.8103 230.73 92.9786 231.733 92.1567 232.746C91.0317 234.128 89.8748 235.48 88.7104 236.83C87.5184 238.216 86.3562 239.625 85.1987 241.04C78.5161 249.186 78.5161 249.186 73.8286 249.902C72.8741 249.948 71.9198 249.951 70.9643 249.954C70.5339 249.957 70.5333 249.957 70.0942 249.959C69.1473 249.965 68.2003 249.969 67.2534 249.972C66.7681 249.974 66.768 249.974 66.2729 249.976C64.562 249.982 62.851 249.986 61.1401 249.989C59.371 249.992 57.6015 250.002 55.8325 250.013C54.4731 250.021 53.1137 250.024 51.7544 250.025C51.102 250.026 50.4497 250.029 49.7973 250.035C48.8862 250.042 47.975 250.042 47.0639 250.04C46.7939 250.043 46.5238 250.047 46.2456 250.051C44.7154 250.039 44.4663 250.037 43.8813 249.63C43.6183 249.448 43.3904 249.214 43.2339 248.935C42.7984 248.158 42.6783 247.418 42.7358 246.516C42.7537 246.236 42.826 245.961 42.9497 245.708C43.7846 244.005 45.2427 242.583 46.4692 241.159C47.4838 239.98 48.4505 238.772 49.4018 237.542C50.5236 236.096 51.699 234.729 52.9389 233.381C53.7208 232.495 54.446 231.574 55.1694 230.639C56.4274 229.014 57.7347 227.444 59.0796 225.89C59.9592 224.873 60.8233 223.847 61.6704 222.802C62.9562 221.219 64.2827 219.673 65.6128 218.127C66.8596 216.678 68.0922 215.216 69.3257 213.755C69.7335 213.273 70.1422 212.791 70.5512 212.309C71.7911 210.849 73.0246 209.386 74.2309 207.898C75.4516 206.397 76.7177 204.939 77.9887 203.481C79.1386 202.159 80.2547 200.814 81.3569 199.452C82.14 198.5 82.9456 197.569 83.7524 196.637C84.9206 195.286 86.0473 193.911 87.1401 192.499C88.4444 190.813 89.8179 189.199 91.2221 187.596C92.2943 186.37 93.325 185.12 94.3325 183.84C95.0305 182.97 95.7532 182.122 96.478 181.274C97.6237 179.932 98.7291 178.566 99.811 177.172C100.875 175.803 101.973 174.486 103.14 173.201C104.006 172.227 104.818 171.212 105.639 170.201C106.402 169.269 107.179 168.349 107.959 167.431C108.942 166.275 109.914 165.112 110.871 163.934C111.883 162.69 113.379 160.986 113.965 160.253C114.022 160.199 119.934 154.524 119.934 151.117C119.934 148.682 117.026 145.749 115.042 143.524C114.305 142.69 113.584 141.842 112.867 140.991C112.734 140.834 112.602 140.678 112.465 140.517C111.643 139.542 110.833 138.557 110.028 137.567C109.016 136.323 107.981 135.101 106.934 133.886C105.669 132.418 104.429 130.932 103.207 129.427C102.457 128.513 101.694 127.61 100.928 126.708C99.7208 125.288 98.5339 123.852 97.3569 122.406C96.6029 121.489 95.8376 120.582 95.0688 119.677C93.8615 118.256 92.6746 116.821 91.4975 115.375C90.7435 114.457 89.9782 113.551 89.2094 112.646C88.0021 111.225 86.8152 109.789 85.6382 108.343C84.8841 107.426 84.1188 106.519 83.3501 105.615C82.1427 104.194 80.9558 102.758 79.7788 101.312C78.8891 100.23 77.9828 99.1625 77.0757 98.0952C76.2322 97.1011 75.4005 96.0985 74.5786 95.0864C73.2863 93.4992 71.9552 91.9475 70.6206 90.396C68.791 88.2687 66.9735 86.1309 65.2036 83.9536C63.9113 82.3664 62.5802 80.8147 61.2456 79.2632C59.416 77.1359 57.5985 74.9981 55.8286 72.8208C54.394 71.0595 52.9138 69.3385 51.4311 67.6177C45.0912 60.257 45.0912 60.2568 42.1508 56.6138C41.6314 55.9681 41.694 56.0678 41.1069 55.4829C40.52 54.8981 40.4233 54.1284 40.3383 53.2104C40.4449 51.9746 40.7374 51.5477 41.602 50.6831C42.6139 50.1774 43.783 50.3446 44.8969 50.3433C45.178 50.3418 45.459 50.3399 45.7485 50.3384C46.6823 50.3341 47.6164 50.3322 48.5503 50.3306C49.1992 50.3289 49.8485 50.3274 50.4975 50.3257C51.8608 50.3226 53.2241 50.3208 54.5874 50.3198C56.3297 50.3182 58.0726 50.3116 59.8149 50.3032C61.157 50.2977 62.4992 50.2959 63.8413 50.2954C64.4831 50.2945 65.1252 50.2924 65.7671 50.2886C66.6687 50.2835 67.5705 50.2838 68.4721 50.2856C68.7345 50.2829 68.9968 50.2806 69.2671 50.2778C72.8888 50.3015 75.5958 51.5847 78.1518 54.1226C79.6807 55.7387 81.0921 57.4529 82.4868 59.1851C83.3409 60.2261 84.2226 61.2409 85.1079 62.2554C86.4262 63.7674 87.7134 65.2987 88.977 66.8569C90.6586 68.9052 92.4021 70.903 94.1421 72.9019C95.7625 74.7639 97.3615 76.6359 98.9155 78.5542C99.9124 79.7617 100.942 80.9407 101.97 82.1216C103.411 83.7772 104.831 85.4499 106.245 87.1284C106.65 87.6091 107.057 88.0886 107.464 88.5679C108.705 90.0283 109.938 91.4924 111.145 92.981C112.506 94.6527 113.919 96.2772 115.334 97.9028C116.396 99.122 117.447 100.35 118.498 101.579C119.424 102.661 120.356 103.738 121.291 104.812C122.76 106.499 124.205 108.201 125.613 109.939C126.358 110.851 127.119 111.749 127.881 112.646C128.864 113.802 129.836 114.966 130.792 116.144C132.085 117.731 133.416 119.283 134.75 120.834C136.574 122.955 138.387 125.086 140.149 127.258C141.687 129.147 143.288 130.98 144.89 132.814C145.251 133.23 145.606 133.65 145.96 134.071C147.185 135.523 147.999 136.585 149.982 136.652C151.833 136.714 152.855 135.473 154.046 134.162C155.116 132.92 156.15 131.649 157.182 130.376C158.144 129.207 159.133 128.061 160.123 126.915C161.032 125.858 161.922 124.789 162.799 123.706C163.841 122.422 164.932 121.196 166.044 119.974C166.699 119.238 167.325 118.484 167.945 117.718C169.473 115.832 171.069 114.007 172.663 112.176C173.856 110.801 175.037 109.415 176.221 108.031C176.669 107.508 177.119 106.986 177.569 106.464C178.894 104.925 180.213 103.383 181.495 101.806C182.922 100.049 184.397 98.3353 185.874 96.6206C186.613 95.7627 187.35 94.9023 188.086 94.0425C188.974 93.006 189.863 91.9699 190.753 90.936C192.078 89.397 193.397 87.855 194.678 86.2788C196.106 84.5221 197.581 82.8079 199.058 81.0933C199.797 80.2353 200.534 79.3749 201.27 78.5151C202.158 77.4786 203.046 76.4426 203.937 75.4087C205.256 73.8761 206.57 72.3411 207.843 70.77C208.898 69.4708 209.985 68.2039 211.084 66.9429C212.408 65.4244 213.702 63.8875 214.971 62.3228C216.101 60.9401 217.259 59.5821 218.416 58.2231C218.867 57.6917 219.315 57.1571 219.762 56.6226C220.068 56.2602 220.374 55.8979 220.679 55.5356C220.886 55.2868 220.886 55.2868 221.097 55.0327C222.384 53.5143 223.816 52.0324 225.641 51.1782C225.826 51.0888 226.012 50.9989 226.203 50.9067C227.205 50.5036 228.116 50.3534 229.195 50.3472C229.446 50.3451 229.697 50.3435 229.956 50.3413C230.365 50.3401 230.365 50.3396 230.783 50.3384C231.072 50.3365 231.362 50.3345 231.66 50.3325C232.616 50.3267 233.573 50.3237 234.53 50.3208C235.02 50.319 235.02 50.3187 235.52 50.3169C237.248 50.3108 238.976 50.3069 240.705 50.3042C242.491 50.301 244.278 50.2904 246.064 50.2788C247.437 50.2712 248.81 50.2691 250.183 50.2681C250.842 50.2666 251.501 50.2627 252.16 50.2573C253.08 50.2502 254.001 50.2504 254.921 50.2524C255.33 50.2468 255.33 50.2474 255.747 50.2417ZM269.257 98.7349C271.062 98.3831 272.925 97.9406 273.583 100.04C273.583 101.285 273.279 101.692 272.548 102.66C272.331 102.936 272.331 102.936 272.119 103.207C271.712 103.726 271.303 104.242 270.889 104.755C269.866 106.017 268.845 107.28 267.857 108.569C266.527 110.314 265.176 112.036 263.788 113.736C262.729 115.032 261.675 116.33 260.644 117.648C259.359 119.294 258.058 120.925 256.738 122.542C255.686 123.832 254.64 125.125 253.614 126.436C251.373 129.305 249.081 132.13 246.762 134.936C245.179 136.851 243.599 138.766 242.071 140.725C241.386 141.606 240.701 142.485 239.993 143.347C239.819 143.556 239.652 143.759 239.484 143.961C239.144 144.372 238.804 144.783 238.463 145.193C236.936 147 235.003 149.057 235.003 151.236C235.004 152.617 238.844 157.69 238.87 157.723C239.243 158.161 239.617 158.6 239.99 159.04C240.396 159.521 240.804 160.001 241.21 160.482C242.402 161.886 243.579 163.3 244.742 164.727C245.128 165.202 245.514 165.678 245.9 166.153C246.387 166.753 246.875 167.353 247.363 167.953C248.248 169.043 249.133 170.135 250.025 171.22C250.827 172.197 251.632 173.17 252.407 174.168C253.42 175.49 254.467 176.775 255.547 178.042C256.478 179.135 257.402 180.231 258.294 181.356C259.177 182.47 260.076 183.57 260.982 184.666C262.42 186.403 263.848 188.145 265.234 189.925C266.099 191.038 266.975 192.14 267.874 193.225C269.78 195.52 272.997 198.351 273.657 201.333C273.583 202.23 273.583 202.231 273.125 202.945C272.041 203.64 272.041 203.64 269.77 203.251C269.448 203.178 269.135 203.107 268.823 203.036C268.265 202.911 267.707 202.787 267.15 202.66C266.33 202.473 265.509 202.289 264.688 202.105C264.466 202.056 264.252 202.007 264.037 201.959C262.365 201.585 260.692 201.228 259.013 200.889C258.503 200.787 257.993 200.683 257.484 200.58C256.735 200.427 255.985 200.275 255.236 200.125C254.52 199.984 253.803 199.844 253.088 199.699C252.862 199.653 252.643 199.608 252.423 199.563C250.56 199.211 249.127 198.64 247.817 197.214C246.862 195.942 245.881 194.7 244.85 193.49C243.959 192.448 243.07 191.404 242.208 190.337C241.275 189.159 240.335 187.991 239.361 186.846C238.003 185.253 236.667 183.644 235.351 182.015C234.293 180.706 233.228 179.405 232.137 178.123C231.134 176.947 230.138 175.771 229.199 174.544C228.364 173.455 227.488 172.404 226.598 171.359C225.816 170.441 225.037 169.522 224.271 168.591C223.225 167.306 222.175 166.026 221.102 164.763C220.024 163.496 218.953 162.226 217.919 160.921C217.28 160.112 216.63 159.314 215.958 158.532C215.266 157.727 214.58 156.917 213.901 156.101C213.773 155.947 213.649 155.797 213.525 155.648C212.374 154.272 211.368 153.095 211.236 151.253C211.181 149.496 211.474 148.763 215.42 144.274C216.086 143.517 216.745 142.76 217.382 141.978C218.465 140.605 219.569 139.255 220.703 137.923C221.45 137.046 222.194 136.168 222.916 135.27C224.053 133.832 225.218 132.426 226.415 131.039C227.419 129.876 228.41 128.71 229.364 127.505C230.257 126.375 231.176 125.27 232.11 124.172C232.879 123.269 233.646 122.365 234.398 121.446C235.51 120.073 236.638 118.719 237.798 117.386C239.02 115.986 240.239 114.589 241.393 113.131C242.28 112.006 243.193 110.908 244.122 109.817C245.155 108.605 246.167 107.38 247.162 106.136C248.308 104.681 249.395 103.473 251.158 102.849C251.72 102.725 251.72 102.725 252.271 102.603C252.905 102.458 253.54 102.315 254.176 102.177C254.611 102.084 255.045 101.988 255.478 101.89C256.791 101.591 258.104 101.298 259.419 101.009C260.309 100.814 261.199 100.619 262.088 100.423C262.423 100.35 262.423 100.349 262.751 100.277C263.857 100.035 264.963 99.7922 266.064 99.5259C266.409 99.4408 266.409 99.4404 266.748 99.3569C267.189 99.2489 267.631 99.1404 268.073 99.0317C268.467 98.9305 268.862 98.8319 269.257 98.7349ZM26.3676 99.9575C27.0262 97.8585 28.8895 98.3011 30.6938 98.6528C31.0889 98.7498 31.4834 98.8495 31.8774 98.9507C32.319 99.0594 32.7609 99.1669 33.2026 99.2749C33.5414 99.3585 33.5415 99.3586 33.8872 99.4438C34.9876 99.7102 36.0928 99.9536 37.1987 100.196C37.527 100.268 37.5278 100.267 37.8628 100.341C38.752 100.537 39.6412 100.733 40.5307 100.928C41.8456 101.216 43.1596 101.509 44.4721 101.808C44.9057 101.906 45.3404 102.002 45.7749 102.095C46.4108 102.232 47.045 102.376 47.6792 102.521C48.23 102.643 48.2305 102.643 48.7924 102.767C50.5552 103.391 51.6428 104.6 52.7895 106.055C53.784 107.299 54.795 108.524 55.8286 109.735C56.757 110.826 57.6706 111.924 58.5571 113.049C59.7113 114.507 60.9309 115.904 62.1528 117.304C63.3129 118.636 64.4413 119.991 65.5532 121.364C66.3045 122.282 67.0711 123.187 67.8403 124.09C68.7739 125.188 69.6939 126.293 70.5874 127.423C71.541 128.628 72.5322 129.795 73.5356 130.958C74.7329 132.345 75.8977 133.75 77.0337 135.188C77.7563 136.086 78.501 136.965 79.2485 137.842C80.3823 139.173 81.4849 140.524 82.5678 141.897C83.2048 142.678 83.8642 143.435 84.5298 144.192C88.4765 148.682 88.7693 149.415 88.7143 151.172C88.5825 153.014 87.5767 154.191 86.4262 155.567C86.3023 155.716 86.178 155.865 86.0503 156.019C85.371 156.836 84.6842 157.645 83.9917 158.451C83.3202 159.233 82.6714 160.031 82.0317 160.84C80.9979 162.145 79.9275 163.415 78.8491 164.682C77.7761 165.945 76.7258 167.225 75.6801 168.51C74.9142 169.441 74.1338 170.359 73.352 171.277C72.4625 172.322 71.5869 173.373 70.7524 174.463C69.8126 175.69 68.8157 176.865 67.813 178.041C66.7223 179.323 65.658 180.625 64.6001 181.934C63.284 183.563 61.9474 185.171 60.5893 186.764C59.6155 187.909 58.676 189.078 57.7426 190.256C56.8814 191.323 55.9921 192.366 55.101 193.408C54.0696 194.618 53.088 195.86 52.1333 197.132C50.8232 198.558 49.3907 199.129 47.5278 199.481C47.3085 199.526 47.0887 199.571 46.8628 199.617C46.1474 199.762 45.4307 199.902 44.7143 200.042C43.9648 200.193 43.2155 200.346 42.4663 200.499C41.9568 200.602 41.4467 200.705 40.937 200.807C39.2583 201.146 37.5846 201.503 35.9135 201.877C35.6986 201.925 35.4836 201.973 35.2622 202.023C34.4416 202.207 33.6211 202.391 32.8012 202.578C32.244 202.705 31.6861 202.83 31.1284 202.955C30.8157 203.026 30.5023 203.096 30.1801 203.169C27.9092 203.558 27.9089 203.558 26.8247 202.863C26.367 202.149 26.3676 202.149 26.2944 201.251C26.9537 198.269 30.1702 195.438 32.0766 193.143C32.9756 192.058 33.8522 190.957 34.7173 189.844C36.1027 188.064 37.5303 186.321 38.9682 184.583C39.8742 183.488 40.774 182.389 41.6567 181.275C42.5496 180.15 43.4716 179.053 44.4028 177.96C45.4827 176.693 46.5299 175.408 47.5434 174.086C48.3183 173.088 49.1238 172.115 49.9262 171.138C50.818 170.053 51.7031 168.962 52.5883 167.872C53.0757 167.272 53.5628 166.672 54.0503 166.072C54.4365 165.596 54.8224 165.121 55.2085 164.645C56.3713 163.218 57.5494 161.805 58.7407 160.401C59.1476 159.92 59.5538 159.439 59.9604 158.958C60.3327 158.518 60.7067 158.079 61.0805 157.641C61.1049 157.609 64.9475 152.535 64.9477 151.154C64.9477 148.975 63.0145 146.918 61.4868 145.111C61.1467 144.701 60.8068 144.29 60.4673 143.879C60.2992 143.677 60.1307 143.475 59.9575 143.266C59.2491 142.404 58.5637 141.524 57.8794 140.643C56.3511 138.684 54.7719 136.769 53.1889 134.854C50.8701 132.048 48.5777 129.223 46.3374 126.354C45.3117 125.044 44.2655 123.751 43.2133 122.461C41.893 120.843 40.5911 119.212 39.3061 117.566C38.275 116.248 37.2222 114.949 36.1635 113.654C34.7756 111.954 33.4243 110.232 32.0942 108.487C31.1064 107.198 30.0847 105.936 29.062 104.674C28.6481 104.161 28.2386 103.645 27.8325 103.125C27.62 102.855 27.6194 102.854 27.4028 102.579C26.6718 101.61 26.3677 101.204 26.3676 99.9575Z" fill="#48DDDD" fill-opacity="0.866667"/></g><defs><clipPath id="clip0_458_1421"><rect width="300" height="300" fill="white"/></clipPath></defs></svg>Crawl4AI<span class="adot" data-adot title="signed in"></span></span>
+  <button class="themetog" data-themetog aria-label="Toggle theme" title="Toggle theme">☀</button>
+  <button class="getk" data-key>Get a key</button>
+</header>
+<main class="doc">
+  <div class="tabrow">
+    <div class="tabl">
+      <div class="filetab"><span class="dot"></span>README.md</div>
+      <a class="oss" href="https://github.com/unclecode/crawl4ai" target="_blank" rel="noopener"><span class="ossin"><span class="s">★</span> Check OSS self-host version</span></a>
+    </div>
+    <div class="tabr">
+      <div class="sess" data-sess></div>
+      <a class="signin" href="/dashboard/">Sign in</a>
+      <button class="getk deskk" data-key>Get a key</button>
+      <button class="themetog" data-themetog aria-label="Toggle light or dark theme" title="Toggle theme">☀</button>
+    </div>
+  </div>
+  <div class="sheet">
+    <div class="fromdocs" data-fromdocs hidden><span class="tagpill" data-fd-tag>from the docs</span> <b data-fd-title>You know the library. This is the same crawler, hosted.</b> <span data-fd-text>No browsers, no proxies, no cookies to babysit: one key with free credits every month, and it works in Claude Code, Codex, OpenCode and Cursor. Always open source, forever.</span> <button class="getk" data-key>Get a key + <span data-credit="monthly">1,000</span> free credits a month →</button></div>
+    <script>/* one welcome per source: the ref of this visit, else the first-touch cookie. Keys: the ref's first word (docs-banner → docs, gh-about → gh). */
+(function(){try{var W={docs:["from the docs","You know the library. This is the same crawler, hosted.","No browsers, no proxies, no cookies to babysit: one key with free credits every month, and it works in Claude Code, Codex, OpenCode and Cursor. Always open source, forever."],
+readme:["from the repo","You already run Crawl4AI. Now let it run for you.","The same crawler you starred, hosted: no browsers, no proxies, no cookies to babysit. One key with free credits every month, and your agent is on the web. The library stays open source, forever."],
+gh:["from GitHub","You already run Crawl4AI. Now let it run for you.","The same crawler you starred, hosted: no browsers, no proxies, no cookies to babysit. One key with free credits every month, and your agent is on the web. The library stays open source, forever."],
+pip:["from pip","You just installed Crawl4AI. This is the hosted one.","Same engine, no browsers to run and no proxies to buy. One key with free credits every month, and it works in Claude Code, Codex, OpenCode and Cursor. The library stays open source, forever."],
+discord:["from Discord","Hello from the community. Crawl4AI Cloud is live.","The same crawler, hosted: no browsers, no proxies, no cookies to babysit. One key with free credits every month, and your agent is on the web. The library stays open source, forever."],
+x:["from X","Crawl4AI Cloud is live.","The open-source crawler with 82k stars, hosted: no browsers, no proxies, no cookies to babysit. One key with free credits every month, and your agent is on the web."]};
+var s=(document.cookie.match(/(?:^|;\s*)c4_src=([^;]*)/)||[])[1]||"",r=(location.search.match(/[?&]ref=([a-zA-Z0-9_-]+)/)||[])[1]||"",k=((r||s).split("-")[0]||"").toLowerCase(),w=W[k];
+if(w){var d=document.querySelector("[data-fromdocs]");d.querySelector("[data-fd-tag]").textContent=w[0];d.querySelector("[data-fd-title]").textContent=w[1];d.querySelector("[data-fd-text]").innerHTML=w[2];d.hidden=false;}}catch(e){}})();</script>
+    <div class="eyebrow"><span class="tagpill">NEW</span> <span class="ebfull">Finally, your favorite open-source crawler is now a hosted API.</span><span class="ebshort">Your open-source crawler, now hosted.</span></div>
+    <h1><svg class="mark" aria-hidden="true"  viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_458_1421)"><path d="M255.747 50.2417C256.982 50.2517 257.735 50.1469 258.707 50.9487C259.67 51.7425 259.846 52.5798 259.703 53.8315C259.544 55.2129 258.42 56.1162 257.52 57.1284C257.244 57.4498 256.968 57.7717 256.693 58.0942C256.09 58.8015 255.485 59.5069 254.877 60.2104C253.908 61.3377 252.969 62.4893 252.031 63.6431C250.041 66.0713 247.988 68.4466 245.944 70.8286C243.976 73.1226 242.012 75.4198 240.106 77.7651C238.813 79.3532 237.481 80.9053 236.145 82.4575C234.898 83.9073 233.666 85.3694 232.432 86.8306C232.024 87.3129 231.616 87.7946 231.207 88.2759C229.956 89.7488 228.711 91.2258 227.491 92.7241C225.867 94.7174 224.199 96.6735 222.535 98.6323C220.928 100.524 219.335 102.425 217.768 104.35C217.008 105.274 216.236 106.187 215.46 107.098C214.527 108.196 213.607 109.3 212.713 110.431C211.343 112.16 209.896 113.822 208.457 115.494C206.549 117.713 204.672 119.956 202.824 122.225C201.407 123.949 199.956 125.643 198.511 127.343C196.904 129.235 195.311 131.137 193.744 133.063C192.854 134.145 191.948 135.212 191.04 136.279C190.197 137.273 189.365 138.276 188.543 139.289C187.681 140.35 186.801 141.392 185.905 142.425C181.494 147.51 180.176 148.535 180.323 151.464C180.323 153.662 182.261 155.443 183.793 157.073C183.826 157.111 186.491 160.228 187.769 161.842C189.06 163.471 190.394 165.054 191.75 166.627C192.644 167.665 193.522 168.712 194.385 169.775C195.391 171.014 196.42 172.229 197.461 173.437C198.727 174.906 199.966 176.392 201.188 177.897C201.938 178.811 202.701 179.714 203.467 180.615C204.675 182.035 205.861 183.472 207.038 184.918C207.792 185.835 208.558 186.741 209.327 187.646C210.534 189.067 211.72 190.504 212.897 191.95C213.651 192.867 214.417 193.773 215.186 194.677C216.393 196.098 217.579 197.535 218.756 198.981C219.51 199.898 220.277 200.804 221.045 201.708C222.253 203.129 223.439 204.566 224.616 206.012C225.505 207.094 226.412 208.161 227.319 209.228C228.162 210.222 228.994 211.226 229.816 212.238C230.828 213.482 231.864 214.703 232.911 215.917C234.176 217.386 235.415 218.872 236.637 220.377C237.387 221.292 238.151 222.194 238.916 223.095C239.899 224.251 240.871 225.415 241.828 226.593C242.84 227.837 243.876 229.058 244.922 230.273C246.189 231.743 247.429 233.23 248.652 234.737C249.255 235.471 249.867 236.196 250.484 236.918C252.051 238.753 253.567 240.621 255.04 242.532C255.466 243.084 255.899 243.615 256.355 244.143C257.376 245.351 257.713 246.209 257.696 247.8C257.427 248.771 257.092 249.209 256.348 249.902C255.382 250.125 254.429 250.1 253.442 250.087C253 250.091 252.999 250.09 252.548 250.093C251.571 250.098 250.595 250.093 249.618 250.086C248.937 250.087 248.257 250.087 247.577 250.088C246.149 250.089 244.721 250.085 243.293 250.077C241.47 250.067 239.646 250.069 237.823 250.075C236.417 250.078 235.01 250.075 233.604 250.071C232.932 250.069 232.259 250.069 231.587 250.071C230.644 250.072 229.701 250.066 228.757 250.058C228.346 250.061 228.346 250.061 227.926 250.064C224.727 250.018 222.022 248.905 219.727 246.679C217.688 244.505 215.812 242.178 213.936 239.864C213.202 238.966 212.456 238.079 211.707 237.195C211.572 237.036 211.437 236.876 211.298 236.712C210.885 236.226 210.472 235.74 210.059 235.253C208.313 233.199 206.579 231.138 204.877 229.047C204.118 228.124 203.345 227.211 202.57 226.3C201.436 224.967 200.332 223.614 199.245 222.243C198.389 221.182 197.506 220.145 196.623 219.107C195.549 217.844 194.498 216.564 193.452 215.278C192.692 214.354 191.919 213.442 191.144 212.531C190.21 211.433 189.29 210.328 188.397 209.198C187.443 207.994 186.453 206.826 185.45 205.664C184.273 204.299 183.123 202.92 182.004 201.506C179.712 198.635 177.358 195.815 174.958 193.034C173.871 191.771 172.812 190.487 171.761 189.193C171.011 188.278 170.249 187.375 169.483 186.474C168.276 185.053 167.089 183.617 165.912 182.171C165.022 181.089 164.116 180.022 163.208 178.955C162.365 177.96 161.533 176.958 160.711 175.946C159.554 174.523 158.365 173.129 157.165 171.742C156.466 170.932 156.445 170.947 155.111 169.279C153.369 167.101 153.076 165.683 150.723 165.683C149.268 165.674 148.202 165.672 147.034 166.644C145.931 167.76 144.946 168.981 143.97 170.208C143.214 171.153 142.436 172.076 141.651 172.998C140.463 174.396 139.291 175.807 138.132 177.23C137.065 178.539 135.99 179.842 134.915 181.145C134.022 182.229 133.13 183.314 132.239 184.399C130.54 186.467 128.833 188.527 127.1 190.566C125.826 192.066 124.582 193.59 123.34 195.117C122.925 195.623 122.51 196.131 122.095 196.637C121.329 197.573 120.564 198.51 119.803 199.451C118.159 201.482 116.505 203.502 114.811 205.492C113.531 206.997 112.282 208.525 111.036 210.058C109.501 211.946 107.948 213.818 106.373 215.672C105.523 216.673 104.686 217.683 103.858 218.701C102.76 220.05 101.639 221.379 100.513 222.705C99.6643 223.705 98.8269 224.714 97.9985 225.732C96.9004 227.081 95.7803 228.41 94.6538 229.736C93.8103 230.73 92.9786 231.733 92.1567 232.746C91.0317 234.128 89.8748 235.48 88.7104 236.83C87.5184 238.216 86.3562 239.625 85.1987 241.04C78.5161 249.186 78.5161 249.186 73.8286 249.902C72.8741 249.948 71.9198 249.951 70.9643 249.954C70.5339 249.957 70.5333 249.957 70.0942 249.959C69.1473 249.965 68.2003 249.969 67.2534 249.972C66.7681 249.974 66.768 249.974 66.2729 249.976C64.562 249.982 62.851 249.986 61.1401 249.989C59.371 249.992 57.6015 250.002 55.8325 250.013C54.4731 250.021 53.1137 250.024 51.7544 250.025C51.102 250.026 50.4497 250.029 49.7973 250.035C48.8862 250.042 47.975 250.042 47.0639 250.04C46.7939 250.043 46.5238 250.047 46.2456 250.051C44.7154 250.039 44.4663 250.037 43.8813 249.63C43.6183 249.448 43.3904 249.214 43.2339 248.935C42.7984 248.158 42.6783 247.418 42.7358 246.516C42.7537 246.236 42.826 245.961 42.9497 245.708C43.7846 244.005 45.2427 242.583 46.4692 241.159C47.4838 239.98 48.4505 238.772 49.4018 237.542C50.5236 236.096 51.699 234.729 52.9389 233.381C53.7208 232.495 54.446 231.574 55.1694 230.639C56.4274 229.014 57.7347 227.444 59.0796 225.89C59.9592 224.873 60.8233 223.847 61.6704 222.802C62.9562 221.219 64.2827 219.673 65.6128 218.127C66.8596 216.678 68.0922 215.216 69.3257 213.755C69.7335 213.273 70.1422 212.791 70.5512 212.309C71.7911 210.849 73.0246 209.386 74.2309 207.898C75.4516 206.397 76.7177 204.939 77.9887 203.481C79.1386 202.159 80.2547 200.814 81.3569 199.452C82.14 198.5 82.9456 197.569 83.7524 196.637C84.9206 195.286 86.0473 193.911 87.1401 192.499C88.4444 190.813 89.8179 189.199 91.2221 187.596C92.2943 186.37 93.325 185.12 94.3325 183.84C95.0305 182.97 95.7532 182.122 96.478 181.274C97.6237 179.932 98.7291 178.566 99.811 177.172C100.875 175.803 101.973 174.486 103.14 173.201C104.006 172.227 104.818 171.212 105.639 170.201C106.402 169.269 107.179 168.349 107.959 167.431C108.942 166.275 109.914 165.112 110.871 163.934C111.883 162.69 113.379 160.986 113.965 160.253C114.022 160.199 119.934 154.524 119.934 151.117C119.934 148.682 117.026 145.749 115.042 143.524C114.305 142.69 113.584 141.842 112.867 140.991C112.734 140.834 112.602 140.678 112.465 140.517C111.643 139.542 110.833 138.557 110.028 137.567C109.016 136.323 107.981 135.101 106.934 133.886C105.669 132.418 104.429 130.932 103.207 129.427C102.457 128.513 101.694 127.61 100.928 126.708C99.7208 125.288 98.5339 123.852 97.3569 122.406C96.6029 121.489 95.8376 120.582 95.0688 119.677C93.8615 118.256 92.6746 116.821 91.4975 115.375C90.7435 114.457 89.9782 113.551 89.2094 112.646C88.0021 111.225 86.8152 109.789 85.6382 108.343C84.8841 107.426 84.1188 106.519 83.3501 105.615C82.1427 104.194 80.9558 102.758 79.7788 101.312C78.8891 100.23 77.9828 99.1625 77.0757 98.0952C76.2322 97.1011 75.4005 96.0985 74.5786 95.0864C73.2863 93.4992 71.9552 91.9475 70.6206 90.396C68.791 88.2687 66.9735 86.1309 65.2036 83.9536C63.9113 82.3664 62.5802 80.8147 61.2456 79.2632C59.416 77.1359 57.5985 74.9981 55.8286 72.8208C54.394 71.0595 52.9138 69.3385 51.4311 67.6177C45.0912 60.257 45.0912 60.2568 42.1508 56.6138C41.6314 55.9681 41.694 56.0678 41.1069 55.4829C40.52 54.8981 40.4233 54.1284 40.3383 53.2104C40.4449 51.9746 40.7374 51.5477 41.602 50.6831C42.6139 50.1774 43.783 50.3446 44.8969 50.3433C45.178 50.3418 45.459 50.3399 45.7485 50.3384C46.6823 50.3341 47.6164 50.3322 48.5503 50.3306C49.1992 50.3289 49.8485 50.3274 50.4975 50.3257C51.8608 50.3226 53.2241 50.3208 54.5874 50.3198C56.3297 50.3182 58.0726 50.3116 59.8149 50.3032C61.157 50.2977 62.4992 50.2959 63.8413 50.2954C64.4831 50.2945 65.1252 50.2924 65.7671 50.2886C66.6687 50.2835 67.5705 50.2838 68.4721 50.2856C68.7345 50.2829 68.9968 50.2806 69.2671 50.2778C72.8888 50.3015 75.5958 51.5847 78.1518 54.1226C79.6807 55.7387 81.0921 57.4529 82.4868 59.1851C83.3409 60.2261 84.2226 61.2409 85.1079 62.2554C86.4262 63.7674 87.7134 65.2987 88.977 66.8569C90.6586 68.9052 92.4021 70.903 94.1421 72.9019C95.7625 74.7639 97.3615 76.6359 98.9155 78.5542C99.9124 79.7617 100.942 80.9407 101.97 82.1216C103.411 83.7772 104.831 85.4499 106.245 87.1284C106.65 87.6091 107.057 88.0886 107.464 88.5679C108.705 90.0283 109.938 91.4924 111.145 92.981C112.506 94.6527 113.919 96.2772 115.334 97.9028C116.396 99.122 117.447 100.35 118.498 101.579C119.424 102.661 120.356 103.738 121.291 104.812C122.76 106.499 124.205 108.201 125.613 109.939C126.358 110.851 127.119 111.749 127.881 112.646C128.864 113.802 129.836 114.966 130.792 116.144C132.085 117.731 133.416 119.283 134.75 120.834C136.574 122.955 138.387 125.086 140.149 127.258C141.687 129.147 143.288 130.98 144.89 132.814C145.251 133.23 145.606 133.65 145.96 134.071C147.185 135.523 147.999 136.585 149.982 136.652C151.833 136.714 152.855 135.473 154.046 134.162C155.116 132.92 156.15 131.649 157.182 130.376C158.144 129.207 159.133 128.061 160.123 126.915C161.032 125.858 161.922 124.789 162.799 123.706C163.841 122.422 164.932 121.196 166.044 119.974C166.699 119.238 167.325 118.484 167.945 117.718C169.473 115.832 171.069 114.007 172.663 112.176C173.856 110.801 175.037 109.415 176.221 108.031C176.669 107.508 177.119 106.986 177.569 106.464C178.894 104.925 180.213 103.383 181.495 101.806C182.922 100.049 184.397 98.3353 185.874 96.6206C186.613 95.7627 187.35 94.9023 188.086 94.0425C188.974 93.006 189.863 91.9699 190.753 90.936C192.078 89.397 193.397 87.855 194.678 86.2788C196.106 84.5221 197.581 82.8079 199.058 81.0933C199.797 80.2353 200.534 79.3749 201.27 78.5151C202.158 77.4786 203.046 76.4426 203.937 75.4087C205.256 73.8761 206.57 72.3411 207.843 70.77C208.898 69.4708 209.985 68.2039 211.084 66.9429C212.408 65.4244 213.702 63.8875 214.971 62.3228C216.101 60.9401 217.259 59.5821 218.416 58.2231C218.867 57.6917 219.315 57.1571 219.762 56.6226C220.068 56.2602 220.374 55.8979 220.679 55.5356C220.886 55.2868 220.886 55.2868 221.097 55.0327C222.384 53.5143 223.816 52.0324 225.641 51.1782C225.826 51.0888 226.012 50.9989 226.203 50.9067C227.205 50.5036 228.116 50.3534 229.195 50.3472C229.446 50.3451 229.697 50.3435 229.956 50.3413C230.365 50.3401 230.365 50.3396 230.783 50.3384C231.072 50.3365 231.362 50.3345 231.66 50.3325C232.616 50.3267 233.573 50.3237 234.53 50.3208C235.02 50.319 235.02 50.3187 235.52 50.3169C237.248 50.3108 238.976 50.3069 240.705 50.3042C242.491 50.301 244.278 50.2904 246.064 50.2788C247.437 50.2712 248.81 50.2691 250.183 50.2681C250.842 50.2666 251.501 50.2627 252.16 50.2573C253.08 50.2502 254.001 50.2504 254.921 50.2524C255.33 50.2468 255.33 50.2474 255.747 50.2417ZM269.257 98.7349C271.062 98.3831 272.925 97.9406 273.583 100.04C273.583 101.285 273.279 101.692 272.548 102.66C272.331 102.936 272.331 102.936 272.119 103.207C271.712 103.726 271.303 104.242 270.889 104.755C269.866 106.017 268.845 107.28 267.857 108.569C266.527 110.314 265.176 112.036 263.788 113.736C262.729 115.032 261.675 116.33 260.644 117.648C259.359 119.294 258.058 120.925 256.738 122.542C255.686 123.832 254.64 125.125 253.614 126.436C251.373 129.305 249.081 132.13 246.762 134.936C245.179 136.851 243.599 138.766 242.071 140.725C241.386 141.606 240.701 142.485 239.993 143.347C239.819 143.556 239.652 143.759 239.484 143.961C239.144 144.372 238.804 144.783 238.463 145.193C236.936 147 235.003 149.057 235.003 151.236C235.004 152.617 238.844 157.69 238.87 157.723C239.243 158.161 239.617 158.6 239.99 159.04C240.396 159.521 240.804 160.001 241.21 160.482C242.402 161.886 243.579 163.3 244.742 164.727C245.128 165.202 245.514 165.678 245.9 166.153C246.387 166.753 246.875 167.353 247.363 167.953C248.248 169.043 249.133 170.135 250.025 171.22C250.827 172.197 251.632 173.17 252.407 174.168C253.42 175.49 254.467 176.775 255.547 178.042C256.478 179.135 257.402 180.231 258.294 181.356C259.177 182.47 260.076 183.57 260.982 184.666C262.42 186.403 263.848 188.145 265.234 189.925C266.099 191.038 266.975 192.14 267.874 193.225C269.78 195.52 272.997 198.351 273.657 201.333C273.583 202.23 273.583 202.231 273.125 202.945C272.041 203.64 272.041 203.64 269.77 203.251C269.448 203.178 269.135 203.107 268.823 203.036C268.265 202.911 267.707 202.787 267.15 202.66C266.33 202.473 265.509 202.289 264.688 202.105C264.466 202.056 264.252 202.007 264.037 201.959C262.365 201.585 260.692 201.228 259.013 200.889C258.503 200.787 257.993 200.683 257.484 200.58C256.735 200.427 255.985 200.275 255.236 200.125C254.52 199.984 253.803 199.844 253.088 199.699C252.862 199.653 252.643 199.608 252.423 199.563C250.56 199.211 249.127 198.64 247.817 197.214C246.862 195.942 245.881 194.7 244.85 193.49C243.959 192.448 243.07 191.404 242.208 190.337C241.275 189.159 240.335 187.991 239.361 186.846C238.003 185.253 236.667 183.644 235.351 182.015C234.293 180.706 233.228 179.405 232.137 178.123C231.134 176.947 230.138 175.771 229.199 174.544C228.364 173.455 227.488 172.404 226.598 171.359C225.816 170.441 225.037 169.522 224.271 168.591C223.225 167.306 222.175 166.026 221.102 164.763C220.024 163.496 218.953 162.226 217.919 160.921C217.28 160.112 216.63 159.314 215.958 158.532C215.266 157.727 214.58 156.917 213.901 156.101C213.773 155.947 213.649 155.797 213.525 155.648C212.374 154.272 211.368 153.095 211.236 151.253C211.181 149.496 211.474 148.763 215.42 144.274C216.086 143.517 216.745 142.76 217.382 141.978C218.465 140.605 219.569 139.255 220.703 137.923C221.45 137.046 222.194 136.168 222.916 135.27C224.053 133.832 225.218 132.426 226.415 131.039C227.419 129.876 228.41 128.71 229.364 127.505C230.257 126.375 231.176 125.27 232.11 124.172C232.879 123.269 233.646 122.365 234.398 121.446C235.51 120.073 236.638 118.719 237.798 117.386C239.02 115.986 240.239 114.589 241.393 113.131C242.28 112.006 243.193 110.908 244.122 109.817C245.155 108.605 246.167 107.38 247.162 106.136C248.308 104.681 249.395 103.473 251.158 102.849C251.72 102.725 251.72 102.725 252.271 102.603C252.905 102.458 253.54 102.315 254.176 102.177C254.611 102.084 255.045 101.988 255.478 101.89C256.791 101.591 258.104 101.298 259.419 101.009C260.309 100.814 261.199 100.619 262.088 100.423C262.423 100.35 262.423 100.349 262.751 100.277C263.857 100.035 264.963 99.7922 266.064 99.5259C266.409 99.4408 266.409 99.4404 266.748 99.3569C267.189 99.2489 267.631 99.1404 268.073 99.0317C268.467 98.9305 268.862 98.8319 269.257 98.7349ZM26.3676 99.9575C27.0262 97.8585 28.8895 98.3011 30.6938 98.6528C31.0889 98.7498 31.4834 98.8495 31.8774 98.9507C32.319 99.0594 32.7609 99.1669 33.2026 99.2749C33.5414 99.3585 33.5415 99.3586 33.8872 99.4438C34.9876 99.7102 36.0928 99.9536 37.1987 100.196C37.527 100.268 37.5278 100.267 37.8628 100.341C38.752 100.537 39.6412 100.733 40.5307 100.928C41.8456 101.216 43.1596 101.509 44.4721 101.808C44.9057 101.906 45.3404 102.002 45.7749 102.095C46.4108 102.232 47.045 102.376 47.6792 102.521C48.23 102.643 48.2305 102.643 48.7924 102.767C50.5552 103.391 51.6428 104.6 52.7895 106.055C53.784 107.299 54.795 108.524 55.8286 109.735C56.757 110.826 57.6706 111.924 58.5571 113.049C59.7113 114.507 60.9309 115.904 62.1528 117.304C63.3129 118.636 64.4413 119.991 65.5532 121.364C66.3045 122.282 67.0711 123.187 67.8403 124.09C68.7739 125.188 69.6939 126.293 70.5874 127.423C71.541 128.628 72.5322 129.795 73.5356 130.958C74.7329 132.345 75.8977 133.75 77.0337 135.188C77.7563 136.086 78.501 136.965 79.2485 137.842C80.3823 139.173 81.4849 140.524 82.5678 141.897C83.2048 142.678 83.8642 143.435 84.5298 144.192C88.4765 148.682 88.7693 149.415 88.7143 151.172C88.5825 153.014 87.5767 154.191 86.4262 155.567C86.3023 155.716 86.178 155.865 86.0503 156.019C85.371 156.836 84.6842 157.645 83.9917 158.451C83.3202 159.233 82.6714 160.031 82.0317 160.84C80.9979 162.145 79.9275 163.415 78.8491 164.682C77.7761 165.945 76.7258 167.225 75.6801 168.51C74.9142 169.441 74.1338 170.359 73.352 171.277C72.4625 172.322 71.5869 173.373 70.7524 174.463C69.8126 175.69 68.8157 176.865 67.813 178.041C66.7223 179.323 65.658 180.625 64.6001 181.934C63.284 183.563 61.9474 185.171 60.5893 186.764C59.6155 187.909 58.676 189.078 57.7426 190.256C56.8814 191.323 55.9921 192.366 55.101 193.408C54.0696 194.618 53.088 195.86 52.1333 197.132C50.8232 198.558 49.3907 199.129 47.5278 199.481C47.3085 199.526 47.0887 199.571 46.8628 199.617C46.1474 199.762 45.4307 199.902 44.7143 200.042C43.9648 200.193 43.2155 200.346 42.4663 200.499C41.9568 200.602 41.4467 200.705 40.937 200.807C39.2583 201.146 37.5846 201.503 35.9135 201.877C35.6986 201.925 35.4836 201.973 35.2622 202.023C34.4416 202.207 33.6211 202.391 32.8012 202.578C32.244 202.705 31.6861 202.83 31.1284 202.955C30.8157 203.026 30.5023 203.096 30.1801 203.169C27.9092 203.558 27.9089 203.558 26.8247 202.863C26.367 202.149 26.3676 202.149 26.2944 201.251C26.9537 198.269 30.1702 195.438 32.0766 193.143C32.9756 192.058 33.8522 190.957 34.7173 189.844C36.1027 188.064 37.5303 186.321 38.9682 184.583C39.8742 183.488 40.774 182.389 41.6567 181.275C42.5496 180.15 43.4716 179.053 44.4028 177.96C45.4827 176.693 46.5299 175.408 47.5434 174.086C48.3183 173.088 49.1238 172.115 49.9262 171.138C50.818 170.053 51.7031 168.962 52.5883 167.872C53.0757 167.272 53.5628 166.672 54.0503 166.072C54.4365 165.596 54.8224 165.121 55.2085 164.645C56.3713 163.218 57.5494 161.805 58.7407 160.401C59.1476 159.92 59.5538 159.439 59.9604 158.958C60.3327 158.518 60.7067 158.079 61.0805 157.641C61.1049 157.609 64.9475 152.535 64.9477 151.154C64.9477 148.975 63.0145 146.918 61.4868 145.111C61.1467 144.701 60.8068 144.29 60.4673 143.879C60.2992 143.677 60.1307 143.475 59.9575 143.266C59.2491 142.404 58.5637 141.524 57.8794 140.643C56.3511 138.684 54.7719 136.769 53.1889 134.854C50.8701 132.048 48.5777 129.223 46.3374 126.354C45.3117 125.044 44.2655 123.751 43.2133 122.461C41.893 120.843 40.5911 119.212 39.3061 117.566C38.275 116.248 37.2222 114.949 36.1635 113.654C34.7756 111.954 33.4243 110.232 32.0942 108.487C31.1064 107.198 30.0847 105.936 29.062 104.674C28.6481 104.161 28.2386 103.645 27.8325 103.125C27.62 102.855 27.6194 102.854 27.4028 102.579C26.6718 101.61 26.3677 101.204 26.3676 99.9575Z" fill="#48DDDD" fill-opacity="0.866667"/></g><defs><clipPath id="clip0_458_1421"><rect width="300" height="300" fill="white"/></clipPath></defs></svg>Crawl4AI <span class="cloud">now available on Cloud</span></h1>
+    <div class="sub">One key: <code>/scrape</code> a page to Markdown, <code>/extract</code> it to JSON, <code>/search</code> the web, <code>/serp</code> for Google's results page as data, <code>/answer</code> a question with sources. Free: <span data-credit="limits.community.requests_per_minute">10</span> a minute, <span data-credit="limits.community.concurrent">2</span> at a time, <span data-credit="monthly">1,000</span> credits every month. Plans: <span data-credit="plans.starter.per_minute">120</span> a minute, <span data-credit="plans.starter.at_once">10</span> at a time, from $<span data-credit="plans.starter.usd">10</span> a month.</div>
+    <div class="seatstrip" data-seatstrip style="display:none"></div>
+    <div class="proof">
+      <a class="trend" href="https://trendshift.io/repositories/11716" target="_blank" rel="noopener" aria-label="Trendshift: #1 Repository of the Day"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 250 53" width="250" height="55" data-date-format="longDate"><rect xmlns="http://www.w3.org/2000/svg" stroke="#4a0e99" stroke-width="1" fill="#FFFFFF" x="0.5" y="0.5" width="249" height="53" rx="10"/><foreignObject width="198" height="17" style="font-size: 9px;color: rgb(67, 39, 135);font-family: Arial;font-weight: 400;text-align: center;letter-spacing: 0em;line-height: 1.5;" x="6" y="10" selection="true"><div xmlns="http://www.w3.org/1999/xhtml">GITHUB TRENDING</div></foreignObject><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="&#x421;&#x43B;&#x43E;&#x439;_1" viewBox="0 0 80 80" width="48" height="45" x="10" y="8"><path fill="#49278e" d="M70.71,40.31C75.74,44.3,80,37.86,80,37.86s-5.64-2.17-8.55,0.61c0.59-1.62,1.02-3.31,1.28-5.01  c4.08,2.16,6.44-2.95,6.44-2.95s-4.41-0.97-6.26,1.4c0.08-0.91,0.12-1.82,0.1-2.73c-0.01-0.36-0.02-0.73-0.05-1.09  c2.96-3.68-1.73-6.99-1.73-6.99s-2.14,5.09,0.98,7.09c0.02,0.33,0.03,0.66,0.03,1c0.01,0.76-0.03,1.52-0.1,2.27  c-0.85-2.69-4.91-3.69-4.91-3.69s-0.13,5.78,4.68,5.48c-0.28,1.69-0.73,3.35-1.34,4.95c-0.19-4.03-5.79-6.33-5.79-6.33  s-1.33,7.55,5.01,8.16c-0.38,0.8-0.8,1.57-1.25,2.32c-0.56,0.95-1.21,1.84-1.89,2.71c0.97-3.99-3.96-7.72-3.96-7.72  s-3.18,6.94,2.73,9.15c-0.38,0.43-0.8,0.81-1.2,1.21c-0.21,0.2-0.43,0.38-0.64,0.58l-0.32,0.29c-0.11,0.09-0.22,0.18-0.33,0.27  l-0.67,0.54l-0.7,0.51c-0.08,0.05-0.16,0.11-0.23,0.16c1.62-3.42-2.07-7.77-2.07-7.77s-4.21,5.55,0.49,8.78  c-1.34,0.79-2.74,1.45-4.2,1.98c1.91-2.59-0.23-6.89-0.23-6.89s-4.66,3.77-1.52,7.46c-1.15,0.33-2.33,0.57-3.51,0.74  c1.46-1.68,0.55-4.83,0.55-4.83s-3.7,2.03-2.18,5c-0.52,0.03-1.05,0.07-1.57,0.06c-0.29,0-0.57,0.01-0.86,0l-0.86-0.04  c-0.85-0.06-1.7-0.15-2.54-0.28l0.68-0.27l0.42-0.17l0.41-0.19l0.82-0.38c0,0,0.01,0,0.01,0c0.39-0.18,0.55-0.65,0.37-1.03  c-0.18-0.39-0.65-0.55-1.03-0.37l-0.04,0.02l-0.77,0.37l-0.39,0.18l-0.39,0.16l-0.79,0.33l-0.8,0.29l-0.4,0.14l-0.41,0.12L40,53.6  l-0.51-0.15l-0.41-0.12l-0.4-0.14l-0.8-0.29l-0.79-0.33l-0.39-0.16l-0.39-0.18l-0.77-0.37l-0.04-0.02c0,0,0,0-0.01,0  c-0.39-0.18-0.85-0.01-1.03,0.38c-0.18,0.39-0.01,0.85,0.38,1.03l0.82,0.38l0.41,0.19l0.42,0.17l0.68,0.27  c-0.84,0.14-1.69,0.22-2.54,0.28l-0.86,0.04c-0.29,0.01-0.57,0-0.86,0c-0.53,0.01-1.05-0.03-1.57-0.06c1.51-2.98-2.18-5-2.18-5  s-0.92,3.15,0.55,4.83c-1.19-0.16-2.36-0.41-3.51-0.74c3.15-3.7-1.52-7.46-1.52-7.46s-2.14,4.31-0.23,6.89  c-1.46-0.53-2.86-1.19-4.2-1.98c4.7-3.22,0.49-8.78,0.49-8.78s-3.69,4.34-2.07,7.77c-0.08-0.05-0.16-0.1-0.23-0.16l-0.7-0.51  l-0.67-0.54c-0.11-0.09-0.23-0.18-0.33-0.27l-0.32-0.29c-0.21-0.19-0.43-0.38-0.64-0.58c-0.4-0.4-0.82-0.79-1.2-1.21  c5.91-2.21,2.73-9.15,2.73-9.15s-4.93,3.73-3.96,7.72c-0.68-0.86-1.33-1.76-1.89-2.71c-0.46-0.75-0.87-1.53-1.25-2.32  c6.33-0.61,5.01-8.16,5.01-8.16s-5.6,2.31-5.79,6.33c-0.61-1.6-1.06-3.26-1.34-4.95c4.81,0.3,4.68-5.48,4.68-5.48  s-4.05,0.99-4.91,3.69c-0.07-0.76-0.1-1.51-0.1-2.27c0-0.33,0.01-0.66,0.03-1c3.11-2.01,0.98-7.09,0.98-7.09s-4.69,3.31-1.73,6.99  C7,28.46,6.99,28.82,6.98,29.18c-0.02,0.91,0.01,1.82,0.1,2.73c-1.84-2.38-6.26-1.4-6.26-1.4s2.37,5.11,6.44,2.95  c0.26,1.71,0.69,3.39,1.28,5.01C5.64,35.69,0,37.86,0,37.86s4.26,6.43,9.29,2.45c0.39,0.87,0.83,1.72,1.31,2.54  c0.47,0.83,1.01,1.63,1.58,2.4C8.71,43.7,4.11,47,4.11,47s5.7,5.1,9.56,0.08c0.04,0.04,0.07,0.08,0.11,0.12  c0.39,0.45,0.82,0.87,1.24,1.3c0.21,0.21,0.44,0.41,0.66,0.61l0.33,0.3c0.11,0.1,0.23,0.19,0.34,0.29l0.69,0.57l0.23,0.17  c-3.34-0.34-6.58,3.29-6.58,3.29s6.19,3.47,8.69-1.83c1.2,0.75,2.47,1.41,3.78,1.96c-2.76,0.6-4.62,4.13-4.62,4.13  s5.89,1.62,6.98-3.26c1.03,0.32,2.07,0.58,3.13,0.78c-1.63,0.99-2.39,3.38-2.39,3.38s4.31,0.39,4.61-3.07  c0.07,0.01,0.14,0.02,0.21,0.02c0.6,0.04,1.2,0.1,1.8,0.09c0.3,0,0.6,0.02,0.9,0.01l0.9-0.03c1.2-0.07,2.41-0.18,3.59-0.42  l0.45-0.08c0.15-0.03,0.29-0.07,0.44-0.1L40,55.13l0.81,0.19c0.15,0.03,0.29,0.07,0.44,0.1l0.45,0.08c1.18,0.23,2.39,0.35,3.59,0.42  l0.9,0.03c0.3,0.01,0.6-0.01,0.9-0.01c0.6,0,1.2-0.06,1.8-0.09c0.07-0.01,0.14-0.02,0.21-0.02c0.31,3.45,4.61,3.07,4.61,3.07  s-0.76-2.39-2.39-3.38c1.06-0.2,2.11-0.46,3.13-0.78c1.09,4.88,6.98,3.26,6.98,3.26s-1.86-3.52-4.62-4.13  c1.31-0.55,2.57-1.21,3.78-1.96c2.5,5.3,8.69,1.83,8.69,1.83s-3.24-3.63-6.58-3.29l0.23-0.17l0.69-0.57  c0.11-0.1,0.23-0.19,0.34-0.29l0.33-0.3c0.22-0.2,0.45-0.4,0.66-0.61c0.42-0.43,0.85-0.84,1.24-1.3c0.03-0.04,0.07-0.08,0.11-0.12  C70.19,52.1,75.89,47,75.89,47s-4.6-3.31-8.08-1.75c0.57-0.77,1.11-1.56,1.58-2.4C69.88,42.03,70.31,41.18,70.71,40.31z"/></svg><foreignObject width="230" height="35" style="font-size: 14px;color: rgb(67, 39, 135);font-family: Arial;font-weight: 700;text-align: left;letter-spacing: 0em;line-height: 1.5;" x="64" y="24"><div xmlns="http://www.w3.org/1999/xhtml">#1 Repository Of The Day</div></foreignObject><foreignObject width="141" height="36" style="font-size: 18px;color: rgb(74, 14, 153);font-family: Arial;font-weight: 400;text-align: center;letter-spacing: 0em;line-height: 1.5;" x="-36" y="9"><div xmlns="http://www.w3.org/1999/xhtml">1</div></foreignObject></svg></a>
+      <a class="shield blue" href="https://github.com/unclecode/crawl4ai" target="_blank" rel="noopener"><span class="k">★ stars</span><span class="v" id="stars">71,073</span></a>
+      <a class="shield blue" href="https://pypi.org/project/crawl4ai/" target="_blank" rel="noopener"><span class="k">downloads</span><span class="v" id="pip">1.9M / mo</span></a>
+      <span class="shield blue hide-m"><span class="k">python</span><span class="v">3.10 | 3.11 | 3.12 | 3.13</span></span>
+      <span class="shield green"><span class="k">license</span><span class="v">Apache-2.0</span></span>
+      <a class="shield discord" href="https://discord.gg/jP8KfhDhyN" target="_blank" rel="noopener"><span class="k">chat</span><span class="v">Discord</span></a>
+    </div>
+    <div class="fence" id="playground">
+      <div class="fbar"><div class="ftabs" role="tablist" aria-label="playground service">
+        <button class="ft" aria-selected="true" data-tab="scrape">scrape</button>
+        <button class="ft" aria-selected="false" data-tab="extract">extract</button>
+        <button class="ft" aria-selected="false" data-tab="search">search</button>
+        <button class="ft" aria-selected="false" data-tab="answer">answer <span class="xtag">exp</span></button>
+        <button class="ft" aria-selected="false" data-tab="serp">serp <span class="xtag">beta</span></button>
+      </div><span class="ep"><span class="m" data-method>POST</span> api.crawl4ai.com<span data-path>/scrape</span></span></div>
+      <div class="fbody">
+        <div class="targetrow">
+          <span class="verb">$ crawl <span data-verb>scrape</span></span>
+          <label class="tfield" title="Click to edit, then Run">
+            <input class="target" data-target spellcheck="false" autocomplete="off" aria-label="URL or query to run">
+            <span class="pen"><span class="peni">✎</span></span>
+          </label>
+          <button class="run" data-run>▶ Run</button><button class="run est" data-estimate title="what this call would cost, before it runs">≈ Estimate</button>
+        </div>
+        <div class="instr-row" data-instrrow><span class="verb2">&nbsp;&nbsp;--instruction</span>
+          <label class="tfield"><input class="target" data-instr spellcheck="false" autocomplete="off" aria-label="what to extract" placeholder="what to extract - e.g. titles, points, prices"></label>
+          <span class="run runghost" aria-hidden="true">▶ Run</span>
+        </div>
+        <div class="deep-row" data-deeprow><label><input type="checkbox" data-deep checked> <span>▸ deep</span> <span class="dhint">ground the answer in the top results</span></label></div>
+        <div class="egs" data-egs></div>
+        <pre class="cmd" data-cmd></pre>
+        <div class="estline" data-est hidden></div>
+        <div class="rr"><button class="cpy" data-copycmd>Copy full command</button><span class="live">Live · play limits</span><span class="ok" data-ok>✓ 200 OK</span></div>
+        <div class="out" data-out aria-live="polite"><span class="ph"># Type a URL above and hit Run - real output renders here</span></div>
+      </div>
+    </div>
+    <h2 id="features"><span class="h">##</span> What you get <a class="anch" href="#features">#</a></h2>
+    <ul class="md">
+      <li><b>/scrape</b> URL → clean Markdown, boilerplate stripped, ready for a prompt.</li>
+      <li><b>/extract</b> URL + a plain-English ask → typed JSON records. No selectors.</li>
+      <li><b>/search</b> query → ranked results as JSON - add <code>rich=1</code> for follow-ups, related &amp; more.</li>
+      <li><b>/answer</b> a question → a direct answer with its sources. Experimental.</li>
+      <li><b>/serp</b> query → Google's results page as data: true ranks, every block, localised to a place. For rank tracking. Beta since 8 Oct 2026.</li>
+      <li><b>at scale</b> queues, jobs, retries, and solid proxies - handled for you.</li>
+    </ul>
+
+    <h2 id="agents"><span class="h">##</span> Use it in Claude Code, Cursor &amp; agents <span class="tag">- paste one line</span> <a class="anch" href="#agents">#</a></h2>
+    <p class="lead">Same key everywhere. Mint one above and it drops into each line below.</p>
+    <div class="recs">
+      <div class="rec" data-setup><div class="meta"><b>Ask your agent</b><span>one line in its chat: it reads llms.txt and sets itself up</span></div>
+        <div class="body">
+          <div class="line"><code><span class="p">set up crawl4ai</span> - https://crawl4ai.com/llms.txt with key: <span class="tok" data-kt>sk_live_…</span></code><button class="cp" data-tmpl='set up crawl4ai - https://crawl4ai.com/llms.txt with key: TOKEN'>Copy</button></div>
+          <div class="where">Claude Code, Codex, Cursor, Gemini CLI, OpenCode, OpenClaw, or any agent that reads a URL · <a href="/llms.txt" target="_blank" rel="noopener">open llms.txt</a></div>
+        </div></div>
+      <div class="rec"><div class="meta"><b>MCP</b><span>your agent's tools, one line per tool</span></div>
+        <div class="body">
+          <div class="agtabs" role="tablist" aria-label="your client">
+            <button class="at" aria-selected="true" data-agent="claude">Claude Code</button>
+            <button class="at" aria-selected="false" data-agent="codex">Codex</button>
+            <button class="at" aria-selected="false" data-agent="opencode">OpenCode</button>
+            <button class="at" aria-selected="false" data-agent="cursor">Cursor · Windsurf</button>
+            <button class="at" aria-selected="false" data-agent="openclaw">OpenClaw</button>
+            <button class="at" aria-selected="false" data-agent="any">any client</button>
+          </div>
+          <div data-agent-block="claude">
+            <div class="line"><code><span class="p">claude</span> mcp add --transport http crawl4ai https://api.crawl4ai.com/mcp --header <span class="a">"Authorization: Bearer <span class="tok" data-kt>sk_live_…</span>"</span></code><button class="cp" data-tmpl='claude mcp add --transport http crawl4ai https://api.crawl4ai.com/mcp --header "Authorization: Bearer TOKEN"'>Copy</button></div></div>
+          <div data-agent-block="codex" hidden><div class="where">~/.codex/config.toml</div>
+            <div class="line"><code>[mcp_servers.crawl4ai] url = <span class="a">"https://api.crawl4ai.com/mcp"</span> http_headers = { Authorization = <span class="a">"Bearer <span class="tok" data-kt>sk_live_…</span>"</span> }</code><button class="cp" data-tmpl='[mcp_servers.crawl4ai]
+url = "https://api.crawl4ai.com/mcp"
+http_headers = { Authorization = "Bearer TOKEN" }'>Copy</button></div></div>
+          <div data-agent-block="opencode" hidden><div class="where">opencode.json</div>
+            <div class="line"><code><span class="a">"mcp"</span>: { <span class="a">"crawl4ai"</span>: { "type": "remote", "url": "https://api.crawl4ai.com/mcp", "headers": { "Authorization": "Bearer <span class="tok" data-kt>sk_live_…</span>" } } }</code><button class="cp" data-tmpl='"mcp": { "crawl4ai": { "type": "remote", "url": "https://api.crawl4ai.com/mcp", "headers": { "Authorization": "Bearer TOKEN" } } }'>Copy</button></div></div>
+          <div data-agent-block="cursor" hidden><div class="where">~/.cursor/mcp.json · Windsurf: ~/.codeium/windsurf/mcp_config.json</div>
+            <div class="line"><code><span class="a">"crawl4ai"</span>: { "url": "https://api.crawl4ai.com/mcp", "headers": { "Authorization": "Bearer <span class="tok" data-kt>sk_live_…</span>" } }</code><button class="cp" data-tmpl='"crawl4ai": { "url": "https://api.crawl4ai.com/mcp", "headers": { "Authorization": "Bearer TOKEN" } }'>Copy</button></div></div>
+          <div data-agent-block="openclaw" hidden><div class="where">~/.openclaw/openclaw.json, the mcp.servers block</div>
+            <div class="line"><code>mcp: { servers: { <span class="a">crawl4ai</span>: { url: "https://api.crawl4ai.com/mcp", transport: "streamable-http", headers: { Authorization: "Bearer <span class="tok" data-kt>sk_live_…</span>" } } } }</code><button class="cp" data-tmpl='mcp: { servers: { crawl4ai: { url: "https://api.crawl4ai.com/mcp", transport: "streamable-http", headers: { Authorization: "Bearer TOKEN" } } } }'>Copy</button></div></div>
+          <div data-agent-block="any" hidden><div class="where">Claude Desktop, ChatGPT, Gemini CLI, VS Code, n8n, or your own client · streamable HTTP</div>
+            <div class="line"><code><span class="p">url</span> https://api.crawl4ai.com/mcp <span style="color:var(--dim)">·</span> <span class="p">header</span> <span class="a">Authorization: Bearer <span class="tok" data-kt>sk_live_…</span></span></code><button class="cp" data-tmpl='https://api.crawl4ai.com/mcp
+Authorization: Bearer TOKEN'>Copy</button></div></div>
+        </div></div>
+      <div class="rec"><div class="meta"><b>HTTP</b><span>code or curl, any language: base url + key</span></div>
+        <div class="body">
+          <div class="line"><code><span class="p">export</span> CRAWL4AI_URL=https://api.crawl4ai.com CRAWL4AI_KEY=<span class="tok" data-kt>sk_live_…</span></code><button class="cp" data-tmpl='export CRAWL4AI_URL=https://api.crawl4ai.com CRAWL4AI_KEY=TOKEN'>Copy</button></div>
+          <div class="line"><code><span class="p">curl</span> -s "https://api.crawl4ai.com/search?q=web+scraping" -H <span class="a">"Authorization: Bearer <span class="tok" data-kt>sk_live_…</span>"</span></code><button class="cp" data-tmpl='curl -s "https://api.crawl4ai.com/search?q=web+scraping" -H "Authorization: Bearer TOKEN"'>Copy</button></div>
+        </div></div>
+    </div>
+
+    <h2 id="self-host"><span class="h">##</span> Self-host, or skip the setup <a class="anch" href="#self-host">#</a></h2>
+    <div class="paths">
+      <div class="path"><div class="pt">// run it yourself</div><h3>Self-host</h3>
+        <p>It's Apache-2.0. <code style="color:var(--teal);font-family:var(--mono)">pip install crawl4ai</code>, point it at your own boxes and proxies. No gate, no token. It's yours.</p>
+        <div class="pact"><a class="ghost" href="https://github.com/unclecode/crawl4ai" target="_blank" rel="noopener"><span style="color:var(--star)">★</span> Clone the repo</a></div></div>
+      <div class="path hosted"><div class="pt">// let us run it</div><h3>Hosted</h3>
+        <p>Or forget the infra. We've operated this crawler at scale for years - proxies, queues, jobs, the hard parts. You keep the key; we keep it fast.</p>
+        <div class="pact"><a class="pill" href="#" data-key>Get a key →</a></div></div>
+    </div>
+    <div class="quip"><b>Who runs it better than the people who built it?</b> Self-host for control; host with us to move fast. Same crawler either way.</div>
+
+    <h2 id="pricing"><span class="h">##</span> Pricing <a class="anch" href="#pricing">#</a></h2>
+    <script>/* the credit numbers: read live from GET /v1/prices at load (fleet_config and tier_rules); these are only the fallback when that call fails */
+window.CREDIT={signup:0,monthly:1000,guest:20,usd:0.001,search:1,scrape:0.5,
+  plans:{starter:{usd:10,usd_year:100,credits:10000,per_minute:120,at_once:10,extra_usd_per_1k:1},builder:{usd:99,usd_year:990,credits:125000,per_minute:600,at_once:20,extra_usd_per_1k:0.79},scale:{usd:499,usd_year:4990,credits:750000,per_minute:1500,at_once:50,extra_usd_per_1k:0.67}},
+  limits:{community:{requests_per_minute:10,concurrent:2,allowance_per_month:2500}}};</script>
+    <div class="quip">Your favourite open-source crawler, now in the cloud. <b>One monthly plan, credits inside:</b> you pay very little and get more than anywhere else.</div>
+    <p class="tryline">Try it now: <b><span data-credit="guest">20</span> free credits</b>, no signup. Verify your email for <b><span data-credit="monthly">1,000</span> free credits every month</b>.</p>
+    <div class="bill" role="group" aria-label="Billing"><button type="button" data-bill="year" class="on">Yearly <b>· 2 months free</b></button><button type="button" data-bill="month">Monthly</button></div>
+    <div class="ptab">
+      <div class="prow"><div>tier</div><div>price</div><div>for</div></div>
+      <div class="prow free"><div class="tier">Free</div><div class="amt">$0<small> · no card</small></div><div class="for">Prototypes and side projects. <span data-credit="monthly">1,000</span> credits every month, <span data-credit="limits.community.requests_per_minute">10</span> a minute, <span data-credit="limits.community.concurrent">2</span> at a time. <span class="cta" data-key>Get a key</span></div></div>
+      <div class="prow credit"><div class="tier">Starter</div><div class="amt" data-plan-amt="starter">$<span data-credit="plans.starter.usd">10</span><small> a month</small></div><div class="for"><span data-credit="plans.starter.credits">10,000</span> credits a month, <span data-credit="plans.starter.per_minute">120</span> a minute, <span data-credit="plans.starter.at_once">10</span> at a time. Extra credits at $<span data-credit="plans.starter.extra_usd_per_1k">1</span> per 1,000. <a class="cta" href="/dashboard/#billing" data-start-link>Start</a></div></div>
+      <div class="prow credit"><div class="tier">Builder</div><div class="amt" data-plan-amt="builder">$<span data-credit="plans.builder.usd">99</span><small> a month</small></div><div class="for"><span data-credit="plans.builder.credits">125,000</span> credits a month, <span data-credit="plans.builder.per_minute">600</span> a minute, <span data-credit="plans.builder.at_once">20</span> at a time. Extra credits at $<span data-credit="plans.builder.extra_usd_per_1k">0.79</span> per 1,000. <a class="cta" href="/dashboard/#billing" data-start-link>Start</a></div></div>
+      <div class="prow credit"><div class="tier">Scale</div><div class="amt" data-plan-amt="scale">$<span data-credit="plans.scale.usd">499</span><small> a month</small></div><div class="for"><span data-credit="plans.scale.credits">750,000</span> credits a month, <span data-credit="plans.scale.per_minute">1,500</span> a minute, <span data-credit="plans.scale.at_once">50</span> at a time. Extra credits at $<span data-credit="plans.scale.extra_usd_per_1k">0.67</span> per 1,000. <a class="cta" href="/dashboard/#billing" data-start-link>Start</a></div></div>
+      <div class="prow"><div class="tier">Enterprise</div><div class="amt" style="color:#fff">Let's talk</div><div class="for">Volume, regions, SLA. <span class="cta ln" data-entform style="cursor:pointer">Contact us</span></div></div>
+    </div>
+    <code class="costline"><b>1 credit = $0.001</b> · page <b data-credit="costPage">0.5</b> · search <b data-credit="costSearch">1</b> · from our archive <b data-credit="costArchive">0.25</b> · real browser <b data-credit="costBrowser">1</b> · hard site <b data-credit="costHard">2</b> <span class="sl">*</span></code>
+    <div class="cmph">The same money elsewhere<small>per 1,000 calls, at each seller's cheapest paid plan</small></div>
+    <div class="cmp">
+      <div class="crow h"><div></div><div>a page</div><div>a web search</div><div>Google results</div></div>
+      <div class="crow us"><div class="who">Crawl4AI Starter<small>$<span data-credit="plans.starter.usd">10</span> a month</small></div><div>$<span data-credit="cmpPage" data-money>0.50</span><small>browser $<span data-credit="cmpBrowser" data-money>1.00</span> · hard site $<span data-credit="cmpHard" data-money>2.00</span></small></div><div>$<span data-credit="cmpSearch" data-money>1.00</span></div><div>$<span data-credit="cmpSearch" data-money>1.00</span></div></div>
+      <div class="crow"><div class="who">Firecrawl Hobby<small>$19 a month</small></div><div>$3.80</div><div>$7.60</div><div class="na">not offered</div></div>
+      <div class="crow"><div class="who">Tavily Project<small>$30 a month</small></div><div>$1.50</div><div>$7.50</div><div class="na">not offered</div></div>
+      <div class="crow"><div class="who">SerpApi Starter<small>$25 a month</small></div><div class="na">not offered</div><div class="na">not offered</div><div>$25.00</div></div>
+    </div>
+    <p class="cmpnote"><b>$<span data-credit="plans.starter.usd">10</span> here buys <span data-credit="cmpStarterPages">20,000</span> pages a month;</b> Firecrawl's $19 Hobby plan buys 5,000. Their prices are from their own pricing pages on 14 October 2026 and can change; ours are live at <a href="https://api.crawl4ai.com/v1/prices">/v1/prices</a>.</p>
+    <div class="ghnote"><div class="t"><span aria-hidden="true">*</span> Soft launch</div>Prices and the free credit can change while we learn; the live table is <a href="https://api.crawl4ai.com/v1/prices">/v1/prices</a>. Extra credits you buy stay yours and never expire.</div>
+
+    <h2 id="philosophy"><span class="h">##</span> Philosophy <a class="anch" href="#philosophy">#</a></h2>
+    <div class="phil"><span class="c"># we don't hide.</span><br><span class="cy">every result</span> carries where it came from - the origin travels with the data.<br><span class="c"># and the whole "block the bots" arms race? a phase.</span><br><span class="cy">let crawlers crawl.</span></div>
+
+    <footer>
+      <span>Built in the open by <a href="https://github.com/unclecode" target="_blank" rel="noopener">@unclecode</a> &amp; the community.</span>
+      <span><a href="https://github.com/unclecode/crawl4ai" target="_blank" rel="noopener">GitHub</a> · <a href="https://docs.crawl4ai.com" target="_blank" rel="noopener">Docs</a> · <a href="https://discord.gg/jP8KfhDhyN" target="_blank" rel="noopener">Discord</a> · <a href="/dashboard/">console</a></span>
+      <span><a href="/legal/#terms">Terms</a> · <a href="/legal/#privacy">Privacy</a> · <a href="/legal/#acceptable-use">Acceptable Use</a> · <a href="/security/">Security</a></span>
+    </footer>
+  </div>
+</main>
+
+<nav class="tabbar" aria-label="sections">
+  <a href="/#top" data-nav="top"><span class="ic" aria-hidden="true">⌂</span>Home</a>
+  <a href="/#playground" data-nav="playground"><span class="ic" aria-hidden="true">▶</span>Playground</a>
+  <a href="/recipes/" data-nav="recipes" data-page data-service="recipes"><span class="ic" aria-hidden="true">▤</span>Recipes</a>
+  <a href="/#pricing" data-nav="pricing"><span class="ic" aria-hidden="true">✦</span>Pricing</a>
+  <a href="#" class="key" data-key><span class="ic" aria-hidden="true">⚿</span>Get key</a>
+</nav>
+<div id="mintpop" role="dialog" aria-modal="true" aria-label="get your API key"><div class="mintcard" data-mintcard></div></div>
+<div id="entpop" role="dialog" aria-modal="true" aria-label="contact us about Enterprise"><div class="entcard" data-entcard></div></div>
+<div id="sharepop" role="dialog" aria-modal="true" aria-label="share this result"><div class="sharecard" data-sharecard></div></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<script>
+/* ---------- device fingerprint: window.c4fp() -> 16 hex characters, or "" ----------
+   A 64-bit FNV-1a hash of stable device traits (screen, timezone, languages, platform, cores,
+   memory, a canvas drawing, the WebGL renderer, five font widths). Our own code, no network call.
+   Kept in memory only, never in localStorage or a cookie. "" under Do Not Track or Global Privacy
+   Control, the same rule as the beacon's anonymous id. Each trait is read in its own try, so the
+   function never throws. It is computed once, in idle time after load or at the first call. */
+(function(){
+  var cached=null;
+  function isTrackingRefused(){try{return navigator.doNotTrack=="1"||navigator.doNotTrack=="yes"||!!(navigator.globalPrivacyControl||window.globalPrivacyControl);}catch(e){return true;}}
+  /** Reads one trait; a trait the browser refuses becomes "". */
+  function read(f){try{var v=f();return v==null?"":String(v);}catch(e){return "";}}
+  /** 64-bit FNV-1a over the UTF-16 code units, done in four 16-bit parts (old Safari has no BigInt).
+      The prime 0x100000001b3 is 2^40 + 0x1b3, so the multiply is h*0x1b3 plus h shifted 40 bits. */
+  function fnv1a64(s){
+    var h0=0x2325,h1=0x8422,h2=0x9ce4,h3=0xcbf2; /* offset basis 0xcbf29ce484222325, low part first */
+    function eat(b){
+      h0^=b;
+      var t0=h0*0x1b3,t1=h1*0x1b3,t2=h2*0x1b3+h0*0x100,t3=h3*0x1b3+h1*0x100;
+      t1+=t0>>>16;h0=t0&0xffff;t2+=t1>>>16;h1=t1&0xffff;t3+=t2>>>16;h2=t2&0xffff;h3=t3&0xffff;
+    }
+    for(var i=0;i<s.length;i++){var c=s.charCodeAt(i);eat(c&0xff);if(c>0xff)eat(c>>>8);}
+    function hex(x){return ("000"+x.toString(16)).slice(-4);}
+    return hex(h3)+hex(h2)+hex(h1)+hex(h0);
+  }
+  /** Collects the traits, one per line, and hashes them. */
+  function compute(){
+    var s=screen,n=navigator,traits=[
+      read(function(){return s.width+"x"+s.height+"x"+s.colorDepth;}),
+      read(function(){return window.devicePixelRatio;}),
+      read(function(){return Intl.DateTimeFormat().resolvedOptions().timeZone;}),
+      read(function(){return (n.languages||[n.language]).join(",");}),
+      read(function(){return n.platform;}),
+      read(function(){return n.hardwareConcurrency;}),
+      read(function(){return n.deviceMemory;}),
+      read(function(){ /* the same text and shapes render to slightly different pixels per GPU, driver and font stack */
+        var c=document.createElement("canvas");c.width=220;c.height=30;var x=c.getContext("2d");
+        x.textBaseline="top";x.font="14px Arial";x.fillStyle="#f60";x.fillRect(120,1,60,20);
+        x.fillStyle="#069";x.fillText("Crawl4AI fp é中",2,15);x.fillStyle="rgba(102,204,0,0.7)";x.fillText("Crawl4AI fp",4,17);
+        return c.toDataURL();
+      }),
+      read(function(){
+        var g=document.createElement("canvas").getContext("webgl")||document.createElement("canvas").getContext("experimental-webgl");
+        var d=g&&g.getExtension("WEBGL_debug_renderer_info");return d?g.getParameter(d.UNMASKED_RENDERER_WEBGL):"";
+      }),
+      read(function(){ /* width of one string in five fonts; a font that is not installed falls back to monospace */
+        var x=document.createElement("canvas").getContext("2d");
+        return ["Segoe UI","Helvetica Neue","Ubuntu","Roboto","Menlo"].map(function(f){
+          x.font="16px '"+f+"',monospace";return Math.round(x.measureText("mmmmmmmmmmlli10WQ").width*10);}).join(",");
+      })
+    ];
+    return fnv1a64(traits.join("\n"));
+  }
+  window.c4fp=function(){
+    if(isTrackingRefused())return "";
+    if(cached===null){try{cached=compute();}catch(e){cached="";}}
+    return cached;
+  };
+  /* compute ahead in idle time, so a click never waits for the canvas and WebGL reads */
+  if(!isTrackingRefused()){
+    var warm=function(){window.c4fp();};
+    addEventListener("load",function(){if(window.requestIdleCallback)requestIdleCallback(warm,{timeout:3000});else setTimeout(warm,1500);});
+  }
+})();
+</script>
+<script>
+/* ---- first-party beacon (telemetry plan P1): batches to ONE sendBeacon on page-leave;
+   anon id only; honors DNT/GPC; fail-open - analytics must never break the page ---- */
+(function(){
+"use strict";
+try{
+  if(navigator.doNotTrack=="1"||navigator.doNotTrack=="yes"||navigator.globalPrivacyControl||window.globalPrivacyControl){window.c4t=function(){};return;}
+  /* a link from the docs banner carries that page's anonymous id (aid): a browser with no id of its own adopts it,
+     so the banner click and this visit are one visitor; a browser that has one sends the docs id on the pageview instead */
+  var da=(location.search.match(/[?&]aid=([a-f0-9]{16})/)||[])[1]||"";
+  var a;try{a=localStorage.getItem("c4a");if(!a){a=da||Array.from(crypto.getRandomValues(new Uint8Array(8))).map(function(b){return b.toString(16).padStart(2,"0");}).join("");localStorage.setItem("c4a",a);}}catch(e){a=Math.random().toString(16).slice(2,18);}
+  var q=[];
+  function flush(){
+    // Loop so a page that queued >25 events flushes ALL of them (one splice dropped the tail).
+    while(q.length){
+      var body=JSON.stringify({a:a,e:q.splice(0,25),now:Date.now()}); /* now + each t: the server works out the real click time */
+      if(navigator.sendBeacon){navigator.sendBeacon("/v1/t",new Blob([body],{type:"application/json"}));}
+      else{try{fetch("/v1/t",{method:"POST",headers:{"content-type":"application/json"},body:body,keepalive:true});}catch(e){break;}}
+    }
+  }
+  // Tag every event with its page so the funnel can separate landing prospects from dashboard
+  // (already-converted) users — same anon id + origin on both pages otherwise mixes them.
+  window.c4t=function(n,p){p=p||{};p.pg="landing";q.push({n:n,p:p,t:Date.now()});if(q.length>=20)flush();};
+  addEventListener("pagehide",flush);
+  document.addEventListener("visibilitychange",function(){if(document.visibilityState==="hidden")flush();});
+  c4t("pageview",{path:location.pathname,ref:(document.referrer.split("/")[2]||""),w:innerWidth,
+    src:(document.cookie.match(/(?:^|;\s*)c4_src=([^;]*)/)||[])[1]||"",daid:(da&&da!==a)?da:"",
+    th:document.documentElement.getAttribute("data-theme")||"dark"});
+  if(new URLSearchParams(location.search).get("verified"))c4t("verified_landing",{});
+  /* scroll depth: passive, one event per bucket per visit */
+  var seen={};
+  addEventListener("scroll",function(){
+    var h=document.documentElement,d=Math.round(100*(h.scrollTop+innerHeight)/h.scrollHeight);
+    [25,50,75,100].forEach(function(m){if(d>=m&&!seen[m]){seen[m]=1;c4t("scroll_depth",{d:String(m)});}});
+  },{passive:true});
+  /* sections: seen once each at 40% visible */
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){
+      if(en.isIntersecting){c4t("section_seen",{s:en.target.id});io.unobserve(en.target);}});},{threshold:.4});
+    ["playground","features","agents","self-host","pricing","philosophy"].forEach(function(id){
+      var el=document.getElementById(id);if(el)io.observe(el);});
+  }
+  /* delegated CTA clicks - passive capture, never blocks the real handler */
+  document.addEventListener("click",function(e){
+    var t=e.target.closest("[data-key],[data-run],[data-copycmd],[data-tokreveal],.tabbar a,.starbtn,[data-estimate]");
+    if(!t)return;
+    var id=t.getAttribute("data-nav")||(t.hasAttribute("data-key")?"get_key":t.hasAttribute("data-run")?"run":t.hasAttribute("data-estimate")?"estimate"
+      :t.hasAttribute("data-copycmd")?"copy_cmd":t.hasAttribute("data-tokreveal")?"reveal_key"
+      :((""+t.className).indexOf("starbtn")>-1?"star":"cta"));
+    c4t("cta_click",{id:id});
+  },true);
+}catch(e){window.c4t=window.c4t||function(){};}
+})();
+</script>
+<script>
+(function(){
+  "use strict";
+  var reduce=matchMedia("(prefers-reduced-motion:reduce)").matches,cur="scrape",keyRevealed=false;
+  var DEFAULT_INSTR="the key fields on this page";
+  function instr(){var I=document.querySelector("[data-instr]");var x=I&&I.value.trim();return x||DEFAULT_INSTR;}
+
+/* key-pass.js - shared by every page that runs on the visitor's key: the key store
+   (signed-in session first, else the 7-day pass in localStorage), toast/copy helpers, and the
+   mint popup. A page provides three hooks, all optional: onKeyChange() (repaint commands),
+   copyCommandWith(key) (what to copy when the popup was opened by a Copy), runNow() (the
+   pending run after minting). The pending* flags below are the page's to set before openPop(). */
+  var pendingRun=false,pendingCopy=false,pendingTmpl=null;
+  var SYNC_GRACE=180e3; /* a fresh key can take ~1 min to reach every region's gate */
+  /* ---------- pass key (signed-in session first, else the 7-day pass in localStorage) ---------- */
+  var sessionKey=null; /* set at boot from /v1/me when a session cookie is live */
+  var passMem=null;    /* in-memory fallback: private-mode / locked-down browsers throw on setItem;
+                          the key must still work for THIS session even if it can't be persisted */
+  function loadKey(){
+    try{var s=JSON.parse(localStorage.getItem("c4pass"));if(s&&s.k&&Date.now()<s.exp)return s;}catch(e){}
+    if(passMem&&Date.now()<passMem.exp)return passMem;
+    return null;
+  }
+  function saveKey(k,hours){
+    var rec={k:k,exp:Date.now()+(hours||168)*36e5,t:Date.now()};
+    passMem=rec;
+    try{localStorage.setItem("c4pass",JSON.stringify(rec));}catch(e){} /* persistence is best-effort */
+  }
+  function keyIsYoung(){if(sessionKey)return false;var s=loadKey();return !!(s&&s.t&&Date.now()-s.t<SYNC_GRACE);}
+  function dropKey(){sessionKey=null;passMem=null;try{localStorage.removeItem("c4pass");}catch(e){}}
+  function tk(){if(sessionKey)return sessionKey;var s=loadKey();return s?s.k:"sk_live_•••••••••••";}
+  function hasKey(){return !!(sessionKey||loadKey());}
+  /* the key is long and clutters the command - show it MASKED (prefix…suffix); the eye/tap reveals + copies the full one */
+  function maskKey(k){return (k&&k.length>=16)?(k.slice(0,12)+"…"+k.slice(-4)):"sk_live_…";}
+  function esc(s){return String(s).replace(/[<>&"]/g,function(c){return {'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c];});}
+  function toast(h){var t=document.getElementById("toast");t.innerHTML=h;t.classList.add("show");clearTimeout(t._h);t._h=setTimeout(function(){t.classList.remove("show");},2600);}
+  function cp(x){if(navigator.clipboard)navigator.clipboard.writeText(x).catch(function(){});}
+  function cpT(x,okHtml){
+    if(!navigator.clipboard){toast("Copy blocked - select it manually");return;}
+    navigator.clipboard.writeText(x).then(function(){toast(okHtml);})
+      .catch(function(){toast("Copy blocked by the browser - select it manually");});
+  }
+  /* ---------- mint popup: email -> your key ---------- */
+  var POP=document.getElementById("mintpop"),CARD=document.querySelector("[data-mintcard]");
+  function refreshKeyUI(){document.querySelectorAll("[data-kt]").forEach(function(e){e.textContent=hasKey()?maskKey(tk()):"sk_live_…";});if(typeof onKeyChange==="function")onKeyChange();}
+  function closePop(){
+    POP.classList.remove("open");
+    pendingRun=false;pendingCopy=false;pendingTmpl=null; /* a dismissed popup must not leave a surprise armed */
+  }
+  POP.addEventListener("click",function(e){if(e.target===POP)closePop();});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closePop();});
+  function openPop(){
+    if(hasKey()){cpT(tk(),"Key <b>copied</b>");return;}
+    if(window.c4t)c4t("mint_open",{});
+    CARD.innerHTML='<button class="mintx" data-x aria-label="close">✕</button>'
+      +'<p class="mt"># Your API key</p>'
+      +'<p class="mb">Drop your email and the key appears <b>right here</b> (your inbox gets a copy). It starts as a 7-day pass - <b>verify the email and it\'s yours for good</b>, free.</p>'
+      +'<p class="mseats" data-mseats style="display:none"></p>'
+      +'<div class="mintform"><input type="email" data-email placeholder="you@work.email" autocomplete="email" inputmode="email" autocapitalize="none" autocorrect="off" spellcheck="false" aria-label="email for your key"><button data-mint>Mint my key</button></div>'
+      +'<p style="font-size:11.5px;color:var(--muted);margin:8px 0 0">By continuing you agree to our <a href="/legal/#terms" style="color:var(--cyan)">Terms</a> &amp; <a href="/legal/#privacy" style="color:var(--cyan)">Privacy</a>.</p>';
+    CARD.querySelector("[data-x]").addEventListener("click",closePop);
+    if(typeof paintSeats==="function")paintSeats();   /* fill the seats line if we already know the count */
+    var E=CARD.querySelector("[data-email]"),B=CARD.querySelector("[data-mint]");
+    function showErr(html){
+      var el=CARD.querySelector(".minterr");
+      if(!el){el=document.createElement("p");el.className="minterr";CARD.appendChild(el);}
+      el.innerHTML="# "+html;
+    }
+    /* the beacon's anonymous visitor id, so the account links to the visit that led to it; none under
+       Do Not Track or Global Privacy Control, the same rule as the beacon */
+    function visitorId(){try{if(navigator.doNotTrack=="1"||navigator.doNotTrack=="yes"||navigator.globalPrivacyControl||window.globalPrivacyControl)return "";return localStorage.getItem("c4a")||"";}catch(e){return "";}}
+    function mint(){
+      if(B.disabled)return; /* Enter pressed twice fast must not fire two mints */
+      var em=E.value.trim();
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){showErr("That email doesn't look right");E.focus();return;}
+      B.disabled=true;B.textContent="Minting…";
+      fetch("/v1/signup/token",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({email:em,a:visitorId(),fp:window.c4fp?c4fp():""})})
+        .then(function(r){return r.json().then(function(j){return {s:r.status,j:j};}).catch(function(){return {s:r.status,j:null};});})
+        .then(function(x){
+          if(x.j===null){ /* server returned non-JSON (e.g. a 5xx/gateway page) - honest status, not "network" */
+            showErr(x.s>=500?"the sign-up service hiccuped ("+x.s+") - try again in a moment":"couldn't read the response ("+x.s+")");
+            B.disabled=false;B.textContent="Mint my key";return;
+          }
+          if(x.s===403&&x.j.error==="closed"){ /* sign-ups closed until launch: say so, no retry */
+            showErr(x.j.note||"Sign-ups open at launch.");
+            B.disabled=true;B.textContent="Closed until launch";return;
+          }
+          if(x.s===200&&x.j.sent){ /* an address that already has a key: it went to the inbox, never to the page */
+            CARD.innerHTML='<button class="mintx" data-x aria-label="close">✕</button>'
+              +'<p class="mt"># This email already has a key</p>'
+              +'<p class="mb">We sent it to <b>'+esc(x.j.inbox_hint||"that inbox")+'</b>, with the link to verify. Check your mail, then paste the key here.</p>'
+              +'<button class="mintdone" data-done>OK</button>';
+            CARD.querySelector("[data-done]").addEventListener("click",closePop);
+            CARD.querySelector("[data-x]").addEventListener("click",closePop);
+          }else if(x.s===200&&x.j.api_key){
+            if(window.c4t)c4t("mint_done",{fp:window.c4fp?c4fp():""});
+            saveKey(x.j.api_key,x.j.expires_in_hours);refreshKeyUI();
+            var copied;
+            if(pendingCopy){pendingCopy=false;cp(typeof copyCommandWith==="function"?copyCommandWith(x.j.api_key):x.j.api_key);copied="Full command copied - paste it in your terminal";}
+            else if(pendingTmpl){cp(pendingTmpl.replace(/TOKEN/g,x.j.api_key));pendingTmpl=null;copied="Command copied with your new key";}
+            else{cp(x.j.api_key);copied="Copied, and in your inbox";}
+            var days=Math.max(1,Math.round((x.j.expires_in_hours||168)/24));
+            /* ONE copy for every case (new / existing) so the popup - like the API
+               response - never reveals whether this email already had an account */
+            var claim='This key lasts <b>'+days+' days</b>. <b>New here?</b> Check your inbox for a link to verify - that keeps it for good, free, and opens your <a href="/dashboard/">console</a>.';
+            CARD.innerHTML='<p class="mt"># here\'s your key <span style="color:var(--dim)">('+copied+')</span></p>'
+              +'<code class="mintkey" data-ckey title="click to copy">'+esc(x.j.api_key)+'</code>'
+              +'<div class="mintkeyrow"><button data-ckey>Copy key</button></div>'
+              +'<p class="mb">'+claim+' (The key can take ~a minute to reach your nearest edge.)</p>'
+              +'<button class="mintdone" data-done>OK, done'+(pendingRun?' - run it ▶':'')+'</button>';
+            CARD.querySelector("[data-done]").addEventListener("click",function(){
+              var willRun=pendingRun; /* closePop() clears pendingRun - capture it first */
+              closePop();
+              if(willRun&&typeof runNow==="function")runNow();
+            });
+            CARD.querySelectorAll("[data-ckey]").forEach(function(el){el.addEventListener("click",function(){cp(x.j.api_key);toast("Key <b>copied</b>");});});
+          }else if(x.s===409){
+            CARD.innerHTML='<button class="mintx" data-x aria-label="close">✕</button>'
+              +'<p class="mt"># That email may already have an account</p>'
+              +'<p class="mb">If it\'s yours, we can <b>email you your key</b>, or <b>sign in</b> and see it in the dashboard. Otherwise try another email.</p>'
+              +'<div class="mintalt"><button data-resend style="color:var(--on);background:var(--cyan);border:0;font-weight:600">Email me my key</button><a href="/v1/auth/github/start">Sign in with GitHub</a><a href="/v1/auth/google/start">With Google</a><button data-retry>Try another email</button></div>';
+            CARD.querySelector("[data-x]").addEventListener("click",closePop);
+            CARD.querySelector("[data-retry]").addEventListener("click",function(){closePop();openPop();});
+            CARD.querySelector("[data-resend]").addEventListener("click",function(){
+              var rb=CARD.querySelector("[data-resend]");rb.disabled=true;rb.textContent="Sending…";
+              fetch("/v1/signup/token",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({email:em,resend:true})})
+                .then(function(r){return r.json();})
+                .then(function(j){
+                  CARD.innerHTML='<p class="mt"># on its way</p>'
+                    +'<p class="mb">'+esc(j.note||"If that email has an account, its key is on the way - check the inbox.")+' The mail has your key ready to copy'
+                    +' (and the verify link if you haven\'t verified yet).</p>'
+                    +'<button class="mintdone" data-done>ok</button>';
+                  CARD.querySelector("[data-done]").addEventListener("click",closePop);
+                })
+                .catch(function(){rb.disabled=false;rb.textContent="Email me my key";toast("Network hiccup - try again");});
+            });
+          }else{
+            showErr(esc((x.j&&(x.j.error||x.j.note))||"Couldn't mint a key - try again in a bit"));
+            B.disabled=false;B.textContent="Mint my key";
+          }
+        })
+        .catch(function(){showErr("Network hiccup - try again");B.disabled=false;B.textContent="Mint my key";});
+    }
+    B.addEventListener("click",mint);
+    E.addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();mint();}});
+    POP.classList.add("open");
+    try{E.focus({preventScroll:true});}catch(e){E.focus();}
+  }
+  function keyAction(e){e.preventDefault();openPop();}
+  function wireKeyButtons(scope){(scope||document).querySelectorAll("[data-key]").forEach(function(b){b.addEventListener("click",keyAction);});}
+  wireKeyButtons();
+
+  /* normalize like Run does, so display/copy/run NEVER disagree */
+  /* the tabs that take a query, not a URL */
+  function isQueryTab(tab){return tab==="search"||tab==="answer"||tab==="serp";}
+  function normUrl(tab,v){return isQueryTab(tab)?v:(/^https?:\/\//i.test(v)?v:"https://"+v);}
+  /* single-quote-safe for pasting into a shell: ' -> '\'' */
+  function shq(x){return x.replace(/'/g,"'\\''");}
+  function payload(obj){return shq(JSON.stringify(obj));}
+  function host(u){return u.replace(/^https?:\/\//,'').replace(/\/.*$/,'');}
+
+  /* ---------- tabs ---------- */
+  /* on phones, break each -H onto its own indented line so the wrapped command
+     reads as clean multi-line instead of a second header spilling mid-line */
+  function hbrk(){return matchMedia("(max-width:680px)").matches?' \\\n    ':' ';}
+  var TAB={
+    scrape:{m:"POST",p:"/scrape",verb:"scrape",ph:"https://a-url-to-crawl.com",def:"https://news.ycombinator.com",
+      cmd:function(t,v){return '<span class="p">$</span> curl -s api.crawl4ai.com<span class="fl">/scrape</span> \\\n    -H <span class="str">"Authorization: Bearer </span>'+t+'<span class="str">"</span>'+hbrk()+'-H <span class="str">"Content-Type: application/json"</span> \\\n    -d <span class="str">\''+esc(payload({url:normUrl("scrape",v)}))+'\'</span>';},
+      copy:function(t,v){return 'curl -s https://api.crawl4ai.com/scrape -H "Authorization: Bearer '+t+'" -H "Content-Type: application/json" -d \''+payload({url:normUrl("scrape",v)})+'\'';}},
+    extract:{m:"POST",p:"/extract",verb:"extract",ph:"https://a-url-to-extract-from.com",def:"https://news.ycombinator.com",
+      cmd:function(t,v){return '<span class="p">$</span> curl -s api.crawl4ai.com<span class="fl">/extract</span> \\\n    -H <span class="str">"Authorization: Bearer </span>'+t+'<span class="str">"</span>'+hbrk()+'-H <span class="str">"Content-Type: application/json"</span> \\\n    -d <span class="str">\''+esc(payload({url:normUrl("extract",v),instruction:instr()}))+'\'</span>';},
+      copy:function(t,v){return 'curl -s https://api.crawl4ai.com/extract -H "Authorization: Bearer '+t+'" -H "Content-Type: application/json" -d \''+payload({url:normUrl("extract",v),instruction:instr()})+'\'';}},
+    search:{m:"GET",p:"/search",verb:"search",ph:"your search query",def:"rust web crawler",
+      cmd:function(t,v){return '<span class="p">$</span> curl -s <span class="str">"api.crawl4ai.com<span class="fl">/search</span>?q='+esc(v).replace(/ /g,'+')+'"</span> \\\n    -H <span class="str">"Authorization: Bearer </span>'+t+'<span class="str">"</span>';},
+      copy:function(t,v){return 'curl -s "https://api.crawl4ai.com/search?q='+encodeURIComponent(v)+'" -H "Authorization: Bearer '+t+'"';}},
+    serp:{m:"GET",p:"/serp",verb:"serp",ph:"a query to rank-track",def:"best crm software",
+      cmd:function(t,v){return '<span class="p">$</span> curl -s <span class="str">"api.crawl4ai.com<span class="fl">/serp</span>?q='+esc(v).replace(/ /g,'+')+'<span class="fl">&amp;country=us</span>"</span> \\\n    -H <span class="str">"Authorization: Bearer </span>'+t+'<span class="str">"</span>';},
+      copy:function(t,v){return 'curl -s "https://api.crawl4ai.com/serp?q='+encodeURIComponent(v)+'&country=us" -H "Authorization: Bearer '+t+'"';}},
+    answer:{m:"GET",p:"/answer",verb:"answer",ph:"ask a question",def:"why is the sky blue",
+      cmd:function(t,v){return '<span class="p">$</span> curl -s <span class="str">"api.crawl4ai.com<span class="fl">/answer</span>?q='+esc(v).replace(/ /g,'+')+'<span class="fl">'+esc(deepParam())+'</span>"</span> \\\n    -H <span class="str">"Authorization: Bearer </span>'+t+'<span class="str">"</span>';},
+      copy:function(t,v){return 'curl -s "https://api.crawl4ai.com/answer?q='+encodeURIComponent(v)+deepParam()+'" -H "Authorization: Bearer '+t+'"';}}};
+
+  var C=document.querySelector("[data-cmd]"),O=document.querySelector("[data-out]"),M=document.querySelector("[data-method]"),P=document.querySelector("[data-path]"),K=document.querySelector("[data-ok]"),VB=document.querySelector("[data-verb]"),T=document.querySelector("[data-target]");
+  var EYE='<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>';
+  function tokH(){
+    if(!hasKey())
+      return '<span class="tok tokbtn" data-reveal title="get your key" role="button" tabindex="0">sk_live_••••••••••• '+EYE+'</span>';
+    return keyRevealed
+      ?'<span class="tok tokbtn" data-tokcopy title="your key - click to copy" role="button" tabindex="0">'+esc(tk())+'</span>'
+      :'<span class="tok tokbtn" data-tokreveal title="tap to reveal + copy your key" role="button" tabindex="0">'+esc(maskKey(tk()))+' '+EYE+'</span>';
+  }
+  function val(){return (T.value.trim()||TAB[cur].def);}
+  /* public deep toggle (answer tab): deep=1 (Google's answer else crawl+generate) / deep=0 (Google's answer only). Default on. */
+  function deepParam(){if(cur!=="answer")return "";var c=document.querySelector("[data-deep]");return (c&&!c.checked)?"&deep=0":"&deep=1";}
+  function rd(){C.innerHTML=TAB[cur].cmd(tokH(),val());}
+  function onKeyChange(){rd();}                              /* key-pass.js hook */
+  function copyCommandWith(k){return TAB[cur].copy(k,val());} /* key-pass.js hook */
+  function tokAct(e){
+    if(e.target.closest("[data-reveal]")){openPop();}
+    else if(e.target.closest("[data-tokreveal]")){keyRevealed=true;rd();cpT(tk(),"Key <b>revealed + copied</b>");}
+    else if(e.target.closest("[data-tokcopy]")){cpT(tk(),"Key <b>copied</b>");}
+  }
+  C.addEventListener("click",tokAct);
+  C.addEventListener("keydown",function(e){
+    if((e.key==="Enter"||e.key===" ")&&e.target.closest(".tokbtn")){e.preventDefault();tokAct(e);}
+  });
+  function pick(n){cur=n;document.querySelectorAll(".ft").forEach(function(t){t.setAttribute("aria-selected",String(t.dataset.tab===n));});
+    M.textContent=TAB[n].m;P.textContent=TAB[n].p;VB.textContent=TAB[n].verb;T.placeholder=TAB[n].ph;T.value=TAB[n].def;rd();
+    O.innerHTML='<span class="ph"># Hit Run to '+n+' - real output renders here</span>';K.classList.remove("show");}
+  document.querySelectorAll(".ft").forEach(function(t){t.addEventListener("click",function(){pick(t.dataset.tab);});});
+  T.addEventListener("input",rd);
+  (function(){var DC=document.querySelector("[data-deep]");if(DC)DC.addEventListener("change",rd);})(); /* deep toggle updates the curl preview live */
+  var EGS={
+    scrape:[{u:"news.ycombinator.com"},{u:"github.com/trending"},{u:"en.wikipedia.org/wiki/Web_scraping"}],
+    extract:[
+      {u:"news.ycombinator.com",i:"the top story titles and their points"},
+      {u:"books.toscrape.com",i:"each book title and its price"},
+      {u:"github.com/trending",i:"the trending repo names and star counts"}
+    ],
+    search:[{u:"rust web crawler"},{u:"llm agents framework"},{u:"open source vector databases"}],
+    answer:[{u:"why is the sky blue"},{u:"how do vaccines work"},{u:"best beaches in bali with no waves"}],
+    serp:[{u:"best crm software"},{u:"plumber austin tx"},{u:"rust vs go"}]
+  };
+  function paintEgs(n){
+    var el=document.querySelector("[data-egs]");if(!el)return;
+    var II=document.querySelector("[data-instr]");
+    el.innerHTML=EGS[n].map(function(x,i){return '<button type="button" class="'+(i===0?"on":"")+'" title="try this one">'+esc(x.u)+'</button>';}).join("");
+    el.querySelectorAll("button").forEach(function(b,i){b.addEventListener("click",function(){
+      var eg=EGS[n][i];
+      T.value=eg.u;
+      if(II&&eg.i)II.value=eg.i; /* extract: fill a matching instruction so one click = ready to Run */
+      el.querySelectorAll("button").forEach(function(x){x.classList.remove("on");});
+      b.classList.add("on"); /* the picked example is the lit one */
+      rd();T.focus();
+    });});
+  }
+  (function(){var IR=document.querySelector("[data-instrrow]"),II=document.querySelector("[data-instr]");
+    if(II){II.addEventListener("input",rd);II.addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();runNow();}});}
+    var _pick=pick;pick=function(n){
+      _pick(n);
+      if(IR)IR.classList.toggle("on",n==="extract");
+      var DR=document.querySelector("[data-deeprow]");if(DR)DR.classList.toggle("on",n==="answer");
+      /* extract needs a URL AND an instruction to run - prefill one that matches the
+         default URL (news.ycombinator.com) so the tab lands ready, not half-empty */
+      if(n==="extract"&&II&&!II.value.trim()){II.value="the top story titles and their points";rd();}
+      paintEgs(n);
+    };})();
+  T.addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();runNow();}});
+
+
+
+  document.querySelector("[data-copycmd]").addEventListener("click",function(){
+    if(!hasKey()){pendingCopy=true;openPop();return;}
+    cpT(TAB[cur].copy(tk(),val()),"Command <b>copied</b> - paste it in your terminal");
+  });
+  document.querySelectorAll("[data-copy]").forEach(function(b){b.addEventListener("click",function(){cp(b.getAttribute("data-copy"));var o=b.textContent;b.textContent="Copied";setTimeout(function(){b.textContent=o;},1200);});});
+  document.querySelectorAll("[data-tmpl]").forEach(function(b){b.addEventListener("click",function(){
+    if(!hasKey()){pendingTmpl=b.getAttribute("data-tmpl");openPop();return;}
+    cp(b.getAttribute("data-tmpl").replace(/TOKEN/g,tk()));
+    var o=b.textContent;b.textContent="Copied";setTimeout(function(){b.textContent=o;},1200);
+    var blk=b.closest("[data-agent-block]");c4t("agent_copy",{client:blk?blk.getAttribute("data-agent-block"):(b.closest("[data-setup]")?"setup":"env")});
+  });});
+  /* the credit numbers: one object at the top of #pricing fills every span */
+  (function(){
+    /* fill every [data-credit] from C: "monthly" = credits, "monthly$" = dollars, "plans.starter.usd" = a plan's number,
+       "limits.starter.concurrent" = a path, "monthSearches"/"monthPages" = what the free month buys,
+       "costPage"/"costSearch"/... = credits per request from the live price table (only once it has arrived) */
+    function fill(C){
+      var usd=C.usd||0.001, n=function(x){return Math.round(x).toLocaleString();};
+      var derived={monthSearches:C.search?C.monthly/C.search:null, monthPages:C.scrape?C.monthly/C.scrape:null};
+      /* the cost line: scrape base x the effort level's multiplier; the fallback object has no levels, so the
+         placeholder text stays until /v1/prices answers. toFixed(3) drops float noise (0.2*3 = 0.6000000000000001) */
+      if(C.levels){
+        var mult=function(name){var l=C.levels.filter(function(x){return x.name===name;})[0];return l&&C.scrape!=null?+(C.scrape*l.mult).toFixed(3):null;};
+        derived.costPage=mult("light"); derived.costArchive=mult("instant"); derived.costBrowser=mult("heavy"); derived.costHard=mult("hard");
+        derived.costSearch=C.search;
+        /* the comparison: per 1,000 calls at the Starter plan's own credit price */
+        var st=C.plans&&C.plans.starter;
+        if(st&&st.credits&&st.usd){var per=st.usd/st.credits*1000;
+          derived.cmpPage=derived.costPage*per; derived.cmpBrowser=derived.costBrowser*per; derived.cmpHard=derived.costHard*per; derived.cmpSearch=C.search*per;
+          derived.cmpStarterPages=derived.costPage?st.credits/derived.costPage:null;}
+      }
+      /* a [data-if] line shows only while its fact holds: today only a monthly credit */
+      var show={monthly:C.monthly>0};
+      document.querySelectorAll("[data-if]").forEach(function(el){el.hidden=!show[el.getAttribute("data-if")];});
+      document.querySelectorAll("[data-credit]").forEach(function(el){
+        var k=el.getAttribute("data-credit"),v=null,m;
+        if((m=k.match(/^(\w+)\$$/)))v=C[m[1]]!=null?+(C[m[1]]*usd).toFixed(2):null;
+        else if(k.indexOf(".")>0)v=k.split(".").reduce(function(o,p){return o&&o[p];},C);
+        else v=k in derived?derived[k]:C[k];
+        if(v!=null&&isFinite(v))el.textContent=el.hasAttribute("data-money")?(+v).toFixed(2):v%1===0?n(v):String(v);
+      });
+    }
+    /* the plan prices for the chosen billing: yearly (the default) shows the price a month, a twelfth of the
+       yearly price, and the yearly total under it; monthly shows the monthly price. A plan with no yearly
+       price shows its monthly price in both. */
+    var billing="year";
+    function money(x){return x%1===0?String(x):x.toFixed(2);}
+    function drawBilling(){
+      var plans=(window.CREDIT||{}).plans||{};
+      document.querySelectorAll("[data-bill]").forEach(function(b){b.classList.toggle("on",b.getAttribute("data-bill")===billing);});
+      document.querySelectorAll("[data-plan-amt]").forEach(function(el){
+        var p=plans[el.getAttribute("data-plan-amt")];if(!p||!p.usd)return;
+        var yearly=billing==="year"&&p.usd_year>0;
+        el.innerHTML=yearly?'$'+money(Math.round(p.usd_year/12*100)/100)+'<small> a month</small><span class="billed">billed $'+p.usd_year.toLocaleString()+' a year</span>'
+                           :'$'+p.usd+'<small> a month</small>';
+      });
+    }
+    document.querySelectorAll("[data-bill]").forEach(function(b){b.addEventListener("click",function(){billing=b.getAttribute("data-bill");drawBilling();});});
+    /* Start carries the chosen billing to the dashboard's plans (?bill=month; yearly is its default too) */
+    document.querySelectorAll("[data-start-link]").forEach(function(a){a.addEventListener("click",function(){a.href="/dashboard/"+(billing==="month"?"?bill=month":"")+"#billing";});});
+    fill(window.CREDIT||{});drawBilling();
+    fetch("/v1/prices").then(function(r){return r.ok?r.json():null;}).then(function(P){
+      if(!P||!P.credit)return;
+      /* keep the live numbers on window.CREDIT too: the playground's out-of-credit message reads them */
+      window.CREDIT={monthly:+P.credit.monthly, guest:+P.credit.guest, usd:P.usd_per_credit,
+            search:+(P.base||{}).search, scrape:+(P.base||{}).scrape,
+            plans:(P.plans||[]).reduce(function(o,p){o[p.name]=p;return o;},{}), limits:P.limits||{}, levels:P.levels||[]};
+      fill(window.CREDIT);drawBilling();
+    }).catch(function(){});
+  })();
+  /* the client picker: only changes which paste block shows (a page cannot install anything) */
+  document.querySelectorAll("[data-agent]").forEach(function(b){b.addEventListener("click",function(){
+    var c=b.getAttribute("data-agent");
+    document.querySelectorAll("[data-agent]").forEach(function(x){x.setAttribute("aria-selected",x===b);});
+    document.querySelectorAll("[data-agent-block]").forEach(function(x){x.hidden=x.getAttribute("data-agent-block")!==c;});
+    c4t("client_picked",{client:c});
+  });});
+  /* ---------- Enterprise contact form (#4): saves the lead + emails the team ---------- */
+  var ENTPOP=document.getElementById("entpop"),ENTCARD=document.querySelector("[data-entcard]");
+  function closeEnt(){ENTPOP.classList.remove("open");}
+  ENTPOP.addEventListener("click",function(e){if(e.target===ENTPOP)closeEnt();});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeEnt();});
+  function openEnt(){
+    ENTCARD.innerHTML='<button class="mintx" data-x aria-label="close">✕</button>'
+      +'<p class="mt"># Talk to us about Enterprise</p>'
+      +'<p class="mb">Volume, dedicated regions, SLA, private archive. Tell us a little and we\'ll be in touch.</p>'
+      +'<div class="entf">'
+      +'<input data-f="name" placeholder="Your name" autocomplete="name">'
+      +'<input data-f="company" placeholder="Company" autocomplete="organization">'
+      +'<input data-f="email" type="email" placeholder="Work email *" autocomplete="email" inputmode="email" autocapitalize="none" autocorrect="off" spellcheck="false">'
+      +'<input data-f="volume" placeholder="Expected volume (e.g. 1M pages/mo)">'
+      +'<textarea data-f="use_case" placeholder="What are you building?"></textarea>'
+      +'<button class="entsend" data-entsend>Send &rarr;</button>'
+      +'</div>';
+    ENTCARD.querySelector("[data-x]").addEventListener("click",closeEnt);
+    var B=ENTCARD.querySelector("[data-entsend]");
+    function showErr(m){var el=ENTCARD.querySelector(".enterr");if(!el){el=document.createElement("p");el.className="enterr";ENTCARD.querySelector(".entf").appendChild(el);}el.textContent="# "+m;}
+    function val(f){var el=ENTCARD.querySelector('[data-f="'+f+'"]');return el?el.value.trim():"";}
+    function send(){
+      if(B.disabled)return;
+      var email=val("email");
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){showErr("Please add a valid work email");return;}
+      B.disabled=true;B.textContent="Sending…";
+      fetch("/v1/enterprise",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({name:val("name"),company:val("company"),email:email,volume:val("volume"),use_case:val("use_case")})})
+        .then(function(r){return r.ok?r.json():r.json().then(function(j){throw new Error((j&&j.error)||"failed");});})
+        .then(function(){closeEnt();toast("Thanks — <b>we'll be in touch</b> 💚");})
+        .catch(function(e){B.disabled=false;B.textContent="Send →";showErr(e.message||"Network hiccup - try again");});
+    }
+    B.addEventListener("click",send);
+    ENTPOP.classList.add("open");
+    var fn=ENTCARD.querySelector('[data-f="name"]');if(fn)fn.focus();
+  }
+  document.querySelectorAll("[data-entform],[data-contact]").forEach(function(b){b.addEventListener("click",function(e){e.preventDefault();openEnt();});});
+
+  /* ---------- run: the real thing ---------- */
+  function fail(status,j){
+    var m;
+    if(status===402&&j&&j.error==="no_credit"){m='<b>You are out of credits</b> (balance '+esc(j.balance)+'). '+(function(C){var u=C.usd||0.001,go=(j.actions&&j.actions.subscribe)?'<a class="cta" href="'+esc(j.actions.subscribe)+'" target="_blank" rel="noopener">Start a plan →</a>':'<a class="cta" href="/dashboard/#billing">'+((j.actions&&j.actions.extra_credits)?'Add extra credits →':'See the plans →')+'</a>';return go+(C.monthly>0&&!(j.actions&&j.actions.extra_credits)?' Or wait: '+Number(C.monthly).toLocaleString()+' free credits on the 1st, no card.':'');})(window.CREDIT||{});}
+    else if(status===402&&j&&j.error==="plan_cap"){m='<b>Your plan\'s monthly allowance is used</b>. '+esc(j.message||"")+' <a class="cta" href="/dashboard/#billing">See the plans →</a>';}
+    else if(status===402&&j&&j.error==="spend_cap"){m='<b>Your monthly spend cap is reached</b> ('+esc(j.cap_left)+' left under it). Your balance is fine; only the cap you set stops this run. <a class="cta" href="/dashboard/#billing">Turn it off in Billing →</a> It resets on the 1st.';}
+    else if(status===402){dropKey();refreshKeyUI();m='Your 7-day pass expired - <a href="#" data-key>mint a fresh one</a> or verify the email we sent';}
+    else if(status===401){
+      dropKey();refreshKeyUI();
+      /* the key may have been ROTATED by a verify - if this browser is signed
+         in, heal from the session ONCE. Guard against a loop: if the healed
+         key ALSO 401s we must not re-heal to the same dead key forever. */
+      if(!healed){
+        healed=true;
+        fetch("/v1/me").then(function(r){return r.ok?r.json():null;}).then(function(j){
+          var k=null;(j&&j.keys||[]).forEach(function(x){if(x.status==="active"&&x.key)k=x.key;});
+          if(k){sessionKey=k;refreshKeyUI();toast("Your key was rotated - picked up the <b>new one</b> from your account");runNow();}
+        }).catch(function(){});
+      }
+      m='That key is no longer valid - <a href="#" data-key>mint a fresh one</a>';
+    }
+    else if(status===429&&j&&j.actions&&(j.actions.subscribe||j.actions.plans)){m='<b>'+esc(j.message)+'</b> '+(j.actions.subscribe?'<a class="cta" href="'+esc(j.actions.subscribe)+'" target="_blank" rel="noopener">Start a plan →</a> or ':'')+'<a class="cta" href="/dashboard/#billing">see the plans →</a>';}
+    else if(status===429){m=(j&&j.message)?esc(j.message):"Rate limited - play keys are tiny on purpose; verify your email for real limits";}
+    else{m=esc((j&&(j.error||j.reason))||("request failed ("+status+")"));}
+    O.innerHTML='<pre><span class="err"># '+m+'</span></pre>';
+    wireKeyButtons(O);
+  }
+  /* a just-minted key can 401 while it syncs to the nearest region - wait, don't drop it */
+  function syncWait(retryFn){
+    var s=loadKey(),left=Math.ceil((SYNC_GRACE-(Date.now()-(s&&s.t||0)))/1000);
+    if(left<=4){
+      O.innerHTML='<pre><span class="err"># The key is taking unusually long to sync - give it a minute, then hit Run again</span></pre>';
+      return;
+    }
+    O.innerHTML='<span class="ph"># Your key is brand new - syncing it to your nearest edge (usually under a minute) <span class="tok">retrying…</span></span>';
+    setTimeout(retryFn,4000);
+  }
+  function render(tab,j,v,totalMs,share){
+    lastShare=share||null;
+    var head='<span class="s">✓ 200</span> · <span class="n">'+(j.ms||"?")+'ms</span> server · '+Math.round(totalMs)+'ms round trip';
+    var body="";
+    if(tab==="scrape"){
+      var md=j.markdown||"";
+      body='<span class="h"># '+esc(host(v))+'</span>\n'+head+' · '+(md.length/1024).toFixed(1)+' KB Markdown · engine: '+esc(j.engine||"auto")+'\n\n'+esc(md.slice(0,1500))+(md.length>1500?"\n<span class=\"ph\">… ("+((md.length-1500)/1024).toFixed(1)+" KB more)</span>":"");
+    }else if(tab==="extract"){
+      var empty=j.data==null||(Array.isArray(j.data)&&j.data.length===0);
+      var data=empty?'<span class="ph"># No records matched - try a more specific instruction</span>':esc(JSON.stringify(j.data,null,1).slice(0,1500))+(JSON.stringify(j.data,null,1).length>1500?"\n<span class=\"ph\">…</span>":"");
+      body='<span class="h"># '+esc(host(v))+' → typed JSON</span>\n'+head+' · '+esc(j.model||"llm")+' · '+((j.usage&&j.usage.total_tokens)||0)+' tok\n\n'+data;
+    }else if(tab==="answer"){
+      var a=j.answer||{};
+      if(!j.answered||!a.text){
+        body='<span class="h"># "'+esc(v)+'" → answer</span>\n'+head+'\n\n<span class="ph"># '+esc(j.note||"No direct answer yet - try the search tab for links.")+'</span>';
+      }else{
+        var at=esc(a.text).replace(/\*\*(\S(?:[^*\n]*\S)?)\*\*/g,'<b>$1</b>');
+        at=at.split('\n').map(function(L){var mm=L.match(/^\s*[*-]\s+(.*)$/);return mm?'  • '+mm[1]:L;}).join('\n');
+        var src=(a.sources||[]).slice(0,3).map(function(x){var u=String(x.url||"");return /^https?:\/\//i.test(u)?'<a class="k" href="'+esc(u)+'" target="_blank" rel="noopener nofollow">'+esc(x.title||host(u))+'</a>':esc(x.title||"");}).filter(Boolean).join(" · ");
+        body='<span class="h"># "'+esc(v)+'" → answer</span>\n'+head+' · experimental\n\n'+at+(src?'\n\n<span class="s">sources: '+src+'</span>':'');
+      }
+    }else{
+      var rs=(j.results||[]).slice(0,6).map(function(r,i){
+        var url=String(r.url||""),title=esc(r.title||"(untitled)");
+        var safe=/^https?:\/\//i.test(url); /* ONLY http(s) becomes a clickable link - never javascript:/data: */
+        var head=safe?'<a class="k" href="'+esc(url)+'" target="_blank" rel="noopener nofollow">'+title+'</a>':'<span class="k">'+title+'</span>';
+        return (i+1)+'. '+head+'\n   <span class="s">'+esc(url)+'</span>';
+      }).join("\n");
+      var what=tab==="serp"?'serp (beta) · '+(j.results||[]).length+' results · '+((j.blocks||[]).length)+' blocks':(j.n||0)+' results';
+      body='<span class="h"># "'+esc(v)+'" → '+what+'</span>\n'+head+'\n\n'+rs;
+    }
+    if(window.c4t)c4t("playground_ok",{s:tab,ms:j.ms||0,rtt:Math.round(totalMs)});
+    lastOut=tab==="scrape"?(j.markdown||""):tab==="extract"?JSON.stringify(j.data,null,2):tab==="answer"?JSON.stringify({answered:!!j.answered,answer:j.answer||null},null,2):JSON.stringify(j.results||[],null,2);
+    O.innerHTML='<pre>'+body+(reduce?'':'<span class="caret"></span>')+'</pre>'
+      +'<div class="rr"><button class="cpy" data-copyout>Copy full output</button>'
+      +(lastShare?'<button class="cpy" data-share>↗ Share result</button>':'')
+      +'</div>';
+    K.textContent="✓ 200 OK · "+(j.ms||"?")+"ms";K.classList.add("show");
+  }
+  var lastOut="",lastShare=null;
+  var SHAREPOP=document.getElementById("sharepop"),SHARECARD=document.querySelector("[data-sharecard]");
+  function closeShare(){SHAREPOP.classList.remove("open");}
+  SHAREPOP.addEventListener("click",function(e){if(e.target===SHAREPOP)closeShare();});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeShare();});
+  function doShare(){
+    if(!lastShare)return;
+    var url=location.origin+"/s/"+lastShare, e=encodeURIComponent, txt="I ran this on Crawl4AI Cloud - try it yourself:";
+    SHARECARD.innerHTML='<button class="mintx" data-x aria-label="close">✕</button>'
+      +'<p class="mt"># Share this result</p>'
+      +'<img class="sharethumb" src="/s/'+lastShare+'/card.png" alt="share card preview" loading="lazy">'
+      +'<div class="sharerow"><input readonly data-shareurl value="'+url+'"><button class="scopy" data-scopy>Copy</button></div>'
+      +'<div class="sharebtns">'
+      +'<a href="https://twitter.com/intent/tweet?text='+e(txt)+'&url='+e(url)+'" target="_blank" rel="noopener">𝕏 Post</a>'
+      +'<a href="https://www.linkedin.com/sharing/share-offsite/?url='+e(url)+'" target="_blank" rel="noopener">LinkedIn</a>'
+      +'<a href="https://api.whatsapp.com/send?text='+e(txt+" "+url)+'" target="_blank" rel="noopener">WhatsApp</a>'
+      +(navigator.share?'<a href="#" data-snative>More…</a>':'')
+      +'</div>'
+      +'<p class="sharenote">Anyone who opens it lands in the playground, pre-filled with this - one Run from their own result.</p>';
+    SHARECARD.querySelector("[data-x]").addEventListener("click",closeShare);
+    SHARECARD.querySelector("[data-scopy]").addEventListener("click",function(){cpT(url,"Link <b>copied</b>");});
+    var inp=SHARECARD.querySelector("[data-shareurl]");inp.addEventListener("focus",function(){inp.select();});
+    var nat=SHARECARD.querySelector("[data-snative]");
+    if(nat)nat.addEventListener("click",function(ev){ev.preventDefault();navigator.share({title:"Crawl4AI Cloud",text:txt,url:url}).catch(function(){});});
+    SHAREPOP.classList.add("open");
+  }
+  O.addEventListener("click",function(e){
+    if(e.target.closest("[data-copyout]"))cpT(lastOut,"Output <b>copied</b> - the full thing, not the preview");
+    else if(e.target.closest("[data-share]"))doShare();
+  });
+  var runSeq=0,running=false,healed=false;
+  function setRunning(on){
+    running=on;
+    var B=document.querySelector("[data-run]");
+    B.disabled=on;B.textContent=on?"… Running":"▶ Run";
+  }
+  /* cheap client-side sanity so junk never burns a request (the gate gets
+     its own validation later - this is the friendly first line) */
+  function checkTarget(tab,raw){
+    if(isQueryTab(tab))return null;
+    var m=raw.match(/^([a-z][a-z0-9+.-]*):\/\//i);
+    if(m&&!/^https?$/i.test(m[1]))return "only http(s) URLs here - "+m[1]+":// isn't crawlable";
+    var u=normUrl(tab,raw);
+    var ok=true;try{var p=new URL(u);ok=!!p.hostname&&p.hostname.indexOf(".")>0;}catch(e){ok=false;}
+    if(!ok||/\s/.test(raw.trim()))return 'that doesn\'t look like a URL - fix it, or ask the <b>search</b> tab instead';
+    return null;
+  }
+  function estimateNow(){ /* the same request shape as Run, priced before it runs (needs a key, like Run) */
+    if(!hasKey()){openPop();return;}
+    var v=val(),tab=cur,bad=checkTarget(tab,v),line=document.querySelector("[data-est]");
+    if(bad){line.hidden=false;line.textContent="# "+bad;return;}
+    v=normUrl(tab,v);line.hidden=false;line.textContent="estimating…";
+    var body=(isQueryTab(tab))?{endpoint:tab}:{endpoint:tab,url:v};
+    fetch("/v1/estimate",{method:"POST",headers:{authorization:"Bearer "+tk(),"content-type":"application/json"},body:JSON.stringify(body)})
+      .then(function(r){return r.json().catch(function(){return {};}).then(function(j){return {s:r.status,j:j};});})
+      .then(function(x){line.textContent=x.s===200&&x.j.text?"≈ "+x.j.text:"estimate unavailable"+(x.j&&x.j.error?" · "+x.j.error:"");})
+      .catch(function(){line.textContent="estimate unavailable";});
+  }
+  function runNow(){
+    if(running)return; /* a double-click must not burn quota twice */
+    if(!hasKey()){pendingRun=true;openPop();return;}
+    var v=val(),tab=cur,t0=performance.now(),seq=++runSeq;
+    var bad=checkTarget(tab,v);
+    if(bad){O.innerHTML='<pre><span class="err"># '+bad+'</span></pre>';K.classList.remove("show");return;}
+    v=normUrl(tab,v);
+    setRunning(true);
+    if(window.c4t)c4t("playground_run",{s:tab,fp:window.c4fp?c4fp():""});
+    O.innerHTML='<span class="ph">running <span class="tok">'+esc(v)+'</span> …'+(tab==="extract"?' <span class="ph">(the LLM takes a few seconds)</span>':'')+'</span>';
+    K.classList.remove("show");
+    var req=(isQueryTab(tab))
+      ?fetch("/"+tab+"?q="+encodeURIComponent(v)+(tab==="answer"?deepParam():""),{headers:{authorization:"Bearer "+tk()}})
+      :fetch("/"+tab,{method:"POST",headers:{authorization:"Bearer "+tk(),"content-type":"application/json"},body:JSON.stringify(tab==="extract"?{url:v,instruction:instr()}:{url:v})});
+    req.then(function(r){var _sh=r.headers.get("x-share"); return r.json().then(function(j){return {s:r.status,j:j,sh:_sh};}).catch(function(){return {s:r.status,j:null,sh:_sh};});})
+      .then(function(x){
+        setRunning(false);
+        if(seq!==runSeq)return; /* a newer run took over */
+        if(cur!==tab){K.classList.remove("show");return;} /* user switched tabs mid-run: never mislabel output */
+        if(x.s===200&&x.j&&x.j.ok!==false){healed=false;render(tab,x.j,v,performance.now()-t0,x.sh);}
+        else if(x.s===401&&keyIsYoung()){syncWait(runNow);}
+        else{fail(x.s,x.j);}
+      })
+      .catch(function(){
+        setRunning(false);
+        if(seq!==runSeq||cur!==tab)return;
+        O.innerHTML='<pre><span class="err"># Network error - is your connection up?</span></pre>';
+      });
+  }
+  document.querySelector("[data-run]").addEventListener("click",runNow);
+  var _eb=document.querySelector("[data-estimate]");if(_eb)_eb.addEventListener("click",estimateNow);
+
+  /* ---------- live badges ---------- */
+  var sn=document.getElementById("stars"),pn=document.getElementById("pip");
+  fetch("/v1/meta/badges").then(function(r){return r.json();}).then(function(j){
+    if(j.pip_downloads_month)pn.textContent=(j.pip_downloads_month/1e6).toFixed(1)+"M / mo";
+    if(!j.github_stars)return;
+    var tg=j.github_stars;
+    if(reduce){sn.textContent=tg.toLocaleString();return;}
+    var c=Math.max(0,tg-214),iv=setInterval(function(){c+=Math.ceil((tg-c)/6);if(c>=tg){c=tg;clearInterval(iv);}sn.textContent=c.toLocaleString();},90);
+  }).catch(function(){});
+
+  /* ---------- launch-wave scarcity: prominent top strip + a line inside the mint modal.
+     Seats OFF (default) -> SEATS.seats_left is null -> nothing renders (feature invisible). ---------- */
+  var SEATS=null;
+  function paintSeats(){
+    if(!SEATS)return;
+    if(SEATS.closed){ /* sign-ups closed until launch: one honest line, no seat counting */
+      var cs=document.querySelector("[data-seatstrip]");
+      if(cs){cs.className="seatstrip closed";cs.innerHTML='<span class="sdot"></span>Sign-ups open at launch';cs.style.display="inline-flex";}
+      var cm=document.querySelector("[data-mseats]");
+      if(cm){cm.innerHTML='&rarr; Sign-ups open at launch';cm.style.display="block";}
+      return;
+    }
+    var off=(SEATS.seats_left==null), open=SEATS.open&&SEATS.seats_left>0;
+    var n=off?"":SEATS.seats_left.toLocaleString();
+    var strip=document.querySelector("[data-seatstrip]");
+    if(strip){
+      if(off){strip.style.display="none";}
+      else{
+        strip.className="seatstrip"+(open?"":" closed");
+        strip.innerHTML='<span class="sdot"></span>'+(open?'<b>'+n+'</b>&nbsp;Free seats left':'Free seats are full &mdash; grab a token, we\'ll email you when one opens');
+        strip.style.display="inline-flex";
+      }
+    }
+    var ms=document.querySelector("[data-mseats]");   /* exists only while the mint modal is open */
+    if(ms){
+      if(off){ms.style.display="none";}
+      else{ms.innerHTML=open?'&rarr; '+n+' Free seats left right now':'&rarr; Seats are full &mdash; your token works today, we\'ll email you the moment one opens';ms.style.display="block";}
+    }
+  }
+  fetch("/v1/meta/seats").then(function(r){return r.json();}).then(function(j){SEATS=j;paintSeats();}).catch(function(){});
+  /* sent back here by a sign-in attempt while sign-ups are closed */
+  if(new URLSearchParams(location.search).get("closed")==="1"&&typeof toast==="function")toast("Sign-ups open at launch");
+
+  /* deep link from a shared result (#5): /?svc=search&q=… lands the playground pre-filled
+     on that service + query, one Run away from the shared result. Falls back to scrape. */
+  (function(){
+    var qs=new URLSearchParams(location.search), svc=qs.get("svc"), q=qs.get("q");
+    var ok=svc&&["scrape","extract","search","answer"].indexOf(svc)>=0;
+    pick(ok?svc:"scrape");
+    if(q){T.value=q;rd();}
+    if(ok||q){O.innerHTML='<span class="ph"># Shared result - hit <b>Run</b> (grab a free key) to see it yourself</span>';}
+  })();
+  refreshKeyUI();
+  /* land with the caret already in the URL bar (desktop only - avoids popping the mobile keyboard
+     and hiding the Run button); the field is prefilled so the very first Run returns something real */
+  if(!matchMedia("(pointer:coarse)").matches){try{T.focus({preventScroll:true});T.setSelectionRange(T.value.length,T.value.length);}catch(e){}}
+
+  /* signed-in visitors get their real key in the playground automatically,
+     plus a visible way back to their console (U: the landing had none) */
+  fetch("/v1/me").then(function(r){return r.ok?r.json():null;}).then(function(j){
+    if(!j||!j.email)return;
+    var k=null;
+    (j.keys||[]).forEach(function(x){if(x.status==="active"&&x.key)k=x.key;});
+    if(k){sessionKey=k;refreshKeyUI();}
+    var sc=document.querySelector("[data-sess]");
+    sc.innerHTML='<span style="color:var(--teal)">●</span> signed in as <b>'+esc(j.email)+'</b> · <a href="/dashboard/">console →</a>';
+    sc.classList.add("on");
+    /* signed in -> the right cluster becomes the session line; drop the Sign in / Get a key doors */
+    document.querySelectorAll(".tabr .signin,.tabr .getk").forEach(function(e){e.style.display="none";});
+    var ad=document.querySelector("[data-adot]");if(ad)ad.classList.add("on"); /* app-bar signed-in dot */
+    /* signed in -> the app-bar CTA becomes the console link (mobile drops the long
+       "signed in as ..." line, so this is the way back to the dashboard) */
+    var gk=document.querySelector(".appbar .getk");
+    if(gk){var nb=gk.cloneNode(false);nb.removeAttribute("data-key");nb.textContent="Console →";
+      nb.addEventListener("click",function(){location.href="/dashboard/";});
+      gk.parentNode.replaceChild(nb,gk);}
+    /* signed in -> the bottom-bar action copies the existing key, so label it honestly */
+    var bk=document.querySelector(".tabbar a.key");
+    if(bk&&bk.lastChild)bk.lastChild.textContent="Copy key";
+  }).catch(function(){});
+
+  /* standing key status under the playground (the keyline left a gap) */
+  function paintLive(){
+    var el=document.querySelector(".live");if(!el)return;
+    var st=loadKey();
+    if(sessionKey){el.textContent="Live · your account key";}
+    else if(st){var h=Math.max(1,Math.round((st.exp-Date.now())/36e5));el.textContent="Live · pass key active · ~"+h+"h left · verify for a permanent key";}
+    else{el.textContent="Live · play limits";}
+  }
+  var _refreshKeyUI=refreshKeyUI;refreshKeyUI=function(){_refreshKeyUI();paintLive();};
+  paintLive();
+
+  /* a used/expired sign-in link lands here with ?verify=expired - explain it */
+  (function(){
+    if(new URLSearchParams(location.search).get("verify")!=="expired")return;
+    history.replaceState(null,"","/");
+    if(hasKey()){
+      toast("That sign-in link was already <b>used or expired</b> - your key here still works");
+      return;
+    }
+    openPop();
+    var el=document.createElement("p");el.className="minterr";
+    el.textContent="# that sign-in link was already used or expired - mint again, or use \"email me my key\" if you have an account";
+    CARD.appendChild(el);
+  })();
+
+  /* popup: focus restore + a simple trap (U8) */
+  (function(){
+    var lastFocus=null;
+    var _open=openPop;openPop=function(){lastFocus=document.activeElement;_open();};
+    var _close=closePop;closePop=function(){_close();if(lastFocus&&lastFocus.focus)lastFocus.focus();};
+    document.addEventListener("keydown",function(e){
+      if(e.key!=="Tab"||!POP.classList.contains("open"))return;
+      var f=POP.querySelectorAll("input,button,a[href]");if(!f.length)return;
+      var first=f[0],last=f[f.length-1];
+      if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+      else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+    });
+  })();
+})();
+
+/* ---------- theme toggle (light / dark; persists, updates theme-color) ---------- */
+(function(){
+  var root=document.documentElement,tc=document.querySelector('meta[name="theme-color"]');
+  function sync(){var l=root.getAttribute("data-theme")==="light";
+    document.querySelectorAll("[data-themetog]").forEach(function(b){b.textContent=l?"☾":"☀";});
+    if(tc)tc.setAttribute("content",l?"#f6f7f9":"#070708");}
+  document.querySelectorAll("[data-themetog]").forEach(function(b){b.addEventListener("click",function(){
+    var next=root.getAttribute("data-theme")==="light"?"dark":"light";
+    root.setAttribute("data-theme",next);try{localStorage.setItem("c4theme",next);}catch(e){}sync();
+  });});
+  sync();
+})();
+/* the service switch: GET /v1/meta/services names the services the fleet switched off, each with a
+   note. Hide their surfaces ([data-service=name]), show their notes ([data-service-off=name], the text
+   into its [data-note]), and fold a docs section (the [data-service-section=name] heading and every
+   sibling up to the next heading of the same tag). A service the body does not name stays as it is.
+   The cookie rides along: a signed-in account on a service's private list gets it answered as on. */
+(function(){
+  fetch("/v1/meta/services",{credentials:"same-origin"}).then(function(r){return r.ok?r.json():{};}).then(function(flags){
+    Object.keys(flags||{}).forEach(function(name){
+      var f=flags[name]; if(!f||f.on!==false)return;
+      var all=function(sel){return Array.prototype.slice.call(document.querySelectorAll(sel));};
+      all('[data-service="'+name+'"]').forEach(function(el){el.style.display="none";});
+      all('[data-service-off="'+name+'"]').forEach(function(el){el.hidden=false;var n=el.querySelector("[data-note]");if(n)n.textContent=f.note||"";});
+      all('[data-service-section="'+name+'"]').forEach(function(h){
+        var el=h; while(el){var next=el.nextElementSibling; el.style.display="none"; if(!next||next.tagName===h.tagName)break; el=next;}
+      });
+    });
+  }).catch(function(){});
+})();
+
+/* ---------- mobile bottom tab bar: smooth scroll + scroll-spy ---------- */
+(function(){
+  var bar=document.querySelector(".tabbar");if(!bar)return;
+  var APP=60; /* offset under the fixed app-bar */
+  function go(id){
+    if(id==="top"){scrollTo({top:0,behavior:"smooth"});return;}
+    var el=document.getElementById(id);if(!el)return;
+    scrollTo({top:el.getBoundingClientRect().top+scrollY-APP,behavior:"smooth"});
+  }
+  var links={};
+  bar.querySelectorAll("a[data-nav]").forEach(function(a){
+    if(a.hasAttribute("data-page"))return;   // a tab that is another page: let the link work
+    links[a.getAttribute("data-nav")]=a;
+    a.addEventListener("click",function(e){e.preventDefault();go(a.getAttribute("data-nav"));});
+  });
+  function setCur(k){
+    for(var n in links)links[n].removeAttribute("aria-current");
+    if(links[k])links[k].setAttribute("aria-current","true");
+  }
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(en){if(en.isIntersecting&&scrollY>=120)setCur(en.target.id);});
+    },{rootMargin:"-45% 0px -50% 0px"});
+    ["playground","pricing"].forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el);});
+  }
+  addEventListener("scroll",function(){if(scrollY<120)setCur("top");},{passive:true});
+  setCur("top");
+})();
+</script>
+</body>
+</html>

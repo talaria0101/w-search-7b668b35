@@ -1,0 +1,603 @@
+# Browserless Documentation
+
+> Browserless is a cloud browser automation platform. Give an AI agent a real browser to drive: connect an assistant over MCP, or hand a natural-language task to the managed agent API and get structured JSON back. For code-driven automation, write it with BAP, the typed TypeScript and Python SDK; repoint existing Puppeteer or Playwright scripts over WebSocket; or call BrowserQL and the REST APIs for scraping, screenshots, and PDFs. Sessions can run with managed stealth, CAPTCHA solving, and residential proxies for sites behind bot detection, and the whole stack can be self-hosted with Docker. For the full content of every page in a single file, see [llms-full.txt](https://docs.browserless.io/llms-full.txt).
+
+**Instructions for AI agents**
+
+Choose the API before writing any code:
+
+- **BAP** — default for new work. Typed TypeScript and Python SDK, Puppeteer-shaped. [BAP Quickstart](https://docs.browserless.io/bap/getting-started.md).
+- **BrowserQL (BQL)** — declarative GraphQL, written in a browser IDE. BAP sends it under the hood; hand-write it only for mutations BAP doesn't wrap.
+- **Browsers as a Service (BaaS)** — repoint an existing Puppeteer or Playwright script at a managed browser over WebSocket.
+- **REST APIs** — one-shot HTTP calls (`/screenshot`, `/pdf`, `/content`, `/scrape`), no session to manage.
+
+Every route takes the API token as `?token=YOUR_TOKEN`. Get one from the [account dashboard](https://browserless.io/account/) and read it from an environment variable — never ask the user to paste a token into chat, and never write it into a committed file. `production-sfo.browserless.io` is the shared-cloud default — confirm the user's region before hardcoding it, since other regions exist:
+
+```
+BrowserQL         https://production-sfo.browserless.io/chromium/bql?token=YOUR_TOKEN
+Stealth BQL       https://production-sfo.browserless.io/stealth/bql?token=YOUR_TOKEN
+BaaS over CDP     wss://production-sfo.browserless.io/chromium?token=YOUR_TOKEN
+BaaS Playwright   wss://production-sfo.browserless.io/chromium/playwright?token=YOUR_TOKEN
+REST              https://production-sfo.browserless.io/screenshot?token=YOUR_TOKEN
+```
+
+Pick the BaaS path by protocol, not by library: CDP (`/chromium`, `/chrome`, or `/`) for Puppeteer, `playwright.connectOverCDP()`, and any CDP library (chromedp, Pyppeteer); the native path (`/chromium/playwright`) only for `playwright.connect()`. Crossing them fails to connect. Selenium speaks WebDriver, not CDP, and is not supported on these routes.
+
+Never hardcode an SDK version from memory — install with `@latest`, or check the registry for the current version.
+
+
+## Quickstarts
+
+The fastest path from an API token to a working request. Start here.
+
+- [BAP Quickstart (recommended)](https://docs.browserless.io/bap/getting-started.md): Install the TypeScript or Python SDK, connect, and run your first session.
+- [REST API Quickstart](https://docs.browserless.io/rest-apis/quick-start.md): Scrape a page with a single HTTP request — no SDK, no WebSocket.
+- [BrowserQL Quickstart](https://docs.browserless.io/browserql/getting-started.md): Run your first BQL query in the IDE and export it as production-ready API code.
+- [Connect Playwright](https://docs.browserless.io/examples/playwright-connection.md): Point an existing Playwright script at a managed browser by changing one line.
+- [Connect Puppeteer](https://docs.browserless.io/examples/puppeteer-connection.md): Point an existing Puppeteer script at a managed browser by changing one line.
+- [Browsers as a Service Quickstart](https://docs.browserless.io/baas/quick-start.md): Connect Puppeteer or Playwright to a managed browser over a CDP WebSocket.
+- [MCP Setup](https://docs.browserless.io/mcp/browserless-mcp-server/setup.md): Give an AI assistant a browser through the Model Context Protocol.
+- [Choosing an API](https://docs.browserless.io/overview/comparison.md): Compare BAP, BrowserQL, BaaS, and REST to pick the right one for a use case.
+- [Get an API Token](https://docs.browserless.io/overview/api-keys.md): View, copy, and rotate the API token every request requires.
+
+## Common tasks
+
+Frequent jobs mapped to the one page that answers them.
+
+- [Take a screenshot of a page](https://docs.browserless.io/rest-apis/screenshot-api.md): or [/bap/screenshots-and-pdfs](https://docs.browserless.io/bap/screenshots-and-pdfs.md) from an existing BAP session
+- [Render a page or raw HTML to PDF](https://docs.browserless.io/rest-apis/pdf-api.md): or [/bap/screenshots-and-pdfs](https://docs.browserless.io/bap/screenshots-and-pdfs.md) from an existing BAP session
+- [Get fully rendered HTML, including JavaScript-generated content](https://docs.browserless.io/rest-apis/content.md): or [/bap/extracting-content](https://docs.browserless.io/bap/extracting-content.md) from an existing BAP session
+- [Extract structured JSON with CSS selectors](https://docs.browserless.io/rest-apis/scrape.md): or [/bap/extracting-content](https://docs.browserless.io/bap/extracting-content.md) from an existing BAP session
+- [Crawl a whole site and scrape every page found](https://docs.browserless.io/rest-apis/crawl.md)
+- [Search the web and optionally scrape each result](https://docs.browserless.io/rest-apis/search.md)
+- [Run a natural-language task with a managed AI agent](https://docs.browserless.io/rest-apis/agent-run.md)
+- [Give an AI assistant a browser it can drive](https://docs.browserless.io/mcp/browser-agent.md): or [/cli/agent](https://docs.browserless.io/cli/agent.md) from the terminal
+- [Log in to a site with an AI agent](https://docs.browserless.io/examples/agent-login.md)
+- [Get past bot detection on a blocked page](https://docs.browserless.io/rest-apis/unblock.md)
+- [Solve a CAPTCHA](https://docs.browserless.io/bap/bot-detection/captchas.md): or [/browserql/bot-detection/solving-captchas](https://docs.browserless.io/browserql/bot-detection/solving-captchas.md) in raw BrowserQL
+- [Run stealth or route traffic through a residential proxy](https://docs.browserless.io/bap/bot-detection/stealth.md): or [/browserql/bot-detection/proxies](https://docs.browserless.io/browserql/bot-detection/proxies.md) in raw BrowserQL
+- [Fill in and submit a form](https://docs.browserless.io/examples/forms.md)
+- [Log in once and reuse that session across runs](https://docs.browserless.io/examples/sessions.md)
+- [Save a logged-in browser profile and reuse it](https://docs.browserless.io/examples/authenticated-profiles.md)
+- [Run many browser sessions in parallel](https://docs.browserless.io/examples/concurrent-sessions.md)
+- [Record a video of a browser session](https://docs.browserless.io/examples/screen-recording.md)
+- [Run end-to-end browser tests in CI](https://docs.browserless.io/examples/e2e-testing.md)
+- [Self-host with Docker](https://docs.browserless.io/enterprise/docker/overview.md)
+- [Work out what a request costs](https://docs.browserless.io/overview/unit-consumption.md): or [browserless.io/pricing](https://browserless.io/pricing) for plan rates
+
+## Account and Platform
+
+Getting-started guides for the most common jobs, plus tokens, dashboard, usage and billing units, request logs, connection URLs, launch parameters, and how the APIs compare.
+
+- [API Token Management](https://docs.browserless.io/overview/api-keys.md): Learn how to view, copy, and rotate your Browserless API token from the dashboard.
+- [API Comparison](https://docs.browserless.io/overview/comparison.md): Compare BAP, BrowserQL, BaaS v2, and REST APIs to choose the right Browserless API for your browser automation, web scraping, or bot detection bypass needs.
+- [Browserless Overview](https://docs.browserless.io/overview/intro.md): Browserless provides managed headless browsers in the cloud.
+- [AI Assistant Privacy](https://docs.browserless.io/overview/ai-assistant-privacy.md): How the Browserless AI assistant handles your data, including security certifications, LLM provider agreements, and data retention.
+- [Connection URLs and Endpoints](https://docs.browserless.io/overview/connection-urls.md): Browserless uses HTTPS for BrowserQL and REST APIs, and WebSocket connections for BaaS sessions.
+- [Dashboard overview](https://docs.browserless.io/overview/dashboard.md)
+- [Bypass CAPTCHAs on a website](https://docs.browserless.io/overview/getting-started/bypass-captchas.md): Reduce how often CAPTCHAs appear by connecting through a stealth route, then solve the ones that still show up automatically.
+- [Connect Playwright](https://docs.browserless.io/overview/getting-started/connect-playwright.md): Point an existing Playwright script at a managed browser with connectOverCDP.
+- [Connect Puppeteer](https://docs.browserless.io/overview/getting-started/connect-puppeteer.md): Point an existing Puppeteer script at a managed browser by replacing launch() with connect().
+- [Create a browser agent](https://docs.browserless.io/overview/getting-started/create-a-browser-agent.md): Set up an agent that drives a real browser, either by adding the Browserless MCP server to an AI client or by calling the managed Agent Run API.
+- [Create a browser session](https://docs.browserless.io/overview/getting-started/create-a-browser-session.md): Open a browser session with the BAP SDK, run several steps against the same page, keep the session alive past your own connection, and close it.
+- [Scrape a website URL](https://docs.browserless.io/overview/getting-started/scrape-a-website.md): Pull data off a live page with a single REST call, then run the same job over a WebSocket connection.
+- [Launch Parameters](https://docs.browserless.io/overview/launch-parameters.md): Configure how browsers launch and behave with query parameters.
+- [Request Logs](https://docs.browserless.io/overview/request-logs.md): Search and filter per-request logs from the Browserless dashboard, including request lifecycle events, errors, durations, unit usage, and request IDs.
+- [Unit Consumption](https://docs.browserless.io/overview/unit-consumption.md): Understand what consumes units from your Browserless balance, including browser time, proxies, CAPTCHAs, and more, and how to check your usage.
+
+## BAP
+
+Typed TypeScript and Python SDKs over BrowserQL: managed stealth, CAPTCHA solving, and a Puppeteer/Playwright-shaped API instead of hand-written GraphQL. The recommended starting point for new automation.
+
+- [BAP Quickstart](https://docs.browserless.io/bap/getting-started.md): Install the BAP SDK for TypeScript or Python, connect to a BrowserQL endpoint, and run your first session.
+- [BAP](https://docs.browserless.io/bap.md): Browser Automation Protocol (BAP) wraps BrowserQL in TypeScript and Python SDKs, so you write page.goto() instead of hand-writing GraphQL.
+- [Custom transports in BAP](https://docs.browserless.io/bap/advanced/custom-transports.md): Replace the TypeScript SDK's built-in WebSocket with your own ConnectionTransport to add logging, inject auth, or tunnel BrowserQL frames over another channel.
+- [Dropping down to raw BrowserQL](https://docs.browserless.io/bap/advanced/raw-browserql.md): Run BrowserQL mutations BAP doesn't wrap with page.send(), batch multiple steps into one round trip, and observe raw protocol frames.
+- [Solving CAPTCHAs with BAP](https://docs.browserless.io/bap/bot-detection/captchas.md): Detect and solve Cloudflare, reCAPTCHA, and other challenges inside a BAP session with solve(), and handle image CAPTCHAs with solveImageCaptcha().
+- [OS emulation in BAP](https://docs.browserless.io/bap/bot-detection/os-emulation.md): Set emulationOs on the BAP connection URL to present a coherent Windows, macOS, or Android identity instead of the default Linux fingerprint.
+- [Stealth and humanization in BAP](https://docs.browserless.io/bap/bot-detection/stealth.md): Run BAP sessions through the managed stealth browser, humanize typing and scrolling, and route traffic through residential proxies.
+- [Error handling in BAP](https://docs.browserless.io/bap/error-handling.md): Catch and branch on BAP's typed errors, tune timeouts, and understand how BrowserQL failures surface in the TypeScript and Python SDKs.
+- [Extracting content with BAP](https://docs.browserless.io/bap/extracting-content.md): Pull text, HTML, Markdown, and structured element data out of a page with BAP, with clean options that strip markup for LLM pipelines.
+- [Interacting with pages in BAP](https://docs.browserless.io/bap/interacting-with-pages.md): Click, type, select, check, hover, and scroll with BAP, plus the wait behavior every interaction method shares and how to follow a navigation.
+- [Migrate to BAP](https://docs.browserless.io/bap/migrate.md): Convert an existing Puppeteer or Playwright script to BAP.
+- [Network control with BAP](https://docs.browserless.io/bap/network-control.md): Block requests by type or URL, query the traffic a session captured, wait for specific requests and responses, and mock endpoints with fulfill.
+- [Page events in BAP](https://docs.browserless.io/bap/page-events.md): Listen to console output, network requests and responses, and non-fatal errors with BAP's event API, and understand the subscriptions it opens behind them.
+- [Screenshots and PDFs with BAP](https://docs.browserless.io/bap/screenshots-and-pdfs.md): Capture page or element screenshots and generate PDFs with BAP, including the options that decide format, quality, and what counts as loaded.
+- [Loading secrets in BAP](https://docs.browserless.io/bap/secrets.md): Fill a password from a 1Password service account with loadSecret() so the credential never reaches your script, and understand the capture lockdown it triggers.
+- [Live URLs and session recording in BAP](https://docs.browserless.io/bap/session-management/live-url.md): Stream a running BAP session to a human with liveURL(), record sessions for replay in the dashboard, and switch between browser windows.
+- [Reconnecting to sessions in BAP](https://docs.browserless.io/bap/session-management/reconnects.md): Keep a browser session alive after your script disconnects and pick it up again from BAP, Puppeteer, or Playwright with the endpoints reconnect() returns.
+- [Cookies and page setup in BAP](https://docs.browserless.io/bap/session-state.md): Read and inject cookies to skip a login, set the user agent, load HTML directly, inject scripts and styles, and disable JavaScript.
+- [Waiting for things in BAP](https://docs.browserless.io/bap/waiting.md): Pick the right wait in BAP, from selectors and navigation to network idle, predicates, and events, and learn which waits are already implied.
+
+## BrowserQL
+
+BrowserQL (BQL) is a GraphQL API for declarative browser automation with built-in stealth, CAPTCHA solving, and human-like behavior. Write queries in the IDE, run them against managed browsers, and export production-ready code.
+
+- [Quickstart](https://docs.browserless.io/browserql/getting-started.md): Run your first BrowserQL query in minutes — get an API token, open the IDE, write a query, and export it as production-ready API code.
+- [BrowserQL](https://docs.browserless.io/browserql/start.md): BrowserQL (BQL) is the GraphQL protocol behind Browserless's automation, which BAP's TypeScript and Python SDKs build and send under the hood.
+- [Running JavaScript with evaluate](https://docs.browserless.io/browserql/advanced-config/multi-line-javascript.md): The evaluate mutation runs JavaScript in the browser's page environment.
+- [Parsing HTML with External Libraries](https://docs.browserless.io/browserql/advanced-config/parsing-libraries.md): Learn how to retrieve HTML with BrowserQL and parse it with Beautiful Soup, Scrapy, or Cheerio, with a working code example for each library.
+- [BQL Best Practices](https://docs.browserless.io/browserql/best-practices.md): This guide covers essential patterns that will make your browser automation more reliable and maintainable.
+- [OS emulation](https://docs.browserless.io/browserql/bot-detection/os-emulation.md): Use the emulationOs parameter to select the OS identity — Windows, macOS, or Linux — presented by a stealth-hardened BrowserQL session on any BQL route.
+- [Bot Detection](https://docs.browserless.io/browserql/bot-detection/overview.md): BrowserQL includes built-in tools for bypassing bot detection on protected and heavily monitored pages.
+- [Proxies](https://docs.browserless.io/browserql/bot-detection/proxies.md): BrowserQL supports built-in residential and datacenter proxies, as well as external third-party proxies.
+- [CAPTCHA Solving](https://docs.browserless.io/browserql/bot-detection/solving-captchas.md): Solve CAPTCHAs automatically with BrowserQL including reCAPTCHA v2, v3, invisible challenges, and custom image-based CAPTCHAs on any site.
+- [Stealth Route](https://docs.browserless.io/browserql/bot-detection/stealth.md): The stealth route (/stealth/bql) is a hardened endpoint for BrowserQL that applies comprehensive browser fingerprint mitigations and entropy injection.
+- [Launch Parameters](https://docs.browserless.io/browserql/launch-parameters.md): Launch parameters configure how browsers start and behave in your sessions.
+- [Cookie Management](https://docs.browserless.io/browserql/session-management/injecting-cookies.md): Set and retrieve cookies in BrowserQL for authentication, session state management, and personalized browser automation workflows.
+- [Persisting State](https://docs.browserless.io/browserql/session-management/persisting-state.md): Learn how to create a long-lived browser session with the Session REST API, run BQL queries against it, and manage how long its state persists.
+- [Reconnect using Puppeteer & Playwright](https://docs.browserless.io/browserql/session-management/puppeteer-playwright.md): Hand off a BrowserQL session to Puppeteer or Playwright mid-query using the reconnect mutation for hybrid automation workflows.
+- [Reconnect to Session](https://docs.browserless.io/browserql/session-management/reconnect-to-browserless.md)
+- [Session Replay](https://docs.browserless.io/browserql/session-management/session-replay.md): Learn how to enable Session Replay for BrowserQL sessions, view recordings in your dashboard, and understand how it differs from BaaS Screen Recording.
+- [PDF Generation](https://docs.browserless.io/browserql/use-cases/pdfs.md): Generate PDFs from web pages with BrowserQL including custom headers, footers, page numbers, margins, and raw HTML content rendering.
+- [Search Automation](https://docs.browserless.io/browserql/use-cases/performing-searches.md): Automate search interactions with BrowserQL using click and type mutations, with support for dynamic results, modal handling, and response interception.
+- [Data Scraping and Extraction](https://docs.browserless.io/browserql/use-cases/scrape-and-extract-data.md): Extract data from web pages with BrowserQL using HTML, mapSelector, querySelectorAll, response interception, and JavaScript evaluation.
+- [Screenshots](https://docs.browserless.io/browserql/use-cases/screenshots.md): Capture screenshots with BrowserQL including full-page captures, element-specific shots, transparent backgrounds, and clipped viewport regions.
+- [Form Submission](https://docs.browserless.io/browserql/use-cases/submitting-forms.md): Automate form submission with BrowserQL using type, click, select, and checkbox mutations, including support for CAPTCHAs, iframes, and shadow DOM.
+- [BQL IDE Features](https://docs.browserless.io/browserql/using-the-ide/ide-features.md): Explore the BrowserQL IDE with built-in documentation, query history, autocomplete, live browser preview, and code export to multiple languages.
+- [IDE Session Settings](https://docs.browserless.io/browserql/using-the-ide/session-settings.md): Configure BrowserQL IDE sessions with different browsers, proxies, viewport sizes, human-like behavior, and stealth settings per session.
+- [Export BQL as API calls](https://docs.browserless.io/browserql/using-the-ide/using-api-calls.md): Design BQL queries in the IDE and export them as ready-to-use API calls in Python, Node.js, cURL, and other languages for production deployment.
+- [Conditional Logic in BQL](https://docs.browserless.io/browserql/writing-bql/conditional-logic.md): if and ifnot are BrowserQL mutations that execute nested operations based on a condition.
+- [Error Handling in BQL](https://docs.browserless.io/browserql/writing-bql/error-handling.md): How BrowserQL reports failed and timed-out steps.
+- [Variables and the @export Directive](https://docs.browserless.io/browserql/writing-bql/exporting-variables.md): Save field values into named variables with the @export directive and reuse them across later mutations in the same BrowserQL query.
+- [BQL Language Basics](https://docs.browserless.io/browserql/writing-bql/language-basics.md): A practical overview of BQL script structure, core actions, aliases, and response fields.
+- [Wait Conditions](https://docs.browserless.io/browserql/writing-bql/waiting-for-things.md): Pause BQL query execution until a CSS selector appears, a network request completes, or a timeout elapses before continuing to the next mutation.
+
+## Browsers as a Service (BaaS)
+
+Connect Puppeteer, Playwright, or any CDP library to managed headless browsers over WebSocket. Includes stealth routes, proxy support, session persistence, and file transfer capabilities.
+
+- [Quickstart](https://docs.browserless.io/baas/quick-start.md): Connect to Browserless using Puppeteer or Playwright via Chrome DevTools Protocol websockets for stable browser automation.
+- [Browsers as a Service](https://docs.browserless.io/baas/start.md): Connect Puppeteer or Playwright to managed headless browsers over WebSocket.
+- [Advanced Hybrid Automation Configurations](https://docs.browserless.io/baas/advanced-configurations/hybrid-automation-configurations.md): This page is the comprehensive reference for all Browserless.liveURL options and advanced patterns.
+- [Playwright Configurations](https://docs.browserless.io/baas/advanced-configurations/playwright-customizations.md): This page covers advanced Playwright configurations for users already familiar with basic Playwright connections to Browserless.
+- [Puppeteer Configurations](https://docs.browserless.io/baas/advanced-configurations/puppeteer-customizations.md): Advanced Puppeteer configuration for CDP monitoring, network request tracking, and performance optimization when connecting to Browserless.
+- [Best Practices](https://docs.browserless.io/baas/best-practices.md): This page covers essential practices for creating reliable Puppeteer and Playwright scripts with Browserless.
+- [CAPTCHA Solving](https://docs.browserless.io/baas/bot-detection/captchas.md): Browserless detects and solves CAPTCHAs programmatically using Chrome DevTools Protocol events and commands.
+- [OS emulation](https://docs.browserless.io/baas/bot-detection/os-emulation.md): Spoof the operating system identity of your browser session to present a coherent Windows or macOS fingerprint instead of the default Linux host.
+- [Bot Detection Overview](https://docs.browserless.io/baas/bot-detection/overview.md): Bypass anti-bot systems with stealth techniques, intelligent CAPTCHA solving, and residential proxies for browser automation.
+- [Proxies](https://docs.browserless.io/baas/bot-detection/proxies.md): Route browser traffic through Browserless built-in residential or datacenter proxies, or configure your own external proxy provider for automation.
+- [Stealth Routes](https://docs.browserless.io/baas/bot-detection/stealth.md): Stealth routes use path-based semantics and the Chrome DevTools Protocol to provide stronger anti-detection than solutions like puppeteer-stealth.
+- [Supported mobile devices](https://docs.browserless.io/baas/bot-detection/supported-mobile-devices.md): The full list of Android device slugs accepted by the emulatedDevice parameter when running a stealth or BQL session with emulationOs=android.
+- [Site Unblocking](https://docs.browserless.io/baas/bot-detection/unblocking.md): Site unblocking uses the Unblock API or BrowserQL to bypass bot detection without relying on automation libraries that leave detectable traces.
+- [User Agent Masking](https://docs.browserless.io/baas/bot-detection/user-agent-masking.md): Control your browser's user agent string with Browserless to improve target site compatibility and reduce automated bot detection signals.
+- [Connection URL Patterns](https://docs.browserless.io/baas/connection-url-patterns.md): Reference for all valid WebSocket connection URL paths, protocol modes, and query parameter patterns for connecting to Browserless.
+- [1Password](https://docs.browserless.io/baas/features/1password.md): Connect a 1Password service account so browser sessions can fill credentials from your vault without ever exposing the secret to your automation code.
+- [Authenticated Profiles](https://docs.browserless.io/baas/features/authenticated-profiles.md): Capture authentication state from a browser session once and reuse it across many parallel sessions without resharing credentials.
+- [Autologin](https://docs.browserless.io/baas/features/autologin.md)
+- [Browser Extensions](https://docs.browserless.io/baas/features/browser-extensions.md): Load Chrome extensions in Browserless browser sessions for ad blocking, authentication, or custom functionality.
+- [File Transfers](https://docs.browserless.io/baas/features/file-transfers.md): File uploads and downloads require specific handling when the browser runs on a remote server instead of your local machine.
+- [Load Balancers](https://docs.browserless.io/baas/infrastructure/load-balancers.md): The Cloud Subscription plans and Dedicated plans have load balancing mechanisms built-in.
+- [Supported Browsers](https://docs.browserless.io/baas/infrastructure/supported-browsers.md): Browser support matrix for Chromium, Chrome, Stealth, Firefox, WebKit, and Edge with Puppeteer and Playwright compatibility.
+- [Launch Parameters](https://docs.browserless.io/baas/launch-options.md): Configure browser behavior via WebSocket connection string parameters for Puppeteer, Playwright, and other automation libraries with Browserless.
+- [Beautiful Soup (Python)](https://docs.browserless.io/baas/libraries/beautifulsoup.md): Beautiful Soup is one of the most popular scraping libraries for Python.
+- [Go (chromedp)](https://docs.browserless.io/baas/libraries/chromedp.md): Browserless supports the chromedp Go library in beta.
+- [PHP](https://docs.browserless.io/baas/libraries/php.md): Integrate Browserless with PHP using cURL, Guzzle, Laravel SDK, Symfony, or WordPress for headless browser automation and web scraping workflows.
+- [Go (playwright-go)](https://docs.browserless.io/baas/libraries/playwright-go.md): Connect playwright-go to Browserless over CDP.
+- [Pyppeteer (Python) - UNMAINTAINED](https://docs.browserless.io/baas/libraries/pyppeteer.md): We suggest not using this library anymore as it is now unmaintained, please consider playwright-python as an alternative.
+- [Scrapy (Python)](https://docs.browserless.io/baas/libraries/scrapy.md): Use Scrapy alongside the /content API or BrowserQL to scrape data.
+- [Migration Guide](https://docs.browserless.io/baas/migrate.md): Migrate from Browserless BaaS v1 to BaaS v2 with updated connection URLs, endpoint paths, and library configurations for the shared fleet.
+- [Embed a live browser in your app](https://docs.browserless.io/baas/monitor-sessions/embedding-live-url.md): Embed a Browserless Live URL in an iframe, configure its permissions, and choose whether viewers can control the remote browser.
+- [Hybrid Automation](https://docs.browserless.io/baas/monitor-sessions/hybrid-automation.md): Pause an automated Puppeteer or Playwright script, hand browser control to a human via a secure live URL, and resume automation once they finish.
+- [Manage Live URLs over REST](https://docs.browserless.io/baas/monitor-sessions/manage-live-url-over-rest.md): Create, inspect, and close a browser session's Live URL from a separate process with the Browserless REST API.
+- [Screen Recording](https://docs.browserless.io/baas/monitor-sessions/screen-recording.md): Capture browser sessions as WebM video files with CDP-based start/stop controls, audio support, and LiveURL integration.
+- [Session Replay](https://docs.browserless.io/baas/monitor-sessions/session-replay.md): Capture browser automation sessions as interactive DOM-based replays viewable in your Browserless dashboard for debugging and monitoring.
+- [Style the Live URL keyboard and dropdowns](https://docs.browserless.io/baas/monitor-sessions/style-live-url-components.md): Resize and restyle the on-screen keyboard and dropdown menus that Live URL injects for viewers, and keep the styles applied after navigation.
+- [Style Live URL keyboards and dropdowns](https://docs.browserless.io/baas/monitor-sessions/styling-live-url-controls.md): Customize the size, spacing, and colors of Live URL virtual keyboards and select dropdowns, and keep styles after navigation.
+- [Session Management Overview](https://docs.browserless.io/baas/session-management.md): Understand how browser session persistence works in Browserless and choose the right session management approach for your automation use case.
+- [Persisting State](https://docs.browserless.io/baas/session-management/persisting-state.md): The Session API lets you create browser sessions via REST, returning a set of URLs and a WebSocket endpoint to manage the session lifecycle.
+- [Standard Sessions](https://docs.browserless.io/baas/session-management/standard-sessions.md): Maintain browser state across Puppeteer connections with standard sessions.
+- [Whitelisting IP Addresses](https://docs.browserless.io/baas/troubleshooting/whitelisting-ips.md): If your target infrastructure restricts inbound traffic by IP address, you need to whitelist the outbound IPs used by Browserless's shared fleet.
+- [Version Compatibility](https://docs.browserless.io/baas/versions.md): Browserless workers are updated periodically with new browser and library versions.
+
+## REST APIs
+
+Stateless HTTP endpoints for scraping, screenshots, PDFs, and code execution without maintaining a WebSocket connection.
+
+- [Quickstart](https://docs.browserless.io/rest-apis/quick-start.md): Scrape a website with a single HTTP request using the Browserless REST APIs.
+- [REST APIs](https://docs.browserless.io/rest-apis/intro.md)
+- [Agent Run API](https://docs.browserless.io/rest-apis/agent-run.md): Asynchronously run a managed AI agent that drives a real browser against a natural-language task and returns a structured, LLM-ready result.
+- [API Playground](https://docs.browserless.io/rest-apis/api-playground.md): Test REST API endpoints interactively with the API Playground.
+- [Content API](https://docs.browserless.io/rest-apis/content.md): Fetch fully rendered HTML from a headless browser, including JavaScript-rendered content.
+- [Crawl API](https://docs.browserless.io/rest-apis/crawl.md): Asynchronously crawl a website and scrape every discovered page.
+- [Download API](https://docs.browserless.io/rest-apis/download.md): Run custom Puppeteer code via the Browserless /download API and retrieve files that Chrome downloads during execution with ESM import support.
+- [Export API](https://docs.browserless.io/rest-apis/export.md): Fetch a URL with the Browserless /export API and stream the result in its native content type: HTML, PDF, images, or a zip archive of all resources.
+- [Function API](https://docs.browserless.io/rest-apis/function.md): Execute custom Puppeteer code via HTTP requests without installing libraries.
+- [Launch Parameters and Options](https://docs.browserless.io/rest-apis/launch-parameters.md): Configure how browsers are launched including headless mode, stealth, proxies, window size, and Chrome flags via query parameters or JSON payloads.
+- [Map API](https://docs.browserless.io/rest-apis/map.md): Discover all URLs on a website with the Browserless /map API.
+- [PDF API](https://docs.browserless.io/rest-apis/pdf-api.md): Generate PDFs from web pages or raw HTML using a headless Chrome-based PDF API.
+- [Performance API](https://docs.browserless.io/rest-apis/performance.md): Run Google Lighthouse audits via the Browserless Performance API and get scores for accessibility, best practices, performance, PWA, and SEO.
+- [Proxies](https://docs.browserless.io/rest-apis/proxies.md): Use Browserless built-in residential and datacenter proxies with REST API requests by adding proxy parameters to your query strings.
+- [Request Configuration](https://docs.browserless.io/rest-apis/request-configuration.md): Configure shared options across all REST API endpoints including wait conditions, navigation behavior, resource blocking, and error handling.
+- [Scrape API](https://docs.browserless.io/rest-apis/scrape.md): Extract structured JSON from rendered web pages using CSS selectors via the Browserless /scrape API.
+- [Predefined Scrapers API](https://docs.browserless.io/rest-apis/scrapers.md): Get structured Zillow listings and property data with ready-made scrapers.
+- [Screenshot API](https://docs.browserless.io/rest-apis/screenshot-api.md): Capture full-page or viewport screenshots of any URL in PNG, JPEG, or WebP formats using the Browserless headless browser screenshot API.
+- [Search API](https://docs.browserless.io/rest-apis/search.md): Search the web and optionally scrape each result page.
+- [Smart Scrape API](https://docs.browserless.io/rest-apis/smart-scrape.md): Intelligently scrape any URL using cascading strategies.
+- [Timeout Configuration](https://docs.browserless.io/rest-apis/timeouts.md): Configure timeouts for Browserless REST API requests including navigation, selector wait, function execution, and event-based timeout settings.
+- [Unblock API](https://docs.browserless.io/rest-apis/unblock.md): Bypass CAPTCHAs and bot detection with the Browserless /unblock API, then return page content, cookies, screenshots, or a browserWSEndpoint.
+
+## Examples
+
+Runnable, end-to-end examples covering scraping, PDFs, screenshots, form automation, and integrations with popular libraries and frameworks.
+
+- [Basic Playwright connection](https://docs.browserless.io/examples/playwright-connection.md): Connect Playwright to Browserless over WebSocket in seconds.
+- [Basic Puppeteer connection](https://docs.browserless.io/examples/puppeteer-connection.md): Connect Puppeteer to Browserless over WebSocket in seconds.
+- [Examples](https://docs.browserless.io/examples.md): Ready-to-run examples for using Browserless with your AI agents, frameworks, and tools.
+- [Log in with an AI agent](https://docs.browserless.io/examples/agent-login.md): Use the browserless_agent MCP tool to log in to websites, navigate authenticated pages, and interact with content behind a login wall.
+- [Save logins to authenticated profiles](https://docs.browserless.io/examples/authenticated-profiles.md): Capture a logged-in browser state once and reuse it across parallel sessions without re-entering credentials.
+- [Batch DOM queries in a single browser call](https://docs.browserless.io/examples/batch-dom-queries.md): When you connect to Browserless over WebSocket, every `page.$eval()` call is a separate network round-trip between your Node process and a remote Chrome.
+- [Log in with BQL and browser automation](https://docs.browserless.io/examples/browser-agent-login.md)
+- [Bulk invoice download](https://docs.browserless.io/examples/bulk-invoice-download.md): Log into a sandbox vendor portal, navigate orders, and download invoices in bulk using browser automation.
+- [Solving reCAPTCHAs](https://docs.browserless.io/examples/captcha.md): Automatically detect and solve reCAPTCHA v2, v3, invisible, and other CAPTCHA challenges during Browserless browser automation sessions.
+- [Close a browser session](https://docs.browserless.io/examples/close-session.md): Fully terminate a remote browser session and release all resources by calling `browser.close()` or sending a DELETE request to the session stop endpoint.
+- [Solving Cloudflare challenges](https://docs.browserless.io/examples/cloudflare.md): Bypass Cloudflare Turnstile and JS challenges to access protected pages using the Browserless `/unblock` endpoint or BQL's `solve(type: cloudflare)` mutation.
+- [Browse Cloudflare Access-protected pages](https://docs.browserless.io/examples/cloudflare-access.md): Access pages protected by Cloudflare Access zero-trust policies by passing Service Token credentials or reusing a saved authenticated profile.
+- [Run concurrent browser sessions](https://docs.browserless.io/examples/concurrent-sessions.md): Launch multiple browser sessions in parallel to speed up large-scale scraping, testing, or automation.
+- [Auto-accept cookie consent banners](https://docs.browserless.io/examples/cookie-consent.md): Automatically detect and dismiss cookie consent banners before scraping or capturing a page, so they don't block content or appear in screenshots.
+- [Export pages and assets](https://docs.browserless.io/examples/download-images.md): Export a full page snapshot including HTML, linked stylesheets, scripts, images, and fonts from any URL using a single Browserless API request.
+- [Run end-to-end tests](https://docs.browserless.io/examples/e2e-testing.md): Run browser tests against Browserless without installing or managing Chrome locally.
+- [Log in via email OTP](https://docs.browserless.io/examples/email-otp.md): Automate login flows that send a one-time passcode (OTP) to an email address.
+- [Export a slide deck to PDF or PNG](https://docs.browserless.io/examples/export-slide-deck.md): Export a slide presentation to a high-fidelity PDF or PNG with accurate fonts, backgrounds, and layout.
+- [Extract content from a URL](https://docs.browserless.io/examples/extract-content.md): Fetch the fully rendered HTML of any page, including content generated by JavaScript.
+- [Upload and download files](https://docs.browserless.io/examples/file-transfers.md): Send a local file into a file input and stream completed downloads back to your machine, without sharing a filesystem with the remote browser.
+- [Fill out a job application form](https://docs.browserless.io/examples/fill-job-application.md): Navigate to a sandbox job listing, open the application tab, fill in personal details, and submit the form.
+- [Fill and submit a form](https://docs.browserless.io/examples/forms.md): Automate form interactions: type into fields, select dropdown options, handle CAPTCHAs, and submit forms across multi-step workflows.
+- [Automate Google search](https://docs.browserless.io/examples/google-search.md): Navigate to Google, submit a search query, and extract result titles and links from the results page.
+- [Healthcare portal extraction](https://docs.browserless.io/examples/healthcare-portal-extraction.md): Log into a sandbox healthcare portal and extract patient medication records from the dashboard.
+- [Wait for navigation after a click](https://docs.browserless.io/examples/navigate-after-click.md): Handle page transitions triggered by clicking a link or button without losing the navigation event.
+- [Generate a PDF](https://docs.browserless.io/examples/pdf.md): Export any webpage or HTML content as a PDF using Browserless.
+- [Continue browser state across runs](https://docs.browserless.io/examples/persist-session.md): Create a long-lived browser session via the Session API, store data like cookies and localStorage, disconnect, then reconnect later and verify state.
+- [Change your browser's IP address using proxies](https://docs.browserless.io/examples/proxy.md): Route browser traffic through a residential or datacenter proxy so target websites see a different IP.
+- [Disconnect and reconnect to a browser](https://docs.browserless.io/examples/reconnect.md): Keep a browser session alive for a short window after disconnecting and reconnect to it with all cookies, localStorage, and state intact.
+- [Retry browser sessions with exponential backoff](https://docs.browserless.io/examples/retry-backoff.md): When Browserless is over capacity it returns a 429, and individual browser sessions can fail mid-run due to transient network or browser errors.
+- [Scrape structured data](https://docs.browserless.io/examples/scrape.md): Extract structured data from fully rendered JavaScript pages using Browserless.
+- [Scrape Amazon product listings](https://docs.browserless.io/examples/scrape-amazon.md): Search Amazon for a keyword and extract product titles, prices, ratings, and links from the results page.
+- [Scrape Booking.com hotel listings](https://docs.browserless.io/examples/scrape-booking.md): Pull hotel names, prices, ratings, and locations from Booking.com search results.
+- [Scrape Etsy product listings](https://docs.browserless.io/examples/scrape-etsy.md): Search Etsy for a keyword and extract product titles, prices, and links from the results page.
+- [Scrape GitHub trending repos](https://docs.browserless.io/examples/scrape-github-trending.md): Extract repository names, descriptions, languages, and star counts from GitHub's trending page.
+- [Scrape Glassdoor job listings](https://docs.browserless.io/examples/scrape-glassdoor.md): Pull job titles, companies, locations, and salary estimates from Glassdoor search results.
+- [Scrape Google Shopping results](https://docs.browserless.io/examples/scrape-google-shopping.md): Query Google Shopping and pull product names, prices, and links out of the results page.
+- [Scrape IMDb movie ratings](https://docs.browserless.io/examples/scrape-imdb.md): Extract movie titles, release years, and ratings from IMDb's Top 250 chart.
+- [Scrape Indeed job listings](https://docs.browserless.io/examples/scrape-indeed-jobs.md): Search Indeed for jobs and extract titles, companies, locations, salaries, and descriptions from the results.
+- [Scrape LinkedIn job listings](https://docs.browserless.io/examples/scrape-linkedin-jobs.md): Extract job titles, company names, locations, and posting dates from LinkedIn's public job search results.
+- [Scrape OpenTable restaurants](https://docs.browserless.io/examples/scrape-opentable.md): Search OpenTable for restaurants and extract names, ratings, cuisines, and price ranges from the results.
+- [Scrape Realtor.com property listings](https://docs.browserless.io/examples/scrape-realtor.md): Search Realtor.com for homes and extract prices, addresses, bed/bath counts, and square footage from the results.
+- [Scrape Reddit posts](https://docs.browserless.io/examples/scrape-reddit.md): Extract post titles, scores, comment counts, and links from any subreddit.
+- [Scrape Ticketmaster events](https://docs.browserless.io/examples/scrape-ticketmaster.md): Search Ticketmaster for events and extract names, dates, venues, and price ranges from the results.
+- [Scrape Walmart product listings](https://docs.browserless.io/examples/scrape-walmart.md): Search Walmart and extract product names, prices, ratings, and review counts.
+- [Scrape Yelp business listings](https://docs.browserless.io/examples/scrape-yelp.md): Search Yelp for businesses and extract names, ratings, review counts, categories, and price ranges.
+- [Scrape YouTube video data](https://docs.browserless.io/examples/scrape-youtube.md): Extract title, channel, view count, likes, and upload date from a YouTube video URL.
+- [Scrape Zillow agent listings](https://docs.browserless.io/examples/scrape-zillow.md): Pull real estate agent names and profile URLs from a Zillow agent directory page.
+- [Record a browser session](https://docs.browserless.io/examples/screen-recording.md): Capture a video recording of a browser session (navigations, clicks, and interactions) as a `.webm` file using the Browserless recording API.
+- [Take a screenshot](https://docs.browserless.io/examples/screenshot.md): Capture any webpage as a PNG or JPEG using Browserless.
+- [Log in and reuse sessions](https://docs.browserless.io/examples/sessions.md): Log in once and reuse that authenticated browser state across many parallel sessions without re-entering credentials using Browserless sessions.
+
+## MCP
+
+Connect AI agents to Browserless via the Model Context Protocol. Includes setup, available tools, and the browser agent.
+
+- [Setup](https://docs.browserless.io/mcp/browserless-mcp-server/setup.md): Connect AI assistants to Browserless using the Model Context Protocol (MCP).
+- [MCP Overview](https://docs.browserless.io/mcp/overview.md): Browserless offers two MCP servers.
+- [Account Tools](https://docs.browserless.io/mcp/account-tools.md): Reference for the Browserless MCP server's account-data tools.
+- [Agentic Checkout with Stripe Link](https://docs.browserless.io/mcp/agentic-checkout.md): Cloud-only feature that lets an MCP browser agent pay a merchant checkout from a buyer's Stripe Link wallet, with user approval and no card exposure.
+- [Browser Agent](https://docs.browserless.io/mcp/browser-agent.md): Give your AI assistant a stateful, snapshot-driven browser agent.
+- [Browserless Docs MCP](https://docs.browserless.io/mcp/browserless-docs-mcp.md): Connect to Browserless documentation directly from your IDE or AI tool using MCP for instant access to API references and guides.
+- [Connector](https://docs.browserless.io/mcp/browserless-mcp-server/connector.md): The Browserless MCP Connector — a focused surface for AI assistants and app directories.
+- [REST API Tools](https://docs.browserless.io/mcp/rest-api-tools.md)
+
+## AI Integrations
+
+Integrate Browserless with AI agent frameworks (Browser Use, Stagehand), AI SDKs, and workflow automation platforms.
+
+- [AI & Agent Integrations Overview](https://docs.browserless.io/ai-integrations/start.md): Connect Browserless to AI agents, MCP clients, SDKs, frameworks, and no-code tools.
+- [Vercel Agent Browser Integration](https://docs.browserless.io/ai-integrations/agent-browser.md): Connect agent-browser to Browserless for cloud-powered headless browser automation with stealth, proxies, and scalable sessions.
+- [AgentKit Integration](https://docs.browserless.io/ai-integrations/agentkit.md): Connect AgentKit to Browserless for fault-tolerant AI agents with stealth browsing, CAPTCHA solving, and residential proxies.
+- [Anthropic SDK](https://docs.browserless.io/ai-integrations/anthropic.md)
+- [Browser Use Integration](https://docs.browserless.io/ai-integrations/browser-use/python.md): Browser Use is a Python library that lets AI agents control a browser.
+- [Claude Agent SDK](https://docs.browserless.io/ai-integrations/claude-agent-sdk.md)
+- [Claude Code + Playwright MCP](https://docs.browserless.io/ai-integrations/claude-code-playwright-mcp.md): Control a stealth-enabled, CAPTCHA-solving Browserless browser directly from Claude Code using Microsoft's official Playwright MCP server.
+- [Claude Code Plugin](https://docs.browserless.io/ai-integrations/claude-code-plugin.md): Give Claude Code direct access to Browserless REST APIs.
+- [Anthropic Computer Use Integration](https://docs.browserless.io/ai-integrations/computer-use/anthropic-computer-use.md): Connect Anthropic Computer Use to Browserless for scalable, cloud-hosted AI browser automation with stealth, proxies, and CAPTCHA solving.
+- [Gemini Computer Use Integration](https://docs.browserless.io/ai-integrations/computer-use/gemini-computer-use.md): Use Google's Gemini Computer Use model with Browserless for AI-powered browser automation.
+- [OpenAI CUA Integration](https://docs.browserless.io/ai-integrations/computer-use/openai-cua.md): Use OpenAI's Computer Use Agent (CUA) with Browserless for AI-powered browser automation.
+- [Hermes Agent](https://docs.browserless.io/ai-integrations/hermes-agent.md): Make Browserless the browser for Hermes Agent.
+- [LangChain Integration](https://docs.browserless.io/ai-integrations/langchain.md): Learn how to integrate Browserless with LangChain for web scraping and content loading.
+- [Browserless templates for Make.com](https://docs.browserless.io/ai-integrations/make.md): Automate browser tasks in Make.com workflows using Browserless templates for screenshots, scraping, PDF generation, and content extraction.
+- [n8n integration templates](https://docs.browserless.io/ai-integrations/n8n.md): Connect Browserless to n8n using HTTP Request nodes.
+- [OpenClaw Integration](https://docs.browserless.io/ai-integrations/open-claw.md): Connect OpenClaw to Browserless for scalable, cloud-powered browser automation with built-in stealth, proxy rotation, and CAPTCHA solving.
+- [OpenAI SDK](https://docs.browserless.io/ai-integrations/openai.md): Build OpenAI agents that use the hosted Browserless MCP server — either directly via the Responses API or with the heavier Agents SDK orchestration layer.
+- [opencode](https://docs.browserless.io/ai-integrations/opencode.md): opencode ships without a browser tool, so the Browserless MCP server adds stealth cloud sessions, automatic CAPTCHA solving, and scraping past bot detection.
+- [Stagehand Integration](https://docs.browserless.io/ai-integrations/stagehand.md): Connect Stagehand to Browserless for cloud-powered AI browser automation with stealth, proxies, and scalable sessions.
+- [Vercel AI SDK Integration](https://docs.browserless.io/ai-integrations/vercel-ai-sdk.md): Build an AI-powered browser automation app with Browserless, the Vercel AI SDK, and Next.js.
+- [Browserless templates for Zapier](https://docs.browserless.io/ai-integrations/zapier.md): Automate browser tasks in Zapier workflows using Browserless templates for screenshots, scraping, PDF generation, and content extraction.
+
+## Browserless CLI
+
+Command reference for @browserless.io/cli: capturing authenticated profiles, managing cloud profiles, and interacting with the hosted agent from your terminal.
+
+- [Browserless CLI](https://docs.browserless.io/cli.md): Install and use the Browserless CLI to capture authenticated browser profiles, manage cloud profiles, and interact with the hosted agent from your terminal.
+- [Agent](https://docs.browserless.io/cli/agent.md): Interactive chat with the Browserless hosted agent from the terminal.
+- [Authentication](https://docs.browserless.io/cli/authentication.md): Store and manage your Browserless API token with the CLI auth commands.
+- [Browser sources](https://docs.browserless.io/cli/browser-sources.md): Discover local browsers and register custom Chromium-based browsers with the Browserless CLI.
+- [Capture pipeline](https://docs.browserless.io/cli/capture-pipeline.md): How the Browserless CLI captures auth state from your local browser profile.
+- [Configuration](https://docs.browserless.io/cli/configuration.md): Manage CLI settings, global flags, environment variables, and exit codes.
+- [Domain filtering](https://docs.browserless.io/cli/domain-filtering.md): Manage persistent domain exclusions to prevent sensitive auth state from being uploaded.
+- [Profile commands](https://docs.browserless.io/cli/profile-commands.md): Upload, refresh, inspect, launch, list, show, rename, and delete cloud profiles with the Browserless CLI.
+
+## Enterprise and Self-Hosted
+
+Deploy Browserless on your own infrastructure with Docker. Includes configuration, private deployment, utility functions, and the enterprise changelog.
+
+- [Enterprise Overview](https://docs.browserless.io/enterprise/overview.md): Browserless Enterprise is a browser automation platform for organizations that need full infrastructure control, network isolation, and dedicated resources.
+- [Enterprise Changelog](https://docs.browserless.io/enterprise/changelog.md): Release notes for Browserless Enterprise and Cloud deployments.
+- [Production Best Practices](https://docs.browserless.io/enterprise/docker/best-practices.md): Production best practices for deploying, scaling, and managing Browserless Enterprise Docker containers with optimal resource configuration.
+- [Migrating from Cloud to Self-Hosted](https://docs.browserless.io/enterprise/docker/cloud-to-self-hosted.md): Move from Browserless Cloud to a self-hosted Enterprise deployment.
+- [Docker Configuration Reference](https://docs.browserless.io/enterprise/docker/config.md): Configure Browserless Enterprise Docker containers with environment variables for session limits, timeouts, security, monitoring, and proxies.
+- [Adding Custom Routes](https://docs.browserless.io/enterprise/docker/custom-routes.md): Extend the Browserless Enterprise image with your own HTTP or WebSocket routes, such as an unauthenticated healthcheck for Kubernetes probes.
+- [Enterprise Deployment Guide](https://docs.browserless.io/enterprise/docker/enterprise-image.md): Deploy and manage Browserless Enterprise Docker Image with advanced session management, monitoring, and multi-browser support.
+- [Extending the Docker Image](https://docs.browserless.io/enterprise/docker/extending.md): Extend the Browserless Docker image with custom fonts, packages, or third-party modules to match your specific browser automation requirements.
+- [NGINX Load Balancing](https://docs.browserless.io/enterprise/docker/nginx-load-balancing.md): Set up NGINX as a reverse proxy and load balancer for multiple Browserless Docker containers with WebSocket support and health check routing.
+- [OpenTelemetry Integration](https://docs.browserless.io/enterprise/docker/opentelemetry.md): Export traces, metrics, and logs from Browserless Enterprise Docker containers to any OpenTelemetry Protocol (OTLP) compatible observability backend.
+- [Enterprise Docker Overview](https://docs.browserless.io/enterprise/docker/overview.md): The Enterprise Docker image lets you run Browserless on your own infrastructure.
+- [Docker Webhooks](https://docs.browserless.io/enterprise/docker/webhooks.md): Configure Browserless Docker webhooks to receive HTTP callbacks when sessions are queued, rejected, timed out, or encounter errors during execution.
+- [Launch Parameters](https://docs.browserless.io/enterprise/launch-options.md): Configure per-session browser behavior via launch parameters on the WebSocket connection URL for Enterprise deployments.
+- [Live Debugger](https://docs.browserless.io/enterprise/live-debugger.md): Debug headless browser scripts with the self-hosted Live Debugger featuring syntax highlighting, screencasts, and DevTools.
+- [Built-in Queueing System](https://docs.browserless.io/enterprise/long-queues.md): Browserless includes a built-in queueing system that manages browser concurrency and request flow.
+- [Migrate from V1](https://docs.browserless.io/enterprise/migrate-from-v1.md): This guide covers everything you need to update when migrating an Enterprise deployment from a V1 image to a V2 image.
+- [Open Source Docker Deployment](https://docs.browserless.io/enterprise/open-source.md): Deploy the open-source Browserless Docker image for headless browser automation with Puppeteer, Playwright, and REST APIs.
+- [Fleet Operations](https://docs.browserless.io/enterprise/private-deployment/fleet-operations.md): Manage your Browserless fleet from the dashboard with Restart Worker, Force Restart, and Relaunch operations for maintaining healthy workers.
+- [Browserless GraphQL API](https://docs.browserless.io/enterprise/private-deployment/graphql-api.md): The Browserless GraphQL API exposes queries for monitoring fleet health, session activity, and unit consumption on your dedicated fleet.
+- [Image Versions and Upgrades](https://docs.browserless.io/enterprise/private-deployment/image-versions.md): Check your current Browserless image version, match client library versions to server versions, and coordinate upgrades across your deployment.
+- [Load Balancing](https://docs.browserless.io/enterprise/private-deployment/load-balancing.md): Configure regional load balancers for Browserless private deployments to distribute browser sessions across workers and optimize performance.
+- [Observability](https://docs.browserless.io/enterprise/private-deployment/observability.md)
+- [Private Deployment Overview](https://docs.browserless.io/enterprise/private-deployment/overview.md): Private Deployment is a fully managed hosting option where Browserless runs dedicated infrastructure in the cloud on your behalf.
+- [Performance and Capacity](https://docs.browserless.io/enterprise/private-deployment/performance.md): This page covers capacity planning, health check behavior, burst traffic patterns, and performance best practices for your private fleet.
+- [Timeouts](https://docs.browserless.io/enterprise/private-deployment/timeouts.md): This page walks through the full timeout chain for a Private Deployment fleet, self-hosted timeout considerations, and common timeout errors and their fixes.
+- [Worker settings](https://docs.browserless.io/enterprise/private-deployment/worker-settings.md): To open your worker settings, log in to your browserless account, click the Production cluster icon, then click Settings.
+- [Terminology](https://docs.browserless.io/enterprise/terminology.md): Key terms and definitions used across Browserless documentation.
+- [Token Roles and Permissions](https://docs.browserless.io/enterprise/token-roles.md)
+- [User Data Directory](https://docs.browserless.io/enterprise/user-data-directory.md): The --user-data-dir flag persists browser data (cookies, localStorage, cache, and login sessions) across multiple browser sessions.
+- [/config API](https://docs.browserless.io/enterprise/utility-functions/config.md): The /config API returns your worker's current configuration.
+- [Utility Functions Overview](https://docs.browserless.io/enterprise/utility-functions/intro.md): Manage and monitor your private Browserless deployments with utility functions for usage metrics, session info, and configuration details.
+- [/json/version API](https://docs.browserless.io/enterprise/utility-functions/json-version.md): The /json/version API returns version information about the browser and DevTools protocol running on your Browserless instance.
+- [/metrics API](https://docs.browserless.io/enterprise/utility-functions/metrics.md): Query the Browserless metrics API to retrieve session statistics covering up to one week of data for monitoring and capacity planning.
+- [/pressure API](https://docs.browserless.io/enterprise/utility-functions/pressure.md): The /pressure API returns real-time system load information for your Browserless instance.
+- [/sessions API](https://docs.browserless.io/enterprise/utility-functions/sessions.md): The /sessions API returns a list of currently running browser sessions.
+- [Watching Sessions](https://docs.browserless.io/enterprise/watching-sessions.md): Monitor live browser automation sessions in real time with the Browserless live debugger for Enterprise and self-hosted Docker deployments.
+
+## API Reference
+
+Entry points into every Browserless API reference: the BrowserQL schema, the OpenAPI specification, CDP extensions, and the CLI.
+
+- [API Reference Overview](https://docs.browserless.io/api-reference.md): Complete API reference documentation for Browserless.
+- [CDP Extensions](https://docs.browserless.io/api-reference/cdp-extensions.md): Browserless-specific Chrome DevTools Protocol methods for live URLs, captcha solving, session reconnect, recording, file transfer, and page identification.
+
+## BrowserQL Schema Reference
+
+Auto-generated GraphQL schema reference for all BQL mutations, fields, and types.
+
+- [addScriptTag](https://docs.browserless.io/bql-schema/operations/mutations/add-script-tag.md): Injects a `<script>` tag into the page, either from a URL or from raw content.
+- [addStyleTag](https://docs.browserless.io/bql-schema/operations/mutations/add-style-tag.md): Injects a stylesheet into the page, either as a `<link>` from a URL or as a `<style>` element from raw content.
+- [authenticate](https://docs.browserless.io/bql-schema/operations/mutations/authenticate.md): Provides credentials for HTTP authentication (RFC 7235).
+- [back](https://docs.browserless.io/bql-schema/operations/mutations/back.md): Goes back in browser history, optionally accepting waitUntil and timeout arguments.
+- [checkbox](https://docs.browserless.io/bql-schema/operations/mutations/checkbox.md): Sets or un-sets the value of a checkbox on the page
+- [click](https://docs.browserless.io/bql-schema/operations/mutations/click.md): Waits for the element to be visible, scrolls to it, then clicks on it with native events
+- [closeLiveURL](https://docs.browserless.io/bql-schema/operations/mutations/close-live-url.md): Closes a Live URL created by this browser session.
+- [content](https://docs.browserless.io/bql-schema/operations/mutations/content.md): Sets the given HTML content on the page with an optional waitUntil parameter
+- [cookies](https://docs.browserless.io/bql-schema/operations/mutations/cookies.md): Sets and gets cookies on the page
+- [emulateMediaType](https://docs.browserless.io/bql-schema/operations/mutations/emulate-media-type.md): Emulates the given CSS media type for the page, mirroring the behavior of printing ("print") or on-screen rendering ("screen").
+- [evaluate](https://docs.browserless.io/bql-schema/operations/mutations/evaluate.md): Evaluates JavaScript client-side, via raw content or a URL to some JavaScript code, in the browser's page environment
+- [forward](https://docs.browserless.io/bql-schema/operations/mutations/forward.md): Goes forward in browser history, optionally accepting waitUntil and timeout arguments.
+- [fulfill](https://docs.browserless.io/bql-schema/operations/mutations/fulfill.md): Fulfills matching requests with a canned response instead of letting them hit the network, mirroring the request-interceptor mocking used by the REST APIs.
+- [goto](https://docs.browserless.io/bql-schema/operations/mutations/goto.md): Navigates to a URL with an optional waitUntil parameter and timeout parameter
+- [hover](https://docs.browserless.io/bql-schema/operations/mutations/hover.md): Waits for the element to be visible, scrolls to it, then hover on it with native events
+- [html](https://docs.browserless.io/bql-schema/operations/mutations/html.md): Returns the HTML content of the page or selector when specified.
+- [if](https://docs.browserless.io/bql-schema/operations/mutations/if.md): Triggers a nested branch of work when a given condition is `true`.
+- [ifnot](https://docs.browserless.io/bql-schema/operations/mutations/ifnot.md): Triggers a nested branch of work when a given condition is `false`.
+- [javaScriptEnabled](https://docs.browserless.io/bql-schema/operations/mutations/java-script-enabled.md): Sets and gets JavaScript execution on the page
+- [liveURL](https://docs.browserless.io/bql-schema/operations/mutations/live-url.md): Returns a fully-qualified, user-shareable live-URL for streaming the web-browser to an end-user, optionally interactive.
+- [loadSecret](https://docs.browserless.io/bql-schema/operations/mutations/load-secret.md): Fills a credential resolved just-in-time from a configured 1Password integration into a target input.
+- [mapSelector](https://docs.browserless.io/bql-schema/operations/mutations/map-selector.md)
+- [markdown](https://docs.browserless.io/bql-schema/operations/mutations/markdown.md): Returns the page's content converted to Markdown.
+- [pdf](https://docs.browserless.io/bql-schema/operations/mutations/pdf.md): Generates a PDF of the page with the print CSS media type
+- [preferences](https://docs.browserless.io/bql-schema/operations/mutations/preferences.md): Sets configuration for the entirety of the session, replacing defaults like the 30 second timeout default
+- [proxy](https://docs.browserless.io/bql-schema/operations/mutations/proxy.md): Proxies requests, by a specified set of conditions, through either the Browserless residential proxy or through an external proxy.
+- [querySelector](https://docs.browserless.io/bql-schema/operations/mutations/query-selector.md): Passes through certain properties of the browsers' own `document.querySelector` API
+- [querySelectorAll](https://docs.browserless.io/bql-schema/operations/mutations/query-selector-all.md): Passes through certain properties of the browsers' own `document.querySelectorAll` API
+- [reconnect](https://docs.browserless.io/bql-schema/operations/mutations/reconnect.md): Returns a payload with reconnection information in order to reconnect back to the same browser session
+- [reject](https://docs.browserless.io/bql-schema/operations/mutations/reject.md): Rejects requests by a specified URL pattern, method, or type and operator.
+- [reload](https://docs.browserless.io/bql-schema/operations/mutations/reload.md): Reloads the given page with an optional waitUntil parameter and timeout parameter
+- [request](https://docs.browserless.io/bql-schema/operations/mutations/request.md): Returns request information made by the Browser with optional filters via arguments.
+- [response](https://docs.browserless.io/bql-schema/operations/mutations/response.md): Returns response information, filtered by the provided arguments, made by the browser.
+- [saveSecret](https://docs.browserless.io/bql-schema/operations/mutations/save-secret.md): Creates a Login item in a vault visible to the session's 1Password integration.
+- [screenshot](https://docs.browserless.io/bql-schema/operations/mutations/screenshot.md): Screenshots the page or a specific selector
+- [scroll](https://docs.browserless.io/bql-schema/operations/mutations/scroll.md): Waits for a selector, then scrolls to it on the page or an x,y coordinate in pixels
+- [select](https://docs.browserless.io/bql-schema/operations/mutations/select.md): Selects a value from a dropdown or multiple select element
+- [setExtraHTTPHeaders](https://docs.browserless.io/bql-schema/operations/mutations/set-extra-httpheaders.md): Sets the HTTP headers for the page
+- [solve](https://docs.browserless.io/bql-schema/operations/mutations/solve.md): Solves a captcha or other challenge.
+- [solveImageCaptcha](https://docs.browserless.io/bql-schema/operations/mutations/solve-image-captcha.md): Solves an image captcha using caller-provided selectors.
+- [stopSessionRecording](https://docs.browserless.io/bql-schema/operations/mutations/stop-session-recording.md): Stops the current session recording and processes the replay data, similar to closing the context.
+- [switchToWindow](https://docs.browserless.io/bql-schema/operations/mutations/switch-to-window.md): Switches context to a popup window matching specified criteria
+- [text](https://docs.browserless.io/bql-schema/operations/mutations/text.md): Returns the text content on the given page or by selector when specified
+- [title](https://docs.browserless.io/bql-schema/operations/mutations/title.md): Returns the title of the page that the browser is currently at
+- [type](https://docs.browserless.io/bql-schema/operations/mutations/type.md): Types text into an element by scrolling to it, clicking it, then emitting key events for every character.
+- [url](https://docs.browserless.io/bql-schema/operations/mutations/url.md): Returns the URL of the page that the browser is currently at
+- [userAgent](https://docs.browserless.io/bql-schema/operations/mutations/user-agent.md): Sets the User-Agent string for the browser session
+- [verify](https://docs.browserless.io/bql-schema/operations/mutations/verify.md): DEPRECATED This mutation is deprecated and will be removed in a future version.
+- [viewport](https://docs.browserless.io/bql-schema/operations/mutations/viewport.md): Sets the viewport dimensions for the browser session
+- [waitForEvent](https://docs.browserless.io/bql-schema/operations/mutations/wait-for-event.md): Waits for a named event to fire on the page's document or window.
+- [waitForFunction](https://docs.browserless.io/bql-schema/operations/mutations/wait-for-function.md): Waits for a JavaScript predicate, evaluated in the page, to return a truthy value.
+- [waitForNavigation](https://docs.browserless.io/bql-schema/operations/mutations/wait-for-navigation.md): Waits for a navigation even to fire, useful for clicking an element and waiting for a page load of some
+- [waitForNetworkIdle](https://docs.browserless.io/bql-schema/operations/mutations/wait-for-network-idle.md): Wait for the page to have no more than the configured number of in-flight network requests for a period of time.
+- [waitForRequest](https://docs.browserless.io/bql-schema/operations/mutations/wait-for-request.md): Waits for the browser to make a particular request
+- [waitForResponse](https://docs.browserless.io/bql-schema/operations/mutations/wait-for-response.md): Waits for a particular network response to be made back to the browser
+- [waitForSelector](https://docs.browserless.io/bql-schema/operations/mutations/wait-for-selector.md): Waits for a given selector to be present in the DOM, with optional visibility
+- [waitForTimeout](https://docs.browserless.io/bql-schema/operations/mutations/wait-for-timeout.md): Wait for a period of time, defined in milliseconds
+- [watchEvent](https://docs.browserless.io/bql-schema/operations/mutations/watch-event.md): Starts tracking a named document/window event in the current document and before scripts execute in future documents.
+- [windows](https://docs.browserless.io/bql-schema/operations/mutations/windows.md): List open page targets without switching the active window.
+- [browser](https://docs.browserless.io/bql-schema/operations/queries/browser.md): The Version of the browser
+- [version](https://docs.browserless.io/bql-schema/operations/queries/version.md): The Version of this server
+- [console](https://docs.browserless.io/bql-schema/operations/subscriptions/console.md): Streams console output as the page emits it.
+- [liveComplete](https://docs.browserless.io/bql-schema/operations/subscriptions/live-complete.md): Streams one completion per live URL minted by this BQL session.
+- [request](https://docs.browserless.io/bql-schema/operations/subscriptions/request.md): Streams each network request as it is issued.
+- [response](https://docs.browserless.io/bql-schema/operations/subscriptions/response.md): Streams each network response as it is received.
+- [Responses](https://docs.browserless.io/bql-schema/responses.md): This page presents reference for all mutations responses.
+- [BrowserQL Schema](https://docs.browserless.io/bql-schema/schema.md): This document is a complete technical specification of our full-length GraphQL API, called BrowserQL.
+- [Additional Schemas](https://docs.browserless.io/bql-schema/schemas.md): This page presents reference for all remaining schemas.
+
+## BAP TypeScript API Reference
+
+Auto-generated reference for the bap-ts SDK. Classes are listed here; the interfaces, type aliases and other shapes they take are on the reference landing page and in llms-full.txt.
+
+- [BAP TypeScript SDK Reference](https://docs.browserless.io/bap/typescript/reference.md): Classes
+- [Browser](https://docs.browserless.io/bap/typescript/reference/classes/Browser.md): Manages BAP pages connected to a Browserless BrowserQL endpoint.
+- [Browserless](https://docs.browserless.io/bap/typescript/reference/classes/Browserless.md): Entry point for creating BAP browser sessions backed by Browserless
+- [BrowserQLError](https://docs.browserless.io/bap/typescript/reference/classes/BrowserQLError.md): Raised when the BrowserQL server returns GraphQL errors.
+- [ConnectionError](https://docs.browserless.io/bap/typescript/reference/classes/ConnectionError.md): Raised when the WebSocket connection fails, drops, or is unavailable.
+- [ElementHandle](https://docs.browserless.io/bap/typescript/reference/classes/ElementHandle.md): A handle to a matched element.
+- [EventEmitter\<Events\>](https://docs.browserless.io/bap/typescript/reference/classes/EventEmitter.md): Minimal typed event emitter backing the puppeteer-style Page event API.
+- [Page](https://docs.browserless.io/bap/typescript/reference/classes/Page.md): Extends
+- [TimeoutError](https://docs.browserless.io/bap/typescript/reference/classes/TimeoutError.md): Raised when an operation exceeds its timeout.
+- [Transport](https://docs.browserless.io/bap/typescript/reference/classes/Transport.md): Accessors
+- [WebSocketTransport](https://docs.browserless.io/bap/typescript/reference/classes/WebSocketTransport.md): The built-in ConnectionTransport: a WebSocket via #platform (native
+
+## BAP Python API Reference
+
+Auto-generated async and sync reference for the bap-py SDK.
+
+- [Python BAP API Reference](https://docs.browserless.io/bap/python/reference.md): Generated async and sync API reference for bap-py.
+- [Async Browser](https://docs.browserless.io/bap/python/reference/async-browser.md): Owns the pages opened against one Browserless configuration.
+- [Async Browserless](https://docs.browserless.io/bap/python/reference/async-browserless.md): Factory namespace matching the Browserless SDKs.
+- [Async ElementHandle](https://docs.browserless.io/bap/python/reference/async-element-handle.md): A matched element's properties plus selector-scoped actions.
+- [Async Page](https://docs.browserless.io/bap/python/reference/async-page.md): A BAP page with generated methods and an event lifecycle.
+- [Enums](https://docs.browserless.io/bap/python/reference/enums.md): AttributeMode
+- [Errors](https://docs.browserless.io/bap/python/reference/errors.md): BAPError
+- [Event types](https://docs.browserless.io/bap/python/reference/events.md): EventName
+- [Input types](https://docs.browserless.io/bap/python/reference/inputs.md): CleanInput
+- [Option types](https://docs.browserless.io/bap/python/reference/options.md): AddScriptTagOptions
+- [Response types](https://docs.browserless.io/bap/python/reference/responses.md): AddScriptTagResponse
+- [Sync Browser](https://docs.browserless.io/bap/python/reference/sync-browser.md): close
+- [Sync Browserless](https://docs.browserless.io/bap/python/reference/sync-browserless.md): connect
+- [Sync ElementHandle](https://docs.browserless.io/bap/python/reference/sync-element-handle.md): childelementcount
+- [Sync Page](https://docs.browserless.io/bap/python/reference/sync-page.md): add_cookies
+
+## OpenAPI Reference
+
+Complete REST API reference generated from the OpenAPI spec.
+
+- [OpenAPI Reference Overview](https://docs.browserless.io/open-api/overview.md): This is the API reference for Browserless Enterprise and Cloud deployments.
+- [/active](https://docs.browserless.io/open-api/active.md): Returns a simple '204' HTTP code, with no response, indicating that the service itself is up and running.
+- [/agent/run/*](https://docs.browserless.io/open-api/agent-run.md): Cancel an active agent run (including needs_human), aborting the in-flight turn, or delete a terminal one.
+- [/agent/run/*/continue](https://docs.browserless.io/open-api/agent-run-continue.md): Continue a multi-turn agent run with a follow-up task.
+- [/agent/run/*](https://docs.browserless.io/open-api/agent-run-get-1.md): Poll an agent run: its status, the latest turn result and streamed step rationales, and the full turn transcript.
+- [/agent/run](https://docs.browserless.io/open-api/agent-run-get-2.md): List the caller's agent runs, newest first, with a short preview of each, using cursor pagination.
+- [/agent/run](https://docs.browserless.io/open-api/agent-run-post-3.md): Start an asynchronous AI agent run: a managed agent drives a real browser against a natural-language task and returns a structured JSON result.
+- [/browser/*](https://docs.browserless.io/open-api/browser.md): Terminates a browser instance by browserId.
+- [/browser/*/live/*](https://docs.browserless.io/open-api/browser-live.md): Closes an active live URL owned by the specified browser.
+- [/browser/*/live/*](https://docs.browserless.io/open-api/browser-live-get-1.md): Reports live URL status and completion reason until its browser closes.
+- [/browser/*/live](https://docs.browserless.io/open-api/browser-live-post-2.md): Creates a live URL (view-only by default; pass interactable: true for a link
+- [/chrome](https://docs.browserless.io/open-api/chrome.md): Launch and connect to Chromium with a library like puppeteer or others that work over chrome-devtools-protocol.
+- [/chrome/bql?(/*)](https://docs.browserless.io/open-api/chrome-bql-connect.md): WebSocket endpoint for BrowserQL.
+- [/chrome/bql?(/*)](https://docs.browserless.io/open-api/chrome-bql-execute.md): Parses and executes BrowserQL requests, powered by the BrowserQL Editor or by other API integrations.
+- [/chrome/content](https://docs.browserless.io/open-api/chrome-content.md): Given a `url` or `html` field, loads the page in Chrome and returns the fully rendered HTML.
+- [/chrome/download](https://docs.browserless.io/open-api/chrome-download.md): Runs a Puppeteer or Playwright script in Chrome and returns any files the browser downloaded during execution.
+- [/chrome/export](https://docs.browserless.io/open-api/chrome-export.md): Exports a webpage to a PDF or image format.
+- [/chrome/function](https://docs.browserless.io/open-api/chrome-function.md): Executes a Puppeteer or Playwright script in the Chrome browser context and returns the result.
+- [/chrome/live/*](https://docs.browserless.io/open-api/chrome-live.md): Websocket back-end that powers the live session experience.
+- [/chrome/pdf](https://docs.browserless.io/open-api/chrome-pdf.md): Returns a PDF binary from a `url` or `html` payload (Chrome, legacy).
+- [/chrome/performance](https://docs.browserless.io/open-api/chrome-performance.md): Run lighthouse performance audits with a supplied 'url' in your JSON payload.
+- [/chrome/playwright](https://docs.browserless.io/open-api/chrome-playwright.md): Connect to Chromium with any playwright style library.
+- [/chrome/scrape](https://docs.browserless.io/open-api/chrome-scrape.md): Returns text, HTML, and metadata from a given list of CSS selectors against the rendered DOM (Chrome, legacy).
+- [/chrome/screenshot](https://docs.browserless.io/open-api/chrome-screenshot.md): Returns a screenshot binary from a `url` or `html` payload (Chrome, legacy).
+- [/chrome/stealth](https://docs.browserless.io/open-api/chrome-stealth.md)
+- [/chrome/unblock](https://docs.browserless.io/open-api/chrome-unblock.md): Unblocks the provided URL from being blocked due to bot detection.
+- [/chromium](https://docs.browserless.io/open-api/chromium.md): Launch and connect to Chromium with a library like puppeteer or others that work over chrome-devtools-protocol.
+- [/chromium/agent](https://docs.browserless.io/open-api/chromium-agent.md): WebSocket endpoint for agentic browser interaction.
+- [/chromium/agent/capabilities](https://docs.browserless.io/open-api/chromium-agent-capabilities.md): Returns the versioned capabilities declared by the Chromium agent route.
+- [/chromium/bql?(/*)](https://docs.browserless.io/open-api/chromium-bql-connect.md): WebSocket endpoint for BrowserQL.
+- [/chromium/bql?(/*)](https://docs.browserless.io/open-api/chromium-bql-execute.md): Parses and executes BrowserQL requests, powered by the BrowserQL Editor or by other API integrations.
+- [/chromium/cli](https://docs.browserless.io/open-api/chromium-cli.md): Interactive hosted-agent chat.
+- [/chromium/content](https://docs.browserless.io/open-api/chromium-content.md): Given a `url` or `html` field, loads the page and returns the fully rendered HTML.
+- [/chromium/download](https://docs.browserless.io/open-api/chromium-download.md): Runs a Puppeteer or Playwright script and returns any files the browser downloaded during execution.
+- [/chromium/export](https://docs.browserless.io/open-api/chromium-export.md): Exports a webpage to a PDF or image format.
+- [/chromium/function](https://docs.browserless.io/open-api/chromium-function.md): Executes a Puppeteer or Playwright script in the browser context and returns the result.
+- [/chromium/performance](https://docs.browserless.io/open-api/chromium-performance.md): Run lighthouse performance audits with a supplied 'url' in your JSON payload.
+- [/chromium/playwright](https://docs.browserless.io/open-api/chromium-playwright.md): Connect to Chromium with any playwright style library.
+- [/](https://docs.browserless.io/open-api/chromium-root.md): Launch and connect to Chromium with a library like puppeteer or others that work over chrome-devtools-protocol.
+- [/chromium/scrape](https://docs.browserless.io/open-api/chromium-scrape.md): Returns text, HTML, and metadata from a given list of CSS selectors against the rendered DOM.
+- [/chromium/stealth](https://docs.browserless.io/open-api/chromium-stealth.md)
+- [/chromium/stealth/reconnect/*](https://docs.browserless.io/open-api/chromium-stealth-reconnect.md): Reconnect to an existing stealth browser session (e.g. from /unblock) with CDP proxy features like solveCaptchas and stealth-mode fingerprint masking.
+- [/crawl/*](https://docs.browserless.io/open-api/crawl-cancel.md): Cancel a running crawl job by its ID.
+- [/crawl](https://docs.browserless.io/open-api/crawl-list.md): List all crawl jobs owned by the authenticated account (or, for keys not yet mapped to an account, the token).
+- [/crawl](https://docs.browserless.io/open-api/crawl-start.md): Start an asynchronous crawl job that spiders a website and scrapes every discovered page.
+- [/crawl/*](https://docs.browserless.io/open-api/crawl-status.md): Get the status of a crawl job and its paginated page results.
+- [/devtools/browser/*](https://docs.browserless.io/open-api/devtools-browser.md): Connect to an already-running Chromium process with a library like
+- [/devtools/page/*](https://docs.browserless.io/open-api/devtools-page.md): Connect to an existing page in Chromium with a library like
+- [/edge](https://docs.browserless.io/open-api/edge.md): Launch and connect to Chromium with a library like puppeteer or others that work over chrome-devtools-protocol.
+- [/edge/content](https://docs.browserless.io/open-api/edge-content.md): Given a `url` or `html` field, loads the page in Edge and returns the fully rendered HTML.
+- [/edge/download](https://docs.browserless.io/open-api/edge-download.md): Runs a Puppeteer or Playwright script in Edge and returns any files the browser downloaded during execution.
+- [/edge/function](https://docs.browserless.io/open-api/edge-function.md): Executes a Puppeteer or Playwright script in the Edge browser context and returns the result.
+- [/edge/pdf](https://docs.browserless.io/open-api/edge-pdf.md): Returns a PDF binary from a `url` or `html` payload using Edge.
+- [/edge/performance](https://docs.browserless.io/open-api/edge-performance.md): Run lighthouse performance audits with a supplied 'url' in your JSON payload.
+- [/edge/playwright](https://docs.browserless.io/open-api/edge-playwright.md): Connect to Chromium with any playwright style library.
+- [/edge/scrape](https://docs.browserless.io/open-api/edge-scrape.md): Returns text, HTML, and metadata from a given list of CSS selectors against the rendered DOM (Edge).
+- [/edge/screenshot](https://docs.browserless.io/open-api/edge-screenshot.md): Returns a screenshot binary from a `url` or `html` payload using Edge.
+- [/firefox/playwright](https://docs.browserless.io/open-api/firefox-playwright.md): Connect to Firefox with any playwright-compliant library.
+- [/function/connect/*](https://docs.browserless.io/open-api/function-connect.md): Internally used by the POST /function API to connect the underlying client-side code to.
+- [/integrations/onepassword/*/audit](https://docs.browserless.io/open-api/integrations-onepassword-audit.md): Lists recent credential activity for a single 1Password integration owned
+- [/integrations/onepassword/autologin/form](https://docs.browserless.io/open-api/integrations-onepassword-autologin-form.md): Returns the selectable references for building an autologin profile: the
+- [/integrations/script-generator](https://docs.browserless.io/open-api/integrations-script-generator.md): Generates a Browserless automation script (BrowserQL / Playwright JS /
+- [/json/new](https://docs.browserless.io/open-api/json-new.md): Returns a JSON payload that acts as a pass-through to the DevTools /json/new HTTP API in Chromium.
+- [/json/protocol](https://docs.browserless.io/open-api/json-protocol.md): Returns Protocol JSON meta-data that Chrome and Chromium come with.
+- [/json/version](https://docs.browserless.io/open-api/json-version.md): Returns a JSON payload that acts as a pass-through to the DevTools /json/version protocol in Chrome and Chromium.
+- [/kill/*](https://docs.browserless.io/open-api/kill-0-9-a-z-a-z.md): Kill running sessions based on BrowserId or TrackingId.
+- [/live/*](https://docs.browserless.io/open-api/live.md): Websocket back-end that powers the live session experience.
+- [/map](https://docs.browserless.io/open-api/map.md): Primarily discovers URLs from the site's sitemap, supplemented
+- [/meta](https://docs.browserless.io/open-api/meta.md): Returns a JSON payload of the current system versions, including the core API version.
+- [/integrations/onepassword/profile](https://docs.browserless.io/open-api/onepassword-autologin-start.md): Kicks off an autologin task: a managed agent creates a browser profile by
+- [/integrations/onepassword/profile/*](https://docs.browserless.io/open-api/onepassword-autologin-status.md): Poll an autologin task by id.
+- [/integrations/onepassword/*](https://docs.browserless.io/open-api/onepassword-delete.md): Deletes a 1Password integration owned by the requesting token.
+- [/integrations/onepassword/*](https://docs.browserless.io/open-api/onepassword-get.md): Returns metadata for a specific 1Password integration owned by the token.
+- [/integrations/onepassword](https://docs.browserless.io/open-api/onepassword-list.md): Lists the 1Password integrations owned by the requesting token.
+- [/integrations/onepassword](https://docs.browserless.io/open-api/onepassword-register.md): Registers a 1Password integration for the requesting token.
+- [/pdf](https://docs.browserless.io/open-api/pdf.md): Returns a PDF binary from a `url` or `html` payload.
+- [/profile](https://docs.browserless.io/open-api/profile.md): Removes selected sites and their cookies, localStorage and IndexedDB from a saved profile.
+- [/profile](https://docs.browserless.io/open-api/profile-create.md): Launches a temporary browser session for creating an authenticated profile.
+- [/profile/*](https://docs.browserless.io/open-api/profile-delete.md): Deletes an authentication profile and its captured state.
+- [/profile/*/download](https://docs.browserless.io/open-api/profile-download.md): Downloads the captured authentication state for a specific profile.
+- [/profile/*](https://docs.browserless.io/open-api/profile-get.md): Returns metadata for a specific authentication profile.
+- [/profile/refresh](https://docs.browserless.io/open-api/profile-refresh.md): Replaces the state of an existing authentication profile in place.
+- [/profile/*](https://docs.browserless.io/open-api/profile-rename.md): Renames an authentication profile.
+- [/profile/upload](https://docs.browserless.io/open-api/profile-upload.md): Creates a new authentication profile from a pre-captured 'state' payload
+- [/profiles](https://docs.browserless.io/open-api/profiles.md): Lists authentication profiles owned by the requesting token.
+- [/proxy/cities](https://docs.browserless.io/open-api/proxy-cities.md): Returns a list of available cities for proxy connections.
+- [/reconnect/*](https://docs.browserless.io/open-api/reconnect.md): Reconnect to an existing Chromium or Chrome session with a library like puppeteer or others that work over chrome-devtools-protocol.
+- [/scrape](https://docs.browserless.io/open-api/scrape.md): A JSON-based API that returns text, html, and meta-data from a given list of
+- [/scrapers](https://docs.browserless.io/open-api/scrapers.md): Lists the scrapers and APIs available from the loaded scraper bundle, with
+- [/scrapers/*/*](https://docs.browserless.io/open-api/scrapers-post-1.md): Runs one API of a predefined scraper from the loaded scraper bundle:
+- [/screenshot](https://docs.browserless.io/open-api/screenshot.md): Returns a screenshot binary from a `url` or `html` payload.
+- [/search](https://docs.browserless.io/open-api/search.md): Search the web and optionally scrape result pages.
+- [/session/bql/*](https://docs.browserless.io/open-api/session-bql.md): > Executes BrowserQL queries against an existing session.
+- [/session/connect/*](https://docs.browserless.io/open-api/session-connect.md): Connect to an existing session with a library like puppeteer or playwright that work over chrome-devtools-protocol.
+- [/session](https://docs.browserless.io/open-api/session-create.md): Creates a new browser session with the specified parameters.
+- [/session/*](https://docs.browserless.io/open-api/session-delete.md): Deletes a session and its associated data.
+- [/skills](https://docs.browserless.io/open-api/skills.md): Returns the browser-automation skills known for a site: tuned, site-specific
+- [/smart-scrape](https://docs.browserless.io/open-api/smart-scrape.md): Intelligently scrapes a URL using cascading strategies (HTTP fetch, proxy, headless browser, etc).
+- [/stealth](https://docs.browserless.io/open-api/stealth.md)
+- [/stealth/bql?(/*)](https://docs.browserless.io/open-api/stealth-bql-connect.md): WebSocket endpoint for BrowserQL.
+- [/stealth/bql?(/*)](https://docs.browserless.io/open-api/stealth-bql-execute.md): Parses and executes BrowserQL requests, powered by the BrowserQL Editor or by other API integrations.
+- [/unblock](https://docs.browserless.io/open-api/unblock.md): Unblocks the provided URL from being blocked due to bot detection.
+- [/webkit/playwright](https://docs.browserless.io/open-api/webkit-playwright.md): Connect to Webkit with any playwright-compliant library.
+- [OpenAPI Reference](https://docs.browserless.io/open-api): browsable REST API reference (Swagger)
+- [OpenAPI spec (JSON)](https://docs.browserless.io/openapi.json): the full machine-readable contract, ~1.2 MB — for codegen or whole-API work; use the per-route pages above for a single endpoint
+- [OpenAPI spec (YAML)](https://docs.browserless.io/openapi.yaml): the same contract in YAML, ~1 MB
+
+## Optional
+
+- [Account Dashboard](https://browserless.io/account/)
+- [Status](https://status.browserless.io/)
+- [Blog](https://www.browserless.io/blog/)
+- [Pricing](https://browserless.io/pricing)
+- [GitHub](https://github.com/browserless/browserless)
+

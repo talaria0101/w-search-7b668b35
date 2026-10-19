@@ -1,0 +1,1874 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    
+    
+    
+    
+    
+
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<title>Currents News API | Free JSON News API for Developers</title>
+<meta name="description" content="Get a free Currents News API key and access real-time JSON news data, latest-news feeds, keyword search, 26M+ articles, and 250 daily requests.">
+
+
+    <!-- Canonical URL (Prevent duplicate content) -->
+    <link rel="canonical" href="https://currentsapi.services/en">
+
+    <!-- Hreflang Tags (Multilingual SEO) -->
+    
+      <link rel="alternate" hreflang="en" href="https://currentsapi.services/en">
+      <link rel="alternate" hreflang="x-default" href="https://currentsapi.services/en">
+    
+
+    <!-- Robots Meta Tag (Control indexing) -->
+    
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    
+
+    <!-- Meta Keywords (Target SEO terms) -->
+    <meta name="keywords" content="News API, real-time news data, affordable API, multilingual news API, JSON news API, developer API, free news API, cheapest news API, news aggregation API, breaking news API, global news API">
+
+    
+<meta property="og:title" content="Currents News API | Free JSON News API for Developers">
+<meta property="og:description" content="Get a free Currents News API key and access real-time JSON news data, latest-news feeds, keyword search, 26M+ articles, and 250 daily requests.">
+<meta property="og:url" content="https://currentsapi.services/en">
+<meta property="og:image" content="https://currentsapi.services/img/Cover-Image.jpg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Currents News API">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@CurrentsApi">
+<meta name="twitter:creator" content="@CurrentsApi">
+<meta name="twitter:title" content="Currents News API | Free JSON News API for Developers">
+<meta name="twitter:description" content="Get a free Currents News API key and access real-time JSON news data, latest-news feeds, keyword search, 26M+ articles, and 250 daily requests.">
+<meta name="twitter:image" content="https://currentsapi.services/img/Cover-Image.jpg">
+
+
+    <!-- Organization Schema (JSON-LD for Knowledge Panel) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Currents News API",
+      "url": "https://currentsapi.services",
+      "logo": "https://currentsapi.services/img/Logo.svg",
+      "description": "Real-time news API providing access to 26M+ articles from a source directory spanning 168 countries in 20+ languages. Developer-friendly JSON API with monitored production reliability and free tier.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "SG"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "support@currentsapi.services",
+        "url": "https://currentsapi.services/en/docs/"
+      },
+      "sameAs": [
+        "https://twitter.com/CurrentsApi",
+        "https://github.com/Currents-API-services"
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema (JSON-LD for Rich Snippets) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Currents News API",
+      "applicationCategory": "DeveloperApplication,BusinessApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "USD",
+        "description": "Free tier with 250 daily requests. No credit card required.",
+        "availability": "https://schema.org/InStock",
+        "url": "https://currentsapi.services/en/register"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Currents"
+      }
+    }
+    </script>
+
+    <!-- FAQ Schema removed from base - should only be on pages that actually contain the FAQ content -->
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="/img/logo-only.svg?q=1772759572" sizes="any">
+    <link rel="icon" type="image/png" href="/favicon.ico" sizes="32x32">
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="/img/Cover-Image.jpg?q=1772090198" as="image">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Source+Sans+3:wght@400;600&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <script>
+      (function() {
+        try {
+          const storedTheme = localStorage.getItem('currents_theme');
+          if (storedTheme === 'classic') {
+            document.documentElement.removeAttribute('data-theme');
+            return;
+          }
+          document.documentElement.setAttribute('data-theme', 'comfort');
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'comfort');
+        }
+      })();
+    </script>
+
+    <!-- Custom CSS -->
+    <style>
+      :root {
+        /* Base palette */
+        --primary-blue: #1162B9;
+        --primary-blue-dark: #034393;
+        --primary-blue-light: #B7D4F2;
+        --bg-white: #FFFFFF;
+        --bg-light: #F8FAFC;
+        --bg-lighter: #F1F5F9;
+        --surface-elevated: #FFFFFF;
+        --surface-muted: #F7FAFC;
+        --text-dark: #0F172A;
+        --text-gray: #64748B;
+        --text-light: #64748B;
+        --border-color: #E2E8F0;
+        --body-accent: rgba(17, 98, 185, 0.05);
+        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        --radius-sm: 8px;
+        --radius-md: 12px;
+        --radius-lg: 16px;
+        /* Typography */
+        --font-display: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+        --font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        --font-mono: 'Spline Sans Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+        /* Accent and semantic */
+        --accent: #D8953D;
+        --accent-deep: #A0600B;
+        --accent-tint: rgba(216, 149, 61, 0.14);
+        --success: #33854A;
+        --warning: #CD9130;
+        --error: #B6322D;
+      }
+
+      html[data-theme="comfort"] {
+        --primary-blue: #1162B9;
+        --primary-blue-dark: #034393;
+        --primary-blue-light: #B7D4F2;
+        --bg-white: #FBF9F3;
+        --bg-light: #F7F3EA;
+        --bg-lighter: #EEE9DC;
+        --surface-elevated: #FEFDFB;
+        --surface-muted: #FAF8F4;
+        --text-dark: #2C2822;
+        --text-gray: #46423A;
+        --text-light: #686359;
+        --border-color: #E0D8C8;
+        --body-accent: rgba(17, 98, 185, 0.07);
+        --shadow-sm: 0 1px 2px 0 rgba(44, 40, 34, 0.06);
+        --shadow-md: 0 8px 16px -8px rgba(44, 40, 34, 0.16);
+        --shadow-lg: 0 18px 28px -16px rgba(44, 40, 34, 0.2);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--font-body);
+        background:
+          radial-gradient(1200px 450px at 90% -10%, var(--body-accent), transparent 70%),
+          linear-gradient(180deg, var(--bg-light) 0%, var(--bg-white) 28%, var(--bg-white) 100%);
+        color: var(--text-dark);
+        line-height: 1.65;
+        font-size: 1.0625rem;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        min-height: 100vh;
+      }
+
+      main {
+        width: 100%;
+      }
+
+      /* Typography */
+      h1, h2, h3, h4, h5, h6 {
+        color: var(--text-dark);
+        font-weight: 600;
+        line-height: 1.15;
+      }
+
+      h1, h2 {
+        font-family: var(--font-display);
+      }
+
+      h1 { font-size: clamp(2.75rem, 4.5vw + 1rem, 4.25rem); line-height: 1.08; letter-spacing: -0.015em; }
+      h2 { font-size: clamp(1.875rem, 2.5vw + 0.75rem, 2.625rem); letter-spacing: -0.01em; }
+      h3 { font-size: 1.5rem; }
+      h4 { font-size: 1.1875rem; }
+
+      p {
+        color: var(--text-gray);
+        line-height: 1.65;
+        margin-bottom: 1rem;
+      }
+
+      .lead-text {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+      }
+
+      .section-lead {
+        font-size: 1.25rem;
+      }
+
+      .cta-title {
+        font-size: clamp(2.25rem, 3vw, 2.75rem);
+        margin-bottom: 1.5rem;
+      }
+
+      .cta-lead {
+        font-size: 1.25rem;
+        color: var(--text-gray);
+        margin-bottom: 2.5rem;
+      }
+
+      /* Links */
+      a {
+        color: var(--primary-blue);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      a:hover {
+        color: var(--primary-blue-dark);
+      }
+
+      /* Container */
+      .container {
+        max-width: 1360px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      .container-fluid {
+        width: 100%;
+        padding: 0 1.5rem;
+      }
+
+      /* Buttons */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9375rem;
+        font-weight: 500;
+        border-radius: var(--radius-sm);
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        text-decoration: none;
+      }
+
+      .btn-primary {
+        background: var(--primary-blue);
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background: var(--primary-blue-dark);
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .btn-outline {
+        background: transparent;
+        color: var(--primary-blue);
+        border: 2px solid var(--primary-blue);
+      }
+
+      .btn-outline:hover {
+        background: var(--primary-blue);
+        color: white;
+      }
+
+      .btn-secondary {
+        background: var(--surface-elevated);
+        color: var(--text-dark);
+        border: 2px solid var(--border-color);
+      }
+
+      .btn-secondary:hover {
+        background: var(--bg-lighter);
+        border-color: var(--text-gray);
+      }
+
+      .btn-lg {
+        padding: 1rem 2rem;
+        font-size: 1.125rem;
+        border-radius: var(--radius-md);
+      }
+
+      .btn-block {
+        width: 100%;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      /* Forms */
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-label {
+        display: block;
+        font-weight: 500;
+        color: var(--text-dark);
+        margin-bottom: 0.5rem;
+        font-size: 0.9375rem;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 0.875rem 1rem;
+        font-size: 1rem;
+        color: var(--text-dark);
+        background: var(--surface-elevated);
+        border: 2px solid var(--border-color);
+        border-radius: var(--radius-sm);
+        transition: all 0.2s ease;
+        font-family: inherit;
+      }
+
+      .form-control:focus {
+        outline: none;
+        border-color: var(--primary-blue);
+        box-shadow: 0 0 0 3px rgba(17, 98, 185, 0.15);
+      }
+
+      .form-control::placeholder {
+        color: var(--text-light);
+      }
+
+      /* Cards */
+      .card {
+        background: var(--surface-elevated);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-sm);
+        transition: all 0.3s ease;
+      }
+
+      .card:hover {
+        box-shadow: var(--shadow-md);
+        transform: translateY(-2px);
+      }
+
+      /* Utilities */
+      .text-center { text-align: center; }
+      .text-left { text-align: left; }
+      .text-right { text-align: right; }
+
+      .mb-1 { margin-bottom: 0.5rem; }
+      .mb-2 { margin-bottom: 1rem; }
+      .mb-3 { margin-bottom: 1.5rem; }
+      .mb-4 { margin-bottom: 2rem; }
+      .mb-5 { margin-bottom: 3rem; }
+
+      .mt-1 { margin-top: 0.5rem; }
+      .mt-2 { margin-top: 1rem; }
+      .mt-3 { margin-top: 1.5rem; }
+      .mt-4 { margin-top: 2rem; }
+      .mt-5 { margin-top: 3rem; }
+
+      .py-5 { padding-top: 3rem; padding-bottom: 3rem; }
+      .py-10 { padding-top: 6rem; padding-bottom: 6rem; }
+
+      .bg-light { background: var(--bg-light); }
+      .bg-white { background: var(--bg-white); }
+
+      .kicker {
+        font-family: var(--font-body);
+        font-size: 0.8125rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent-deep);
+      }
+
+      .measure { max-width: 68ch; }
+
+      .font-display { font-family: var(--font-display); }
+
+      /* Badge */
+      .badge {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        border-radius: 9999px;
+      }
+
+      .badge-primary {
+        background: var(--primary-blue-light);
+        color: white;
+      }
+
+      /* Alert */
+      .alert {
+        padding: 1rem;
+        border-radius: var(--radius-sm);
+        margin-bottom: 1rem;
+        border-left: 4px solid;
+      }
+
+      .alert-info {
+        background: var(--bg-lighter);
+        border-color: var(--primary-blue);
+        color: var(--primary-blue-dark);
+      }
+
+      .alert-error {
+        background: #FEF2F2;
+        border-color: #EF4444;
+        color: #B91C1C;
+      }
+
+      .alert-success {
+        background: #ECFDF5;
+        border-color: #10B981;
+        color: #047857;
+      }
+
+      /* Navigation Styles */
+      .nav {
+        background: var(--surface-elevated);
+        background: color-mix(in srgb, var(--surface-elevated) 94%, transparent);
+        border-bottom: 1px solid var(--border-color);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        backdrop-filter: blur(6px);
+      }
+
+      .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 1.5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .nav-brand {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: var(--text-dark);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.25rem;
+        flex-shrink: 0;
+      }
+
+      .nav-brand img {
+        height: 2.5rem;
+        width: auto;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+      }
+
+      .nav-dropdown-wrapper {
+        position: relative;
+      }
+
+      .nav-link {
+        color: var(--text-gray);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.9375rem;
+        transition: color 0.2s ease;
+        white-space: nowrap;
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        color: var(--primary-blue);
+      }
+
+      .nav-dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--surface-elevated);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-sm);
+        box-shadow: var(--shadow-lg);
+        min-width: 200px;
+        display: none;
+        z-index: 100;
+      }
+
+      .nav-dropdown-link {
+        display: block;
+        padding: 0.75rem 1rem;
+        color: var(--text-gray);
+        text-decoration: none;
+        border-radius: var(--radius-sm);
+        transition: background 0.2s ease, color 0.2s ease;
+      }
+
+      .nav-dropdown-link:hover {
+        background: var(--bg-light);
+        color: var(--text-dark);
+      }
+
+      @media (max-width: 1100px) {
+        .nav-dropdown-link {
+          padding: 0.75rem 1.5rem;
+          border-radius: 0;
+        }
+
+        .nav-dropdown-link:hover {
+          background: transparent;
+          color: var(--primary-blue);
+        }
+      }
+
+      .nav-buttons {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        flex-shrink: 0;
+      }
+
+      .theme-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+        padding: 0.45rem 0.7rem;
+        border: 1px solid var(--border-color);
+        border-radius: 999px;
+        background: var(--surface-elevated);
+        color: var(--text-gray);
+        font-size: 0.8125rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .theme-toggle:hover {
+        border-color: var(--primary-blue-light);
+        color: var(--primary-blue);
+      }
+
+      .theme-toggle[aria-pressed="true"] {
+        background: var(--surface-muted);
+        border-color: var(--primary-blue-light);
+        color: var(--primary-blue-dark);
+      }
+
+      .theme-toggle-icon {
+        font-size: 0.9rem;
+        line-height: 1;
+      }
+
+      .theme-toggle-label {
+        line-height: 1;
+      }
+
+      .theme-toggle-desktop {
+        width: 2.3rem;
+        height: 2.3rem;
+        padding: 0.45rem;
+        gap: 0;
+      }
+
+      .theme-toggle-desktop .theme-toggle-label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+        white-space: nowrap;
+        clip-path: inset(50%);
+      }
+
+      .theme-toggle-desktop .theme-toggle-icon {
+        font-size: 1rem;
+      }
+
+      .theme-toggle-mobile {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      @media (min-width: 1101px) {
+        .theme-toggle-mobile {
+          display: none;
+        }
+      }
+
+      .nav-mobile-actions {
+        display: none;
+        flex-direction: column;
+        gap: 0.75rem;
+        padding-top: 0.75rem;
+        margin-top: 0.75rem;
+        border-top: 1px solid var(--border-color);
+        width: 100%;
+      }
+
+      /* Mobile Menu */
+      .nav-mobile-toggle {
+        display: none;
+        background: none;
+        border: none;
+        padding: 0.5rem;
+        cursor: pointer;
+      }
+
+      @media (max-width: 1100px) {
+        .nav-container {
+          padding: 0.75rem 1rem;
+        }
+
+        .nav-brand img {
+          height: 2rem;
+          max-width: 170px;
+        }
+
+        .nav-links {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: var(--surface-elevated);
+          flex-direction: column;
+          padding: 1.5rem;
+          gap: 0.75rem;
+          border-bottom: 1px solid var(--border-color);
+          box-shadow: var(--shadow-lg);
+          align-items: flex-start;
+        }
+
+        .nav-links.show {
+          display: flex;
+        }
+
+        .nav-links .nav-link {
+          width: 100%;
+          font-size: 1rem;
+          display: block;
+          padding: 0.4rem 0;
+        }
+
+        .nav-dropdown-wrapper {
+          width: 100%;
+        }
+
+        .nav-dropdown {
+          position: static;
+          width: 100%;
+          min-width: 100%;
+          box-shadow: none;
+          margin-top: 0.5rem;
+          background: transparent;
+          border: none;
+          border-radius: 0;
+        }
+
+        .nav-mobile-actions {
+          display: flex;
+        }
+
+        .nav-mobile-toggle {
+          display: block;
+        }
+
+        .nav-buttons {
+          gap: 0;
+        }
+
+        .nav-buttons .btn {
+          display: none;
+        }
+
+        .theme-toggle-desktop {
+          display: none;
+        }
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--text-dark);
+        color: var(--text-light);
+        padding: 4rem 0 2rem;
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      .footer-section {
+        margin-bottom: 2rem;
+      }
+
+      .footer-section h4 {
+        color: white;
+        margin-bottom: 1rem;
+      }
+
+      .footer-links {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-links a {
+        color: var(--text-light);
+        transition: color 0.2s ease;
+      }
+
+      .footer-links a:hover {
+        color: white;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 2rem;
+        margin-top: 2rem;
+        text-align: center;
+      }
+
+      /* Grid */
+      .grid {
+        display: grid;
+        gap: 2rem;
+      }
+
+      .grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      @media (max-width: 768px) {
+        .grid-2,
+        .grid-3,
+        .grid-4 {
+          grid-template-columns: 1fr;
+        }
+
+        .grid {
+          gap: 1.5rem;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .cta-buttons .btn {
+          width: 100%;
+        }
+
+        body {
+          font-size: 15.5px;
+        }
+
+        .lead-text,
+        .section-lead,
+        .cta-lead {
+          font-size: 1rem;
+        }
+
+        .cta-title {
+          font-size: 1.9rem;
+        }
+
+        h1 { font-size: 1.9rem; }
+        h2 { font-size: 1.6rem; }
+      }
+
+      /* Stats */
+      .stat-card {
+        text-align: center;
+        padding: 2.5rem;
+        background: var(--surface-elevated);
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--border-color);
+      }
+
+      .stat-number {
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: var(--primary-blue);
+        margin-bottom: 0.5rem;
+      }
+
+      .stat-label {
+        color: var(--text-gray);
+        font-size: 1.125rem;
+      }
+
+      /* Feature */
+      .feature-icon {
+        width: 3rem;
+        height: 3rem;
+        background: var(--surface-muted);
+        border-radius: var(--radius-sm);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+        color: var(--primary-blue);
+      }
+
+      @media (max-width: 768px) {
+        .feature-icon {
+          margin: 0 auto 1rem auto;
+        }
+      }
+
+      /* Hero */
+      .hero {
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+      }
+
+      .hero-content {
+        max-width: 800px;
+      }
+
+      .hero-form {
+        display: flex;
+        gap: 1rem;
+        max-width: 600px;
+      }
+
+      .hero-form input {
+        flex: 1;
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          min-height: auto;
+          padding: 3.5rem 0;
+        }
+
+        .hero-content {
+          max-width: 100%;
+        }
+
+        .hero-form {
+          flex-direction: column;
+        }
+
+        .hero-form .btn {
+          width: 100%;
+        }
+
+        .stat-card {
+          padding: 1.75rem;
+        }
+
+        .stat-number {
+          font-size: 2.75rem;
+        }
+      }
+
+      /* Section */
+      .section {
+        padding: 5rem 0;
+      }
+
+      .section-light {
+        background: var(--surface-muted);
+      }
+
+      @media (max-width: 768px) {
+        .section {
+          padding: 3.5rem 0;
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 480px) {
+        .container { padding: 0 1rem; }
+        .py-5 { padding-top: 2rem; padding-bottom: 2rem; }
+        .py-10 { padding-top: 4rem; padding-bottom: 4rem; }
+        .footer-content { padding: 0 1rem; }
+        h1 { font-size: 1.7rem; }
+        h2 { font-size: 1.45rem; }
+      }
+
+      /* Visually hidden */
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+        white-space: nowrap;
+        clip-path: inset(50%);
+      }
+    </style>
+    
+<!-- FAQ Schema removed (Google restricts FAQPage to gov/healthcare since Aug 2023).
+     FAQ content is in the page body — rich results no longer applicable. -->
+<style>
+  .integration-examples {
+    overflow-x: hidden;
+  }
+
+  .integration-examples .grid > *,
+  .integration-examples .card {
+    box-sizing: border-box;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .integration-examples .grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .integration-examples .card {
+    overflow: hidden;
+  }
+
+  .integration-examples pre {
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  .integration-examples code {
+    min-width: 0;
+    white-space: pre;
+  }
+
+  @media (max-width: 768px) {
+    .integration-examples .grid {
+      display: block;
+    }
+
+    .integration-examples .grid-2 {
+      grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    .integration-examples .card {
+      margin-bottom: 1.5rem;
+      padding: 1.25rem !important;
+      width: 100% !important;
+    }
+  }
+</style>
+
+  </head>
+  <body>
+    
+  
+
+
+<style>
+  /* Desktop Hover Logic */
+  @media (min-width: 769px) {
+    .nav-dropdown-wrapper:hover .nav-dropdown {
+      display: block !important;
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    /* Ensure there's a small bridge so the menu doesn't close when moving mouse down */
+    .nav-dropdown::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: 0;
+      width: 100%;
+      height: 10px;
+    }
+  }
+
+  /* Chevron animation */
+  .dropdown-trigger svg {
+    transition: transform 0.2s ease;
+  }
+  .nav-dropdown-wrapper:hover .dropdown-trigger svg {
+    transform: rotate(180deg);
+  }
+</style>
+
+<nav class="nav">
+  <div class="nav-container">
+    <!-- Brand -->
+    <a href="/en" class="nav-brand">
+      <img src="/en/img/logo-banner.svg" alt="Currents News API" class="nav-brand-img">
+    </a>
+
+    <!-- Navigation Links -->
+    <div class="nav-links" id="navLinks">
+      <!-- Platform Dropdown -->
+      <div class="nav-dropdown-wrapper">
+        <a href="#" class="nav-link dropdown-trigger" data-dropdown-trigger="true">
+          Platform
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 4px; vertical-align: middle;">
+            <path d="M2 4l4 4 4-4"/>
+          </svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="/en/introduction" class="nav-dropdown-link">Introduction</a>
+          <!-- <a href="/en/statistic" class="nav-dropdown-link">Statistics</a> -->
+          <a href="/en/sources" class="nav-dropdown-link">Sources</a>
+        </div>
+      </div>
+
+      <!-- Solutions Dropdown -->
+      <div class="nav-dropdown-wrapper">
+        <a href="#" class="nav-link dropdown-trigger" data-dropdown-trigger="true">
+          Solutions
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 4px; vertical-align: middle;">
+            <path d="M2 4l4 4 4-4"/>
+          </svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="/en/use-cases" class="nav-dropdown-link">Use Cases</a>
+          <a href="/en/compare/alternatives" class="nav-dropdown-link">Compare Alternatives</a>
+          <a href="/en/compare/pricing" class="nav-dropdown-link">Pricing Comparison</a>
+          <a href="/en/compare/features" class="nav-dropdown-link">Features Comparison</a>
+        </div>
+      </div>
+
+      <!-- Standalone Pricing -->
+      <a href="/en/pricing" class="nav-link ">
+        Pricing
+      </a>
+
+      <!-- Developers Dropdown -->
+      <div class="nav-dropdown-wrapper">
+        <a href="#" class="nav-link dropdown-trigger" data-dropdown-trigger="true">
+          Developers
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 4px; vertical-align: middle;">
+            <path d="M2 4l4 4 4-4"/>
+          </svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="/en/docs/" class="nav-dropdown-link">Documentation</a>
+          <a href="/en/faq" class="nav-dropdown-link">FAQ</a>
+        </div>
+      </div>
+
+      <a href="/en/blog" class="nav-link ">
+        Blog
+      </a>
+
+      <div class="nav-mobile-actions">
+        <button class="theme-toggle theme-toggle-mobile" type="button" data-theme-toggle aria-pressed="false">
+          <span class="theme-toggle-icon" aria-hidden="true">◐</span>
+          <span class="theme-toggle-label" data-theme-toggle-label>Comfort off</span>
+        </button>
+
+        
+          <a href="/en/login" class="btn btn-secondary btn-block">Login</a>
+          <a href="/en/register" class="btn btn-primary btn-block">Sign Up Free</a>
+        
+      </div>
+    </div>
+
+    <!-- Authentication Buttons -->
+    <div class="nav-buttons">
+      <button class="theme-toggle theme-toggle-desktop" type="button" data-theme-toggle aria-pressed="false">
+        <span class="theme-toggle-icon" aria-hidden="true">◐</span>
+        <span class="theme-toggle-label" data-theme-toggle-label>Comfort off</span>
+      </button>
+
+      
+        <a href="/en/login" class="btn btn-secondary">Login</a>
+        <a href="/en/register" class="btn btn-primary">Sign Up Free</a>
+      
+
+      <!-- Mobile Menu Toggle -->
+      <button class="nav-mobile-toggle" id="navMobileToggle" aria-label="Toggle navigation">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 12h18M3 6h18M3 18h18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Mobile Navigation & Dropdown Toggle
+  (function() {
+    const navToggle = document.getElementById('navMobileToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    if (!navToggle || !navLinks) return;
+
+    navToggle.setAttribute('aria-expanded', 'false');
+
+    // Toggle mobile menu
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('show');
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    // Handle Clicks (Mobile logic for dropdowns)
+    document.addEventListener('click', (e) => {
+      const trigger = e.target.closest('a[data-dropdown-trigger]');
+      
+      if (trigger) {
+        // Only prevent default and toggle if on mobile
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          const dropdown = trigger.nextElementSibling;
+          const isVisible = dropdown.style.display === 'block';
+          
+          // Close all other dropdowns
+          document.querySelectorAll('.nav-dropdown').forEach(d => d.style.display = 'none');
+          
+          dropdown.style.display = isVisible ? 'none' : 'block';
+        }
+      } else if (!e.target.closest('.nav-dropdown-wrapper')) {
+        // Close dropdowns when clicking outside
+        document.querySelectorAll('.nav-dropdown').forEach(d => d.style.display = 'none');
+      }
+    });
+
+    // Close mobile menu on window resize
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        navLinks.classList.remove('show');
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.querySelectorAll('.nav-dropdown').forEach(d => d.style.display = '');
+      }
+    });
+  })();
+</script>
+
+    <main>
+      
+      
+<!-- Hero Section -->
+<section class="hero bg-light">
+  <div class="container">
+    <div class="hero-content">
+      <h1>News API for Real-Time JSON News Data</h1>
+      <p class="lead-text">
+        Get a free API key, test latest-news feeds and keyword search, and access real-time and historical news from a source directory spanning 168 countries and 20+ languages. Start with 250 free requests per day, no credit card required.
+      </p>
+
+      <!-- Email Signup Form -->
+      <form method="post" action="/en" class="hero-form">
+        <input name="_csrf_token" type="hidden" value="2790d05396072df3f3657d6c4960dda521ac0a380c71d246258248b3354858c853175cbc28d02c4e"/>
+        <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
+        <button type="submit" class="btn btn-primary btn-lg">
+          Start for Free
+        </button>
+      </form>
+      <div class="cta-buttons" style="justify-content: center; margin-top: 1rem; margin-bottom: 0.75rem;">
+        <a href="/en/register" class="btn btn-primary btn-lg">Get Free API Key</a>
+        <a href="/en/news-api-key" class="btn btn-outline btn-lg">API Key Setup</a>
+        <a href="/en/docs/" class="btn btn-outline btn-lg">Read Docs</a>
+      </div>
+      <p style="text-align: center; font-size: 0.9375rem; margin-bottom: 0;">
+        No credit card required. Start with 250 daily requests.
+      </p>
+
+      <div style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem;">
+        <a href="/en/free-news-api" style="font-size: 0.9rem;">Free News API</a>
+        <a href="/en/latest-news-api" style="font-size: 0.9rem;">Latest News API</a>
+        <a href="/en/product/price" style="font-size: 0.9rem;">Pricing and quotas</a>
+      </div>
+
+      <!-- Feature Highlights -->
+      <div class="grid grid-3 mt-5">
+        <div style="text-align: center;">
+          <img src="/en/img/free-tier.svg" alt="Free Tier" width="48" height="48" class="feature-icon" style="margin-bottom: 1rem;">
+          <h3 class="mt-2">Free Tier</h3>
+          <p>Start with 250 daily requests at no cost. <a href="/en/product/price" style="font-size: 0.875rem; color: var(--text-gray);">View pricing</a></p>
+        </div>
+        <div style="text-align: center;">
+          <img src="/en/img/no-credit-card.svg" alt="No Credit Card" width="48" height="48" class="feature-icon" style="margin-bottom: 1rem;">
+          <h3 class="mt-2">No Credit Card</h3>
+          <p>Sign up instantly without payment details</p>
+        </div>
+        <div style="text-align: center;">
+          <img src="/en/img/easy-to-use.svg" alt="Easy to Use" width="48" height="48" class="feature-icon" style="margin-bottom: 1rem;">
+          <h3 class="mt-2">Easy to Use</h3>
+          <p>Simple JSON API with <a href="/en/docs/" style="text-decoration: underline; color: var(--primary-blue);">comprehensive docs</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What is Currents Section -->
+<section class="section">
+  <div class="container">
+    <div class="card" style="padding: 2rem;">
+      <h2>What is Currents News API?</h2>
+      <p>
+        Currents is a REST news API that delivers real-time and historical articles from a source directory spanning 168 countries and 20+ languages. Responses are clean JSON with metadata, descriptions, source URLs, available content fields, and filters for country, language, category, date range, and search keywords.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- How the News API Works Section -->
+<section class="section section-light integration-examples" id="how-it-works">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2>How the News API Works</h2>
+      <p>Send one HTTP request with your API key. The API returns a JSON list of articles.</p>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="card" style="padding: 2rem;">
+        <h3>1. Send a request</h3>
+        <pre style="font-size: 0.875rem; overflow-x: auto; background: var(--bg-lighter); border: 1px solid var(--border-color); border-radius: 6px; padding: 1rem;"><code>curl -G https://api.currentsapi.services/v1/latest-news \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -d language=en -d page_size=3</code></pre>
+        <ul style="line-height: 1.8;">
+          <li><code>/v1/latest-news</code> returns the newest indexed articles. Filter them by <code>language</code>, <code>country</code>, and <code>category</code>.</li>
+          <li><code>/v1/search</code> finds articles by <code>keywords</code> in a date window set by <code>start_date</code> and <code>end_date</code>.</li>
+          <li>A free key allows 250 requests per UTC day and up to 20 articles per request. Free searches have a 30-day lookback and a 7-day max date span per request.</li>
+        </ul>
+        <p style="margin-bottom: 0;"><a href="/en/register">Get a free API key</a> · <a href="/en/docs/latest_news">Latest news reference</a> · <a href="/en/docs/search">Search reference</a></p>
+      </div>
+
+      <div class="card" style="padding: 2rem;">
+        <h3>2. Read the JSON response</h3>
+        <pre style="font-size: 0.875rem; overflow-x: auto; background: var(--bg-lighter); border: 1px solid var(--border-color); border-radius: 6px; padding: 1rem;"><code>{
+  "status": "ok",
+  "news": [
+    {
+      "id": "f8f18e4b-c66e-47ca-9f7d-54f03e431a77",
+      "title": "Chipmaker expands data-center investment",
+      "description": "The company announced a new multi-year expansion plan...",
+      "url": "https://example.com/business/chipmaker-expands",
+      "author": "Editorial Desk",
+      "image": "https://example.com/images/chipmaker.jpg",
+      "language": "en",
+      "category": ["science_technology", "economy_business_finance"],
+      "published": "2026-03-24 11:10:00 +0000"
+    }
+  ],
+  "page": 1
+}</code></pre>
+        <p style="margin-bottom: 0;">Each article has an ID, title, description, link to the original story, language, categories, and publication time. <code>author</code> and <code>image</code> are <code>null</code> when the publisher does not provide them. The values above are examples.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Statistics Section -->
+<section class="section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="badge badge-primary mb-2">POWERED BY CURRENTS</h2>
+      <p class="section-lead">Built for developers who need reliable news data</p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="stat-card">
+        <div class="stat-number">168</div>
+        <div class="stat-label">Country Designations</div>
+        <p>Global and regional news with country-level filtering.</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">26M+</div>
+        <div class="stat-label">Total Articles</div>
+        <p>A large and diverse news collection archived over the past 4 years.</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">20+</div>
+        <div class="stat-label">Languages Supported</div>
+        <p>Use language filters for multilingual news workflows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Currents Section -->
+<section class="section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2>Why Choose Currents?</h2>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card" style="padding: 2rem;">
+        <h3>Generous free tier</h3>
+        <p>Start with 250 requests per day, no credit card required. <a href="/en/free-news-api">See free plan details</a>.</p>
+      </div>
+      <div class="card" style="padding: 2rem;">
+        <h3>Broad source coverage</h3>
+        <p>Use a global source catalog with entries assigned to 168 country designations and 20+ languages.</p>
+      </div>
+      <div class="card" style="padding: 2rem;">
+        <h3>Historical archive</h3>
+        <p>Search 26M+ archived articles for research, monitoring, and trend analysis.</p>
+      </div>
+      <div class="card" style="padding: 2rem;">
+        <h3>Developer-friendly JSON</h3>
+        <p>Use consistent REST endpoints with clean JSON responses and predictable metadata. <a href="/en/news-api-key">Get your API key</a>.</p>
+      </div>
+      <div class="card" style="padding: 2rem;">
+        <h3>Transparent pricing</h3>
+        <p>Simple plans from free tier to enterprise scale, with clear monthly quotas. <a href="/en/product/price">Compare plans</a>.</p>
+      </div>
+      <div class="card" style="padding: 2rem;">
+        <h3>Fast, reliable access</h3>
+        <p>Built for predictable API access and monitored production reliability.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What the API Provides Section -->
+<section class="section section-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2>What Does Our News API Provide?</h2>
+      <p>Comprehensive news data infrastructure for developers and enterprises</p>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="card" style="padding: 2rem;">
+        <img src="/en/img/index_1.svg" alt="Latest News Endpoint" width="40" height="40" class="feature-icon">
+        <h3>Latest News Endpoint</h3>
+        <p>Access breaking news and recent articles with the <code>/latest-news</code> endpoint. Filter by language, country, or category to get precisely the content you need delivered in clean JSON format.</p>
+      </div>
+
+      <div class="card" style="padding: 2rem;">
+        <img src="/en/img/index_2.svg" alt="Search Endpoint" width="40" height="40" class="feature-icon">
+        <h3>Powerful Search API</h3>
+        <p>The <code>/search</code> endpoint lets you query our entire archive of 26M+ articles. Search by keywords, date ranges, sources, and more. Perfect for research, monitoring, and content curation.</p>
+      </div>
+
+      <div class="card" style="padding: 2rem;">
+        <img src="/en/img/index_3.svg" alt="Rich Metadata" width="40" height="40" class="feature-icon">
+        <h3>Rich Article Metadata</h3>
+        <p>Each article includes title, description, source URL, available content fields, published date, source domain, language, category, and author information when available. Structured data ready for your application.</p>
+      </div>
+
+      <div class="card" style="padding: 2rem;">
+        <img src="/en/img/index_4.svg" alt="API Response" width="40" height="40" class="feature-icon">
+        <h3>Consistent JSON Format</h3>
+        <p>All API responses follow a consistent schema with pagination support. Integrate once and trust that your implementation will work reliably across all endpoints and use cases.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Use Cases Section -->
+<section class="section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2>Built for Every Use Case</h2>
+      <p>See how developers and businesses use Currents API</p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card" style="padding: 2rem;">
+        <div class="feature-icon" style="background: var(--primary-blue); color: white;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+        </div>
+        <h3>News Aggregators</h3>
+        <p>Build news aggregation platforms with newly indexed articles from a broad source catalog, delivered as clean JSON without maintaining your own scraping pipeline.</p>
+      </div>
+
+      <div class="card" style="padding: 2rem;">
+        <div class="feature-icon" style="background: var(--primary-blue); color: white;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 3v18h18"></path>
+            <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"></path>
+          </svg>
+        </div>
+        <h3>Market Research</h3>
+        <p>Track industry trends, competitors, and market-moving narratives across global news sources with keyword search, source filters, date ranges, and country/language filters.</p>
+      </div>
+
+      <div class="card" style="padding: 2rem;">
+        <div class="feature-icon" style="background: var(--primary-blue); color: white;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </div>
+        <h3>AI & NLP Workflows</h3>
+        <p>Build summarization, classification, and sentiment-analysis workflows using metadata, source links, and available content fields subject to plan terms.</p>
+      </div>
+
+      <div class="card" style="padding: 2rem;">
+        <div class="feature-icon" style="background: var(--primary-blue); color: white;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+        </div>
+        <h3>Crisis Monitoring</h3>
+        <p>Monitor breaking events across regions with real-time article delivery, country/language filters, and source-level metadata for dashboards and alerts.</p>
+      </div>
+
+      <div class="card" style="padding: 2rem;">
+        <div class="feature-icon" style="background: var(--primary-blue); color: white;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+        </div>
+        <h3>Brand Monitoring</h3>
+        <p>Track mentions of your brand, products, executives, and competitors across global news sources in 20+ languages using keyword search and date filtering.</p>
+      </div>
+
+      <div class="card" style="padding: 2rem;">
+        <div class="feature-icon" style="background: var(--primary-blue); color: white;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+        </div>
+        <h3>Academic Research</h3>
+        <p>Access structured current and historical news data for journalism studies, media analysis, and social science research, with source attribution and consistent metadata.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Global Coverage Section -->
+<section class="section section-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2>Global Coverage by Country & Language</h2>
+      <p>News from every corner of the world, delivered to your application</p>
+    </div>
+
+    <div class="card" style="padding: 2.5rem;">
+      <div class="grid grid-2" style="gap: 3rem;">
+        <div>
+          <h3 style="margin-bottom: 1.5rem;">168 Countries in the Source Directory</h3>
+          <p style="margin-bottom: 1.5rem;">From major markets like the United States, United Kingdom, Germany, and Japan to emerging markets across Asia, Africa, and Latin America. Counts reflect directory country designations; coverage depth varies by market.</p>
+          <ul style="color: var(--text-gray); line-height: 2;">
+            <li>North America: US, Canada, Mexico</li>
+            <li>Europe: UK, Germany, France, Spain, Italy, Netherlands</li>
+            <li>Asia-Pacific: Japan, China, India, Singapore, Australia</li>
+            <li>Middle East & Africa: UAE, Saudi Arabia, South Africa, Egypt</li>
+            <li>Latin America: Brazil, Argentina, Chile, Colombia</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="margin-bottom: 1.5rem;">20+ Languages Supported</h3>
+          <p style="margin-bottom: 1.5rem;">Access news in the language your users prefer. Our language detection and classification ensures accurate filtering and delivery of multilingual content.</p>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; color: var(--text-gray);">
+            <span>🇺🇸 English</span>
+            <span>🇩🇪 German</span>
+            <span>🇪🇸 Spanish</span>
+            <span>🇫🇷 French</span>
+            <span>🇮🇹 Italian</span>
+            <span>🇵🇹 Portuguese</span>
+            <span>🇨🇳 Chinese</span>
+            <span>🇯🇵 Japanese</span>
+            <span>🇰🇷 Korean</span>
+            <span>🇷🇺 Russian</span>
+            <span>🇦🇪 Arabic</span>
+            <span>🇮🇳 Hindi</span>
+            <span>🇳🇱 Dutch</span>
+            <span>🇵🇱 Polish</span>
+            <span>🇹🇷 Turkish</span>
+            <span>🇮🇩 Indonesian</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Integration Example Section -->
+<section class="section section-light integration-examples">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2>Simple Integration</h2>
+      <p>Get started in minutes with our RESTful API</p>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="card" style="padding: 2rem; background: var(--text-dark); color: white;">
+        <h3 style="color: white; margin-bottom: 1rem;">Python Example</h3>
+        <pre style="background: transparent; color: #a5d6ff; font-size: 0.875rem; overflow-x: auto; margin: 0;"><code>import requests
+
+API_KEY = "your-api-key"
+URL = "https://api.currentsapi.services/v1/latest-news"
+
+response = requests.get(
+    URL,
+    headers={"Authorization": API_KEY},
+    params={"language": "en", "country": "US"}
+)
+
+data = response.json()
+for article in data["news"]:
+    print(article["title"])</code></pre>
+      </div>
+
+      <div class="card" style="padding: 2rem; background: var(--text-dark); color: white;">
+        <h3 style="color: white; margin-bottom: 1rem;">JavaScript Example</h3>
+        <pre style="background: transparent; color: #a5d6ff; font-size: 0.875rem; overflow-x: auto; margin: 0;"><code>const API_KEY = 'your-api-key';
+const URL = 'https://api.currentsapi.services/v1/search';
+
+fetch(`${URL}?keywords=technology&language=en`, {
+  headers: { 'Authorization': API_KEY }
+})
+  .then(res => res.json())
+  .then(data => {
+    data.news.forEach(article => {
+      console.log(article.title);
+    });
+  });</code></pre>
+      </div>
+    </div>
+
+    <div class="text-center mt-4">
+      <p style="color: var(--text-gray);">
+        Works with any language that can make HTTP requests. 
+        <a href="/en/docs/" style="color: var(--primary-blue);">View full documentation →</a>
+        <span style="color: var(--text-light); margin: 0 0.35rem;">|</span>
+        <a href="/en/news-api-key" style="color: var(--primary-blue);">Get an API key</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing Explanation Section -->
+<section class="section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2>Transparent, Affordable Pricing</h2>
+      <p>From free tier to enterprise scale</p>
+    </div>
+
+    <div class="card" style="padding: 2.5rem;">
+      <div class="grid grid-4" style="text-align: center; margin-bottom: 2rem;">
+        <div>
+          <div style="font-size: 2rem; font-weight: 700; color: var(--primary-blue);">Free</div>
+          <p style="font-size: 0.875rem; color: var(--text-gray);">250 requests/day</p>
+        </div>
+        <div>
+          <div style="font-size: 2rem; font-weight: 700; color: var(--primary-blue);">$69<span style="font-size: 1rem;">/mo</span></div>
+          <p style="font-size: 0.875rem; color: var(--text-gray);">75K requests/month</p>
+        </div>
+        <div>
+          <div style="font-size: 2rem; font-weight: 700; color: var(--primary-blue);">$150<span style="font-size: 1rem;">/mo</span></div>
+          <p style="font-size: 0.875rem; color: var(--text-gray);">300K requests/month</p>
+        </div>
+        <div>
+          <div style="font-size: 2rem; font-weight: 700; color: var(--primary-blue);">$300<span style="font-size: 1rem;">/mo</span></div>
+          <p style="font-size: 0.875rem; color: var(--text-gray);">600K requests/month</p>
+        </div>
+      </div>
+      <div class="text-center" style="border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
+        <p style="margin-bottom: 1rem;">
+          <strong>Transparent request tiers</strong> — clear quotas, history access, and result caps.
+          No hidden fees, no surprise charges. Scale as you grow.
+        </p>
+        <a href="/en/product/price" class="btn btn-primary">View Full Pricing</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- API Endpoints Section -->
+<section class="section section-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2>Core API Endpoints</h2>
+      <p>Everything you need to build news-powered applications</p>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="card" style="padding: 2rem;">
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+          <span style="background: var(--primary-blue); color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600;">GET</span>
+          <code style="font-size: 0.9375rem;">/v1/latest-news</code>
+        </div>
+        <h3 style="margin-bottom: 0.75rem;">Latest News</h3>
+        <p style="margin-bottom: 1rem;">Retrieve the most recent news articles. Filter by language, country, and category to get targeted results for your application.</p>
+        <ul style="font-size: 0.875rem; color: var(--text-gray); line-height: 1.8;">
+          <li>Real-time article delivery</li>
+          <li>Multiple filter parameters</li>
+          <li>Paginated results</li>
+        </ul>
+      </div>
+
+      <div class="card" style="padding: 2rem;">
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+          <span style="background: var(--primary-blue); color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600;">GET</span>
+          <code style="font-size: 0.9375rem;">/v1/search</code>
+        </div>
+        <h3 style="margin-bottom: 0.75rem;">Search Archive</h3>
+        <p style="margin-bottom: 1rem;">Search through millions of archived articles. Perfect for research, historical analysis, and comprehensive content discovery.</p>
+        <ul style="font-size: 0.875rem; color: var(--text-gray); line-height: 1.8;">
+          <li>Full-text keyword search</li>
+          <li>Date range filtering</li>
+          <li>Source-specific queries</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="/en/docs/" class="btn btn-outline btn-lg">Explore API Documentation</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="grid grid-2">
+      <div class="card" style="padding: 2rem;">
+        <h3>Is Currents News API free?</h3>
+        <p>Yes! Currents offers a free tier with 250 daily requests. No credit card required to sign up. Simply register and start using the API immediately.</p>
+      </div>
+      <div class="card" style="padding: 2rem;">
+        <h3>How much does Currents News API cost?</h3>
+        <p>Pricing starts at $0 for the free tier (250 daily requests). Paid plans begin at $69/month for Builder (75K monthly requests), $150/month for Professional (300K monthly requests), and $300/month for Scale (600K monthly requests).</p>
+      </div>
+      <div class="card" style="padding: 2rem;">
+        <h3>What countries does Currents News API cover?</h3>
+        <p>Our source directory contains entries assigned to 168 country designations, including the United States, United Kingdom, India, China, Germany, France, Japan, Brazil, Australia, and many more. See the <a href="/en/sources">sources directory</a> for per-country counts.</p>
+      </div>
+      <div class="card" style="padding: 2rem;">
+        <h3>Does Currents News API offer real-time data?</h3>
+        <p>Yes. Currents provides newly indexed news without an artificial plan delay. Observed freshness varies by publisher and source.</p>
+      </div>
+      <div class="card" style="padding: 2rem;">
+        <h3>What programming languages can I use with Currents API?</h3>
+        <p>Currents News API is a REST API that returns JSON, so you can use it with any programming language including Python, JavaScript, PHP, Ruby, Go, Java, Node.js, and more.</p>
+      </div>
+      <div class="card" style="padding: 2rem;">
+        <h3>How fast is Currents API?</h3>
+        <p>Response time varies by query, result size, and network path. Test representative requests with the endpoints and plan limits your application will use.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section">
+  <div class="container text-center">
+    <h2 class="cta-title">Ready to Get Started?</h2>
+    <p class="cta-lead">
+      Use Currents API to power news aggregators, dashboards, research tools, and AI workflows with clean, structured news data.
+      Start free with 250 daily requests — no credit card required.
+    </p>
+    <div class="cta-buttons">
+      <a href="/en/register" class="btn btn-primary btn-lg">
+        Get Free API Key
+      </a>
+      <a href="/en/news-api-key" class="btn btn-outline btn-lg">
+        API Key Setup
+      </a>
+      <a href="/en/product/price" class="btn btn-outline btn-lg">
+        View Pricing
+      </a>
+      <a href="/en/docs/" class="btn btn-outline btn-lg">
+        Read Documentation
+      </a>
+    </div>
+
+    <p class="mt-5" style="font-size: 0.9375rem;">
+      Questions? <a href="/cdn-cgi/l/email-protection#8cfff9fcfce3fef8cceff9fefee9e2f8ffedfce5a2ffe9fefae5efe9ff">Contact our support team</a>
+    </p>
+  </div>
+</section>
+
+<!-- Latest News Preview (if available) -->
+
+
+    </main>
+
+    <footer class="footer">
+  <div class="footer-content">
+    <div class="grid grid-4">
+      <!-- Brand -->
+      <div class="footer-section">
+        <div style="margin-bottom: 1rem;">
+          <img src="/en/img/logo-only.svg" alt="Currents News API Logo" width="32" height="32" loading="lazy" style="height: 2rem; width: auto; margin-bottom: 0.5rem;">
+          <p style="font-weight: 600; font-size: 1.25rem;"><a href="/en" style="color: white; text-decoration: none;">Currents News API</a></p>
+        </div>
+        <p style="color: var(--text-light); margin-bottom: 0;">
+          Access real-time news from a source directory spanning 168 countries in 20+ languages with our developer-friendly JSON API.
+        </p>
+        <h4 style="margin-top: 1.5rem;">Use Cases</h4>
+        <ul class="footer-links">
+          <li><a href="/en/news-aggregator-api">News Aggregator API</a></li>
+          <li><a href="/en/media-monitoring-api">Media Monitoring API</a></li>
+          <li><a href="/en/google-news-api">Google News API Alternative</a></li>
+        </ul>
+      </div>
+
+      <!-- Solutions & Developers -->
+      <div class="footer-section">
+        <h4>Solutions & Docs</h4>
+        <ul class="footer-links">
+          <li><a href="/en/free-news-api">Free News API (250 req/day)</a></li>
+          <li><a href="/en/docs/">Documentation Home</a></li>
+          <li><a href="/en/docs/latest_news">Latest News Stream</a></li>
+          <li><a href="/en/docs/search">Search API Reference</a></li>
+          <li><a href="/en/solutions/trading">Financial & Trading News</a></li>
+          <li><a href="/en/news-api-rag">News API for AI / RAG</a></li>
+          <li><a href="/en/ai-info">AI Agent Integration Spec</a></li>
+          <li><a href="/en/blog/python-news-api-guide">Python Integration Guide</a></li>
+        </ul>
+      </div>
+
+      <!-- Comparisons & Alternatives -->
+      <div class="footer-section">
+        <h4>Comparisons</h4>
+        <ul class="footer-links">
+          <li><a href="/en/alternative">News API Alternatives Hub</a></li>
+          <li><a href="/en/compare/alternatives">Compare News APIs</a></li>
+          <li><a href="/en/blog/newsapi-alternatives">NewsAPI.org Alternatives</a></li>
+          <li><a href="/en/alternative/bing-news-api">Bing News API Migration</a></li>
+          <li><a href="/en/alternative/aylien">AYLIEN News API Alternative</a></li>
+          <li><a href="/en/alternative/eventregistry">Event Registry Alternative</a></li>
+          <li><a href="/en/alternative/mediastack">Mediastack Alternative</a></li>
+          <li><a href="/en/alternative/newsdataio">NewsData.io Alternative</a></li>
+          <li><a href="/en/blog/best-news-apis">Top 9 News APIs Guide</a></li>
+        </ul>
+      </div>
+
+      <!-- Company & Legal -->
+      <div class="footer-section">
+        <h4>Platform & Legal</h4>
+        <ul class="footer-links">
+          <li><a href="/en/product/price">Pricing & Plans</a></li>
+          <li><a href="/en/about">About Currents</a></li>
+          <li><a href="/en/faq">Frequently Asked Questions</a></li>
+          <li><a href="/terms">Terms of Service</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="https://github.com/Currents-API-services" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#60131510100f12142003151212050e14130110094e1305121609030513">Contact Support</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p style="color: var(--text-light);">
+        &copy; 2026 Currents API. All rights reserved. Made with <span style="color: #EF4444;">♥</span> for developers.
+      </p>
+    </div>
+  </div>
+</footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+      (function() {
+        const storageKey = 'currents_theme';
+        const root = document.documentElement;
+        const isComfort = () => root.getAttribute('data-theme') === 'comfort';
+
+        function applyTheme(theme) {
+          const mode = theme === 'classic' ? 'classic' : 'comfort';
+          if (mode === 'classic') {
+            root.removeAttribute('data-theme');
+          } else {
+            root.setAttribute('data-theme', 'comfort');
+          }
+
+          const comfortEnabled = isComfort();
+          const label = comfortEnabled ? 'Comfort on' : 'Comfort off';
+          document.querySelectorAll('[data-theme-toggle]').forEach((btn) => {
+            btn.setAttribute('aria-pressed', comfortEnabled ? 'true' : 'false');
+          });
+          document.querySelectorAll('[data-theme-toggle-label]').forEach((textNode) => {
+            textNode.textContent = label;
+          });
+        }
+
+        function initTheme() {
+          try {
+            const storedTheme = localStorage.getItem(storageKey);
+            applyTheme(storedTheme || 'comfort');
+          } catch (e) {
+            applyTheme('comfort');
+          }
+        }
+
+        function handleThemeToggle(event) {
+          const toggleButton = event.target.closest('[data-theme-toggle]');
+          if (!toggleButton) return;
+
+          const nextTheme = isComfort() ? 'classic' : 'comfort';
+          applyTheme(nextTheme);
+          try {
+            localStorage.setItem(storageKey, nextTheme);
+          } catch (e) {
+            // Ignore storage write failures and keep in-memory theme state.
+          }
+        }
+
+        initTheme();
+        document.addEventListener('click', handleThemeToggle);
+      })();
+    </script>
+
+    
+    <script src="/en/js/webmcp-tools.js"></script>
+  </body>
+</html>

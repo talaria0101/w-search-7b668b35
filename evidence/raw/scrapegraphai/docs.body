@@ -1,0 +1,109 @@
+# ScrapeGraphAI
+
+- [Introduction](https://docs.scrapegraphai.com/introduction.md): Welcome to ScrapeGraphAI - AI-Powered Web Data Extraction
+- [Installation](https://docs.scrapegraphai.com/install.md): Install and get started with ScrapeGraphAI v2 SDKs
+- [Transition from Firecrawl to ScrapeGraph v2](https://docs.scrapegraphai.com/transition-from-firecrawl.md): A practical, end-to-end guide for migrating your scraping workflows from Firecrawl to ScrapeGraph v2
+- [Overview](https://docs.scrapegraphai.com/use-cases/overview.md): Transform web data into actionable insights with intelligent scraping
+- [AI & LLM Applications](https://docs.scrapegraphai.com/use-cases/ai-llm.md): Power your AI applications with real-time web data
+- [Lead Generation](https://docs.scrapegraphai.com/use-cases/lead-generation.md): Automate lead discovery and enrichment with intelligent web scraping
+- [Market Intelligence](https://docs.scrapegraphai.com/use-cases/market-intelligence.md): Monitor competitors and market trends with automated data collection
+- [Content Aggregation](https://docs.scrapegraphai.com/use-cases/content-aggregation.md): Build powerful content aggregators and news monitoring systems
+- [Research & Analysis](https://docs.scrapegraphai.com/use-cases/research-analysis.md): Build powerful research tools with deep web search capabilities
+- [SEO & Analytics](https://docs.scrapegraphai.com/use-cases/seo-analytics.md): Monitor and optimize your digital presence with automated SEO tracking
+- [Dashboard](https://docs.scrapegraphai.com/dashboard/overview.md): Overview of your ScrapeGraphAI dashboard
+- [User Settings](https://docs.scrapegraphai.com/dashboard/settings.md): Manage your account settings and preferences
+- [Scrape](https://docs.scrapegraphai.com/services/scrape.md): Scrape web pages in markdown, HTML, screenshot, JSON, and more
+- [Extract](https://docs.scrapegraphai.com/services/extract.md): AI-powered structured data extraction from any webpage
+- [Search](https://docs.scrapegraphai.com/services/search.md): AI-powered web search with structured data extraction
+- [Crawl](https://docs.scrapegraphai.com/services/crawl.md): Multi-page website crawling with flexible output formats
+- [Monitor](https://docs.scrapegraphai.com/services/monitor.md): Scheduled web monitoring with AI-powered extraction and change detection
+- [Schema](https://docs.scrapegraphai.com/services/schema.md): Generate or augment a JSON Schema from a natural-language prompt
+- [History](https://docs.scrapegraphai.com/services/history.md): Look up past requests and fetch the full results — including content from crawled pages.
+- [Agent Payments](https://docs.scrapegraphai.com/services/agent-payments.md): Let AI agents buy API access with a crypto wallet, no signup or human required
+- [Python SDK](https://docs.scrapegraphai.com/sdks/python.md): Official Python SDK for ScrapeGraphAI v2
+- [JavaScript SDK](https://docs.scrapegraphai.com/sdks/javascript.md): Official JavaScript/TypeScript SDK for ScrapeGraphAI v2
+- [Mocking & Testing](https://docs.scrapegraphai.com/sdks/mocking.md): Test ScrapeGraphAI v2 functionality without consuming API credits
+- [Introduction](https://docs.scrapegraphai.com/services/cli/introduction.md): Command-line interface for ScrapeGraph AI
+- [Commands](https://docs.scrapegraphai.com/services/cli/commands.md): Full reference for every just-scrape command and its flags
+- [JSON Mode](https://docs.scrapegraphai.com/services/cli/json-mode.md): Machine-readable output for scripting and AI agents with --json
+- [AI Agent Skill](https://docs.scrapegraphai.com/services/cli/ai-agent-skill.md): Give AI coding agents direct access to web scraping through just-scrape
+- [Examples](https://docs.scrapegraphai.com/services/cli/examples.md): Practical examples for every just-scrape command
+- [Introduction](https://docs.scrapegraphai.com/services/mcp-server/introduction.md): Get started with ScrapeGraphAI MCP Server - Connect LLMs to web scraping tools
+- [Cursor](https://docs.scrapegraphai.com/services/mcp-server/cursor.md): Configure ScrapeGraph MCP in Cursor
+- [Claude Desktop](https://docs.scrapegraphai.com/services/mcp-server/claude.md): Configure ScrapeGraph MCP in Claude Desktop
+- [Claude Code](https://docs.scrapegraphai.com/services/mcp-server/claude-code.md): Configure ScrapeGraph MCP in Claude Code
+- [Codex](https://docs.scrapegraphai.com/services/mcp-server/codex.md): Configure ScrapeGraph MCP in Codex
+- [OpenAI](https://docs.scrapegraphai.com/developer-guides/llm-sdks-and-frameworks/openai.md): Use ScrapeGraphAI with OpenAI for web scraping + AI workflows
+- [Anthropic](https://docs.scrapegraphai.com/developer-guides/llm-sdks-and-frameworks/anthropic.md): Use ScrapeGraphAI with Claude for web scraping + AI workflows
+- [Gemini](https://docs.scrapegraphai.com/developer-guides/llm-sdks-and-frameworks/gemini.md): Use ScrapeGraphAI with Google Gemini AI for web scraping + AI workflows
+- [Vercel AI SDK](https://docs.scrapegraphai.com/integrations/vercel_ai.md): Use ScrapeGraphAI as first-party tools inside Vercel AI SDK agents
+- [LangChain](https://docs.scrapegraphai.com/integrations/langchain.md): Wrap ScrapeGraph endpoints as vanilla LangChain tools
+- [LangGraph](https://docs.scrapegraphai.com/integrations/langgraph.md): Build stateful workflows with ScrapeGraph endpoints as LangGraph nodes
+- [LlamaIndex](https://docs.scrapegraphai.com/integrations/llamaindex.md): Build LlamaIndex agents and RAG pipelines with ScrapeGraphAI
+- [CrewAI](https://docs.scrapegraphai.com/integrations/crewai.md): Wrap ScrapeGraph endpoints as native CrewAI tools
+- [Agno](https://docs.scrapegraphai.com/integrations/agno.md): Wire ScrapeGraph into Agno agents with the first-party ScrapeGraphTools toolkit
+- [LiteLLM](https://docs.scrapegraphai.com/integrations/litellm.md): Expose ScrapeGraphAI to any model through the LiteLLM MCP gateway
+- [Orthogonal](https://docs.scrapegraphai.com/integrations/orthogonal.md): Call ScrapeGraph through the Orthogonal API gateway — one key, the @orth/sdk, the orth CLI, MCP, and x402 stablecoin payments
+- [Hermes Agent](https://docs.scrapegraphai.com/integrations/hermes.md): Give Nous Research's Hermes Agent the power of web scraping with schema-validated JSON
+- [OpenClaw](https://docs.scrapegraphai.com/integrations/openclaw.md): Scrape any URL into structured JSON from Telegram, Slack, or Discord with OpenClaw and the just-scrape skill
+- [n8n](https://docs.scrapegraphai.com/integrations/n8n.md): Use ScrapeGraphAI inside n8n workflows — scrape, extract, crawl, monitor, and more, with no code
+- [n8n: Transition Guide from v1 to v2](https://docs.scrapegraphai.com/integrations/n8n-transition-from-v1-to-v2.md): Move your n8n workflows from n8n-nodes-scrapegraphai 0.x to 1.0.2+
+- [Make](https://docs.scrapegraphai.com/integrations/make.md): Use ScrapeGraphAI inside Make.com scenarios to scrape, extract, search, crawl, and monitor web pages
+- [Zapier](https://docs.scrapegraphai.com/integrations/zapier.md): Use ScrapeGraphAI inside Zapier Zaps — scrape, extract, search, crawl, and monitor web pages with no code
+- [Open Source](https://docs.scrapegraphai.com/contribute/opensource.md): ScrapeGraphAI open-source ecosystem
+- [Knowledge Base](https://docs.scrapegraphai.com/knowledge-base/introduction.md): Frequently asked questions and guides for ScrapeGraphAI
+- [Using ScrapeGraphAI with v0](https://docs.scrapegraphai.com/knowledge-base/ai-tools/v0.md): Integrate web scraping into UI components generated with Vercel v0
+- [Using ScrapeGraphAI with Bolt.new](https://docs.scrapegraphai.com/knowledge-base/ai-tools/bolt.md): Add real-time web data extraction to apps built with Bolt.new
+- [Using ScrapeGraphAI with Cursor](https://docs.scrapegraphai.com/knowledge-base/ai-tools/cursor.md): Speed up development with AI-assisted scraping code in Cursor
+- [Getting started with just-scrape](https://docs.scrapegraphai.com/knowledge-base/cli/getting-started.md): Install and configure the just-scrape CLI in minutes
+- [Using JSON mode for scripting](https://docs.scrapegraphai.com/knowledge-base/cli/json-mode.md): Pipe just-scrape output to jq, files, or other tools with --json
+- [Using just-scrape as a coding agent skill](https://docs.scrapegraphai.com/knowledge-base/cli/ai-agent-skill.md): Give AI coding agents access to web scraping through the just-scrape skill
+- [CLI command examples](https://docs.scrapegraphai.com/knowledge-base/cli/command-examples.md): Practical examples for every just-scrape command
+- [Why am I getting empty results?](https://docs.scrapegraphai.com/knowledge-base/troubleshooting/empty-results.md): Common reasons why extractions return no data and how to fix them
+- [Understanding rate limiting](https://docs.scrapegraphai.com/knowledge-base/troubleshooting/rate-limiting.md): What happens when you hit rate limits and how to handle them gracefully
+- [Handling timeout errors](https://docs.scrapegraphai.com/knowledge-base/troubleshooting/timeout-errors.md): Diagnose and resolve request timeouts for complex or slow websites
+- [Scraping JavaScript-heavy websites](https://docs.scrapegraphai.com/knowledge-base/scraping/javascript-rendering.md): Extract data from dynamic pages that require JavaScript execution
+- [Handling pagination](https://docs.scrapegraphai.com/knowledge-base/scraping/pagination.md): Scrape multi-page results with Crawl or iterate URLs yourself
+- [Using custom headers](https://docs.scrapegraphai.com/knowledge-base/scraping/custom-headers.md): Pass custom HTTP headers to bypass authentication or anti-bot protections
+- [Proxy & Fetch Configuration](https://docs.scrapegraphai.com/knowledge-base/scraping/proxy.md): Control proxy routing, stealth mode, and geo-targeting with FetchConfig
+- [Plans & Pricing](https://docs.scrapegraphai.com/knowledge-base/account/pricing.md): Overview of ScrapeGraphAI plans, pricing, and what each tier includes
+- [Managing your API keys](https://docs.scrapegraphai.com/knowledge-base/account/api-keys.md): How to create, rotate, and revoke your ScrapeGraphAI API keys
+- [Understanding credits](https://docs.scrapegraphai.com/knowledge-base/account/credits.md): How credits are counted and how to monitor your usage
+- [Rate limits by plan](https://docs.scrapegraphai.com/knowledge-base/account/rate-limits.md): Requests per minute and concurrent job limits for each plan
+- [Introduction](https://docs.scrapegraphai.com/cookbook/introduction.md): Learn from practical examples using ScrapeGraphAPI
+- [🏢 Company Information](https://docs.scrapegraphai.com/cookbook/examples/company-info.md): Extract structured company data from websites
+- [🌟 GitHub Trending](https://docs.scrapegraphai.com/cookbook/examples/github-trending.md): Monitor trending repositories and developers
+- [📰 Wired Articles](https://docs.scrapegraphai.com/cookbook/examples/wired.md): How to extract articles from Wired.com
+- [🏠 Homes Listings](https://docs.scrapegraphai.com/cookbook/examples/homes.md): How to extract real estate data from Homes.com
+- [📄 Pagination Examples](https://docs.scrapegraphai.com/cookbook/examples/pagination.md): Walk through paginated listings with the Extract service
+- [Introduction](https://docs.scrapegraphai.com/api-reference/introduction.md): REST API reference for ScrapeGraphAI v2
+- [Error handling](https://docs.scrapegraphai.com/api-reference/errors.md): Error payload shape and HTTP status codes returned by the v2 API
+- [Scrape](https://docs.scrapegraphai.com/api-reference/endpoint/scrape.md): Fetch a URL and return its content in one or more formats.
+- [Extract](https://docs.scrapegraphai.com/api-reference/endpoint/extract.md): Natural-language structured extraction from a URL, HTML, or markdown.
+- [Search](https://docs.scrapegraphai.com/api-reference/endpoint/search.md): Run a web search and fetch the top results in one call.
+- [Start crawl](https://docs.scrapegraphai.com/api-reference/endpoint/crawl/start.md): Kick off an async multi-page crawl and return a job id.
+- [Get crawl status](https://docs.scrapegraphai.com/api-reference/endpoint/crawl/get-status.md): Poll a running or finished crawl job.
+- [Get crawl pages](https://docs.scrapegraphai.com/api-reference/endpoint/crawl/pages.md): Fetch paginated crawl pages with resolved scrape results.
+- [Manage crawl jobs](https://docs.scrapegraphai.com/api-reference/endpoint/crawl/manage.md): Stop, resume, and delete running crawl jobs.
+- [Create monitor](https://docs.scrapegraphai.com/api-reference/endpoint/monitor/create.md): Schedule a recurring fetch with change detection.
+- [Manage monitors](https://docs.scrapegraphai.com/api-reference/endpoint/monitor/manage.md): List, inspect, update, pause, resume, delete monitors and fetch tick activity.
+- [History](https://docs.scrapegraphai.com/api-reference/endpoint/history.md): Look up past requests by ID, or list recent requests with optional filters.
+- [Credits](https://docs.scrapegraphai.com/api-reference/endpoint/credits.md): Check remaining credits, plan, and job quotas.
+- [Introduction](https://docs.scrapegraphai.com/v1/introduction.md): Welcome to ScrapeGraphAI v1 - AI-Powered Web Data Extraction
+- [Quickstart](https://docs.scrapegraphai.com/v1/quickstart.md): Get started with ScrapeGraphAI v1 SDKs
+- [SmartScraper](https://docs.scrapegraphai.com/v1/smartscraper.md): AI-powered web scraping for any website (v1)
+- [SearchScraper](https://docs.scrapegraphai.com/v1/searchscraper.md): Search and extract information from multiple web sources (v1)
+- [Markdownify](https://docs.scrapegraphai.com/v1/markdownify.md): Convert web content to clean markdown (v1)
+- [Scrape](https://docs.scrapegraphai.com/v1/scrape.md): Basic webpage scraping service (v1)
+- [SmartCrawler](https://docs.scrapegraphai.com/v1/smartcrawler.md): AI-powered multi-page crawling service (v1)
+- [Sitemap](https://docs.scrapegraphai.com/v1/sitemap.md): Extract sitemaps from websites (v1)
+- [AgenticScraper](https://docs.scrapegraphai.com/v1/agenticscraper.md): Agent-based multi-step scraping (v1)
+- [API Reference](https://docs.scrapegraphai.com/v1/api-reference/introduction.md): ScrapeGraphAI v1 API Reference
+
+## Optional
+
+- [Official Website](https://scrapegraphai.com/)
+- [Blog](https://scrapegraphai.com/blog)
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

@@ -1,0 +1,2529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+@media (max-width: 768px) {
+    #mobileMenuCustom {
+    z-index: 50 !important;
+    top: 50px !important;
+    }
+	.text-4xl {
+    font-size: 1.55rem;
+	}
+.mt-16 {
+    margin-top: 2rem;
+}}
+</style>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TLMMM5C');</script>
+<!-- End Google Tag Manager -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v28.4 - https://yoast.com/product/yoast-seo-wordpress/ -->
+	<title>SERP API for Developers - Scrape Google Results in Real-Time | Zenserp</title>
+<link data-rocket-prefetch href="https://script.crazyegg.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://connect.facebook.net" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://www.redditstatic.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://www.google-analytics.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://www.googletagmanager.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://geo.cookie-script.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://googleads.g.doubleclick.net" rel="dns-prefetch"><link rel="preload" data-rocket-preload as="image" href="https://zenserp.com/wp-content/uploads/2023/11/Supported-removebg-preview.png" fetchpriority="high">
+	<meta name="description" content="Fetch live Google search results via a fast, reliable SERP API. JSON responses in &lt;500ms. 99.9% uptime. Free plan available - Get your free API key today." />
+	<link rel="canonical" href="https://zenserp.com/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="SERP API for Developers - Scrape Google Results in Real-Time | Zenserp" />
+	<meta property="og:description" content="Fetch live Google search results via a fast, reliable SERP API. JSON responses in &lt;500ms. 99.9% uptime. Free plan available - Get your free API key today." />
+	<meta property="og:url" content="https://zenserp.com/" />
+	<meta property="og:site_name" content="zenserp" />
+	<meta property="article:publisher" content="https://www.facebook.com/apilayer/" />
+	<meta property="article:modified_time" content="2026-09-08T12:07:44+00:00" />
+	<meta property="og:image" content="https://zenserp.com/wp-content/uploads/2020/12/code-sample.jpg" />
+	<meta property="og:image:width" content="701" />
+	<meta property="og:image:height" content="431" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@apilayer" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\/\/zenserp.com\/","url":"https:\/\/zenserp.com\/","name":"SERP API for Developers - Scrape Google Results in Real-Time | Zenserp","isPartOf":{"@id":"https:\/\/zenserp.com\/#website"},"about":{"@id":"https:\/\/zenserp.com\/#organization"},"primaryImageOfPage":{"@id":"https:\/\/zenserp.com\/#primaryimage"},"image":{"@id":"https:\/\/zenserp.com\/#primaryimage"},"thumbnailUrl":"https:\/\/zenserp.com\/wp-content\/uploads\/2020\/12\/code-sample.jpg","datePublished":"2020-12-15T14:39:35+00:00","dateModified":"2026-09-08T12:07:44+00:00","description":"Fetch live Google search results via a fast, reliable SERP API. JSON responses in &lt;500ms. 99.9% uptime. Free plan available - Get your free API key today.","breadcrumb":{"@id":"https:\/\/zenserp.com\/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https:\/\/zenserp.com\/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/zenserp.com\/#primaryimage","url":"https:\/\/zenserp.com\/wp-content\/uploads\/2020\/12\/code-sample.jpg","contentUrl":"https:\/\/zenserp.com\/wp-content\/uploads\/2020\/12\/code-sample.jpg","width":701,"height":431,"caption":"google search api"},{"@type":"BreadcrumbList","@id":"https:\/\/zenserp.com\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https:\/\/zenserp.com\/#website","url":"https:\/\/zenserp.com\/","name":"http:\/\/zenserp.com\/","description":"Effortlessly Scrape Accurate Search Results with Zenserp API","publisher":{"@id":"https:\/\/zenserp.com\/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/zenserp.com\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https:\/\/zenserp.com\/#organization","name":"Zenserp","url":"https:\/\/zenserp.com\/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/zenserp.com\/#\/schema\/logo\/image\/","url":"https:\/\/zenserp.com\/wp-content\/uploads\/2023\/05\/zenserp.png","contentUrl":"https:\/\/zenserp.com\/wp-content\/uploads\/2023\/05\/zenserp.png","width":145,"height":78,"caption":"Zenserp"},"image":{"@id":"https:\/\/zenserp.com\/#\/schema\/logo\/image\/"},"sameAs":["https:\/\/www.facebook.com\/apilayer\/","https:\/\/x.com\/apilayer","https:\/\/www.instagram.com\/apilayer\/"]}]}</script>
+	<meta name="google-site-verification" content="vGyYijajdclgy2n1CDEzq6EOGhM67-uuiNKz1kBlXzk" />
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://zenserp.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fzenserp.com%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://zenserp.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fzenserp.com%2F&#038;format=xml" />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+<style id="wp-block-styles-placeholder-inline-css">
+:root { --wp-internal-comment: "Placeholder for wp_hoist_late_printed_styles() to replace with the block styles printed at wp_footer." }
+/*# sourceURL=wp-block-styles-placeholder-inline-css */
+</style>
+<style id="wp-global-styles-placeholder-inline-css">
+:root { --wp-internal-comment: "Placeholder for wp_hoist_late_printed_styles() to replace with the global-styles printed at wp_footer." }
+/*# sourceURL=wp-global-styles-placeholder-inline-css */
+</style>
+<link data-minify="1" rel='stylesheet' id='style-css' href='https://zenserp.com/wp-content/cache/min/1/wp-content/themes/saasindustries/public/css/style.css?ver=1790680505' media='all' />
+<link rel="https://api.w.org/" href="https://zenserp.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://zenserp.com/wp-json/wp/v2/pages/7" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://zenserp.com/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 7.1" />
+<link rel='shortlink' href='https://zenserp.com/' />
+<style id="wp-custom-css">
+/* social media icons start */
+.social-icons {
+  display: flex;
+  gap: 5px;
+  padding: 12px;
+/*   background: linear-gradient(90deg, #020b1a, #06162d);
+  border-radius: 12px; */
+}
+
+.icon-box {
+   opacity: 0.8;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.icon-box .icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.icon-box:hover {
+  border-color: #ffffff;
+  color: #ffffff;
+   opacity:1;
+}
+
+.icon-box.active {
+  border-color: #ffffff;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+}
+/* social media icons end */
+
+@media (min-width: 1024px){
+.lg\:grid-cols-2 {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+}
+}
+
+.prettyprint {
+    background: #1d1f21;
+	color:#fff;
+	font-size:14px;
+	padding:10px;
+	
+}
+
+pre.pretty-blog {
+    height: 450px;
+    overflow: hidden scroll;
+}
+
+pre.prettyprint span.primary-color {
+    color: #586d4c;
+}
+
+/* blog css */
+
+p.text-xl.font-semibold.text-gray-900:hover {
+    text-decoration: underline;
+    font-weight: 700;
+}
+p.text-xl.font-semibold.text-gray-900 {
+    font-weight: 700;
+}
+p.text-sm.text-gray-600:hover {
+    text-decoration: underline;
+}
+.text-gray-600{
+	color:#5a67d8;
+}
+.text-gray-600:hover{
+	    text-decoration: underline;
+}
+.post-content.text-left a {
+    color: #5a67d8;
+}
+.post-content.text-left h3, h2 {
+    font-weight: 700;
+}
+
+/* blog next-previous post */
+.nav-next.alignright {
+    text-align: right;
+}
+code, pre.codeblock1 {
+    overflow-wrap: break-word !important;
+    white-space: break-spaces !important;
+}
+pre.codeblock {
+    white-space: break-spaces !important;
+}
+div#launchChat {
+    display: none;
+}
+.overscroll-contain{
+ -ms-scroll-chaining: none;
+    overscroll-behavior: auto;
+    max-height: 23rem;
+	overflow-y: scroll;}
+.differntiate{
+	align-items:center;
+}
+@media (max-width: 768px) {
+	.text-4xl {
+    font-size: 1.55rem;
+	}
+.mt-16 {
+    margin-top: 2rem;
+}
+	.box.w-full.md\:w-6\/12.overflow-hidden.sm\:rounded-lg {
+    display: none;
+}
+.images img {
+    margin-top: 16px;
+    text-align: center;
+	}}
+.navbar {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+	}
+.max-w-7xl.m-auto.md\:flex.justify-center {
+    max-width: 1320px;
+}
+.post-content.text-left h1{
+	font-size:36px;
+}
+.post-content.text-left h2{
+	font-size:30px;
+}
+.post-content.text-left h3{
+	font-size:22px;
+}
+.post-content.text-left h4{
+	font-size:20px;
+}
+.post-content.text-left ul li{
+	list-style-type:disc;
+	margin-left:15px;
+}
+.box{
+	min-height:100px;
+}
+.worldn {
+    align-items: flex-start;
+}
+.images {
+    gap: 5px;
+    align-items: center;
+}
+.images img {
+    height: 27px;
+    width: 85px;
+}
+table.feature {
+    margin: 0 20px;
+}
+.feature td{
+	border: 1px solid #000;
+	padding: 10px;
+}
+@media (min-width: 768px) and (max-width: 844px) {
+.md\:space-x-10>:not(template)~:not(template) {
+        --space-x-reverse:0;
+        margin-right: calc(1rem*var(--space-x-reverse));
+        margin-left: calc(1rem*(1 - var(--space-x-reverse)))
+	}}
+
+
+ol.standard li {
+    list-style: number;
+    padding-bottom: 15px;
+}
+ul.required li{
+	 padding-bottom: 15px;
+	list-style: disc;
+}
+.glossaries p {
+    margin-bottom: 2rem;
+}
+.listol {
+    padding-left: 17px;
+    padding-bottom: 20px;
+}
+ul.requiredone {
+    margin-left: 37px;
+}
+
+.grid-price {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap:10px;
+}
+@media (min-width: 640px) {
+    .sm\:pb-24 {
+        padding-bottom: 0;
+    }
+}
+@media (min-width: 1024px) {
+  .grid-price {
+    grid-template-columns: repeat(6, 1fr);
+		grid-gap:5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-price {
+    grid-template-columns: repeat(1, 1fr);
+		grid-gap:5px;
+  }
+	.sm\:pb-24 {
+        padding-bottom: 0;
+    }
+}
+</style>
+    <link rel="apple-touch-icon" sizes="180x180" href="/wp-content/themes/saasindustries/img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/wp-content/themes/saasindustries/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/wp-content/themes/saasindustries/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/wp-content/themes/saasindustries/img/favicon/manifest.json">
+    <link rel="mask-icon" href="/wp-content/themes/saasindustries/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="theme-color" content="#000000">
+    <meta name="google-site-verification" content="9IpkU7JdllKk9mK7MACcTS8NZmm1u7dQlwcLJYTg1V0" />
+	<meta name="facebook-domain-verification" content="vmjjsq3zvy8jge1wl4u38p7rcss72g" />
+<style id="rocket-lazyrender-inline-css">[data-wpr-lazyrender] {content-visibility: auto;}</style><meta name="generator" content="WP Rocket 3.23.3.3" data-wpr-features="wpr_preconnect_external_domains wpr_automatic_lazy_rendering wpr_oci wpr_image_dimensions wpr_minify_css wpr_cdn wpr_preload_links wpr_desktop" /></head>
+
+<body style="background-color:#00264c;" data-spy="scroll" data-target="#pb-navbar" data-offset="200" id="index">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLMMM5C"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div style="background-color:#00264c;" class="navbar">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 py-2">
+                <nav class="relative flex items-center justify-between sm:h-10 md:justify-end" aria-label="Global">
+                    <div class="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
+                        <div class="flex items-center justify-between w-full md:w-auto">
+                            <a href="/">
+                                <span class="sr-only">Workflow</span>
+                                <img width="885" height="188" class="h-8 w-auto" src="https://zenserp.com/wp-content/themes/saasindustries/img/zenserp-logo-light.svg" alt="zenserp logo light">
+                            </a>
+                            <div class="-mr-2 flex items-center md:hidden">
+                                <button id="openMobileMenuCustom" type="button" class="bg-gray-50 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" id="main-menu" aria-haspopup="true">
+                                    <span class="sr-only">Open main menu</span>
+                                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mobile hidden md:flex md:space-x-10">
+                        <button id="openFlyoutCustom" type="button" x-state:on="Item active" x-state:off="Item inactive" class="font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 font-medium uppercase text-xs py-2 text-gray-300 hover:text-gray-500 flex letter-spacing-3">
+                            <span>Features</span>
+                            <svg x-state:on="Item active" x-state:off="Item inactive" class="ml-2 h-5 w-5 group-hover:text-gray-500 text-gray-400" x-bind:class="{ 'text-gray-600': solutionsMenuOpen, 'text-gray-400': !solutionsMenuOpen }" x-description="Heroicon name: chevron-down" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <div id="flyoutMenuCustom" class="absolute z-10 inset-x-0 mt-12 transform shadow-xl hidden bg-white rounded ml-0" style="max-width: 800px;margin: 50px auto;">
+    <div class="bg-white rounded border-b">
+        <div class="max-w-7xl mx-auto grid gap-y-8 px-4 py-6 sm:px-6 sm:py-8 lg:px-8 lg:py-10" style="padding-top: 10px;overflow-y: scroll;max-height: 520px;">
+
+            <!-- GOOGLE -->
+            <div >
+                <div class="flex items-center justify-between" style="border-bottom: 1px solid lightgrey; height: 30px;">
+                    <p class="text-xs font-semibold text-darkgray-400 uppercase tracking-wider" style="font-size: 12px;font-weight: 700;letter-spacing: 0.06em;">Google</p>
+                    <!-- <button type="button" class="-m-2 p-2 text-gray-400 hover:text-gray-500">
+                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10 3a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm0 5.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm0 5.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"></path>
+                        </svg>
+                    </button> -->
+                </div>
+                <div class="mt-4 grid grid-cols-1 gap-y-4 gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
+                    <a href="/" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-200 transition ease-in-out duration-150 hidden" style="align-items: flex-start;">
+                        <div class="flex-shrink-0">
+                            <div class="inline-flex items-center justify-center h-8 w-8 rounded-md text-blue-700">
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-base font-medium text-gray-900">Google SERP</p>
+                            <p class="mt-1 text-sm text-darkgray-500">Organic, ads, snippets</p>
+                        </div>
+                    </a>
+
+                    <a href="/google-image-search-api" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-200 transition ease-in-out duration-150" style="align-items: flex-start;">
+                        <div class="flex-shrink-0">
+                            <div class="inline-flex items-center justify-center h-8 w-8 rounded-md text-blue-700">
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-base font-medium text-gray-900" style="font-size: 15px;font-weight: 600;line-height: 1.3;color: #1a1a2e;">Image Search</p>
+                            <p class="mt-1 text-sm text-darkgray-500" style="margin-top:0;color: rgba(160, 174, 192, 1);">Images for a query</p>
+                        </div>
+                    </a>
+
+                    <a href="/google-maps-api" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-200 transition ease-in-out duration-150" style="align-items: flex-start;">
+                        <div class="flex-shrink-0">
+                            <div class="inline-flex items-center justify-center h-8 w-8 rounded-md text-blue-700">
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-base font-medium text-gray-900" style="font-size: 15px;font-weight: 600;line-height: 1.3;color: #1a1a2e;">Maps Search</p>
+                            <p class="mt-1 text-sm text-darkgray-500" style="margin-top:0;color: rgba(160, 174, 192, 1);">Local businesses</p>
+                        </div>
+                    </a>
+
+                    <a href="/google-news-api" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-200 transition ease-in-out duration-150" style="align-items: flex-start;">
+                        <div class="flex-shrink-0">
+                            <div class="inline-flex items-center justify-center h-8 w-8 rounded-md text-blue-700">
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-base font-medium text-gray-900" style="font-size: 15px;font-weight: 600;line-height: 1.3;color: #1a1a2e;">News</p>
+                            <p class="mt-1 text-sm text-darkgray-500" style="margin-top:0;color: rgba(160, 174, 192, 1);">Latest news</p>
+                        </div>
+                    </a>
+
+                    <a href="/google-shopping-api" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-200 transition ease-in-out duration-150" style="align-items: flex-start;">
+                        <div class="flex-shrink-0">
+                            <div class="inline-flex items-center justify-center h-8 w-8 rounded-md text-blue-700">
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-base font-medium text-gray-900" style="font-size: 15px;font-weight: 600;line-height: 1.3;color: #1a1a2e;">Shopping</p>
+                            <p class="mt-1 text-sm text-darkgray-500" style="margin-top:0;color: rgba(160, 174, 192, 1);">Products + pages</p>
+                        </div>
+                    </a>
+
+                    <a href="/google-trends-api" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-200 transition ease-in-out duration-150" style="align-items: flex-start;">
+                        <div class="flex-shrink-0">
+                            <div class="inline-flex items-center justify-center h-8 w-8 rounded-md text-blue-700">
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-base font-medium text-gray-900" style="font-size: 15px;font-weight: 600;line-height: 1.3;color: #1a1a2e;">Trends</p>
+                            <p class="mt-1 text-sm text-darkgray-500" style="margin-top:0;color: rgba(160, 174, 192, 1);">Popularity over time</p>
+                        </div>
+                    </a>
+
+                    <a href="/google-image-reverse-search-api" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-200 transition ease-in-out duration-150" style="align-items: flex-start;">
+                        <div class="flex-shrink-0">
+                            <div class="inline-flex items-center justify-center h-8 w-8 rounded-md text-blue-700">
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-base font-medium text-gray-900" style="font-size: 15px;font-weight: 600;line-height: 1.3;color: #1a1a2e;">Reverse Image</p>
+                            <p class="mt-1 text-sm text-darkgray-500" style="margin-top:0;color: rgba(160, 174, 192, 1);">Find pages by image</p>
+                        </div>
+                    </a>
+
+                    <a href="/youtube-search-api" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-200 transition ease-in-out duration-150" style="align-items: flex-start;">
+                        <div class="flex-shrink-0">
+                            <div class="inline-flex items-center justify-center h-8 w-8 rounded-md text-blue-700">
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-base font-medium text-gray-900" style="font-size: 15px;font-weight: 600;line-height: 1.3;color: #1a1a2e;">Youtube</p>
+                            <p class="mt-1 text-sm text-darkgray-500" style="margin-top:0;color: rgba(160, 174, 192, 1);">Video results</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            
+
+            <!-- AI SEARCH -->
+            <div>
+                <div class="flex items-center" style="border-bottom: 1px solid lightgrey; height: 30px;">
+                    <p class="text-xs font-semibold text-darkgray-400 uppercase tracking-wider" style="font-size: 12px;font-weight: 700;letter-spacing: 0.06em;">AI Search</p>
+                    <span class="ml-2 inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-indigo-100 text-indigo-800" style="display:none;">Coming Soon</span>
+                </div>
+                <div class="mt-4 grid grid-cols-1 gap-y-4 gap-x-8 sm:grid-cols-2">
+                    <a href="/ai-overview-api" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-200 transition ease-in-out duration-150" style="align-items: flex-start;">
+                        <div class="flex-shrink-0">
+                            <div class="inline-flex items-center justify-center h-8 w-8 rounded-md text-blue-700">
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="transform: rotate(180deg);">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-base font-medium text-gray-900" style="font-size: 15px;font-weight: 600;line-height: 1.3;color: #1a1a2e;">AI Overview</p>
+                            <p class="mt-1 text-sm text-darkgray-500" style="margin-top:0;color: rgba(160, 174, 192, 1);">Google AI answer + citations</p>
+                        </div>
+                    </a>
+
+                    <a href="/answer-engines-api" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-200 transition ease-in-out duration-150" style="align-items: flex-start;">
+                        <div class="flex-shrink-0">
+                            <div class="inline-flex items-center justify-center h-8 w-8 rounded-md text-blue-700">
+                                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor" fill="none" stroke-width="1.5"><rect x="3" y="4" width="18" height="13" rx="2.5"></rect><polyline points="7 17 7 21 11 17"></polyline><circle cx="9" cy="10.2" r="0.6" fill="currentColor" stroke="none"></circle><circle cx="15" cy="10.2" r="0.6" fill="currentColor" stroke="none"></circle><path d="M8.7 12.8c.9.9 1.9 1.3 3.3 1.3s2.4-.4 3.3-1.3"></path></svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-base font-medium text-gray-900" style="font-size: 15px;font-weight: 600;line-height: 1.3;color: #1a1a2e;">Answer Engines</p>
+                            <p class="mt-1 text-sm text-darkgray-500" style="margin-top:0;color: rgba(160, 174, 192, 1);">ChatGPT, Perplexity, Gemini, Grok, Copilot</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            
+
+            <!-- OTHER ENGINES -->
+            <div>
+                <p class="text-xs font-semibold text-darkgray-400 uppercase tracking-wider" style="border-bottom: 1px solid lightgrey; height: 30px;font-size: 12px;font-weight: 700;letter-spacing: 0.06em;">Other Engines</p>
+                <div class="mt-4 grid grid-cols-1 gap-y-4 gap-x-8 sm:grid-cols-2">
+                    <a href="/bing-search-api" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-200 transition ease-in-out duration-150" style="align-items: flex-start;">
+                        <div class="flex-shrink-0">
+                            <div class="inline-flex items-center justify-center h-8 w-8 rounded-md text-blue-700">
+                                <svg viewBox="0 0 24 24" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" fill="none" stroke-width="1.5"><path d="M6 2.8l3.2 1.1v11.6l4-2.3-2.6-1.2 5.4 1.9c1.2.4 1.2 1.4.1 2l-6.7 3.9L6 17.2z"></path></svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-base font-medium text-gray-900" style="font-size: 15px;font-weight: 600;line-height: 1.3;color: #1a1a2e;">Bing Search</p>
+                            <p class="mt-1 text-sm text-darkgray-500" style="margin-top:0;color: rgba(160, 174, 192, 1);">Organic, ads, video</p>
+                        </div>
+                    </a>
+
+                    <a href="/yandex-serp-api" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-200 transition ease-in-out duration-150" style="align-items: flex-start;">
+                        <div class="flex-shrink-0">
+                            <div class="inline-flex items-center justify-center h-8 w-8 rounded-md text-blue-700">
+                                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor" fill="none" stroke-width="1.5"><circle cx="10" cy="10" r="7.2"></circle><line x1="2.8" y1="10" x2="17.2" y2="10"></line><path d="M10 2.8a10 10 0 0 1 0 14.4"></path><path d="M10 2.8a10 10 0 0 0 0 14.4"></path><circle cx="15.8" cy="15.8" r="3.6"></circle><line x1="18.4" y1="18.4" x2="20.8" y2="20.8"></line></svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-base font-medium text-gray-900" style="font-size: 15px;font-weight: 600;line-height: 1.3;color: #1a1a2e;">Yandex Search</p>
+                            <p class="mt-1 text-sm text-darkgray-500" style="margin-top:0;color: rgba(160, 174, 192, 1);">JSON results</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            
+
+            <!-- SPECIALIZED VERTICALS -->
+            <div>
+                <div class="flex items-center" style="border-bottom: 1px solid lightgrey; height: 30px;">
+                    <p class="text-xs font-semibold text-darkgray-400 uppercase tracking-wider" style="font-size: 12px;font-weight: 700;letter-spacing: 0.06em;">Specialized Verticals</p>
+                    <span class="ml-2 inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-indigo-100 text-indigo-800 hidden">Coming Soon</span>
+                </div>
+                <div class="mt-4 grid grid-cols-3 gap-y-4 gap-x-8 sm:grid-cols-3">
+                    <a href="#" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-200 transition ease-in-out duration-150 hidden" style="align-items: flex-start;">
+                        <div class="flex-shrink-0">
+                            <div class="inline-flex items-center justify-center h-8 w-8 rounded-md text-blue-700">
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.977 2.89a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.196-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.977-2.89c-.783-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-base font-medium text-gray-900">Reviews</p>
+                        </div>
+                    </a>
+
+                    <a href="/google-hotels-api/" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-200 transition ease-in-out duration-150" style="align-items: flex-start;">
+                        <div class="flex-shrink-0">
+                            <div class="inline-flex items-center justify-center h-8 w-8 rounded-md text-blue-700">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                  <path d="M4 6v12"></path>
+                                  <circle cx="8" cy="9.5" r="1.6"></circle>
+                                  <path d="M4 13h16"></path>
+                                  <path d="M11 13V9h7q2 0 2 2v7"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-base font-medium text-gray-900">Hotels</p>
+                        </div>
+                    </a>
+
+                    <a href="/google-flights-api/" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-200 transition ease-in-out duration-150" style="align-items: flex-start;">
+                        <div class="flex-shrink-0">
+                            <div class="inline-flex items-center justify-center h-8 w-8 rounded-md text-blue-700">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(90deg);">
+                                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2.5 1.5V22l4-1 4 1v-1.5L13 19v-5.5l8 2.5z"></path>
+                              </svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-base font-medium text-gray-900">Flights</p>
+                        </div>
+                    </a>
+
+                    <a href="/google-jobs-api/" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-200 transition ease-in-out duration-150" style="align-items: flex-start;">
+                        <div class="flex-shrink-0">
+                            <div class="inline-flex items-center justify-center h-8 w-8 rounded-md text-blue-700">
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m-2 0h12a2 2 0 012 2v8a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-base font-medium text-gray-900">Jobs</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER: unchanged from original code -->
+    <div class="bg-gray-50">
+        <div class="max-w-7xl mx-auto space-y-6 px-4 py-5 sm:flex sm:space-y-0 sm:space-x-10 sm:px-6 lg:px-8">
+            <div class="flow-root">
+                <a href="https://app.zenserp.com/playground" class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100 transition ease-in-out duration-150">
+                    <svg class="flex-shrink-0 h-6 w-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <span class="ml-3">Try in Playground</span>
+                </a>
+            </div>
+
+            <div class="flow-root">
+                <a href="https://app.zenserp.com/documentation" class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100 transition ease-in-out duration-150">
+                    <svg class="flex-shrink-0 h-6 w-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                    </svg>
+                    <span class="ml-3">Documentation &amp; Examples</span>
+                </a>
+            </div>
+
+            <div class="flow-root">
+                <a href="/contact" class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100 transition ease-in-out duration-150">
+                    <svg class="flex-shrink-0 h-6 w-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                    <span class="ml-3">Contact Sales</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>                        <a href="/pricing-plans" class="font-medium uppercase text-xs py-2 text-gray-300 hover:text-gray-500 flex letter-spacing-3">Pricing</a>
+                        <a href="/blog" class="font-medium uppercase text-xs py-2 text-gray-300 hover:text-gray-500 flex letter-spacing-3">Blog</a>
+                        <a href="https://zenserp.freshstatus.io" target="_blank" class="font-medium uppercase text-xs py-2 text-gray-300 hover:text-gray-500 flex" style="display:none;">
+                            <svg class="h-4 w-4 mr-1 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M14 13a5 5 1 1 1-12 0 5 5 0 1 1 12 0z" clip-rule="evenodd" />
+                            </svg>
+                            Status
+                        </a>
+                        <a href="/contact" class="font-medium uppercase text-xs py-2 text-gray-300 hover:text-gray-500 flex letter-spacing-3">Contact</a>
+                        <div class="hidden md:flex md:items-center md:justify-end md:inset-y-0 md:right-0">
+                            <span class="inline-flex rounded-md">
+                                <a href="//app.zenserp.com/register" class="inline-flex items-center px-3 py-2 border border-transparent font-medium text-xs shadow uppercase rounded text-white text-white bg-blue-700 letter-spacing-3">
+                                    Start Building
+                                </a>
+                                <a href="//app.zenserp.com/login" class="inline-flex items-center px-3 py-2 border border-transparent font-medium text-xs uppercase rounded text-white bg-transparent letter-spacing-3">
+                                    <svg class="h-4 w-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                                    </svg>
+                                    Log in
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+</div>
+            <div  class="relative bg-darkblue bg-hero-pattern bg-contain bg-left-top">
+        <div  class="relative pt-6 pb-16 sm:pb-24">
+<main  class="mt-16 mx-auto max-w-6xl sm:mt-24">
+    <div class="items-center flex flex-wrap">
+        <div class="mobile-res w-full md:w-5/12 mr-auto px-4 md:px-6 md:px-0">
+            <h1 class="text-4xl font-semibold text-center md:text-left text-white sm:text-4xl md:text-4xl">
+                Fast, Accurate Search Data Built for Developers
+            </h1>
+            <p class="mt-3 max-w-md mx-auto text-gray-500 text-center md:text-left sm:text-lg md:mt-5 md:text-xl md:max-w-2xl">
+                Zenserp lets you fetch live Google search results through a fast and stable SERP API.
+            </p>
+            <div class="mt-5 sm:flex justify-center  md:justify-start md:mt-8">
+                <div class="rounded-sm shadow">
+                    <a href="https://app.zenserp.com/register?plan=free" class="w-full uppercase flex rounded items-center justify-center px-6 py-3 border border-transparent text-sm font-medium text-white bg-blue-700 hover:bg-blue-800">
+                        Get Your API Key
+                    </a>
+                </div>
+                <div class="mt-3 rounded-sm shadow sm:mt-0 sm:ml-3">
+                    <a href="/pricing-plans" class="w-full uppercase flex rounded items-center justify-center px-6 py-3 border border-transparent text-sm font-medium text-darkblue-600 bg-white hover:bg-gray-50">
+                        View Pricing
+                    </a>
+                </div>
+            </div>
+            <div class="mt-5 flex items-center justify-start">
+                <span class="text-xs font-semibold text-white uppercase  mr-3">Supported Platforms</span>
+                <div class="flex items-center">
+					<img fetchpriority="high" width="576" height="53" alt="supported platforms" src="/wp-content/uploads/2023/11/Supported-removebg-preview.png">
+                </div>
+            </div>
+        </div>
+        <!-- <div class="hidden md:block w-full md:w-6/12 ml-auto px-4 pt-24 md:pt-0">
+            <img width="900" height="521" alt="sample search" class="max-w-lg rounded-lg shadow-xl" style="transform:scale(1) perspective(1040px) rotateY(-11deg) rotateX(2deg) rotate(2deg)" src="https://zenserp.com/wp-content/themes/saasindustries/img/search-sample.jpg">
+            <img width="701" height="431" alt="google search api response" class="max-w-sm ml-auto rounded-lg shadow-xl hero-foreground-image" style="transform:scale(1) perspective(1040px) rotateY(-11deg) rotateX(2deg) rotate(2deg)" src="https://zenserp.com/wp-content/themes/saasindustries/img/code-sample.jpg">
+        </div> -->
+        <div class="box w-full md:w-6/12 overflow-hidden sm:rounded-lg">
+                <div class="text-lg leading-6 font-medium text-gray-100">
+                    <div class="flex bg-gray-200 justify-between p-3">
+                        <input id="q" type="text" class="w-full shadow px-4 py-2 border border-transparent placeholder-gray-500 focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white focus:border-white rounded-md text-sm text-gray-800" value="Pied Piper" placeholder="Pied Piper">
+                        <input type="hidden" id="tbm" value="null">
+						<input type="hidden" id="search_engine" value="google.com">
+                        <div class="rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
+                            <button id="getSerpBtn" type="submit" class="w-24 md:w-full uppercase flex rounded items-center justify-center px-4 py-2 border border-transparent text-sm font-medium text-white bg-blue-700 hover:bg-blue-800" href>
+                                Search
+                            </button>
+                        </div>
+                    </div>
+                    <pre id="jsonResponse" class="visible overscroll-contain text-xs h-96 pb-0 bg-gray-800 p-3 pt-0"><code class="json">{
+	<span class="hljs-attr">"organic"</span>: [
+		{
+			<span class="hljs-attr">"position"</span>: <span class="hljs-number">1</span>,
+			<span class="hljs-attr">"title"</span>: <span class="hljs-string">"Pied Piper of Hamelin - Wikipedia"</span>,
+			<span class="hljs-attr">"url"</span>: <span class="hljs-string">"https://en.wikipedia.org/wiki/Pied_Piper_of_Hamelin"</span>,
+			<span class="hljs-attr">"destination"</span>: <span class="hljs-string">"https://en.wikipedia.org/wiki/Pied_Piper_of_Hamelin"</span>,
+			<span class="hljs-attr">"description"</span>: <span class="hljs-string">"The Pied Piper of Hamelin is the titular character of..."</span>
+		},
+		{
+			<span class="hljs-attr">"position"</span>: <span class="hljs-number">2</span>,
+			<span class="hljs-attr">"questions"</span>: [
+				{
+					<span class="hljs-attr">"question"</span>: <span class="hljs-string">"What is the meaning of the Pied Piper?"</span>
+				},
+				{
+					<span class="hljs-attr">"question"</span>: <span class="hljs-string">"What is the legend of the Pied Piper?"</span>
+				},
+				{
+					<span class="hljs-attr">"question"</span>: <span class="hljs-string">"What is the moral of the story pied piper?"</span>
+				}
+			]
+		},
+		{
+			<span class="hljs-attr">"position"</span>: <span class="hljs-number">3</span>,
+			<span class="hljs-attr">"videos"</span>: [
+				{
+					<span class="hljs-attr">"title"</span>: <span class="hljs-string">"Walt Disney's Fables - Pied Piper"</span>,
+					<span class="hljs-attr">"url"</span>: <span class="hljs-string">"https://www.youtube.com/watch?v=UXOCHn7Vfec"</span>
+				},
+				{
+					<span class="hljs-attr">"title"</span>: <span class="hljs-string">"The True History of The Pied Piper of Hamelin | Fairy..."</span>,
+					<span class="hljs-attr">"url"</span>: <span class="hljs-string">"https://www.youtube.com/watch?v=obIAwAAcAAg"</span>
+				}
+			]
+		}
+	]
+}
+
+</code></pre>
+                    <div id="loader" class="hidden overscroll-contain text-xs h-96 pb-0 bg-gray-800 p-3 pt-0 h-full flex items-center justify-center " style="height: 23rem;">
+                        <div class="text-red-500">
+                            <img width="135" height="140" src="https://zenserp.com/wp-content/themes/saasindustries/img/bars.svg" alt="bars" class="mx-auto w-12 mb-3">
+                            <p class="text-gray-100 text-sm">
+                                Loading your response :)
+                            </p>
+                        </div>
+                    </div>
+                    <div id="errorResponse" class="hidden overscroll-contain text-xs h-96 pb-0 bg-gray-800 p-3 pt-0 h-full flex items-center justify-center" style="height: 23rem;">
+                        <div class="text-red-500">
+
+                            <svg class="h-8 w-8 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+
+                            <p id="errorMessage" class="text-gray-100 text-sm">
+                                An error occured!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</main>
+</div>
+</div>
+<div  class="py-12 bg-white">
+    <div  class="max-w-6xl px-4 md:px-6 mx-auto lg:grid lg:grid-cols-3 lg:gap-x-8">
+        <div>
+            <span class="text-base font-semibold text-blue-700 uppercase tracking-wide">At your fingertips</span>
+            <h2 class="mt-2 text-3xl font-bold text-gray-900">One API, Endless Possibilities</h2>
+            <p class="mt-4 text-lg">Scrape Google, YouTube, and Shopping Results with ease using our SERP API. We cover all major search engines and frequently add new endpoints to our search API. <a href="https://app.zenserp.com/playground" class="mt-2 font-medium text-gray-600 lg:mt-4">Try in Playground <span aria-hidden="true">→</span></a></p>
+        </div>
+        <div  class="mt-12 lg:mt-0 lg:col-span-2">
+            <dl class="space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 sm:grid-rows-2 sm:grid-flow-col sm:gap-x-4 sm:gap-y-10 lg:gap-x-8">
+                <div class="flex">
+                    <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 21h7a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v11m0 5l4.879-4.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242z" />
+                    </svg>
+					
+                    <div class="ml-3">
+                        <dt class="text-lg leading-6 font-medium text-gray-900">
+                            Google Search API
+                        </dt>
+                        <dd class="mt-2 text-base text-gray-700">
+                            Standard search, image search, news search, maps search, etc.
+                        </dd>
+                    </div>
+                </div>
+                <div class="flex">
+                    <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <div class="ml-3">
+                        <dt class="text-lg leading-6 font-medium text-gray-900">
+                            Google Trends API
+                        </dt>
+                        <dd class="mt-2 text-base text-gray-700">
+                            Retrieve trending topics in easy-to-read JSON format.
+                        </dd>
+                    </div>
+                </div>
+                <div class="flex">
+                    <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    <div class="ml-3">
+                        <dt class="text-lg leading-6 font-medium text-gray-900">
+                            Youtube Search API
+                        </dt>
+                        <dd class="mt-2 text-base text-gray-700">
+                            Get video ranking information, including channel and ad results.
+                        </dd>
+                    </div>
+                </div>
+                <div class="flex">
+                    <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <div class="ml-3">
+                        <dt class="text-lg leading-6 font-medium text-gray-900">
+                            Google Shopping Product Page API
+                        </dt>
+                        <dd class="mt-2 text-base text-gray-700">
+                            Gain valuable product insights and scrape product information.
+                        </dd>
+                    </div>
+                </div>
+
+            </dl>
+        </div>
+    </div>
+</div>
+<div  class="bg-gray-100 py-12">
+  <div  class="mx-auto max-w-6xl px-4 md:px-6">
+    <div  class="text-left">
+      <h2 class="text-3xl leading-8 font-bold tracking-tight text-gray-900">Try Our Complete and Easy-to-use API</h2>
+      <p class="mt-4 text-xl">
+        Our Google search API provides plenty of setting parameters and filters that allow you to refine your search. For further testing, please visit our
+        <a class="text-gray-600" href="https://app.zenserp.com/playground">
+          Playground
+          <svg class="inline h-6 w-6 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      </p>
+    </div>
+  </div>
+
+  <div  id="landingDemo" class="mx-auto max-w-6xl px-4 md:px-6">
+    <div  class="differntiate mt-3 flex flex-wrap md:mt-8">
+      <!-- LEFT: Code UI (replaces images) -->
+      <div class="w-full px-4 md:w-7/12">
+        <!-- GET Endpoint -->
+        <div class="mb-6 rounded-xl bg-gray-900 p-5">
+        <div class="mb-2 flex items-center gap-2">
+            <span class="rounded px-2 py-0.5 text-xs font-semibold text-white">
+            GET
+            </span>
+            <span class="text-xs text-gray-400">Request</span>
+        </div>
+
+       <pre class="overflow-x-auto text-sm break-all text-purple-400"><code>https://app.zenserp.com/api/v2/search?q=pied+piper&engine=google</code></pre>
+        </div>
+
+        <!-- Response -->
+        <div class="rounded-xl bg-gray-900 p-5">
+        <div class="mb-3 flex items-center justify-between">
+            <span class="text-sm font-semibold text-gray-300">Response</span>
+            <span class="text-xs text-gray-400">JSON</span>
+        </div>
+
+        <pre class="overflow-x-auto text-xs text-gray-100"><code style="white-space: inherit!important;">{
+    <span class="text-blue-400">"organic"</span>: [
+    {
+    <span class="text-blue-400">"position"</span>: <span class="text-purple-400">1</span>,
+    <span class="text-blue-400">"title"</span>: <span class="text-green-400">"Pied Piper of Hamelin - Wikipedia"</span>,
+    <span class="text-blue-400">"url"</span>: <span class="text-green-400">"https://en.wikipedia.org/wiki/Pied_Piper_of_Hamelin"</span>,
+    <span class="text-blue-400">"destination"</span>: <span class="text-green-400">"https://en.wikipedia.org/wiki/Pied_Piper_of_Hamelin"</span>,
+    <span class="text-blue-400">"description"</span>: <span class="text-green-400">"The Pied Piper of Hamelin is the titular character of..."</span>
+    },
+    {
+    <span class="text-blue-400">"position"</span>: <span class="text-purple-400">2</span>,
+    <span class="text-blue-400">"questions"</span>: [
+        { <span class="text-blue-400">"question"</span>: <span class="text-green-400">"What is the meaning of the Pied Piper?"</span> },
+        { <span class="text-blue-400">"question"</span>: <span class="text-green-400">"What is the legend of the Pied Piper?"</span> },
+        { <span class="text-blue-400">"question"</span>: <span class="text-green-400">"What is the moral of the story pied piper?"</span> }
+    ]
+    },
+    {
+    <span class="text-blue-400">"position"</span>: <span class="text-purple-400">3</span>,
+    <span class="text-blue-400">"videos"</span>: [
+        {
+        <span class="text-blue-400">"title"</span>: <span class="text-green-400">"Walt Disney's Fables - Pied Piper"</span>,
+        <span class="text-blue-400">"url"</span>: <span class="text-green-400">"https://www.youtube.com/watch?v=UXOCHn7Vfec"</span>
+        },
+        {
+        <span class="text-blue-400">"title"</span>: <span class="text-green-400">"The True History of The Pied Piper of Hamelin | Fairy..."</span>,
+        <span class="text-blue-400">"url"</span>: <span class="text-green-400">"https://www.youtube.com/watch?v=obIAwAAcAAg"</span>
+        }
+    ]
+    }
+]
+}</code></pre>
+        </div>
+
+
+      </div>
+
+      <!-- RIGHT: Original content (unchanged) -->
+      <div class="mt-4 w-full md:mt-0 md:w-5/12 md:pl-12">
+        <h2 class="text-2xl font-bold tracking-tight text-gray-900">
+          <span class="block">Scrape Google Search Results Without Limits</span>
+        </h2>
+        <p class="mt-2 mb-4 text-base text-gray-700">Unlock the full potential of google search results with our API's many benefits</p>
+
+        <h4 class="block text-lg leading-6 font-medium text-gray-900">Generous Free Plan</h4>
+        <p class="mt-2 mb-4 text-base text-gray-700">We believe in fair pricing. Hence, we offer you 50 free searches per month. No strings attached!</p>
+
+        <h4 class="block text-lg leading-6 font-medium text-gray-900">Request Builder</h4>
+        <p class="mt-2 mb-4 text-base text-gray-700">Getting started is easy. We provide an extensive request builder, that converts your requests into production ready code snippets.</p>
+
+        <h4 class="block text-lg leading-6 font-medium text-gray-900">Supports All Programming Languages</h4>
+        <p class="mt-2 mb-4 text-base text-gray-700">Zenserp can be used with any programming language, as data can be simply retrieved by any HTTP client.</p>
+
+        <div class="flex flex-wrap">
+          <div class="mr-3 mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-gray-300 p-2 shadow"><img width="228" height="256" style="max-width:2em" src="https://zenserp.com/wp-content/themes/saasindustries/img/languages/c.svg" /></div>
+          <div class="mr-3 mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-gray-300 p-2 shadow"><img width="256" height="255" style="max-width:2em" src="https://zenserp.com/wp-content/themes/saasindustries/img/languages/python.svg" /></div>
+          <div class="mr-3 mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-gray-300 p-2 shadow"><img width="128" height="128" style="max-width:2em" src="https://zenserp.com/wp-content/themes/saasindustries/img/languages/javascript.svg" /></div>
+          <div class="mr-3 mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-gray-300 p-2 shadow"><img width="256" height="256" style="max-width:2em" src="https://zenserp.com/wp-content/themes/saasindustries/img/languages/ruby.svg" /></div>
+          <div class="mr-3 mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-gray-300 p-2 shadow"><img width="256" height="255" style="max-width:2em" src="https://zenserp.com/wp-content/themes/saasindustries/img/languages/swift.svg" /></div>
+          <div class="mr-3 mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-gray-300 p-2 shadow"><img width="188" height="256" style="max-width:1.6em" src="https://zenserp.com/wp-content/themes/saasindustries/img/languages/go-old.svg" /></div>
+          <div class="mr-3 mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-gray-300 p-2 shadow"><img width="189" height="256" style="max-width:2em" src="https://zenserp.com/wp-content/themes/saasindustries/img/languages/java.svg" /></div>
+          <div class="mr-3 mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-gray-300 p-2 shadow"><img width="256" height="135" style="max-width:2em" src="https://zenserp.com/wp-content/themes/saasindustries/img/languages/php.svg" /></div>
+          <div class="mr-3 mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-gray-300 p-2 shadow"><img width="128" height="128" style="max-width:2em" src="https://zenserp.com/wp-content/themes/saasindustries/img/languages/csharp.svg" /></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div  id="whyUsSection" class="bg-white">
+    <div  class="max-w-6xl mx-auto py-8 lg:py-10 px-4 sm:px-6 lg:px-8">
+		 <h2 class="pb-4 text-3xl font-bold text-black" style="border: solid 2px #2f855a; background: #f7fffb; padding: 4px 8px; margin-bottom: 25px;">
+            Transform Your Search Strategy 
+        </h2>
+        <dl class="space-y-10 lg:space-y-0 lg:grid lg:grid-cols-4 lg:gap-8">
+            <div>
+                <div class="flex items-center justify-center h-8 w-8 text-blue-700">
+                    <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                </div>
+                <div class="mt-5">
+                    <dt class="text-lg leading-6 font-medium text-gray-900">
+                        Location Based
+                    </dt>
+                    <dd class="mt-2 text-base text-gray-700">
+                        Zenserp enables you to obtain accurate and geolocated search engine results.
+                    </dd>
+                </div>
+            </div>
+
+            <div>
+                <div class="flex items-center justify-center h-8 w-8 text-blue-700">
+                    <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+                    </svg>
+                </div>
+                <div class="mt-5">
+                    <dt class="text-lg leading-6 font-medium text-gray-900">
+                        Highly Scalable
+                    </dt>
+                    <dd class="mt-2 text-base text-gray-700">
+                        Zenserp always provides you with enough performance, no matter how high your volume might be.
+                    </dd>
+                </div>
+            </div>
+
+            <div>
+                <div class="flex items-center justify-center h-8 w-8 text-blue-700">
+                    <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                    </svg>
+                </div>
+                <div class="mt-5">
+                    <dt class="text-lg leading-6 font-medium text-gray-900">
+                        Maximum Speed
+                    </dt>
+                    <dd class="mt-2 text-base text-gray-700">
+                        Our Google Search Results API is powered by strong infrastructure to return results in realtime.
+                    </dd>
+                </div>
+            </div>
+
+            <div>
+                <div class="flex items-center justify-center h-8 w-8 text-blue-700">
+                    <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                    </svg>
+                </div>
+                <div class="mt-5">
+                    <dt class="text-lg leading-6 font-medium text-gray-900">
+                        Affordable
+                    </dt>
+                    <dd class="mt-2 text-base text-gray-700">
+                       Only pay what you need. Choose between our free or custom plan and let our servers do the work for you.
+                    </dd>
+                </div>
+            </div>
+        </dl>
+    </div>
+</div>
+<div  class="py-12 bg-gray-100">
+    <div  class="max-w-6xl px-4 md:px-6 mx-auto">
+        <div  class="text-left">
+            <span class="text-base font-semibold text-blue-700 uppercase tracking-wide">Full Coverage</span>
+            <h2 class="mt-2 text-3xl leading-8 font-bold tracking-tight text-gray-900">
+                Our Complete SERP API Covers All Available Snippets
+            </h2>
+            <p class="mt-4 text-xl">
+                Our SERP API consists of more than organic and paid results. We cover all snippet types and consistently add new ones, as they are added by the search engines. View our
+                <a class="text-gray-600" href="https://app.zenserp.com/documentation" class="underline">Documentation</a> to see a complete list of all supported SERP snippets.
+            </p>
+        </div>
+    </div>
+    <div  class="max-w-6xl px-4 md:px-6 mx-auto py-8 lg:py-10 lg:grid lg:grid-cols-12 lg:gap-x-8 flex items-center">
+        <div  class="hidden md:block md:col-span-3">
+            <img width="450" height="964" src="https://zenserp.com/wp-content/themes/saasindustries/img/iphone-with-serp.png" alt="iphone with serp">
+        </div>
+        <div  class="mt-12 lg:mt-0 md:col-span-9">
+            <dl class="space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 sm:grid-rows-1 sm:grid-flow-col sm:gap-x-4 sm:gap-y-10 lg:gap-x-8">
+                <div class="flex">
+                    <ul>
+                        <li class="mb-4">
+                            <div class="flex w-full">
+                                <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <div class="ml-3">
+                                    <dt class="text-lg leading-6 font-medium text-gray-900">
+                                        Organic Results
+                                    </dt>
+                                    <dd class="mt-2 text-base text-gray-700">
+                                        One search result page can contain up to 100 results and over 400 results with Pagination.
+
+                                    </dd>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mb-4">
+                            <div class="flex">
+                                <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <div class="ml-3">
+                                    <dt class="text-lg leading-6 font-medium text-gray-900">
+                                        Paid Results
+                                    </dt>
+                                    <dd class="mt-2 text-base text-gray-700">
+                                       All types of Google ads, including their position on the search result page.
+                                    </dd>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mb-4">
+                            <div class="flex">
+                                <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <div class="ml-3">
+                                    <dt class="text-lg leading-6 font-medium text-gray-900">
+                                        News Results
+                                    </dt>
+                                    <dd class="mt-2 text-base text-gray-700">
+                                        Inline news as part of the organic results, including thumbnail, description and target url.
+                                    </dd>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mb-4">
+                            <div class="flex">
+                                <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <div class="ml-3">
+                                    <dt class="text-lg leading-6 font-medium text-gray-900">
+                                        Video Results
+                                    </dt>
+                                    <dd class="mt-2 text-base text-gray-700">
+                                        Inline video results as part of the organic results, including their title and url.
+                                    </dd>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mb-4">
+                            <div class="flex">
+                                <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <div class="ml-3">
+                                    <dt class="text-lg leading-6 font-medium text-gray-900">
+                                        Local Results
+                                    </dt>
+                                    <dd class="mt-2 text-base text-gray-700">
+                                        Zenserp features Google places search. Results include title, reviews, address, place_id, etc.
+                                    </dd>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex">
+                    <ul>
+                        <li class="mb-4">
+                            <div class="flex w-full">
+                                <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <div class="ml-3">
+                                    <dt class="text-lg leading-6 font-medium text-gray-900">
+                                        Knowledge Graph
+                                    </dt>
+                                    <dd class="mt-2 text-base text-gray-700">
+                                        Search results can contain a knowledge block containing search query related information
+                                    </dd>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mb-4">
+                            <div class="flex">
+                                <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <div class="ml-3">
+                                    <dt class="text-lg leading-6 font-medium text-gray-900">
+                                        Related Questions
+                                    </dt>
+                                    <dd class="mt-2 text-base text-gray-700">
+                                        Zenserp features the "People also ask" results if it appears on the search result page.
+                                    </dd>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mb-4">
+                            <div class="flex">
+                                <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <div class="ml-3">
+                                    <dt class="text-lg leading-6 font-medium text-gray-900">
+                                        Answerbox Results
+                                    </dt>
+                                    <dd class="mt-2 text-base text-gray-700">
+                                        Calculations, Weather Reports, Dictionary and much more.
+                                    </dd>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mb-4">
+                            <div class="flex">
+                                <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <div class="ml-3">
+                                    <dt class="text-lg leading-6 font-medium text-gray-900">
+                                        Maps Results
+                                    </dt>
+                                    <dd class="mt-2 text-base text-gray-700">
+                                        Google Maps search results return information for stores, local businesses like restaurants, etc.
+                                    </dd>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mb-4">
+                            <div class="flex">
+                                <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                                <div class="ml-3">
+                                    <dt class="text-lg leading-6 font-medium text-gray-900">
+                                        New Snippets Added Continuously
+                                    </dt>
+                                    <dd class="mt-2 text-base text-gray-700">
+                                        As new SERP types are released, we update them to our SERP API.
+                                    </dd>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </dl>
+        </div>
+    </div>
+</div>
+<div data-wpr-lazyrender="1" class="bg-darkblue bg-hero-pattern bg-contain bg-left-top overflow-hidden py-12">
+    <div  class="max-w-2xl mx-auto text-center px-4 sm:px-6">
+        <h2 class="text-3xl font-bold text-white">
+            Start Scraping Google pages for free today!
+        </h2>
+        <div  class="mt-5 sm:flex justify-center mx-auto">
+            <div class="rounded-sm shadow">
+                <a href="https://app.zenserp.com/register?plan=free" class="w-full uppercase flex rounded items-center justify-center px-6 py-3 border border-transparent text-sm font-medium text-white bg-blue-700 hover:bg-blue-800">
+                    Get Your API Key
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div data-wpr-lazyrender="1" class="bg-gray-100">
+    <div  class="max-w-6xl mx-auto py-12 px-4 sm:px-6">
+        <h2 class="text-3xl font-bold text-gray-900 sm:text-center">
+Simple and Economical pricing</h2>
+<p class="mt-4 text-xl ">
+Choose from a variety with different usage limits and features to match the size and scope of your project. All plans include real-time scraping capabilities and 24/7 customer support.
+</p>
+<!--<div class="mt-12 space-y-4 sm:mt-8 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-6xl lg:mx-auto  lg:mx-0 lg:grid-cols-5">-->
+<div  class="mt-12 space-y-4 sm:mt-8 sm:space-y-0 grid  lg:max-w-6xl lg:mx-auto  lg:mx-0 grid-price">
+<div class="bg-white rounded-lg shadow-sm divide-y divide-gray-200 stripe-plan">
+        <div class="p-6" style="min-height: 250px;">
+            <h3 class="text-lg leading-6 font-medium text-gray-900">Free</h3>
+            <p class="mt-4 text-sm">All basic to get started</p>
+            <p class="mt-4">
+                <span class="text-3xl font-bold text-gray-900 price" style="font-size: 1.3rem;">$0</span>
+                <span class="text-base font-medium">/mo</span>
+            </p>
+            <a href="https://app.zenserp.com/register?plan=free" class="price-link mt-8 block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900">Try Now</a>
+        </div>
+        <div class="pt-6 pb-8 px-6">
+            <h4 class="text-xs font-medium text-gray-900 tracking-wide uppercase">What's included</h4>
+           
+            <ul class="mt-6 space-y-2">
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">50 Searches/mo</span>
+                </li>
+<!--                 <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">All SERP Types</span>
+                </li> -->
+            </ul>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-sm divide-y divide-gray-200 stripe-plan">
+        <div class="p-6" style="min-height: 250px;">
+            <h3 class="text-lg leading-6 font-medium text-gray-900">Small</h3>
+            <p class="mt-4 text-sm">Best for hobby projects</p>
+            <p class="mt-4">
+                <span class="font-bold text-gray-900 price" style="font-size: 1.3rem;">$49.99</span>
+                <span class="text-base font-medium">/mo</span>
+            </p>
+            <a href="https://app.zenserp.com/register?plan=small-5" class="price-link mt-8 block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900">Try Now</a>
+        </div>
+        <div class="pt-6 pb-8 px-6">
+            <h4 class="text-xs font-medium text-gray-900 tracking-wide uppercase">What's included</h4>
+            
+            <ul class="mt-6 space-y-2">
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">25,000 Searches/mo</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">All SERP Types</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-sm divide-y divide-gray-200 stripe-plan">
+        <div class="p-6" style="min-height: 250px;">
+            <h3 class="text-lg leading-6 font-medium text-gray-900">Medium</h3>
+            <p class="mt-4 text-sm">More features, SLA</p>
+            <p class="mt-4" style="margin-top:36px;">
+                <span class="font-bold text-gray-900 price" style="font-size: 1.3rem;">$149.99</span>
+                <span class="text-base font-medium">/mo</span>
+            </p>
+            <a href="https://app.zenserp.com/register?plan=medium-5" class="price-link mt-8 block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900">Try Now</a>
+        </div>
+        <div class="pt-6 pb-8 px-6">
+            <h4 class="text-xs font-medium text-gray-900 tracking-wide uppercase">What's included</h4>
+            
+            <ul class="mt-6 space-y-2">
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">100,000 Searches/mo</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">All SERP Types</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">Batch Endpoint</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">Keyword Search Volume</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">Keyword CPC</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">Bulk Index Checker (GUI)</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">Personal Support</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">Concierge Onboarding</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">Service Level Agreement</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="bg-white rounded-lg shadow-sm divide-y divide-gray-200 stripe-plan">
+        <div class="p-6" style="min-height: 250px;">
+            <h3 class="text-lg leading-6 font-medium text-gray-900">Large</h3>
+            <p class="mt-4 text-sm">More requests</p>
+            <p class="mt-4" style="margin-top:36px;">
+                <span class="font-bold text-gray-900 price" style="font-size: 1.3rem;">$299.99</span>
+                <span class="text-base font-medium">/mo</span>
+            </p>
+            <a href="https://app.zenserp.com/register?plan=large-5" class="price-link mt-8 block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900">Try Now</a>
+        </div>
+        <div class="pt-6 pb-8 px-6">
+            <h4 class="text-xs font-medium text-gray-900 tracking-wide uppercase">What's included</h4>
+            
+            <ul class="mt-6 space-y-2">
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">250,000 Searches/mo</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">All SERP Types</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">Batch Endpoint</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">Keyword Search Volume</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">Keyword CPC</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">Bulk Index Checker (GUI)</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">Personal Support</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">Concierge Onboarding</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">Service Level Agreement</span>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-sm divide-y divide-gray-200 stripe-plan">
+        <div class="p-6" style="min-height: 250px;">
+            <h3 class="text-lg leading-6 font-medium text-gray-900">Premium</h3>
+            <p class="mt-4 text-sm">For large SERP projects</p>
+            <p class="mt-4">
+                <span class="font-bold text-gray-900 price" style="font-size: 1.3rem;">$499.99</span>
+                <span class="text-base font-medium">/mo</span>
+            </p>
+            <a href="https://app.zenserp.com/register?plan=premium-5" class="price-link mt-8 block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900">Try Now</a>
+        </div>
+        <div class="pt-6 pb-8 px-6">
+            <h4 class="text-xs font-medium text-gray-900 tracking-wide uppercase">What's included</h4>
+            
+            <ul class="mt-6 space-y-2">
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">500,000 Searches/mo</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">All SERP Types</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">Batch Endpoint</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">Keyword Search Volume</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">Keyword CPC</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">Bulk Index Checker (GUI)</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">Personal Support</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">Concierge Onboarding</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">Service Level Agreement</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">Custom Queue</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <!--Enterprise-->
+    <div class="bg-white rounded-lg shadow-sm divide-y divide-gray-200 stripe-plan">
+        <div class="p-6" style="min-height: 250px;">
+            <h3 class="text-lg leading-6 font-medium text-gray-900">Enterprise</h3>
+            <p class="mt-4 text-sm">For large SERP projects</p>
+            <p class="mt-4">
+                <span class="font-bold text-gray-900 price" style="font-size: 1.3rem;">$899.99</span>
+                <span class="text-base font-medium">/mo</span>
+            </p>
+            <a href="https://app.zenserp.com/register?plan=enterprise-5" class="price-link mt-8 block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900">Try Now</a>
+        </div>
+        <div class="pt-6 pb-8 px-6">
+            <h4 class="text-xs font-medium text-gray-900 tracking-wide uppercase">What's included</h4>
+            
+            <ul class="mt-6 space-y-2">
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">1,000,000 Searches/mo</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">All SERP Types</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">Batch Endpoint</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">Keyword Search Volume</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">Keyword CPC</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">Bulk Index Checker (GUI)</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">Personal Support</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">Concierge Onboarding</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">Service Level Agreement</span>
+                </li>
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">Custom Queue</span>
+                </li>
+                
+                <li class="flex space-x-3">
+                    <svg class="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm">All features of Premium (or drop the line)</span>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <!---->
+</div>        <div  class="max-w-6xl mx-auto mt-6">
+            <div class="w-full bg-white cta-bg-pattern rounded lg:flex lg:items-center lg:justify-between shadow-md p-6">
+                <div>
+                    <h2 class="text-2xl font-bold tracking-tight text-gray-900">
+                        <span class="block">Don't see a plan that fits your needs? </span>
+                    </h2>
+                    <p class="mt-1 text-lg text-gray-500">Contact us for a quote if you require a volume larger than our enterprise plan.</p>
+                </div>
+                <div class="mt-8 lex lg:mt-0 lg:flex-shrink-0">
+                    <!--<div class="inline-flex rounded-md shadow">-->
+                    <!--    <a href="/pricing-plans" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-sm font-medium rounded-md text-white bg-blue-700 uppercase hover:bg-blue-900">-->
+                    <!--        View High Volume Plans-->
+                    <!--    </a>-->
+                    <!--</div>-->
+                    <div class="ml-3 inline-flex rounded-md shadow">
+                        <a href="/contact" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-sm font-medium rounded-md text-blue-600 bg-white uppercase hover:bg-indigo-50">
+                            Contact Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div data-wpr-lazyrender="1" id="faqSection" class="bg-white">
+    <div  class="max-w-6xl mx-auto py-8 lg:py-10 px-4 sm:px-6">
+        <h2 class="text-3xl font-bold text-gray-900 sm:text-center">
+            Frequently asked questions
+        </h2>
+        <div  class="mt-5 flex flex-wrap">
+            <div class="w-full md:w-6/12 md:pr-8">
+                <dl class="mt-6 space-y-3 divide-y divide-gray-200">
+                    <div class="pt-3">
+                        <dt class="text-lg">
+                            <!-- Expand/collapse question button -->
+                            <button onclick="toggleFaq('faq-1')" class="text-left w-full flex justify-between items-start text-gray-400">
+                                <span class="font-medium text-gray-900">
+                                    Can I also pay annually?
+                                </span>
+                                <span class="ml-6 h-7 flex items-center">
+                                    <svg data-toggle="faq-1" class="rotate-0 h-6 w-6 transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </span>
+                            </button>
+                        </dt>
+                        <dd class="mt-2 pr-12">
+                            <p data-toggle="faq-1" class="text-base text-gray-700 hidden">
+                                Yes. We also offer you a 20% discount if you choose an annual subscription plan.
+                            </p>
+                        </dd>
+                    </div>
+
+                    <div class="pt-3">
+                        <dt class="text-lg">
+                            <!-- Expand/collapse question button -->
+                            <button onclick="toggleFaq('faq-2')" class="text-left w-full flex justify-between items-start text-gray-400">
+                                <span class="font-medium text-gray-900">
+                                    Will request errors be counted towards my monthly limit?
+                                </span>
+                                <span class="ml-6 h-7 flex items-center">
+                                    <svg data-toggle="faq-2" class="rotate-0 h-6 w-6 transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </span>
+                            </button>
+                        </dt>
+                        <dd class="mt-2 pr-12">
+                            <p data-toggle="faq-2" class="text-base text-gray-700 hidden">
+                                No, we only charge you for successful responses. Invalid requests are not going to affect your usage volume!
+                            </p>
+                        </dd>
+                    </div>
+
+                    <div class="pt-3">
+                        <dt class="text-lg">
+                            <button onclick="toggleFaq('faq-3')" class="text-left w-full flex justify-between items-start text-gray-400">
+                                <span class="font-medium text-gray-900">
+                                    How much load can your API take?
+                                </span>
+                                <span class="ml-6 h-7 flex items-center">
+                                    <svg data-toggle="faq-3" class="rotate-0 h-6 w-6 transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </span>
+                            </button>
+                        </dt>
+                        <dd class="mt-2 pr-12">
+                            <p data-toggle="faq-3" class="text-base text-gray-700 hidden">
+                                Our API handles millions of API requests on a daily basis. For our standard plans, we encourage not to exceed 400 concurrent connections. If you need more, please let us know and we are happy to increase that limit for you.
+                                Also, we offer an asynchronous batch endpoint, which is useful for extremely large data sets.
+                            </p>
+                        </dd>
+                    </div>
+
+                    <div class="pt-3">
+                        <dt class="text-lg">
+                            <!-- Expand/collapse question button -->
+                            <button onclick="toggleFaq('faq-4')" class="text-left w-full flex justify-between items-start text-gray-400">
+                                <span class="font-medium text-gray-900">
+                                    Which payment methods do you support?
+                                </span>
+                                <span class="ml-6 h-7 flex items-center">
+                                    <svg data-toggle="faq-4" class="rotate-0 h-6 w-6 transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </span>
+                            </button>
+                        </dt>
+                        <dd class="mt-2 pr-12">
+                            <p data-toggle="faq-4" class="text-base text-gray-700 hidden">
+                                We accept all common payment methods, including credit cards (MasterCard, Visa, American Express). Enterprise and high-volume customers may request annual bank transfer payments to be enabled.
+                            </p>
+                        </dd>
+                    </div>
+
+
+                </dl>
+            </div>
+            <div class="w-full md:w-6/12 md:pl-8">
+                <dl class="mt-6 space-y-3 divide-y divide-gray-200">
+                    <div class="pt-3">
+                        <dt class="text-lg">
+                            <!-- Expand/collapse question button -->
+                            <button onclick="toggleFaq('faq-5')" class="text-left w-full flex justify-between items-start text-gray-400">
+                                <span class="font-medium text-gray-900">
+                                    What is the difference between the different plans?
+                                </span>
+                                <span class="ml-6 h-7 flex items-center">
+                                    <svg data-toggle="faq-5" class="rotate-0 h-6 w-6 transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </span>
+                            </button>
+                        </dt>
+                        <dd class="mt-2 pr-12">
+                            <p data-toggle="faq-5" class="text-base text-gray-700 hidden">
+                                The plans vary according to the number of the available search requests. Also, our larger plans come with unlimited support and come with a service level agreement (SLA). No matter how small or big your project is, there is the right plan for you.
+                            </p>
+                        </dd>
+                    </div>
+
+                    <div class="pt-3">
+                        <dt class="text-lg">
+                            <!-- Expand/collapse question button -->
+                            <button onclick="toggleFaq('faq-6')" class="text-left w-full flex justify-between items-start text-gray-400">
+                                <span class="font-medium text-gray-900">
+                                    What is zenserp.com?
+                                </span>
+                                <span class="ml-6 h-7 flex items-center">
+                                    <svg data-toggle="faq-6" class="rotate-0 h-6 w-6 transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </span>
+                            </button>
+                        </dt>
+                        <dd class="mt-2 pr-12">
+                            <p data-toggle="faq-6" class="text-base text-gray-700 hidden">
+                                Zenserp.com is a Google SERP API, that enables you to scrape search engine result pages in an easy and efficient way. In realtime and without interruption.
+                            </p>
+                        </dd>
+                    </div>
+
+                    <div class="pt-3">
+                        <dt class="text-lg">
+                            <button onclick="toggleFaq('faq-7')" class="text-left w-full flex justify-between items-start text-gray-400">
+                                <span class="font-medium text-gray-900">
+                                    What is the API's uptime?
+                                </span>
+                                <span class="ml-6 h-7 flex items-center">
+                                    <svg data-toggle="faq-7" class="rotate-0 h-6 w-6 transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </span>
+                            </button>
+                        </dt>
+                        <dd class="mt-2 pr-12">
+                            <p data-toggle="faq-7" class="text-base text-gray-700 hidden">
+                                We are constantly tracking and monitoring the uptime of our service. We are doing every effort to ensure a maximum of availability and reliability, leading to an uptime of 99.9%, calculated on the past 12 months.
+                                You can see more detailed information about our API's status, <a href="https://zenserp.freshstatus.io" style="color:blue;" target="_blank">here</a>.
+                            </p>
+                        </dd>
+                    </div>
+
+                    <div class="pt-3">
+                        <dt class="text-lg">
+                            <button onclick="toggleFaq('faq-8')" class="text-left w-full flex justify-between items-start text-gray-400">
+                                <span class="font-medium text-gray-900">
+                                    Will you notify me if I run out of requests?
+                                </span>
+                                <span class="ml-6 h-7 flex items-center">
+                                    <svg data-toggle="faq-8" class="rotate-0 h-6 w-6 transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </span>
+                            </button>
+                        </dt>
+                        <dd class="mt-2 pr-12">
+                            <p data-toggle="faq-8" class="text-base text-gray-700 hidden">
+                                Sure! We will send you an email notification when your monthly usage hits 90% and 100%, so you have enough time to react and adapt your plan.
+                            </p>
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div data-wpr-lazyrender="1" class="bg-white pt-12 pb-12 sm:pb-0 bg-gray-100">
+  <div  class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div  class="md:flex md:items-start md:justify-between">
+      <!-- Left Column -->
+      <div class="max-w-md pb-8 lg:pb-10 ">
+        <h2 class="text-3xl font-bold text-gray-900">
+          <span class="block">Still have questions? Let's talk!</span>
+        </h2>
+        <p class="mt-4 text-lg leading-6 text-gray-700">
+          Still have questions or need more information? Our team is here to help.
+          Contact us today via phone, email, or live chat and we'll be more than happy
+          to assist you in finding the perfect plan for your needs.
+        </p>
+      </div>
+
+      <!-- Right Column -->
+      <div class="md:flex md:flex-col md:items-start md:-mt-5">
+        <a href="/cdn-cgi/l/email-protection#4d3e383d3d223f390d2c3d24212c34283f632e2220" class="-m-3 mt-2 p-3 flex items-center rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition ease-in-out duration-150">
+          <svg class="flex-shrink-0 h-6 w-6 text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          <span class="ml-3"><span class="__cf_email__" data-cfemail="8bf8fefbfbe4f9ffcbeafbe2e7eaf2eef9a5e8e4e6">[email&#160;protected]</span></span>
+        </a>
+
+        <a href="/contact" class="mt-8 border border-transparent rounded-md px-6 py-3 inline-flex items-center text-sm font-medium text-white bg-blue-700 uppercase">
+          or Fill a Contact Form
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer data-wpr-lazyrender="1" class="bg-footergray" aria-labelledby="footerHeading">
+    
+    <div  class="max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+        <div  class="xl:grid xl:grid-cols-3 xl:gap-8">
+            <div class="space-y-5 md:pr-3 xl:col-span-1">
+                <a href="/" style="display:flex;flex-direction:row">
+                    <img width="145" height="40" class="h-8" style="margin-right: -110px; margin-left: -30px;" src="https://zenserp.com/wp-content/themes/saasindustries/img/zenserp-footer-logo-icon.png" alt="zenserp logo icon white">
+                    <img width="885" height="188" class="h-8" src="https://zenserp.com/wp-content/themes/saasindustries/img/zenserp-logo-light.svg" alt="zenserp logo white">
+                </a>
+                <p class="text-gray-500 text-sm">
+                    Zenserp enables you to scrape search engine result pages in a fast and scalable way. Getting SERPs has never been easier.
+                </p>
+                <p class="text-gray-500 text-sm">
+                    Zenserp is not endorsed or affiliated by any search engine provider in any way and does not make use of any API provided by any search engine.
+                </p>
+                <!--<div class="flex rounded-md shadow-sm">-->
+                <!--    <div class="rounded-l-md border-r border-opacity-100 bg-gray-100 p-3">-->
+                <!--        <div class="flex items-center">-->
+                <!--            <div class="flex-shrink-0">-->
+                <!--                <svg class="h-5 w-5 text-green-400" x-description="Heroicon name: check-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">-->
+                <!--                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>-->
+                <!--                </svg>-->
+                <!--            </div>-->
+                <!--            <div class="ml-2 flex-1 flex justify-between">-->
+                <!--                <p class="text-sm text-gray-700 ">-->
+                <!--                    All systems operational-->
+                <!--                </p>-->
+                <!--            </div>-->
+                <!--        </div>-->
+                <!--    </div>-->
+                <!--    <div class="rounded-r-md border-l-0 bg-gray-100 p-3 ">-->
+                <!--        <div class="flex items-center">-->
+                <!--            <div class="flex-1 md:flex md:justify-between">-->
+                <!--                <p class="text-sm md:mt-0">-->
+                <!--                    <a href="https://zenserp.freshstatus.io" target="_blank" class="whitespace-nowrap font-medium text-gray-700 hover:text-blue-600">Status Page <span aria-hidden="true">&rarr;</span></a>-->
+                <!--                </p>-->
+                <!--            </div>-->
+                <!--        </div>-->
+                <!--    </div>-->
+                <!--</div>-->
+            </div>
+            <div class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
+                <div class="md:grid md:grid-cols-2 md:gap-8">
+                    <div>
+                        <h3 class="text-sm font-semibold text-gray-100 tracking-wider uppercase">
+                            General
+                        </h3>
+                        <ul class="mt-4 space-y-3">
+                            <li>
+                                <a href="/pricing-plans" class="text-sm text-gray-500 hover:text-gray-200">
+                                    Pricing
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="https://app.zenserp.com/register?plan=free" class="text-sm text-gray-500 hover:text-gray-200">
+                                    Free Plan
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/#faqSection" class="text-sm text-gray-500 hover:text-gray-200">
+                                    FAQ
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/contact" class="text-sm text-gray-500 hover:text-gray-200">
+                                    Contact
+                                </a>
+                            </li>
+                             <li>
+                                <a href="/zenserp-api-glossary" class="text-sm text-gray-500 hover:text-gray-200">
+                                    API Glossary
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="mt-12 md:mt-0">
+                        <h3 class="text-sm font-semibold text-gray-100 tracking-wider uppercase">
+                            Support
+                        </h3>
+                        <ul class="mt-4 space-y-3">
+
+                            <li>
+                                <a href="https://app.zenserp.com/playground?utm_source=zenserp&utm_medium=landing_page&utm_campaign=homepage&utm_content=playground_cta" class="text-sm text-gray-500 hover:text-gray-200">
+                                    API Playground
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="https://app.zenserp.com/documentation?utm_source=zenserp&utm_medium=landing_page&utm_campaign=homepage&utm_content=documentation_cta" class="text-sm text-gray-500 hover:text-gray-200">
+                                    Documentation
+                                </a>
+                            </li>
+                          
+                            <!--<li>-->
+                            <!--    <a href="https://zenserp.freshstatus.io" class="text-sm text-gray-500 hover:text-gray-200">-->
+                            <!--        API Status-->
+                            <!--    </a>-->
+                            <!--</li>-->
+                        </ul>
+                    </div>
+                </div>
+                <div class="md:grid md:grid-cols-2 md:gap-8">
+
+                    <div>
+                        <h3 class="text-sm font-semibold text-gray-100 tracking-wider uppercase">
+                            Legal
+                        </h3>
+                        <ul class="mt-4 space-y-3">
+                            <li>
+                                <a href="/privacy-policy" class="text-sm text-gray-500 hover:text-gray-200">
+                                    Privacy Policy
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="https://www.ideracorp.com/Legal/Terms-of-Use" class="text-sm text-gray-500 hover:text-gray-200">
+                                    Terms of Service (Idera)
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/imprint" class="text-sm text-gray-500 hover:text-gray-200">
+                                    Imprint
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-12 md:mt-0">
+                        <h3 class="text-sm font-semibold text-gray-100 tracking-wider uppercase">
+                            Content
+                        </h3>
+                        <ul class="mt-4 space-y-3">
+
+
+                            <li>
+                                <a href="/serp-api-review" class="text-sm text-gray-500 hover:text-gray-200">
+                                    Top 7 Google Search API Comparison
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/google-index-checker-tool" class="text-sm text-gray-500 hover:text-gray-200">
+                                    Google Index Checker Tool
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/serp-api-alternative" class="text-sm text-gray-500 hover:text-gray-200">
+                                    SERP API Alternative
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/blog" class="text-sm text-gray-500 hover:text-gray-200">
+                                    Blog
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div  class="mt-8 border-gray-200 pt-8 md:flex border-t border-opacity-25 md:items-center md:justify-between">
+            <div class="flex md:order-2 items-center" style="justify-content: center;">
+                
+<!--New social media icons start-->
+                <div class="social-icons">
+                    
+                    <a href="https://www.instagram.com/apilayer/" target="_blank" class="icon-box">
+                        <svg class="h-6 w-6 icon" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M17.34,5.46h0a1.2,1.2,0,1,0,1.2,1.2A1.2,1.2,0,0,0,17.34,5.46Zm4.6,2.42a7.59,7.59,0,0,0-.46-2.43,4.94,4.94,0,0,0-1.16-1.77,4.7,4.7,0,0,0-1.77-1.15,7.3,7.3,0,0,0-2.43-.47C15.06,2,14.72,2,12,2s-3.06,0-4.12.06a7.3,7.3,0,0,0-2.43.47A4.78,4.78,0,0,0,3.68,3.68,4.7,4.7,0,0,0,2.53,5.45a7.3,7.3,0,0,0-.47,2.43C2,8.94,2,9.28,2,12s0,3.06.06,4.12a7.3,7.3,0,0,0,.47,2.43,4.7,4.7,0,0,0,1.15,1.77,4.78,4.78,0,0,0,1.77,1.15,7.3,7.3,0,0,0,2.43.47C8.94,22,9.28,22,12,22s3.06,0,4.12-.06a7.3,7.3,0,0,0,2.43-.47,4.7,4.7,0,0,0,1.77-1.15,4.85,4.85,0,0,0,1.16-1.77,7.59,7.59,0,0,0,.46-2.43c0-1.06.06-1.4.06-4.12S22,8.94,21.94,7.88ZM20.14,16a5.61,5.61,0,0,1-.34,1.86,3.06,3.06,0,0,1-.75,1.15,3.19,3.19,0,0,1-1.15.75,5.61,5.61,0,0,1-1.86.34c-1,.05-1.37.06-4,.06s-3,0-4-.06A5.73,5.73,0,0,1,6.1,19.8,3.27,3.27,0,0,1,5,19.05a3,3,0,0,1-.74-1.15A5.54,5.54,0,0,1,3.86,16c0-1-.06-1.37-.06-4s0-3,.06-4A5.54,5.54,0,0,1,4.21,6.1,3,3,0,0,1,5,5,3.14,3.14,0,0,1,6.1,4.2,5.73,5.73,0,0,1,8,3.86c1,0,1.37-.06,4-.06s3,0,4,.06a5.61,5.61,0,0,1,1.86.34A3.06,3.06,0,0,1,19.05,5,3.06,3.06,0,0,1,19.8,6.1,5.61,5.61,0,0,1,20.14,8c.05,1,.06,1.37.06,4S20.19,15,20.14,16ZM12,6.87A5.13,5.13,0,1,0,17.14,12,5.12,5.12,0,0,0,12,6.87Zm0,8.46A3.33,3.33,0,1,1,15.33,12,3.33,3.33,0,0,1,12,15.33Z"/>
+                        </svg>
+                    </a>
+                    
+                    <a href="https://www.facebook.com/APILayer/" target="_blank" class="icon-box">
+                        <svg class="h-6 w-6 icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="icon">
+                            <path fill-rule="evenodd" d="M14,6h3a1,1,0,0,0,1-1V3a1,1,0,0,0-1-1H14A5,5,0,0,0,9,7v3H7a1,1,0,0,0-1,1v2a1,1,0,0,0,1,1H9v7a1,1,0,0,0,1,1h2a1,1,0,0,0,1-1V14h2.22a1,1,0,0,0,1-.76l.5-2a1,1,0,0,0-1-1.24H13V7A1,1,0,0,1,14,6Z"></path>
+                        </svg>
+                    </a>
+                    
+                    <a href="https://www.linkedin.com/company/apilayer/" target="_blank" class="icon-box">
+                        <svg class="h-6 w-6 icon" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" style="margin-left:6px">
+                            <path fill-rule="evenodd" d='M19.959 11.719v7.379h-4.278v-6.885c0-1.73-.619-2.91-2.167-2.91-1.182 0-1.886.796-2.195 1.565-.113.275-.142.658-.142 1.043v7.187h-4.28s.058-11.66 0-12.869h4.28v1.824l-.028.042h.028v-.042c.568-.875 1.583-2.126 3.856-2.126 2.815 0 4.926 1.84 4.926 5.792zM2.421.026C.958.026 0 .986 0 2.249c0 1.235.93 2.224 2.365 2.224h.028c1.493 0 2.42-.989 2.42-2.224C4.787.986 3.887.026 2.422.026zM.254 19.098h4.278V6.229H.254v12.869z' />
+                        </svg>
+                    </a>
+                    
+                    <a href="https://twitter.com/apilayer/" target="_blank" class="icon-box">
+
+<svg class="h-6 w-6 icon" fill="currentColor" style="margin: 9px 0 0 9px;" viewBox="0 0 24 24">
+  <path fill-rule="evenodd" d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+</svg>
+                    </a>
+                    
+                    <a href="https://www.youtube.com/channel/UCwDncja3klyMhkKXWV1zoNQ" target="_blank" class="icon-box">
+                        <svg class="h-6 w-6 icon" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7489 4C10.755 4.00335 6.95329 4.03145 4.29761 4.23019C3.86729 4.28305 2.92964 4.28706 2.09295 5.19376C1.43291 5.88365 1.21872 7.45214 1.21872 7.45214C1.21872 7.45214 1.01747 9.13906 1 10.8982V13.0957C1.01747 14.8549 1.21872 16.5418 1.21872 16.5418C1.21872 16.5418 1.43291 18.1097 2.09295 18.8002C2.92964 19.7069 4.02971 19.6781 4.51956 19.7725C6.12954 19.9324 11.0533 19.9913 11.8803 20H12.2893C13.3485 19.994 17.0829 19.9599 19.7011 19.7638C20.1314 19.7109 21.0691 19.7069 21.9058 18.8002C22.5658 18.1097 22.78 16.5418 22.78 16.5418C22.78 16.5418 23 14.701 23 12.8602V11.1338C23 9.29229 22.78 7.45214 22.78 7.45214C22.78 7.45214 22.5658 5.88365 21.9058 5.19376C21.0691 4.28706 20.1314 4.28305 19.7011 4.23019C17.0454 4.03145 13.2437 4.00335 12.2491 4H11.7489ZM9.72675 8.56008L15.6723 11.7681L9.72804 14.9548L9.72675 8.56008Z"/>
+                        </svg>
+                    </a>
+                    
+                    
+                    
+                    <a href="https://github.com/apilayer/" target="_blank" class="icon-box">
+                        <svg class="h-6 w-6 icon" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                        </svg>
+                    </a>
+
+                    <a href="https://discord.com/invite/hgjA78638n" target="_blank" class="icon-box">
+                        <svg class="h-6 w-6 icon" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M18.8944 4.34399C17.5184 3.71467 16.057 3.256 14.5317 3C14.3397 3.33067 14.1263 3.77866 13.977 4.13067C12.3546 3.89599 10.7439 3.89599 9.14394 4.13067C8.9946 3.77866 8.77059 3.33067 8.58925 3C7.05328 3.256 5.59194 3.71467 4.22555 4.34399C1.46289 8.41865 0.716219 12.3973 1.08955 16.3226C2.92421 17.6559 4.6949 18.4666 6.43463 19C6.86129 18.424 7.2453 17.8053 7.57597 17.1546C6.94663 16.92 6.3493 16.632 5.7733 16.2906C5.92263 16.184 6.07197 16.0667 6.21064 15.9493C9.68796 17.5387 13.4544 17.5387 16.889 15.9493C17.0383 16.0667 17.177 16.184 17.3263 16.2906C16.7503 16.632 16.153 16.92 15.5237 17.1546C15.8543 17.8053 16.2384 18.424 16.665 19C18.4037 18.4666 20.185 17.6559 22.0101 16.3226C22.4687 11.7787 21.2837 7.83202 18.8944 4.34399ZM8.05596 13.9013C7.01061 13.9013 6.15728 12.952 6.15728 11.7893C6.15728 10.6267 6.98928 9.67731 8.05596 9.67731C9.11194 9.67731 9.97591 10.6267 9.95457 11.7893C9.95457 12.952 9.11194 13.9013 8.05596 13.9013ZM15.065 13.9013C14.0197 13.9013 13.1653 12.952 13.1653 11.7893C13.1653 10.6267 13.9983 9.67731 15.065 9.67731C16.121 9.67731 16.985 10.6267 16.9637 11.7893C16.9637 12.952 16.1317 13.9013 15.065 13.9013Z"/>
+                    </svg>
+                    </a>
+                    
+                </div>
+                <!--New social media icons end-->
+                
+      <!--          <a href="https://github.com/apilayer/" class="text-gray-400 hover:text-gray-500 mr-3">-->
+      <!--              <span class="sr-only">GitHub</span>-->
+      <!--              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">-->
+      <!--                  <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />-->
+      <!--              </svg>-->
+      <!--          </a>-->
+      <!--          <a href="https://www.linkedin.com/company/apilayer/" class="text-gray-400 hover:text-gray-500 mr-3">-->
+      <!--              <span class="sr-only">LinkedIn</span>-->
+      <!--              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">-->
+      <!--                  <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />-->
+      <!--              </svg>-->
+      <!--          </a>-->
+      <!--          <a href="https://www.facebook.com/APILayer/" class="text-gray-400 hover:text-gray-500 mr-3">-->
+      <!--              <span class="sr-only">Facebook</span>-->
+      <!--              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">-->
+      <!--                  <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>-->
+      <!--              </svg>-->
+      <!--          </a>-->
+      <!--          <a href="https://twitter.com/apilayer/" class="text-gray-400 hover:text-gray-500">-->
+      <!--              <span class="sr-only">Twitter</span>-->
+      <!--              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">-->
+      <!--                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>-->
+      <!--              </svg>-->
+      <!--          </a>-->
+				  <!--<a href="https://www.instagram.com/apilayer/" class="text-gray-400 hover:text-gray-500">-->
+      <!--              <span class="sr-only">Instagram</span>-->
+      <!--             <svg style="margin-left:4px;" class="h-5 w-5 insta" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16"> <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/> </svg>-->
+      <!--          </a>-->
+
+            </div>
+
+            <p class="text-sm text-gray-400 md:order-1">
+                &copy; 2026 Zenserp API, an <a href="https://apilayer.com/" class="underline" target="_blank">APILayer</a> product. All rights reserved.
+            </p>
+        </div>
+        <div  class="my-4">
+            <img width="828" height="297" src="https://zenserp.com/wp-content/themes/saasindustries/img/madeineu.svg" class="h-12" alt="made in eu">
+        </div>
+
+    </div>
+</footer>
+<div  id="mobileMenuCustom" class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right hidden">
+    <div  class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
+        <div  class="px-5 pt-4 flex items-center justify-between">
+            <div>
+                <img width="885" height="211" class="h-8 w-auto" src="https://zenserp.com/wp-content/themes/saasindustries/img/zenserp-logo-dark.svg" alt="zenserp logo dark">
+            </div>
+            <div class="-mr-2">
+                <button id="closeMobileMenuCustom" type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                    <span class="sr-only">Close menu</span>
+                    <!-- Heroicon name: x -->
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div  role="menu" aria-orientation="vertical" aria-labelledby="main-menu">
+            <div class="px-2 pt-2 pb-3" role="none">
+                <a href="/pricing-plans" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" role="menuitem">Pricing</a>
+                <a href="https://app.zenserp.com/playground" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" role="menuitem">Playground</a>
+                <a href="https://app.zenserp.com/documentation" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" role="menuitem">Documentation</a>
+                <h3 class="text-sm px-3 py-2 font-semibold text-gray-900 tracking-wider uppercase" style="padding-bottom: 0;margin-bottom: 5px;">
+                    Features
+                </h3>
+                <div class="max-w-7xl mx-auto grid gap-y-8 px-4 py-1 sm:px-6 sm:py-8 lg:px-8 lg:py-10">
+
+            <!-- GOOGLE -->
+            <div>
+                <div class="flex items-center justify-between" style="border-bottom: 1px solid lightgrey; height: 30px;">
+                    <p class="text-xs font-semibold text-darkgray-400 uppercase tracking-wider" style="font-size: 12px;font-weight: 700;letter-spacing: 0.06em;">Google</p>
+                    <!-- <button type="button" class="-m-2 p-2 text-gray-400 hover:text-gray-500">
+                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10 3a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm0 5.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm0 5.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"></path>
+                        </svg>
+                    </button> -->
+                </div>
+                <div class="mt-4 grid grid-cols-1 gap-y-4 gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
+                    <a href="/" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-200 transition ease-in-out duration-150 hidden" style="align-items: flex-start;">
+                        <div class="flex-shrink-0">
+                            <div class="inline-flex items-center justify-center h-8 w-8 rounded-md text-blue-700">
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-base font-medium text-gray-900">Google SERP</p>
+                            <p class="mt-1 text-sm text-darkgray-500">Organic, ads, snippets</p>
+                        </div>
+                    </a>
+
+                    <a href="/google-image-search-api" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-200 transition ease-in-out duration-150" style="align-items: flex-start;">
+                        <div class="flex-shrink-0">
+                            <div class="inline-flex items-center justify-center h-8 w-8 rounded-md text-blue-700">
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-base font-medium text-gray-900" style="font-size: 15px;font-weight: 600;line-height: 1.3;color: #1a1a2e;">Image Search</p>
+                            <p class="mt-1 text-sm text-darkgray-500" style="margin-top:0;color: rgba(160, 174, 192, 1);">Images for a query</p>
+                        </div>
+                    </a>
+
+                    <a href="/google-maps-api" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-200 transition ease-in-out duration-150" style="align-items: flex-start;">
+                        <div class="flex-shrink-0">
+                            <div class="inline-flex items-center justify-center h-8 w-8 rounded-md text-blue-700">
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-base font-medium text-gray-900" style="font-size: 15px;font-weight: 600;line-height: 1.3;color: #1a1a2e;">Maps Search</p>
+                            <p class="mt-1 text-sm text-darkgray-500" style="margin-top:0;color: rgba(160, 174, 192, 1);">Local businesses</p>
+                        </div>
+                    </a>
+
+                    <a href="/google-news-api" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-200 transition ease-in-out duration-150" style="align-items: flex-start;">
+                        <div class="flex-shrink-0">
+                            <div class="inline-flex items-center justify-center h-8 w-8 rounded-md text-blue-700">
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-base font-medium text-gray-900" style="font-size: 15px;font-weight: 600;line-height: 1.3;color: #1a1a2e;">News</p>
+                            <p class="mt-1 text-sm text-darkgray-500" style="margin-top:0;color: rgba(160, 174, 192, 1);">Latest news</p>
+                        </div>
+                    </a>
+
+                    <a href="/google-shopping-api" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-200 transition ease-in-out duration-150" style="align-items: flex-start;">
+                        <div class="flex-shrink-0">
+                            <div class="inline-flex items-center justify-center h-8 w-8 rounded-md text-blue-700">
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-base font-medium text-gray-900" style="font-size: 15px;font-weight: 600;line-height: 1.3;color: #1a1a2e;">Shopping</p>
+                            <p class="mt-1 text-sm text-darkgray-500" style="margin-top:0;color: rgba(160, 174, 192, 1);">Products + pages</p>
+                        </div>
+                    </a>
+
+                    <a href="/google-trends-api" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-200 transition ease-in-out duration-150" style="align-items: flex-start;">
+                        <div class="flex-shrink-0">
+                            <div class="inline-flex items-center justify-center h-8 w-8 rounded-md text-blue-700">
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-base font-medium text-gray-900" style="font-size: 15px;font-weight: 600;line-height: 1.3;color: #1a1a2e;">Trends</p>
+                            <p class="mt-1 text-sm text-darkgray-500" style="margin-top:0;color: rgba(160, 174, 192, 1);">Popularity over time</p>
+                        </div>
+                    </a>
+
+                    <a href="/google-image-reverse-search-api" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-200 transition ease-in-out duration-150" style="align-items: flex-start;">
+                        <div class="flex-shrink-0">
+                            <div class="inline-flex items-center justify-center h-8 w-8 rounded-md text-blue-700">
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-base font-medium text-gray-900" style="font-size: 15px;font-weight: 600;line-height: 1.3;color: #1a1a2e;">Reverse Image</p>
+                            <p class="mt-1 text-sm text-darkgray-500" style="margin-top:0;color: rgba(160, 174, 192, 1);">Find pages by image</p>
+                        </div>
+                    </a>
+
+                    <a href="/youtube-search-api" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-200 transition ease-in-out duration-150" style="align-items: flex-start;">
+                        <div class="flex-shrink-0">
+                            <div class="inline-flex items-center justify-center h-8 w-8 rounded-md text-blue-700">
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-base font-medium text-gray-900" style="font-size: 15px;font-weight: 600;line-height: 1.3;color: #1a1a2e;">Youtube</p>
+                            <p class="mt-1 text-sm text-darkgray-500" style="margin-top:0;color: rgba(160, 174, 192, 1);">Video results</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            
+
+            <!-- AI SEARCH -->
+            <div>
+                <div class="flex items-center" style="border-bottom: 1px solid lightgrey; height: 30px;">
+                    <p class="text-xs font-semibold text-darkgray-400 uppercase tracking-wider" style="font-size: 12px;font-weight: 700;letter-spacing: 0.06em;">AI Search</p>
+                    <span class="ml-2 inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-indigo-100 text-indigo-800" style="display:none;">Coming Soon</span>
+                </div>
+                <div class="mt-4 grid grid-cols-1 gap-y-4 gap-x-8 sm:grid-cols-2">
+                    <a href="/ai-overview-api" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-200 transition ease-in-out duration-150" style="align-items: flex-start;">
+                        <div class="flex-shrink-0">
+                            <div class="inline-flex items-center justify-center h-8 w-8 rounded-md text-blue-700">
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="transform: rotate(180deg);">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-base font-medium text-gray-900" style="font-size: 15px;font-weight: 600;line-height: 1.3;color: #1a1a2e;">AI Overview</p>
+                            <p class="mt-1 text-sm text-darkgray-500" style="margin-top:0;color: rgba(160, 174, 192, 1);">Google AI answer + citations</p>
+                        </div>
+                    </a>
+
+                    <a href="/answer-engines-api" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-200 transition ease-in-out duration-150" style="align-items: flex-start;">
+                        <div class="flex-shrink-0">
+                            <div class="inline-flex items-center justify-center h-8 w-8 rounded-md text-blue-700">
+                                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor" fill="none" stroke-width="1.5"><rect x="3" y="4" width="18" height="13" rx="2.5"></rect><polyline points="7 17 7 21 11 17"></polyline><circle cx="9" cy="10.2" r="0.6" fill="currentColor" stroke="none"></circle><circle cx="15" cy="10.2" r="0.6" fill="currentColor" stroke="none"></circle><path d="M8.7 12.8c.9.9 1.9 1.3 3.3 1.3s2.4-.4 3.3-1.3"></path></svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-base font-medium text-gray-900" style="font-size: 15px;font-weight: 600;line-height: 1.3;color: #1a1a2e;">Answer Engines</p>
+                            <p class="mt-1 text-sm text-darkgray-500" style="margin-top:0;color: rgba(160, 174, 192, 1);">ChatGPT, Perplexity, Gemini, Grok, Copilot</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            
+
+            <!-- OTHER ENGINES -->
+            <div>
+                <p class="text-xs font-semibold text-darkgray-400 uppercase tracking-wider" style="border-bottom: 1px solid lightgrey; height: 30px;font-size: 12px;font-weight: 700;letter-spacing: 0.06em;">Other Engines</p>
+                <div class="mt-4 grid grid-cols-1 gap-y-4 gap-x-8 sm:grid-cols-2">
+                    <a href="/bing-search-api" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-200 transition ease-in-out duration-150" style="align-items: flex-start;">
+                        <div class="flex-shrink-0">
+                            <div class="inline-flex items-center justify-center h-8 w-8 rounded-md text-blue-700">
+                                <svg viewBox="0 0 24 24" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" fill="none" stroke-width="1.5"><path d="M6 2.8l3.2 1.1v11.6l4-2.3-2.6-1.2 5.4 1.9c1.2.4 1.2 1.4.1 2l-6.7 3.9L6 17.2z"></path></svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-base font-medium text-gray-900" style="font-size: 15px;font-weight: 600;line-height: 1.3;color: #1a1a2e;">Bing Search</p>
+                            <p class="mt-1 text-sm text-darkgray-500" style="margin-top:0;color: rgba(160, 174, 192, 1);">Organic, ads, video</p>
+                        </div>
+                    </a>
+
+                    <a href="/yandex-serp-api" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-200 transition ease-in-out duration-150" style="align-items: flex-start;">
+                        <div class="flex-shrink-0">
+                            <div class="inline-flex items-center justify-center h-8 w-8 rounded-md text-blue-700">
+                                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor" fill="none" stroke-width="1.5"><circle cx="10" cy="10" r="7.2"></circle><line x1="2.8" y1="10" x2="17.2" y2="10"></line><path d="M10 2.8a10 10 0 0 1 0 14.4"></path><path d="M10 2.8a10 10 0 0 0 0 14.4"></path><circle cx="15.8" cy="15.8" r="3.6"></circle><line x1="18.4" y1="18.4" x2="20.8" y2="20.8"></line></svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-base font-medium text-gray-900" style="font-size: 15px;font-weight: 600;line-height: 1.3;color: #1a1a2e;">Yandex Search</p>
+                            <p class="mt-1 text-sm text-darkgray-500" style="margin-top:0;color: rgba(160, 174, 192, 1);">JSON results</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            
+
+            <!-- SPECIALIZED VERTICALS -->
+            <div>
+                <div class="flex items-center" style="border-bottom: 1px solid lightgrey; height: 30px;">
+                    <p class="text-xs font-semibold text-darkgray-400 uppercase tracking-wider" style="font-size: 12px;font-weight: 700;letter-spacing: 0.06em;">Specialized Verticals</p>
+                    <span class="ml-2 inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-indigo-100 text-indigo-800 hidden">Coming Soon</span>
+                </div>
+                <div class="mt-4 grid grid-cols-1 gap-y-4 gap-x-8 sm:grid-cols-2">
+                    <a href="#" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-200 transition ease-in-out duration-150 hidden" style="align-items: flex-start;">
+                        <div class="flex-shrink-0">
+                            <div class="inline-flex items-center justify-center h-8 w-8 rounded-md text-blue-700">
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.977 2.89a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.196-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.977-2.89c-.783-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-base font-medium text-gray-900">Reviews</p>
+                        </div>
+                    </a>
+
+                    <a href="/google-hotels-api/" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-200 transition ease-in-out duration-150" style="align-items: flex-start;">
+                        <div class="flex-shrink-0">
+                            <div class="inline-flex items-center justify-center h-8 w-8 rounded-md text-blue-700">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                  <path d="M4 6v12"></path>
+                                  <circle cx="8" cy="9.5" r="1.6"></circle>
+                                  <path d="M4 13h16"></path>
+                                  <path d="M11 13V9h7q2 0 2 2v7"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-base font-medium text-gray-900">Hotels</p>
+                        </div>
+                    </a>
+
+                    <a href="/google-flights-api/" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-200 transition ease-in-out duration-150" style="align-items: flex-start;">
+                        <div class="flex-shrink-0">
+                            <div class="inline-flex items-center justify-center h-8 w-8 rounded-md text-blue-700">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(90deg);">
+                                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2.5 1.5V22l4-1 4 1v-1.5L13 19v-5.5l8 2.5z"></path>
+                              </svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-base font-medium text-gray-900">Flights</p>
+                        </div>
+                    </a>
+
+                    <a href="/google-jobs-api/" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-200 transition ease-in-out duration-150" style="align-items: flex-start;">
+                        <div class="flex-shrink-0">
+                            <div class="inline-flex items-center justify-center h-8 w-8 rounded-md text-blue-700">
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m-2 0h12a2 2 0 012 2v8a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-base font-medium text-gray-900">Jobs</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+            </div>
+            <div role="none">
+                <a href="https://app.zenserp.com/login" class="block w-full px-5 py-3 text-center font-medium text-black bg-gray-200 hover:bg-gray-400" role="menuitem">
+                    Log in
+                </a>
+                <a href="https://app.zenserp.com/register" class="block w-full px-5 py-3 text-center font-medium text-white bg-blue-700 hover:bg-gray-400" role="menuitem">
+                    Register
+                </a>
+            </div>
+        </div>
+    </div>
+</div><div  id="launchChat">
+    <div  class="chat-content">
+        <svg version="1.1" id="chatIcon" class="d-hotline h-btn animated zoomIn faster hidden" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
+            <g id="Icon-Comment" transform="translate(328.000000, 480.000000)">
+                <path id="Fill-59" fill="currentColor" stroke-width="1" stroke="currentColor" class="st0" d="M-304.7-433.9h-1.6l0.9-1.3c0.7-1,1.2-2.2,1.4-3.8c-4.5-2-6.8-5.8-6.8-10.7
+			c0-7.6,5.7-12.3,15-12.3s15,4.7,15,12.3c0,7.7-5.6,12.3-15,12.3c-0.2,0-0.4,0-0.6,0C-297.9-435.8-300.4-433.9-304.7-433.9
+			L-304.7-433.9z M-295.9-460.4c-8.4,0-13.3,4-13.3,10.7c0,5.7,3.5,8.3,6.4,9.5l0.6,0.3l-0.1,0.6c-0.2,1.4-0.5,2.7-1,3.8
+			c3-0.4,4.8-1.9,5.7-3.1l0.3-0.3h0.6c0.3,0,0.6,0,0.8,0c12,0,13.3-7.5,13.3-10.7C-282.6-456.4-287.6-460.4-295.9-460.4
+			L-295.9-460.4z" />
+            </g>
+        </svg>
+
+        <div  id="consentSection" class="fixed bottom-0 inset-x-0 hidden">
+            <div class="max-w-7xl mx-auto">
+                <div class="p-2 bg-blue-900 shadow-lg sm:p-3">
+                    <div class="flex items-center justify-between flex-wrap">
+                        <div class="w-0 flex-1 flex items-center">
+                            <p class="ml-3 font-medium text-white truncate">
+                                <span class="md:hidden text-sm font-normal text-gray-300">
+                                    <span class="text-lg font-medium font-normal text-white">You want to chat? We need your consent!</span><br />
+                                    The Freshchat Widget is a service for interacting with the Freshchat live chat platform provided, by Freshworks, Inc.<br />
+                                    Personal Data processed: Data communicated while using the service; email address; Tracker; Usage Data.<br />
+                                    Place of processing: European Union - <a target="_blank" href="https://www.freshworks.com/privacy/">Privacy Policy</a>
+                                </span>
+                                <span class="hidden md:inline text-sm font-normal text-gray-300">
+                                    <span class="text-lg font-medium text-white">You want to chat? We need your consent!</span> <br />
+                                    The Freshchat Widget is a service for interacting with the Freshchat live chat platform provided, by Freshworks, Inc.<br />
+                                    Personal Data processed: Data communicated while using the service; email address; Tracker; Usage Data.<br />
+                                    Place of processing: European Union - <a target="_blank" href="https://www.freshworks.com/privacy/">Privacy Policy</a>
+                                </span>
+                            </p>
+                        </div>
+                        <div class="order-3 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto">
+                            <a id="loadChat" href class="flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-blue-900 bg-white">
+                                Yes, I Agree
+                            </a>
+                        </div>
+                        <div class="order-2 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto">
+                            <a id="closeChat" href class="flex items-center justify-center px-4 py-2 border border-transparent rounded-md text-sm font-medium text-white ">
+                                No, Thanks
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div><div  id="consentContainer" class="cookie-notification-container hidden" rel="cookie-notification">
+  	<div  class="cookie-notification">
+	  	<span class="cookie-notification-copy">
+			By using our website you agree to our <a class="common-Link text-blue-700" href="/privacy-policy" >privacy policy</a>.
+	  	</span>
+	  	<div  id="dismiss-button" class="dismiss-button"></div>
+  	</div>
+</div><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/saasindustries/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+//# sourceURL=rocket-browser-checker-js-after
+</script>
+<script id="rocket-preload-links-js-extra">
+var RocketPreloadLinksConfig = {"excludeUris":"/(?:.+/)?feed(?:/(?:.+/?)?)?$|/(?:.+/)?embed/|/(index.php/)?(.*)wp-json(/.*|$)|/refer/|/go/|/recommend/|/recommends/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https://zenserp.com","onHoverDelay":"100","rateThrottle":"3"};
+//# sourceURL=rocket-preload-links-js-extra
+</script>
+<script id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+
+//# sourceURL=rocket-preload-links-js-after
+</script>
+<script id="base-js-js" src="https://zenserp.com/wp-content/themes/saasindustries/public/js/compiled.js?ver=3.0.0"></script>
+<script id="pricing-js-js" src="https://zenserp.com/wp-content/themes/saasindustries/public/js/pricing1.js?ver=3.0.6"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    var openBtn1  = document.getElementById('openMobileMenuCustom');
+    var closeBtn1 = document.getElementById('closeMobileMenuCustom');
+    var menu1     = document.getElementById('mobileMenuCustom');
+
+    if (!openBtn1 || !closeBtn1 || !menu1) {
+        return;
+    }
+
+    function toggleMenuCustom() {
+        menu1.classList.toggle('hidden');
+        menu1.classList.add('z-20');
+    }
+
+    openBtn1.addEventListener('click', toggleMenuCustom);
+    closeBtn1.addEventListener('click', toggleMenuCustom);
+    
+    try {
+    document.getElementById("openFlyoutCustom").addEventListener("click", (function() {
+        document.getElementById("flyoutMenuCustom").classList.contains("hidden") ? document.getElementById("flyoutMenuCustom").classList.remove("hidden") : document.getElementById("flyoutMenuCustom").classList.add("hidden")
+    }))
+} catch (e) {}
+
+});    
+</script>
+<!-- Syntax highlighting engine for code snippets 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-php.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>-->
+</body>
+
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1792388154 -->

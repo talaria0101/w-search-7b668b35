@@ -1,0 +1,63 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://docs.langsearch.com/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Plan & usage
+
+> Token metering, account rate limits, and daily resets at 00:00 UTC.
+
+<div className="ls-plan"><span className="ls-kicker">FREE PLAN</span><div className="ls-price">\$0<span> / month</span></div><p>All supported Web Search features included.</p><a href="https://langsearch.com/dashboard">View your plan and usage →</a></div>
+
+## How tokens are counted
+
+Web Search measures usage in **input and output tokens**. Tokens are pieces of text, not characters or requests.
+
+* **Input:** the search query.
+* **Output:** the returned webpage text, or the snippet when no full-length content is returned.
+* Titles, URLs, dates, and other metadata do not count.
+* For older integrations receiving multiple content representations, each returned full-length content field counts; the shorter snippet is excluded.
+
+Counting happens after response filtering and text truncation. Input and output tokens together consume your allowance. Reducing `count` or `contents.text.maxCharacters` can reduce output usage.
+
+Successful API responses include `usage.input_tokens` and `usage.output_tokens`. Add them to get the request's total token usage. Request counts are still tracked separately.
+
+## Free Plan pricing
+
+Input tokens and output tokens currently both cost **\$0 per million tokens**. There are no additional charges for individual Web Search features. Token limits still apply.
+
+## Account limits
+
+| Limit | What it controls |
+| - | - |
+| RPS | Requests per second. New accounts start at **5 RPS**; existing accounts retain their configured RPS. |
+| TPM | Input plus output tokens within a rolling **60-second** window. |
+| TPD | Input plus output tokens during the current **UTC day**. |
+
+Web Search does not impose separate requests-per-minute or requests-per-day quotas. All API keys on an account share its Web Search limits, including calls through MCP. Creating additional keys does not restore allowance.
+
+The Dashboard shows your actual RPS and TPM limits and today's consumed tokens alongside the daily usage percentage.
+
+## Automatic reset
+
+Daily token allowance resets at **00:00 UTC**, every day. This is a fixed UTC boundary, not 24 hours after your first request and not midnight in your device's timezone. There is no manual reset action.
+
+TPM becomes available as earlier requests leave the rolling window; it does not reset on a fixed clock-minute boundary.
+
+## Usage reporting
+
+Current plan usage reads settled token records. Historical statistics are aggregated once per minute, grouped by account, product, API key, and UTC minute. The current minute may not yet appear in historical reports; minutes without usage do not produce empty records.
+
+Only successfully settled searches contribute token usage. A client timeout does not necessarily mean the server failed: a search that completes successfully can still consume tokens.
+
+## When a limit is reached
+
+A `429` can indicate RPS, concurrency, TPM, or TPD limits. Follow `Retry-After` when present. Daily token exhaustion requires waiting for the next UTC reset. If a response cannot fit within your token limit, reduce the result count or text length rather than repeatedly retrying unchanged.
+
+See [Errors](/api/errors) for retry guidance.
+
+## Results per request
+
+`count` controls the maximum number of results, from 1 to 50. It is separate from token allowance and request rate limits.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

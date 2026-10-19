@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta property="og:title" content="News API Quick Start: Get Your API Key in Minutes | Currents">
+    <meta property="og:description" content="Currents News API provides affordable, reliable news data in JSON format.">
+    <meta property="og:image" content="/img/Cover-Image.jpg?q=1772090198">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://currentsapi.services/en/docs/">
+    <meta property="og:site_name" content="Currents News API">
+    <meta name="twitter:site" content="@CurrentsApi">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="News API Quick Start: Get Your API Key in Minutes | Currents">
+    <meta name="twitter:description" content="Complete documentation for Currents News API.">
+    <meta name="twitter:image" content="/img/Cover-Image.jpg?q=1772090198">
+    
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://currentsapi.services/en/docs/">
+    <link rel="alternate" hreflang="en" href="https://currentsapi.services/en/docs/">
+    <link rel="alternate" hreflang="x-default" href="https://currentsapi.services/en/docs/">
+
+    <!-- TechArticle Schema (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Currents News API Documentation",
+      "description": "Complete documentation for the Currents News API: authentication, endpoints, rate limits, and error handling for real-time news data in JSON.",
+      "url": "https://currentsapi.services/en/docs/",
+      "inLanguage": "en",
+      "publisher": {"@type": "Organization", "name": "Currents News API", "url": "https://currentsapi.services"}
+    }
+    </script>
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Source+Sans+3:wght@400;600&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <script>
+      (function() {
+        try {
+          const storedTheme = localStorage.getItem('currents_theme');
+          if (storedTheme === 'classic') {
+            document.documentElement.removeAttribute('data-theme');
+            return;
+          }
+          document.documentElement.setAttribute('data-theme', 'comfort');
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'comfort');
+        }
+      })();
+    </script>
+
+    <style>
+      :root {
+        --primary-blue: #1162B9;
+        --primary-blue-dark: #034393;
+        --primary-blue-light: #B7D4F2;
+        --bg-white: #FFFFFF;
+        --bg-light: #F8FAFC;
+        --bg-lighter: #F1F5F9;
+        --surface-elevated: #FFFFFF;
+        --surface-muted: #F7FAFC;
+        --text-dark: #0F172A;
+        --text-gray: #64748B;
+        --text-light: #64748B;
+        --border-color: #E2E8F0;
+        --body-accent: rgba(17, 98, 185, 0.05);
+        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        --radius-sm: 8px;
+        --radius-md: 12px;
+        --radius-lg: 16px;
+        /* Typography */
+        --font-display: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+        --font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        --font-mono: 'Spline Sans Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+        /* Accent and semantic */
+        --accent: #D8953D;
+        --accent-deep: #A0600B;
+        --accent-tint: rgba(216, 149, 61, 0.14);
+        --success: #33854A;
+        --warning: #CD9130;
+        --error: #B6322D;
+      }
+
+      html[data-theme="comfort"] {
+        --primary-blue: #1162B9;
+        --primary-blue-dark: #034393;
+        --primary-blue-light: #B7D4F2;
+        --bg-white: #FBF9F3;
+        --bg-light: #F7F3EA;
+        --bg-lighter: #EEE9DC;
+        --surface-elevated: #FEFDFB;
+        --surface-muted: #FAF8F4;
+        --text-dark: #2C2822;
+        --text-gray: #46423A;
+        --text-light: #686359;
+        --border-color: #E0D8C8;
+        --body-accent: rgba(17, 98, 185, 0.07);
+        --shadow-sm: 0 1px 2px 0 rgba(44, 40, 34, 0.06);
+        --shadow-md: 0 8px 16px -8px rgba(44, 40, 34, 0.16);
+        --shadow-lg: 0 18px 28px -16px rgba(44, 40, 34, 0.2);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        background-color: var(--bg-light) !important;
+        width: 100%;
+        overflow-x: hidden;
+      }
+      body {
+        font-family: var(--font-body);
+        background:
+          radial-gradient(1200px 450px at 90% -10%, var(--body-accent), transparent 70%),
+          linear-gradient(180deg, var(--bg-light) 0%, var(--bg-white) 32%, var(--bg-white) 100%);
+        color: var(--text-dark);
+        line-height: 1.65;
+        font-size: 1.0625rem;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        width: 100%;
+        overflow-x: hidden;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        color: var(--text-dark);
+        font-weight: 600;
+        line-height: 1.15;
+        margin-bottom: 1rem;
+      }
+
+      h1, h2 {
+        font-family: var(--font-display);
+      }
+
+      h1 { font-size: clamp(2.25rem, 3vw + 0.75rem, 3.25rem); line-height: 1.12; letter-spacing: -0.015em; margin-bottom: 2rem; }
+      h2 { font-size: clamp(1.625rem, 2vw + 0.5rem, 2.125rem); letter-spacing: -0.01em; margin-bottom: 1.5rem; }
+      h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+      h4 { font-size: 1.1875rem; margin-bottom: 0.75rem; }
+      h5 { font-size: 1.125rem; margin-bottom: 0.5rem; }
+      h6 { font-size: 1rem; margin-bottom: 0.5rem; }
+
+      p {
+        color: var(--text-gray);
+        line-height: 1.65;
+        margin-bottom: 1rem;
+      }
+
+      img,
+      svg {
+        max-width: 100%;
+        height: auto;
+      }
+
+      a {
+        color: var(--primary-blue);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      a:hover {
+        color: var(--primary-blue-dark);
+      }
+
+      /* Container */
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      /* Documentation Layout */
+      .docs-layout {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        min-height: calc(100vh - 5rem);
+        width: 100%;
+        max-width: 100%;
+      }
+
+      @media (max-width: 1024px) {
+        .docs-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .docs-sidebar {
+          display: none;
+        }
+
+        .docs-sidebar.show {
+          display: block;
+        }
+      }
+
+      /* Sidebar */
+      .docs-sidebar {
+        background: var(--surface-muted);
+        border-right: 1px solid var(--border-color);
+        padding: 2rem 0 0 0;
+        position: sticky;
+        top: 5rem;
+        height: calc(100vh - 5rem);
+        overflow-y: auto;
+      }
+
+      .docs-sidebar-logo {
+        padding: 0 1.5rem 2rem 1.5rem;
+        border-bottom: 1px solid var(--border-color);
+        margin-bottom: 1rem;
+      }
+
+      .docs-sidebar-logo img {
+        max-height: 2rem;
+        width: auto;
+      }
+
+      .docs-sidebar-logo a {
+        display: block;
+      }
+
+      .docs-nav {
+        list-style: none;
+      }
+
+      .docs-nav-item {
+        margin-bottom: 0.25rem;
+      }
+
+      .docs-nav-link {
+        display: block;
+        padding: 0.75rem 1.5rem;
+        color: var(--text-gray);
+        text-decoration: none;
+        font-size: 0.9375rem;
+        transition: all 0.2s ease;
+        border-left: 3px solid transparent;
+      }
+
+      .docs-nav-link:hover,
+      .docs-nav-link.active {
+        color: var(--primary-blue);
+        background: var(--surface-elevated);
+        border-left-color: var(--primary-blue);
+      }
+
+      .docs-nav-header {
+        padding: 0.75rem 1.5rem;
+        font-weight: 600;
+        color: var(--text-dark);
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-top: 1.5rem;
+      }
+
+      /* Content */
+      .docs-content {
+        padding: 3rem;
+        max-width: 900px;
+        width: 100%;
+        overflow-wrap: anywhere;
+        min-width: 0;
+      }
+
+      .docs-content > * {
+        max-width: 100%;
+      }
+
+      @media (max-width: 768px) {
+        .docs-content {
+          padding: 1.5rem;
+        }
+
+        body { font-size: 15.5px; }
+        h1 { font-size: 1.75rem; }
+        h2 { font-size: 1.5rem; }
+
+        table {
+          display: block;
+          overflow-x: auto;
+        }
+      }
+
+      /* Code Blocks */
+      code {
+        font-family: var(--font-mono);
+        background: var(--surface-muted);
+        padding: 0.2rem 0.4rem;
+        border-radius: var(--radius-sm);
+        font-size: 0.875rem;
+        color: var(--text-dark);
+        overflow-wrap: anywhere;
+      }
+
+      pre {
+        background: var(--surface-muted);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-md);
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        overflow-x: auto;
+        max-width: 100%;
+      }
+
+      pre code {
+        background: none;
+        padding: 0;
+        border: none;
+        font-size: 0.875rem;
+        line-height: 1.7;
+      }
+
+      /* Tables */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 2rem;
+        table-layout: fixed;
+      }
+
+      th, td {
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 1px solid var(--border-color);
+        word-break: break-word;
+      }
+
+      th {
+        font-weight: 600;
+        color: var(--text-dark);
+        background: var(--bg-light);
+      }
+
+      tr:hover td {
+        background: var(--bg-light);
+      }
+
+      /* Alerts */
+      .alert {
+        padding: 1rem 1.5rem;
+        border-radius: var(--radius-sm);
+        margin-bottom: 1.5rem;
+        border-left: 4px solid;
+      }
+
+      .alert-info {
+        background: var(--bg-lighter);
+        border-color: var(--primary-blue);
+        color: var(--primary-blue-dark);
+      }
+
+      .alert-success {
+        background: #ECFDF5;
+        border-color: #10B981;
+        color: #047857;
+      }
+
+      .alert-warning {
+        background: #FEF3C7;
+        border-color: #F59E0B;
+        color: #92400E;
+      }
+
+      /* API Endpoint Card */
+      .endpoint-card {
+        background: var(--surface-elevated);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-md);
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .endpoint-method {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        border-radius: var(--radius-sm);
+        font-weight: 600;
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+
+      .endpoint-method.get { background: #DBEAFE; color: #1E40AF; }
+      .endpoint-method.post { background: #D1FAE5; color: #047857; }
+      .endpoint-method.put { background: #FEF3C7; color: #92400E; }
+      .endpoint-method.delete { background: #FEE2E2; color: #B91C1C; }
+
+      .endpoint-url {
+        font-family: var(--font-mono);
+        font-size: 1rem;
+        color: var(--text-dark);
+        margin-bottom: 1rem;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+      }
+
+      /* Mobile Menu Toggle */
+      .docs-mobile-toggle {
+        display: none;
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 3.5rem;
+        height: 3.5rem;
+        background: var(--primary-blue);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        box-shadow: var(--shadow-lg);
+        cursor: pointer;
+        z-index: 1000;
+        transition: all 0.2s ease;
+      }
+
+      .docs-mobile-toggle:hover {
+        transform: scale(1.1);
+        background: var(--primary-blue-dark);
+      }
+
+      @media (max-width: 1024px) {
+        .docs-mobile-toggle {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+      /* Navigation */
+      .nav {
+        background: var(--surface-elevated);
+        background: color-mix(in srgb, var(--surface-elevated) 94%, transparent);
+        border-bottom: 1px solid var(--border-color);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        backdrop-filter: blur(6px);
+      }
+
+      .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 1rem 1.5rem 1rem 0;
+        margin: 0;
+      }
+
+      .nav-brand {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: var(--text-dark);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.25rem;
+        flex-shrink: 0;
+        width: 280px;
+        padding-left: 1.5rem;
+      }
+
+      .nav-brand img {
+        height: 2.5rem;
+        width: auto;
+      }
+
+      .theme-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+        padding: 0.4rem 0.7rem;
+        border: 1px solid var(--border-color);
+        border-radius: 999px;
+        background: var(--surface-elevated);
+        color: var(--text-gray);
+        font-size: 0.8125rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .theme-toggle:hover {
+        border-color: var(--primary-blue-light);
+        color: var(--primary-blue);
+      }
+
+      .theme-toggle[aria-pressed="true"] {
+        background: var(--surface-muted);
+        border-color: var(--primary-blue-light);
+        color: var(--primary-blue-dark);
+      }
+
+      .theme-toggle-icon {
+        font-size: 0.9rem;
+        line-height: 1;
+      }
+
+      .theme-toggle-label {
+        line-height: 1;
+        white-space: nowrap;
+      }
+
+      .docs-nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-left: auto;
+        flex-wrap: nowrap;
+      }
+
+      .docs-auth-link {
+        color: var(--text-gray);
+        text-decoration: none;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+
+      .docs-auth-link:hover {
+        color: var(--primary-blue);
+      }
+
+      .docs-auth-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+        line-height: 1.2;
+        white-space: nowrap;
+      }
+
+      @media (max-width: 768px) {
+        .nav-container {
+          padding: 0.75rem 1rem;
+        }
+
+        .nav-brand img {
+          height: 2rem;
+          max-width: 160px;
+        }
+
+        .docs-nav-actions {
+          gap: 0.55rem;
+        }
+
+        .theme-toggle {
+          padding: 0.35rem 0.55rem;
+          font-size: 0.75rem;
+        }
+
+        .docs-auth-btn {
+          padding: 0.42rem 0.75rem;
+          font-size: 0.8125rem;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .nav-brand {
+          width: auto;
+          padding-left: 0;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .theme-toggle {
+          width: 2rem;
+          height: 2rem;
+          padding: 0.35rem;
+          gap: 0;
+        }
+
+        .theme-toggle-label {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          margin: -1px;
+          padding: 0;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          border: 0;
+          white-space: nowrap;
+          clip-path: inset(50%);
+        }
+
+        .docs-nav-actions {
+          gap: 0.45rem;
+        }
+
+        .docs-auth-link {
+          font-size: 0.92rem;
+        }
+
+        .docs-auth-btn {
+          padding: 0.4rem 0.62rem;
+          font-size: 0.8rem;
+        }
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--text-dark);
+        color: var(--text-light);
+        padding: 3rem 1.5rem 2rem;
+        text-align: center;
+      }
+
+      .footer a {
+        color: var(--text-light);
+      }
+
+      /* Utilities */
+      .mb-1 { margin-bottom: 0.5rem; }
+      .mb-2 { margin-bottom: 1rem; }
+      .mb-3 { margin-bottom: 1.5rem; }
+      .mb-4 { margin-bottom: 2rem; }
+
+      .mt-1 { margin-top: 0.5rem; }
+      .mt-2 { margin-top: 1rem; }
+      .mt-3 { margin-top: 1.5rem; }
+      .mt-4 { margin-top: 2rem; }
+
+      /* Visually Hidden */
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+      }
+
+      /* Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--bg-light);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: var(--border-color);
+        border-radius: var(--radius-sm);
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--text-light);
+      }
+    </style>
+
+    
+<title>News API Quick Start: Get Your API Key in Minutes | Currents</title>
+<meta name="description" content="Start with the Currents News API: create a free account, get your API key, make your first JSON request to /v1/latest-news or /v1/search. No card required.">
+
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="nav-container">
+        <a href="/en" class="nav-brand" aria-label="Currents home">
+          <img src="/en/img/logo-banner.svg" alt="Currents">
+        </a>
+
+        <div class="docs-nav-actions">
+          <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">
+            <span class="theme-toggle-icon" aria-hidden="true">◐</span>
+            <span class="theme-toggle-label" data-theme-toggle-label>Comfort off</span>
+          </button>
+
+          
+            <a href="/en/login" class="docs-auth-link">Login</a>
+            <a href="/en/register" class="btn btn-primary docs-auth-btn">Sign Up</a>
+          
+        </div>
+      </div>
+    </nav>
+
+    <!-- Documentation Layout -->
+    <div class="docs-layout">
+      <!-- Sidebar -->
+      <aside class="docs-sidebar" id="docsSidebar">
+        <ul class="docs-nav">
+          <li class="docs-nav-item">
+            <a href="/en/docs/introduction" class="docs-nav-link">
+              Introduction
+            </a>
+          </li>
+          <li class="docs-nav-item">
+            <a href="/en/docs/" class="docs-nav-link">
+              Getting Started
+            </a>
+          </li>
+          <li class="docs-nav-item">
+            <a href="/en/docs/authentication" class="docs-nav-link">
+              Authentication
+            </a>
+          </li>
+          <li class="docs-nav-item">
+            <a href="/en/docs/ratelimit" class="docs-nav-link">
+              Rate Limit
+            </a>
+          </li>
+          <li class="docs-nav-item">
+            <a href="/en/docs/errors" class="docs-nav-link">
+              Error Responses
+            </a>
+          </li>
+
+          <div class="docs-nav-header">API Endpoints</div>
+          <li class="docs-nav-item">
+            <a href="/en/docs/latest_news" class="docs-nav-link">
+              Latest News
+            </a>
+          </li>
+          <li class="docs-nav-item">
+            <a href="/en/docs/search" class="docs-nav-link">
+              Search
+            </a>
+          </li>
+
+          <div class="docs-nav-header">SDK</div>
+          <li class="docs-nav-item">
+            <a href="/en/docs/official" class="docs-nav-link">
+              Official SDKs
+            </a>
+          </li>
+
+          <div class="docs-nav-header">AI Agents</div>
+          <li class="docs-nav-item">
+            <a href="/en/docs/agent_skills" class="docs-nav-link">
+              Agent Skills
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Content -->
+      <main class="docs-content">
+        
+<h1>News API Documentation</h1>
+
+        
+<h2>Get an API key and make your first request</h2>
+
+<p class="mb-4">
+  Use this quick start to create a free Currents account, copy your API key, and test a JSON response from the Latest News API before choosing a paid plan.
+</p>
+
+<div class="alert alert-info mb-4">
+  <strong>New to Currents?</strong> Start here: <a href="/en/register">create a free account</a>, copy your key, then run the first request below.
+</div>
+
+<div class="card mb-4" style="padding: 1.25rem; background: var(--bg-light); border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+  <h2 style="font-size: 1.35rem; margin-bottom: 0.75rem;">First-request path</h2>
+  <div class="grid grid-3">
+    <p style="margin-bottom: 0;"><strong>1. Get a free key.</strong> Sign up and open your account dashboard.</p>
+    <p style="margin-bottom: 0;"><strong>2. Request JSON.</strong> Use the cURL, JavaScript, Python, or R example below.</p>
+    <p style="margin-bottom: 0;"><strong>3. Pick a plan later.</strong> Upgrade only when quota, history, or result limits become real blockers.</p>
+  </div>
+  <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem;">
+    <a href="/en/register" class="btn btn-primary" style="font-size: 0.875rem;">Get Free API Key</a>
+    <a href="/en/news-api-key" class="btn btn-outline" style="font-size: 0.875rem;">API Key Setup</a>
+    <a href="/en/examples" class="btn btn-outline" style="font-size: 0.875rem;">Code Examples</a>
+  </div>
+</div>
+
+<h3>Step 1: Get Your API Key</h3>
+
+<p>To use the Currents API, you need an API key. You can get one by:</p>
+
+<div class="grid grid-2 mb-4">
+  <div style="padding: 1.5rem; background: var(--bg-light); border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+    <h4 style="font-size: 1.125rem; margin-bottom: 0.75rem;">Free Account</h4>
+    <p style="margin-bottom: 1rem;">Sign up for free, get an API key, and test up to 250 requests per day.</p>
+    <a href="/en/register" class="btn btn-primary">Create Free Account</a>
+  </div>
+
+  <div style="padding: 1.5rem; background: var(--bg-light); border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+    <h4 style="font-size: 1.125rem; margin-bottom: 0.75rem;">Existing Account</h4>
+    <p style="margin-bottom: 1rem;">Login to your account and view your API key in the dashboard.</p>
+    <a href="/en/profile" class="btn btn-secondary">View API Key</a>
+  </div>
+</div>
+
+<div class="card mb-4" style="padding: 1.25rem; background: var(--bg-light); border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+  <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Plan your first integration</h3>
+  <p style="margin-bottom: 0.75rem;">
+    Most teams start by testing the free request quota, then choosing whether latest-news feeds or keyword search fits their workflow.
+  </p>
+  <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+    <a href="/en/news-api-key" class="btn btn-outline" style="font-size: 0.875rem;">News API Key</a>
+    <a href="/en/free-news-api" class="btn btn-outline" style="font-size: 0.875rem;">Free News API</a>
+    <a href="/en/product/price" class="btn btn-outline" style="font-size: 0.875rem;">Pricing</a>
+    <a href="/en/latest-news-api" class="btn btn-outline" style="font-size: 0.875rem;">Latest News API</a>
+    <a href="/en/search-news-api" class="btn btn-outline" style="font-size: 0.875rem;">Search News API</a>
+    <a href="/en/news-aggregator-api" class="btn btn-outline" style="font-size: 0.875rem;">Aggregator Tutorial</a>
+    <a href="/en/media-monitoring-api" class="btn btn-outline" style="font-size: 0.875rem;">Media Monitoring API</a>
+    <a href="/en/news-api-rag" class="btn btn-outline" style="font-size: 0.875rem;">News Data for RAG</a>
+    <a href="/en/examples" class="btn btn-outline" style="font-size: 0.875rem;">Examples</a>
+  </div>
+</div>
+
+<h3>Step 2: Make Your First Request</h3>
+
+<p>Here is a simple example to fetch the latest news as JSON:</p>
+
+<div class="endpoint-card mb-4">
+  <div>
+    <span class="endpoint-method get">GET</span>
+    <code class="endpoint-url">https://api.currentsapi.services/v1/latest-news</code>
+  </div>
+</div>
+
+<h4>With cURL</h4>
+<pre><code>curl -H "Authorization: YOUR_API_KEY" \
+  https://api.currentsapi.services/v1/latest-news</code></pre>
+
+<h4>With JavaScript (fetch)</h4>
+<pre><code>fetch('https://api.currentsapi.services/v1/latest-news', {
+  headers: {
+    'Authorization': 'YOUR_API_KEY'
+  }
+})
+  .then(response => response.json())
+  .then(data => console.log(data));</code></pre>
+
+<h4>With Python (requests)</h4>
+<pre><code>import requests
+
+headers = {
+  'Authorization': 'YOUR_API_KEY'
+}
+
+response = requests.get(
+  'https://api.currentsapi.services/v1/latest-news',
+  headers=headers
+)
+
+data = response.json()
+print(data)</code></pre>
+
+<div class="alert alert-info mb-4">
+  <p style="margin-bottom: 0.5rem;"><strong>Using Python's built-in <code>urllib</code>? Set a User-Agent header.</strong> Our CDN rejects the default <code>Python-urllib/3.x</code> User-Agent with HTTP 403 and <code>error code: 1010</code>, before the request reaches the API. These blocked requests do not count against your quota. <code>requests</code>, <code>httpx</code>, cURL, and JavaScript <code>fetch</code> send an accepted User-Agent by default. Perl's LWP is also blocked, so set a User-Agent there too.</p>
+  <pre style="margin-bottom: 0;"><code>import json
+import urllib.request
+
+req = urllib.request.Request(
+  "https://api.currentsapi.services/v1/latest-news?language=en&page_size=3",
+  headers={
+    "Authorization": "Bearer YOUR_API_KEY",
+    "User-Agent": "my-news-app/1.0",
+    "Accept": "application/json",
+  },
+)
+with urllib.request.urlopen(req) as resp:
+  data = json.load(resp)
+print(data)</code></pre>
+</div>
+
+<h4>Examples by Programming Language (Tab View)</h4>
+<p>Use the same API call in different client languages.</p>
+
+<div class="lang-tabs mb-4" data-tab-group="getting-started-clients">
+  <div class="tab-list" role="tablist" aria-label="Programming language examples">
+    <button class="tab-btn active" type="button" data-tab-target="curl">cURL</button>
+    <button class="tab-btn" type="button" data-tab-target="js">JavaScript</button>
+    <button class="tab-btn" type="button" data-tab-target="python">Python</button>
+    <button class="tab-btn" type="button" data-tab-target="r">R</button>
+  </div>
+
+  <div class="tab-panel active" data-tab-panel="curl">
+    <p style="margin-bottom: 0.5rem;"><strong>Request</strong></p>
+    <pre><code>curl -H "Authorization: Bearer YOUR_API_KEY" "https://api.currentsapi.services/v1/latest-news?language=en&page_size=3"</code></pre>
+  </div>
+
+  <div class="tab-panel" data-tab-panel="js">
+    <p style="margin-bottom: 0.5rem;"><strong>Request</strong></p>
+    <pre><code>fetch("https://api.currentsapi.services/v1/latest-news?language=en&page_size=3", {
+  headers: { Authorization: "Bearer YOUR_API_KEY" }
+})
+  .then((res) => res.json())
+  .then((data) => console.log(data));</code></pre>
+  </div>
+
+  <div class="tab-panel" data-tab-panel="python">
+    <p style="margin-bottom: 0.5rem;"><strong>Request</strong></p>
+    <pre><code>import requests
+
+response = requests.get(
+  "https://api.currentsapi.services/v1/latest-news",
+  params={"language": "en", "page_size": 3},
+  headers={"Authorization": "Bearer YOUR_API_KEY"},
+)
+print(response.json())</code></pre>
+  </div>
+
+  <div class="tab-panel" data-tab-panel="r">
+    <p style="margin-bottom: 0.5rem;"><strong>Request</strong></p>
+    <pre><code>library(httr)
+
+res <- GET(
+  "https://api.currentsapi.services/v1/latest-news",
+  query = list(language = "en", page_size = 3),
+  add_headers(Authorization = "Bearer YOUR_API_KEY")
+)
+content(res, "parsed")</code></pre>
+  </div>
+</div>
+
+<h4>Response Structure (What Every Successful Call Looks Like)</h4>
+<pre><code>{
+  "status": "ok",
+  "news": [
+    {
+      "id": "uuid",
+      "title": "string",
+      "description": "string",
+      "url": "string",
+      "author": "string|null",
+      "image": "string|null",
+      "language": "string",
+      "category": ["string", "..."],
+      "published": "timestamp string"
+    }
+  ],
+  "page": 1
+}</code></pre>
+
+<h4>What your first request should show</h4>
+<p>
+  After you sign up and copy your API key, start with a simple <code>/v1/latest-news</code>
+  request. If the key is valid, the API returns HTTP <code>200</code>, <code>"status": "ok"</code>,
+  and a <code>news</code> array. Then try <code>/v1/search</code> with your own keywords.
+</p>
+
+<div class="card mb-4" style="padding: 1rem; background: var(--bg-light); border: 1px solid var(--border-color); border-radius: var(--radius-sm); overflow-x: auto;">
+  <table style="width: 100%; border-collapse: collapse;">
+    <thead>
+      <tr>
+        <th style="text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--border-color);">What happened</th>
+        <th style="text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--border-color);">What you will see</th>
+        <th style="text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--border-color);">Next step</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);"><strong>It worked and found articles</strong></td>
+        <td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);"><code>200</code>, <code>"status": "ok"</code>, <code>news</code> contains articles.</td>
+        <td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);">Your key works. Build the feed, search, or monitoring flow.</td>
+      </tr>
+      <tr>
+        <td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);"><strong>It worked, but found no articles</strong></td>
+        <td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);"><code>200</code>, <code>"status": "ok"</code>, <code>"news": []</code>.</td>
+        <td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);">The request was valid. Broaden the keyword, country, language, date window, or page.</td>
+      </tr>
+      <tr>
+        <td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);"><strong>The API key is missing or wrong</strong></td>
+        <td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);"><code>401</code>, <code>"msg": "Authentication required"</code> or <code>"Invalid token"</code>.</td>
+        <td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);">Copy the key again from your profile and send it as <code>Authorization: Bearer YOUR_API_KEY</code>.</td>
+      </tr>
+      <tr>
+        <td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);"><strong>The search query needs fixing</strong></td>
+        <td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);"><code>400</code>, <code>"code": "INVALID_QUERY"</code>.</td>
+        <td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);">Fix malformed boolean syntax, unsupported parameters, or version-specific filters.</td>
+      </tr>
+      <tr>
+        <td style="padding: 0.5rem;"><strong>The search backend timed out</strong></td>
+        <td style="padding: 0.5rem;"><code>503</code>, <code>"code": "SEARCH_BACKEND_TIMEOUT"</code>, usually with <code>Retry-After</code>.</td>
+        <td style="padding: 0.5rem;">Retry with backoff. Do not treat this as a no-result search.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+  Once the API call works, keep building on the free plan until you need more daily requests,
+  longer history, larger result windows, or more room to grow. That is when
+  <a href="/en/product/price#pricing-section">Builder or Professional</a>
+  is worth comparing.
+</p>
+
+<h3>Step 3: Understand API Versions</h3>
+
+<p>Currents exposes both <code>/v1</code> and <code>/v2</code> paths. V1 remains stable for existing integrations. V2 is the canonical taxonomy path and includes cursor pagination for search.</p>
+
+<div class="alert alert-info mb-4">
+  <strong>Category migration note:</strong> use <code>/v2/available/categories</code> as the authoritative list for category filtering on <code>/v2/*</code>. The canonical set is:
+  <code>general, society, science_technology, politics_government, economy_business_finance, arts_culture_entertainment, lifestyle_leisure, human_interest, sport, crime_law_justice, education, environment, labour, health, automotive, real_estate</code>.
+  On <code>/v1/*</code> use legacy v1 categories (for example, <code>technology</code> or <code>science</code> instead of <code>science_technology</code>).
+</div>
+
+<div class="alert alert-warning mb-4">
+  <strong>Parameter compatibility:</strong> <code>keywords</code>, <code>query</code>, <code>start_date</code>, <code>end_date</code>, <code>limit</code>, <code>has_image</code>, and <code>has_description</code> are only supported on <code>/v1/search</code> and <code>/v2/search</code>. <code>cursor</code> is supported only on <code>/v2/search</code>. Passing these parameters to <code>/v1/latest-news</code> or <code>/v2/latest-news</code> returns <code>400 Invalid parameters</code>.
+</div>
+
+<div class="card mb-4" style="padding: 1rem; background: var(--bg-light); border: 1px solid var(--border-color); border-radius: var(--radius-sm); overflow-x: auto;">
+  <table style="width: 100%; border-collapse: collapse;">
+    <thead>
+      <tr>
+        <th style="text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--border-color);">Capability</th>
+        <th style="text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--border-color);">V1</th>
+        <th style="text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--border-color);">V2</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);">Latest News</td>
+        <td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);"><code>/v1/latest-news</code></td>
+        <td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);"><code>/v2/latest-news</code></td>
+      </tr>
+      <tr>
+        <td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);">Search</td>
+        <td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);"><code>/v1/search</code> (offset pagination)</td>
+        <td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);"><code>/v2/search</code> (offset + cursor pagination)</td>
+      </tr>
+      <tr>
+        <td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);">Auth Check</td>
+        <td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);"><code>/v1/auth</code></td>
+        <td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);">Not available on <code>/v2</code></td>
+      </tr>
+      <tr>
+        <td style="padding: 0.5rem;">Available Filters</td>
+        <td style="padding: 0.5rem;"><code>/v1/available/*</code></td>
+        <td style="padding: 0.5rem;"><code>/v2/available/*</code></td>
+      </tr>
+      <tr>
+        <td style="padding: 0.5rem; border-top: 1px solid var(--border-color);">Category Source of Truth</td>
+        <td style="padding: 0.5rem; border-top: 1px solid var(--border-color);">Legacy compatibility path</td>
+        <td style="padding: 0.5rem; border-top: 1px solid var(--border-color);">Canonical category taxonomy</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>Step 4: Explore the API</h3>
+
+<p>Now that you have your API key, you can:</p>
+
+<ul style="margin-left: 1.5rem; margin-bottom: 2rem;">
+  <li>Search for news on specific topics</li>
+  <li>Filter by country, language, category, author, and domain</li>
+  <li>Get latest news or search historical articles</li>
+  <li>Limit results and paginate with page numbers or cursor (<code>/v2/search</code>)</li>
+</ul>
+
+<div class="alert alert-success mb-4">
+  <h4 style="margin-bottom: 0.5rem;">Ready for More?</h4>
+  <p style="margin-bottom: 0.5rem;">After the first request works, compare endpoint behavior and plan limits:</p>
+  <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+    <a href="/en/docs/authentication" class="btn btn-outline" style="font-size: 0.875rem;">Authentication</a>
+    <a href="/en/docs/latest_news" class="btn btn-outline" style="font-size: 0.875rem;">Latest News</a>
+    <a href="/en/docs/search" class="btn btn-outline" style="font-size: 0.875rem;">Search</a>
+    <a href="/en/product/price" class="btn btn-outline" style="font-size: 0.875rem;">Pricing</a>
+  </div>
+</div>
+
+<h3>Troubleshooting</h3>
+
+<div class="mb-4">
+  <h4 style="font-size: 1.125rem; margin-bottom: 0.5rem;">401 Unauthorized</h4>
+  <p style="margin-bottom: 0;">Make sure you're using the correct API key from your dashboard.</p>
+</div>
+
+<div class="mb-4">
+  <h4 style="font-size: 1.125rem; margin-bottom: 0.5rem;">429 Too Many Requests</h4>
+  <p style="margin-bottom: 0;">You've exceeded your daily request limit. Check your usage in the dashboard.</p>
+</div>
+
+<p>
+  Need more help? <a href="/cdn-cgi/l/email-protection#5e2d2b2e2e312c2a1e3d2b2c2c3b302a2d3f2e37702d3b2c28373d3b2d">Contact our support team</a> or check out our <a href="/en/product/price">pricing plans</a>.
+</p>
+
+<style>
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .lang-tabs .tab-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .lang-tabs .tab-btn {
+    border: 1px solid var(--border-color);
+    background: var(--bg-white);
+    color: var(--text-dark);
+    border-radius: 999px;
+    padding: 0.35rem 0.8rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+  }
+
+  .lang-tabs .tab-btn.active {
+    background: var(--primary-blue);
+    color: #fff;
+    border-color: var(--primary-blue);
+  }
+
+  .lang-tabs .tab-panel {
+    display: none;
+    background: var(--bg-light);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 1rem;
+  }
+
+  .lang-tabs .tab-panel.active {
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    .grid-2,
+    .grid-3 {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-tab-group]').forEach(function (group) {
+      var buttons = group.querySelectorAll('[data-tab-target]');
+      var panels = group.querySelectorAll('[data-tab-panel]');
+
+      buttons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          var target = button.getAttribute('data-tab-target');
+
+          buttons.forEach(function (btn) { btn.classList.remove('active'); });
+          panels.forEach(function (panel) { panel.classList.remove('active'); });
+
+          button.classList.add('active');
+          var activePanel = group.querySelector('[data-tab-panel="' + target + '"]');
+          if (activePanel) {
+            activePanel.classList.add('active');
+          }
+        });
+      });
+    });
+  });
+</script>
+
+      </main>
+    </div>
+
+    <!-- Mobile Toggle -->
+    <button class="docs-mobile-toggle" id="docsMobileToggle" aria-label="Toggle documentation sidebar">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 12h18M3 6h18M3 18h18"/>
+      </svg>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2026 Currents API. All rights reserved.</p>
+      <p class="mt-1">
+        <a href="/terms">Terms</a> &bull; <a href="/privacy">Privacy</a>
+      </p>
+    </footer>
+
+    <script>
+      // Mobile Sidebar Toggle
+      (function() {
+        const toggle = document.getElementById('docsMobileToggle');
+        const sidebar = document.getElementById('docsSidebar');
+
+        if (!toggle) return;
+
+        toggle.addEventListener('click', () => {
+          sidebar.classList.toggle('show');
+        });
+
+        // Close sidebar on content click
+        const content = document.querySelector('.docs-content');
+        content.addEventListener('click', () => {
+          sidebar.classList.remove('show');
+        });
+      })();
+
+      // Active Link Highlighting
+      (function() {
+        const currentPath = window.location.pathname;
+        const links = document.querySelectorAll('.docs-nav-link');
+
+        links.forEach(link => {
+          if (link.getAttribute('href') === currentPath) {
+            link.classList.add('active');
+          }
+        });
+      })();
+
+      (function() {
+        const storageKey = 'currents_theme';
+        const root = document.documentElement;
+        const isComfort = () => root.getAttribute('data-theme') === 'comfort';
+
+        function applyTheme(theme) {
+          const mode = theme === 'classic' ? 'classic' : 'comfort';
+          if (mode === 'classic') {
+            root.removeAttribute('data-theme');
+          } else {
+            root.setAttribute('data-theme', 'comfort');
+          }
+
+          const comfortEnabled = isComfort();
+          const label = comfortEnabled ? 'Comfort on' : 'Comfort off';
+          document.querySelectorAll('[data-theme-toggle]').forEach((btn) => {
+            btn.setAttribute('aria-pressed', comfortEnabled ? 'true' : 'false');
+          });
+          document.querySelectorAll('[data-theme-toggle-label]').forEach((textNode) => {
+            textNode.textContent = label;
+          });
+        }
+
+        function initTheme() {
+          try {
+            const storedTheme = localStorage.getItem(storageKey);
+            applyTheme(storedTheme || 'comfort');
+          } catch (e) {
+            applyTheme('comfort');
+          }
+        }
+
+        function handleThemeToggle(event) {
+          const toggleButton = event.target.closest('[data-theme-toggle]');
+          if (!toggleButton) return;
+
+          const nextTheme = isComfort() ? 'classic' : 'comfort';
+          applyTheme(nextTheme);
+          try {
+            localStorage.setItem(storageKey, nextTheme);
+          } catch (e) {
+            // Ignore storage write failures and keep in-memory theme state.
+          }
+        }
+
+        initTheme();
+        document.addEventListener('click', handleThemeToggle);
+      })();
+    </script>
+    <script src="/en/js/webmcp-tools.js"></script>
+  </body>
+</html>

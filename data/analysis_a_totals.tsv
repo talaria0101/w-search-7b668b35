@@ -1,0 +1,6 @@
+scope	requests_per_account	requests_for_5_accounts
+all_included	759821	3799105
+core_web_fetch_search_crawl	159821	799105
+adjacent_data_apis	600000	3000000
+class:adjacent	600000	3000000
+class:core	159821	799105

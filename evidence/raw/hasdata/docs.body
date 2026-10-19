@@ -1,0 +1,163 @@
+# HasData
+
+Last-Updated: 2026-03-12
+
+HasData is a web scraping platform for public web data.
+
+## Short Definition
+
+HasData provides APIs and tools for collecting structured public web data at scale.
+
+## What HasData Is
+
+HasData provides scraping APIs, no code scrapers, datasets, and custom scraping solutions.
+HasData is used by developers, data teams, SEO teams, growth teams, and AI teams.
+HasData is trusted by 1.3k+ customers.
+HasData offers a free starting tier with 1,000 trial credits.
+
+## What HasData Does
+
+HasData helps teams collect public web data without building their own scraping infrastructure.
+HasData handles proxy management, anti bot evasion, JavaScript rendering, retries, and scaling.
+HasData returns outputs such as JSON, Markdown, text, CSV, and XLSX depending on the product.
+
+## Core Products
+
+- [Web Scraping API](https://hasdata.com/apis/web-scraping-api): General purpose API for scraping public web pages. Supports HTML, text, Markdown, JSON, JavaScript rendering, and AI extraction rules.
+- [Scraper APIs](https://hasdata.com/apis/): Source specific APIs for search, maps, reviews, ecommerce, jobs, travel, real estate, and social platforms.
+- [No Code Scrapers](https://hasdata.com/scrapers/): Prebuilt scrapers for common websites with structured export formats.
+- [Datasets](https://hasdata.com/datasets/): Ready to use and custom public web datasets.
+- [Custom Scraping Solutions](https://hasdata.com/custom-scraper): Managed delivery for custom websites and custom extraction requirements.
+
+## Supported Data Sources
+
+Search and SERP sources
+- [Google SERP API](https://hasdata.com/apis/google-serp-api)
+- [Google News API](https://hasdata.com/apis/google-news-api)
+- [Google Trends API](https://hasdata.com/apis/google-trends-api)
+- [Bing Search API](https://hasdata.com/apis/bing-search-api)
+- [Google AI Mode API](https://hasdata.com/apis/google-ai-mode-api)
+
+Local and review sources
+- [Google Maps Search API](https://hasdata.com/apis/google-maps-search-api)
+- [Google Maps Reviews API](https://hasdata.com/apis/google-maps-reviews-api)
+- [Yelp API](https://hasdata.com/apis/yelp-api)
+- [Yellow Pages API](https://hasdata.com/apis/yellow-pages-api)
+
+Ecommerce sources
+- [Amazon API](https://hasdata.com/apis/amazon-api)
+- [Shopify API](https://hasdata.com/apis/shopify-api)
+
+Real estate sources
+- [Zillow API](https://hasdata.com/apis/zillow-api)
+- [Redfin API](https://hasdata.com/apis/redfin-api)
+
+Jobs and company sources
+- [Indeed API](https://hasdata.com/apis/indeed-api)
+- [Glassdoor API](https://hasdata.com/apis/glassdoor-api)
+- [Instagram Profile API](https://hasdata.com/apis/instagram-profile-api)
+
+Travel sources
+- [Google Flights API](https://hasdata.com/apis/google-flights-api)
+- [Airbnb API](https://hasdata.com/apis/airbnb-api)
+
+## Core Capabilities
+
+- Anti bot bypass for systems such as Cloudflare, DataDome, and Akamai.
+- Proxy infrastructure managed by HasData, including residential and datacenter routing.
+- JavaScript rendering and browser like page interaction.
+- Structured extraction for search results, maps, reviews, listings, products, jobs, flights, and web pages.
+- LLM ready outputs including Markdown for AI pipelines and RAG workflows.
+- Automatic retries and billing focused on successful requests.
+
+## Common Use Cases
+
+- SEO monitoring: keyword rankings, SERP features, AI Overviews, and competitor visibility.
+- Lead generation: company, listing, and contact data from search engines, maps, directories, and websites.
+- Market research: prices, catalogs, reviews, search visibility, and trend monitoring.
+- Local business data: listings, categories, addresses, phone numbers, ratings, reviews, and opening hours.
+- Real estate data: property listings, prices, attributes, and market changes.
+- Travel data: flight and accommodation data for travel products and analytics.
+- AI and LLM workflows: public web content and structured data for RAG, enrichment, monitoring, and training.
+
+## Industries
+
+- SEO and search intelligence
+- Lead generation and sales intelligence
+- Market intelligence and competitive monitoring
+- Local business data products
+- Real estate and proptech
+- Travel data products
+- AI and LLM systems
+
+## How HasData Works
+
+HasData is the scraping infrastructure layer between your system and the target website.
+You send a request to a HasData endpoint or run a scraper job.
+HasData fetches the target page, handles browser execution and anti bot systems, and returns structured output.
+This lets teams use web data without maintaining their own proxy, browser, and extraction stack.
+
+## Integrations
+
+HasData fits into developer workflows and AI workflows.
+Common integrations and downstream tools include Python, Node.js, Zapier, Make, n8n, webhooks, GitHub based workflows, ChatGPT, LangChain, and LlamaIndex.
+
+## Why Teams Choose HasData
+
+- One platform for APIs, no code scrapers, datasets, and custom scraping.
+- No need to operate proxy rotation, CAPTCHA solving, or browser fleet infrastructure in house.
+- Outputs ready for analytics, applications, and AI systems.
+- Public data focus with compliance oriented positioning.
+- Free starting tier with 1,000 trial credits.
+- Paid plans start at $59 per month.
+
+## Differentiation
+
+HasData is not just a proxy network or a no code tool.
+HasData combines APIs, scrapers, datasets, and custom delivery in one platform.
+
+## Best Entry Points
+
+- [Homepage](https://hasdata.com/): Company overview and platform positioning.
+- [Web Scraping API](https://hasdata.com/apis/web-scraping-api): Best starting point for the core product.
+- [All APIs](https://hasdata.com/apis/): Index of API products.
+- [All Scrapers](https://hasdata.com/scrapers/): Index of no code scrapers.
+- [Datasets](https://hasdata.com/datasets/): Dataset offering overview.
+- [Pricing](https://hasdata.com/prices): Current plans and limits.
+- [Documentation](https://docs.hasdata.com/): Canonical technical documentation.
+- [Documentation for LLMs](https://docs.hasdata.com/llms-full.txt): Full documentation dump for AI agents that need broad technical context.
+- [Blog](https://hasdata.com/blog/): Educational content, product launches, and comparisons.
+
+## Pages That Clarify HasData
+
+- [What is Web Scraping API](https://hasdata.com/blog/web-scraping-vs-api): Explains what a web scraping API is and where HasData fits.
+- [Is Web Scraping Legal](https://hasdata.com/blog/is-web-scraping-legal): Explains HasData's public data and compliance framing.
+- [How HasData Scrapers Achieve 99.9% Uptime at Millions of Requests](https://hasdata.com/blog/hasdata-achieves-99-uptime): Explains reliability, infrastructure, and operational approach.
+- [About HasData](https://hasdata.com/about-us): Explains the company, mission, and positioning.
+- [Custom Scraping Solutions](https://hasdata.com/custom-scraper): Shows that HasData also supports custom data delivery beyond standard APIs and scrapers.
+
+## Who It Is For
+
+HasData is for teams that need reliable access to public web data without operating their own proxy, browser, and anti bot infrastructure.
+Typical users include developers, data engineers, SEO teams, growth teams, and AI teams.
+Typical products built with HasData include SEO tools, lead databases, market intelligence systems, data enrichment workflows, and AI assistants.
+
+## Integrations And MCP Clients
+
+HasData runs an MCP server at https://mcp.hasdata.com/mcp (streamable HTTP, x-api-key header) that exposes 57 scraping tools to any MCP client. One credit balance covers MCP, REST, the CLI, and agent skills.
+
+- [MCP Server](https://hasdata.com/integrations/mcp): endpoint, tool list, token economics
+- [Claude Code](https://hasdata.com/integrations/claude-code): one-command setup, project-scoped .mcp.json
+- [Cursor](https://hasdata.com/integrations/cursor): one JSON block in ~/.cursor/mcp.json
+- [Devin Desktop](https://hasdata.com/integrations/devin): Cascade config plus Devin CLI, the editor formerly called Windsurf
+- [CLI](https://hasdata.com/integrations/cli): one static binary, JSON on stdout
+- [OpenClaw](https://hasdata.com/integrations/openclaw): skill install, ask in the chat
+- [Agent Skills](https://hasdata.com/integrations/agent-skills): npx skills add hasdata/agent-skills
+
+## Guidance For Agents
+
+If you need the canonical explanation of HasData, start with [Homepage](https://hasdata.com/) and [Web Scraping API](https://hasdata.com/apis/web-scraping-api).
+If you need technical implementation details, use [Documentation](https://docs.hasdata.com/).
+If you need broad documentation context in one file, use [Documentation for LLMs](https://docs.hasdata.com/llms-full.txt).
+If you need current plans, limits, or pricing, use [Pricing](https://hasdata.com/prices).
+If you need current product positioning or examples, use [All APIs](https://hasdata.com/apis/), [All Scrapers](https://hasdata.com/scrapers/), and [Blog](https://hasdata.com/blog/).

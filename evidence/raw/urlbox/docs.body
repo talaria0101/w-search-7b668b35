@@ -1,0 +1,106 @@
+# Documentation
+
+
+- **Get started**
+- [Overview](/docs/): Welcome to Urlbox, an API for converting URLs and HTML into screenshots, PDFs, videos, and extracting text, html and metadata with ease.
+- [Quick Start](/docs/quickstart): Quickly learn how to use Urlbox's website screenshot API
+- [Projects](/docs/projects): Learn about Projects and how to use them.
+
+- **Capture**
+- [Screenshots](/docs/screenshots): Capture full-page screenshots and target specific elements on a page.
+- Videos
+  - [Recording videos](/docs/videos/recording-videos): How to record MP4 and WebM videos of any website with Urlbox, including scrolling videos and section-controlled scrolling
+- [PDFs](/docs/pdfs): Render web pages and HTML to PDF.
+- [Render Links](/docs/render-links): Create screenshots, PDFs and other renders by embedding a single link in your HTML or emails.
+- Saving to S3
+  - [Saving to S3](/docs/storage): Persist renders directly into your own cloud storage bucket.
+  - [Configuring S3](/docs/storage/configure-s3): Save your screenshots, PDFs and other renders to an S3 bucket from Urlbox
+  - [Configuring a private S3 bucket](/docs/storage/configure-s3-private): Save your screenshots, PDFs and other renders to a private S3 bucket from Urlbox
+  - [Configuring Cloudflare R2](/docs/storage/configure-cloudflare-r2): Save your screenshots, PDFs and other renders to a Cloudflare R2 bucket from Urlbox
+  - [Configuring Google Cloud Storage](/docs/storage/configure-google-cloud-storage): Save your screenshots, PDFs and other renders to Google Cloud Storage from Urlbox
+  - [Configuring Digital Ocean Spaces](/docs/storage/configure-digitalocean-spaces): Save your screenshots, PDFs and other renders to a Digital Ocean Spaces bucket from Urlbox
+  - [Configuring Backblaze B2](/docs/storage/configure-backblaze-b2): Save your screenshots, PDFs and other renders to a Backblaze B2 bucket from Urlbox
+  - [Configuring Azure Blob Storage](/docs/storage/configure-azure-blob-storage): Save your screenshots, PDFs and other renders to an Azure Blob Storage container from Urlbox
+
+- **Reference**
+- API Reference
+  - [Urlbox API Reference](/docs/api): Technical reference for the Urlbox API
+  - [Sync vs Async](/docs/guides/sync-vs-async)
+  - [Webhooks](/docs/webhooks)
+  - [Usage Info](/docs/api/get-usage)
+  - [Rate Limits](/docs/api/rate-limits): How Urlbox API rate limits work, how they scale with your plan, and what to do when you hit one.
+  - [REST API vs Render Links](/docs/api/rest-api-vs-render-links): Explaining differences between generating renders using render links and via the REST API
+- Render Options
+  - [Render Options](/docs/options): Every render option the Urlbox API accepts, grouped by area, with examples.
+  - [Basic options](/docs/options#basic)
+  - [Blocking options](/docs/options#blocking)
+  - [Customize options](/docs/options#customize)
+  - [Screenshot options](/docs/options#screenshot)
+  - [PDF options](/docs/options#pdf)
+  - [Cache options](/docs/options#cache)
+  - [Request options](/docs/options#request)
+  - [Wait options](/docs/options#wait)
+  - [Fail options](/docs/options#fail)
+  - [Page options](/docs/options#page)
+  - [Full page options](/docs/options#full-page)
+  - [Highlighting options](/docs/options#highlighting)
+  - [Geolocation options](/docs/options#geolocation)
+  - [Storage options](/docs/options#storage)
+  - [LLM options](/docs/options#llm)
+  - [Extraction options](/docs/options#extraction)
+  - [Webhook options](/docs/options#webhook)
+
+- **Agents & CLI**
+- AI agents (MCP)
+  - [Overview](/docs/agents): Connect Claude, ChatGPT, Claude Code, Codex, Cursor, VS Code or any other MCP client to Urlbox by adding one URL and signing in with your Urlbox account.
+  - [Connect your agent](/docs/agents/mcp): Add the Urlbox MCP server to Claude, ChatGPT, Claude Code, Codex, Cursor, VS Code or any other MCP client, and sign in with your Urlbox account.
+  - [Signing in](/docs/agents/authentication): Sign in to the Urlbox MCP server with your Urlbox account, manage connections, and choose which project renders use. API keys are a fallback for headless use.
+  - [Tools and prompts](/docs/agents/tools): Every tool and prompt the Urlbox MCP server offers, what each needs, and how long renders work.
+  - [Using the CLI from an AI agent](/docs/cli/ai-agents)
+- Urlbox CLI
+  - [Overview](/docs/cli): Render screenshots, PDFs and videos from your terminal with the Urlbox CLI, or hand it to an AI agent and have a screenshot saved in under a minute.
+  - [Quickstart](/docs/cli/quickstart): Install the Urlbox CLI and render screenshots, PDFs and more from your terminal.
+  - [Install & update](/docs/cli/install): Install the Urlbox CLI with npm, Homebrew, Scoop or the install script, verify it with urlbox doctor, and keep it current with urlbox upgrade.
+  - [Authentication](/docs/cli/authentication): Sign in to the Urlbox CLI with urlbox login, switch orgs and projects, and authenticate CI and headless environments with an env var.
+  - [Rendering](/docs/cli/rendering): Capture screenshots, PDFs and videos from the terminal with the Urlbox CLI, covering formats, presets, viewport, full-page, and the common render flags.
+  - [Saving files & output](/docs/cli/output-and-scripting): Control where the Urlbox CLI saves renders with the --output sandbox, and choose how each command's result is printed.
+  - [Any option with --json](/docs/cli/json-and-schema): Use --json to pass any Urlbox API option through the CLI, even ones without a dedicated flag.
+  - [Signed render links](/docs/cli/signed-links): Generate signed Urlbox render URLs locally with urlbox link, with no API call and no credit spent, to embed in templates, emails and websites.
+  - [Async renders & webhooks](/docs/cli/async-and-webhooks): Queue heavy Urlbox renders with --async and receive the result by webhook, or check on a render with urlbox status.
+  - [Screenshots from a CSV](/docs/cli/batch-csv): Render a whole list of URLs from a CSV into a folder with the Urlbox CLI, by asking an AI agent or with a short shell loop.
+  - [Using the CLI from an AI agent](/docs/cli/ai-agents): Install the Urlbox agent skill so Claude Code, Cursor, Codex or opencode can drive the CLI for you and render in plain English.
+  - [Storage, proxies & LLMs](/docs/cli/org-resources): Manage your organisation's storage credentials, proxies and LLM credentials from the Urlbox CLI, and assign them to projects.
+  - [Configuration](/docs/cli/configuration): Where the Urlbox CLI stores its configuration, how to read and change it, and how env vars fit in.
+  - [Troubleshooting](/docs/cli/troubleshooting): Diagnose Urlbox CLI problems with urlbox doctor and understand the error codes it reports.
+  - [Command reference](/docs/cli/command-reference): Every Urlbox CLI command and global flag in one place, from render, screenshot and link to login, projects, storage and doctor.
+
+- **Help**
+- Guides
+  - [Guides](/docs/guides): Step-by-step Urlbox guides for bulk screenshots, proxies, avoiding blocks, logged-in pages, local URLs, saving to S3, thumbnails and side renders.
+  - [Taking screenshots of all pages on a website](/docs/guides/bulk-website-screenshots)
+  - [Proxies](/docs/guides/proxies): Learn how to configure a proxy with Urlbox
+  - [Static IP for whitelisting](/docs/guides/static-ip): Render from a fixed Urlbox IP address that you can allowlist on your firewall, WAF or staging site
+  - [Avoiding Being Blocked](/docs/guides/avoiding-being-blocked): Detect block pages and CAPTCHAs, retry blocked renders automatically, and use stealth and proxies to capture the real content
+  - [Setting the User Agent](/docs/guides/setting-the-user-agent): How to override the default user agent
+  - [Saving to S3](/docs/guides/s3)
+  - [Sandbox](/docs/guides/sandbox): The Urlbox sandbox is a place for you to play around with the various options available in the API before coding your integration.
+  - [Side Renders](/docs/guides/side-renders): Generate extra artifacts - HTML, MHTML, markdown, metadata, extracted content and thumbnails - from the same page load as your main render
+  - [Rendering thumbnails](/docs/guides/thumbnails): Generate multiple thumbnail images from a single render using the thumbnails option
+  - [Rendering Behind a Login](/docs/guides/rendering-behind-login): How to screenshot pages that require you to be logged in, using session cookies or auth headers
+  - [Rendering Local URLs](/docs/guides/rendering-local-urls): How to render sites running on localhost or a private network by exposing them through a tunnel
+- Example Code
+  - [Example Code](/docs/examplecode): Code samples for taking website screenshots with Urlbox in Node.js, Ruby, Python, PHP, Java and C#, using the official SDKs or plain HTTP.
+  - [Node.js website screenshots](/docs/examplecode/node): Take website screenshots in Node.js with Urlbox — signed render links for img tags, sync renders for scripts, and async renders with webhooks.
+  - [Ruby website screenshots](/docs/examplecode/ruby): Generate website screenshots with Ruby and Rails
+  - [Python website screenshots](/docs/examplecode/python): Take website screenshots in Python and Django with the Urlbox SDK — signed render links for templates, direct downloads, and async renders with webhooks.
+  - [PHP website screenshots](/docs/examplecode/php): Take website screenshots in PHP and Laravel with the Urlbox SDK — signed render links, sync renders saved to disk, and async renders with verified webhooks.
+  - [Java website screenshots](/docs/examplecode/java): URL to image with Java
+  - [C# website screenshots](/docs/examplecode/csharp): Generate website screenshots with C#
+- Common Problems
+  - [Common Problems](/docs/common-problems): Fixes for the most common Urlbox rendering problems — blocked or blank screenshots, missing content, broken full-page captures — and the options most people set.
+  - [Most-used options](/docs/common-problems/most-used-options): The options most people set on almost every render.
+  - [Avoiding blocks](/docs/common-problems/avoiding-blocks): Fix blank or blocked screenshots caused by bot detection, Cloudflare, or 403s.
+  - [Getting complete renders](/docs/common-problems/getting-complete-renders): Fix screenshots captured too early that miss late-loading content.
+  - [Full-page gotchas](/docs/common-problems/full-page-gotchas): Fix full-page screenshots that are cut off, stretched, or have duplicated headers.
+  - [Saving to your storage](/docs/common-problems/saving-to-storage): Send renders to your own bucket, or get notified with a webhook.
+- [LLMs.txt](/docs/llms.txt)

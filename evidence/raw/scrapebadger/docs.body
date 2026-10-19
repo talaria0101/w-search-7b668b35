@@ -1,0 +1,80 @@
+# ScrapeBadger
+
+> Credit-based web scraping APIs for Twitter/X (including real-time streams), Reddit, Facebook, Instagram, TikTok, YouTube, ChatGPT, Perplexity, Amazon, eBay, Walmart, Etsy, AliExpress, Target, ASOS, Best Buy, Vinted, Depop, Wallapop, Gumtree, Google (18 products), Bing, Yahoo, DuckDuckGo, Yandex, real estate (Zillow, Redfin, Realtor, Apartments.com, Idealista, Immobiliare, LoopNet, Leboncoin), and any URL via the general Web Scraping API. One API key, REST + official SDKs for 12 languages (Python, Node.js/TypeScript, Go, Rust, PHP, C#, Java, Kotlin, Ruby, Swift, Dart, C++) + CLI + a hosted MCP server with 510 tools (latest MCP spec, 2026-07-28). 1,000 free credits on signup, no credit card required.
+
+All endpoints live under `https://scrapebadger.com/v1/*` and authenticate with an API key. Machine-readable references: this file's companion [llms-full.txt](https://scrapebadger.com/llms-full.txt) lists every endpoint, and the documentation site publishes its own [docs llms.txt](https://docs.scrapebadger.com/llms.txt) with per-page markdown.
+
+## Docs
+
+- [Documentation](https://docs.scrapebadger.com): Quickstart, authentication, credits and pricing, rate limits, and the full API reference (append `.md` to any docs URL for markdown)
+- [Full endpoint reference for LLMs](https://scrapebadger.com/llms-full.txt): Every REST endpoint with method, path, and purpose in one file
+- [Pricing](https://scrapebadger.com/pricing): Credit packs, subscriptions, and per-endpoint credit costs
+
+## Products
+
+- [Web Scraping API](https://scrapebadger.com/web-scraping-api): Scrape any URL with JS rendering, anti-bot bypass, PNG screenshots, and CSS/XPath or AI-powered structured extraction
+- [Twitter/X Scraper](https://scrapebadger.com/twitter-scraper): Profiles, tweets, search, trends, followers, communities, lists, and spaces without rate limits
+- [Twitter Streams](https://scrapebadger.com/twitter-streams): Real-time tweet monitoring with filter rules, webhooks, and delivery logs
+- [Reddit Scraper](https://scrapebadger.com/reddit-scraper): Post search, subreddit feeds, comment trees, user profiles, and trending content
+- [Instagram Scraper](https://scrapebadger.com/instagram-scraper): Public profiles, posts, media detail and comments — no Instagram login required. Authenticated endpoints (stories, followers/following, related profiles, hashtags, search, locations, audio, oEmbed, likers) are temporarily unavailable.
+- [TikTok Scraper](https://scrapebadger.com/tiktok-scraper): Profiles, videos, comments, transcripts, hashtags, sounds, search, trending, and the ad library across 20+ regions
+- [YouTube Scraper](https://scrapebadger.com/youtube-scraper): 39 endpoints for videos, channels, playlists, comments, transcripts, and search — no YouTube API key or quota
+- [Ecommerce Scraper APIs](https://scrapebadger.com/ecommerce-scraper-api): Hub for the Amazon, eBay, Walmart, Etsy, AliExpress, Target, ASOS, Best Buy, Vinted, Depop, Wallapop, Leboncoin, Gumtree, Etsy, AliExpress, Target, ASOS and Best Buy APIs, plus Amazon price, Amazon review and Walmart price pages
+- [Amazon Scraper](https://scrapebadger.com/ecommerce-scraper-api/amazon): Products, offers, reviews, bestsellers, deals, and sellers across 20 marketplaces
+- [eBay Scraper](https://scrapebadger.com/ecommerce-scraper-api/ebay): Active and completed/sold listings, search by image, item detail, and seller data across 18 marketplaces
+- [Walmart Scraper](https://scrapebadger.com/ecommerce-scraper-api/walmart): US product search, category browse, deals/rollbacks, full product detail with UPC and specs, the complete review star histogram, marketplace seller catalogues, and physical-store detail with per-department hours
+- [Google Play Scraper](https://scrapebadger.com/google-play-scraper): Play Store app search, full listing detail with the complete rating histogram, token-paged user reviews, declared Android permissions, similar apps, developer portfolios and category charts across 40+ countries and 17+ languages
+- [Apple App Store Scraper](https://scrapebadger.com/app-store-scraper): App Store search, full listing detail with both lifetime and current-version ratings, customer reviews, developer portfolios and Top Free / Top Paid / Top Grossing charts on every country storefront
+- [Google Ads Transparency](https://scrapebadger.com/google-scraper-api/ads-transparency): Every ad an advertiser runs across Search, Maps, Play, Shopping and YouTube — creative detail, brand-to-advertiser-id lookup, and the political spend and impression ranges Google discloses
+- [Vinted Scraper](https://scrapebadger.com/ecommerce-scraper-api/vinted): Marketplace search, item details, seller profiles, and brands across 26 markets
+- [Yandex Scraper](https://scrapebadger.com/yandex-scraper): Web search, image search, and reverse image search by URL on the Russian/international search engine, across 6 markets (Turkey default)
+- [Google Scraper](https://scrapebadger.com/google-scraper): 18 Google products — SERP, Maps, News, Trends, Jobs, Shopping, Hotels, Flights, Scholar, Patents, Lens, Finance, AI Mode, and more
+- [Bing Scraper](https://scrapebadger.com/bing-scraper): Bing web search (organic results, ads, related searches), image search, video search, news search, and query autocomplete across 30+ markets
+- [Yahoo Scraper](https://scrapebadger.com/yahoo-scraper): Yahoo web search (organic results, ads, related searches), image search, video search, news search, and query autocomplete across 35+ regional markets (Yahoo Japan not covered)
+- [Baidu Scraper](https://scrapebadger.com/baidu-scraper): China's #1 search engine — web SERP, news, images, and autocomplete, with the REAL target URL on every result instead of Baidu's /link?url= redirect
+- [Naver Scraper](https://scrapebadger.com/naver-scraper): South Korea's #1 search engine — web search, news, blog, autocomplete, local/Place detail and reviews, plus shopping search, bestsellers and trends, SmartStore stores and reviews, and Shopping Live — 55 endpoints under /v1/naver/*
+- [DuckDuckGo Scraper](https://scrapebadger.com/duckduckgo-scraper): web, image, news and video search results, search autocomplete and Instant Answers from the privacy-first search engine — region-targeted, no API key required
+- [Zillow Scraper](https://scrapebadger.com/zillow-scraper): US/Canada property search, full detail with Zestimates, price history, and agent data
+- [Redfin Scraper](https://scrapebadger.com/redfin-scraper): US/Canada for-sale property search, full detail with Redfin Estimates, price history, and agent data
+- [Apartments.com Scraper](https://scrapebadger.com/apartments-scraper): US rental listings with UNIT-LEVEL pricing — every rentable unit's rent, beds, baths, sqft and availability date, plus floor plans, amenities and photos
+- [Realtor Scraper](https://scrapebadger.com/realtor-scraper): Listings and property detail across realtor.com (US) and realtor.ca (Canada)
+- [Idealista Scraper](https://scrapebadger.com/idealista-scraper): Real-estate listings for Spain, Italy, and Portugal
+- [Immobiliare Scraper](https://scrapebadger.com/immobiliare-scraper): Italy's #1 real-estate portal plus indomio.es/gr and immotop.lu, with market price insights
+- [Airbnb Scraper](https://scrapebadger.com/airbnb-scraper): Stays search with pricing, listing detail, 12-month availability calendars, paginated reviews, and experiences — worldwide
+- [Booking.com Scraper](https://scrapebadger.com/booking-scraper): Hotel and stay search with live prices and availability for your dates, destination autocomplete, full property detail with facilities, house rules and photos, every room type with its full live rate table, and paginated guest reviews — worldwide, any currency
+- [LoopNet Scraper](https://scrapebadger.com/loopnet-scraper): Commercial real estate — listings, cap rates, brokers across US, CA, UK, FR, ES
+- [Leboncoin Scraper](https://scrapebadger.com/ecommerce-scraper-api/leboncoin): France's #1 classifieds site — ads, sellers, categories, and locations
+- [Gumtree Scraper](https://scrapebadger.com/ecommerce-scraper-api/gumtree): Classifieds in the UK (gumtree.com), Australia (gumtree.com.au) and South Africa (gumtree.co.za) — listing search by keyword, category, location and radius with category filters and live counts, full listing detail with the vehicle spec for cars, seller profiles and inventories, and per-market category/location trees
+- [Depop Scraper](https://scrapebadger.com/ecommerce-scraper-api/depop): Second-hand fashion marketplace — product search, product & shop detail, and seller listings across the global catalog
+- [Wallapop Scraper](https://scrapebadger.com/ecommerce-scraper-api/wallapop): Spain's most-used second-hand marketplace — listing search with price, condition, brand, distance and car filters, listing detail, seller profiles, listings and reviews, categories and filters across Spain, Italy and Portugal
+- [LinkedIn Scraper](https://scrapebadger.com/linkedin-scraper): Job search & detail, company and school profiles, member profiles, posts, articles, and courses — no LinkedIn account or login required
+- [Facebook Scraper](https://scrapebadger.com/facebook-scraper): Marketplace listings (search, category browse, item detail), search across pages/people/groups/posts/places/events, Page and profile detail with timelines, group feeds, post detail and comments, and the Ad Library — ad search & detail, advertiser page search, advertiser page info (category, followers, page transparency, managing organization, admin-account locations, ad spend), and EU/UK ad transparency insights (payer/beneficiary, reach and targeting breakdowns) — no Facebook login or Graph API token required Global keyword search is temporarily unavailable.
+- [ChatGPT Scraper](https://scrapebadger.com/chatgpt-scraper): Send a prompt to the real chatgpt.com and get structured JSON — answer, citations anchored to character offsets in the answer, the full search trail, and brand-visibility (AEO/GEO) analysis; no OpenAI account or API key required
+- [Perplexity Scraper](https://scrapebadger.com/perplexity-scraper): Send a prompt to the real perplexity.ai and get structured JSON — answer, citations anchored to character offsets in the answer, the full search trail, the retrieval fan-out (search_queries), related questions, and brand-visibility (AEO/GEO) analysis; no Perplexity account or API key required
+- [Gemini Scraper](https://scrapebadger.com/gemini-scraper): Send a prompt to the real Gemini and get structured JSON — answer, cited web sources, and brand-visibility (AEO/GEO) analysis; anonymous, no Google account or API key required
+
+<!-- BEGIN ECOMMERCE PRODUCTS -->
+- [Etsy Scraper API](https://scrapebadger.com/ecommerce-scraper-api/etsy): Etsy public ecommerce search, product, seller and review data.
+- [AliExpress Scraper API](https://scrapebadger.com/ecommerce-scraper-api/aliexpress): AliExpress public ecommerce search, product, seller and review data.
+- [Target Scraper API](https://scrapebadger.com/ecommerce-scraper-api/target): Search Target US products, retrieve variants and prices, read reviews and questions, and monitor stores and stock.
+- [ASOS Scraper API](https://scrapebadger.com/ecommerce-scraper-api/asos): Search ASOS fashion products, retrieve rich product detail, monitor stock and prices, and browse navigation and search facets across storefronts.
+- [Best Buy Scraper API](https://scrapebadger.com/ecommerce-scraper-api/best-buy): Search Best Buy US products, compare deals and specifications, read reviews and questions, and check ZIP-specific fulfillment.
+<!-- END ECOMMERCE PRODUCTS -->
+
+## Connect
+
+- [MCP Server](https://scrapebadger.com/mcp): Hosted Model Context Protocol server at `https://mcp.scrapebadger.com/mcp` with 510 tools; speaks the latest MCP spec (2026-07-28) plus all earlier revisions; setup guides for Claude, Cursor, Windsurf, Gemini, and ChatGPT; OAuth 2.1 or API-key (Bearer header) auth
+- [SDKs](https://scrapebadger.com/sdks): 12 official SDKs generated from one OpenAPI spec, always in sync with the API — Python (`pip install scrapebadger`), Node.js/TypeScript (`npm install scrapebadger`), Go (`go get github.com/scrape-badger/scrapebadger-go`), Rust (`cargo add scrapebadger-sdk`), PHP (`composer require scrape-badger/scrapebadger-php`), C#/.NET (`dotnet add package ScrapeBadger`), Java (`com.scrapebadger:scrapebadger` on Maven Central), Kotlin (`com.scrapebadger:scrapebadger-kotlin`), Ruby (`gem install scrapebadger`), Swift (SPM `scrape-badger/scrapebadger-swift`), Dart/Flutter (`dart pub add scrapebadger`), and C++ (source releases)
+- [CLI](https://docs.scrapebadger.com/cli/overview): `pip install scrapebadger-cli` (command: `scrapebadger`; one-shot run: `uvx --from scrapebadger-cli scrapebadger`) — terminal access built for AI agents and automation: JSON/CSV/table/markdown output, field selection, pipe-friendly (`jq`) chaining; auth via `SCRAPEBADGER_API_KEY`
+- [Integrations](https://scrapebadger.com/integrations): n8n workflow nodes and other automation platforms
+- [Dashboard](https://scrapebadger.com/dashboard?utm_source=llms.txt): API keys, usage, billing ([sign up](https://scrapebadger.com/auth/signup?utm_source=llms.txt) for 1,000 free credits)
+
+## Optional
+
+- [Reviews](https://scrapebadger.com/reviews): Every public review of ScrapeBadger from Trustpilot, Capterra and the Apify Store, word for word with ratings, synced daily
+- [Blog](https://scrapebadger.com/blog): Tutorials, scraping guides, and product updates
+- [Careers](https://scrapebadger.com/careers): Open engineering positions
+- [Use cases](https://scrapebadger.com/use-cases): Worked examples like brand monitoring and price tracking
+- [Alternatives](https://scrapebadger.com/alternatives): Comparisons with other scraping providers
+- [Contact](https://scrapebadger.com/contact): Support and sales
+- [GitHub](https://github.com/scrape-badger): Open-source SDKs and examples

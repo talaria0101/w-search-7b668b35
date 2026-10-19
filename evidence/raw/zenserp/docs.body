@@ -1,0 +1,29 @@
+# Zenserp
+
+> Zenserp is a search engine results page (SERP) scraping REST API that fetches live results from Google and other engines and returns them as structured JSON, typically in under 500 ms. It is used for SEO rank tracking, ad verification, competitor and keyword research, content aggregation, lead generation, and market monitoring. Proxies are rotated automatically and only valid responses are returned, so callers never manage IP pools or blocks. Beyond standard Google web search, it covers dedicated verticals: Google Image Search, Maps (local businesses, with title, reviews, address and place_id), News, Trends, Shopping including product pages, Reverse Image Search, and YouTube, plus Bing, Yandex, and DuckDuckGo. Responses parse the whole page rather than just links — organic results (up to 100 per page, 400+ with pagination), paid ads with their page position, inline news and video results, local results, knowledge graph blocks, "People also ask" related questions, and answer boxes covering calculations, weather and dictionary entries — and new snippet types are added as search engines ship them. Searches can be geolocated and language-targeted. Uptime is 99.9%. Zenserp is part of the APILayer suite.
+A free API key is available at https://app.zenserp.com/register?plan=free — the Free Plan includes 50 searches per month with AI Overview access. Paid plans are Small ($49.99/month, 25,000 searches, adds all SERP types), Medium ($149.99/month, 100,000 searches, adds the asynchronous batch endpoint, keyword search volume and CPC data, the bulk index checker GUI, personal support, concierge onboarding and an SLA), Large ($299.99/month, 250,000 searches), Premium ($499.99/month, 500,000 searches, adds a custom queue), and Enterprise ($899.99/month, 1,000,000 searches), with quotes above that and a 20% discount for annual billing. Authentication uses an apikey credential from the dashboard, accepted either as a query parameter or as an apikey request header. The base URL is app.zenserp.com/api/v2. A single search is one HTTP GET request: app.zenserp.com/api/v2/search?apikey=YOUR_KEY&q=pied+piper. The main Search endpoint (GET /search) takes q for the query plus optional parameters including engine or search_engine to pick the target engine and domain, location for geo-targeting, hl for language, device, and pagination controls; the vertical endpoints follow the same pattern. An asynchronous batch endpoint, available from the Medium plan upward, handles very large data sets. Billing note: only successful responses consume quota, errors are not counted, and email notifications are sent at 90% and 100% of the monthly limit. Standard plans are designed for up to 400 concurrent connections, and higher limits can be arranged. Zenserp is not endorsed by or affiliated with any search engine provider and does not use any search engine's own API.
+## Getting Started
+- [Zenserp Homepage](https://zenserp.com/): Fast, accurate live Google SERP data for developers
+- [API Documentation](https://app.zenserp.com/documentation): Full reference — every endpoint, parameter, supported snippet type, and examples
+- [API Playground](https://app.zenserp.com/playground): Configure requests interactively and generate ready-to-use code snippets
+- [Free Plan Signup](https://app.zenserp.com/register?plan=free): Create a free account with 50 monthly searches
+- [Login](https://app.zenserp.com/login): Access your dashboard, API key, and usage statistics
+- [Pricing](https://zenserp.com/pricing-plans): Free and paid plans with search volumes, batch access, and support levels
+## Tools
+- [Google Index Checker Tool](https://zenserp.com/google-index-checker-tool): Check in bulk whether URLs are indexed by Google
+## Endpoints by Search Type
+- [Google Image Search API](https://zenserp.com/google-image-search-api): Image results for a search query
+- [Google Maps Search API](https://zenserp.com/google-maps-api): Local businesses, shops and restaurants
+- [Google News API](https://zenserp.com/google-news-api): Latest news results for a query
+- [Google Trends API](https://zenserp.com/google-trends-api): Relative popularity of search phrases over time
+- [Google Shopping API](https://zenserp.com/google-shopping-api): Shopping results and product page data
+- [Reverse Image Search API](https://zenserp.com/google-image-reverse-search-api): Pages containing a given image
+- [YouTube Search API](https://zenserp.com/youtube-search-api): Video rankings, channel and ad results
+- [Bing Search API](https://zenserp.com/bing-search-api): Organic, ad and video results from Bing
+- [Yandex Search API](https://zenserp.com/yandex-serp-api): Yandex results in JSON format
+## Resources
+- [FAQs](https://zenserp.com/#faqSection): Common questions on load and concurrency, error billing, plans, and uptime
+- [API Glossary](https://zenserp.com/api-glossary/): Definitions of common SERP and API terms
+- [Blog](https://zenserp.com/blog): Tutorials, use cases, and product updates
+## Support
+- [Contact Us](https://zenserp.com/contact): Sales, technical support, and custom volume quotes

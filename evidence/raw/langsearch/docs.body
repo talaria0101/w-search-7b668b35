@@ -1,0 +1,45 @@
+# LangSearch
+
+> The World Engine for AGI. LangSearch provides a free Web Search API for AI agents and RAG applications.
+
+## Product facts
+
+- Web Search is available through a REST API, MCP and an agent Skill.
+- The Free Plan includes all supported Web Search features. A daily token allowance applies and resets automatically at 00:00 UTC.
+- POST https://api.langsearch.com/v1/web-search uses Bearer API key authentication.
+- Requests support up to 50 results, date filters and includeDomains / excludeDomains filters.
+- Results contain source links and snippets by default. contents.text enables full webpage text instead of snippet, with a default limit of 5000 characters per result.
+- For the complete, current request and response contract, use the official documentation below.
+
+## Website
+
+- [Web Search API](https://langsearch.com/product): Product capabilities and request controls.
+- [Free Plan and pricing](https://langsearch.com/pricing): Plan details and published provider pricing comparisons.
+- [Company](https://langsearch.com/company): Mission and team.
+- [Blog](https://langsearch.com/blog): Product and company stories.
+- [Web Search update and invite rewards](https://langsearch.com/blog/more-search-more-rewards): Token-based free usage, higher starting RPS and up to 10M extra tokens/day through qualifying invitations.
+- [Our first round](https://langsearch.com/blog/our-first-round): How the team funds LangSearch itself.
+
+## Documentation and installation
+
+- [Documentation](https://docs.langsearch.com/reference/search-api-guide): Official Web Search guides and API reference.
+- [Documentation index](https://docs.langsearch.com/llms.txt): Machine-readable documentation links.
+- [Complete documentation](https://docs.langsearch.com/llms-full.txt): Full documentation text.
+- [Install the Skill](https://langsearch.com/install/skill.md): Agent skill installation instructions.
+- [Skill definition](https://langsearch.com/install/langsearch/SKILL.md): Web Search skill instructions and API examples.
+- [MCP endpoint](https://mcp.langsearch.com/mcp): HTTP MCP endpoint; requires a LangSearch API key.
+
+## Optional
+
+- [Privacy policy](https://langsearch.com/privacy-policy)
+- [Terms of service](https://langsearch.com/terms-of-service)
+
+## Token usage
+
+Web Search usage is measured in tokens. A successful API response includes `usage.input_tokens` for the query and `usage.output_tokens` for the returned content. Both count toward the account's Web Search TPM (rolling 60 seconds) and TPD (UTC day) limits. Titles, URLs and response metadata are not metered. Token prices are currently zero.
+
+Read the API's usage values rather than estimating from character counts. Full-text results count after the per-result character cap; longer content can consume more allowance. Check [Plan & usage](https://docs.langsearch.com/limits/api-limits) for the complete rules, including older content representations.
+
+For HTTP 429, inspect `error_type` when present and honor `Retry-After`. `response_exceeds_token_limit` requires reducing `count` or `contents.text.max_characters`; waiting alone will not make the same oversized response fit. The Dashboard shows tokens used today, percentage used and the next 00:00 UTC reset. Minute usage history can lag the live allowance.
+
+New accounts start at 5 RPS. Existing accounts keep their configured RPS. Web Search uses TPM and TPD token limits, with no separate request-per-minute or request-per-day quotas. Check the Dashboard for account limits.

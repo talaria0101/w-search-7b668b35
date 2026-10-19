@@ -1,0 +1,115 @@
+# Serpent API
+
+> Serpent API is a developer-first search intelligence API. New Web credit across supported engines costs $0.60/$0.30/$0.10/$0.03 per 1,000 units on Default/Growth/Scale/Enterprise. Enterprise requires one qualifying $1,000 deposit. Existing credit keeps its original price schedule. Pay-as-you-go pricing, free calls on eligible endpoints, no credit card required.
+
+## Core pages
+
+- [Homepage](https://apiserpent.com/) : Product overview, tiered pricing, the "cheapest Google SERP API" positioning
+- [Pricing](https://apiserpent.com/pricing) : Current Web prices per 1,000 units are Default $0.60, Growth $0.30 (one $100 deposit), Scale $0.10 (one $500 deposit), and Enterprise $0.03 (one $1,000 deposit). News and other non-Web rates keep their prior ladder; Enterprise inherits Scale non-Web rates. Existing credit keeps its original price schedule.
+- [Documentation](https://apiserpent.com/docs) : Complete REST API reference with cURL, Python, and Node examples
+- [Playground](https://apiserpent.com/playground) : Live API tester for SERP, AI Ranking, and Social Media endpoints
+- [Features](https://apiserpent.com/features) : Engine matrix, supported countries, rich SERP features (AI Overviews, PAA, featured snippets)
+- [FAQ](https://apiserpent.com/faq) : Per-page vs per-call pricing, AI Overviews, PAA, country targeting, rate limits and refunds
+
+## SERP product pages
+
+- [SERP API overview](https://apiserpent.com/serp-api) : All five engines in one API
+- [Google SERP API](https://apiserpent.com/google-serp-api) : Google Web with AI Overviews, Featured Snippets, PAA, related searches
+- [Bing SERP API](https://apiserpent.com/bing-serp-api) : Bing Web, News, Images, Videos with PAA + Shopping PLAs
+- [Yahoo SERP API](https://apiserpent.com/yahoo-serp-api) : Yahoo Web in 112 countries with Shopping PLAs
+- [DuckDuckGo API](https://apiserpent.com/duckduckgo-serp-api) : DDG search results across 112 country codes
+- [Brave Search API](https://apiserpent.com/brave-search-api) : Brave's independent index — Web, News, Images, Videos with AI digest as aiOverview
+- [News API](https://apiserpent.com/news-api) : Structured news results from supported engines
+- [Image Search API](https://apiserpent.com/image-search-api) : Image search with size, color, type filters
+- [Video Search API](https://apiserpent.com/video-search-api) : Yahoo and DuckDuckGo Videos with embed URLs
+- [Shopping API](https://apiserpent.com/shopping-api) : Four-engine product search (google · yahoo · ddg · brave) — announced, not yet released; the page describes the planned response fields
+- [Google Shopping API](https://apiserpent.com/google-shopping-api) : Google Shopping product listings — coming soon, no endpoint yet
+- [Yahoo Shopping API](https://apiserpent.com/yahoo-shopping-api) : Yahoo Shopping product listings — coming soon, no endpoint yet
+- [DuckDuckGo Shopping API](https://apiserpent.com/ddg-shopping-api) : DuckDuckGo product listings — coming soon, no endpoint yet
+- [Brave Shopping API](https://apiserpent.com/brave-shopping-api) : Brave product listings — coming soon, no endpoint yet
+
+Note on Shopping: the Shopping API is announced but not yet released. There is no live `/api/shopping` endpoint, no billable price yet (planned pricing only), and the shopping guides in the blog list below describe the planned interface rather than a callable one.
+
+## Rank tracking & SERP geometry
+
+- [Rank Tracking API](https://apiserpent.com/rank-tracking-api) : Every organic result carries a 1-indexed `position` field on `engine=google`, `bing`, `yahoo`, `ddg` and `brave` — no opt-in flag
+- [Local Rank Tracking API](https://apiserpent.com/local-rank-tracking-api) : Keyword plus location in, 1-indexed `position` out — country and language targeting across 112 countries; country-level, not city/postcode
+- [Pixel Position API](https://apiserpent.com/pixel-position-api) : BETA. `pixel_position=true` on `/api/search` adds a `pixel_position` integer and a `pixel_box` `{ x, y, w, h }` to every SERP element — Google, Yahoo, Bing and DuckDuckGo, desktop 1366×768; `engine=brave` returns no pixel fields
+
+## AI Ranking pages
+
+- [AI Ranking API overview](https://apiserpent.com/ai-rank-api) : Citation tracking across all four major public AI engine labels
+- [Claude Citations](https://apiserpent.com/claude-ai-rank) : Track Claude citations
+- [ChatGPT Citations](https://apiserpent.com/chatgpt-ai-rank) : Track ChatGPT citations
+- [Gemini Citations](https://apiserpent.com/gemini-ai-rank) : Track Gemini citations
+- [Perplexity Citations](https://apiserpent.com/perplexity-ai-rank) : Track Perplexity citations
+
+## Social media APIs
+
+- [Social Media API overview](https://apiserpent.com/social-media-api) : One REST API for YouTube and Instagram data — search, video, channel and profile endpoints
+- [YouTube API](https://apiserpent.com/youtube-api) : Search videos, channels, playlists without Google quota
+- [Instagram API](https://apiserpent.com/instagram-api) : Profile scraper — bio, followers, engagement, recent posts
+- [LinkedIn API](https://apiserpent.com/linkedin-api) : Company firmographics, job postings, and public profile data via one REST endpoint
+- [TikTok API](https://apiserpent.com/tiktok-api) : TikTok profile, video, hashtag, search and music data as JSON — the five endpoints and their billable rates. Basic `/profile` and `/video` calls usually return in seconds; optional field groups and list requests can take longer and support a job form when available
+- [X (Twitter) API](https://apiserpent.com/x-api) : Single post by id or URL and public profile by handle, as JSON — lookup only: no post search, no full timelines, no followers list. Billed per request, never per item: $0.10/1K for a post ($0.09 Growth, $0.07 Scale), $0.10/1K for a profile flat at every tier, $0.15/1K with `hydrate=true`, also flat. Both endpoints also run as background jobs through `POST /api/bulk/jobs` under the keys `x_tweet` and `x_profile`; there is no `/api/x/*/async` twin, and since X has no depth parameter a job buys a bigger time budget and one submission for many items rather than more data per call
+- [Reddit API](https://apiserpent.com/reddit-api) : Subreddit listings, post comments, post search, user and community summaries as JSON, billed per call rather than per item returned. One rate for all five endpoints — $0.12/1K on Default, $0.108 Growth, $0.084 Scale. `search`, `user` and `subreddit` are that flat charge at any depth; `posts` and `comments` are charged one unit per started block of 25 items, so `limit=100` is four blocks ($0.48/1K). Every operation has an `/async` twin at the same block price, with `limit` up to 250 on posts and 1000 on comments
+
+## Marketplace data
+
+- [Amazon Scraper API](https://apiserpent.com/amazon-scraper-api) : Amazon product, search and bestseller data as JSON across 22 marketplaces, billed per request rather than per result — `/api/amazon/search`, `/api/amazon/product` and `/api/amazon/bestsellers` are live, and the rates shown on the page are the billable rates
+
+## Local business data
+
+- [Google Maps API](https://apiserpent.com/google-maps-api) : Ranked place search (up to 100), one rich place record, and paged reviews as normalized JSON
+
+## Top 2026 blog posts
+
+- [Google Maps API: Getting Started in 15 Minutes](https://apiserpent.com/blog/google-maps-api-getting-started) : API key, Quick search, place detail, and paged reviews with cURL, Python, and Node examples
+- [Google Maps API Pricing in 2026: Every Provider, Same Unit](https://apiserpent.com/blog/google-maps-api-pricing-comparison) : Cost per 1,000 places across the official Places API, Apify, Outscraper, DataForSEO, SerpApi, and Serpent
+- [Bing Search API in Python: A 2026 Tutorial](https://apiserpent.com/blog/bing-search-api-python-tutorial) : Pull Bing results with engine=bing and an X-API-Key header
+- [DuckDuckGo Search API Guide: What the SERP Includes (and What It Doesn't)](https://apiserpent.com/blog/duckduckgo-search-api-guide) : DDG result contents, where Shopping stands (coming soon), when to pick DDG over Google
+- [Brave Search vs Google SERP Data: Independent Index, Real Differences](https://apiserpent.com/blog/brave-search-vs-google-serp-data) : Overlap and divergence between Brave's own index and Google's
+- [Image Search API for Visual Monitoring: Brands, Competitors, Products](https://apiserpent.com/blog/image-search-api-reverse-image-monitoring) : Track brand, competitor, and product visuals across five engines
+- [Video SERP Monitoring: Track Your Video Presence Across Engines](https://apiserpent.com/blog/video-search-api-competitor-monitoring) : Monitor brand and competitor video visibility over time
+- [Video Search API in Python: Fetch Video Results as JSON](https://apiserpent.com/blog/video-search-api-python-tutorial) : requests/httpx code for the /api/videos endpoint
+- [Pixel Position vs. Rank Position: Measuring SERP Layout, Not Just Rank](https://apiserpent.com/blog/pixel-position-vs-serp-features) : Where results actually render, not just rank
+- [Local Rank Tracking in Python: Track a Keyword in a Place](https://apiserpent.com/blog/local-rank-tracking-python-tutorial) : Read the position field and build a local rank tracker in code
+- [Yahoo Shopping API: Product Data from PLA Results](https://apiserpent.com/blog/yahoo-shopping-api-guide) : Titles, prices, merchants, URLs, ratings from /api/shopping
+- [Shopping Price Monitoring: A Playbook for Google + Yahoo Product SERPs](https://apiserpent.com/blog/shopping-price-monitoring-playbook) : Normalize prices, detect drops, build a monitoring loop
+- [DuckDuckGo Shopping API: What Product Data It Returns](https://apiserpent.com/blog/duckduckgo-shopping-api-guide) : Card fields for engine=ddg and a working Node.js example
+- [Scrape DuckDuckGo Shopping Prices in Python](https://apiserpent.com/blog/scrape-duckduckgo-shopping-python) : engine=ddg price scraping, normalization, SQLite storage
+- [Best DuckDuckGo Shopping API in 2026](https://apiserpent.com/blog/best-duckduckgo-shopping-api) : DDG product-data API options vs Serpent's engine=ddg
+- [Brave Shopping API: What Product Data It Returns](https://apiserpent.com/blog/brave-shopping-api-guide) : Card fields for engine=brave and a working Node.js example
+- [How to Scrape Brave Shopping Prices in Python](https://apiserpent.com/blog/scrape-brave-shopping-python) : engine=brave price scraping, normalization, alerting
+- [Best Brave Shopping API in 2026](https://apiserpent.com/blog/best-brave-shopping-api) : Brave product-data API options vs Serpent's engine=brave
+- [Best Yahoo Shopping API in 2026: Providers Tested](https://apiserpent.com/blog/best-yahoo-shopping-api) : Yahoo product-data API options vs Serpent's default engine=yahoo
+- [AEO vs SEO Playbook](https://apiserpent.com/blog/geo-vs-aeo-vs-seo-google-ai-search-guide) : Definitions, side-by-side comparison, 12-step AEO checklist
+- [ChatGPT Atlas SEO Guide](https://apiserpent.com/blog/chatgpt-atlas-seo-guide) : OAI-SearchBot crawler, schema priorities, citation tracking
+- [llms.txt Explained](https://apiserpent.com/blog/llms-txt-guide) : Setup guide for the new standard for AI crawlers
+- [Build an AI Citation Tracker (Python)](https://apiserpent.com/blog/ai-citation-tracker-python) : Step-by-step weekly diff reports
+- [15 Google AI Mode Ranking Factors](https://apiserpent.com/blog/google-ai-mode-ranking-factors) : 2026 data-backed listicle
+- [Programmatic SEO with SERP API](https://apiserpent.com/blog/programmatic-seo-serp-api) : 10,000 ranking pages
+- [Search Everywhere Optimization](https://apiserpent.com/blog/search-everywhere-optimization) : Reddit, YouTube, TikTok, Quora 2026
+- [SERP API for AI Coding Agents](https://apiserpent.com/blog/serp-api-ai-coding-agents) : 7 use cases for Cursor, Cline, Codex
+- [RAG Real-Time Search Tutorial](https://apiserpent.com/blog/rag-real-time-search-tutorial) : LangChain + LlamaIndex code samples
+- [Brand SERP Monitoring 2026](https://apiserpent.com/blog/brand-serp-monitoring-2026) : 4 engines + 4 LLMs in one dashboard
+- [The Cheapest SERP API in 2026](https://apiserpent.com/blog/serp-api-pricing-comparison) : Industry pricing comparison
+- [Proxycurl Alternative for LinkedIn Data](https://apiserpent.com/blog/proxycurl-alternative-linkedin-api) : Neutral comparison and clean migration path after Proxycurl's 2025 shutdown
+- [Scrape LinkedIn Company Data via API](https://apiserpent.com/blog/scrape-linkedin-company-data-api) : Firmographics — industry, headcount, HQ, founded year — in one GET request
+- [Best Google Maps & Local Business APIs in 2026](https://apiserpent.com/blog/best-google-maps-local-business-api) : Buyer's guide comparing local-business data providers
+- [Scrape Google Maps Data with Python and an API](https://apiserpent.com/blog/scrape-google-maps-data-python-api) : Query places, enrich details, and pull reviews with Python
+- [Google Maps to Verified Email Lead Pipeline](https://apiserpent.com/blog/google-maps-email-lead-pipeline) : From ranked places to a verified-email prospect list
+- [Google Maps Place Details API: Field Coverage Audit](https://apiserpent.com/blog/google-maps-place-details-api) : Which fields survive the public place view, honest-null included
+- [Google Maps Reviews API in Python](https://apiserpent.com/blog/google-maps-reviews-api-python) : Paginated review pulls with reviewer metadata in Python
+
+## Account
+
+- [Sign in](https://apiserpent.com/login) : Google sign-in, free searches included
+- [Refund Policy](https://apiserpent.com/refund) : Request a refund within 7 days of purchase; see the policy for eligibility
+
+## Optional
+
+- [About](https://apiserpent.com/about)
+- [Contact](https://apiserpent.com/contact)
+- [Privacy Policy](https://apiserpent.com/privacy)
+- [Terms of Service](https://apiserpent.com/terms)

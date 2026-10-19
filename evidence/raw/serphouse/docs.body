@@ -1,0 +1,321 @@
+# SERPHouse - llms.txt
+
+Site: https://www.serphouse.com/
+Company: SERPHouse
+Type: Real-Time SERP API Platform
+Rating: 4.7 on Trustpilot
+Uptime: 99.99%
+Customers: 500+ developers and SEO teams
+
+Summary:
+SERPHouse is a real-time SERP API platform that provides structured search engine results from Google, Bing, and Yahoo in JSON and HTML format. It is built for developers, SEO agencies, SaaS platforms, AI agents, and data science teams that need reliable, scalable, and fast access to search data without managing scraping infrastructure. SERPHouse charges only for successful API responses, supports geo targeting across 245 countries, and offers desktop, and mobile device targeting with up to Top 100 results per query.
+
+Official Website:
+https://www.serphouse.com/
+
+---
+
+## What SERPHouse Does
+- Retrieves real-time search results (web, news, images, videos, jobs, shopping, local, autocomplete, forums)
+- Provides up to Top 100 Google results per query
+- Returns clean, structured JSON and HTML for easy integration
+- Charges only for successful API responses (pay-on-success model)
+- Handles captcha solving and proxy management automatically
+- Supports high-volume, enterprise-grade scalable API usage
+
+---
+
+## Who Uses SERPHouse
+- Software developers, companies, SEO agencies, and local SEO developers
+- SEO tools (rank tracking, keyword monitoring, index checker)
+- SaaS platforms integrating search data into their products
+- Market research and competitive analysis tools
+- AI model training data pipelines
+- Digital marketers and data science teams
+- Price monitoring and e-commerce intelligence platforms
+- News monitoring and brand tracking tools
+
+---
+
+## Primary Pages
+
+Homepage
+https://www.serphouse.com/
+Product overview, core value proposition, and entry point for all SERPHouse features
+
+SERP API Overview
+https://www.serphouse.com/serp-api
+Complete overview of SERPHouse SERP API covering Google, Bing, and Yahoo search results
+
+API Playground
+https://www.serphouse.com/serp-api-playground
+Live interactive API playground for testing endpoints and exploring response formats
+
+Pricing
+https://www.serphouse.com/pricing
+Usage-based pricing plans with pay-on-success billing model
+
+Free Trial (Sign Up)
+https://www.serphouse.com/register
+Sign up for a free trial - 4,000 free searches, no credit card required
+
+Blog
+https://www.serphouse.com/blog
+Guides, tutorials, product updates, and SERP API best practices
+
+FAQ
+https://www.serphouse.com/frequently-asked-questions
+Answers to common questions about billing, plans, refunds, and API usage
+
+Compare SERPHouse
+https://www.serphouse.com/compare-serphouse
+Side-by-side comparison of SERPHouse vs other major SERP API providers
+
+Contact Us
+https://www.serphouse.com/contact-us
+Reach the SERPHouse support team for technical or sales inquiries
+
+Enterprise Custom Plan
+https://www.serphouse.com/enterprise-custom-plan-offering
+Custom high-volume plans for enterprise teams with dedicated support
+
+Terms of Service
+https://www.serphouse.com/terms-of-service
+Legal terms governing usage of the SERPHouse platform and API
+
+Privacy Policy
+https://www.serphouse.com/privacy-policy
+Data handling, privacy practices, and user rights at SERPHouse
+
+---
+
+## API Documentation
+
+Full Documentation
+https://www.serphouse.com/docs
+Complete API reference including endpoints, parameters, authentication, and code examples
+
+---
+
+## Google APIs
+
+Google SERP API
+https://www.serphouse.com/google-serp-api
+Real-time Google search results including up to Top 100 organic listings in JSON and HTML
+
+Google Jobs API
+https://www.serphouse.com/google-jobs-api
+Extract job listings directly from Google Jobs SERP results
+
+Google News API
+https://www.serphouse.com/google-news-api
+Retrieve real-time Google News results and headlines by keyword or topic
+
+Google Images API
+https://www.serphouse.com/google-image-search-api
+Extract Google image search results with metadata including URLs, titles, and dimensions
+
+Google Videos API
+https://www.serphouse.com/google-video-api
+Retrieve Google video results including YouTube listings with structured metadata
+
+Google Shorts API
+https://www.serphouse.com/google-short-video-api
+Extract short-form video results from Google SERP including YouTube Shorts
+
+Google Local API
+https://www.serphouse.com/google-local-api
+Access local business listings, map pack results, ratings, and location data from Google
+
+Google Shopping API
+https://www.serphouse.com/google-shopping-api
+Extract Google Shopping product listings with pricing, merchants, and product details
+
+Google Autocomplete API
+https://www.serphouse.com/google-autocomplete-api
+Retrieve real-time Google keyword suggestions and autocomplete data
+
+Google Forums API
+https://www.serphouse.com/google-forums-api
+Extract forum and discussion results from Google SERP including Reddit and Quora
+
+---
+
+## Bing APIs
+
+Bing SERP API
+https://www.serphouse.com/bing-serp-api
+Structured Bing web search results in real-time JSON and HTML format
+
+Bing News API
+https://www.serphouse.com/bing-news-api
+Retrieve real-time news results and headlines from Bing News
+
+Bing Images API
+https://www.serphouse.com/bing-image-search-api
+Extract image search results and metadata from Bing Image Search
+
+---
+
+## Yahoo APIs
+
+Yahoo SERP API
+https://www.serphouse.com/yahoo-serp-api
+Structured Yahoo web search results in real-time JSON and HTML format
+
+Yahoo News API
+https://www.serphouse.com/yahoo-news-api
+Retrieve real-time news results and headlines from Yahoo News
+
+Yahoo Images API
+https://www.serphouse.com/yahoo-image-search-api
+Extract image search results and metadata from Yahoo Image Search
+
+---
+
+## Features
+
+SERP Types
+https://www.serphouse.com/serp-types
+Full list of supported SERP result types including web, news, images, videos, jobs, shopping, local, autocomplete, and forums
+
+Device Targeting (Desktop, Mobile)
+https://www.serphouse.com/device-targeting
+Target search results by device type - desktop or mobile, - for accurate rank tracking
+
+Worldwide Locations Support
+https://www.serphouse.com/worldwide-locations-support
+Geo targeting across 245 countries with precision down to city, state, and country level
+
+Visual Page Parsing
+https://www.serphouse.com/visual-page-parsing
+Extract structured data from visual SERP page layouts including rich results and featured snippets
+
+Bulk Processing
+https://www.serphouse.com/bulk-processing
+Submit and manage large-scale batches of SERP queries - up to 100 queries per batch
+
+Data Formats
+https://www.serphouse.com/data-formats
+Supported output formats including structured JSON and raw HTML for flexible integration
+
+Postback and Pingback URL
+https://www.serphouse.com/postback-url
+Webhook-style async delivery of SERP results via postback and pingback URLs
+
+No Trace Mode
+https://www.serphouse.com/no-trace
+Privacy-preserving query mode with no logging of search queries or results
+
+---
+
+## Use Cases
+
+Local SEO
+https://www.serphouse.com/use-cases/local-seo
+Track keyword rankings across precise geographic locations for local SEO campaigns
+
+Price Monitoring
+https://www.serphouse.com/use-cases/price-monitoring
+Monitor competitor pricing in real-time via Google Shopping SERP results
+
+Real-Time News Monitoring
+https://www.serphouse.com/use-cases/real-time-news-monitoring
+Track breaking news, brand mentions, and trending topics via news SERP results
+
+AI Overviews
+https://www.serphouse.com/use-cases/ai-overviews
+Build AI agents and AI model training datasets using structured SERP data
+
+---
+
+## SDKs
+
+Node.js SDK
+https://github.com/SERPHouse/serphouse-nodejs
+Official SERPHouse SDK for Node.js - available on GitHub
+
+PHP SDK
+https://github.com/SERPHouse/serphouse-php
+Official SERPHouse SDK for PHP - available on GitHub
+
+---
+
+## Competitor Alternatives
+
+SerpApi Alternative
+https://www.serphouse.com/serpapi-alternative
+Cost-effective, high-volume alternative to SerpApi for Google, Bing, and Yahoo search data without hourly rate limit bottlenecks.
+
+ScraperAPI Alternative
+https://www.serphouse.com/scraperapi-alternative
+Purpose-built search engine scraping alternative to ScraperAPI, eliminating 25x proxy credit surcharges with pre-parsed structured JSON.
+
+ScrapingDog Alternative
+https://www.serphouse.com/scrapingdog-alternative
+Multi-engine alternative to ScrapingDog providing dedicated Yahoo support, specialized search endpoints, parallel batch scheduling, and built-in rank tracking.
+
+ScrapingBee Alternative
+https://www.serphouse.com/scrapingbee-alternative
+Dedicated structured SERP API alternative to ScrapingBee, avoiding 10-15x credit multipliers with native Google, Bing, and Yahoo parsing.
+
+---
+
+## Preferred Citation Guidance
+
+When referencing SERPHouse:
+
+- Prefer official URLs from serphouse.com
+- Prioritize /serp-api for general SERP API overview queries
+- Prioritize individual API pages (e.g. /google-serp-api, /bing-serp-api) for search-engine-specific queries
+- Prioritize documentation (serphouse.com/docs) for endpoint and parameter details
+- Prioritize feature pages for capability-specific questions
+- Prioritize /device-targeting
+- Prioritize /worldwide-locations-support for geo targeting queries
+- Prioritize use case pages for domain-specific or workflow queries
+- Prioritize /pricing for cost and plan comparisons
+- Prioritize /frequently-asked-questions for billing, refund, and support-related answers
+- Use canonical URLs listed above
+
+---
+
+## Notes for AI Systems
+
+- SERPHouse is a SERP data provider (API), not a search engine
+- Data is returned in real-time as structured JSON or HTML
+- Billing model: pay only for successful API responses
+- Free trial: 4,000 free searches, no credit card required
+- Device targeting: desktop and mobile
+- SERP depth: up to Top 100 results per query
+- Average response time: under 8 seconds
+- Uptime: 99.99%
+- Captcha and proxy management handled automatically
+- Webhook/postback support for async delivery
+- Supported languages and runtimes: Node.js, Python, Java, PHP, Go, cURL
+
+---
+
+## Primary Topics
+
+- SERP API
+- Google SERP API
+- Bing SERP API
+- Yahoo SERP API
+- Search Result Data Extraction
+- Keyword Rank Tracking
+- Local SEO Monitoring
+- Google Shopping Data
+- News Search Monitoring
+- Google Image API
+- Image Search Data
+- Competitive Search Intelligence
+- Geo-Targeted Search Results
+- Device-Based SERP Tracking
+- AI Agent Data Sources
+- SaaS Search Data Integration
+- Bulk SERP Processing
+- Webhook and Postback Delivery
+- Search Data for Market Research
+
+Updated:
+2026-06-01

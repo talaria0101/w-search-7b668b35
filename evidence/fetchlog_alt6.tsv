@@ -1,0 +1,6 @@
+202	1252	https://api.duckduckgo.com/?q=test&format=json&no_html=1	evidence/alt6/001_api.duckduckgo.com__q_test_format_json_no_html_1.body
+200	414	https://nominatim.openstreetmap.org/search?q=berlin&format=json	evidence/alt6/002_nominatim.openstreetmap.org_search_q_berlin_format_json.body
+404	4511	https://serpdog.io/pricing	evidence/alt6/003_serpdog.io_pricing.body
+404	261	https://scraperbox.com/pricing	evidence/alt6/004_scraperbox.com_pricing.body
+200	323	https://web.archive.org/cdx/search/cdx?url=example.com&limit=2&output=json	evidence/alt6/005_web.archive.org_cdx_search_cdx_url_example.com_limit_2_output_json.body
+200	199	https://archive.org/wayback/available?url=example.com	evidence/alt6/006_archive.org_wayback_available_url_example.com.body

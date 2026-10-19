@@ -1,0 +1,2055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){if(localStorage.getItem('serpent-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');})()</script>
+  <!-- Consent Mode v2 (must load BEFORE any tracking) -->
+  <script src="/assets/js/consent.7e1b4d04857cb6a4e55087def6b4be2e749e3eb1737f886ac8e8a6a3846f762f.js"></script>
+  <!-- Tracking (lazy-loaded after first user interaction) -->
+  <script defer src="/assets/js/lazy-tracking.e7a2d2a2e95e84ff75135d6ba19b5c29fce2dd390a92b0578fdf701e075f3c1a.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SERP API Pricing &mdash; Per-Call Rates, No Subscription</title>
+  <!-- Google Ads Conversion Tracking (AW-18132360102) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18132360102"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18132360102');
+  </script>
+  <meta name="description" content="Serpent Web from $0.03/1K new Enterprise units after one $1,000 deposit: $0.00003 per one-unit Quick call. Deep bills by requested page.">
+  <meta name="keywords" content="cheapest serp api pricing, affordable search api pricing, serp api pricing, cheap serp api, free serp api, free google serp api, free google search api, cheapest google search api, google search api cost, bing api pricing, duckduckgo api price, pay as you go serp api">
+  <meta name="author" content="Serpent API">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://apiserpent.com/pricing">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="SERP API Pricing &mdash; Per-Call Rates, No Subscription">
+  <meta property="og:description" content="Serpent Web from $0.03/1K new Enterprise units after one $1,000 deposit: $0.00003 per one-unit Quick call. Deep bills by requested page.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://apiserpent.com/pricing">
+  <meta property="og:site_name" content="Serpent API">
+  <meta property="og:image" content="https://apiserpent.com/og-images/pricing.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SERP API Pricing &mdash; Per-Call Rates, No Subscription">
+  <meta name="twitter:description" content="Serpent Web from $0.03/1K new Enterprise units after one $1,000 deposit: $0.00003 per one-unit Quick call. Deep bills by requested page.">
+  <meta name="twitter:image" content="https://apiserpent.com/og-images/pricing.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0d9488">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#0d9488">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=optional" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.5ca31bfc902a39280550b9bec00e417fc8d2635cd1ed1ae97dc8dd9927046c7a.css">
+  <link rel="stylesheet" href="/css/mobile.18348652644ddfcfecd0cc7af1cca858e9f8edd78c5094ffb957f3f578c8c921.css">
+
+  <!-- Structured Data - SoftwareApplication with AggregateOffer
+       lowPrice and highPrice span the category rate cards below in dollars per 1,000
+       category-specific billable units: $0.01 for News/YouTube at Scale or Enterprise,
+       up to $75.00 for the Maps Deep premium band at Default. One request can use more
+       than one unit: Deep Web bills per requested page, and some other categories use
+       parameter-dependent bands or multipliers. The description must name that distinction.
+       offerCount counts the 33 priced product rows, not the number of tiers. Recheck these
+       bounds and the count whenever a category or billing unit changes. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Serpent API",
+    "image": "https://apiserpent.com/og-image.png",
+    "description": "SERP API with category-based pricing across all engines (Google, Bing, Yahoo, DuckDuckGo, Brave). Web search from $0.03/1K units on Enterprise after one $1,000 deposit.",
+    "url": "https://apiserpent.com/pricing",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "AggregateOffer",
+      "lowPrice": "0.01",
+      "highPrice": "75.00",
+      "priceCurrency": "USD",
+      "offerCount": "33",
+      "description": "Prices are US dollars per 1,000 category-specific billable units. Quick Web normally uses one unit per request; Deep Web uses one unit per requested page. Other categories can have parameter-dependent bands or multipliers. News and YouTube are $0.01 per 1,000 units at Scale or Enterprise; Google Maps Deep premium band is $75.00 per 1,000 premium-band units at Default."
+    },
+    "provider": {
+      "@type": "Organization",
+      "@id": "https://apiserpent.com/#organization",
+      "name": "Serpent API",
+      "url": "https://apiserpent.com"
+    }
+  }
+  </script>
+
+  <!-- Structured Data - BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://apiserpent.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Pricing",
+        "item": "https://apiserpent.com/pricing"
+      }
+    ],
+    "provider": {
+      "@type": "Organization",
+      "@id": "https://apiserpent.com/#organization",
+      "name": "Serpent API",
+      "url": "https://apiserpent.com"
+    }
+  }
+  </script>
+
+  <!-- Structured Data - FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does billing work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Serpent API uses a pay-as-you-go credit system. Deposit funds into your account and credits are deducted per API call based on the engine and endpoint used. No subscriptions or recurring charges. Your deposited credits never expire (promotional bonus credits expire 30 days after they're granted — see below)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the minimum deposit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For new users, the minimum to get started is $10. Once your lifetime deposits reach $50, the minimum for any further top-up is $100 — so established accounts add credits in larger blocks. New Web credit uses $0.30/1K on Growth after one $100 deposit, $0.10/1K on Scale after one $500 deposit, or $0.03/1K on Enterprise after one $1,000 deposit, so the larger minimum lines up with the tier thresholds. Refunded or charged-back amounts don't count toward your tier."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do pricing tiers work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A single qualifying $100 deposit earns Growth pricing for new credit, $500 earns Scale, and $1,000 earns Enterprise. Existing credit keeps its old price schedule. Refunded or charged-back amounts do not count toward qualification. Concurrency, minute/hour limits and queue priority follow live spendable balance, independently of the price schedule. Daily allowance is at least 10,000 requests/day for every account, including free accounts, or 100,000/day after verified total net deposits of $500; higher balance bands keep their higher daily limits. Goodwill and bonus credit do not count; refunds and chargebacks reduce qualifying deposits. Reviewed custom daily allocations take precedence. Bonus credit adds spendable balance but does not count as a qualifying deposit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What payment methods do you accept?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We accept all major credit and debit cards (Visa, Mastercard, American Express) through our secure payment partner Dodo Payments. All transactions are SSL encrypted and processed securely."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do credits expire?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Your deposited credits never expire — once added, they stay in your account until used, with no monthly fees or maintenance charges. Promotional bonus credits (for example the extra credits from a coupon match or bonus offer) expire 30 days after they're granted. Only that bonus portion expires — your deposited balance always remains. When you make API calls, spending draws from your bonus credits first, so they're used before they lapse. Your billing dashboard shows your deposit and bonus balances separately, along with the bonus expiry date."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if a search fails?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every response we could not complete is refunded automatically to your account. One exception: a 404 for a resource that genuinely does not exist is an answer, and that call is charged."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I get a refund?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Because credits are delivered instantly, purchases are generally non-refundable. We make exceptions for technical failures, duplicate charges, unauthorized transactions, or service discontinuation. Separately, requests we could not complete are refunded automatically; a 404 for a resource that does not exist is an answer and is charged. Submit refund requests within 7 days of purchase via info@apiserpent.com. See the full Refund Policy."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does Enterprise include?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Enterprise is the published $1,000 single-deposit tier: $0.03 per 1,000 Web units on new credit, with Scale rates on non-Web categories. Standard Enterprise concurrency and minute/hour limits apply when spendable balance reaches $1,000. Daily allowance is at least 10,000 requests/day for every account, including free accounts, or 100,000/day after verified total net deposits of $500; higher balance bands keep their higher daily limits. Goodwill and bonus credit do not count; refunds and chargebacks reduce qualifying deposits. Reviewed custom daily allocations take precedence. Negotiated pricing and custom limits are available separately; contact us at info@apiserpent.com."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    a { color: var(--text-primary); text-decoration: none; }
+    .accent { color: var(--accent); }
+
+    /* Navigation */
+    .navbar {
+      padding: 1.5rem 2rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      background: var(--navbar-bg);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-brand {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .nav-brand .brand-api {
+      color: var(--accent);
+      margin-left: 0.15rem;
+    }
+
+    .infinity-serpent {
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .infinity-serpent svg {
+      width: 48px;
+      height: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      font-weight: 500;
+      transition: color 0.2s, border-color 0.2s;
+      padding: 0.4rem 0;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    /* Launch banner + hero — reserve space to prevent font-load CLS on mobile.
+       Floors are the measured natural heights, so they reserve space without
+       adding dead band. (This rule previously targeted `.launch-banner`, a
+       class no element carries, so it never applied.) */
+    .launch-urgency-banner { min-height: 50px; box-sizing: border-box; }
+    @media (max-width: 768px) {
+      .launch-urgency-banner { min-height: 92px; }
+    }
+    @media (max-width: 480px) {
+      .launch-urgency-banner { min-height: 103px; }
+    }
+
+    /* Hero Section */
+    .pricing-hero {
+      padding: 10rem 2rem 4rem;
+      text-align: center;
+      background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+      border-bottom: 1px solid var(--border);
+      min-height: 380px;
+    }
+
+    .pricing-hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .pricing-hero p {
+      color: var(--text-secondary);
+      font-size: 1.2rem;
+      max-width: 650px;
+      margin: 0 auto 2rem;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb { max-width: 1200px; margin: 0 auto; padding: 1.5rem 2rem 0; font-size: 0.875rem; }
+    .breadcrumb a { color: var(--text-secondary); }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb span { color: var(--text-muted); margin: 0 0.5rem; }
+
+    /* Category Tabs */
+    .category-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 0.35rem;
+      border: 1px solid var(--border);
+    }
+
+    .category-tab {
+      padding: 0.75rem 1.5rem;
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-radius: 8px;
+      transition: all 0.25s ease;
+      flex: 1;
+      font-family: inherit;
+    }
+
+    .category-tab:hover {
+      color: var(--text-primary);
+    }
+
+    .category-tab.active {
+      background: var(--accent);
+      color: #ffffff;
+      box-shadow: 0 2px 8px var(--accent-glow);
+    }
+
+    /* Tab Content */
+    .tab-content {
+      display: none;
+      animation: tabFadeIn 0.3s ease;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Sub-tabs (per engine / per LLM / per platform) */
+    .sub-tabs {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 1.5rem auto 1.25rem;
+      max-width: 760px;
+    }
+    .sub-tab {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 0.95rem;
+      border: 1px solid var(--border);
+      border-radius: 9999px;
+      background: var(--bg-card);
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+      font-family: inherit;
+    }
+    .sub-tab img {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+    }
+    .sub-tab:hover { border-color: var(--accent); color: var(--text-primary); }
+    .sub-tab.active {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: transparent;
+    }
+    /* Per-row hide for the platform sub-tabs on the Social table (the only sub-tabs left: SERP
+       and AI price identically across every engine and model, so those pills were removed). */
+    .pricing-table tr[data-platform].hidden { display: none; }
+
+    @keyframes tabFadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Pricing Tables Section */
+    .pricing-section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+    }
+
+    .pricing-table-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      box-shadow: var(--card-shadow);
+    }
+
+    table.pricing-table {
+      display: table;
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: auto;
+      grid-template-columns: none;
+      gap: 0;
+      margin: 0;
+    }
+
+    /* Scale column highlight */
+    .scale-col {
+      background: rgba(13, 148, 136, 0.06);
+    }
+
+    [data-theme=dark] .scale-col {
+      background: rgba(20, 184, 166, 0.08);
+    }
+
+    .pricing-table thead th.scale-col {
+      color: var(--accent);
+    }
+
+    .pricing-table td.scale-col strong {
+      color: var(--accent);
+    }
+
+    /* Engine name rowspan vertical alignment */
+    .pricing-table td[rowspan] {
+      vertical-align: middle;
+    }
+
+    table.pricing-table thead {
+      display: table-header-group;
+    }
+
+    table.pricing-table tbody {
+      display: table-row-group;
+    }
+
+    table.pricing-table tr {
+      display: table-row;
+    }
+
+    table.pricing-table th,
+    table.pricing-table td {
+      display: table-cell;
+    }
+
+    .pricing-table thead th {
+      background: var(--bg-secondary);
+      padding: 1rem 1.25rem;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* SERP table: 5 columns - engine wider, rest equal */
+    .pricing-table thead th:first-child {
+      width: 25%;
+    }
+
+    .pricing-table thead th:first-child {
+      border-top-left-radius: 16px;
+    }
+
+    .pricing-table thead th:last-child {
+      border-top-right-radius: 16px;
+    }
+
+    .pricing-table tbody td {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+    }
+
+    .pricing-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .pricing-table tbody tr:hover td {
+      background: var(--bg-card-hover);
+    }
+
+    .pricing-table .engine-name {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .pricing-table .engine-name .row-logos {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      vertical-align: middle;
+      margin-right: 0.5rem;
+    }
+    .pricing-table .engine-name .row-logos img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+    @media (max-width: 640px) {
+      .pricing-table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        position: relative;
+      }
+      /* Give the table a real min-width so the wrapper's overflow-x:auto
+         actually scrolls instead of crushing 5 columns to unreadable,
+         left-clipped slivers on a 412px phone. */
+      table.pricing-table {
+        min-width: 560px;
+        width: max-content;
+      }
+      .pricing-table thead th,
+      .pricing-table tbody td {
+        padding: 0.75rem 0.85rem;
+        font-size: 0.85rem;
+        white-space: nowrap;
+      }
+      .pricing-table thead th:first-child,
+      .pricing-table tbody td:first-child {
+        position: sticky;
+        left: 0;
+        z-index: 1;
+        background: var(--bg-card);
+      }
+      .pricing-table thead th:first-child { background: var(--bg-secondary); }
+      .pricing-table .engine-name .row-logos img { width: 16px; height: 16px; }
+      .pricing-table .engine-name .row-logos { gap: 0.25rem; }
+    }
+
+    .pricing-table .price-cell {
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .pricing-table .na-cell {
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .pricing-table .highlight-row td {
+      background: var(--accent-dim);
+    }
+
+    .pricing-table .highlight-row:hover td {
+      background: rgba(13, 148, 136, 0.12);
+    }
+
+    /* Table Notes */
+    .table-notes {
+      margin-top: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .table-note {
+      position: relative;
+      padding-left: 1.75rem;
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      line-height: 1.55;
+    }
+
+    .table-note svg {
+      position: absolute;
+      left: 0;
+      top: 4px;
+      color: var(--accent);
+    }
+
+    /* Volume Discount Tiers */
+    .tiers-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .tiers-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+
+    .tiers-section .section-subtitle {
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      margin-bottom: 3rem;
+    }
+
+    .tiers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .tier-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+    }
+
+    .tier-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .tier-card.featured {
+      border-color: var(--accent);
+      box-shadow: 0 0 30px var(--accent-glow);
+    }
+
+    .tier-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: #ffffff;
+      padding: 0.25rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .tier-badge.custom-badge {
+      background: #6366f1;
+    }
+
+    .tier-name {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .tier-price {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+      line-height: 1.25;
+    }
+
+    .tier-price span {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    .tier-desc {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+      min-height: 4.1rem;
+    }
+
+    .tier-features {
+      list-style: none;
+      margin-bottom: 1.5rem;
+      flex: 1;
+    }
+
+    .tier-features li {
+      padding: 0.4rem 0;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .tier-features li svg {
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+      color: var(--success);
+    }
+
+    .tier-cta {
+      width: 100%;
+      height: 3.25rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      font-size: 0.95rem;
+      margin-top: auto;
+    }
+
+    /* Features Grid */
+    .features-section {
+      background: var(--bg-secondary);
+      padding: 4rem 2rem;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .features-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+
+    .features-section .section-subtitle {
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      margin-bottom: 3rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      transition: border-color 0.3s ease;
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .feature-card p {
+      flex-grow: 1;
+    }
+
+    .feature-card:hover {
+      border-color: var(--accent);
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--accent-dim);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      color: var(--accent);
+    }
+
+    .feature-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-card p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .faq-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+
+    .faq-section .section-subtitle {
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+      background: var(--bg-card);
+      transition: border-color 0.2s ease;
+    }
+
+    .faq-item:hover {
+      border-color: var(--accent);
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 1.25rem 1.5rem;
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-family: inherit;
+      transition: color 0.2s;
+    }
+
+    .faq-question:hover {
+      color: var(--accent);
+    }
+
+    .faq-question svg {
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+      color: var(--text-muted);
+    }
+
+    .faq-item.open .faq-question svg {
+      transform: rotate(180deg);
+      color: var(--accent);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+    }
+
+    .faq-answer-inner {
+      padding: 0 1.5rem 1.25rem;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      text-align: center;
+      padding: 5rem 2rem;
+      background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+      border-top: 1px solid var(--border);
+    }
+
+    .cta-section h2 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .cta-section p {
+      color: var(--text-secondary);
+      font-size: 1.15rem;
+      max-width: 500px;
+      margin: 0 auto 2rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 4rem 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .footer-brand {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-desc {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-email {
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+
+    .footer-title {
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 3rem auto 0;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* Google / Yahoo Brand Colors */
+    .google-brand { font-family: 'Product Sans', 'Google Sans', Arial, sans-serif; font-weight: 400; letter-spacing: -0.5px; }
+    .google-brand .g1 { color: #4285F4; }
+    .google-brand .o1 { color: #EA4335; }
+    .google-brand .o2 { color: #FBBC05; }
+    .google-brand .g2 { color: #4285F4; }
+    .google-brand .l { color: #34A853; }
+    .google-brand .e { color: #EA4335; }
+    .yahoo-brand { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; color: #6001D2; letter-spacing: -1px; }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .tiers-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .pricing-hero {
+        padding: 7rem 1rem 3rem;
+      }
+
+      .pricing-hero h1 {
+        font-size: 2rem;
+      }
+
+      .pricing-hero p {
+        font-size: 1rem;
+      }
+
+      .category-tabs {
+        flex-direction: column;
+        margin: 0 1rem 2rem;
+        max-width: 100%;
+      }
+
+      .category-tab {
+        padding: 0.65rem 1rem;
+      }
+
+      .pricing-section {
+        padding: 0 1rem 3rem;
+      }
+
+      .pricing-table-wrapper {
+        border-radius: 12px;
+      }
+
+      .tiers-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cta-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+      }
+
+      .footer-brand {
+        justify-content: center;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+  
+    .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: #fff; padding: 8px 16px; z-index: 10000; font-size: 14px; text-decoration: none; border-radius: 0 0 4px 0; transition: top 0.2s; }
+    .skip-link:focus { top: 0; }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KR35XQV5"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="/" class="nav-brand" aria-label="Serpent API Home">
+        <span class="infinity-serpent">
+          <svg viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <path d="M12 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8c-2.5 0-4.7-1.1-6.2-2.9" style="stroke: var(--accent);"/>
+            <path d="M36 12c0 4.4-3.6 8-8 8s-8-3.6-8-8 3.6-8 8-8c2.5 0 4.7 1.1 6.2 2.9" style="stroke: var(--accent);"/>
+          </svg>
+        </span>
+        Serpent<span class="brand-api">API</span>
+      </a>
+      <ul class="nav-links" id="navLinks"></ul>
+      <div class="nav-buttons" id="navButtons"></div>
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+        <svg class="hamburger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <svg class="close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul class="mobile-menu-links"></ul>
+    <div class="mobile-menu-buttons" id="mobileMenuButtons"></div>
+  </div>
+
+  <!-- Documentation update notice -->
+    <div class="launch-urgency-banner" role="note" aria-label="Documentation update">
+      <div class="launch-urgency-inner launch-slide is-active">
+        <span>Our API documentation has just been updated</span>
+        <a href="/docs" class="launch-urgency-cta">See what&rsquo;s new &rarr;</a>
+      </div>
+    </div>
+
+  <!-- Hero Section -->
+  <header class="pricing-hero">
+    <h1><span class="accent">Deposit Once</span>, Unlock a Web Tier</h1>
+    <p>From <strong>$0.03 per 1,000 Web billing units</strong> at the Enterprise tier after one qualifying $1,000 deposit on eligible new credit. That is <strong>$0.00003 per one-unit Quick Web call</strong>; Deep Search bills one unit per requested page. No subscription. Free to start on eligible endpoints.</p>
+    <a href="/login" class="btn btn-primary btn-lg">Try for Free</a>
+  </header>
+
+  <main id="main-content">
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span>/</span> <strong>Pricing</strong>
+    </nav>
+
+    <!-- Promo offer scope -->
+    <aside role="note" aria-label="Promotional pricing terms" style="max-width: 920px; margin: 0 auto 2rem; padding: 1rem 1.25rem; background: rgba(13,148,136,0.08); border-left: 4px solid #0f8378; border-radius: 6px; font-size: 0.95rem; line-height: 1.55; min-height: 100px;">
+      <strong style="color:#0f8378;">How pricing works:</strong>
+      New deposits follow the current schedule: Web is $0.30/1K on Growth ($100), $0.10/1K on Scale ($500), or $0.03/1K on Enterprise after one $1,000 deposit on eligible new credit. The Enterprise rate equals $0.00003 per one-unit Quick Web call; Deep Search bills one unit per requested page. Existing credit keeps its old price schedule; bonuses spend first, then old deposited credit, then new deposited credit. A call that exceeds the old remainder uses the new rate and applies that remainder toward it. Refunded or charged-back amounts don't count toward your tier.
+    </aside>
+
+    <!-- Category Tabs -->
+    <section class="pricing-section" aria-label="Pricing categories">
+      <div class="category-tabs" role="tablist" aria-label="Pricing categories">
+        <button class="category-tab active" role="tab" aria-selected="true" aria-controls="tab-serp" id="tab-btn-serp" onclick="switchTab('serp')">SERP APIs</button>
+        <button class="category-tab" role="tab" aria-selected="false" aria-controls="tab-ai" id="tab-btn-ai" onclick="switchTab('ai')">AI Mentions &amp; Overviews</button>
+        <button class="category-tab" role="tab" aria-selected="false" aria-controls="tab-maps" id="tab-btn-maps" onclick="switchTab('maps')">Google Maps</button>
+        <button class="category-tab" role="tab" aria-selected="false" aria-controls="tab-social" id="tab-btn-social" onclick="switchTab('social')">Social &amp; Ecommerce APIs</button>
+      </div>
+
+      <!-- SERP APIs Tab -->
+      <div class="tab-content active" id="tab-serp" role="tabpanel" aria-labelledby="tab-btn-serp">
+        <p class="text-muted" style="text-align:center;font-size:0.78rem;margin:0 auto 1rem;max-width:640px;">Same Web category rate across all 5 engines — Google, Bing, Yahoo, DuckDuckGo and Brave.</p>
+        <div class="pricing-table-wrapper">
+          <table class="pricing-table">
+            <thead>
+              <tr>
+                <th>Endpoint</th>
+                <th>Default</th>
+                <th>Growth<br><small style="font-weight:400;text-transform:none;letter-spacing:0">Web $0.30/1K · one $100 deposit</small></th>
+                <th class="scale-col">Scale<br><small style="font-weight:400;text-transform:none;letter-spacing:0">Web $0.10/1K · one $500 deposit</small></th>
+                <th>Enterprise<br><small style="font-weight:400;text-transform:none;letter-spacing:0">Web $0.03/1K · one $1,000 deposit</small></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="engine-name">
+                  <strong>Google SERP &mdash; Deep Search</strong><br><small style="color:var(--text-muted);font-weight:400;"><code>/api/search</code> · 1 query returns up to 10 pages (~100 results with PAA · AIO · Featured Snippets) · <strong>billed per page requested</strong>: a 1-page call is 1 unit and a 10-page call is 10, at every tier and every balance</small>
+                </td>
+                <td class="price-cell">$0.60<br><small style="color:var(--text-muted);font-weight:400;">/1K Pages</small></td>
+                <td class="price-cell">$0.30<br><small style="color:var(--text-muted);font-weight:400;">/1K Pages</small></td>
+                <td class="price-cell scale-col"><strong>$0.10</strong><br><small style="color:var(--text-muted);font-weight:400;">/1K Pages</small></td>
+                <td class="price-cell">$0.03<br><small style="color:var(--text-muted);font-weight:400;">/1K Pages</small></td>
+              </tr>
+              <tr>
+                <td class="engine-name">
+                  <strong>Google SERP &mdash; Quick Search</strong><br><small style="color:var(--text-muted);font-weight:400;"><code>/api/search/quick</code> · Same flat price · organic-only on Google; other engines return their own blocks · 1 query returns up to 100 organic results, best-effort at the high end · always one charge per call</small>
+                </td>
+                <td class="price-cell">$0.60<br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+                <td class="price-cell">$0.30<br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+                <td class="price-cell scale-col"><strong>$0.10</strong><br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+                <td class="price-cell">$0.03<br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+              </tr>
+              <tr>
+                <td class="engine-name">
+                  <strong>News Search</strong><br><small style="color:var(--text-muted);font-weight:400;">Per 1K Search Queries · All engines</small>
+                </td>
+                <td class="price-cell">$0.20<br><small style="color:var(--text-muted);font-weight:400;">/1K Queries</small></td>
+                <td class="price-cell">$0.02<br><small style="color:var(--text-muted);font-weight:400;">/1K Queries</small></td>
+                <td class="price-cell scale-col"><strong>$0.01</strong><br><small style="color:var(--text-muted);font-weight:400;">/1K Queries</small></td>
+                <td class="price-cell">$0.01<br><small style="color:var(--text-muted);font-weight:400;">/1K Queries</small></td>
+              </tr>
+              <tr>
+                <td class="engine-name">
+                  <strong>Image Search</strong><br><small style="color:var(--text-muted);font-weight:400;">Per 1K Search Queries · All engines · Standard discount</small>
+                </td>
+                <td class="price-cell">$0.35<br><small style="color:var(--text-muted);font-weight:400;">/1K Queries</small></td>
+                <td class="price-cell">$0.32<br><small style="color:var(--text-muted);font-weight:400;">/1K Queries</small></td>
+                <td class="price-cell scale-col"><strong>$0.25</strong><br><small style="color:var(--text-muted);font-weight:400;">/1K Queries</small></td>
+                <td class="price-cell">$0.25<br><small style="color:var(--text-muted);font-weight:400;">/1K Queries</small></td>
+              </tr>
+              <tr>
+                <td class="engine-name">
+                  <strong>Video Search</strong><br><small style="color:var(--text-muted);font-weight:400;">Per 1K Search Queries · All engines · Standard discount</small>
+                </td>
+                <td class="price-cell">$0.10<br><small style="color:var(--text-muted);font-weight:400;">/1K Queries</small></td>
+                <td class="price-cell">$0.09<br><small style="color:var(--text-muted);font-weight:400;">/1K Queries</small></td>
+                <td class="price-cell scale-col"><strong>$0.07</strong><br><small style="color:var(--text-muted);font-weight:400;">/1K Queries</small></td>
+                <td class="price-cell">$0.07<br><small style="color:var(--text-muted);font-weight:400;">/1K Queries</small></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-notes">
+          <div class="table-note">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-with="2" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            <strong>One Web search price, whichever engine you ask for &mdash; Google, Bing, Yahoo, DuckDuckGo or Brave.</strong> The rate below is the Web category rate; setting <code>engine=</code> never changes what you pay. Quick Search is billed one published Web category unit per request whatever your tier or balance. On Deep Search, one published Web category unit is charged per page requested, up to 10 pages, at every tier and every balance. For new credit, Scale Web search is <strong>$0.10/1K units</strong> and Enterprise is <strong>$0.03/1K units</strong>.
+          </div>
+          <div class="table-note">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Failed requests (server errors) are automatically refunded
+          </div>
+          <div class="table-note">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <strong>Empty responses are refunded automatically when the search could not be completed.</strong> If we ran out of time, or could not complete the search for another reason on our side, its credits are returned to your account. <strong>A search that completes and genuinely has no matches is a delivered result and is charged</strong> &mdash; &ldquo;there is nothing here&rdquo; is a real answer to a real question. A response that is short of what you asked for is also a delivered response and is charged normally.
+          </div>
+          <div class="table-note">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            free calls for every new account
+          </div>
+          <div class="table-note">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            The largest single qualifying deposit sets the tier for new credit: $100 Growth, $500 Scale, or $1,000 Enterprise. Existing credit keeps its old price schedule as your balance spends down. Refunded or charged-back amounts don't count toward your tier. Concurrency, minute/hour limits and queue priority follow your live balance. Daily allowance is at least 10,000 requests/day for every account, including free accounts, or 100,000/day after verified total net deposits of $500; higher balance bands keep their higher daily limits. Goodwill and bonus credit do not count; refunds and chargebacks reduce qualifying deposits. Reviewed custom daily allocations take precedence. News retains its existing discount ladder; Images and Videos retain their 10% (Growth) / 30% (Scale and Enterprise) discount.
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Mentions & Overviews Tab -->
+      <div class="tab-content" id="tab-ai" role="tabpanel" aria-labelledby="tab-btn-ai">
+        <p class="text-muted" style="text-align:center;font-size:0.78rem;margin:0 auto 1rem;max-width:640px;">Same rate for every model — Claude, ChatGPT, Gemini and Perplexity.</p>
+        <div class="pricing-table-wrapper">
+          <table class="pricing-table">
+            <thead>
+              <tr>
+                <th>Endpoint</th>
+                <th>Default</th>
+                <th>Growth<br><small style="font-weight:400;text-transform:none;letter-spacing:0">10× off · one-time $100 deposit</small></th>
+                <th class="scale-col">Scale / Enterprise<br><small style="font-weight:400;text-transform:none;letter-spacing:0">Same non-Web rates · $500 / $1,000 deposit</small></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="engine-name">
+                  <strong>AI Ranking — Single LLM</strong><br><small style="color:var(--text-muted);font-weight:400;">Per 1K Search Queries · Claude · ChatGPT · Gemini · Perplexity</small>
+                </td>
+                <td class="price-cell">$20.00<br><small style="color:var(--text-muted);font-weight:400;">/1K Queries</small></td>
+                <td class="price-cell">$2.00<br><small style="color:var(--text-muted);font-weight:400;">/1K Queries</small></td>
+                <td class="price-cell scale-col"><strong>$1.00</strong><br><small style="color:var(--text-muted);font-weight:400;">/1K Queries</small></td>
+              </tr>
+              <tr>
+                <td class="engine-name">
+                  <strong>AI Ranking — All 4 Combined</strong><br><small style="color:var(--text-muted);font-weight:400;">Per 1K Search Queries · Single call across all LLMs</small>
+                </td>
+                <td class="price-cell">$40.00<br><small style="color:var(--text-muted);font-weight:400;">/1K Queries</small></td>
+                <td class="price-cell">$4.00<br><small style="color:var(--text-muted);font-weight:400;">/1K Queries</small></td>
+                <td class="price-cell scale-col"><strong>$2.00</strong><br><small style="color:var(--text-muted);font-weight:400;">/1K Queries</small></td>
+              </tr>
+              <tr data-platform="web">
+                <td class="engine-name">
+                  <strong>AI Mode &mdash; surcharge</strong><br><small style="color:var(--text-muted);font-weight:400;"><code>include_ai_mode=true</code> on Deep Search (<code>/api/search</code>) · <strong>$0.004 per call</strong>, added to the call you already pay for — never instead of it — plus one written answer, its sources and suggested follow-up questions in the top-level <code>aiMode</code> object · charged the same whether the call returns 1 page or 10, and <strong>flat at every tier &mdash; no Growth or Scale discount</strong> · paid plans only; the free tier returns the same key, empty</small>
+                </td>
+                <td class="price-cell">$4.00<br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+                <td class="price-cell">$4.00<br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+                <td class="price-cell scale-col"><strong>$4.00</strong><br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-notes">
+          <div class="table-note">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            Check if your brand or keyword is mentioned in AI-generated answers
+          </div>
+          <div class="table-note">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            <strong>AI Mode is an add-on, not an endpoint.</strong> You buy it by sending <code>include_ai_mode=true</code> with a Deep Search call on a paid plan, and the $0.004 is charged on top of that call's own rate &mdash; a 10-page Deep call at Default is $0.006 for the pages plus $0.004 for AI Mode. It is priced the same at every tier because it is a flat fee per call, not a rate we discount.
+          </div>
+          <div class="table-note">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            "All 4 Combined" queries each LLM in a single API call
+          </div>
+        </div>
+      </div>
+
+      <!-- Google Maps Tab -->
+      <div class="tab-content" id="tab-maps" role="tabpanel" aria-labelledby="tab-btn-maps">
+        <div class="pricing-table-wrapper">
+          <table class="pricing-table">
+            <thead><tr><th>Endpoint</th><th>Default</th><th>Growth<br><small style="font-weight:400;text-transform:none;letter-spacing:0">10% off</small></th><th class="scale-col">Scale<br><small style="font-weight:400;text-transform:none;letter-spacing:0">30% off</small></th></tr></thead>
+            <tbody>
+              <tr><td class="engine-name"><strong>Maps Quick</strong><br><small style="color:var(--text-muted);font-weight:400;">Up to 20 places · shares the free-call pool</small></td><td class="price-cell">$15.00<br><small>/1K</small></td><td class="price-cell">$13.50<br><small>/1K</small></td><td class="price-cell scale-col"><strong>$10.50</strong><br><small>/1K</small></td></tr>
+              <tr><td class="engine-name"><strong>Maps List &mdash; standard band</strong><br><small style="color:var(--text-muted);font-weight:400;"><code>detail=0</code> &middot; up to 20 places, none enriched</small></td><td class="price-cell">$0.10<br><small>/1K calls</small></td><td class="price-cell">$0.09<br><small>/1K calls</small></td><td class="price-cell scale-col"><strong>$0.07</strong><br><small>/1K calls</small></td></tr>
+              <tr><td class="engine-name"><strong>Maps List &mdash; premium band</strong><br><small style="color:var(--text-muted);font-weight:400;"><code>detail=0</code> &middot; 21&ndash;100 places, none enriched &middot; flat</small></td><td class="price-cell">$0.50<br><small>/1K calls</small></td><td class="price-cell">$0.45<br><small>/1K calls</small></td><td class="price-cell scale-col"><strong>$0.35</strong><br><small>/1K calls</small></td></tr>
+              <tr><td class="engine-name"><strong>Maps Deep &mdash; standard band</strong><br><small style="color:var(--text-muted);font-weight:400;"><code>detail</code> 1&ndash;20 &middot; default <code>detail=20</code> &middot; up to 100 places returned, up to 20 fully enriched &middot; shares the free-call pool</small></td><td class="price-cell">$15.00<br><small>/1K calls</small></td><td class="price-cell">$13.50<br><small>/1K calls</small></td><td class="price-cell scale-col"><strong>$10.50</strong><br><small>/1K calls</small></td></tr>
+              <tr><td class="engine-name"><strong>Maps Deep &mdash; premium band</strong><br><small style="color:var(--text-muted);font-weight:400;"><code>detail</code> 21&ndash;100, flat &middot; up to 100 places returned, up to 100 fully enriched &middot; shares the free-call pool</small></td><td class="price-cell">$75.00<br><small>/1K calls</small></td><td class="price-cell">$67.50<br><small>/1K calls</small></td><td class="price-cell scale-col"><strong>$52.50</strong><br><small>/1K calls</small></td></tr>
+              <tr><td class="engine-name"><strong>Place Details</strong></td><td class="price-cell">$1.50<br><small>/1K</small></td><td class="price-cell">$1.35<br><small>/1K</small></td><td class="price-cell scale-col"><strong>$1.05</strong><br><small>/1K</small></td></tr>
+              <tr><td class="engine-name"><strong>Reviews</strong><br><small style="color:var(--text-muted);font-weight:400;">20 reviews per page</small></td><td class="price-cell">$3.00<br><small>/1K</small></td><td class="price-cell">$2.70<br><small>/1K</small></td><td class="price-cell scale-col"><strong>$2.10</strong><br><small>/1K</small></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-notes"><div class="table-note">Maps uses the standard tier discount — 10% off at Growth, 30% off at Scale.</div><div class="table-note"><strong>Maps Deep has two flat bands, and there is a hard step between them.</strong> Every Deep call returns up to 100 ranked places by default; <code>detail</code> decides how many of those get opened and fully enriched — the rest come back as <code>core_only</code> records that still carry name, address, coordinates, rating, review count, phone and website. <code>detail</code> 1&ndash;20 is the standard band at <strong>$0.0150 per call</strong>. <code>detail=0</code> buys Maps List, from <strong>$0.0001 per call</strong> for up to 20 places and <strong>$0.0005 per call</strong> for 21&ndash;100 places. <code>detail</code> 21&ndash;100 is the premium band at <strong>$0.0750 per call</strong>, flat — 21 and 99 cost exactly the same. <strong>So <code>detail=20</code> bills $0.0150 and <code>detail=21</code> bills $0.0750: 5&times; for one more enriched place.</strong> That step is deliberate, and we would rather you read it here than find it on an invoice. The default is <code>detail=20</code>, inside the standard band.</div><div class="table-note"><strong>Read the unit before you compare us to anyone.</strong> At the default <code>detail=20</code> a Deep call is <strong>$0.15 per 1,000 places returned</strong> and <strong>$0.75 per 1,000 fully-enriched places</strong>. At the premium band's <code>detail=100</code> it is <strong>$0.75 per 1,000 places returned</strong> and <strong>$0.75 per 1,000 fully-enriched places</strong> — the same enriched-record rate at both ends of the product, which is why the premium band is fair value at its ceiling rather than a penalty. Between the two it is worse per enriched record: <code>detail=30</code> is $0.0750 a call for 30 enriched, i.e. <strong>$2.50 per 1,000 fully-enriched places</strong>. For a current synchronous call choose a depth up to 30; depth 100 requires the general job route, which is currently unavailable.</div><div class="table-note"><strong>Quick and Deep cost the same at the default.</strong> Maps Quick is $0.0150 per call and fully enriches all 20 places it returns — <strong>$0.75 per 1,000 fully-enriched places</strong>. Maps Deep at <code>detail=20</code> is also $0.0150 per call, fully enriches 20, and <em>additionally</em> returns up to 100 ranked places as <code>core_only</code> records. Deep is the better value on data per dollar; Quick is the faster, smaller response and is the one with <code>start</code> paging through the ranked list.</div><div class="table-note">Synchronous Deep requests are capped at <code>detail=30</code>. That is a <em>performance</em> limit, not a pricing one — you may ask for 21&ndash;30 synchronously and simply pay the premium $0.0750 per call. <code>detail</code> above 30, up to 100, requires <code>GET /api/maps/search/async</code> at the same flat premium $0.0750 per call, but this general job route is currently unavailable. <code>GET /api/status</code> is the authority on whether the job surface is live for your account — read <code>limits.endpoints[&hellip;].async_available</code> before you build against it.</div><div class="table-note">Search responses preserve ranked core records when detail enrichment reaches its deadline.</div></div>
+      </div>
+
+      <!-- Social &amp; Ecommerce APIs Tab -->
+      <div class="tab-content" id="tab-social" role="tabpanel" aria-labelledby="tab-btn-social">
+        <div class="sub-tabs" role="tablist" aria-label="Pick a platform">
+          <button class="sub-tab active" type="button" data-cat="social" data-key="all" onclick="switchSubTab('social','all',this)">All platforms</button>
+          <button class="sub-tab" type="button" data-cat="social" data-key="youtube" onclick="switchSubTab('social','youtube',this)"><img data-brand="youtube" alt="">YouTube</button>
+          <button class="sub-tab" type="button" data-cat="social" data-key="instagram" onclick="switchSubTab('social','instagram',this)"><img data-brand="instagram" alt="">Instagram</button>
+          <button class="sub-tab" type="button" data-cat="social" data-key="linkedin" onclick="switchSubTab('social','linkedin',this)"><img data-brand="linkedin" alt="">LinkedIn</button>
+          <button class="sub-tab" type="button" data-cat="social" data-key="tiktok" onclick="switchSubTab('social','tiktok',this)"><img data-brand="tiktok" alt="">TikTok</button>
+          <button class="sub-tab" type="button" data-cat="social" data-key="amazon" onclick="switchSubTab('social','amazon',this)"><img data-brand="amazon" alt="">Amazon</button>
+          <button class="sub-tab" type="button" data-cat="social" data-key="ebay" onclick="switchSubTab('social','ebay',this)">eBay</button>
+          <button class="sub-tab" type="button" data-cat="social" data-key="x" onclick="switchSubTab('social','x',this)"><img data-brand="x" alt="">X (Twitter)</button>
+          <button class="sub-tab" type="button" data-cat="social" data-key="reddit" onclick="switchSubTab('social','reddit',this)"><img data-brand="reddit" alt="">Reddit</button>
+        </div>
+        <div class="pricing-table-wrapper">
+          <table class="pricing-table">
+            <thead>
+              <tr>
+                <th>Endpoint</th>
+                <th>Default</th>
+                <th>Growth<br><small style="font-weight:400;text-transform:none;letter-spacing:0">up to 90% off · one-time $100 deposit</small></th>
+                <th class="scale-col">Scale / Enterprise<br><small style="font-weight:400;text-transform:none;letter-spacing:0">Same non-Web rates · $500 / $1,000 deposit</small></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-platform="youtube">
+                <td class="engine-name">
+                  <strong>YouTube</strong><br><small style="color:var(--text-muted);font-weight:400;">Per 1K Search Queries · Search · Video · Channel · Playlist<br><span style="color:var(--accent);font-weight:600;">Core discount — 90% off at Growth, 95% off at Scale, not the 10%/30% above</span></small>
+                </td>
+                <td class="price-cell">$0.20<br><small style="color:var(--text-muted);font-weight:400;">/1K Queries</small></td>
+                <td class="price-cell">$0.02<br><small style="color:var(--text-muted);font-weight:400;">/1K Queries</small></td>
+                <td class="price-cell scale-col"><strong>$0.01</strong><br><small style="color:var(--text-muted);font-weight:400;">/1K Queries</small></td>
+              </tr>
+              <tr data-platform="instagram">
+                <td class="engine-name">
+                  <strong>Instagram Profile</strong><br><small style="color:var(--text-muted);font-weight:400;">Per 1K Profile Lookups · Standard discount</small>
+                </td>
+                <td class="price-cell">$0.40<br><small style="color:var(--text-muted);font-weight:400;">/1K Lookups</small></td>
+                <td class="price-cell">$0.36<br><small style="color:var(--text-muted);font-weight:400;">/1K Lookups</small></td>
+                <td class="price-cell scale-col"><strong>$0.28</strong><br><small style="color:var(--text-muted);font-weight:400;">/1K Lookups</small></td>
+              </tr>
+              <tr data-platform="instagram">
+                <td class="engine-name">
+                  <strong>Instagram Profile + Recent Posts</strong><br><small style="color:var(--text-muted);font-weight:400;">Per 1K Profile Lookups · <code>include_posts=true</code> · Standard discount</small>
+                </td>
+                <td class="price-cell">$0.40<br><small style="color:var(--text-muted);font-weight:400;">/1K Lookups</small></td>
+                <td class="price-cell">$0.36<br><small style="color:var(--text-muted);font-weight:400;">/1K Lookups</small></td>
+                <td class="price-cell scale-col"><strong>$0.28</strong><br><small style="color:var(--text-muted);font-weight:400;">/1K Lookups</small></td>
+              </tr>
+              <tr data-platform="instagram">
+                <td class="engine-name">
+                  <strong>Instagram Profile + Post Details</strong><br><small style="color:var(--text-muted);font-weight:400;">Per 1K Profile Lookups · <code>include_post_details=true</code> · Standard discount</small>
+                </td>
+                <td class="price-cell">$4.00<br><small style="color:var(--text-muted);font-weight:400;">/1K Lookups</small></td>
+                <td class="price-cell">$3.60<br><small style="color:var(--text-muted);font-weight:400;">/1K Lookups</small></td>
+                <td class="price-cell scale-col"><strong>$2.80</strong><br><small style="color:var(--text-muted);font-weight:400;">/1K Lookups</small></td>
+              </tr>
+              <tr data-platform="linkedin">
+                <td class="engine-name">
+                  <strong>LinkedIn Company</strong><br><small style="color:var(--text-muted);font-weight:400;">Per 1K Company Lookups · Standard discount</small>
+                </td>
+                <td class="price-cell">$1.00<br><small style="color:var(--text-muted);font-weight:400;">/1K Lookups</small></td>
+                <td class="price-cell">$0.90<br><small style="color:var(--text-muted);font-weight:400;">/1K Lookups</small></td>
+                <td class="price-cell scale-col"><strong>$0.70</strong><br><small style="color:var(--text-muted);font-weight:400;">/1K Lookups</small></td>
+              </tr>
+              <tr data-platform="linkedin">
+                <td class="engine-name">
+                  <strong>LinkedIn Full Profile</strong><br><small style="color:var(--text-muted);font-weight:400;">Per 1K Profile Lookups · Standard discount</small>
+                </td>
+                <td class="price-cell">$1.00<br><small style="color:var(--text-muted);font-weight:400;">/1K Lookups</small></td>
+                <td class="price-cell">$0.90<br><small style="color:var(--text-muted);font-weight:400;">/1K Lookups</small></td>
+                <td class="price-cell scale-col"><strong>$0.70</strong><br><small style="color:var(--text-muted);font-weight:400;">/1K Lookups</small></td>
+              </tr>
+              <tr data-platform="linkedin">
+                <td class="engine-name">
+                  <strong>LinkedIn Posts</strong><br><small style="color:var(--text-muted);font-weight:400;">Per 1K calls at <code>limit=10</code> (the default) · priced by depth: a discovery floor plus one unit per post, so <code>limit=1</code> costs less and <code>limit=50</code> is 3.4&times; this rate · +20% per opted-in field group (<code>include_comments</code>, <code>include_transcript</code>) · empty responses refunded when we could not complete the request, delivered ones charged · Standard discount</small>
+                </td>
+                <td class="price-cell">$1.00<br><small style="color:var(--text-muted);font-weight:400;">/1K Lookups</small></td>
+                <td class="price-cell">$0.90<br><small style="color:var(--text-muted);font-weight:400;">/1K Lookups</small></td>
+                <td class="price-cell scale-col"><strong>$0.70</strong><br><small style="color:var(--text-muted);font-weight:400;">/1K Lookups</small></td>
+              </tr>
+              <tr data-platform="linkedin">
+                <td class="engine-name">
+                  <strong>LinkedIn Profile &amp; Jobs</strong><br><small style="color:var(--text-muted);font-weight:400;">Per 1K Lookups · Basic profile, job search, job detail · Standard discount</small>
+                </td>
+                <td class="price-cell">$0.50<br><small style="color:var(--text-muted);font-weight:400;">/1K Lookups</small></td>
+                <td class="price-cell">$0.45<br><small style="color:var(--text-muted);font-weight:400;">/1K Lookups</small></td>
+                <td class="price-cell scale-col"><strong>$0.35</strong><br><small style="color:var(--text-muted);font-weight:400;">/1K Lookups</small></td>
+              </tr>
+              <tr data-platform="linkedin">
+                <td class="engine-name">
+                  <strong>LinkedIn Profile Search</strong> <span style="font-size:0.7rem;font-weight:600;color:var(--accent);">BETA</span><br><small style="color:var(--text-muted);font-weight:400;">Per 1K Searches · Name to candidate profiles · Standard discount</small>
+                </td>
+                <td class="price-cell">$1.00<br><small style="color:var(--text-muted);font-weight:400;">/1K Searches</small></td>
+                <td class="price-cell">$0.90<br><small style="color:var(--text-muted);font-weight:400;">/1K Searches</small></td>
+                <td class="price-cell scale-col"><strong>$0.70</strong><br><small style="color:var(--text-muted);font-weight:400;">/1K Searches</small></td>
+              </tr>
+              <tr data-platform="tiktok">
+                <td class="engine-name">
+                  <strong>TikTok Profile &amp; Video</strong><br><small style="color:var(--text-muted);font-weight:400;">Per 1K Requests · <code>/profile</code> and <code>/video</code> with no opt-in field groups · Standard discount</small>
+                </td>
+                <td class="price-cell">$0.10<br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+                <td class="price-cell">$0.09<br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+                <td class="price-cell scale-col"><strong>$0.07</strong><br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+              </tr>
+              <tr data-platform="tiktok">
+                <td class="engine-name">
+                  <strong>TikTok Enriched</strong><br><small style="color:var(--text-muted);font-weight:400;">Per 1K Requests · Any opt-in <code>include_*</code> field group (posts, comments, followers, following, liked, related) plus <code>/hashtag</code>, <code>/search</code> and <code>/music</code> · priced at the default <code>limit=30</code> and scaling with depth — a fixed floor plus one unit per item, so <code>limit=180</code> bills 2.5&times; this rate · +20% for each field group beyond the first · Standard discount</small>
+                </td>
+                <td class="price-cell">$3.00<br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+                <td class="price-cell">$2.70<br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+                <td class="price-cell scale-col"><strong>$2.10</strong><br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+              </tr>
+              <tr data-platform="tiktok">
+                <td class="engine-name">
+                  <strong>TikTok Media &mdash; surcharge</strong><br><small style="color:var(--text-muted);font-weight:400;">Per 1K Requests · <code>include_media=true</code> on <code>/video</code> · <strong>this is a surcharge charged on top of the call, not instead of it</strong> — a basic video call with media is $0.10 + $10.00 = $10.10 per 1,000 at Default · the only endpoint here that is <strong>not</strong> free-allowance eligible: a media call is always billed · Standard discount</small>
+                </td>
+                <td class="price-cell">$10.00<br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+                <td class="price-cell">$9.00<br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+                <td class="price-cell scale-col"><strong>$7.00</strong><br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+              </tr>
+              <tr data-platform="amazon">
+                <td class="engine-name">
+                  <strong>Amazon Product</strong><br><small style="color:var(--text-muted);font-weight:400;">Per 1K Requests · One ASIN per request · up to 13 reviews and the rating breakdown included at no extra charge · Standard discount</small>
+                </td>
+                <td class="price-cell">$0.020<br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+                <td class="price-cell">$0.018<br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+                <td class="price-cell scale-col"><strong>$0.014</strong><br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+              </tr>
+              <tr data-platform="amazon">
+                <td class="engine-name">
+                  <strong>Amazon Search</strong><br><small style="color:var(--text-muted);font-weight:400;">Per 1K Requests · One request is one results page — 16 to 48 products depending on the marketplace, with prices, ratings and sponsored flags · Standard discount</small>
+                </td>
+                <td class="price-cell">$0.020<br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+                <td class="price-cell">$0.018<br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+                <td class="price-cell scale-col"><strong>$0.014</strong><br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+              </tr>
+              <tr data-platform="amazon">
+                <td class="engine-name">
+                  <strong>Amazon Bestsellers</strong><br><small style="color:var(--text-muted);font-weight:400;">Per 1K Requests · One request is one chart — 30 ranked ASINs, or 36 when no <code>category</code> is given · Standard discount</small>
+                </td>
+                <td class="price-cell">$0.020<br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+                <td class="price-cell">$0.018<br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+                <td class="price-cell scale-col"><strong>$0.014</strong><br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+              </tr>
+              <tr data-platform="ebay">
+                <td class="engine-name">
+                  <strong>eBay Search, Item, Seller, Reviews &amp; Feedback</strong><br><small style="color:var(--text-muted);font-weight:400;">Per 1,000 direct calls, or per 1,000 served pages in a search, seller-listings, product-reviews or seller-feedback job. Direct calls can use the shared trial allowance; jobs require funded credits. Standard discount.</small>
+                </td>
+                <td class="price-cell">$0.40<br><small style="color:var(--text-muted);font-weight:400;">/1K calls or served pages</small></td>
+                <td class="price-cell">$0.36<br><small style="color:var(--text-muted);font-weight:400;">/1K calls or served pages</small></td>
+                <td class="price-cell scale-col"><strong>$0.28</strong><br><small style="color:var(--text-muted);font-weight:400;">/1K calls or served pages</small></td>
+              </tr>
+              <tr data-platform="ebay">
+                <td class="engine-name">
+                  <strong>eBay Full Item with Description</strong><br><small style="color:var(--text-muted);font-weight:400;">Per 1,000 direct calls with <code>include_description=1</code>. Requires funded credits. If the description cannot be delivered but the core item can, the call is charged at the standard item rate. Standard discount.</small>
+                </td>
+                <td class="price-cell">$1.50<br><small style="color:var(--text-muted);font-weight:400;">/1K calls</small></td>
+                <td class="price-cell">$1.35<br><small style="color:var(--text-muted);font-weight:400;">/1K calls</small></td>
+                <td class="price-cell scale-col"><strong>$1.05</strong><br><small style="color:var(--text-muted);font-weight:400;">/1K calls</small></td>
+              </tr>
+              <tr data-platform="x">
+                <td class="engine-name">
+                  <strong>X Post</strong><br><small style="color:var(--text-muted);font-weight:400;">Per 1K Requests · <code>/api/x/tweet</code> — one post by numeric id or permalink, with author, engagement counts, media, hashtags, mentions and links · Standard discount</small>
+                </td>
+                <td class="price-cell">$0.10<br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+                <td class="price-cell">$0.09<br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+                <td class="price-cell scale-col"><strong>$0.07</strong><br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+              </tr>
+              <tr data-platform="x">
+                <td class="engine-name">
+                  <strong>X Profile</strong><br><small style="color:var(--text-muted);font-weight:400;">Per 1K Requests · <code>/api/x/profile</code> — a public profile by handle, plus the recent posts it lists · <strong style="color:var(--accent);">One flat rate at every tier — no Growth or Scale discount, and we would rather print that than a discount that does not exist</strong> · <code>hydrate=true</code> adds engagement and media to those recent posts and bills 1.5&times;, so $0.15 per 1,000 calls, flat as well</small>
+                </td>
+                <td class="price-cell">$0.10<br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+                <td class="price-cell">$0.10<br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+                <td class="price-cell scale-col"><strong>$0.10</strong><br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+              </tr>
+              <tr data-platform="reddit">
+                <td class="engine-name">
+                  <strong>Reddit Search, User &amp; Community</strong><br><small style="color:var(--text-muted);font-weight:400;">Per 1K Requests · <code>/api/reddit/search</code>, <code>/api/reddit/user</code> and <code>/api/reddit/subreddit</code> — one flat charge at any depth. On search, <code>limit</code> is a page size and nothing more: one call, one charge, whether you ask for 1 result or 100 · Standard discount</small>
+                </td>
+                <td class="price-cell">$0.12<br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+                <td class="price-cell">$0.108<br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+                <td class="price-cell scale-col"><strong>$0.084</strong><br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+              </tr>
+              <tr data-platform="reddit">
+                <td class="engine-name">
+                  <strong>Reddit Posts &amp; Comments</strong><br><small style="color:var(--text-muted);font-weight:400;">Per 1K Requests · <code>/api/reddit/posts</code> and <code>/api/reddit/comments</code> — <strong>the rate buys 25 records, and every started block of 25 costs one more unit.</strong> A block is charged whole, so <code>limit=26</code> costs exactly what <code>limit=50</code> costs, and <code>limit=100</code> is four blocks: $0.48 per 1,000 calls at Default. Set <code>limit</code> on a 25 boundary · Standard discount</small>
+                </td>
+                <td class="price-cell">$0.12<br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+                <td class="price-cell">$0.108<br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+                <td class="price-cell scale-col"><strong>$0.084</strong><br><small style="color:var(--text-muted);font-weight:400;">/1K Requests</small></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-notes">
+          <div class="table-note">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            Real-time data, not cached results
+          </div>
+          <div class="table-note">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Structured JSON response for easy integration
+          </div>
+          <div class="table-note">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            <strong>Three discount shapes sit in this one table, and each row says which it uses.</strong> YouTube takes the core discount &mdash; 90% off at Growth, 95% off at Scale. Nearly every other row here &mdash; Instagram, LinkedIn, TikTok, Amazon, eBay, Reddit and the X post call alike &mdash; takes the standard discount: 10% off at Growth, 30% off at Scale. The column headings quote the largest of the three, which is why they read &ldquo;up to&rdquo;. <strong>The one exception is <code>/api/x/profile</code>, which is flat:</strong> $0.10 per 1,000 on all three tiers, and $0.15 hydrated on all three. A bigger deposit does not move it, and printing the same number three times is more honest than printing a discount we do not give.
+          </div>
+          <div class="table-note">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            <strong>Read the unit before you compare any of these rates.</strong> X and Reddit are billed <strong>per request, never per record returned</strong> &mdash; one X call is one charge whatever the profile lists, and a Reddit search, user or community call is one charge at any <code>limit</code>. <strong>The single exception is <code>/api/reddit/posts</code> and <code>/api/reddit/comments</code>, where <code>limit</code> is a price:</strong> the rate buys 25 records and each started block of 25 adds one unit, so 100 records is four blocks &mdash; $0.48 per 1,000 calls at Default, which is $0.0048 per 1,000 posts. Ask for 26 and you pay for 50. That curve is printed here rather than discovered on an invoice.
+          </div>
+          <div class="table-note">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            <strong>The free calls are one shared allowance, not one per product.</strong> Every endpoint in this table draws from the same pool as Web, News, Maps and the rest &mdash; a free call is one call whatever its depth or how many field groups it asks for. A hydrated X profile spends one free call, not one and a half, and a 100-record Reddit listing spends one, not four: the free pool counts calls, never multipliers or blocks. <strong>eBay full items and paginated jobs require funded credits. The other exception is TikTok Media:</strong> adding <code>include_media</code> makes that call paid, always.
+          </div>
+          <div class="table-note">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <strong>Empty responses are refunded automatically when the search could not be completed.</strong> If we ran out of time, or could not complete the search for another reason on our side, its credits are returned to your account. <strong>A search that completes and genuinely has no matches is a delivered result and is charged</strong> &mdash; &ldquo;there is nothing here&rdquo; is a real answer to a real question. A response that is short of what you asked for is also a delivered response and is charged normally.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rate-stability footnote (discreet, per product decision) -->
+    <p style="text-align:center;font-size:0.72rem;color:var(--text-muted);margin:-1rem auto 1.5rem;max-width:780px;line-height:1.5;">
+      Existing credit keeps its original schedule. New deposits use the current schedule at the tier earned by the largest qualifying single deposit. Refunded or charged-back deposits can change that qualification.
+    </p>
+
+    <!-- Volume Discount Tiers -->
+    <section class="tiers-section" aria-label="Volume discount tiers">
+      <h2>One-time deposit. No expiry. <span class="accent">Four Web rates.</span></h2>
+      <p class="section-subtitle">New credit uses your earned tier; existing credit keeps its original schedule. Quick Search uses one Web unit per call and Deep uses one per requested page. No subscription; refunded or charged-back amounts do not qualify toward a tier.</p>
+
+      <div class="tiers-grid">
+        <!-- Default -->
+        <div class="tier-card">
+          <span class="tier-badge">Web $0.60/1K</span>
+          <h3 class="tier-name">Default</h3>
+          <div class="tier-price">$0 <span>deposit required</span></div>
+          <p class="tier-desc">No qualifying deposit needed. New Web credit starts at $0.60/1K units.</p>
+          <ul class="tier-features">
+            <li>
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Web $0.60/1K units · News $0.20/1K · Images $0.35/1K
+            </li>
+            <li>
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              free calls on eligible endpoints
+            </li>
+            <li>
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Standard SERP response speed
+            </li>
+            <li>
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Community support
+            </li>
+          </ul>
+          <a href="/login" class="btn btn-outline tier-cta">Start Free</a>
+        </div>
+
+        <!-- Growth -->
+        <div class="tier-card featured">
+          <span class="tier-badge">Web $0.30/1K</span>
+          <h3 class="tier-name">Growth</h3>
+          <div class="tier-price">$100 <span>one-time deposit</span></div>
+          <p class="tier-desc">One qualifying $100 deposit sets Growth pricing for new credit.</p>
+          <ul class="tier-features">
+            <li>
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Web $0.30/1K units · News $0.02/1K · Images $0.32/1K
+            </li>
+            <li>
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Faster SERP responses</strong> with priority queue access</span>
+            </li>
+            <li>
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Email support
+            </li>
+          </ul>
+          <a href="/billing" class="btn btn-primary tier-cta">Deposit $100</a>
+        </div>
+
+        <!-- Scale -->
+        <div class="tier-card">
+          <span class="tier-badge">Web $0.10/1K</span>
+          <h3 class="tier-name">Scale</h3>
+          <div class="tier-price">$500 <span>one-time deposit</span></div>
+          <p class="tier-desc">One qualifying $500 deposit sets Scale pricing for new credit.</p>
+          <ul class="tier-features">
+            <li>
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Web $0.10/1K units · News $0.01/1K · Images $0.25/1K
+            </li>
+            <li>
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Top paid priority (free-allowance calls are served first)
+            </li>
+            <li>
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Higher-volume onboarding path
+            </li>
+          </ul>
+          <a href="/billing" class="btn btn-outline tier-cta">Deposit $500</a>
+        </div>
+        <div class="tier-card">
+          <span class="tier-badge">Web $0.03/1K</span>
+          <h3 class="tier-name">Enterprise</h3>
+          <div class="tier-price">$1,000 <span>single deposit</span></div>
+          <p class="tier-desc">One qualifying $1,000 deposit sets Enterprise Web pricing for new credit.</p>
+          <ul class="tier-features">
+            <li><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Web $0.03/1K units across Google, Bing, Yahoo, DuckDuckGo and Brave</li>
+            <li><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>News, Images and other non-Web prices match Scale</li>
+            <li><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Standard Enterprise balance limits: 300 concurrent, 2,250/min, 22,500/hour; daily allowance follows total deposits</li>
+          </ul>
+          <a href="/billing" class="btn btn-outline tier-cta">Deposit $1,000</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Account rate limits -->
+    <section class="pricing-section" aria-label="Account rate limits" style="margin-top: 0;">
+      <h2 style="text-align:center;">Account <span class="accent">rate limits</span></h2>
+      <p class="section-subtitle">Concurrency, minute/hour limits and queue priority follow your <strong>live spendable balance</strong>, separately from the price schedule on each credit balance. Spending down can lower those limits. Daily allowance is at least 10,000 requests/day for every account, including free accounts, or 100,000/day after verified total net deposits of $500; higher balance bands keep their higher daily limits. Goodwill and bonus credit do not count; refunds and chargebacks reduce qualifying deposits. Reviewed custom daily allocations take precedence.</p>
+      <div class="pricing-table-wrapper">
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>Bracket (by live balance)</th>
+              <th>Concurrent</th>
+              <th>Per min</th>
+              <th>Per hour</th>
+              <th>Per day</th>
+              <th>Priority</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="engine-name"><strong>Free</strong><br><small style="color:var(--text-muted);font-weight:400;">No deposit</small></td>
+              <td>1</td>
+              <td>10</td>
+              <td>100</td>
+              <td>10,000 / 100,000</td>
+              <td>Lowest</td>
+            </tr>
+            <tr>
+              <td class="engine-name"><strong>Default</strong><br><small style="color:var(--text-muted);font-weight:400;">Balance &lt; $100</small></td>
+              <td>10</td>
+              <td>100</td>
+              <td>1,000</td>
+              <td>10,000 / 100,000</td>
+              <td>Standard</td>
+            </tr>
+            <tr>
+              <td class="engine-name"><strong>Growth</strong><br><small style="color:var(--text-muted);font-weight:400;">Balance $100&ndash;$499</small></td>
+              <td>50</td>
+              <td>500</td>
+              <td>5,000</td>
+              <td>10,000 / 100,000</td>
+              <td>High</td>
+            </tr>
+            <tr>
+              <td class="engine-name"><strong>Scale</strong><br><small style="color:var(--text-muted);font-weight:400;">Balance $500&ndash;$999</small></td>
+              <td>100</td>
+              <td>750</td>
+              <td>7,500</td>
+              <td>10,000 / 100,000</td>
+              <td>Top paid<br><small style="color:var(--text-muted);font-weight:400;">free-allowance calls are served first</small></td>
+            </tr>
+            <tr>
+              <td class="engine-name"><strong>Enterprise</strong><br><small style="color:var(--text-muted);font-weight:400;">Balance $1,000+</small></td>
+              <td>300</td>
+              <td>2,250</td>
+              <td>22,500</td>
+              <td>10,000 / 100,000</td>
+              <td>Top paid<br><small style="color:var(--text-muted);font-weight:400;">free-allowance calls are served first</small></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-muted" style="text-align:center;font-size:0.78rem;max-width:760px;margin:1rem auto 2rem;line-height:1.5;">
+        The daily column shows 10,000 / 100,000 according to the deposited-total rule above, separately from the balance bracket. These are standard up-to allocations, not guaranteed throughput under heavy load. For reviewed custom allocations, <a href="/contact" style="color:var(--accent);">contact us</a>. Free calls are available on eligible endpoints.
+      </p>
+    </section>
+
+    <!-- Custom Rate Limits CTA -->
+    <section class="custom-limits-cta" aria-label="Custom rate limits">
+      <div class="custom-limits-cta-text">
+        <h3 class="custom-limits-cta-title">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/>
+          </svg>
+          Need higher rate limits?
+        </h3>
+        <p class="custom-limits-cta-body">
+          The numbers above are standard defaults. If your workload needs more — higher concurrency or higher /min, /hour, /day allocations — contact us for a reviewed custom-limit allocation.
+        </p>
+      </div>
+      <div class="custom-limits-cta-actions">
+        <a href="/contact" class="btn btn-primary">Contact us</a>
+        <a href="mailto:info@apiserpent.com?subject=Custom%20rate%20limits%20request" class="btn btn-outline">Email sales</a>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" aria-label="Features">
+      <h2>Why Developers <span class="accent">Choose</span> Us</h2>
+      <p class="section-subtitle">Built for reliability, priced for accessibility</p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h3>10 Free Calls to Start</h3>
+          <p>Every new account gets free calls to start, shared across eligible endpoints — Web Search, News, Images, Videos, AI Rank, LinkedIn, Maps, YouTube, and Instagram.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/>
+            </svg>
+          </div>
+          <h3>Pay As You Go</h3>
+          <p>No subscriptions or recurring charges. Deposit credits and use them whenever you need.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <h3>Automatic Refunds</h3>
+          <p>Requests we could not complete are refunded automatically; a 404 for a resource that does not exist is an answer and is charged.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <h3>Engine-Specific Pricing</h3>
+          <p>Pay only for what you use. All five web engines from $0.03/1K pages on a Deep Search at the Enterprise tier — Quick Search is a flat rate per call, however deep the call; Deep Search is billed per page requested, up to 10 pages, at every tier and every balance.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
+          <h3>Current Results</h3>
+          <p>Requests return current available data for the selected product and query.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3>Built for Production Workloads</h3>
+          <p>Account-level limits scale by balance, with custom allocations available for larger workloads.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" aria-label="Frequently asked questions">
+      <h2>Frequently Asked <span class="accent">Questions</span></h2>
+      <p class="section-subtitle">Everything you need to know about our pricing</p>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+          How does billing work?
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Serpent API uses a pay-as-you-go credit system. Deposit funds into your account and credits are deducted per API call based on the engine and endpoint used. No subscriptions or recurring charges. Your deposited credits never expire (promotional bonus credits expire 30 days after they're granted — see below).
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+          What's the minimum deposit?
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            For new users, the minimum to get started is $10. Once your lifetime deposits reach $50, the minimum for any further top-up is $100 — so established accounts add credits in larger blocks. New Web credit uses $0.30/1K on Growth after one $100 deposit, $0.10/1K on Scale after one $500 deposit, or $0.03/1K on Enterprise after one $1,000 deposit, so the larger minimum lines up with the tier thresholds. Refunded or charged-back amounts don't count toward your tier.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+          How do pricing tiers work?
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            A single qualifying $100 deposit earns Growth pricing for new credit, $500 earns Scale, and $1,000 earns Enterprise. Existing credit keeps its old price schedule. Refunded or charged-back amounts do not count toward qualification. Concurrency, minute/hour limits and queue priority follow live spendable balance, independently of the price schedule. Daily allowance is at least 10,000 requests/day for every account, including free accounts, or 100,000/day after verified total net deposits of $500; higher balance bands keep their higher daily limits. Goodwill and bonus credit do not count; refunds and chargebacks reduce qualifying deposits. Reviewed custom daily allocations take precedence. Bonus credit adds spendable balance but does not count as a qualifying deposit.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+          What payment methods do you accept?
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            We accept all major credit and debit cards (Visa, Mastercard, American Express) through our secure payment partner Dodo Payments. All transactions are SSL encrypted and processed securely.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+          Do credits expire?
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Your <strong>deposited credits never expire</strong> — once added, they stay in your account until used, with no monthly fees or maintenance charges. <strong>Promotional bonus credits</strong> (for example the extra credits from a coupon match or bonus offer) <strong>expire 30 days after they're granted</strong>. Only that bonus portion expires — your deposited balance always remains. When you make API calls, spending draws from your bonus credits first, so they're used before they lapse. Your billing dashboard shows your deposit and bonus balances separately, along with the bonus expiry date.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+          What happens if a search fails?
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Every response we could not complete is refunded automatically to your account. One exception: a 404 for a resource that genuinely does not exist is an answer, and that call is charged.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+          Can I get a refund?
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Because credits are delivered instantly, purchases are generally non-refundable. We make exceptions for technical failures, duplicate charges, unauthorized transactions, or service discontinuation. Separately, requests we could not complete are refunded automatically; a 404 for a resource that does not exist is an answer and is charged. Submit refund requests within 7 days of purchase via <a href="mailto:info@apiserpent.com" style="color: var(--accent);">info@apiserpent.com</a>. See the <a href="/refund" style="color: var(--accent);">full Refund Policy</a>.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+          What does Enterprise include?
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Enterprise is the published $1,000 single-deposit tier: $0.03 per 1,000 Web units on new credit, with Scale rates on non-Web categories. Standard Enterprise concurrency and minute/hour limits apply when spendable balance reaches $1,000. Daily allowance is at least 10,000 requests/day for every account, including free accounts, or 100,000/day after verified total net deposits of $500; higher balance bands keep their higher daily limits. Goodwill and bonus credit do not count; refunds and chargebacks reduce qualifying deposits. Reviewed custom daily allocations take precedence. Negotiated pricing and custom limits are available separately; contact us at <a href="mailto:info@apiserpent.com?subject=Custom%20Terms%20Inquiry" style="color: var(--accent);">info@apiserpent.com</a>.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" aria-label="Call to action">
+      <h2>Ready to <span class="accent">Get Started</span>?</h2>
+      <p>Start with free calls on eligible endpoints today.</p>
+      <div class="cta-buttons">
+        <a href="/login" class="btn btn-primary btn-lg">Sign Up Free</a>
+        <a href="/docs" class="btn btn-outline btn-lg">View Documentation</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Related reading — self-styled (landing pages never load /css/blog.css) -->
+  <style>
+    .related-guides { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; border-top: 1px solid var(--border); }
+    .related-guides h2 { font-size: 1.75rem; font-weight: 800; margin-bottom: 0.4rem; color: var(--text-primary); }
+    .related-guides > p { color: var(--text-secondary); margin-bottom: 2rem; }
+    .related-guides-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
+    .related-guides-card { display: block; padding: 1.1rem 1.25rem; border: 1px solid var(--border); border-radius: 12px; color: var(--text-primary); transition: border-color .2s ease, transform .2s ease; }
+    .related-guides-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .related-guides-card strong { color: var(--accent); }
+    .related-guides-card span { display: block; color: var(--text-secondary); font-size: 0.88rem; margin-top: 0.35rem; line-height: 1.5; }
+    @media (max-width: 768px) { .related-guides { padding: 3rem 1rem; } }
+  </style>
+  <section class="related-guides" aria-label="Related reading">
+    <h2>Related reading</h2>
+    <p>Independent market research from our blog: how to evaluate vendors in this space for yourself, and what their published rates really work out to at volume.</p>
+    <div class="related-guides-grid">
+      <a href="/blog/serp-api-cost-calculator" class="related-guides-card"><strong>Calculate SERP API usage</strong><span>Choose a Web tier and search depth, then estimate cost per billable unit and per observed useful response.</span></a>
+      <a href="/blog/scraperapi-credits-per-google-search" class="related-guides-card"><strong>ScraperAPI Google search credit math</strong><span>Turn 25-credit SERP requests into plan capacity and monthly cash before comparing providers.</span></a>
+      <a href="/blog/bright-data-serp-api-alternative" class="related-guides-card"><strong>Bright Data SERP API comparison</strong><span>See how delivery mode, a monthly commitment and payable requests affect a buyer's decision.</span></a>
+      <a href="/blog/scale-serp-alternative" class="related-guides-card"><strong>Scale SERP annual-plan math</strong><span>Model included searches, peak-month overage and optional Google feature credits.</span></a>
+      <a href="/blog/serpapi-alternatives" class="related-guides-card"><strong>Cheap SerpApi alternative</strong><span>Compare the monthly bill at your usage with field fit and switching effort.</span></a>
+      <a href="/blog/no-subscription-serp-api" class="related-guides-card"><strong>Search without a subscription</strong><span>Compare usage billing, credit packs and spendable deposits for uneven demand.</span></a>
+      <a href="/blog/serp-api-failed-request-billing" class="related-guides-card"><strong>Audit failed-request billing</strong><span>Separate payable outcomes from failed calls, empty searches and partial responses.</span></a>
+      <a href="/blog/best-residential-proxy-providers-2026" class="related-guides-card"><strong>Choosing a residential proxy provider</strong><span>How to evaluate a provider yourself when almost every published ranking is written by a seller.</span></a>
+      <a href="/blog/residential-proxy-pricing-effective-cost" class="related-guides-card"><strong>What residential IPs really cost per GB</strong><span>Advertised per-GB rates versus the proxy pricing you actually pay once volume tiers are applied.</span></a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div>
+        <div class="footer-brand">
+          <span class="infinity-serpent" style="margin-right: 4px;">
+            <svg viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="width: 28px; height: 14px;">
+              <path d="M12 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8c-2.5 0-4.7-1.1-6.2-2.9" style="stroke: var(--accent);"/>
+              <path d="M36 12c0 4.4-3.6 8-8 8s-8-3.6-8-8 3.6-8 8-8c2.5 0 4.7 1.1 6.2 2.9" style="stroke: var(--accent);"/>
+            </svg>
+          </span>
+          Serpent
+        </div>
+        <p class="footer-desc">Search data, AI rankings & social media APIs with clear per-unit pricing.</p>
+        <p class="footer-email">info@apiserpent.com</p>
+      </div>
+      <div>
+        <h3 class="footer-title">Product</h3>
+        <ul class="footer-links">
+          <li><a href="/serp-api">SERP APIs</a></li>
+          <li><a href="/rank-tracking-api">Rank Tracking</a></li>
+          <li><a href="/ai-rank-api">AI Ranking</a></li>
+          <li><a href="/social-media-api">Social Media</a></li>
+          <li><a href="/google-maps-api">Google Maps API</a></li>
+          <li><a href="/shopping-api">Shopping API (soon)</a></li>
+          <li><a href="/news-api">News API</a></li>
+          <li><a href="/youtube-api">YouTube API</a></li>
+          <li><a href="/instagram-api">Instagram API</a></li>
+          <li><a href="/image-search-api">Image Search API</a></li>
+          <li><a href="/video-search-api">Video Search API</a></li>
+          <li><a href="/brave-search-api">Brave Search API</a></li>
+          <li><a href="/linkedin-api">LinkedIn API</a></li>
+          <li><a href="/amazon-scraper-api">Amazon Scraper API</a></li><li><a href="/ebay-api">eBay Data API</a></li>
+          <li><a href="/tiktok-api">TikTok API</a></li>
+          <li><a href="/x-api">X (Twitter) API</a></li>
+          <li><a href="/reddit-api">Reddit API</a></li><li><a href="/pricing">Pricing</a></li>
+          <li><a href="/docs">Documentation</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-title">Account</h3>
+        <ul class="footer-links">
+          <li><a href="/login">Sign In</a></li>
+          <li><a href="/login">Sign Up</a></li>
+          <li><a href="/dashboard">Dashboard</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-title">Company</h3>
+        <ul class="footer-links">
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/faq">FAQ</a></li><li><a href="/terms">Terms of Service</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/refund">Refund Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; <span class="copyright-year"></span> Serpent API — a product of <a href="https://contentladder.in" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: underline;">Contentladder Marketing Pvt Ltd</a>. All rights reserved. | <a href="/terms" style="color: var(--text-muted);">Terms</a> | <a href="/privacy" style="color: var(--text-muted);">Privacy</a>
+    </div>
+  </footer>
+
+  <script src="/js/app-config.b8ed283b356f3c7976257158d7a23bb221b36643766a27a1ce5395088a3ee450.js"></script>
+  <script src="/js/firebase-config.fad00f7d7e1c5789f78cad4927d50b049a861703f60fe9638ae84d1474b72dee.js"></script>
+  <script src="/js/header.96415739c9c31422accdf0b6ef314ea1413543e5f0752754e7841a8d6cc31d19.js"></script>
+  <script src="/js/banner-rotator.aca9b99a86b9ead6dc11f92694cb59c0dc7b0bc6641aea97b435fe9a745d4dff.js" defer></script>
+  <script>
+    // Sub-tab switching (per platform). The SERP and AI tabs have no sub-tabs: pricing is
+    // identical across every engine and every model, so the pills had nothing to switch.
+    function switchSubTab(cat, key, btn) {
+      var group = btn.parentElement;
+      group.querySelectorAll('.sub-tab').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+
+      if (cat === 'social') {
+        document.querySelectorAll('tr[data-platform]').forEach(function(tr) {
+          tr.classList.toggle('hidden', !(key === 'all' || tr.dataset.platform === key));
+        });
+      }
+    }
+
+    // Tab switching
+    function switchTab(tabId) {
+      // Deactivate all tabs and content
+      document.querySelectorAll('.category-tab').forEach(function(tab) {
+        tab.classList.remove('active');
+        tab.setAttribute('aria-selected', 'false');
+      });
+      document.querySelectorAll('.tab-content').forEach(function(content) {
+        content.classList.remove('active');
+      });
+
+      // Activate selected tab and content
+      var btn = document.getElementById('tab-btn-' + tabId);
+      var content = document.getElementById('tab-' + tabId);
+      if (btn) {
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+      }
+      if (content) {
+        content.classList.add('active');
+      }
+    }
+
+    // FAQ toggle
+    function toggleFaq(button) {
+      var item = button.closest('.faq-item');
+      var isOpen = item.classList.contains('open');
+
+      // Close all FAQs
+      document.querySelectorAll('.faq-item').forEach(function(faq) {
+        faq.classList.remove('open');
+        faq.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+
+      // Open clicked one (if it was closed)
+      if (!isOpen) {
+        item.classList.add('open');
+        button.setAttribute('aria-expanded', 'true');
+      }
+    }
+  </script>
+</body>
+</html>

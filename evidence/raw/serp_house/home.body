@@ -1,0 +1,2283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>SERPHouse SERP API: Parsed Search Data, 4,000 Free Credits
+</title>
+    <meta name="csrf-token" content="0XSCrJFMLxPIQGdMOCgrnNsrupdiVEMO1nl0aMBd">
+    <meta name="description"
+    content="SERPHouse turns Google, Bing and Yahoo results into parsed JSON with city and device targeting. Built for SEO tools, data teams and AI apps. 4,000 free credits." />
+<meta name="title" content="SERPHouse SERP API: Parsed Search Data, 4,000 Free Credits" />
+
+    <link rel="stylesheet" href="https://www.serphouse.com/css/text-poppins.css" />
+    <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v21/pxiEyp8kv8JHgFVrJJnecmNE.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v21/pxiEyp8kv8JHgFVrJJfecg.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v21/pxiByp8kv8JHgFVrLGT9Z1JlFc-K.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v21/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v21/pxiByp8kv8JHgFVrLEj6Z1JlFc-K.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v21/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v21/pxiByp8kv8JHgFVrLCz7Z1JlFc-K.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v21/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="https://www.serphouse.com/images/homePage/serphouse-logo.png" />
+    <link rel="stylesheet" href="https://www.serphouse.com/css/select2.css">
+    <link rel="stylesheet" href="https://www.serphouse.com/css/tailwind-app.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://www.serphouse.com/css/swiper.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://www.serphouse.com/css/prism.css" media="print" onload="this.media='all'">
+    <link rel="canonical" href="https://www.serphouse.com" />
+    <link rel="preload" href="https://www.serphouse.com/images/homePage/serp-apis.webp" as="image" type="image/webp">
+<link rel="preload" href="https://www.serphouse.com/images/homePage/image-bg.png" as="image" type="image/png">
+    <script src="https://www.serphouse.com/js/main-swiper.js"></script>
+<script src="https://www.serphouse.com/js/home-animations.js" defer></script>
+        <link rel="preload" as="style" href="https://www.serphouse.com/build/assets/app-BQ1G5JUK.css" /><link rel="stylesheet" href="https://www.serphouse.com/build/assets/app-BQ1G5JUK.css" /></head>
+
+<body class="font-poppins">
+    
+    
+    <section class="navbar padding-horizontal relative 2xl:min-h-[89px] xsm:min-h-[70px] shadow-[0_3px_11px_0_#0000001A]">
+    <div class="mx-auto flex 2xl:h-[89px] xsm:min-h-[70px] xsm:gap-0 gap-x-5 w-full max-w-screen-1xl xsm:items-center justify-between py-2.5 xsm:py-0">
+        <a href="https://www.serphouse.com" class="2xl:max-h-[60px] 2xl:max-w-[60px] max-w-12 w-full">
+            <img src="https://www.serphouse.com/images/homePage/serphouse-logo.png" width="60" height="60" alt="Serphouse logo" />
+        </a>
+        <ul id="nav-links"
+            class="left-[0px] xsm:top-[76px] top-28 lg:py-0 pt-1 pb-2 z-50 mr-[10px] w-full items-center justify-end self-center bg-[#f4f0ff] xsm:max-[1023px]:px-2.5 min-[0px]:max-[1023px]:absolute lg:bg-white lg:px-0 xl:mr-4 hidden lg:flex">
+            <li class="nav-link cursor-pointer xl:px-3.5 lg:py-4 py-1.5 min-[800px]:px-2.5 px-2 content-regular dropdown text-secondary relative group">
+                <div class="flex relative items-center justify-between gap-x-0.5 product-toggle">
+                    <p id="home" class="cursor-pointer">
+                        Product
+                    </p>
+                    <svg class="size-5" id="product-dropdown" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-lineca p="round" stroke-linejoin="round">
+                        <path d="m6 9 6 6 6-6" />
+                    </svg>
+                </div>
+                <div id="product-menu" class="hidden lg:group-hover:block lg:absolute lg:left-1/2 lg:-translate-x-1/2 top-full lg:shadow-[0px_0px_30px_0px_rgba(0,0,0,0.32)] lg:rounded-[16px] lg:py-4 py-2 z-50 lg:bg-white min-w-[190px]">
+                    <div class="dropdown-inner">
+                        <div class="mx-3.5 cursor-pointer">
+                            <a href="https://www.serphouse.com/web-search-api"
+                                class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                                <img src="https://www.serphouse.com/images/navBar/web-search-api-logo.png" class="min-[1441px]:w-6 w-5"
+                                    width="18" height="18" loading="lazy" alt="Web Search API logo" />
+                                Web Search API
+                            </a>
+                        </div>
+                        <div class="mx-3.5 cursor-pointer">
+                            <a href="https://www.serphouse.com/serp-api"
+                                class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                                <img src="https://www.serphouse.com/images/navBar/serp-api-logo.png" class="min-[1441px]:w-6 w-5"
+                                    width="18" height="18" loading="lazy" alt="Serp API logo" />
+                                SERP API
+                            </a>
+                        </div>
+                        <div class="group/google relative">
+                            <div class="mx-3.5 google-toggle cursor-pointer flex items-center lg:justify-between hover:bg-[#f4f0ff] rounded-[4px] gap-x-2">
+                                <div class="dropdown-link w-fit lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                                    <img src="https://www.serphouse.com/images/navBar/google-api.png" class="min-[1441px]:w-6 w-5" width="18" height="18"
+                                        loading="lazy" alt="Google API logo" />
+                                    <span class="lg:flex-1">
+                                        Google API
+                                    </span>
+                                </div>
+                                <svg class="size-5 lg:rotate-[270deg]" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-lineca
+                                    p="round" stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg>
+                            </div>
+                            <div id="google-menu" class="lg:absolute lg:top-0 lg:left-[187px] hidden lg:group-hover/google:block min-w-60 lg:bg-white lg:shadow-[0px_0px_30px_0px_rgba(0,0,0,0.32)] lg:rounded-[16px] lg:py-4 py-2 z-50">
+                                <div class="lg:px-3 pl-12 space-y-1">
+                                    <a href="https://www.serphouse.com/google-serp-api"
+                                        class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                                        <img src="https://www.serphouse.com/images/navBar/google-serp-api-logo.png" class="min-[1441px]:w-6 w-5" alt="Google SERP API"
+                                            loading="lazy">
+                                        Google SERP API
+                                    </a>
+                                    <a href="https://www.serphouse.com/google-news-api"
+                                        class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                                        <img src="https://www.serphouse.com/images/navBar/google-news-api-logo.png" class="min-[1441px]:w-6 w-5" alt="Google News Api" loading="lazy">
+                                        Google News API
+                                    </a>
+                                    <a href="https://www.serphouse.com/google-jobs-api"
+                                        class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                                        <img src="https://www.serphouse.com/images/navBar/google-job-api-logo.png" class="min-[1441px]:w-6 w-5" alt="Google Job Api" loading="lazy">
+                                        Google Job API
+                                    </a>
+                                    <a href="https://www.serphouse.com/google-video-api"
+                                        class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                                        <img src="https://www.serphouse.com/images/navBar/google-video-api-logo.png" class="min-[1441px]:w-6 w-5" alt="Google Videos Api" loading="lazy">
+                                        Google Videos API
+                                    </a>
+                                    <a href="https://www.serphouse.com/google-image-search-api"
+                                        class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                                        <img src="https://www.serphouse.com/images/navBar/google-image-api-logo.png" class="min-[1441px]:w-6 w-5" alt="Google Images Api" loading="lazy">
+                                        Google Images API
+                                    </a>
+                                    <a href="https://www.serphouse.com/google-shopping-api" class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                                        <img src="https://www.serphouse.com/images/navBar/google-shopping-api-logo.png" class="min-[1441px]:w-6 w-5" alt="Google Shopping API" loading="lazy">
+                                        Google Shopping API
+                                    </a>
+                                    <a href="https://www.serphouse.com/google-short-video-api"
+                                        class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                                        <img src="https://www.serphouse.com/images/navBar/short-video-api-logo.png" class="min-[1441px]:w-6 w-5"
+                                            alt="Google Short Videos API" loading="lazy">
+                                        Google Short Videos API
+                                    </a>
+                                    <a href="https://www.serphouse.com/google-autocomplete-api"
+                                        class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                                        <img src="https://www.serphouse.com/images/navBar/google-autocomplete-logo.png" class="min-[1441px]:w-6 w-5"
+                                            alt="Google Autocomplete API" loading="lazy">
+                                        Google Autocomplete API
+                                    </a>
+                                    <a href="https://www.serphouse.com/google-forums-api"
+                                        class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                                        <img src="https://www.serphouse.com/images/navBar/google-forums-api-logo.png" class="min-[1441px]:w-6 w-5" alt="Google Forums API" loading="lazy">
+                                        Google Forums API
+                                    </a>
+                                    <a href="https://www.serphouse.com/google-local-api"
+                                        class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                                        <img src="https://www.serphouse.com/images/navBar/google-local-api-logo.png" class="min-[1441px]:w-6 w-5"
+                                            alt="Google Local API" loading="lazy">
+                                        Google Local API
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group/bing relative">
+                            <div class="mx-3.5 bing-toggle cursor-pointer flex items-center lg:justify-between hover:bg-[#f4f0ff] rounded-[4px] gap-x-2">
+                                <div class="dropdown-link w-fit lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                                    <img src="https://www.serphouse.com/images/navBar/bing-api.png" class="min-[1441px]:w-6 w-5" width="18" height="18"
+                                        loading="lazy" alt="Bing API logo" />
+                                    <span class="lg:flex-1">
+                                        Bing API
+                                    </span>
+                                </div>
+                                <svg class="size-5 lg:rotate-[270deg]"  xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-lineca
+                                    p="round" stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg>
+                            </div>
+                            <div id="bing-menu" class="lg:absolute lg:top-0 lg:left-[187px] hidden lg:group-hover/bing:block min-w-52 lg:bg-white lg:shadow-[0px_0px_30px_0px_rgba(0,0,0,0.32)] lg:rounded-[16px] lg:py-4 py-2 z-50">
+                                <div class="lg:px-3 pl-12 space-y-1">
+                                    <a href="https://www.serphouse.com/bing-serp-api"
+                                        class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                                        <img src="https://www.serphouse.com/images/navBar/bing-serp-api-logo.png" class="min-[1441px]:w-6 w-5" alt="Bing SERP API"
+                                            loading="lazy">
+                                        Bing SERP API
+                                    </a>
+                                    <a href="https://www.serphouse.com/bing-news-api"
+                                        class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                                        <img src="https://www.serphouse.com/images/navBar/google-news-api-logo.png" class="min-[1441px]:w-6 w-5" alt="Bing News API" loading="lazy">
+                                        Bing News API
+                                    </a>
+                                    <a href="https://www.serphouse.com/bing-image-search-api"
+                                        class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                                        <img src="https://www.serphouse.com/images/navBar/google-image-api-logo.png" class="min-[1441px]:w-6 w-5" alt="Bing Images API" loading="lazy">
+                                        Bing Images API
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group/yahoo relative">
+                            <div class="mx-3.5 yahoo-toggle cursor-pointer flex items-center lg:justify-between hover:bg-[#f4f0ff] rounded-[4px] gap-x-2">
+                                <div class="dropdown-link w-fit lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                                    <img src="https://www.serphouse.com/images/navBar/yahoo-api.png" class="min-[1441px]:w-6 w-5" width="18" height="18"
+                                        loading="lazy" alt="Yahoo API logo" />
+                                    <span class="lg:flex-1">
+                                        Yahoo API
+                                    </span>
+                                </div>
+                                <svg class="size-5 lg:rotate-[270deg]" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-lineca
+                                    p="round" stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg>
+                            </div>
+                            <div id="yahoo-menu" class="lg:absolute lg:top-0 lg:left-[187px] hidden lg:group-hover/yahoo:block min-w-52 lg:bg-white lg:shadow-[0px_0px_30px_0px_rgba(0,0,0,0.32)] lg:rounded-[16px] lg:py-4 py-2 z-50">
+                                <div class="lg:px-3 pl-12 space-y-1">
+                                    <a href="https://www.serphouse.com/yahoo-serp-api"
+                                        class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                                        <img src="https://www.serphouse.com/images/navBar/yahoo-serp-api-logo.png" class="min-[1441px]:w-6 w-5" alt="Yahoo SERP API"
+                                            loading="lazy">
+                                        Yahoo SERP API
+                                    </a>
+                                    <a href="https://www.serphouse.com/yahoo-news-api"
+                                        class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                                        <img src="https://www.serphouse.com/images/navBar/google-news-api-logo.png" class="min-[1441px]:w-6 w-5" alt="Yahoo News API" loading="lazy">
+                                        Yahoo News API
+                                    </a>
+                                    <a href="https://www.serphouse.com/yahoo-image-search-api"
+                                        class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                                        <img src="https://www.serphouse.com/images/navBar/google-image-api-logo.png" class="min-[1441px]:w-6 w-5" alt="Yahoo Images API" loading="lazy">
+                                        Yahoo Images API
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mx-3.5 cursor-pointer">
+                            <a href="https://www.serphouse.com/keyword-rank-tracker"
+                                class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                                <img src="https://www.serphouse.com/images/useCases/rank-tracker-logo.png" class="min-[1441px]:w-6 w-5"
+                                    width="18" height="18" loading="lazy" alt="Keyword Rank Tracker" />
+                                Keyword Rank Tracker
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li
+                class="nav-link xl:px-3.5 lg:py-4 py-1.5 min-[800px]:px-2.5 px-2 content-regular dropdown text-secondary relative group">
+                <div class="flex cursor-pointer relative items-center justify-between feature-toggle gap-x-0.5">
+                    <p id="feature-pages" class="cursor-pointer">
+                        Features
+                    </p>
+                    <svg class="size-5" id="feature-dropdown" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-lineca p="round"
+                        stroke-linejoin="round">
+                        <path d="m6 9 6 6 6-6" />
+                    </svg>
+                </div>
+                <div id="feature-menu"
+                    class="hidden lg:group-hover:block lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:top-full lg:shadow-[0px_0px_30px_0px_rgba(0,0,0,0.32)] lg:rounded-[16px] lg:py-4 py-2 z-50 lg:bg-white min-w-[248px]">
+                    <div class="px-3 dropdown-inner">
+                        <a href="https://www.serphouse.com/serp-types"
+                            class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                            <img src="https://www.serphouse.com/images/navBar/serp-type.png" class="min-[1441px]:w-6 w-5" width="18" height="18" />
+                            SERP Type
+                        </a>
+                        <a href="https://www.serphouse.com/device-targeting"
+                            class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                            <img src="https://www.serphouse.com/images/navBar/devices-type.png" class="min-[1441px]:w-6 w-5" width="18"
+                                height="18" />
+                            Mobile & Desktop
+                        </a>
+                        <a href="https://www.serphouse.com/worldwide-locations-support"
+                            class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                            <img src="https://www.serphouse.com/images/navBar/feature-locations.png" class="min-[1441px]:w-6 w-5" width="18"
+                                height="18" />
+                            Locations
+                        </a>
+                        <a href="https://www.serphouse.com/visual-page-parsing"
+                            class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                            <img src="https://www.serphouse.com/images/navBar/ser-parsing.png" class="min-[1441px]:w-6 w-5" width="18"
+                                height="18" />
+                            SERP Parsing
+                        </a>
+                        <a href="https://www.serphouse.com/bulk-processing"
+                            class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                            <img src="https://www.serphouse.com/images/navBar/bulk-processing.png" class="min-[1441px]:w-6 w-5" width="18"
+                                height="18" />
+                            Bulk Processing
+                        </a>
+                        <a href="https://www.serphouse.com/data-formats"
+                            class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                            <img src="https://www.serphouse.com/images/homePage/data-format.png" class="min-[1441px]:w-6 w-5" width="18"
+                                height="18" />
+                            Data Formats
+                        </a>
+                        <a href="https://www.serphouse.com/postback-url"
+                            class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                            <img src="https://www.serphouse.com/images/navBar/postback-pingback-url.png" class="min-[1441px]:w-6 w-5" width="18"
+                                height="18" />
+                            Postback & Pingback URL
+                        </a>
+                        <a href="https://www.serphouse.com/no-trace"
+                            class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                            <img src="https://www.serphouse.com/images/navBar/no-trace.svg" class="min-[1441px]:w-6 w-5" width="18" height="18" />
+                            No Trace Mode
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-link xl:px-3.5 lg:py-4 py-1.5 min-[800px]:px-2.5 px-2 content-regular text-secondary">
+                <a href="https://www.serphouse.com/serp-api-playground" class="try-demo">Try Demo</a>
+            </li>
+            <li class="nav-link xl:px-3.5 lg:py-4 py-1.5 min-[800px]:px-2.5 px-2 content-regular text-secondary">
+                <a href="https://www.serphouse.com/pricing" class="pricing-page">Pricing</a>
+            </li>
+            <li class="nav-link xl:px-3.5 lg:py-4 py-1.5 min-[800px]:px-2.5 px-2 content-regular dropdown text-secondary relative group">
+                <div class="flex cursor-pointer relative items-center justify-between gap-x-0.5 use-cases-toggle">
+                    <p id="use-case" class="cursor-pointer">
+                        Use Cases
+                    </p>
+                    <svg class="size-5" id="use-case-dropdown" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-lineca p="round"
+                        stroke-linejoin="round">
+                        <path d="m6 9 6 6 6-6" />
+                    </svg>
+                </div>
+                <div id="use-case-menu" class="hidden lg:group-hover:block lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:top-full lg:shadow-[0px_0px_30px_0px_rgba(0,0,0,0.32)] lg:rounded-[16px] lg:py-4 py-2 z-50 lg:bg-white min-w-[230px]">
+                    <div class="px-3 dropdown-inner">
+                        <a href="https://www.serphouse.com/use-cases/local-seo"
+                            class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                            <img src="https://www.serphouse.com/images/useCases/local-seo-logo.png" class="min-[1441px]:w-7 w-5"
+                                width="18" height="18" loading="lazy" alt="Local SEO" />
+                            Local SEO
+                        </a>
+                        <a href="https://www.serphouse.com/use-cases/price-monitoring"
+                            class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                            <img src="https://www.serphouse.com/images/useCases/price-monitoring-logo.png"
+                                class="min-[1441px]:w-7 w-5" width="18" height="18" loading="lazy"
+                                alt="Price Monitoring" />
+                            Price Monitoring
+                        </a>
+                        <a href="https://www.serphouse.com/use-cases/real-time-news-monitoring"
+                            class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                            <img src="https://www.serphouse.com/images/useCases/news-monitoring-logo.png"
+                                class="min-[1441px]:w-6 w-5" width="18" height="18" loading="lazy" alt="News Monitoring" />
+                            News Monitoring
+                        </a>
+                        <a href="https://www.serphouse.com/use-cases/ai-overviews" class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                            <img src="https://www.serphouse.com/images/useCases/ai-overview-data-logo.png" class="min-[1441px]:w-7 w-5" width="18" height="18" loading="lazy" alt="AI Overview Data" />
+                            AI Overview Data
+                        </a>
+                        <a href="https://www.serphouse.com/use-cases/ai-agents" class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                            <img src="https://www.serphouse.com/images/useCases/ai-agents-logo.png" class="min-[1441px]:w-7 w-5" width="18" height="18" loading="lazy" alt="AI Agents" />
+                            AI Agents
+                        </a>
+                        <a href="https://www.serphouse.com/use-cases/rag-pipelines" class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                            <img src="https://www.serphouse.com/images/useCases/rag-pipelines-logo.png" class="min-[1441px]:w-7 w-5" width="18" height="18" loading="lazy" alt="RAG Pipelines" />
+                            RAG Pipelines
+                        </a>
+                        <a href="https://www.serphouse.com/use-cases/langchain-llamaindex-integration" class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                            <img src="https://www.serphouse.com/images/useCases/langchain-integration-logo.png" class="min-[1441px]:w-7 w-5" width="18" height="18" loading="lazy" alt="LangChain Integration" />
+                            LangChain Integration
+                        </a>
+                        <a href="https://www.serphouse.com/use-cases/rank-tracker" class="dropdown-link lg:py-[11px] py-2.5 md:pl-[11px] pl-2 flex items-center min-[1441px]:gap-x-4 gap-x-3">
+                            <img src="https://www.serphouse.com/images/useCases/rank-tracker-logo.png" class="min-[1441px]:w-7 w-5" width="18" height="18" loading="lazy" alt="Rank Tracker" />
+                            Rank Tracker
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-link xl:px-3.5 lg:py-4 py-1.5 min-[800px]:px-2.5 px-2 content-regular text-secondary">
+                <a href="https://www.serphouse.com/docs">Documentation</a>
+            </li>
+            <div class="h-7 border border-[#D8D8D8] lg:block hidden"></div>
+            <li class="nav-link xl:px-3.5 lg:py-4 py-1.5 min-[800px]:px-2.5 px-2 content-regular text-secondary">
+                <a href="https://www.serphouse.com/enterprise-custom-plan-offering" class="contact-sale">Contact Sales</a>
+            </li>
+            <li class="text-primary lg:pl-3.5 lg:py-4 py-1.5 pl-2 content-regular">
+                <a href="https://www.serphouse.com/login" class="text-primary flex items-center gap-x-[10px]">
+                    Login
+                    <img src="https://www.serphouse.com/images/homePage/next-svgrepo.png" width="11" height="11"
+                        class="mt-0.5 relative right-1 h-[11px]" alt="next icon" />
+                </a>
+            </li>
+        </ul>
+        <div class="flex lg:hidden xsm:flex-nowrap flex-wrap justify-end gap-y-2 gap-x-4 items-center xsm:max-lg:w-full max-w-56 w-full">
+            <button id="menu-toggle" aria-label="Toggle navigation menu" class="nav-toggler lg:hidden">
+                <div class="one"></div>
+                <div class="two"></div>
+                <div class="three"></div>
+            </button>
+            <a href="https://www.serphouse.com/register"
+                class="max-h-[47px] text-center w-full rounded-[26px] bg-primary py-[10px] content-regular font-semibold text-[#ffffff] 2xl:max-w-[173px] 2xl:text-lg lg:max-w-36 max-w-32">
+                Free Sign Up
+            </a>
+        </div>
+        <a href="https://www.serphouse.com/register"
+            class="max-h-[47px] text-center lg:block hidden w-full rounded-[26px] bg-primary py-[10px] content-regular font-semibold text-[#ffffff] 2xl:max-w-[173px] 2xl:text-lg lg:max-w-36 max-w-32">
+            Free Sign Up
+        </a>
+    </div>
+</section>
+    <section class="serp-api custom-gradient padding-horizontal">
+    <div class="mx-auto grid md:grid-cols-2 w-full md:justify-between justify-center items-center max-w-screen-1xl flex-wrap md:flex-nowrap">
+        <div class="md:pt-10 md:pb-10 md:py-6 pt-6 justify-self-start">
+            <div class="flex items-center xl:flex-nowrap sm:justify-start justify-center flex-wrap gap-[15px] ">
+    <p class="content-regular content-medium text-primary-dark font-medium">Excellent</p>
+    <a href="https://www.trustpilot.com/review/serphouse.com" target="_blank" rel="noopener noreferrer"
+        class="flex items-center gap-[15px]">
+        <img src="https://www.serphouse.com/images/homePage/stars-4.5.svg" width="144" height="27" loading="lazy"
+            class="z-0 min-[1441px]:max-w-36 max-w-28 w-full" alt="trustpilot" />
+        <p class="content-regular content-medium text-primary-dark font-medium">4.7 review on</p>
+    </a>
+    <div class="flex items-center gap-x-2">
+        <img src="https://www.serphouse.com/images/homePage/one-star.png" width="28" height="26" loading="lazy"
+            class="z-0 min-[1441px]:max-w-7 max-w-6" alt="one stars" />
+        <p class="content-regular content-medium text-primary-dark font-medium">Trustpilot</p>
+    </div>
+</div>
+            <div class="flex mt-6 flex-wrap min-[500px]:justify-start justify-center items-center lg:gap-4 gap-3 min-[0px]:max-md:w-full">
+                <h1 class="text-primary-dark main-page-title xsm:text-left text-center">
+                    SERP API
+                </h1>
+                <div class="relative text-center overflow-hidden h-[50px] min-[1441px]:h-[62px] rounded-[33px] border border-primary">
+                    <div class="relative transform origin-top-left animate-[rotate_5s_ease-out_infinite] ">
+                        <p class="text-primary-dark mt-1 flex items-center justify-center gap-x-2 px-4 py-2.5 section-subtitle">
+                            <img src="https://www.serphouse.com/images/homePage/google-btn.png" width="28" height="28" loading="lazy" class="max-w-6 min-h-6" alt="google logo" />
+                            Google
+                        </p>
+                        <p class="text-primary-dark mt-1 flex items-center justify-center gap-x-2 px-4 py-2.5 section-subtitle">
+                            <img src="https://www.serphouse.com/images/homePage/bing-btn.png" width="28" height="28" loading="lazy" class="max-w-6 min-h-6" alt="bing logo" />
+                            Bing
+                        </p>
+                        <p class="text-primary-dark mt-1 flex items-center justify-center gap-x-2 px-4 py-2.5 section-subtitle">
+                            <img src="https://www.serphouse.com/images/homePage/yahoo-btn.png" width="28" height="28" loading="lazy" class="max-w-6 min-h-6" alt="yahoo logo" />
+                            Yahoo
+                        </p>
+                        <p class="text-primary-dark mt-1 flex items-center justify-center gap-x-2 px-4 py-2.5 section-subtitle">
+                            <img src="https://www.serphouse.com/images/homePage/google-btn.png" width="28" height="28" loading="lazy" class="max-w-6 min-h-6" alt="google logo" />
+                            Google
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <h2
+                class="content-medium content-subheading mt-3.5 w-full max-w-[650px] text-secondary min-[497px]:text-left">
+                Your Shortcut to SERP Data Insights With Our SERP Scraper.
+            </h2>
+            <div class="mt-4">
+                <div class="mt-[5px] flex items-center gap-x-2.5 sm:mt-0">
+                    <div class="min-[1441px]:max-w-6 max-w-5 w-full self-start">
+                        <img src="https://www.serphouse.com/images/homePage/description-icon.png" width="24" height="24"
+                            loading="lazy" class="min-[1441px]:max-w-6 max-w-5 mt-0.5 xl:mt-0" alt="description icon" />
+                    </div>
+                    <p class="content-regular self-start font-medium text-secondary">
+                        Reduce operational costs on data extraction with no maintenance concerns.
+                    </p>
+                </div>
+                <div class="mt-3.5 flex items-center gap-x-2.5">
+                    <div class="min-[1441px]:max-w-6 max-w-5 w-full self-start">
+                        <img src="https://www.serphouse.com/images/homePage/description-icon.png" width="24" height="24"
+                            loading="lazy" class="min-[1441px]:max-w-6 max-w-5 mt-0.5 xl:mt-0" alt="description icon" />
+                    </div>
+                    <p class="content-regular font-medium self-start text-secondary">
+                        Real-time SERP data with geo and device targeting, delivered in JSON and HTML.
+                    </p>
+                </div>
+                <div class="mt-3.5 flex items-center gap-x-2.5">
+                    <div class="min-[1441px]:max-w-6 max-w-5 w-full self-start">
+                        <img src="https://www.serphouse.com/images/homePage/description-icon.png" width="24" height="24"
+                            loading="lazy" class="min-[1441px]:max-w-6 max-w-5 mt-0.5 xl:mt-0" alt="description icon" />
+                    </div>
+                    <p class="content-regular font-medium self-start text-secondary">
+                        High Exceptional performance at any scale.
+                    </p>
+                </div>
+                <div class="mt-3.5 flex items-center gap-x-2.5">
+                    <div class="min-[1441px]:max-w-6 max-w-5 w-full self-start">
+                        <img src="https://www.serphouse.com/images/homePage/description-icon.png" width="24" height="24"
+                            loading="lazy" class="min-[1441px]:max-w-6 max-w-5 mt-0.5 xl:mt-0" alt="description icon" />
+                    </div>
+                    <p class="content-regular font-medium self-start text-secondary tracking-[0.02em]">
+                        Pay on successful data response.
+                    </p>
+                </div>
+            </div>
+            <div
+                class="text-secondary flex flex-wrap min-[400px]:flex-row flex-col gap-x-[20.66px] gap-y-[10px] mt-5 sm:justify-start">
+
+                <p class="content-regular font-semibold text-secondary flex items-center gap-x-2.5 xl:gap-x-[9px]">
+                    <img src="https://www.serphouse.com/images/homePage/ok-img.png" width="16" height="10" loading="lazy"
+                        class="h-[10px] w-[16.34px]" alt="true sign" />
+                    No Captcha, no blocks
+                </p>
+                <p class="content-regular font-semibold text-secondary flex items-center gap-x-2.5 xl:gap-x-[9px]">
+                    <img src="https://www.serphouse.com/images/homePage/ok-img.png" width="16" height="10" loading="lazy"
+                        class="h-[10px] w-[16.34px]" alt="true sign" />
+                    Enterprise Scaling
+                </p>
+                <p class="content-regular font-semibold text-secondary flex items-center gap-x-2.5 xl:gap-x-[9px]">
+                    <img src="https://www.serphouse.com/images/homePage/ok-img.png" width="16" height="10" loading="lazy"
+                        class="h-[10px] w-[16.34px]" alt="true sign" />
+                    24/7 Support
+                </p>
+            </div>
+            <div
+                class="flex flex-wrap min-[354px]:justify-start justify-center items-center gap-y-[15px] mt-5 lg:gap-x-[22px] gap-x-5">
+                <a href="https://www.serphouse.com/register"
+                    class="minor-subheading font-semibold rounded-[26px] bg-primary text-white 2xl:py-2.5 py-2 2xl:px-8 px-6 text-center">
+                    Activate Free Trial
+                </a>
+                <a href="https://www.serphouse.com/pricing"
+                    class="text-primary self-center flex items-center gap-x-[6px] minor-subheading font-medium sm:gap-x-[10px]">
+                    View Pricing
+                    <img src="https://www.serphouse.com/images/homePage/next-svgrepo.png" width="15" height="15" loading="lazy"
+                        class="mt-px h-[15px] w-[15px]" alt="next arrow" />
+                </a>
+            </div>
+            <div class="mt-5 flex items-center min-[354px]:justify-start justify-center 2xl:gap-x-[18px] gap-x-3">
+                <img src="https://www.serphouse.com/images/homePage/credit-card-off.png" width="24" height="24" loading="lazy"
+                    class="min-[1441px]:max-w-6 max-w-5 w-full" alt="no credit card required" />
+                <p class="content-regular font-medium text-secondary">No Credit Card Required</p>
+            </div>
+        </div>
+        <div
+            class="min-[375px]:py-12 py-10 md:py-0 h-full bg-pattern justify-self-center flex justify-center items-center w-full self-center">
+            <img fetchpriority="high" src="https://www.serphouse.com/images/homePage/serp-apis.webp" type="image/webp" width="545"
+                height="423"
+                class="min-[1441px]:max-w-[545px] xl:max-w-[470px] lg:max-w-md justify-self-center md:max-w-xs max-w-sm self-center w-full h-auto"
+                alt="serp apis" />
+        </div>
+    </div>
+</section>
+<section class="used-by-developers padding-horizontal">
+    <div class="mx-auto max-w-screen-1xl w-full min-[1441px]:py-24 xl:py-[75px] lg:py-16 md:py-14 py-12">
+        <h2 class="section-subtitle text-primary-dark font-medium text-center">
+            Used by the best developers and teams around the world
+        </h2>
+        <div class="swiper mySwipers mt-10">
+            <div class="swiper-wrapper flex items-center ">
+                <div class="swiper-slide flex justify-center items-center">
+                    <img src="https://www.serphouse.com/images/homePage/customer-royalty-range.png" width="186.66" height="14" loading="lazy" alt="Royalty Range" />
+                </div>
+                <div class="swiper-slide flex justify-center items-center">
+                    <img src="https://www.serphouse.com/images/homePage/customer-tcs.png" width="186.66" height="51" loading="lazy" alt="TCS-Logo-Image" />
+                </div>
+                <div class="swiper-slide flex justify-center items-center">
+                    <img src="https://www.serphouse.com/images/homePage/customer-shopify.png" width="186.66" height="53" loading="lazy" alt="Shopify" />
+                </div>
+                <div class="swiper-slide flex justify-center items-center">
+                    <img src="https://www.serphouse.com/images/homePage/customer-world-bank.png" width="186.66" height="36" loading="lazy" alt="the world bank" />
+                </div>
+                <div class="swiper-slide flex justify-center items-center">
+                    <img src="https://www.serphouse.com/images/homePage/customer-hotstar.png" width="186.66" height="53" loading="lazy" alt="Disney hotstar" />
+                </div>
+                <div class="swiper-slide flex justify-center items-center">
+                    <img src="https://www.serphouse.com/images/homePage/customer-dhl.png" width="186.66" height="25" loading="lazy" alt="DHL" />
+                </div>
+                <div class="swiper-slide flex items-center justify-center">
+                 <img src="https://www.serphouse.com/images/homePage/customer-master-card.png" width="97" height="75" loading="lazy" class="2xl:max-w-[97px] md:max-w-20 max-w-14" alt="Mastercard" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section><section class="serp-api-works-flow padding-horizontal bg-lavender">
+    <div class="mx-auto max-w-screen-1xl min-[1441px]:py-20 xl:py-16 lg:py-14 md:py-12 py-10">
+        <div class="">
+            <h2 class="text-primary-dark sub-title">
+                How SERP API Works?
+            </h2>
+            <p class="content-medium text-secondary 2xl:max-w-5xl max-w-3xl mx-auto mt-3.5 text-center">
+                Unveil the magic of SERP scrapers and discover how search engine result API work. Learn how they can
+                transform your SEO strategy.
+            </p>
+            <div class="2xl:mt-14 mt-12 flex justify-center">
+                <img src="https://www.serphouse.com/images/homePage/serp-api-working.png" width="1280" height="225" loading="lazy"
+                    class="min-[500px]:block hidden" alt="how does serp api works" />
+                <img src="https://www.serphouse.com/images/homePage/serp-api-working-mobile.png" width="322" height="759"
+                    loading="lazy" class="min-[500px]:hidden block" alt="how Does SERP API Works" />
+            </div>
+        </div>
+    </div>
+</section>
+<section class="padding-horizontal bg-primary">
+    <div
+        class="mx-auto flex min-h-[74px] w-full max-w-screen-1xl flex-col items-center min-[0px]:max-sm:py-2.5 justify-around gap-y-[10px] sm:justify-between sm:flex-row">
+        <p class="max-[1440px]:text-lg content-subheading text-center text-footer-white sm:text-left">
+            Here’s How Does SERP API Works:
+        </p>
+        <div class="flex items-center gap-x-[18px] border-b-[1px] border-white pb-2.5">
+            <a href="https://www.serphouse.com/register"
+                class="minor-subheading flex justify-center items-center gap-x-2 text-white">
+                Explore How It Works!
+                <img src="https://www.serphouse.com/images/homePage/arrow.png" width="22" height="14" loading="lazy"
+                    class="min-[1441px]:w-[22px] w-[18px]" alt="next arrow icon" />
+            </a>
+        </div>
+    </div>
+</section>
+<section class="padding-horizontal relative pt-20 lg:pt-24 pb-20 md:pb-24" id="serp-engine-carousel-section">
+    <div id="sticky-cards-track" class="relative w-full max-w-screen-1xl mx-auto" style="height: 200vh;">
+        <div class="sticky top-[70px] lg:top-[85px] flex flex-col items-center justify-start w-full">
+            <div class="text-center mb-36 lg:mb-[130px] max-w-4xl mx-auto">
+                <h2 class="text-primary-dark sub-title">
+                    Search APIs Across Major Search Engines.
+                </h2>
+                <p class="medium-body-text text-secondary mt-3.5 max-w-2xl mx-auto text-center">
+                    Access structured search results from Google, Bing, and Yahoo through a unified API designed for consistent, real-time data collection.
+                </p>
+            </div>
+
+            <div id="stacked-cards-frame" class="relative w-full max-w-[1140px] mx-auto">
+                <div id="bg-card-3" class="absolute inset-0 w-full h-full bg-white rounded-[28px] border border-gray-100 shadow-[0px_10px_35px_rgba(20,20,43,0.06)] pointer-events-none z-0 origin-top" style="transform: translate3d(0, -76px, 0) scale(0.92);"></div>
+                <div id="bg-card-2" class="absolute inset-0 w-full h-full bg-white rounded-[28px] border border-gray-100 shadow-[0px_10px_35px_rgba(20,20,43,0.07)] pointer-events-none z-[1] origin-top" style="transform: translate3d(0, -38px, 0) scale(0.96);"></div>
+
+                <div id="card-google" class="stacked-engine-card relative w-full bg-white rounded-[28px] border border-gray-100 border-b-[5px] border-b-[#8460E5] shadow-[0px_10px_35px_rgba(20,20,43,0.08)] p-9 sm:p-10 lg:p-12 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 transition-all duration-300 ease-out will-change-transform z-30 origin-top" style="transform: translate3d(0, 0px, 0) scale(1);">
+                    <div class="w-full md:w-1/2 flex flex-col justify-center text-left">
+                        <div class="mb-5">
+                            <img src="https://www.serphouse.com/images/homePage/google-logo.png" width="48" height="48" class="w-12 h-12 object-contain" alt="Google logo" />
+                        </div>
+                        <h3 class="card-title text-primary-dark mb-4">Google Search API</h3>
+                        <p class="content-regular text-secondary leading-relaxed">
+                            Pull live Google SERP data including organic rankings, featured snippets, People Also Ask, and local results in structured JSON format. Built for accurate, geo-targeted SEO tracking at scale.
+                        </p>
+                    </div>
+                    <div class="w-full md:w-1/2 flex items-center justify-center">
+                        <img src="https://www.serphouse.com/images/homePage/google-search-api.png" alt="Google Search API illustration" width="530" height="440" loading="lazy" class="w-full max-w-[480px] h-auto object-contain drop-shadow-sm" />
+                    </div>
+                </div>
+
+                <div id="card-bing" class="stacked-engine-card absolute inset-0 w-full h-full bg-white rounded-[28px] border border-gray-100 border-b-[5px] border-b-[#8460E5] shadow-[0px_10px_35px_rgba(20,20,43,0.08)] p-9 sm:p-10 lg:p-12 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 transition-all duration-300 ease-out will-change-transform z-20 origin-top" style="transform: translate3d(0, -38px, 0) scale(0.96);">
+                    <div class="w-full md:w-1/2 flex flex-col justify-center text-left">
+                        <div class="mb-5">
+                            <img src="https://www.serphouse.com/images/homePage/bing-logo.png" width="48" height="48" class="w-12 h-12 object-contain" alt="Bing logo" />
+                        </div>
+                        <h3 class="card-title text-primary-dark mb-4">Bing Search API</h3>
+                        <p class="content-regular text-secondary leading-relaxed">
+                            SERPHouse’s Bing Search API gives you structured access to Bing SERP data, including organic results, ads, and rich answers. Ideal for teams analyzing search visibility across different search engines.
+                        </p>
+                    </div>
+                    <div class="w-full md:w-1/2 flex items-center justify-center">
+                        <img src="https://www.serphouse.com/images/homePage/bing-search-api.png" alt="Bing Search API illustration" width="530" height="440" loading="lazy" class="w-full max-w-[480px] h-auto object-contain drop-shadow-sm" />
+                    </div>
+                </div>
+
+                <div id="card-yahoo" class="stacked-engine-card absolute inset-0 w-full h-full bg-white rounded-[28px] border border-gray-100 border-b-[5px] border-b-[#8460E5] shadow-[0px_10px_35px_rgba(20,20,43,0.08)] p-9 sm:p-10 lg:p-12 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 transition-all duration-300 ease-out will-change-transform z-10 origin-top" style="transform: translate3d(0, -76px, 0) scale(0.92);">
+                    <div class="w-full md:w-1/2 flex flex-col justify-center text-left">
+                        <div class="mb-5">
+                            <img src="https://www.serphouse.com/images/homePage/yahoo-logo.png" width="48" height="48" class="w-12 h-12 object-contain" alt="Yahoo logo" />
+                        </div>
+                        <h3 class="card-title text-primary-dark mb-4">Yahoo Search API</h3>
+                        <p class="content-regular text-secondary leading-relaxed">
+                            Yahoo still has a strong user base, especially in finance, news, and older demographics. SERPHouse’s Yahoo Search API delivers real-time SERP data, including organic listings and sponsored results.
+                        </p>
+                    </div>
+                    <div class="w-full md:w-1/2 flex items-center justify-center">
+                        <img src="https://www.serphouse.com/images/homePage/yahoo-search-api.png" alt="Yahoo Search API illustration" width="530" height="440" loading="lazy" class="w-full max-w-[480px] h-auto object-contain drop-shadow-sm" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<section class="padding-horizontal bg-lavender">
+    <div
+        class="mx-auto max-w-screen-1xl flex md:flex-nowrap flex-wrap lg:justify-between justify-center gap-x-12 gap-y-12 items-center min-[1441px]:py-20 xl:py-[60px] lg:py-16 md:py-14 py-12">
+        <div class="xsm:max-lg:w-full">
+            <div class="max-w-2xl w-full">
+                <h2 class="sm:text-left text-primary-dark sub-title">Access search results tailored to specific devices
+                </h2>
+                <p class="content-regular text-secondary mt-2.5 sm:text-left text-center">Use device-specific data to
+                    refine your SEO strategies
+                    and optimize performance across platforms.</p>
+            </div>
+            <div class="mt-5 w-full">
+                <div class="flex items-center gap-x-2.5">
+                    <img src="https://www.serphouse.com/images/homePage/check-circle.png" width="24" height="24" loading="lazy"
+                        class="min-[1441px]:max-w-6 max-w-5 w-full self-start  mt-0.5 min-[388px]:mt-0"
+                        alt="checked circle image" />
+                    <p class="content-regular text-secondary font-medium self-start">
+                        Desktop And Mobile Devices Targeting.
+                    </p>
+                </div>
+                <div class="flex items-center gap-x-2.5 mt-3.5">
+                    <img src="https://www.serphouse.com/images/homePage/check-circle.png" width="24" height="24" loading="lazy"
+                        class="min-[1441px]:max-w-6 max-w-5 w-full self-start mt-0.5 min-[530px]:mt-0 md:max-[1156px]:mt-0.5"
+                        alt="checked circle image" />
+                    <p class="content-regular text-secondary font-medium self-start">Gain Insights Into Your Content’s
+                        Rankings Across Various Devices.</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <img src="https://www.serphouse.com/images/homePage/specific-devices.png" width="680" height="380" loading="lazy"
+                class="min-[1441px]:max-w-[680px] max-h-[380px] xl:max-w-xl lg:max-w-lg md:max-w-xl max-w-md w-full"
+                alt="Access search results tailored to specific devices" />
+        </div>
+    </div>
+</section>
+<section class="padding-horizontal">
+    <div
+        class="mx-auto max-w-screen-1xl flex md:flex-nowrap flex-wrap min-[1441px]:py-20 xl:py-20 lg:py-16 md:py-14 py-12 lg:gap-x-12 gap-x-9 xl:gap-x-24 gap-y-12 md:justify-between justify-center items-center">
+        <div>
+            <img src="https://www.serphouse.com/images/homePage/geographic-location.png" width="644" height="353" loading="lazy"
+                class="min-[1441px]:max-w-[660px] xl:max-w-xl lg:max-w-xl md:max-w-sm max-w-md w-full"
+                alt="Real-time SERP data from all major search engines">
+        </div>
+        <div class="w-full min-[1441px]:max-w-[550px] xl:max-w-[650px] min-[900px]:max-xl:max-w-md  md:max-w-sm ">
+            <h2 class="sm:text-left text-primary-dark sub-title">Access search results from any geographic location</h2>
+            <p class="content-regular text-secondary mt-2.5 sm:text-left text-center">We use Google Geographical
+                Targeting so that you can use
+                it as a data source and Boost local SEO efforts.</p>
+
+            <div class="mt-5">
+                <div class="flex items-start gap-x-2.5">
+                    <img src="https://www.serphouse.com/images/homePage/check-circle.png" width="24" height="24" loading="lazy"
+                        class="min-[1441px]:max-w-6 max-w-5 w-full self-start min-[375px]:mt-0 mt-0.5"
+                        alt="checked circle image">
+                    <p class="content-regular text-secondary font-medium">Get Localised Results From 245 Countries.</p>
+                </div>
+                <div class="flex items-start gap-x-2.5 mt-3.5">
+                    <img src="https://www.serphouse.com/images/homePage/check-circle.png" width="24" height="24" loading="lazy"
+                        class="min-[1441px]:max-w-6 max-w-5 w-full self-start min-[900px]:mt-0 mt-0.5 min-[412px]:max-md:mt-0"
+                        alt="checked circle image">
+                    <p class="content-regular text-secondary font-medium">Target Country, State, City, Municipality And
+                        More.</p>
+                </div>
+                <div class="flex items-start gap-x-2.5 mt-3.5">
+                    <img src="https://www.serphouse.com/images/homePage/check-circle.png" width="24" height="24" loading="lazy"
+                        class="min-[1441px]:max-w-6 max-w-5 w-full self-start mt-0.5 min-[900px]:mt-0 min-[452px]:max-md:mt-0 "
+                        alt="checked circle image">
+                    <p class="content-regular text-secondary font-medium">Location-Specific Insights For Optimal
+                        Decision-Making.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="industrie-benefits padding-horizontal bg-lavender">
+    <div class="mx-auto max-w-screen-1xl min-[1441px]:py-20 xl:py-[60px] lg:py-16 md:py-14 py-12">
+        <h2 class="text-primary-dark text-center sub-title">
+            Industries that Can Benefits from SERPHouse
+        </h2>
+        <p class="text-secondary content-medium max-w-4xl mx-auto 2xl:mt-5 mt-3.5 text-center">
+            SERPHouse includes digital marketing, e-commerce, finance, and tech startups, all leveraging advanced SERP
+            analysis for competitive insights and growth.
+        </p>
+
+        <div
+            class="2xl:mt-28 min-[1441px]:mt-24 mt-20 grid xl:justify-between lg:gap-x-5 md:gap-x-10 gap-x-7 gap-y-20 min-[500px]:grid-cols-2 min-[400px]:grid-cols-[350px] grid-cols-1 lg:grid-cols-[repeat(4,minmax(0,305px))] justify-center">
+            <div
+                class="bg-white rounded-[10px] flex flex-col items-center shadow-[0px_0px_20px_0px_#f0ebff] border-b-[3px] hover:border-primary border-transparent">
+                <img src="https://www.serphouse.com/images/homePage/seo-professional.png" width="150" height="150" loading="lazy"
+                    class="relative min-[1441px]:max-w-[150px] min-[1441px]:bottom-16 xl:bottom-12 bottom-12 xl:max-w-28 max-w-24 w-full"
+                    alt="SEO professional with an upward arrow symbolizing growth" />
+                <p class="content-subheading text-primary-dark relative xl:bottom-[29.66px] bottom-6">
+                    SEO Professional
+                </p>
+            </div>
+            <div
+                class="bg-white rounded-[10px] flex flex-col items-center shadow-[0px_0px_20px_0px_#f0ebff] border-b-[3px] hover:border-primary border-transparent">
+                <img src="https://www.serphouse.com/images/homePage/digital-marketers.png" width="150" height="150" loading="lazy"
+                    class="relative min-[1441px]:max-w-[150px] min-[1441px]:bottom-16 xl:bottom-12 bottom-12 xl:max-w-28 max-w-24 w-full"
+                    alt="digital marketer using a megaphone, representing online marketing" />
+                <p class="content-subheading text-primary-dark relative xl:bottom-[29.66px] bottom-6">
+                    Digital Marketers
+                </p>
+            </div>
+            <div
+                class="bg-white rounded-[10px] flex flex-col items-center shadow-[0px_0px_20px_0px_#f0ebff] border-b-[3px] hover:border-primary border-transparent">
+                <img src="https://www.serphouse.com/images/homePage/developers.png" width="150" height="150" loading="lazy"
+                    class="relative min-[1441px]:max-w-[150px] min-[1441px]:bottom-16 xl:bottom-12 bottom-12 xl:max-w-28 max-w-24 w-full"
+                    alt="developer working on a laptop with a coding symbol" />
+                <p class="content-subheading text-primary-dark relative xl:bottom-[29.66px] bottom-6">
+                    Train AI Models
+                </p>
+            </div>
+            <div
+                class="bg-white rounded-[10px] flex flex-col items-center shadow-[0px_0px_20px_0px_#f0ebff] border-b-[3px] hover:border-primary border-transparent">
+                <img src="https://www.serphouse.com/images/homePage/data-science.png" width="150" height="150" loading="lazy"
+                    class="relative min-[1441px]:max-w-[150px] min-[1441px]:bottom-16 xl:bottom-12 bottom-12 xl:max-w-28 max-w-24 w-full"
+                    alt="hands holding a lightbulb symbolizing data science and innovation." />
+                <p class="content-subheading text-primary-dark relative xl:bottom-[29.66px] bottom-6">
+                    Data Science
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="padding-horizontal">
+    <div class="mx-auto w-full max-w-screen-1xl 2xl:py-24 xl:py-20 lg:py-16 md:py-14 py-12">
+        <div
+            class="mx-auto flex flex-wrap min-[440px]:flex-row gap-x-14 w-full gap-y-[40px] min-[1441px]:max-w-[800px] xl:max-w-3xl md:max-w-2xl max-w-xl flex-col justify-center items-center min-[450px]:justify-between ">
+            <div class="flex flex-col items-center justify-center">
+                <img src="https://www.serphouse.com/images/homePage/clock-up-arrow.png" width="64" height="64" loading="lazy"
+                    class="min-[1441px]:max-w-[61px] max-w-12 w-full" alt="clock up arrow" />
+                <p class="text-primary-dark mt-3 section-subtitle font-semibold">
+                    99.99%
+                </p>
+                <p class="text-primary-dark mt-3 content-regular font-semibold">
+                    Up Time
+                </p>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+                <p class="text-primary-dark max-[1440px]:text-[2.063rem] text-[2.75rem] font-medium leading-[50px]">
+                    4.7
+                </p>
+                <img src="https://www.serphouse.com/images/homePage/star.png" width="143" height="23" loading="lazy"
+                    class="mt-[13px] min-[1441px]:max-w-36 max-w-28" alt="stars" />
+                <div class="flex items-center justify-center 2xl:gap-x-2 gap-x-1 2xl:mt-[22px] mt-5">
+                    <img src="https://www.serphouse.com/images/homePage/one-star.png" width="25" height="23" loading="lazy"
+                        class="z-0 min-[1441px]:max-w-[25px] max-w-5" alt="one stars" />
+                    <p class="content-regular text-primary-dark font-medium">Trustpilot</p>
+                </div>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+                <img src="https://www.serphouse.com/images/homePage/dolar-sign.png" width="51" height="59" loading="lazy"
+                    class="min-[1441px]:max-w-[51px] max-w-12 w-full" alt="dolar sign" />
+                <p class="text-primary-dark mt-[15px] content-regular font-semibold">
+                    7-Day Money Back
+                </p>
+                <p class="text-primary-dark 2xl:mt-[14px] mt-2.5 section-subtitle">
+                    Guarantee
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="benefits padding-horizontal bg-lavender">
+    <div class="max-w-screen-1xl mx-auto xl:py-14 lg:py-12 py-10">
+        <div class="">
+            <h2 class="text-primary-dark sub-title">Why SERPHouse</h2>
+            <p
+                class="content-medium text-secondary min-[1441px]:max-w-4xl max-w-2xl mx-auto 2xl:mt-5 mt-3.5 text-center">
+                Unveiling the magic behind SERP Scraper & Discover the inner workings of search engine results.
+            </p>
+        </div>
+        <div
+            class="xl:mt-[60.66px] mt-12 grid grid-cols-1 lg:gap-x-[22px] gap-x-[15px] gap-y-[30px] sm:grid-cols-2  min-[900px]:grid-cols-3  items-stretch">
+            <div
+                class="serp-benefit pb-5 border border-[#e2d7ff] lg:pt-[22px] pt-5 min-[1441px]:min-h-52 xl:min-h-44 md:min-h-48 w-full flex flex-col flex-wrap items-center lg:px-7 px-4">
+                <img src="https://www.serphouse.com/images/homePage/realtime-result.png" width="35" height="35" loading="lazy"
+                    class="h-[35px] w-[35px]" alt="realtime result" />
+                <p class="content-subheading text-primary-dark mt-2.5 text-center">
+                    Realtime
+                </p>
+                <p class="content-regular text-secondary mt-2.5 text-center">
+                    Get real-time access to search data as it unfolds.
+                </p>
+            </div>
+            <div
+                class="serp-benefit pb-5 border border-[#e2d7ff] lg:pt-[22px] pt-5 min-[1441px]:min-h-52 xl:min-h-44 md:min-h-48 w-full flex flex-col flex-wrap items-center lg:px-7 px-4">
+                <img src="https://www.serphouse.com/images/homePage/built-volume.png" width="40" height="40" loading="lazy"
+                    class="h-[39.98px] w-[40px]" alt="Highly Scalable" />
+                <p class="content-subheading text-primary-dark mt-2.5 text-center">
+                    Highly Scalable
+                </p>
+                <p class="content-regular text-secondary mt-2.5 text-center">
+                    Efficiently manage large-scale data extraction.
+                </p>
+            </div>
+            <div
+                class="serp-benefit pb-5 border border-[#e2d7ff] lg:pt-[22px] pt-5 min-[1441px]:min-h-52 xl:min-h-44 md:min-h-48 w-full flex flex-col flex-wrap items-center lg:px-7 px-4">
+                <img src="https://www.serphouse.com/images/homePage/automated-data-retrieval.png" width="36" height="40"
+                    loading="lazy" class="h-[40px] w-[36.67px]" alt="Accurate Location" />
+                <p class="content-subheading text-primary-dark mt-2.5 text-center">
+                    Accurate Location
+                </p>
+                <p class="content-regular text-secondary mt-2.5 text-center">
+                    Target locations realtime anywhere in the world including City, State, and Country level.
+                </p>
+            </div>
+            <div
+                class="serp-benefit pb-5 border border-[#e2d7ff] lg:pt-[22px] pt-5 min-[1441px]:min-h-52 xl:min-h-44 md:min-h-48 w-full flex flex-col flex-wrap items-center lg:px-7 px-4">
+                <img src="https://www.serphouse.com/images/homePage/various-data-formats.png" width="39" height="36" loading="lazy"
+                    class="h-[36.67px] w-[39.93px]" alt="speed" />
+                <p class="content-subheading text-primary-dark mt-2.5 text-center">
+                    Speed
+                </p>
+                <p class="content-regular text-secondary mt-2.5 text-center">
+                    Standard average response time in under 8 seconds.
+                </p>
+            </div>
+            <div
+                class="serp-benefit pb-5 border border-[#e2d7ff] lg:pt-[22px] pt-5 min-[1441px]:min-h-52 xl:min-h-44 md:min-h-48 w-full flex flex-col flex-wrap items-center lg:px-7 px-4">
+                <img src="https://www.serphouse.com/images/homePage/user-experience.png" width="40" height="40" loading="lazy"
+                    class="h-[40px] w-[40px]" alt="Pay on Success" />
+                <p class="content-subheading text-primary-dark mt-2.5 text-center">
+                    Pay On Success
+                </p>
+                <p class="content-regular text-secondary mt-2.5 text-center">
+                    You will pay only for successful requests.
+                </p>
+            </div>
+            <div
+                class="serp-benefit pb-5 border border-[#e2d7ff] lg:pt-[22px] pt-5 min-[1441px]:min-h-52 xl:min-h-44 md:min-h-48 w-full flex flex-col flex-wrap items-center lg:px-7 px-4">
+                <img src="https://www.serphouse.com/images/homePage/programmable-response.png" width="56" height="47"
+                    loading="lazy" class="h-[47px] w-[56px]" alt="Programmable Response" />
+                <p class="content-subheading text-primary-dark mt-2.5 text-center">
+                    Programmable Response
+                </p>
+                <p class="content-regular text-secondary mt-2.5 text-center">
+                    Extract SERP data from specialized search engines.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="padding-horizontal">
+    <div
+    class="mx-auto w-full max-w-screen-1xl xl:my-[70px] lg:my-16 md:my-14 my-12 md:px-8 xl:px-12 px-5 py-9 rounded-[10px] bg-lavender">
+    <div class="flex items-center md:flex-nowrap flex-wrap justify-between lg:gap-x-16 gap-y-7">
+        <div class="xl:max-w-3xl md:max-w-2xl w-full">
+            <h2 class="md:text-left text-primary-dark sub-title">Experience The SERP API For Yourself.</h2>
+            <p class="w-full content-regular text-secondary 2xl:mt-5 mt-2.5 md:text-left text-center">
+                Explore the Scraper APIs Playground on the Oxylabs dashboard for hands-on interaction with our
+                APIs, and access detailed technical documentation for all the essential information.
+            </p>
+        </div>
+        <div class="2xl:max-w-72 lg:max-w-60 md:max-w-64 w-full">
+            <div class="w-full flex md:justify-end justify-center">
+                <a href="https://www.serphouse.com/register" class="">
+                    <p
+                        class="2xl:py-3 py-2 2xl:px-12 px-8 bg-primary font-semibold text-white text-center minor-subheading rounded-full">
+                        Signup now
+                    </p>
+                </a>
+            </div>
+            <div class="mt-6 flex items-center md:justify-end justify-center 2xl:gap-x-[18px] gap-x-3">
+                <img src="https://www.serphouse.com/images/homePage/credit-card-off.png" width="24" height="24" loading="lazy"
+                    class="min-[1441px]:max-w-6 max-w-5 w-full" alt="no credit card required" />
+                <p class="content-regular font-medium text-secondary">No Credit Card Required</p>
+            </div>
+        </div>
+    </div>
+</div></section>
+<section class="api-playground padding-horizontal" id="tryDemo">
+    <div class="max-w-screen-1xl mx-auto min-[1441px]:pb-20 xl:pb-[75px] lg:pb-16 md:pb-14 pb-12">
+        <div class="flex flex-col items-center justify-center">
+            <h2 class=" text-primary-dark text-center sub-title">API Playground</h2>
+            <p class="content-medium text-secondary max-w-[1007px] text-center 2xl:mt-5 mt-3.5">
+                SERPHouse effortlessly powers your SEO apps and services. Try our
+                complete and easy to use API
+            </p>
+        </div>
+        <div class="mt-10 min-h-[830px] h-full w-full rounded-[40px] border-[1px] border-[#DDDDDD] bg-[#FFFFFF] shadow-[0_0_20px_0_#00000026]"
+            id="content-container">
+            <form method="POST" action="#" id="searchFormStatic" class="lg:px-10 sm:px-5 px-2.5">
+                <input type="hidden" name="_token" value="0XSCrJFMLxPIQGdMOCgrnNsrupdiVEMO1nl0aMBd" autocomplete="off">                <input type="hidden" name="f_type" value="frontend">
+                <input type="hidden" name="data[page]" value="1">
+                <input type="hidden" name="data[device]" value="desktop">
+                <input type="hidden" name="data[serp_type]" value="web">
+                <input type="hidden" name="data[verbatim]" value="0">
+                <div class="grid lg:grid-cols-4 min-[500px]:grid-cols-2 xl:gap-5 lg:gap-2.5 gap-5 pt-10 ">
+                    <input type="text" name="data[q]" required placeholder="Search Query" value="ChatGPT"
+                        class="form-control text-secondary w-full rounded-[10px] border-[1px] border-[#DDDDDD] py-[7px] pl-[15px] focus:outline-none" />
+                    <select name="data[domain]" id="domainStatic"
+                        class="w-full  text-secondary rounded-[10px] border-[1px] border-[#DDDDDD] bg-white py-[7px] pl-[15px] focus:outline-none ">
+                        <option value="google.com" selected>google.com</option>
+                    </select>
+                    <select name="data[loc]" id="locationStatic" required class="w-full text-secondary pl-[15px] bg-white">
+                        <option value="Abernathy,Texas,United States" selected>Abernathy,Texas,United States</option>
+                    </select>
+                    <select name="data[lang]" id="languageStatic" required
+                        class="w-full text-secondary rounded-[10px] border-[1px] border-[#DDDDDD] bg-white py-[7px] pl-[15px] focus:outline-none  ">
+                        <option value="en" selected>English</option>
+                    </select>
+                </div>
+                <div
+                    class="mt-3 min-[701px]:mt-5 flex lg:gap-x-10 gap-x-8 gap-y-3 justify-center sm:flex-nowrap flex-wrap">
+                    <div class="g-recaptcha" data-sitekey="6LdzRL8UAAAAAN7vHXDQD8I7PFehkKLsRYzlC4ip">
+                    </div>
+                    <button type="submit" id="searchStatic" disabled
+                        class="bg-primary max-h-[54px] minor-subheading  font-medium h-full py-3 max-w-52 w-full self-center  text-white rounded-full">Processing...</button>
+                </div>
+            </form>
+            <div
+                class="min-h-[685px] lg:mx-10 lg:mb-10 mb-5 sm:mt-10 mt-8 sm:mx-5 rounded-[40px] shadow-[-1px_0_10px_-2px_#00000024] loader-container">
+                <div class="custom-container z-20 relative  max-h-[685px] rounded-[26px]">
+                    <div class="slide-container">
+                        <div id="iframe-content" class="slide-before slider-section ">
+                            <iframe loading="lazy" name="api-playground-frame" title="API Playground Content"
+                                id="iframe-block-static" class="min-h-[685px] "
+                                style="-webkit-transform: scale(0.5); -webkit-transform-origin: 0 0; width: 200%; height: 200%;"></iframe>
+                        </div>
+                        <div class="code-container ser-code-toolbar slider-section min-h-[685px] min-w-[50%]  mostly-customized-scrollbar"
+                            role="region" aria-labelledby="code-block-label">
+                            <div class="code-toolbar">
+                                <pre style="margin-top: 0 !important; margin-left: var(--position) !important;"
+                                    id="api-code-block" class="mostly-customized-scrollbar  h-full min-h-[685px] image-after overflow-auto"
+                                    aria-live="polite" aria-atomic="true">
+
+                                        <code class="language-json copy-code" id="code-block-static" tabindex="0">
+                                            
+                                        </code>
+                                    </pre>
+                                <button
+                                    class="copy-btn bg-gray-800 hover:bg-gray-700 text-gray-300 absolute top-4 right-4 z-50 rounded-md text-white text-xs toolbar"
+                                    data-clipboard-target="#code-block-static">
+                                    <img src="https://www.serphouse.com/images/homePage/copy-btn.png" width="21" height="24" class="max-w-[21px] text-white" alt="copy button" />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="range" min="0" max="100" value="50" aria-label="Percentage of before photo shown"
+                        class="slider" />
+                    <div class="slider-line" aria-hidden="true"></div>
+                    <div class="slider-button" aria-hidden="true"></div>
+                    <div class="overlay ">
+                        <p class="">Processing...</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="mx-auto mt-12 flex h-[37px] max-w-[281px] items-center justify-center ">
+            <a href="https://www.serphouse.com/serp-api-playground"
+                class="text-primary pb-[10px] flex justify-center border-b-[1px] border-primary  items-center 2xl:gap-x-[20px] gap-3 text-center  minor-subheading font-semibold ">
+                Play with more parameter
+                <img src="https://www.serphouse.com/images/homePage/arrow-primary.png" width="22" height="12" loading="lazy" class="w-[20px] min-[1441px]:w-[22px]" alt="next arrow icon" />
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="padding-horizontal bg-lavender">
+    <div
+        class="max-w-screen-1xl relative mx-auto grid lg:grid-cols-2 grid-cols-1 xl:flex-nowrap flex-wrap justify-center xl:justify-between items-center gap-y-14   min-[1441px]:py-20 xl:py-16 md:py-14 py-12">
+        <div class="xsm:max-xl:w-full lg:pr-14">
+            <h2 class="text-primary-dark sm:text-left sub-title font-medium">
+                Easy Integration - <span class="text-primary">Go Live in Under 5 Minutes.</span>
+            </h2>
+            <p class="content-regular text-secondary mt-3.5 mb-8 lg:mb-10 sm:text-left text-center max-w-xl leading-relaxed">
+                SERPHouse works with Node.js, Python, PHP, Go, and any HTTP client. No complex setup, no SDKs required just a free API key and your first request.
+            </p>
+
+            <div class="relative flex flex-col gap-y-7 sm:gap-y-8 my-6" id="integration-steps-container">
+                <div id="steps-track-line" class="absolute left-[21px] w-[2px] bg-[#EAE2FD] z-0 pointer-events-none" style="top: 22px; bottom: 22px;"></div>
+                <div id="steps-progress-fill" class="absolute left-[21px] w-[2px] bg-primary z-0 pointer-events-none" style="top: 22px; height: 0; opacity: 0;"></div>
+
+                <div class="integration-step-item relative z-10 flex items-center gap-4 sm:gap-5 cursor-pointer group" data-step="0">
+                    <div class="step-badge w-11 h-11 rounded-full flex items-center justify-center font-medium text-sm sm:text-base shrink-0 transition-all duration-300 bg-primary text-white shadow-[0_4px_14px_rgba(132,96,229,0.35)] scale-105">
+                        01
+                    </div>
+                    <p class="step-text content-regular text-primary font-medium transition-colors duration-300 leading-snug">
+                        Create your account and get a free API key instantly. Sign up in seconds.
+                    </p>
+                </div>
+
+                <div class="integration-step-item relative z-10 flex items-center gap-4 sm:gap-5 cursor-pointer group" data-step="1">
+                    <div class="step-badge w-11 h-11 rounded-full flex items-center justify-center font-medium text-sm sm:text-base shrink-0 transition-all duration-300 bg-[#F4EFFF] text-primary border border-[#E4DAFD]">
+                        02
+                    </div>
+                    <p class="step-text content-regular text-secondary font-normal transition-colors duration-300 leading-snug">
+                        Send your first API request in the language you already use.
+                    </p>
+                </div>
+
+                <div class="integration-step-item relative z-10 flex items-center gap-4 sm:gap-5 cursor-pointer group" data-step="2">
+                    <div class="step-badge w-11 h-11 rounded-full flex items-center justify-center font-medium text-sm sm:text-base shrink-0 transition-all duration-300 bg-[#F4EFFF] text-primary border border-[#E4DAFD]">
+                        03
+                    </div>
+                    <p class="step-text content-regular text-secondary font-normal transition-colors duration-300 leading-snug">
+                        Receive structured SERP data directly in your API response.
+                    </p>
+                </div>
+
+                <div class="integration-step-item relative z-10 flex items-center gap-4 sm:gap-5 cursor-pointer group" data-step="3">
+                    <div class="step-badge w-11 h-11 rounded-full flex items-center justify-center font-medium text-sm sm:text-base shrink-0 transition-all duration-300 bg-[#F4EFFF] text-primary border border-[#E4DAFD]">
+                        04
+                    </div>
+                    <p class="step-text content-regular text-secondary font-normal transition-colors duration-300 leading-snug">
+                        Automate, analyze, and scale your SERP data pipeline.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="easy-integration w-full bg-[#272822] relative overflow-hidden border-[10px] border-white rounded-[30px] shadow-[0px_0px_22.76px_0px_#8460E575]"
+            id="easy-integration">
+            <div class="overflow-auto rounded-br-[34px]">
+                <button
+                    class="absolute bottom-2 h-5 copy-btn text-white text-xs right-2 z-50 rounded-full px-2 text-center"
+                    data-clipboard-target="#subpages-desktop-code">
+                    <img id="copy-icon" src="https://www.serphouse.com/images/homePage/copy-btn.png" width="21" height="24" loading="lazy" class="w-[21px] text-white" alt="copy button" />
+                </button>
+                <div
+                    class="lg:py-5 px-4 py-4 sticky top-0 left-0 bg-[#272822] z-50 border-b border-[#525252]  mb-2  min-[470px]:flex flex-wrap items-center lg:gap-[15px] gap-[10px] grid grid-cols-3">
+                    <a href="#" class="subpages-desktop-links language-link active-link rounded-full"
+                        data-language="curl" data-q="Coffee" data-domain="google.com" data-lang="en"
+                        data-loc="Texas,United States" data-device="desktop" data-serp_type="web">Curl</a>
+
+                    <a href="#" class="subpages-desktop-links language-link rounded-full" data-q="Coffee"
+                        data-language="python" data-domain="google.com" data-lang="en" data-loc="Texas,United States"
+                        data-device="desktop" data-serp_type="web">Python</a>
+
+                    <a href="#" class="subpages-desktop-links language-link rounded-full" data-q="Coffee"
+                        data-language="nodejs" data-domain="google.com" data-lang="en" data-loc="Texas,United States"
+                        data-device="desktop" data-serp_type="web">Node.js</a>
+
+                    <a href="#" class="subpages-desktop-links language-link rounded-full" data-q="info edge news"
+                        data-language="php" data-domain="google.com" data-lang="en" data-loc="Texas,United States"
+                        data-device="desktop" data-serp_type="web">PHP</a>
+
+                    <a href="#" class="subpages-desktop-links language-link rounded-full" data-q="info edge news"
+                        data-language="java" data-domain="google.com" data-lang="en" data-loc="Texas,United States"
+                        data-device="desktop" data-serp_type="web">Java</a>
+
+                    <a href="#" class="subpages-desktop-links language-link rounded-full" data-q="Coffee"
+                        data-language="go" data-lang="en" data-loc="Texas,United States" data-device="desktop"
+                        data-serp_type="web">Go</a>
+
+
+                </div>
+                <pre
+                    class="top-storie-desktop  mostly-customized-scrollbar z-20 overflow-auto  min-[1441px]:h-[400px] h-[340px] relative ">
+                            <code id="subpages-desktop-code" class="language-shell code relative overflow-auto z-0" data-prismjs-copy="Copy">
+                                    curl -X POST \\
+                                        https://api.serphouse.com/serp/live \\
+                                            -H 'accept: application/json' \\
+                                            -H 'authorization: Bearer API_TOKEN' \\
+                                                -H 'content-type: application/json' \\
+                                        -d '{
+                                            "data": {
+                                                "domain":"google.com",
+                                                "lang":"en",
+                                                "q": "Coffee",
+                                                "loc":"Texas,United States",
+                                                "device": "desktop",
+                                                "serp_type": "web"
+                                            }
+                                    }
+                            </code>
+                         </pre>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="padding-horizontal">
+    <div class="max-w-screen-1xl mx-auto min-[1441px]:py-24 xl:py-[75px] lg:py-16 md:py-14 py-12">
+        <h2 class="text-primary-dark sub-title">Maximize The Potential Of The SERP API</h2>
+        <p class="2xl:mt-5 mt-3.5 max-w-4xl text-secondary font-medium mx-auto text-center w-full content-medium">Stop
+            guessing, start knowing Make data-driven SEO decisions with our SERP API, your key to unlocking the power of
+            search.</p>
+        <div class="mt-[60px] grid lg:grid-cols-3 sm:grid-cols-2 gap-x-9 2xl:gap-y-16 gap-y-14">
+            <div
+                class="flex flex-col items-center lg:px-7 lg:py-8 px-5 py-5 hover:border-b-[3px] border-transparent hover:border-primary border-b-[3px] hover:shadow-[0px_0px_20px_0px_#F0EBFF] rounded-[10px]">
+                <img src="https://www.serphouse.com/images/homePage/seo-analysis.png" width="70" height="70" loading="lazy"
+                    class="min-[1441px]:max-w-[70px] min-[1441px]:max-h-[70px] max-w-16 max-h-16 w-full"
+                    alt="SEO analysis" />
+                <p class="text-primary-dark content-subheading mt-3.5">SEO Analysis</p>
+                <p class="content-regular text-secondary mt-2.5 text-center">Analyze search engine rankings for
+                    keywords and websites, identify top-performing pages, and evaluate their features to enhance your
+                    website’s ranking.</p>
+            </div>
+            <div
+                class="flex flex-col items-center lg:px-7 lg:py-8 px-5 py-5 hover:border-b-[3px] border-transparent hover:border-primary border-b-[3px] hover:shadow-[0px_0px_20px_0px_#F0EBFF] rounded-[10px]">
+                <img src="https://www.serphouse.com/images/homePage/market-research.png" width="70" height="70" loading="lazy"
+                    class="min-[1441px]:max-w-[70px] min-[1441px]:max-h-[70px] max-h-20 max-w-16 w-full"
+                    alt="Market research" />
+                <p class="text-primary-dark content-subheading mt-3.5">Market Research</p>
+                <p class="content-regular text-secondary mt-2.5 text-center">Unlock key insights into market trends,
+                    customer behavior, and preferences by analyzing search results for targeted products or services.
+                </p>
+            </div>
+            <div
+                class="flex flex-col items-center lg:px-7 lg:py-8 px-5 py-5 hover:border-b-[3px] border-transparent hover:border-primary border-b-[3px] hover:shadow-[0px_0px_20px_0px_#F0EBFF] rounded-[10px]">
+                <img src="https://www.serphouse.com/images/homePage/lead-generation.png" width="70" height="70" loading="lazy"
+                    class="min-[1441px]:max-w-[70px] min-[1441px]:max-h-[70px] max-h-20 max-w-16 w-full"
+                    alt="Lead generation" />
+                <p class="text-primary-dark content-subheading mt-3.5">Lead Generation</p>
+                <p class="content-regular text-secondary mt-2.5 text-center">Extract contact details from search
+                    results to generate leads for sales and marketing efforts.</p>
+            </div>
+            <div
+                class="flex flex-col items-center lg:px-7 lg:py-8 px-5 py-5 hover:border-b-[3px] border-transparent hover:border-primary border-b-[3px] hover:shadow-[0px_0px_20px_0px_#F0EBFF] rounded-[10px]">
+                <img src="https://www.serphouse.com/images/homePage/keyword-ranking.png" width="70" height="70" loading="lazy"
+                    class="min-[1441px]:max-w-[70px] min-[1441px]:max-h-[70px] max-w-16 lg:max-h-16 min-h-16 h-full w-full"
+                    alt="Keyword ranking" />
+                <p class="text-primary-dark content-subheading mt-3.5">Keyword Ranking</p>
+                <p class="content-regular text-secondary mt-2.5 text-center">Gather keyword data like competition, and
+                    ranking difficulty to enhance keyword research and refine your SEO strategy.</p>
+            </div>
+            <div
+                class="flex flex-col items-center lg:px-7 lg:py-8 px-5 py-5 hover:border-b-[3px] border-transparent hover:border-primary border-b-[3px] hover:shadow-[0px_0px_20px_0px_#F0EBFF] rounded-[10px]">
+                <img src="https://www.serphouse.com/images/homePage/content-creation.png" width="70" height="70" loading="lazy"
+                    class="min-[1441px]:max-w-[70px] min-[1441px]:max-h-[70px] max-w-16 max-h-16 w-full"
+                    alt="Content creation" />
+                <p class="text-primary-dark content-subheading mt-3.5">Content Creation</p>
+                <p class="content-regular text-secondary mt-2.5 text-center">Identify trending topics and optimize your
+                    content for broad visibility.</p>
+            </div>
+            <div
+                class="flex flex-col items-center lg:px-7 lg:py-8 px-5 py-5 hover:border-b-[3px] border-transparent hover:border-primary border-b-[3px] hover:shadow-[0px_0px_20px_0px_#F0EBFF] rounded-[10px]">
+                <img src="https://www.serphouse.com/images/homePage/paid-ads-tracking.png" width="70" height="70" loading="lazy"
+                    class="min-[1441px]:max-w-[70px] min-[1441px]:max-h-[70px] max-w-16 max-h-16 w-full"
+                    alt="Paid ads tracking" />
+                <p class="text-primary-dark content-subheading mt-3.5">Paid Ads Tracking</p>
+                <p class="content-regular text-secondary mt-2.5 text-center">Monitor and evaluate paid ads on search
+                    engine result pages, focusing on ad copy, placement, and performance metrics, to optimize campaigns
+                    and boost ROI.</p>
+            </div>
+        </div>
+        <div class="xl:mt-[57px] mt-10 flex justify-center">
+            <a href="" class="">
+                <p
+                    class="2xl:px-8 px-7 2xl:py-3 py-2 bg-primary minor-subheading rounded-full text-white font-semibold">
+                    Dive into Use Cases
+                </p>
+            </a>
+        </div>
+        <div class="min-[1441px]:mt-24 xl:mt-[75px] lg:mt-16 mt-12 bg-lavender py-12 px-5 rounded-[10px]">
+            <div
+                class="flex flex-wrap lg:justify-between min-[622px]:justify-between justify-center min-[1441px]:max-w-[988px] xl:max-w-4xl lg:max-w-3xl max-w-2xl w-full mx-auto min-[622px]:gap-x-7 gap-14">
+                <div class="flex flex-col items-center">
+                    <img src="https://www.serphouse.com/images/homePage/enterprise-scaling.png" width="56" height="56"
+                        loading="lazy"
+                        class="min-[1441px]:max-w-14 min-[1441px]:max-h-14 h-full max-w-11 max-h-11 w-full"
+                        alt="Enterprise scaling" />
+                    <p class="content-subheading mt-3 text-center text-primary-dark">Enterprise Scaling</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="https://www.serphouse.com/images/homePage/cost-efficiency.png" width="56" height="56" loading="lazy"
+                        class="min-[1441px]:max-w-14 min-[1441px]:max-h-14 h-full max-w-11 max-h-11 w-full"
+                        alt="Cost efficiency" />
+                    <p class="content-subheading mt-3 text-center text-primary-dark">Cost Efficiency</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="https://www.serphouse.com/images/homePage/dedicated-support.png" width="56" height="56"
+                        loading="lazy"
+                        class="min-[1441px]:max-w-14 min-[1441px]:max-h-14 h-full max-w-11 max-h-11 w-full"
+                        alt="Dedicated support" />
+                    <p class="content-subheading mt-3 text-center text-primary-dark">Dedicated Support</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="padding-horizontal bg-lavender">
+    <div
+        class="max-w-screen-1xl mx-auto xl:py-14 lg:py-12 py-10  justify-center  flex lg:flex-nowrap flex-wrap xl:gap-x-20 gap-y-10 gap-x-7 relative">
+       <img src="https://www.serphouse.com/images/homePage/faq-new.png" width="552" height="483" loading="lazy"
+            alt="frequently asked questions"
+            class="2xl:max-w-[552px] xl:max-w-lg self-start lg:max-w-md md:max-w-md max-w-sm w-full" />
+        <div class="w-full self-center">
+                            <div class="bg-white py-2.5 lg:px-[22px] sm:px-5 px-3.5 w-full rounded-[15px]">
+                    <div class="faq-header flex items-center xl:gap-x-[18px] gap-x-4 cursor-pointer"
+                        onclick="toggleContent(this)">
+                        <span class="toggle-btn transition-transform  text-2xl">+ </span>
+                        <p class="small-heading">How Are Search Credits Counted?</p>
+                    </div>
+                    <div class="content">
+                        <p class="text-secondary content-regular text-justify">
+                            We only count successful requests. Failed requests need to be retried.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-white py-2.5 lg:px-[22px] sm:px-5 px-3.5 w-full rounded-[15px] mt-5">
+                    <div class="faq-header flex items-center xl:gap-x-[18px] gap-x-4 cursor-pointer"
+                        onclick="toggleContent(this)">
+                        <span class="toggle-btn transition-transform  text-2xl">+ </span>
+                        <p class="small-heading">What's Your Refund Policy?</p>
+                    </div>
+                    <div class="content">
+                        <p class="text-secondary content-regular text-justify">
+                            We offer a full refund unless you have not used 25% of your searches within 10 days.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-white py-2.5 lg:px-[22px] sm:px-5 px-3.5 w-full rounded-[15px] mt-5">
+                    <div class="faq-header flex items-center xl:gap-x-[18px] gap-x-4 cursor-pointer"
+                        onclick="toggleContent(this)">
+                        <span class="toggle-btn transition-transform  text-2xl">+ </span>
+                        <p class="small-heading">What If I Need More Search Credits?</p>
+                    </div>
+                    <div class="content">
+                        <p class="text-secondary content-regular text-justify">
+                            We offer a custom plan based on your requirements. You have to write us at
+                            <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="462123323533363629343206352334362e293335236825292b">[email&#160;protected]</a> with your Monthly/Yearly requirement.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-white py-2.5 lg:px-[22px] sm:px-5 px-3.5 w-full rounded-[15px] mt-5">
+                    <div class="faq-header flex items-center xl:gap-x-[18px] gap-x-4 cursor-pointer"
+                        onclick="toggleContent(this)">
+                        <span class="toggle-btn transition-transform  text-2xl">+ </span>
+                        <p class="small-heading">Scaping Is Legal?</p>
+                    </div>
+                    <div class="content">
+                        <p class="text-secondary content-regular text-justify">
+                            Scraping public data is legal unless your usage is otherwise illegal. Illegal activities
+                            include
+                            but are not limited to cyber criminality, terrorism, pornography, denial of service
+                            attacks,
+                            and
+                            war crimes.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-white py-2.5 lg:px-[22px] sm:px-5 px-3.5 w-full rounded-[15px] mt-5">
+                    <div class="faq-header flex items-center xl:gap-x-[18px] gap-x-4 cursor-pointer"
+                        onclick="toggleContent(this)">
+                        <span class="toggle-btn transition-transform  text-2xl">+ </span>
+                        <p class="small-heading">Can I Use The SERP API For Commercial Purposes?</p>
+                    </div>
+                    <div class="content">
+                        <p class="text-secondary content-regular text-justify">
+                            Yes, you can use the SERP API for commercial and business purposes. SERPHouse offers plans
+                            suitable for both individual and enterprise use.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-white py-2.5 lg:px-[22px] sm:px-5 px-3.5 w-full rounded-[15px] mt-5">
+                    <div class="faq-header flex items-center xl:gap-x-[18px] gap-x-4 cursor-pointer"
+                        onclick="toggleContent(this)">
+                        <span class="toggle-btn transition-transform  text-2xl">+ </span>
+                        <p class="small-heading">Is Serp Api Free?</p>
+                    </div>
+                    <div class="content">
+                        <p class="text-secondary content-regular text-justify">
+                            For any specific inquiries or further assistance, don't hesitate to contact SERPHouse
+                            support,
+                            consult their documentation, or refer to their official website for the most up-to-date
+                            information about the SERP API..
+                        </p>
+                    </div>
+                </div>
+                    </div>
+    </div>
+</section>
+<section class="padding-horizontal bg-white">
+    <div class="xl:py-[75px] lg:py-16 md:py-14 py-12 max-w-screen-1xl w-full mx-auto">
+        <h2 class="text-primary-dark sub-title">What Do Our Customers Say?</h2>
+        <div
+            class="min-[1441px]:mt-16 lg:mt-14 mt-12 flex place-items-center lg:flex-nowrap flex-wrap justify-center 2xl:gap-x-12 xl:gap-x-8 gap-x-7 gap-y-10">
+            <div
+                class="flex lg:flex-col self-start items-center justify-center lg:gap-0 sm:gap-5 gap-3 lg:max-w-44 max-w-[97%] w-full md:flex-nowrap flex-wrap lg:border-none border-b-[2px] border-[#00000017] pb-4 lg:pb-0 ">
+                <p class="section-subtitle font-medium text-primary-dark">Excellent</p>
+                <img src="https://www.serphouse.com/images/homePage/stars-4.5.svg" width="176" height="33" loading="lazy"
+                    class="min-[1441px]:max-w-48 sm:max-w-36 max-w-32 w-full lg:mt-1.5" alt="4.5 stars rating">
+                <p class="section-subtitle font-medium lg:mt-1.5  text-primary-dark">4.7 Review On</p>
+                <div class="flex items-center justify-start gap-3 lg:mt-1.5">
+                    <img src="https://www.serphouse.com/images/homePage/one-star.png" loading="lazy" width="36" height="34" class="min-[1441px]:max-w-9 max-w-7 w-full" alt="one stars">
+                    <p class="section-subtitle font-medium text-primary-dark">Trustpilot</p>
+                </div>
+            </div>
+            <div class="swiper swiper-container w-full lg:px-[60px] px-12 overflow-hidden">
+                <div class="overflow-hidden client-rating justify-center w-full ">
+                    <div class="swiper-wrapper flex  mt-1">
+                        <div class="swiper-slide w-full ">
+                            <img src="https://www.serphouse.com/images/homePage/stars-5.svg" width="144" height="27" loading="lazy"
+                                class="min-[1441px]:max-w-36 max-w-28 w-full" alt="5 stars rating">
+                            <a href="https://www.trustpilot.com/reviews/6949673b9b403689bd592d76" target="_blank" rel="noopener noreferrer">
+                                <p class="content-subheading text-secondary mt-2">Kervi Javiya</p>
+                                <p class="content-regular text-secondary font-[450]  line-clamp-1 mt-1.5">
+                                    Excellent api experience
+                                </p>
+                                <p class="content-regular text-secondary line-clamp-3">
+                                    I've been using the SERPHouse API for the past two weeks and it's been amazing. It's reliable, easy to use and has made my workflow much smoother.
+                                </p>
+                                <p class="content-regular text-secondary font-medium mt-1.5">
+                                    December 5, 2025
+                                </p>
+                            </a>
+                        
+                        </div>
+                        <div class="swiper-slide w-full ">
+                            <img src="https://www.serphouse.com/images/homePage/stars-5.svg" width="144" height="27" loading="lazy"
+                                class="min-[1441px]:max-w-36 max-w-28 w-full" alt="5 stars rating">
+                            <a href="https://www.trustpilot.com/reviews/6931b3695f3eba92a4a864c8" target="_blank" rel="noopener noreferrer">
+                                <p class="content-subheading text-secondary mt-2">customer</p>
+                                <p class="content-regular text-secondary font-[450]  line-clamp-1 mt-1.5">
+                                    Best Serp api tool
+                                </p>
+                                <p class="content-regular text-secondary line-clamp-3">
+                                    I have been using serphouse API tool and it was great experience for as an SEO it help me with detailed serp insights and automation workflow.
+                                </p>
+                                <p class="content-regular text-secondary font-medium mt-1.5">
+                                    November 10, 2025
+                                </p>
+                            </a>
+                        
+                        </div>
+                        <div class="swiper-slide w-full ">
+                            <img src="https://www.serphouse.com/images/homePage/stars-5.svg" width="144" height="27" loading="lazy"
+                                class="min-[1441px]:max-w-36 max-w-28 w-full" alt="5 stars rating">
+                            <a href="https://www.trustpilot.com/reviews/676cf21c763b507f2144d36a" target="_blank" rel="noopener noreferrer">
+                                <p class="content-subheading text-secondary mt-2">Lo Lo</p>
+                                <p class="content-regular text-secondary font-[450]  line-clamp-1 mt-1.5">
+                                    Nice.
+                                </p>
+                                <ol class="list-decimal list-inside text-secondary line-clamp-3">
+                                    <li>JSON data is accurate and comprehensive;</li>
+                                    <li>API response is stable and fast;</li>
+                                    <li>Reasonable price;</li>
+                                    <li>Customer service response is fast;</li>
+                                </ol>
+                                <p class="content-regular text-secondary font-medium mt-1.5">
+                                    November 7, 2024
+                                </p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide w-full">
+                            <img src="https://www.serphouse.com/images/homePage/stars-5.svg" width="144" height="27" loading="lazy" class="min-[1441px]:max-w-36 max-w-28 w-full" alt="5 stars rating">
+                            <a href="https://www.trustpilot.com/reviews/66da62511c64d3149931de6d" target="_blank"
+                                rel="noopener noreferrer">
+                                <p class="content-subheading text-secondary mt-2">Mister Brooks</p>
+                                <p class="content-regular text-secondary mt-1.5 font-[450]  line-clamp-1">Great
+                                    services at a reasonable prices.
+                                </p>
+                                <p class="content-regular text-secondary line-clamp-3">Fast and reliable service with
+                                    all the features you might need at reasonable prices.
+                                    I noticed a clear difference in performance after switching from another service to
+                                    SERPHouse.They also have a great customer service. You can get help and everything
+                                    you
+                                    need in minutes.
+                                </p>
+                                <p class="content-regular font-medium text-secondary mt-1.5">
+                                    September
+                                    01, 2024</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide w-full">
+                            <img src="https://www.serphouse.com/images/homePage/stars-5.svg" width="144" height="27" loading="lazy" class="min-[1441px]:max-w-36 max-w-28 w-full" alt="5 stars rating">
+                            <a href="https://www.trustpilot.com/reviews/665d919bc35dfc2f666a5335" target="_blank"
+                                rel="noopener noreferrer">
+                                <p class="content-subheading text-secondary mt-2">Vivek O</p>
+                                <p class="content-regular text-secondary mt-1.5 font-[450]  line-clamp-1">Best SERP
+                                    API.</p>
+                                <p class="content-regular text-secondary line-clamp-3">Stable and
+                                    Reliable Service.
+                                    Customer support are awesome.</p>
+                                <p class="content-regular font-medium text-secondary mt-1.5">
+                                    May 16, 2024
+                                </p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide w-full">
+                            <img src="https://www.serphouse.com/images/homePage/stars-5.svg" width="144" height="27" loading="lazy" class="min-[1441px]:max-w-36 max-w-28 w-full" alt="5 stars rating">
+                            <a href="https://www.trustpilot.com/reviews/665021df956c976f4ef0c79c" target="_blank"
+                                rel="noopener noreferrer">
+                                <p class="content-subheading text-secondary mt-2">Bhaavik Das</p>
+                                <p class="content-regular text-secondary mt-1.5 font-[450]  line-clamp-1	">Fast and
+                                    Reliable SERP
+                                    API.
+                                </p>
+                                <p class="content-regular text-secondary line-clamp-3">
+                                    Customer support
+                                    is
+                                    very handy.</p>
+                                <p class="content-regular font-medium text-secondary mt-1.5"> May
+                                    17,
+                                    2024</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide w-full">
+                            <img src="https://www.serphouse.com/images/homePage/stars-5.svg" width="144" height="27" loading="lazy" class="min-[1441px]:max-w-36 max-w-28 w-full" alt="5 stars rating">
+                            <a href="https://www.trustpilot.com/reviews/65bc99f32cc6ec66f6c95f7a" target="_blank"
+                                rel="noopener noreferrer">
+                                <p class="content-subheading text-secondary mt-2">Harshad P</p>
+                                <p class="content-regular text-secondary mt-1.5 font-[450]  line-clamp-1	">Value for
+                                    Money 100%.</p>
+                                <p class="content-regular text-secondary line-clamp-3	">Ease of Use,
+                                    Great Customer Service,
+                                    Including new Features.</p>
+                                <p class="content-regular font-medium text-secondary mt-1.5">
+                                    January 26, 2024</p>
+
+                            </a>
+                        </div>
+                        <div class="swiper-slide w-full ">
+                            <img src="https://www.serphouse.com/images/homePage/stars-5.svg" width="144" height="27" loading="lazy"
+                                class="min-[1441px]:max-w-36 max-w-28 w-full" alt="5 stars rating">
+                            <a href="https://www.trustpilot.com/reviews/66deb8eb92e2ba4bbf85f3eb" target="_blank" rel="noopener noreferrer">
+                                <p class="content-subheading text-secondary mt-2">Akash chauhan</p>
+                                <p class="content-regular text-secondary font-[450]  line-clamp-1	 mt-1.5">Great
+                                    product and service.
+                                </p>
+                                <p class="content-regular text-secondary line-clamp-3">Great product.</p>
+                                <p class="content-regular text-secondary font-medium mt-1.5">
+                                    September 15, 2023
+                                </p>
+                            </a>
+                        
+                        </div>
+                        <div class="swiper-slide w-full">
+                            <img src="https://www.serphouse.com/images/homePage/stars-5.svg" width="144" height="27" loading="lazy" class="min-[1441px]:max-w-36 max-w-28 w-full" alt="5 stars rating">
+                            <a href="https://www.trustpilot.com/reviews/644784db64347205532d1a10" target="_blank"
+                                rel="noopener noreferrer">
+                                <p class="content-subheading text-secondary mt-2">Marco M</p>
+                                <p class="content-regular text-secondary mt-1.5 font-[450]  line-clamp-1	">Fantastic
+                                    Service.</p>
+                                <p class="content-regular text-secondary line-clamp-3">Fantastic service - love the
+                                    guys.</p>
+                                <p class="content-regular font-medium text-secondary mt-1.5">
+                                    April 25, 2023</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide w-full">
+                            <img src="https://www.serphouse.com/images/homePage/stars-5.svg" width="144" height="27" loading="lazy" class="min-[1441px]:max-w-36 max-w-28 w-full" alt="5 stars rating">
+                            <a href="https://www.trustpilot.com/reviews/6440ea1da142ade0df4362e7" target="_blank"
+                                rel="noopener noreferrer">
+                                <p class="content-subheading text-secondary mt-2">Jyo Jyo</p>
+                                <p class="content-regular text-secondary mt-1.5 font-[450]  line-clamp-1	">Great
+                                    service and support.</p>
+                                <p class="content-regular text-secondary line-clamp-3">They
+                                    came into a screenshare when we encountered a problem and guided us on best
+                                    solutions
+                                    and suggestions.</p>
+                                <p class="content-regular font-medium text-secondary mt-1.5">
+                                    April 07, 2023</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide w-full">
+                            <img src="https://www.serphouse.com/images/homePage/stars-5.svg" width="144" height="27" loading="lazy" class="min-[1441px]:max-w-36 max-w-28 w-full" alt="5 stars rating">
+                            <a href="https://www.trustpilot.com/reviews/6433b2a0fc80131bd48ab635" target="_blank"
+                                rel="noopener noreferrer">
+                                <p class="content-subheading text-secondary mt-2">Saurabh Chauhan</p>
+                                <p class="content-regular text-secondary mt-1.5 font-[450]  line-clamp-1	">Awesome
+                                    experience & support.</p>
+                                <p class="content-regular text-secondary line-clamp-3">
+                                    Thank you for everything ❤️.</p>
+                                <p class="content-regular font-medium text-secondary mt-1.5">
+                                    April 07, 2023</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide w-full">
+                            <img src="https://www.serphouse.com/images/homePage/stars-5.svg" width="144" height="27" loading="lazy" class="min-[1441px]:max-w-36 max-w-28 w-full" alt="5 stars rating">
+                            <a href="https://www.trustpilot.com/reviews/63b3f8f94d0773066a2c3e1b" target="_blank"
+                                rel="noopener noreferrer">
+                                <p class="content-subheading text-secondary mt-2">Ankita</p>
+                                <p class="content-regular text-secondary mt-1.5 font-[450]  line-clamp-1	 ">Very
+                                    stable and reliable API experience.</p>
+                                <p class="content-regular text-secondary line-clamp-3">I have with SERPHouse.com
+                                    Customer support is a next level, Always received
+                                    support within a few hours.</p>
+                                <p class="content-regular font-medium text-secondary mt-1.5">
+                                    January 02, 2023</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide w-full">
+                            <img src="https://www.serphouse.com/images/homePage/stars-5.svg" width="144" height="27" loading="lazy" class="min-[1441px]:max-w-36 max-w-28 w-full" alt="5 stars rating">
+                            <a href="https://www.trustpilot.com/reviews/63aad8ea4d0773066a261ba2" target="_blank"
+                                rel="noopener noreferrer" rel="noopener noreferrer">
+                                <p class="content-subheading text-secondary mt-2">Tim</p>
+                                <p class="content-regular text-secondary mt-1.5 font-[450]  line-clamp-1	">Highly
+                                    recommend.</p>
+                                <p class="content-regular text-secondary line-clamp-3">I really enjoy using this
+                                    service which saves me a lot of time and money. The API is powerful (advanced
+                                    search +
+                                    batch scheduled) with reasonable price so that I as a individual developer can
+                                    afford.
+                                    I
+                                    always get reply and support in minutes from their support team. That really solves
+                                    my
+                                    problem and anxiety quickly.
+                                </p>
+
+                                <p class="content-regular font-medium text-secondary mt-1.5">
+                                    November 22, 2022
+                                </p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide w-full">
+                            <img src="https://www.serphouse.com/images/homePage/stars-5.svg" width="144" height="27" loading="lazy" class="min-[1441px]:max-w-36 max-w-28 w-full" alt="5 stars rating">
+                            <a href="https://www.trustpilot.com/reviews/63a5763b2338b6d417a4f56a" target="_blank"
+                                rel="noopener noreferrer">
+                                <p class="content-subheading text-secondary mt-2">Matthaus Michalik</p>
+                                <p class="content-regular text-secondary mt-1.5 font-[450]  line-clamp-1	">Great API
+                                    for SERP Ranking.</p>
+                                <p class="content-regular text-secondary line-clamp-3">We use SERHouse for weekly
+                                    keyword tracking and we are very happy with the fast support and the data we get
+                                    over
+                                    the API.</p>
+
+                                <p class="content-regular font-medium text-secondary mt-1.5">
+                                    December 20, 2022</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide w-full">
+                            <img src="https://www.serphouse.com/images/homePage/stars-5.svg" width="144" height="27" loading="lazy" class="min-[1441px]:max-w-36 max-w-28 w-full" alt="5 stars rating">
+                            <a href="https://www.trustpilot.com/reviews/6375feea252cba2c02db498c" target="_blank"
+                                rel="noopener noreferrer">
+                                <p class="content-subheading text-secondary mt-2">Mr. K C</p>
+                                <p class="content-regular text-secondary mt-1.5 font-[450]  line-clamp-1	">Great
+                                    Service - Highly recommend</p>
+                                <p class="content-regular text-secondary line-clamp-3">Very helpful support team and
+                                    positive response from them.. Service is so fast and excellent API for less response
+                                    time. Thank you.</p>
+
+                                <p class="content-regular font-medium text-secondary mt-1.5">
+                                    November 16, 2022</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide w-full">
+                            <img src="https://www.serphouse.com/images/homePage/stars-5.svg" width="144" height="27" loading="lazy" class="min-[1441px]:max-w-36 max-w-28 w-full" alt="5 stars rating">
+                            <a href="https://www.trustpilot.com/reviews/63723941b84cc27618eb57c8" target="_blank"
+                                rel="noopener noreferrer">
+                                <p class="content-subheading text-secondary mt-2">Media Agency</p>
+                                <p class="content-regular text-secondary mt-1.5 font-[450]  line-clamp-1	">Top
+                                    service.</p>
+                                <p class="content-regular text-secondary line-clamp-3">Great communication and very
+                                    fast speed. Top service.</p>
+
+                                <p class="content-regular font-medium text-secondary mt-1.5">
+                                    November 11, 2022</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide w-full">
+                            <img src="https://www.serphouse.com/images/homePage/stars-5.svg" width="144" height="27" loading="lazy" class="min-[1441px]:max-w-36 max-w-28 w-full" alt="5 stars rating">
+                            <a href="https://www.trustpilot.com/reviews/636519f4b84cc27618e22600" target="_blank"
+                                rel="noopener noreferrer">
+                                <p class="content-subheading text-secondary mt-2">Yigit</p>
+                                <p class="content-regular text-secondary mt-1.5 font-[450]  line-clamp-1">Great
+                                    company and paying a lot of attention.</p>
+                                <p class="content-regular text-secondary line-clamp-3">Great company and paying lots
+                                    of attention for customer feedbacks - service is so fast and efficient. Love it!</p>
+
+                                <p class="content-regular font-medium text-secondary mt-1.5">
+                                    November 02, 2022</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide w-full">
+                            <img src="https://www.serphouse.com/images/homePage/stars-5.svg" width="144" height="27" loading="lazy" class="min-[1441px]:max-w-36 max-w-28 w-full" alt="5 stars rating">
+                            <a href="https://www.trustpilot.com/reviews/634e9c769b12f67dfee4575c" target="_blank"
+                                rel="noopener noreferrer">
+                                <p class="content-subheading text-secondary mt-2">Pedro</p>
+                                <p class="content-regular text-secondary mt-1.5 font-[450]  line-clamp-1">Simple and
+                                    excellent.</p>
+                                <p class="content-regular text-secondary line-clamp-3">This API
+                                    is very good and the support is great and fast. I am satisfied.</p>
+
+                                <p class="content-regular font-medium text-secondary mt-1.5">
+                                    October 18, 2022</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide w-full">
+                            <img src="https://www.serphouse.com/images/homePage/stars-5.svg" width="144" height="27" loading="lazy" class="min-[1441px]:max-w-36 max-w-28 w-full" alt="5 stars rating">
+                            <a href="https://www.trustpilot.com/reviews/6315e2e66a3e1ed2c3ca244b" target="_blank"
+                                rel="noopener noreferrer">
+                                <p class="content-subheading text-secondary mt-2">Matt Lobel</p>
+                                <p class="content-regular text-secondary mt-1.5 font-[450]  line-clamp-1">Excellent
+                                    API - Highly recommend.</p>
+                                <p class="content-regular text-secondary line-clamp-3">Excellent API for quickly
+                                    getting our SEO tool up and running. Well documented and it's scheduled batch
+                                    requests
+                                    feature is awesome. Highly recommend.</p>
+
+                                <p class="content-regular font-medium text-secondary mt-1.5">
+                                    September 05, 2022</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide w-full">
+                            <img src="https://www.serphouse.com/images/homePage/stars-5.svg" width="144" height="27" loading="lazy" class="min-[1441px]:max-w-36 max-w-28 w-full" alt="5 stars rating">
+                            <a href="https://www.trustpilot.com/reviews/62f600cc4c35e69ec52ac74d" target="_blank"
+                                rel="noopener noreferrer">
+                                <p class="content-subheading text-secondary mt-2">Hubert Janik</p>
+                                <p class="content-regular text-secondary mt-1.5 font-[450]  line-clamp-1">Very good
+                                    platform.</p>
+                                <p class="content-regular text-secondary line-clamp-3">Very helpful support. Issues
+                                    are done quite fast. Well documentation and stable API.</p>
+
+                                <p class="content-regular font-medium text-secondary mt-1.5">
+                                    August 12, 2022</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide w-full">
+                            <img src="https://www.serphouse.com/images/homePage/stars-5.svg" width="144" height="27" loading="lazy" class="min-[1441px]:max-w-36 max-w-28 w-full" alt="5 stars rating">
+                            <a href="https://www.trustpilot.com/reviews/5ed1de1b25e5d209b8f83b90" target="_blank"
+                                rel="noopener noreferrer" rel="noopener noreferrer">
+                                <p class="content-subheading text-secondary mt-2">Krishna Sutariya</p>
+                                <p class="content-regular text-secondary mt-1.5 font-[450]  line-clamp-1">Highly
+                                    Recommended.</p>
+                                <p class="content-regular text-secondary line-clamp-3">Happy to use SERPHouse.com for
+                                    my SEO work.</p>
+
+                                <p class="content-regular font-medium text-secondary mt-1.5">
+                                    May 30, 2020</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide w-full">
+                            <img src="https://www.serphouse.com/images/homePage/stars-5.svg" width="144" height="27" loading="lazy" class="min-[1441px]:max-w-36 max-w-28 w-full" alt="5 stars rating">
+                            <a href="https://www.trustpilot.com/reviews/5ed1dad625e5d209b8f83b10" target="_blank"
+                                rel="noopener noreferrer">
+                                <p class="content-subheading text-secondary mt-2">Jeson</p>
+                                <p class="content-regular text-secondary mt-1.5 font-[450]  line-clamp-1">Very nice
+                                    tool to use in SEO Industry.</p>
+                                <p class="content-regular text-secondary line-clamp-3">
+                                    I have been using SERPHouse.com API since a month, API speed is awesome,
+                                    response is exact what we seen in search engine.</p>
+
+                                <p class="content-regular font-medium text-secondary mt-1.5">
+                                    May 30, 2020</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide w-full">
+                            <img src="https://www.serphouse.com/images/homePage/stars-5.svg" width="144" height="27" loading="lazy" class="min-[1441px]:max-w-36 max-w-28 w-full" alt="5 stars rating">
+                            <a href="https://www.trustpilot.com/reviews/5e1c2f64c84545083440b2fa" target="_blank"
+                                rel="noopener noreferrer">
+                                <p class="content-subheading text-secondary mt-2">vijaykumar patoliya</p>
+                                <p class="content-regular text-secondary mt-1.5 font-[450]  line-clamp-1">100%
+                                    recommending SerpHouse API.</p>
+                                <p class="content-regular text-secondary line-clamp-3 "> I love to use it. It works
+                                    like a charm for Google and Bing SERP API JSON response.
+                                    Support is also awesome if need any custom requirement.</p>
+
+                                <p class="content-regular font-medium text-secondary mt-1.5">
+                                    May 30, 2020</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="swiper-button-prev max-w-[30px] absolute left-0 max-h-[30px] xl:h-full w-full py-2 sm:py-0.5 border border-[#D3D3D3] rounded-md">
+                    <img src="https://www.serphouse.com/images/homePage/navigation-arrow.png" width="8" height="13" class="w-2" alt="previous button">
+                </div>
+                <div
+                    class="swiper-button-next max-w-[30px] absolute right-0 max-h-[30px] xl:h-full  w-full py-2 sm:py-0.5 border border-[#D3D3D3] rounded-md">
+                    <img src="https://www.serphouse.com/images/homePage/navigation-arrow.png" width="8" height="13" class="w-2 rotate-180" alt="next button">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section><section class="padding-horizontal bg-lavender flex justify-center scale-your-business">
+    <div class=" max-w-[738px] w-full min-[1441px]:py-[90px] xl:py-[70px] lg:py-16 md:py-14 py-12">
+        <h2 class="text-primary-dark text-center max-w-md w-full mx-auto sub-title">Scale Up Your Business with SERPHouse</h2>
+        <div class="flex justify-center">
+            <div
+                class="flex flex-col flex-wrap sm:items-center md:gap-x-8 gap-x-5 gap-y-[10px] 2xl:mt-6 mt-4 sm:flex-row sm:justify-start">
+                <p class="content-regular font-normal text-primary-dark flex items-center gap-x-2.5 xl:gap-x-[9px]">
+                    <img src="https://www.serphouse.com/images/homePage/ok-img.png" width="16" height="10" class="h-[10px] w-[16.34px]" alt="true sign" />
+                4,000 free searches
+                </p>
+                <p class="content-regular font-normal text-primary-dark flex items-center gap-x-2.5 xl:gap-x-[9px]">
+                    <img src="https://www.serphouse.com/images/homePage/ok-img.png" width="16" height="10" class="h-[10px] w-[16.34px]" alt="true sign" />
+                    No credit card required
+                </p>
+                <p class="content-regular font-normal text-primary-dark flex items-center gap-x-2.5 xl:gap-x-[9px]">
+                    <img src="https://www.serphouse.com/images/homePage/ok-img.png" width="16" height="10" class="h-[10px] w-[16.34px]" alt="true sign" />
+                    Cancel at any time
+                </p>
+            </div>
+        </div>
+        <div class="mt-5 flex gap-7 justify-center sm:flex-nowrap flex-wrap">
+            <a href="https://www.serphouse.com/register" class="">
+                <p
+                    class="minor-subheading 2xl:px-9 px-7 2xl:py-3 py-2 bg-primary border border-transparent w-full rounded-full text-white">
+                    Try free for 1 week
+                </p>
+            </a>
+            <a href="https://www.serphouse.com/enterprise-custom-plan-offering" class="">
+                <p
+                    class="minor-subheading 2xl:px-8 px-7 2xl:py-3 py-2 w-full rounded-full text-primary border border-primary">
+                    Contact sales
+                </p>
+            </a>
+        </div>
+    </div>
+</section>
+    
+    <section class="footer bg-primary-dark padding-horizontal">
+    <div class="mx-auto max-w-screen-1xl lg:pt-[50px] pt-[33px] lg:pb-[26px] pb-[15px] ">
+
+        <div class="grid grid-cols-1 gap-y-[30px] lg:grid-cols-2 sm:grid-cols-2">
+            <div class="lg:pr-[30px] min-[500px]:pr-[30px] xl:pr-1 sm:pr-[20px]">
+                <div>
+                    <img src="https://www.serphouse.com/images/homePage/serphouse-logo.png" class="2xl:max-w-[70px] max-w-14 w-full"
+                        alt="Serphouse logo" />
+                    <p class="content-regular sm:mt-[30.58px] mt-7 sm:max-w-lg w-full text-footer-white">
+                        High Volume API for SEO companies, data mining services,
+                        and SEO Tool Suite as a SaaS.
+                    </p>
+                    <div class="mt-[20px] border-l-[2px] border-white">
+                        <p
+                            class="medium-body-text font-normal max-w-[389px] sm:pb-4 pb-3 min-[500px]:pl-[27px] pl-5 sm:pt-4 pt-3 text-footer-white">
+                            203-208, Silver Trade Center, Near Oxygen Park, Opp.
+                            GEB Power House, Utran, Surat 394105, Gujarat,
+                            India.
+                        </p>
+                    </div>
+                </div>
+                <p class="minor-subheading mt-[28px] text-footer-white">Follow Us</p>
+                <div class="mt-[13.7px] flex items-center gap-x-[26.36px]">
+                    <a href="https://www.facebook.com/serphouse/" target="_blank">
+                        <img src="https://www.serphouse.com/images/homePage/facebook-logo.png" class="h-[30.33px] w-[30.51px]"
+                            alt="Facebook icon" />
+                    </a>
+                    <a href="https://www.linkedin.com/company/serphouse/" target="_blank">
+                        <img src="https://www.serphouse.com/images/homePage/linkedin-logo.png" class="h-[27.9px] w-[27.9px]"
+                            alt="Linkedin icon" />
+                    </a>
+                </div>
+            </div>
+
+            <div
+                class="footer-link grid md:pl-[20px] sm:pl-[20px] lg:pl-0 sm:max-lg:border-l border-[#FFFFFF33] sm:gap-y-[25px]  xl:grid-cols-[180px_200px_180px_auto] lg:grid-cols-4 sm:grid-cols-2 min-[560px]:grid-cols-3">
+                <div class="min-[0px]:max-[560px]:border-b border-[#FFFFFF33] min-[0px]:max-[560px]:pb-[19px]">
+                    <p class="minor-subheading font-bold text-footer-white">Use Cases</p>
+                    <p class="mt-[9px]">
+                        <a href="https://www.serphouse.com/use-cases/local-seo" class="content-regular text-footer-white">Local SEO</a>
+                    </p>
+                    <p class="mt-[9px]">
+                        <a href="https://www.serphouse.com/use-cases/price-monitoring" class="content-regular text-footer-white">Price Monitoring</a>
+                    </p>
+                    <p class="mt-[9px]">
+                        <a href="https://www.serphouse.com/use-cases/real-time-news-monitoring" class="content-regular text-footer-white">News Monitoring</a>
+                    </p>
+                    <p class="mt-[9px]">
+                        <a href="https://www.serphouse.com/use-cases/ai-overviews" class="content-regular text-footer-white">AI Overviews</a>
+                    </p>
+                    <p class="mt-[9px]">
+                        <a href="https://www.serphouse.com/use-cases/ai-agents" class="content-regular text-footer-white">AI Agents</a>
+                    </p>
+                    <p class="mt-[9px]">
+                        <a href="https://www.serphouse.com/use-cases/rag-pipelines" class="content-regular text-footer-white">RAG Pipelines</a>
+                    </p>
+                    <p class="mt-[9px]">
+                        <a href="https://www.serphouse.com/use-cases/langchain-llamaindex-integration" class="content-regular text-footer-white">LangChain & LlamaIndex</a>
+                    </p>
+                    <p class="mt-[9px]">
+                        <a href="https://www.serphouse.com/use-cases/rank-tracker" class="content-regular text-footer-white">Rank Tracker</a>
+                    </p>
+                </div>
+                <div class="min-[0px]:max-[560px]:border-b border-[#FFFFFF33] min-[0px]:max-[560px]:pb-[19px]">
+                    <p class="minor-subheading font-bold  text-footer-white">
+                        API
+                    </p>
+                    <p class="lg:mt-3 mt-2">
+                        <a href="https://www.serphouse.com/web-search-api" class="content-regular text-footer-white">Web Search API</a>
+                    </p>
+                    
+                    <p class="lg:mt-3 mt-2">
+                        <a href="https://www.serphouse.com/serp-api" class="content-regular  text-footer-white">SERP API</a>
+                    </p>
+                    <p class="lg:mt-3 mt-2"> <a href="https://www.serphouse.com/google-serp-api"
+                            class="content-regular  text-footer-white">
+                            Google API</a>
+                    </p>
+
+                    <p class="mt-[9px] ">
+                        <a href="https://www.serphouse.com/bing-serp-api" class="content-regular text-footer-white">Bing API</a>
+                    </p>
+                    <p class="mt-[9px]">
+                        <a href="https://www.serphouse.com/yahoo-serp-api" class="content-regular text-footer-white">Yahoo API</a>
+                    </p>
+                    <div class="w-full mt-5">
+                        <p class="minor-subheading font-bold text-footer-white">Alternatives</p>
+                        <p class="mt-[9px]">
+                            <a href="https://www.serphouse.com/serpapi-alternative" class="content-regular text-footer-white">SerpApi Alternative</a>
+                        </p>
+                        <p class="mt-[9px]">
+                            <a href="https://www.serphouse.com/scraperapi-alternative" class="content-regular text-footer-white">ScraperAPI Alternative</a>
+                        </p>
+                        <p class="mt-[9px]">
+                            <a href="https://www.serphouse.com/scrapingdog-alternative" class="content-regular text-footer-white">ScrapingDog Alternative</a>
+                        </p>
+                        <p class="mt-[9px]">
+                            <a href="https://www.serphouse.com/scrapingbee-alternative" class="content-regular text-footer-white">ScrapingBee Alternative</a>
+                        </p>
+                    </div>
+                </div>
+                <div
+                    class="min-[0px]:max-[560px]:border-b border-[#FFFFFF33] min-[0px]:max-[560px]:pb-[19px] min-[0px]:max-[560px]:pt-[19px] sm:max-w-40">
+                    <p class="minor-subheading font-bold text-footer-white">Help & Support</p>
+                    <p class="lg:mt-3 mt-2">
+                        <a href="https://www.serphouse.com/about-us" class="content-regular text-footer-white">About Us</a>
+                    </p>
+                    <p class="mt-[9px]">
+                        <a href="https://www.serphouse.com/contact-us" class="content-regular text-footer-white">Contact Us</a>
+                    </p>
+                    <p class="mt-[9px]">
+                        <a href="https://www.serphouse.com/blog" class="content-regular text-footer-white">Blog</a>
+                    </p>
+                    <p class="mt-[9px]">
+                        <a href="https://www.serphouse.com/frequently-asked-questions" class="content-regular text-footer-white">FAQs</a>
+                    </p>
+                    <div class="w-full mt-5">
+                        <p class="minor-subheading font-bold text-footer-white">More Reading</p>
+                        <p class="mt-[9px]">
+                            <a href="https://www.serphouse.com/compare-serphouse" class="content-regular text-footer-white">Compare</a>
+                        </p>
+                        <p class="mt-[9px]">
+                            <a href="https://www.serphouse.com/serp-api/united-states" class="content-regular text-footer-white">SERP API for USA</a>
+                        </p>
+                        <p class="mt-[9px]">
+                            <a href="https://www.serphouse.com/serp-api/united-kingdom" class="content-regular text-footer-white">SERP API for UK</a>
+                        </p>
+                        <p class="mt-[9px]">
+                            <a href="https://www.serphouse.com/serp-api/india" class="content-regular text-footer-white">SERP API for India</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="min-[0px]:max-[560px]:pt-[19px] sm:max-lg:col-span-2">
+                    <p class="minor-subheading font-bold text-footer-white">Features</p>
+                    <p class="lg:mt-3 mt-2">
+                        <a href="https://www.serphouse.com/serp-types" class="content-regular text-footer-white">SERP Types</a>
+                    </p>
+                    <p class="mt-[9px]">
+                        <a href="https://www.serphouse.com/device-targeting" class="content-regular text-footer-white">Device Types</a>
+                    </p>
+                    <p class="mt-[9px]">
+                        <a href="https://www.serphouse.com/worldwide-locations-support" class="content-regular text-footer-white">Worldwide Locations</a>
+                    </p>
+                    <p class="mt-[9px]">
+                        <a href="https://www.serphouse.com/visual-page-parsing"
+                            class="content-regular text-footer-white">Visual Page Parsing</a>
+                    </p>
+                    <p class="mt-[9px]">
+                        <a href="https://www.serphouse.com/bulk-processing" class="content-regular text-footer-white"> Bulk Processing</a>
+                    </p>
+                    <p class="mt-[9px]">
+                        <a href="https://www.serphouse.com/data-formats" class="content-regular text-footer-white">Data Formats</a>
+                    </p>
+                    <p class="mt-[9px]">
+                        <a href="https://www.serphouse.com/postback-url" class="content-regular text-footer-white">Postback & Pingback URL</a>
+                    </p>
+                    <p class="mt-[9px]">
+                        <a href="https://www.serphouse.com/no-trace" class="content-regular text-footer-white">No Trace Mode</a>
+                    </p> 
+                </div>
+            </div>
+        </div>
+        <div class="lg:mt-[54.97px] sm:mt-[42px] mt-[19px] w-full border-b-[1px] border-[#564681]"></div>
+        <div class="lg:mt-[25px] mt-[21px] flex flex-col items-center gap-y-[15px] sm:flex-row sm:justify-between">
+            <p class=" footer-copyright-privacy text-footer-white">
+                Copyright ©2026 SERPHouse.            </p>
+            <div class="flex">
+                <a href="https://www.serphouse.com/terms-of-service"
+                    class=" footer-copyright-privacy text-footer-white border-r-[1px] border-white pr-[10px] sm:pr-[27px]">
+                    Terms of Service
+                </a>
+                <a href="https://www.serphouse.com/privacy-policy"
+                    class=" footer-copyright-privacy text-footer-white ml-[10px] sm:ml-[30px]">
+                    Privacy Policy
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</section>
+    <div class="js-cookie-consent cookie-consent fixed bottom-10 right-10 z-50">
+    <div class="mx-auto shadow-custom-cookie rounded-[20px] float-right bg-white w-[360px]">
+        <div class="py-6 px-8 rounded-[20px]">
+            <div class="items-center justify-around">
+                <div class="max-w-full items-center text-center">
+                    <p class="md:ml-3 cookie-consent__message text-secondary">
+                        We use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you are happy with it.
+                    </p>
+                </div>
+                <div class="mt-6 flex items-center gap-6 justify-center">
+                    <a target="_blank" href="https://www.serphouse.com/privacy-policy" class="cursor-pointer w-[135px] px-4 py-2 text-sm font-medium text-secondary rounded-2xl border-[0.3px] border-[#BFBFBF]">
+                        Privacy Policy
+                    </a>
+                    <button class="js-cookie-consent-agree cookie-consent__agree cursor-pointer w-[60px] px-4 py-2 text-sm font-medium bg-primary text-white rounded-2xl">
+                        Ok
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+
+        window.laravelCookieConsent = (function () {
+
+            const COOKIE_VALUE = true;
+            const COOKIE_DOMAIN = 'www.serphouse.com';
+
+            function consentWithCookies() {
+                setCookie('cookie_notice_accepted', COOKIE_VALUE, 365);
+                hideCookieDialog();
+            }
+
+            function cookieExists(name) {
+                return (document.cookie.split('; ').indexOf(name + '=' + COOKIE_VALUE) !== -1);
+            }
+
+            function hideCookieDialog() {
+                const dialogs = document.getElementsByClassName('js-cookie-consent');
+
+                for (let i = 0; i < dialogs.length; ++i) {
+                    dialogs[i].style.display = 'none';
+                }
+            }
+
+            function setCookie(name, value, expirationInDays) {
+                const date = new Date();
+                date.setTime(date.getTime() + (expirationInDays * 24 * 60 * 60 * 1000));
+                document.cookie = name + '=' + value
+                    + ';expires=' + date.toUTCString()
+                    + ';domain=' + COOKIE_DOMAIN
+                    + ';path=/'
+                    + '';
+            }
+
+            if (cookieExists('cookie_notice_accepted')) {
+                hideCookieDialog();
+            }
+
+            const buttons = document.getElementsByClassName('js-cookie-consent-agree');
+
+            for (let i = 0; i < buttons.length; ++i) {
+                buttons[i].addEventListener('click', consentWithCookies);
+            }
+
+            return {
+                consentWithCookies: consentWithCookies,
+                hideCookieDialog: hideCookieDialog
+            };
+        })();
+    </script>
+
+
+    <script src="https://www.serphouse.com/js/jquery3.7.1_cdn.js"></script>
+    <script src="https://www.serphouse.com/js/select2.4.0.13.js"></script>
+    <script src="https://www.serphouse.com/js/prism.js"></script>
+    <script src="https://www.serphouse.com/js/prism_normalize_whitespace.js "></script>
+    <script src="https://www.serphouse.com/js/clipboard.v2.0.11.min.js "></script>
+    <script src="https://www.serphouse.com/js/swiper.js"></script>
+    <script src="https://www.serphouse.com/js/api_playground_core.js"></script>
+    <script src="https://www.serphouse.com/js/main.js"></script>
+    
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+                        <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/6400009.js"></script>
+            
+            <!-- Google tag (gtag.js) -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-LQ7KVFH849"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-LQ7KVFH849');
+            </script>
+            <script type="text/javascript">
+                function trq(){(trq.q=trq.q||[]).push(arguments);}
+                trq('account', 't-5da81ab90ea6364892792f9c');
+                var _paq=_paq||[];
+                _paq.push(['trackPageView']);
+                _paq.push(['enableLinkTracking']);
+
+                (function() {
+                    var u="//capturly.com/";
+                    _paq.push(["setTrackerUrl", u+"capturly-track.php"]);
+                    _paq.push(['setSiteId', '2852']);
+                    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'capturly-track-js.js';
+                    s.parentNode.insertBefore(g,s);
+                })();
+            </script>
+            <script type="text/javascript">
+                (function(c,l,a,r,i,t,y){
+                    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+                })(window, document, "clarity", "script", "u0q3ecl5ng");
+            </script>
+                <script>
+$(document).ready(function () {
+    // Select2 setup
+    $('#domainStatic').select2({
+        placeholder: "Select a Domain",
+        minimumInputLength: 1,
+        language: {
+            inputTooShort: function () {
+                return 'Please enter 1 or more characters';
+            },
+        },
+        ajax: {
+            url: '/serp/domains',
+            method: 'GET',
+            dataType: 'json',
+            data: function (params) {
+                return {
+                    term: params.term,
+                    f_type: 'dropdown'
+                };
+            },
+            processResults: function (data) {
+                let domains = [];
+                let items = data.result || data;
+                let list = [];
+                if (Array.isArray(items)) {
+                    list = items;
+                } else if (typeof items === 'object') {
+                    list = Object.keys(items).map(k => items[k]);
+                }
+                $.each(list, function (key, value) {
+                    domains.push({
+                        'id': value,
+                        'text': value
+                    });
+                });
+                return {
+                    'results': domains
+                };
+            }
+        }
+    });
+
+    $('#locationStatic').select2({
+        placeholder: "Select a Location",
+        minimumInputLength: 2,
+        language: {
+            inputTooShort: function () {
+                return 'Please enter 2 or more characters';
+            }
+        },
+        ajax: {
+            url: '/serp/locations',
+            method: 'GET',
+            dataType: 'json',
+            data: function (params) {
+                let domainText = $("#domainStatic option:selected").text().trim();
+                return {
+                    term: params.term,
+                    f_type: 'dropdown',
+                    type: domainText.includes('bing') ? 'bing' : ''
+                };
+            },
+            processResults: function (response) {
+                let location = [];
+                let items = response.data || response;
+                if (Array.isArray(items)) {
+                    $.each(items, function (key, value) {
+                        location.push({
+                            'id': value.loc || value.id,
+                            'text': value.loc || value.name || value.text
+                        });
+                    });
+                }
+                return {
+                    'results': location
+                };
+            }
+        }
+    });
+
+    $('#languageStatic').select2({
+        placeholder: "Select a Language",
+        minimumInputLength: 1,
+        language: {
+            inputTooShort: function () {
+                return 'Please enter 1 or more characters';
+            }
+        },
+        ajax: {
+            url: '/serp/language',
+            method: 'GET',
+            data: function (params) {
+                return {
+                    term: params.term,
+                    f_type: 'dropdown',
+                    domain: $("#domainStatic option:selected").text().trim()
+                };
+            },
+            dataType: 'json',
+            processResults: function (data) {
+                let language = [];
+                let items = data.result || data;
+                if (items) {
+                    $.each(items, function (key, value) {
+                        language.push({
+                            'id': key,
+                            'text': value
+                        });
+                    });
+                }
+                return {
+                    'results': language
+                };
+            }
+        }
+    });
+
+    $('#domainStatic').on('change', function (e) {
+        e.stopPropagation();
+        
+        let langSelect = $('#languageStatic');
+        let currentLangVal = langSelect.val();
+        let domain = $(this).val();
+
+        $.get('/serp/language', { term: '', f_type: 'dropdown', domain: domain }, function(data) {
+            let items = data.result || data;
+            if (currentLangVal && items && items[currentLangVal]) {
+                let label = items[currentLangVal];
+                let newOption = new Option(label, currentLangVal, true, true);
+                langSelect.empty().append(newOption).trigger('change');
+            } else {
+                langSelect.empty().val(null).trigger('change');
+            }
+        }).fail(function() {
+            langSelect.empty().val(null).trigger('change');
+        });
+    });
+
+    $('#searchFormStatic').on('submit', function (e) {
+        e.preventDefault();
+        
+        if (grecaptcha.getResponse() === "") {
+            alert("Captcha is required.");
+            return;
+        }
+
+        $('.loader-container').addClass('loading');
+
+        let submitButton = $('#searchStatic');
+        submitButton.attr("disabled", "disabled");
+        submitButton.text('Processing...');
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        let formData = $('#searchFormStatic').serialize();
+
+        $.ajax({
+            url: '/serp/search',
+            data: formData,
+            type: 'POST',
+            success: function (response) {
+                let iframe = $("#iframe-block-static").contents().find('body');
+                if (response.status == true) {
+                    let htmlData = response.data.html;
+                    let jsonData = response.data.json;
+
+                    $('#code-block-static').text(JSON.stringify(jsonData, null, 2));
+
+                    if (htmlData) {
+                        $('#iframe-block-static').removeAttr('src');
+                        $('#iframe-block-static').attr('srcdoc', htmlData);
+                    } else {
+                        $('#iframe-block-static').removeAttr('src');
+                        $('#iframe-block-static').removeAttr('srcdoc');
+                    }
+                } else {
+                    $('#iframe-block-static').removeAttr('src');
+                    $('#iframe-block-static').removeAttr('srcdoc');
+                    $('#code-block-static').text(JSON.stringify(response, null, 4));
+                }
+                submitButton.text('Search');
+                submitButton.removeAttr("disabled");
+                Prism.highlightElement(document.querySelector('#code-block-static'));
+                $('.loader-container').removeClass('loading');
+                if (typeof grecaptcha !== 'undefined') {
+                    grecaptcha.reset();
+                }
+            },
+            error: function (xhr) {
+                $('.loader-container').removeClass('loading');
+                submitButton.text('Search');
+                submitButton.removeAttr("disabled");
+            }
+        });
+    });
+
+    setTimeout(() => {
+        $('.loader-container').removeClass('loading');
+        const apiPlayGroundIframe = document.getElementById('iframe-block-static');
+        if (apiPlayGroundIframe) {
+            apiPlayGroundIframe.src = '/data/chatgpt.html';
+        }
+
+        const codeBlock = document.getElementById('code-block-static');
+        if (codeBlock) {
+            fetch('/data/chatgpt.json')
+            .then(response => response.json())
+            .then(data => {
+                if (codeBlock) {
+                    codeBlock.textContent = JSON.stringify(data, null, 2);
+                    Prism.highlightElement(codeBlock);
+                }
+                let submitButton = $('#searchStatic');
+                if (submitButton.length) {
+                    submitButton.text('Search');
+                    submitButton.removeAttr("disabled");
+                }
+            })
+            .catch(error => {
+                console.error('Error loading code block content:', error);
+                codeBlock.textContent = "Error loading content.";
+                let submitButton = $('#searchStatic');
+                if (submitButton.length) {
+                    submitButton.text('Search');
+                    submitButton.removeAttr("disabled");
+                }
+            });
+        }
+    }, 5000);
+});
+</script>
+</body>
+
+</html>

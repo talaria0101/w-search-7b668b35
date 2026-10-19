@@ -1,0 +1,125 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="cleartype" content="on">
+    <title>
+ Throttles  - 
+        Stack Exchange API
+    </title>
+    <link rel="stylesheet" href="https://cdn.sstatic.net/apiv2/all.css?v=1c289caba433">
+        <script nonce="s8/xyZkjg/fM+uKEbPyKd6AIz2OWfTDRURtarzGoUto=" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+</head>
+<body>
+    <div class="outside header">
+        <div class="inside">
+            <div class="logo">
+                <svg aria-hidden="true" class="native svg-icon iconLogoNew js-svg" width="238" height="30" viewBox="0 0 238 30"><path fill="var(--black-600)" d="m21.82 16.05.04.02h-.01za18 18 0 0 0-2.42 4.07q0 .04-.03.07a18 18 0 0 0-1.26 4.53v.03a18 18 0 0 0-.05 4.76H0v-5h15.72l.06-.38-15.1-4 1.25-4.63 15.3 4.05.21-.46-13.72-7.83 2.42-4.15 13.93 7.94.34-.4L9 3.4 12.43 0l11.6 11.45 1.22 1.21a19 19 0 0 0-3.43 3.39m192.82-3.35h4.04l2.41 12.6 2.8-12.6h4.1l2.8 12.64 2.5-12.64h4l-4.04 16.82h-5l-2.28-10.3-2.28 10.3h-5.01zm-8.91-.48c5.18 0 8.56 3.7 8.56 8.9 0 5.22-3.38 8.88-8.56 8.88s-8.6-3.66-8.6-8.87c0-5.22 3.39-8.91 8.6-8.91m-4.73 8.9c0 3.18 1.59 5.46 4.73 5.46s4.73-2.28 4.73-5.45-1.59-5.53-4.73-5.53-4.73 2.42-4.73 5.53M191.44 7v22.52h3.8V7zm-4.08 0c-3.62 0-5.35 1.7-5.35 4.7v1h-1.73v3.21h1.73v13.6h3.76v-13.6h3.7v-3.2h-3.7V11.7q.01-1.47 1.63-1.48h2.41V7zm-17.6 5.7v16.82h3.76v-13.6h5.42V12.7zm-9.6 17.3c-5.22 0-8.6-3.66-8.6-8.87 0-5.22 3.38-8.91 8.6-8.91 4.55 0 8.46 3.7 7.63 10.15h-12.26c.31 2.45 1.76 4.21 4.63 4.21 1.97 0 3.2-1.04 3.73-2.42h3.93c-.72 3.46-3.59 5.84-7.66 5.84m-4.56-10.74h8.49c-.2-2-1.45-3.66-3.94-3.66-2.62 0-4.03 1.52-4.56 3.66m-19.75-6.56h4.04l3.76 13.43 3.8-13.43h4.04l-5.25 16.82h-5.15zm-21.44 6.63c0-5.77 3.7-10.63 10.4-10.63s10.35 4.87 10.35 10.63S131.46 30 124.8 30s-10.39-4.84-10.39-10.67m16.67 0c0-3.45-1.9-7.11-6.28-7.11s-6.39 3.66-6.39 7.1c0 3.46 1.97 7.16 6.39 7.16s6.28-3.7 6.28-7.15M96.01 9.18h3.8v10.25l5.41-6.73h4.46l-5.46 6.77 6.01 10.04h-4.21l-4.08-7.28-2.14 2.7v4.58H96zM86.27 30c-5.18 0-8.56-3.66-8.56-8.87 0-5.22 3.38-8.91 8.56-8.91 4.6 0 7.8 3.38 7.84 7.08h-3.94c-.1-1.83-1.2-3.66-3.9-3.66-3.28 0-4.7 2.38-4.7 5.49 0 3.1 1.42 5.42 4.7 5.42 2.8 0 3.9-1.97 4-4.08h3.9c-.06 4.35-3.14 7.53-7.9 7.53M66.9 12.22c2.38 0 4.04.96 5.1 2.66V12.7h3.77v16.8h-3.76v-2.14C71 29 69.38 30 66.9 30c-4.7 0-7.56-3.66-7.56-8.87 0-5.22 2.86-8.91 7.56-8.91m-3.7 8.9c0 3.18 1.53 5.46 4.29 5.46 3.04 0 4.52-2.35 4.52-5.45s-1.48-5.53-4.52-5.53c-2.76 0-4.28 2.32-4.28 5.53M49.23 12.7h2.25V9.18h3.76v3.52h2.87v3.21h-2.87v10.4h3.35v3.2h-7.11v-13.6h-2.25zm-9.5 13.81c2.43 0 4.19-.93 4.19-2.66 0-4.28-12.78-.38-12.78-8.97 0-3.35 3.18-6.18 8.29-6.18 4.49 0 8.15 2.93 8.15 7.15h-4.04c-.18-2.28-1.49-3.63-4.25-3.63s-4.14 1.1-4.14 2.66c0 4.66 12.74.45 12.74 8.97 0 3.94-3.11 6.15-8.36 6.15-4.87 0-8.49-3.07-8.63-7.18h4.07c.21 2.31 2.18 3.7 4.77 3.7"></path></svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="outside content">
+        <div class="inside">
+            <div class="mainbar">
+                
+<div class="subheader">
+    <h1>Throttles</h1>
+</div>
+
+<h2>Discussion</h2>
+<div class="indented">
+    <p>In order to prevent abuse the API implements a number of throttles.</p>
+
+    <p>Every application is subject to an IP based concurrent request throttle.  If a single IP is making more than 30 requests a second, new requests will
+    be dropped.  The exact ban period is subject to change, but will be on the order of 30 seconds to a few minutes typically.  Note that
+    exactly what response an application gets (in terms of HTTP code, text, and so on) is undefined when subject to this ban; we consider > 30 request/sec per IP
+    to be very abusive and thus cut the requests off very harshly.</p>
+    
+    <p>After that, applications are sorted into two distinct throttles.  Those with, and those without, valid access_tokens (obtained via <a href="/docs/authentication">authenticating</a> a user).</p>
+
+    <p>If an application <strong>does not</strong> have an access_token, then the application shares an IP based quota with all other applications on that IP.
+    This quota is based on the <code>key</code> being passed by the applications; it is the max of the daily request limit for the applications involved,
+    which by default is 10,000.  This quota scheme is essentially unchanged from earlier versions of the API.</p>
+
+    <p>If an application <strong>does</strong> have an access_token, then the application is on a distinct user/app pair daily quota (default size of 10,000).
+    A user can have up to 5 distinct quotas at any one time, though this limit is not reflected in <code>quota_remaining</code> returns for privacy reasons.</p>
+
+    <p>A dynamic throttle is also in place on a per-method level.  If an application receives a response with the <code>backoff</code> field set, it <em>must</em>
+    wait that many seconds before hitting the same method again.  For the purposes of throttling, all /me routes are considered to be identical to their
+    /users/{ids} equivalent.  Note that <code>backoff</code> is set based on a combination of factors, and may not be consistently returned for the same
+    arguments to the same method.  Additionally, all methods (even seemingly trivial ones) may return <code>backoff</code>.</p>
+
+    <p>While not strictly a throttle, the API employs heavy caching and as such no application should make semantically identical requests more 
+        than once a minute. This is generally a waste of bandwidth as, more often than not, the exact same result will be returned.</p>
+
+</div>
+            </div>
+                    
+
+<div class="sidebar">
+    <div class="module help">
+        <div class="mobile-nav">Navigation <span class="mobile-nav-arrow"></span></div>
+        <div class="help-list">
+            <ul>
+                <li><a href="/docs">Overview</a></li>
+                <li class="list-separator"></li>
+                <li><a href="/docs/authentication">Authentication</a></li>
+                    <li><a href="/docs/mcp-server">MCP Server</a></li>
+                <li><a href="/docs/js-lib">JavaScript SDK</a></li>
+                <li class="list-separator"></li>
+                <li><a href="/docs/vectors">Batching Requests</a></li>
+                <li><a href="/docs/min-max">Complex Queries</a></li>
+                <li><a href="/docs/duplicate-requests">Duplicate Requests</a></li>
+                <li><a href="/docs/filters">Filters</a></li>
+                <li><a href="/docs/paging">Paging</a></li>
+                <li class="list-separator"></li>
+                <li><a href="/docs/dates">Dates</a></li>
+                <li><a href="/docs/numbers">Numbers</a></li>
+                <li class="list-separator"></li>
+                <li><a href="/docs/compression">Compression</a></li>
+                <li><a href="/docs/error-handling">Error Handling</a></li>
+                <li><a href="/docs/wrapper">Response Wrapper</a></li>
+                <li><a href="/docs/throttle" class="youarehere">Rate Limiting</a></li>
+                <li><a href="/docs/user-types">Users</a></li>
+                <li class="list-separator"></li>
+                <li><a href="/docs/write">Write</a></li>
+                <li class="list-separator"></li>
+                <li><a href="/docs/change-log">Change Log</a></li>
+                <li class="list-separator"></li>
+                <li><a href="https://stackexchange.com/legal/api-terms-of-use">Terms Of Use</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+        </div>
+
+        <div class="bottom">
+            <div class="bottom-wrapper">
+                
+            </div>
+        </div>
+    </div>
+        <div class="outside footer">
+    <!-- StackOverflow.Api.V2 2026.5.26.43284 -->
+    <div class="inside"> 
+        <p class="footer-links"><a href="https://stackexchange.com/about">about</a> <a href="https://stackoverflow.blog">blog</a> <a href="https://stackexchange.com/legal/api-terms-of-use">terms of use</a> <a href="/cdn-cgi/l/email-protection#0c78696d61276d7c654c7f786d6f6769746f646d626b69226f6361">contact us</a> <a href="http://stackapps.com/">feedback always welcome</a></p>
+        <p class="csp-mb0">site design / logo &copy; 2026 Stack Exchange, Inc; user contributions licensed under <a href="https://stackoverflow.com/help/licensing" rel="license">CC BY-SA</a></p>
+    </div>
+    <br class="csp-clear" />
+</div>
+
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script nonce="s8/xyZkjg/fM+uKEbPyKd6AIz2OWfTDRURtarzGoUto=">
+        $(function() {
+            $(".mobile-nav").on("click", function() {
+                $(".help-list").toggleClass("active");
+            });
+        });
+    </script>
+</body>
+</html>

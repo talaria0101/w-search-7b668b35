@@ -1,0 +1,143 @@
+# Serpstat
+
+> Serpstat is an AI search and SEO intelligence platform that helps marketers, agencies, and in-house teams win visibility across both traditional search engines and AI-driven discovery surfaces (ChatGPT, Claude, Gemini, Perplexity, Google AI Overviews). It combines keyword research, competitor analysis, rank tracking, backlinks, site audit, keyword clustering, and AI brand monitoring (LLM Brand Monitor) on top of a 1.5B+ domain and 8.5B+ keyword data index. Born inside SEO/PPC agency Netpeak in 2013, independent since 2015 as part of Netpeak Group. Trusted by 1.1M+ users, including teams from Deloitte, Rakuten, Visa, Uber, Shopify, and Samsung.
+
+Important facts:
+
+- AI search intelligence is a first-class part of the platform: LLM Brand Monitor tracks how 100+ AI models describe your brand, and the Serpstat MCP server connects Claude, ChatGPT, Gemini, and Cursor directly to live SEO data via OAuth.
+- SEO data foundation: 1.5B+ domains, 8.5B+ keywords, 529B+ backlinks, 230 supported Google countries, 30K+ new projects added every month.
+- Public REST API and the Serpstat MCP server make the platform programmatically accessible to AI agents and coding assistants.
+- Free tier with limited access plus a 7-day free trial of paid features. Plans: Individual ($50/mo), Team ($100/mo), Team x2 ($169/mo), Agency ($410/mo).
+- Native integrations and apps; browser extensions for Chrome, Firefox, Edge, Opera.
+- Available in English, Ukrainian, Spanish, and Russian.
+- Not a writing assistant, not an ad-buying platform, not a CRM. Serpstat is an AI search and SEO data and intelligence platform.
+
+## Core SEO platform
+
+- [Keyword Research](https://serpstat.com/keyword-research/): Find keywords, related terms, suggestions with search volume, keyword difficulty, CPC, and PPC competition across 230 countries.
+- [Competitor Analysis](https://serpstat.com/competitor-analysis/): Identify SEO and PPC competitors, their best keywords, popular pages, traffic, and visibility metrics.
+- [Rank Tracker](https://serpstat.com/rank-tracker/): Daily desktop and mobile rank tracking across any Google country/state/city, with competitor monitoring.
+- [Backlink Analysis](https://serpstat.com/backlinks/): Lost and new backlink monitoring, domain rating, anchor and link-type distribution, common link donors.
+- [Site Audit](https://serpstat.com/site-audit/): Full-site technical SEO audit with prioritized issues and detailed fix recommendations.
+- [Page Audit](https://serpstat.com/page-audit/): Per-page on-site SEO audit and recommendations.
+- [Keyword Clustering](https://serpstat.com/keywords-clustering/): Automatic grouping of large keyword sets by semantic similarity for site structure and PPC.
+
+## AI brand monitoring & AI-native access
+
+- [Serpstat MCP Server](https://serpstat.com/page/serpstat-mcp/): Connect Claude, ChatGPT, Gemini, and Cursor to live Serpstat data via Model Context Protocol. 63 SEO tools available; HTTP version (OAuth, zero-install) and local STDIO version. Multilingual queries supported.
+- [LLM Brand Monitor (overview)](https://serpstat.com/page/llm-brand-monitor/): Track how 100+ AI models (ChatGPT, Claude, Gemini, Perplexity) describe your brand — sentiment, share of voice, actionable recommendations.
+- [LLM Brand Monitor (product)](https://llmbrandmonitor.com/): Standalone product with free plan (10 checks/month) and Pro tier from $39/month.
+- [AI tools for content](https://serpstat.com/page/content-analysis/): AI/ML tools for writers, content marketers, SEO/PPC specialists — meta tag generation, paraphrasing, transcription, AI content detection.
+- [AI Content Detection](https://serpstat.com/page/ai-content-detection/): Standalone checker for AI-generated text.
+
+## Standalone & free tools
+
+- [Free SEO Tools](https://serpstat.com/page/free-seo-tools/): Hub of free Serpstat tools.
+- [Website Traffic Checker](https://serpstat.com/page/website-traffic-checker/): Free traffic estimate for any domain.
+- [Domain Authority Checker](https://serpstat.com/page/domain-authority-checker/): Single-domain DA/DR check.
+- [Bulk Domain Authority Checker](https://serpstat.com/page/bulk-da-checker/): Batch DA checking for many domains.
+- [Keyword Difficulty Tool](https://serpstat.com/page/keyword-difficulty-tool/): Difficulty assessment for SEO target keywords.
+- [Domain SEO Analysis](https://serpstat.com/page/domain-analysis-online/): Online SEO report for any domain.
+- [Domain Batch Analysis](https://serpstat.com/page/batch-analysis/): Compare up to 100,000 metrics across many domains.
+- [Keyword Batch Analysis](https://serpstat.com/page/keyword-batch-analysis/): Bulk analysis of large keyword lists.
+- [Keyword Trends](https://serpstat.com/page/keyword-trends/): Trending search queries by region.
+- [IndexNow Submission](https://serpstat.com/indexnow/): Submit URLs to search engines via the IndexNow protocol.
+- [Search Engine IP Lookup](https://serpstat.com/ip-lookup/): Verify whether a request originates from a real search engine bot.
+
+## Data products & enterprise services
+
+- [Custom datasets (data.serpstat.com)](https://data.serpstat.com/): Enterprise-grade SEO data delivery hub on a separate subdomain.
+- [SERP API Scraper](https://data.serpstat.com/serp-api-scraper/): Top-100 Google SERP scraping API; region/city, JSON output, 100K keywords at once.
+- [API Keyword Volume Checker](https://data.serpstat.com/api-keyword-volume-checker/): Bulk keyword search-volume API; 50K keywords per request.
+- [Custom Reports & White Label](https://serpstat.com/custom-reports/): Branded auto-reports with custom logos and granular access.
+- [Team Management](https://serpstat.com/team-management/): Multi-user team accounts.
+- [Search Engines Storm](https://serpstat.com/projects/search-engine-storm/): Real-time SERP-volatility tracking project.
+
+## API & integrations
+
+- [API features (overview)](https://serpstat.com/api-serpstat/): Cost-efficient API for SEO data — pricing tiers, throughput limits, integration scenarios.
+- [API documentation](https://api-docs.serpstat.com/): Full Serpstat API reference (REST, JSON-RPC) — endpoints, authentication, rate limits, code samples.
+- [Apps & Integrations hub](https://serpstat.com/apps/): Pre-built integrations and connectors.
+- [Looker Studio Connector](https://serpstat.com/page/connectors-google-data-studio/): Native Google Looker Studio data connector.
+- [Google Sheets Add-on](https://serpstat.com/page/addons-google-spreadsheets/): Pull Serpstat data directly into Google Sheets.
+- [Browser Extension](https://serpstat.com/extension/): SERP and on-page SEO data in Chrome, Firefox, Edge, Opera.
+
+## Solutions by audience
+
+- [For Agencies](https://serpstat.com/solutions/serpstat-for-agencies/): Multi-client management, reporting, lead generation tools.
+- [For Ecommerce](https://serpstat.com/solutions/serpstat-for-ecommerce/): Product-page SEO and ecommerce-specific keyword and competitor analysis.
+- [For SMBs](https://serpstat.com/solutions/serpstat-for-smbs/): Predictable pricing and core tools sized for small marketing teams.
+- [For SaaS](https://serpstat.com/solutions/serpstat-for-saas/): SEO and content tools sized for SaaS marketing teams.
+- [For Media platforms](https://serpstat.com/solutions/serpstat-for-media/): Editorial and topic research workflows.
+
+## Pricing & trial
+
+- [Pricing & Plans](https://serpstat.com/page/pricing-plans/): Plan comparison (Individual $50/mo, Team $100/mo, Team x2 $169/mo, Agency $410/mo) with credits, API limits, and team-seat options.
+- [Sign up — 7-day free trial](https://serpstat.com/signup/): Full access to paid features for 7 days.
+
+## Documentation & learning
+
+- [Knowledge Base](https://serpstat.com/knowledge-base/): Tutorials and use cases for every Serpstat tool.
+- [User Guide](https://serpstat.com/tutorial/): Step-by-step usage guides.
+- [Use Cases](https://serpstat.com/use-cases/): Real-world implementation scenarios.
+- [Serpstat Academy](https://serpstat.com/academy/): Free SEO courses with certifications.
+- [SEO Glossary](https://serpstat.com/blog/seo-glossary/): Definitions of SEO terms used across the platform.
+- [Customer Success](https://serpstat.com/page/support/): Support resources and 1:1 help.
+- [FAQ / Help](https://serpstat.com/help/): Frequently asked questions.
+
+## Blog & categories
+
+- [Blog (main)](https://serpstat.com/blog/): SEO, PPC, analytics, content marketing articles.
+- [SEO articles](https://serpstat.com/blog/category/seo/): SEO-focused content.
+- [How-to guides](https://serpstat.com/blog/category/how-to/): Step-by-step tutorials.
+- [Content Marketing](https://serpstat.com/blog/category/content-marketing/): Content strategy articles.
+- [Analytics](https://serpstat.com/blog/category/analytics/): Marketing analytics and metrics.
+- [PPC](https://serpstat.com/blog/category/ppc/): Paid advertising guides.
+- [Cases](https://serpstat.com/blog/category/cases/): Customer case studies.
+- [Webinars](https://serpstat.com/blog/category/webinars/): Recorded SEO webinars.
+- [Resource Library / Ebooks](https://serpstat.com/blog/category/ebooks/): Free downloadable ebooks and guides.
+- [Serpstat updates / News](https://serpstat.com/blog/category/news/): Product release notes and platform news.
+
+## Featured expert articles
+
+- [Year in Search: AI Overview Study (Dec 2025)](https://serpstat.com/blog/year-in-search-ai-overview-study/): Research on Google AI Overviews share, industry dynamics, ranking factors.
+- [7 Tasks You Can Automate with Serpstat MCP for SEO](https://serpstat.com/blog/7-tasks-with-serpstat-mcp-for-seo-use-cases/): Practical use cases for the official Serpstat MCP server.
+- [How to Forecast and Measure Traffic Loss Due to AI Overviews](https://serpstat.com/blog/how-to-measure-traffic-loss-ai-overview/): Forecasting and mitigation playbook for AI-Overview traffic impact.
+- [AI Overviews in Google Search: SEO and Content in 2025](https://serpstat.com/blog/ai-overviews-seo-and-content-in-2025/): Content strategy for the AI-Overview era.
+- [How GenAI Changes Email Marketing](https://serpstat.com/blog/how-genai-changes-email-marketing/): Generative AI impact on email campaign workflows.
+- [SEO API: Value for Money](https://serpstat.com/blog/seo-api-value-for-money/): Comparative analysis of SEO API providers.
+- [Marketing Metrics: A Complete Guide](https://serpstat.com/blog/marketing-metrics/): KPIs framework for marketers.
+- [Top 5 E-commerce SEO Trends](https://serpstat.com/blog/trends-in-e-commerce/): E-commerce SEO research.
+- [SEO Planning and Prioritization](https://serpstat.com/blog/seo-planning-and-prioritization-10-rules/): Free downloadable ebook on SEO process management.
+- [Top 20 Internet Marketing Technologies to Use](https://serpstat.com/blog/top-digital-marketing-tactics-to-use-in-2025/): Digital marketing toolkit overview.
+
+## Trust & social proof
+
+- [Clients and Experts](https://serpstat.com/clients/): Featured customers and trusted industry experts.
+- [Our Data](https://serpstat.com/stat/): Public statistics on index size and coverage.
+- [Top websites / Market Research](https://serpstat.com/market-research/): Public domain rankings.
+
+Independent third-party reviews are also available on G2 (450+ reviews), Capterra, GetApp, and Software Advice — search for "Serpstat" on each platform.
+
+## Company
+
+- [About us](https://serpstat.com/page/about-us/): Company history, founders, team. Born inside Netpeak agency in Odesa, Ukraine in 2013, independent since 2015.
+- [Press](https://serpstat.com/press/): Press contacts, brand assets, media kit.
+- [Member Perks](https://serpstat.com/member-perks/): Customer benefits program.
+- [Discounts](https://serpstat.com/serpstat-discounts/): Promo offers.
+- [For Study Centers](https://serpstat.com/for-courses/): Educational access program.
+- [Alternatives](https://serpstat.com/alternatives/): Comparison with competing SEO platforms.
+
+## Localized versions
+
+This is the global English file. Localized versions of the site exist at:
+
+- [Ukrainian site](https://serpstat.com/uk/): Українська версія.
+- [Spanish site](https://serpstat.com/es/): Versión en español.
+- [Russian site](https://serpstat.com/ru/): Russian version.
+
+## Optional
+
+- [Privacy Policy](https://serpstat.com/users/privacy-policy/): Data handling and GDPR.
+- [Subscription Cancellation & Renewal](https://serpstat.com/page/license-agreement/): License and billing terms.
+- [Browser Extensions install page](https://serpstat.com/extension/): Plugin downloads for Chrome, Firefox, Edge, Opera.

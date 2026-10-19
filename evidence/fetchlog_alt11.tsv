@@ -1,0 +1,4 @@
+403	5486	https://europepmc.org/RestfulWebService	evidence/alt11/001_europepmc.org_RestfulWebService.body
+200	1194	https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=test&format=json&pageSize=1	evidence/alt11/002_www.ebi.ac.uk_europepmc_webservices_rest_search_query_test_format_json_pageSize_1.body
+200	191492	https://developers.zenodo.org/	evidence/alt11/003_developers.zenodo.org.body
+200	12000	https://zenodo.org/api/records?size=1	evidence/alt11/004_zenodo.org_api_records_size_1.body
