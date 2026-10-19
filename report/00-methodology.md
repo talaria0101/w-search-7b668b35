@@ -1,6 +1,6 @@
 # Methodology and verification for this report set
 
-This file explains how the figures in `report/01` to `report/04` and in
+This file explains how the figures in `report/01` to `report/03` and in
 `data/` were produced, how to check any single one of them against a captured
 artefact, and what was not covered.
 
@@ -10,7 +10,7 @@ This repository holds two independent inventory passes for the same prompt
 (one free web fetch/search/crawl gateway across as many providers as possible,
 without a credit card).
 
-- This set: `report/00` to `report/04`, `data/`, `evidence/`, `scripts/`.
+- This set: `report/00` to `report/03`, `data/`, `evidence/`, `scripts/`.
   Every number here traces to a captured artefact with an HTTP code and a
   sha256 under `evidence/`.
 - The repository root: `README.md`, `REPORT.md`, `providers.json`,
@@ -27,9 +27,8 @@ built from separate captures at separate times.
 | path | contents |
 |---|---|
 | `report/01-top-100.md` | The 100 providers ranked by `score`, one table row per provider. |
-| `report/02-deep-reviews-1.md` | Deep reviews: Tavily, Exa, Firecrawl. |
+| `report/02-deep-reviews.md` | Deep reviews of 10 providers; every figure tied to a captured artefact. |
 | `report/03-post-analysis.md` | Five analyses (a) to (e): totals, anti-bot, credit kind, maturity, delivery. |
-| `report/04-deep-reviews-2.md` | Deep reviews: Parallel, Diffbot, LangSearch, You.com, TinyFish. |
 | `data/providers.tsv` | 128 rows, 15 columns. The full working set, including rows excluded from the top 100. |
 | `data/analysis_a_units.tsv` | Per-provider monthly unit figures for the totals in `report/03`. |
 | `data/analysis_a_totals.tsv` | The summed totals, per account and for five accounts. |
@@ -129,13 +128,15 @@ the URLs were taken from the artefact itself and recorded in
 same byte count (347037): they are one capture recorded twice. The pair is kept
 rather than deduplicated so the duplication stays visible.
 
-**treg leaderboard.** The success-rate and latency figures in `report/04` come
-from a single 30-day capture of the treg leaderboard
-(`evidence/seeds/002_treg.to_web-arena_api_leaderboard.body`, captured
-2026-10-19). The samples are unequal across providers, tiny for some (Diffbot
-search is 100 runs), LangSearch has no entry at all, and Diffbot has no fetch
-entry. These figures are one snapshot, not a controlled benchmark. The
-per-provider caveats in `report/04` state each sample size.
+**treg leaderboard (captured, not used by the current reviews).**
+`evidence/seeds/002_treg.to_web-arena_api_leaderboard.body` is a single 30-day
+capture of the treg leaderboard, taken 2026-10-19. The samples are unequal
+across providers and tiny for some (Diffbot search is 100 runs); LangSearch has
+no entry at all. An earlier review file in this set used these figures, but
+that file was removed and none of the ten providers in
+`report/02-deep-reviews.md` appears in the capture. The capture is kept because
+it is the set's only measured success-rate source; no current figure rests on
+it.
 
 **Redacted third-party token in one capture.** The first line of
 `evidence/alt9/013_musicbrainz.org_doc_MusicBrainz_API_Rate_Limiting.body` is

@@ -7,7 +7,7 @@ A technical inventory, comparative benchmark, and reference gateway routing impl
 This repository provides everything needed to deploy an unblocked, high-throughput web access gateway without requiring paid subscriptions or credit cards:
 
 1. Exhaustive 100-Provider Inventory: Documented endpoints, home pages, pricing URLs, llms.txt documentation, quotas, cadences, credit card requirements, anti-bot mechanisms, rendering engines, and rate limits.
-2. 8 Deep Technical Architecture Reviews: Focused reviews of Tinyfish, Keenable, Firecrawl, Jina AI, Tavily, Exa, Crawl4AI, and Serper.
+2. 10 Evidence-Backed Deep Reviews: `report/02-deep-reviews.md` covers 10 providers, each figure tied to a captured artefact with a sha256 (see `report/00-methodology.md`).
 3. 5 Post-Analyses:
    - 5-account capacity modeling (yielding 14.48 million requests per month).
    - Anti-bot bypass rankings across Cloudflare Turnstile, Datadome, Kasada, and Akamai.
@@ -50,7 +50,7 @@ This repository provides everything needed to deploy an unblocked, high-throughp
 
 ## Repository Structure
 
-- `REPORT.md`: Comprehensive 2,900+ line technical report containing the master 100-provider catalog, 8 deep reviews, 5 post-analyses, and gateway architecture blueprints.
+- `REPORT.md`: Comprehensive 2,200+ line technical report containing the master 100-provider catalog, 5 post-analyses, and gateway architecture blueprints.
 - `providers.json`: Full machine-readable catalog of all 100 providers with 16 structured metadata fields per provider.
 - `gateway_router.py`: Runnable reference implementation of the unified gateway router.
 - `LICENSE`: 0BSD License (public domain equivalent, zero restrictions).
